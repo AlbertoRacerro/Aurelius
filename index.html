@@ -306,16 +306,21 @@ nav button.on{color:var(--acc)}
       <button class="btn g s" id="bImp2">Ripristina</button>
     </div>
     <div class="row" style="margin-bottom:9px">
-      <div class="fld" style="flex:1 1 100%"><label>Email — la copia parte da sola, non devi fare niente</label>
-        <input type="email" id="fMail" placeholder="tua@email.it" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
+      <div class="fld" style="flex:1 1 100%"><label>Canale silenzioso dove finisce la copia — non iscriverti</label>
+        <input type="text" id="fTopicBk" placeholder="si crea da solo" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <p class="small" style="margin:7px 0 0">Indirizzo da usare in Comandi Rapidi:<br><code id="bkUrl" style="user-select:all;-webkit-user-select:all"></code></p></div>
+    </div>
+    <div class="row" style="margin-bottom:9px">
+      <div class="fld" style="flex:1 1 100%"><label>Email — facoltativa, se ntfy la accetta</label>
+        <input type="email" id="fMail" placeholder="lascia vuoto se dà errore" autocapitalize="off" autocorrect="off" spellcheck="false"></div>
     </div>
     <div class="acts">
-      <button class="btn g s" id="bMail">Salva email</button>
-      <button class="btn g s" id="bMailTest">Mandalo adesso</button>
+      <button class="btn g s" id="bMail">Salva</button>
+      <button class="btn g s" id="bMailTest">Fai la copia adesso</button>
     </div>
     <p class="small" id="bkStato" style="margin:10px 0 0"></p>
   </div>
-  <p class="small">Con l'email impostata la copia parte <b>da sola ogni volta che chiudi Aurelius</b>, e solo se è cambiato qualcosa: una mail per sessione, non una per ogni tocco. Per rimettere tutto: apri la mail, copia il testo, premi <b>Ripristina</b> e incolla — le righe in più non danno fastidio.</p>
+  <p class="small">La copia parte <b>da sola quando chiudi Aurelius</b>, e finisce su un canale ntfy <b>a cui non sei iscritto</b>: nessuna notifica, nessuna mail. La rileggi da qualunque browser aprendo <code>ntfy.sh/CANALE/json?poll=1</code>, oppure la fai prendere da un'automazione di Comandi Rapidi che la scrive in iCloud. L'email è in più, e solo se ntfy la accetta.</p>
 
   <h2>Notifiche</h2>
   <div class="card">
@@ -386,7 +391,7 @@ var CIT=[
 ];
 /* ===================================================== */
 
-var S={days:{},pk:[],proc:[],uni:[],gloss:[],tlog:[],tstart:0,topic:'',mail:'',bkup:'',bkupH:0,bkupT:0};
+var S={days:{},pk:[],proc:[],uni:[],gloss:[],tlog:[],tstart:0,topic:'',topicBk:'',mail:'',bkup:'',bkupH:0,bkupT:0};
 function pulisci(o){
   if(!o||typeof o!=='object')o={};
   var d=(o.days&&typeof o.days==='object')?o.days:{};
@@ -403,6 +408,7 @@ function pulisci(o){
     mail:(typeof o.mail==='string'?o.mail:''),
     bkup:(typeof o.bkup==='string'?o.bkup:''),
     bkupH:+o.bkupH||0, bkupT:+o.bkupT||0,
+    topicBk:(typeof o.topicBk==='string'?o.topicBk:''),
     tstart:+o.tstart||0};
 }
 function load(){var o=null;try{var r=localStorage.getItem(CFG.chiave);if(r)o=JSON.parse(r)}catch(e){}S=pulisci(o);
@@ -545,6 +551,8 @@ function render(){
 
   if(document.activeElement!==$('fTopic'))$('fTopic').value=S.topic||'';
   if(document.activeElement!==$('fMail'))$('fMail').value=S.mail||'';
+  if(document.activeElement!==$('fTopicBk'))$('fTopicBk').value=canaleBk();
+  var bu=$('bkUrl'); if(bu)bu.textContent=canaleBk()?('https://ntfy.sh/'+canaleBk()+'/json?poll=1'):'— imposta prima il canale ntfy —';
   var gb=S.bkup?Math.round((new Date(t)-new Date(S.bkup))/864e5):null, av=$('bkAvviso');
   if(gb===null||gb>=7){
     av.style.display=''; av.className='note red';
@@ -598,12 +606,21 @@ $('pfCasa').onclick=function(){setProf('casa')};
 $('pfGio').onclick=function(){setProf('giordana')};
 
 /* ---------- notifiche (ntfy) ---------- */
+function invia(o){
+  return fetch('https://ntfy.sh/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o),keepalive:true})
+    .then(function(r){
+      if(r.ok)return r;
+      return r.text().then(function(t){
+        var m=t; try{var j=JSON.parse(t); m=(j.error||t)+(j.code?(' [cod. '+j.code+']'):'')}catch(e){}
+        throw new Error('HTTP '+r.status+' — '+String(m).slice(0,140));
+      });
+    });
+}
 function ntfy(o){
   if(!S.topic)return Promise.reject('nessun canale');
-  o.topic=S.topic;
-  return fetch('https://ntfy.sh/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o)})
-    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r});
+  o.topic=S.topic; return invia(o);
 }
+function canaleBk(){return S.topicBk||(S.topic?S.topic+'-bk':'')}
 function alleOre(giorniAvanti,h,m){
   var d=new Date();d.setDate(d.getDate()+giorniAvanti);d.setHours(h,m||0,0,0);
   return String(Math.floor(d.getTime()/1000));
@@ -630,7 +647,7 @@ $('bGen').onclick=function(){
 };
 $('bTopic').onclick=function(){
   S.topic=$('fTopic').value.trim().replace(/[^A-Za-z0-9_-]/g,'');
-  $('fTopic').value=S.topic; save();
+  $('fTopic').value=S.topic; save(); render();
   stato(S.topic?('Canale salvato: '+S.topic+'. Iscriviti a questo nome nell\u2019app ntfy, poi premi Prova.'):'Canale rimosso: niente notifiche.');
 };
 $('bTest').onclick=function(){
@@ -647,24 +664,32 @@ function impronta(x){var h=5381;for(var i=0;i<x.length;i++)h=((h<<5)+h+x.charCod
 function contenuto(){var c={days:S.days,pk:S.pk,proc:S.proc,uni:S.uni,gloss:S.gloss,tlog:S.tlog};return JSON.stringify(c)}
 var _t=null, INVIO=false;
 function spedisci(chiudendo){
-  if(INVIO||!S.mail||!S.topic)return;
+  if(INVIO||!canaleBk())return;
   var c=contenuto(), h=impronta(c);
   if(h===S.bkupH)return;                       // niente di nuovo
   var d=dati();
   if(d.length>3600){bkStato('Dati troppo grandi per l\u2019email ('+Math.round(d.length/1024)+' KB). Usa Scarica il file.');return}
   var testa='Per ripristinare: copia tutto questo messaggio, apri Aurelius, scheda Sera, Ripristina.\n\n';
-  var corpo=JSON.stringify({topic:S.topic,title:'Backup Aurelius '+oggi(),message:testa+d,email:S.mail,tags:['floppy_disk'],priority:1});
+  var bk=canaleBk();
+  var base={topic:bk,title:'Backup Aurelius '+oggi()+' · incolla in Ripristina',message:d,tags:['floppy_disk'],priority:1};
   if(chiudendo&&navigator.sendBeacon){
-    try{ if(navigator.sendBeacon('https://ntfy.sh/',new Blob([corpo],{type:'text/plain'}))){
-      S.bkupH=h;S.bkupT=Date.now();S.bkup=oggi();save();} }catch(e){}
+    try{ if(navigator.sendBeacon('https://ntfy.sh/',new Blob([JSON.stringify(base)],{type:'text/plain'}))){
+      S.bkupH=h;S.bkupT=Date.now();S.bkup=oggi();save();
+      if(S.mail)try{navigator.sendBeacon('https://ntfy.sh/',new Blob([JSON.stringify({topic:bk,title:'Backup Aurelius '+oggi(),message:testa+d,email:S.mail,priority:1})],{type:'text/plain'}))}catch(e){}
+    } }catch(e){}
     return;
   }
   INVIO=true;
-  fetch('https://ntfy.sh/',{method:'POST',headers:{'Content-Type':'application/json'},body:corpo,keepalive:true})
-    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);
+  invia(base)
+    .then(function(){
       S.bkupH=h;S.bkupT=Date.now();S.bkup=oggi();save();
-      bkStato('Copia spedita a '+S.mail+'. La prossima parte quando chiudi Aurelius.');render();})
-    .catch(function(e){bkStato('Copia non riuscita: '+e+'. Riprovo alla prossima apertura.')})
+      bkStato('Copia salvata sul canale «'+bk+'» ('+(d.length/1024).toFixed(1)+' KB).');render();
+      if(!S.mail)return;
+      return invia({topic:bk,title:'Backup Aurelius '+oggi(),message:testa+d,email:S.mail,priority:1})
+        .then(function(){bkStato('Copia salvata e spedita a '+S.mail+'.')})
+        .catch(function(e){bkStato('Copia salvata sul canale, ma la mail no: '+e)});
+    })
+    .catch(function(e){bkStato('Copia non riuscita: '+e)})
     .then(function(){INVIO=false});
 }
 // non a ogni modifica: solo quando chiudi, o dopo 10 minuti di inattivita
@@ -682,8 +707,10 @@ $('bDl').onclick=function(){
 };
 function bkStato(t){var e=$('bkStato');if(e)e.textContent=t}
 $('bMail').onclick=function(){
-  S.mail=$('fMail').value.trim(); save();
-  bkStato(S.mail?('Email salvata. Da stasera il backup parte da solo quando chiudi la giornata.'):'Email rimossa.');
+  S.mail=$('fMail').value.trim();
+  S.topicBk=$('fTopicBk').value.trim().replace(/[^A-Za-z0-9_-]/g,'');
+  save(); $('fTopicBk').value=canaleBk();
+  bkStato('Salvato. La copia va sul canale «'+canaleBk()+'»'+(S.mail?(' e per email a '+S.mail):'')+', da sola, quando chiudi Aurelius.');
 };
 function backupMail(manuale){
   if(!S.mail||!S.topic)return Promise.resolve();
@@ -694,8 +721,7 @@ function backupMail(manuale){
     .catch(function(e){bkStato('Backup non spedito: '+e+(manuale?'':' — scarica il file a mano.'))});
 }
 $('bMailTest').onclick=function(){
-  if(!S.mail){bkStato('Prima scrivi e salva l\u2019email.');return}
-  if(!S.topic){bkStato('Serve anche il canale ntfy qui sopra.');return}
+  if(!canaleBk()){bkStato('Prima imposta il canale ntfy qui sopra.');return}
   bkStato('Invio\u2026'); S.bkupH=0; spedisci(0);
 };
 
