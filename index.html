@@ -10,8 +10,8 @@
 <title>Aurelius</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%23F6F8F2'/%3E%3Ctext x='90' y='126' font-family='Georgia,serif' font-size='108' font-weight='600' fill='%232F6149' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
-:root{--bg:#F6F8F2;--ink:#1B2620;--mut:#6B7A70;--rule:#DCE4D6;--acc:#2F6149;--acc2:#5E8F76;--box:#ECF1E6;--gold:#8C7436;--accB:#2F6149;--acc2B:#4A7A63;--glow:rgba(94,143,118,.13)}
-@media(prefers-color-scheme:dark){:root{--bg:#0F1511;--ink:#E2EADF;--mut:#8D9A8F;--rule:#25302A;--acc:#8CC0A4;--acc2:#A9CDB6;--box:#161D19;--gold:#C7AE71;--accB:#3B6E55;--acc2B:#35604D;--glow:rgba(140,192,164,.09)}}
+:root{--bg:#F6F8F2;--ink:#1B2620;--mut:#6B7A70;--rule:#DCE4D6;--acc:#2F6149;--acc2:#5E8F76;--box:#ECF1E6;--gold:#8C7436;--accB:#2F6149;--acc2B:#4A7A63;--glow:rgba(94,143,118,.13);--gStudio:#2F6149;--gSonno:#37658F}
+@media(prefers-color-scheme:dark){:root{--bg:#0F1511;--ink:#E2EADF;--mut:#8D9A8F;--rule:#25302A;--acc:#8CC0A4;--acc2:#A9CDB6;--box:#161D19;--gold:#C7AE71;--accB:#3B6E55;--acc2B:#35604D;--glow:rgba(140,192,164,.09);--gStudio:#8CC0A4;--gSonno:#93B9E0}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--ink);
   font:400 17px/1.52 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
@@ -130,6 +130,19 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--acc)}
 .prof{display:flex;gap:7px;margin:12px 0 0}
 .prof button{flex:1;background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:9px;color:var(--mut);font:600 13.5px/1.2 inherit;cursor:pointer}
 .prof button.on{background:var(--acc2B);border-color:var(--acc2B);color:#fff}
+/* grafici */
+.ch{background:var(--box);border:1px solid var(--rule);border-radius:14px;padding:14px 14px 11px;margin:12px 0}
+.ch svg{display:block;width:100%;height:auto;overflow:visible}
+.cap{font:400 13px/1.45 inherit;color:var(--mut);margin-top:9px;min-height:19px}
+.cap b{color:var(--ink);font-weight:650}
+.due{display:flex;gap:14px}
+.due>div{flex:1}
+.due .n{font:500 30px/1.05 ui-serif,"New York",Georgia,serif;color:var(--acc)}
+.due .n.alt{color:var(--mut)}
+.due .l{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.35}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots i{width:13px;height:13px;border-radius:4px;background:var(--rule);display:block}
+.dots i.ok{background:var(--acc2B)} .dots i.no{background:var(--acc);opacity:.4}
 /* tabbar */
 nav{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);
  border-top:1px solid var(--rule);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:9}
@@ -170,6 +183,7 @@ nav button.on{color:var(--acc)}
   <div class="note" id="bigliettoBox" style="display:none"><b>Il primo gesto di oggi</b><div class="t" id="bigliettoTxt"></div></div>
   <div class="note red" id="apertiBox" style="display:none"><b>Rimasto aperto ieri</b><div class="t" id="apertiTxt"></div></div>
   <div class="note red" id="dueBox" style="display:none"><b>Da riprendere oggi</b><div class="t" id="dueTxt"></div></div>
+  <div class="note red" id="safariBox" style="display:none"><b>Stai usando Safari</b><div class="t">Su iPhone il browser e l'icona in Home tengono <b>due archivi separati</b>: ore, note e canali non si parlano. Scegli l'icona in Home come quella vera — da qui premi Sera → Esporta, poi apri l'icona e fai Ripristina.</div></div>
   <div class="note red" id="sonnoBox" style="display:none"><b>Poco sonno</b><div class="t" id="sonnoTxt"></div></div>
   <div class="note" id="noteBox" style="display:none"><b>Prese al volo</b><div class="t" id="noteTxt"></div></div>
   <div class="quote" id="cit"></div>
@@ -298,9 +312,39 @@ nav button.on{color:var(--acc)}
       <button class="btn g s" id="bExp" style="margin-left:auto">Esporta</button>
       <button class="btn g s" id="bImp">Importa</button>
     </div>
-    <div class="hist" id="hist"></div>
-    <div class="small" style="margin-top:6px">ultimi 14 giorni — verde: piano chiuso · altezza: ore</div>
   </div>
+</section>
+
+
+<section class="pane" id="p-dati">
+  <div class="strip">
+    <div class="chip"><div class="v" id="dMedia">—</div><div class="l">media 7 gg</div></div>
+    <div class="chip"><div class="v" id="dSonno">—</div><div class="l">sonno 7 gg</div></div>
+    <div class="chip"><div class="v" id="dTot">—</div><div class="l">ore totali</div></div>
+    <div class="chip"><div class="v" id="dFila">—</div><div class="l">giorni di fila</div></div>
+  </div>
+
+  <h2>Ore studiate <span class="en">— al giorno</span></h2>
+  <div class="ch"><div id="g1"></div><div class="cap" id="c1">Tocca una barra per il dettaglio.</div></div>
+
+  <h2>Ore dormite <span class="en">— al giorno</span></h2>
+  <div class="ch"><div id="g2"></div><div class="cap" id="c2">Tocca una barra per il dettaglio.</div></div>
+
+  <h2>Avanzamento</h2>
+  <div class="ch"><div id="g3"></div><div class="cap" id="c3"></div></div>
+
+  <h2>Deciso o piaciuto</h2>
+  <div class="card">
+    <div class="due"><div><div class="n" id="dDec">—</div><div class="l">giorni su ciò che avevi deciso</div></div>
+      <div><div class="n alt" id="dPia">—</div><div class="l">giorni su ciò che ti piaceva</div></div></div>
+    <div class="small" id="dDecNota" style="margin-top:10px"></div>
+  </div>
+
+  <h2>Piani chiusi</h2>
+  <div class="card"><div class="dots" id="dDots"></div><div class="small" id="dDotsL" style="margin-top:9px"></div></div>
+</section>
+
+<section class="pane" id="p-setup">
   <h2>Copia di sicurezza</h2>
   <div class="note" id="bkAvviso" style="display:none"><b>Backup</b><div class="t" id="bkAvvisoTxt"></div></div>
   <div class="card">
@@ -361,6 +405,8 @@ nav button.on{color:var(--acc)}
   <button class="on" data-p="oggi"><span class="ic">☀</span>Oggi</button>
   <button data-p="studio"><span class="ic">✎</span>Studio</button>
   <button data-p="sera"><span class="ic">☾</span>Sera</button>
+  <button data-p="dati"><span class="ic">▦</span>Dati</button>
+  <button data-p="setup"><span class="ic">⚙</span>Setup</button>
 </nav>
 </div>
 
@@ -559,6 +605,9 @@ function render(){
   if(!G.children.length)G.innerHTML='<div class="small" style="padding:4px 0">Vuoto.</div>';
 
   aggiornaSes();
+  renderDati();
+  var sfb=$('safariBox');
+  if(sfb)sfb.style.display=(navigator.standalone===false&&/iPhone|iPad|iPod/.test(navigator.userAgent))?'':'none';
 
   // log cronometro
   var TL=$('tmLog'),recenti=S.tlog.slice(-5).reverse();
@@ -595,12 +644,8 @@ function render(){
     $('bkAvvisoTxt').textContent=(gb===null?'Non hai ancora fatto una copia. Premi «Scarica il file»: trenta secondi, e non perdi niente.':'Ultima copia '+gb+' giorni fa. Falla adesso.');
   } else { av.style.display='none' }
   renderGiornata();
-  var h=$('hist');h.innerHTML='';var mx=1;
-  for(var i=13;i>=0;i--){var oo=S.days[sh(-i)];if(oo&&+oo.ore>mx)mx=+oo.ore}
-  for(var i=13;i>=0;i--){var kk=sh(-i),oo=S.days[kk]||{},el=document.createElement('div');
-    el.style.height=Math.max(2,Math.round(((+oo.ore||0)/mx)*40))+'px';
-    if(oo.chiuso===true)el.className='ok';else if(oo.chiuso===false)el.className='no';
-    el.title=kk+' — '+(+oo.ore||0)+'h';h.appendChild(el)}
+  // la strisciolina vive nella scheda Dati
+
 }
 
 /* ---------- la giornata ---------- */
@@ -855,6 +900,119 @@ function aggiornaSes(){
     sb3.style.display=''; sb3.className='note'+(S.ses.run?'':' red');
     $('sesTxt').textContent=(S.ses.run?'In corso da ':'In pausa a ')+Math.round(el2/60)+' minuti. Alla fine del blocco le ore si sommano da sole.';
   } else sb3.style.display='none';
+}
+
+
+/* ---------- grafici ---------- */
+var GG_N=21;
+function serie(campo){
+  var out=[];
+  for(var i=GG_N-1;i>=0;i--){ var k=sh(-i), o=S.days[k]||{};
+    out.push({k:k,v:(o[campo]!=null?+o[campo]:null),chiuso:o.chiuso,dec:o.deciso}); }
+  return out;
+}
+function gg(k){var d=new Date(k);return d.getDate()+'/'+(d.getMonth()+1)}
+function barre(idSvg,idCap,dati,colore,rif,rifTxt,unita){
+  var W=336,H=104,PB=16,n=dati.length,gap=2;
+  var bw=(W-gap*(n-1))/n;
+  var max=Math.max(rif||0, 1);
+  dati.forEach(function(d){ if(d.v!=null&&d.v>max)max=d.v });
+  max=Math.ceil(max*1.12*2)/2;
+  var alt=H-PB, sc=function(v){return Math.max(0,Math.min(alt,v/max*alt))};
+  var sv=['<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="grafico a barre">'];
+  // assi recessivi
+  sv.push('<line x1="0" y1="'+alt+'" x2="'+W+'" y2="'+alt+'" stroke="var(--rule)" stroke-width="1"/>');
+  var RIF='';
+  if(rif){ var y=alt-sc(rif);
+    RIF+='<line x1="0" y1="'+y.toFixed(1)+'" x2="'+W+'" y2="'+y.toFixed(1)+'" stroke="var(--mut)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>';
+    var lw=rifTxt.length*4.9+8;
+    RIF+='<rect x="'+(W-lw).toFixed(1)+'" y="'+(y-13).toFixed(1)+'" width="'+lw.toFixed(1)+'" height="12" rx="3" fill="var(--box)" opacity=".92"/>';
+    RIF+='<text x="'+(W-4)+'" y="'+(y-4).toFixed(1)+'" text-anchor="end" font-size="9.5" fill="var(--mut)">'+esc(rifTxt)+'</text>';
+  }
+  var imax=-1,vmax=-1;
+  dati.forEach(function(d,i){ if(d.v!=null&&d.v>vmax){vmax=d.v;imax=i} });
+  dati.forEach(function(d,i){
+    var x=i*(bw+gap), h=d.v==null?0:sc(d.v);
+    if(h>0.4) sv.push('<rect class="bx" data-i="'+i+'" x="'+x.toFixed(1)+'" y="'+(alt-h).toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="'+Math.min(4,bw/2).toFixed(1)+'" fill="'+colore+'"/>');
+    else sv.push('<rect class="bx" data-i="'+i+'" x="'+x.toFixed(1)+'" y="'+(alt-2)+'" width="'+bw.toFixed(1)+'" height="2" rx="1" fill="var(--rule)"/>');
+    sv.push('<rect class="hit" data-i="'+i+'" x="'+x.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+alt+'" fill="transparent"/>');
+  });
+  sv.push(RIF);
+  // etichette dirette: solo il massimo e oggi
+  [imax,n-1].forEach(function(i,q){
+    if(i<0)return; var d=dati[i]; if(d.v==null)return;
+    if(q===1&&i===imax)return;
+    var x=i*(bw+gap)+bw/2, y=alt-sc(d.v)-5;
+    sv.push('<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" text-anchor="middle" font-size="10" font-weight="650" fill="var(--ink)">'+(Math.round(d.v*10)/10)+'</text>');
+  });
+  sv.push('<text x="0" y="'+(H-3)+'" font-size="9.5" fill="var(--mut)">'+gg(dati[0].k)+'</text>');
+  sv.push('<text x="'+W+'" y="'+(H-3)+'" text-anchor="end" font-size="9.5" fill="var(--mut)">oggi</text>');
+  sv.push('</svg>');
+  var el=$(idSvg); if(!el)return; el.innerHTML=sv.join('');
+  [].forEach.call(el.querySelectorAll('.hit'),function(r){
+    r.style.cursor='pointer';
+    r.addEventListener('click',function(){
+      var d=dati[+r.getAttribute('data-i')];
+      $(idCap).innerHTML='<b>'+gg(d.k)+'</b> — '+(d.v==null?'nessun dato':(Math.round(d.v*10)/10)+' '+unita);
+    });
+  });
+}
+function lineaAvanz(){
+  var W=336,H=104,PB=16,alt=H-PB;
+  var ks=Object.keys(S.days).sort(), tot=0;
+  var gTot=Math.max(1,Math.round((new Date(CFG.esame)-new Date(sh(-GG_N+1)))/864e5));
+  var punti=[], cum=0;
+  for(var i=GG_N-1;i>=0;i--){ var k=sh(-i); cum+=(+(S.days[k]||{}).ore||0); punti.push(cum); }
+  var giorniPass=GG_N, restanti=Math.max(0,Math.round((new Date(CFG.esame)-new Date(oggi()))/864e5));
+  var max=Math.max(CFG.oreTarget, cum, 1);
+  var sc=function(v){return alt-Math.max(0,Math.min(alt,v/max*alt))};
+  var dx=W/(GG_N-1||1);
+  var d1=punti.map(function(v,i){return (i?'L':'M')+(i*dx).toFixed(1)+' '+sc(v).toFixed(1)}).join(' ');
+  var sv=['<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="ore accumulate">'];
+  sv.push('<line x1="0" y1="'+alt+'" x2="'+W+'" y2="'+alt+'" stroke="var(--rule)" stroke-width="1"/>');
+  sv.push('<line x1="0" y1="'+sc(CFG.oreTarget).toFixed(1)+'" x2="'+W+'" y2="'+sc(CFG.oreTarget).toFixed(1)+'" stroke="var(--mut)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>');
+  var ty=sc(CFG.oreTarget), tw=String(CFG.oreTarget).length*4.9+62;
+  sv.push('<rect x="'+(W-tw).toFixed(1)+'" y="'+(ty-13).toFixed(1)+'" width="'+tw.toFixed(1)+'" height="12" rx="3" fill="var(--box)" opacity=".92"/>');
+  sv.push('<text x="'+(W-4)+'" y="'+(ty-4).toFixed(1)+'" text-anchor="end" font-size="9.5" fill="var(--mut)">obiettivo '+CFG.oreTarget+' h</text>');
+  sv.push('<path d="'+d1+'" fill="none" stroke="var(--gStudio)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>');
+  sv.push('<circle cx="'+((GG_N-1)*dx).toFixed(1)+'" cy="'+sc(cum).toFixed(1)+'" r="4" fill="var(--gStudio)" stroke="var(--box)" stroke-width="2"/>');
+  sv.push('</svg>');
+  var el=$('g3'); if(el)el.innerHTML=sv.join('');
+  var c=$('c3'); if(c){
+    var manca=Math.max(0,CFG.oreTarget-cum);
+    var util=Math.max(0,restanti-CFG.giorniPersi);
+    c.innerHTML='<b>'+(Math.round(cum*10)/10)+' h</b> accumulate. '+(manca>0?('Ne mancano '+Math.round(manca)+' in '+util+' giorni utili: <b>'+(util?(manca/util).toFixed(1):'—')+' h al giorno</b>.'):'Obiettivo raggiunto.');
+  }
+}
+function renderDati(){
+  if(!$('g1'))return;
+  var st=serie('ore'), so=serie('sonno');
+  var tot=0,ks=Object.keys(S.days); ks.forEach(function(k){tot+=(+S.days[k].ore||0)});
+  var u7=0,n7=0,s7=0,m7=0, lim=sh(-6);
+  ks.forEach(function(k){ if(k>=lim){ var o=S.days[k];
+    if(o.ore!=null){u7+=+o.ore;n7++} if(o.sonno!=null){s7+=+o.sonno;m7++} }});
+  $('dMedia').textContent=n7?(u7/n7).toFixed(1):'—';
+  $('dSonno').textContent=m7?(s7/m7).toFixed(1):'—';
+  $('dTot').textContent=Math.round(tot*10)/10;
+  $('dFila').textContent=$('kFila').textContent;
+  var restanti=Math.max(0,Math.round((new Date(CFG.esame)-new Date(oggi()))/864e5));
+  var util=Math.max(1,restanti-CFG.giorniPersi);
+  var serve=Math.max(0,CFG.oreTarget-tot)/util;
+  barre('g1','c1',st,'var(--gStudio)',serve>0?serve:0,'servono '+serve.toFixed(1)+' h/g','ore di studio');
+  barre('g2','c2',so,'var(--gSonno)',7.5,'obiettivo 7,5 h','ore di sonno');
+  lineaAvanz();
+  var dec=0,pia=0;
+  ks.forEach(function(k){ var o=S.days[k]; if(o.deciso===true)dec++; else if(o.deciso===false)pia++ });
+  $('dDec').textContent=dec; $('dPia').textContent=pia;
+  $('dDecNota').textContent=(dec+pia)<3?'Rispondi alla domanda ogni sera: dopo qualche giorno questo numero dice più di tutto il resto.'
+    :(pia>dec?'Stai lavorando più su ciò che ti piace che su ciò che avevi deciso. È il motivo per cui esiste questa app.'
+             :'Il piano sta reggendo.');
+  var D=$('dDots'); D.innerHTML='';
+  var nOk=0;
+  serie('ore').forEach(function(d){ var i=document.createElement('i');
+    if(d.chiuso===true){i.className='ok';nOk++} else if(d.chiuso===false)i.className='no';
+    i.title=gg(d.k); D.appendChild(i); });
+  $('dDotsL').textContent=nOk+' giorni chiusi su 21. Verde: piano minimo chiuso · rosso: no · vuoto: non risposto.';
 }
 
 /* ---------- cronometro ---------- */
