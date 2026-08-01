@@ -694,24 +694,31 @@ $('bTest').onclick=function(){
 var LEGGO=false;
 function eseguiComando(txt){
   var t=String(txt||'').trim(); if(!t)return null;
-  // corpo codificato per URL: gli spazi diventano "+" e gli accenti "%C3%A0"
-  if(/%[0-9A-Fa-f]{2}/.test(t)){ try{ t=decodeURIComponent(t.replace(/\+/g,' ')).trim() }catch(e){} }
-  else if(t.indexOf('+')>=0 && t.indexOf(' ')<0){ t=t.replace(/\+/g,' ').trim() }
-  // se Comandi Rapidi manda il corpo come JSON invece che come testo, scarto l'involucro
-  if(t.charAt(0)==='{'){
-    try{ var j=JSON.parse(t), k=Object.keys(j);
-      if(k.length===1&&typeof j[k[0]]==='string')t=j[k[0]].trim();
-    }catch(e){}
-  }
-  // riconosce il comando comunque sia attaccato: "sonno 4", "sonno4", "sonno: 4", "sonno=4"
   var ALIAS=[['sonno','sonno'],['dormito','sonno'],['ore','ore'],['studio','ore'],['studiato','ore'],
              ['blocco','blocco'],['bloccato','blocco'],['nota','nota'],['idea','nota'],['appunto','nota']];
   ALIAS.sort(function(a,b){return b[0].length-a[0].length});
+  function noto(w){for(var q=0;q<ALIAS.length;q++)if(ALIAS[q][0]===w)return true;return false}
+
+  // corpo "Modulo" di Comandi Rapidi: arriva "chiave=valore", spesso con chiave vuota -> "=sonno+4"
+  var mf=t.match(/^([A-Za-z0-9_\-]*)=([\s\S]+)$/);
+  if(mf&&!noto(mf[1].toLowerCase()))t=mf[2].trim();
+  // codifica URL: spazi come "+" e accenti come "%C3%A0"
+  if(/%[0-9A-Fa-f]{2}/.test(t)){ try{ t=decodeURIComponent(t.replace(/\+/g,' ')).trim() }catch(e){} }
+  else if(t.indexOf('+')>=0&&t.indexOf(' ')<0){ t=t.replace(/\+/g,' ').trim() }
+  // corpo "JSON" con un solo valore
+  if(t.charAt(0)==='{'){
+    try{ var j2=JSON.parse(t), k2=Object.keys(j2);
+      if(k2.length===1&&typeof j2[k2[0]]==='string')t=j2[k2[0]].trim();
+    }catch(e){}
+  }
+  // e se dopo tutto questo e' rimasto un uguale davanti, via
+  t=t.replace(/^[=+\s]+/,'').trim(); if(!t)return null;
+
   var low=t.toLowerCase(), cmd=null, arg='';
-  for(var i=0;i<ALIAS.length;i++){
-    if(low.indexOf(ALIAS[i][0])===0){
-      cmd=ALIAS[i][1];
-      arg=t.slice(ALIAS[i][0].length).replace(/^[\s:=\-+]+/,'').trim();
+  for(var i2=0;i2<ALIAS.length;i2++){
+    if(low.indexOf(ALIAS[i2][0])===0){
+      cmd=ALIAS[i2][1];
+      arg=t.slice(ALIAS[i2][0].length).replace(/^[\s:=\-+]+/,'').trim();
       break;
     }
   }
