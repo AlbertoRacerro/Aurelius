@@ -694,7 +694,28 @@ $('bTest').onclick=function(){
 var LEGGO=false;
 function eseguiComando(txt){
   var t=String(txt||'').trim(); if(!t)return null;
-  var sp=t.indexOf(' '), cmd=(sp<0?t:t.slice(0,sp)).toLowerCase(), arg=(sp<0?'':t.slice(sp+1).trim());
+  // corpo codificato per URL: gli spazi diventano "+" e gli accenti "%C3%A0"
+  if(/%[0-9A-Fa-f]{2}/.test(t)){ try{ t=decodeURIComponent(t.replace(/\+/g,' ')).trim() }catch(e){} }
+  else if(t.indexOf('+')>=0 && t.indexOf(' ')<0){ t=t.replace(/\+/g,' ').trim() }
+  // se Comandi Rapidi manda il corpo come JSON invece che come testo, scarto l'involucro
+  if(t.charAt(0)==='{'){
+    try{ var j=JSON.parse(t), k=Object.keys(j);
+      if(k.length===1&&typeof j[k[0]]==='string')t=j[k[0]].trim();
+    }catch(e){}
+  }
+  // riconosce il comando comunque sia attaccato: "sonno 4", "sonno4", "sonno: 4", "sonno=4"
+  var ALIAS=[['sonno','sonno'],['dormito','sonno'],['ore','ore'],['studio','ore'],['studiato','ore'],
+             ['blocco','blocco'],['bloccato','blocco'],['nota','nota'],['idea','nota'],['appunto','nota']];
+  ALIAS.sort(function(a,b){return b[0].length-a[0].length});
+  var low=t.toLowerCase(), cmd=null, arg='';
+  for(var i=0;i<ALIAS.length;i++){
+    if(low.indexOf(ALIAS[i][0])===0){
+      cmd=ALIAS[i][1];
+      arg=t.slice(ALIAS[i][0].length).replace(/^[\s:=\-+]+/,'').trim();
+      break;
+    }
+  }
+  if(!cmd)return null;
   var d=oggi(); S.days[d]=S.days[d]||{};
   var n=parseFloat(String(arg).replace(',','.'));
   if(cmd==='sonno'&&!isNaN(n)){ S.days[d].sonno=Math.min(16,Math.max(0,n)); return 'sonno '+S.days[d].sonno+' h'; }
