@@ -170,6 +170,8 @@ nav button.on{color:var(--acc)}
   <div class="note" id="bigliettoBox" style="display:none"><b>Il primo gesto di oggi</b><div class="t" id="bigliettoTxt"></div></div>
   <div class="note red" id="apertiBox" style="display:none"><b>Rimasto aperto ieri</b><div class="t" id="apertiTxt"></div></div>
   <div class="note red" id="dueBox" style="display:none"><b>Da riprendere oggi</b><div class="t" id="dueTxt"></div></div>
+  <div class="note red" id="sonnoBox" style="display:none"><b>Poco sonno</b><div class="t" id="sonnoTxt"></div></div>
+  <div class="note" id="noteBox" style="display:none"><b>Prese al volo</b><div class="t" id="noteTxt"></div></div>
   <div class="quote" id="cit"></div>
 
   <h2>La Tromba <span class="en">— la mattina</span></h2>
@@ -336,6 +338,21 @@ nav button.on{color:var(--acc)}
     <p class="small" id="ntStato" style="margin:10px 0 0"></p>
   </div>
   <p class="small">Installa <b>ntfy</b> dall'App Store, apri l'app, <b>+</b> e iscriviti a questo stesso canale. Quando chiudi la giornata, Aurelius programma da solo la sveglia di domani con dentro il tuo primo gesto.</p>
+
+  <h2>Ingresso da Comandi Rapidi</h2>
+  <div class="card">
+    <div class="row" style="margin-bottom:9px">
+      <div class="fld" style="flex:1 1 100%"><label>Canale in ingresso — non iscriverti nemmeno a questo</label>
+        <input type="text" id="fTopicIn" placeholder="si crea da solo" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <p class="small" style="margin:7px 0 0">Indirizzo a cui mandare i comandi, in POST con corpo di testo:<br><code id="inUrl" style="user-select:all;-webkit-user-select:all"></code></p></div>
+    </div>
+    <div class="acts">
+      <button class="btn g s" id="bTopicIn">Salva canale</button>
+      <button class="btn g s" id="bLeggi">Controlla adesso</button>
+    </div>
+    <p class="small" id="inStato" style="margin:10px 0 0"></p>
+  </div>
+  <p class="small">Un comando per messaggio: <code>sonno 6.5</code> · <code>ore 2</code> · <code>blocco fugacità, non torna il segno</code> · <code>nota chiedere gli appunti a Giordana</code>. Aurelius li legge da solo quando lo apri.</p>
 </section>
 
 <nav>
@@ -391,7 +408,7 @@ var CIT=[
 ];
 /* ===================================================== */
 
-var S={days:{},pk:[],proc:[],uni:[],gloss:[],tlog:[],tstart:0,topic:'',topicBk:'',mail:'',bkup:'',bkupH:0,bkupT:0};
+var S={days:{},pk:[],proc:[],uni:[],gloss:[],tlog:[],tstart:0,topic:'',topicBk:'',topicIn:'',inSeen:[],note:[],mail:'',bkup:'',bkupH:0,bkupT:0};
 function pulisci(o){
   if(!o||typeof o!=='object')o={};
   var d=(o.days&&typeof o.days==='object')?o.days:{};
@@ -409,6 +426,9 @@ function pulisci(o){
     bkup:(typeof o.bkup==='string'?o.bkup:''),
     bkupH:+o.bkupH||0, bkupT:+o.bkupT||0,
     topicBk:(typeof o.topicBk==='string'?o.topicBk:''),
+    topicIn:(typeof o.topicIn==='string'?o.topicIn:''),
+    inSeen:(Array.isArray(o.inSeen)?o.inSeen.slice(-120):[]),
+    note:(Array.isArray(o.note)?o.note.filter(function(x){return x&&x.t}):[]),
     tstart:+o.tstart||0};
 }
 function load(){var o=null;try{var r=localStorage.getItem(CFG.chiave);if(r)o=JSON.parse(r)}catch(e){}S=pulisci(o);
@@ -552,6 +572,17 @@ function render(){
   if(document.activeElement!==$('fTopic'))$('fTopic').value=S.topic||'';
   if(document.activeElement!==$('fMail'))$('fMail').value=S.mail||'';
   if(document.activeElement!==$('fTopicBk'))$('fTopicBk').value=canaleBk();
+  if(document.activeElement!==$('fTopicIn'))$('fTopicIn').value=canaleIn();
+  var iu=$('inUrl'); if(iu)iu.textContent=canaleIn()?('https://ntfy.sh/'+canaleIn()):'— imposta prima il canale ntfy —';
+  var od=S.days[t]||{}, sb2=$('sonnoBox');
+  if(od.sonno!=null&&od.sonno<6.5){ sb2.style.display='';
+    $('sonnoTxt').textContent='Hai dormito '+od.sonno+' h. Oggi il piano si taglia: tre voci, non venti. La correzione si fa stasera andando a letto prima.'; }
+  else sb2.style.display='none';
+  var nb=$('noteBox'), att=S.note.filter(function(x){return !x.ok});
+  nb.style.display=att.length?'':'none';
+  if(att.length){ $('noteTxt').innerHTML=att.map(function(x){return esc(x.t)}).join(' · ')+
+    ' <button class="btn g s" id="bNoteOk" style="margin-top:8px">viste</button>';
+    var bn=$('bNoteOk'); if(bn)bn.onclick=function(){S.note.forEach(function(x){x.ok=1});save();render()}; }
   var bu=$('bkUrl'); if(bu)bu.textContent=canaleBk()?('https://ntfy.sh/'+canaleBk()+'/json?poll=1'):'— imposta prima il canale ntfy —';
   var gb=S.bkup?Math.round((new Date(t)-new Date(S.bkup))/864e5):null, av=$('bkAvviso');
   if(gb===null||gb>=7){
@@ -621,6 +652,7 @@ function ntfy(o){
   o.topic=S.topic; return invia(o);
 }
 function canaleBk(){return S.topicBk||(S.topic?S.topic+'-bk':'')}
+function canaleIn(){return S.topicIn||(S.topic?S.topic+'-in':'')}
 function alleOre(giorniAvanti,h,m){
   var d=new Date();d.setDate(d.getDate()+giorniAvanti);d.setHours(h,m||0,0,0);
   return String(Math.floor(d.getTime()/1000));
@@ -657,6 +689,45 @@ $('bTest').onclick=function(){
     .then(function(){stato('Inviata. Se non arriva: controlla di esserti iscritto al canale «'+S.topic+'» nell\u2019app ntfy.')})
     .catch(function(e){stato('Non è partita: '+e+'. Controlla la connessione e il nome del canale.')});
 };
+
+/* ---------- ingresso da Comandi Rapidi ---------- */
+var LEGGO=false;
+function eseguiComando(txt){
+  var t=String(txt||'').trim(); if(!t)return null;
+  var sp=t.indexOf(' '), cmd=(sp<0?t:t.slice(0,sp)).toLowerCase(), arg=(sp<0?'':t.slice(sp+1).trim());
+  var d=oggi(); S.days[d]=S.days[d]||{};
+  var n=parseFloat(String(arg).replace(',','.'));
+  if(cmd==='sonno'&&!isNaN(n)){ S.days[d].sonno=Math.min(16,Math.max(0,n)); return 'sonno '+S.days[d].sonno+' h'; }
+  if(cmd==='ore'&&!isNaN(n)){ S.days[d].ore=Math.min(24,Math.max(0,(+S.days[d].ore||0)+n)); return '+'+n+' h di studio'; }
+  if(cmd==='blocco'&&arg){ S.pk.push({txt:arg,step:0,next:sh(CFG.ritorni[0]),done:0}); return 'parcheggiato'; }
+  if(cmd==='nota'&&arg){ S.note.push({t:arg,d:d}); return 'nota presa'; }
+  return null;
+}
+function leggiIngresso(){
+  var c=canaleIn(); if(!c||LEGGO)return Promise.resolve(0);
+  LEGGO=true;
+  return fetch('https://ntfy.sh/'+encodeURIComponent(c)+'/json?poll=1&since=12h')
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})
+    .then(function(t){
+      var fatti=[];
+      t.split('\n').forEach(function(riga){
+        if(!riga.trim())return;
+        var m; try{m=JSON.parse(riga)}catch(e){return}
+        if(m.event&&m.event!=='message')return;
+        if(!m.id||S.inSeen.indexOf(m.id)>=0)return;
+        S.inSeen.push(m.id);
+        var esito=eseguiComando(m.message);
+        if(esito)fatti.push(esito);
+      });
+      if(S.inSeen.length>120)S.inSeen=S.inSeen.slice(-120);
+      save(); render();
+      if(fatti.length)inStato('Ricevuto: '+fatti.join(' · '));
+      return fatti.length;
+    })
+    .catch(function(e){inStato('Non ho potuto leggere il canale: '+e)})
+    .then(function(v){LEGGO=false;return v});
+}
+function inStato(t){var e=$('inStato');if(e)e.textContent=t}
 
 /* ---------- copia di sicurezza ---------- */
 function dati(){return JSON.stringify(S)}
@@ -695,7 +766,7 @@ function spedisci(chiudendo){
 // non a ogni modifica: solo quando chiudi, o dopo 10 minuti di inattivita
 // (rete di sicurezza se iOS chiude l'app senza avvisare)
 function forse(){ clearTimeout(_t); _t=setTimeout(function(){spedisci(0)},600000); }
-document.addEventListener('visibilitychange',function(){ if(document.hidden)spedisci(1) });
+document.addEventListener('visibilitychange',function(){ if(document.hidden)spedisci(1); else setTimeout(leggiIngresso,400) });
 window.addEventListener('pagehide',function(){ spedisci(1) });
 function segnaBackup(){S.bkup=oggi();save();render()}
 $('bDl').onclick=function(){
@@ -706,6 +777,11 @@ $('bDl').onclick=function(){
   segnaBackup(); bkStato('File creato. Salvalo in File o iCloud Drive.');
 };
 function bkStato(t){var e=$('bkStato');if(e)e.textContent=t}
+$('bTopicIn').onclick=function(){
+  S.topicIn=$('fTopicIn').value.trim().replace(/[^A-Za-z0-9_-]/g,''); save(); render();
+  inStato('Canale salvato: '+canaleIn()+'. Mandaci un POST da Comandi Rapidi.');
+};
+$('bLeggi').onclick=function(){ inStato('Leggo\u2026'); leggiIngresso().then(function(k){ if(!k)inStato('Niente di nuovo sul canale.') }) };
 $('bMail').onclick=function(){
   S.mail=$('fMail').value.trim();
   S.topicBk=$('fTopicBk').value.trim().replace(/[^A-Za-z0-9_-]/g,'');
@@ -790,6 +866,7 @@ $('bImp').onclick=function(){var t=prompt('Incolla il backup (va bene anche tutt
 
 load();render();renderGiornata();tick();
 setTimeout(function(){spedisci(0)},4000);
+setTimeout(leggiIngresso,1200);
 setInterval(renderGiornata,60000);
 setInterval(tick,1000);
 var _g=oggi();setInterval(function(){if(oggi()!==_g){_g=oggi();render()}},30000);
