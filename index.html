@@ -5,34 +5,39 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Agosto">
-<meta name="theme-color" content="#FBF9F5">
-<title>Agosto</title>
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%23FBF9F5'/%3E%3Ctext x='90' y='126' font-family='Georgia,serif' font-size='108' font-weight='600' fill='%238C3A2B' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="apple-mobile-web-app-title" content="Aurelius">
+<meta name="theme-color" content="#F6F8F2">
+<title>Aurelius</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%23F6F8F2'/%3E%3Ctext x='90' y='126' font-family='Georgia,serif' font-size='108' font-weight='600' fill='%232F6149' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
-:root{--bg:#FBF9F5;--ink:#23201C;--mut:#7A7267;--rule:#E4DED2;--acc:#8C3A2B;--acc2:#3A5A4E;--box:#F3EFE7;--gold:#8A6D2F;--accB:#8C3A2B;--acc2B:#3A5A4E}
-@media(prefers-color-scheme:dark){:root{--bg:#15140F;--ink:#EDE7DC;--mut:#9A9287;--rule:#332F28;--acc:#D98A72;--acc2:#8FBBAB;--box:#1E1C16;--gold:#C9A85C;--accB:#A8462F;--acc2B:#3E6B5B}}
+:root{--bg:#F6F8F2;--ink:#1B2620;--mut:#6B7A70;--rule:#DCE4D6;--acc:#2F6149;--acc2:#5E8F76;--box:#ECF1E6;--gold:#8C7436;--accB:#2F6149;--acc2B:#4A7A63;--glow:rgba(94,143,118,.13)}
+@media(prefers-color-scheme:dark){:root{--bg:#0F1511;--ink:#E2EADF;--mut:#8D9A8F;--rule:#25302A;--acc:#8CC0A4;--acc2:#A9CDB6;--box:#161D19;--gold:#C7AE71;--accB:#3B6E55;--acc2B:#35604D;--glow:rgba(140,192,164,.09)}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-  padding:0 18px calc(84px + env(safe-area-inset-bottom)); overflow-wrap:anywhere}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:400 17px/1.52 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;letter-spacing:-.005em;
+  padding:0 18px calc(86px + env(safe-area-inset-bottom)); overflow-wrap:anywhere;
+  background-image:radial-gradient(120% 55% at 50% -8%, var(--glow), transparent 70%);
+  background-attachment:fixed}
 .w{max-width:640px;margin:0 auto}
 header{padding:calc(26px + env(safe-area-inset-top)) 0 0}
 .dt{font:650 11px/1 inherit;letter-spacing:.17em;text-transform:uppercase;color:var(--acc);margin:0 0 8px}
-h1{font:600 30px/1.1 "Iowan Old Style",Georgia,ui-serif,serif;margin:0 0 14px;letter-spacing:-.02em}
-h2{font:650 11.5px/1.4 inherit;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin:30px 0 9px;padding-top:15px;border-top:1px solid var(--rule)}
-h2 .en{color:var(--mut);letter-spacing:.02em;text-transform:none;font-weight:500}
+h1{font:500 33px/1.1 ui-serif,"New York",Georgia,serif;margin:0 0 14px;letter-spacing:-.02em}
+h2{font:600 11px/1.4 inherit;letter-spacing:.19em;text-transform:uppercase;color:var(--acc);margin:32px 0 10px;padding-top:16px;border-top:1px solid var(--rule);position:relative}
+h2::before{content:"";position:absolute;top:-3.5px;left:0;width:6px;height:6px;transform:rotate(45deg);background:var(--bg);border:1px solid var(--acc);opacity:.75}
+h2 .en{color:var(--mut);letter-spacing:.01em;text-transform:none;font-weight:450;font-size:13px}
 p{margin:0 0 11px}
 strong,b{font-weight:650}
 .small{font:400 13.5px/1.5 inherit;color:var(--mut)}
 /* chips */
 .strip{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 9px}
-.chip{background:var(--box);border-radius:9px;padding:9px 12px;flex:1 1 auto;min-width:96px}
-.chip .v{font:700 20px/1.1 "Iowan Old Style",Georgia,serif;color:var(--acc)}
+.chip{background:var(--box);border:1px solid var(--rule);border-radius:11px;padding:9px 12px;flex:1 1 auto;min-width:96px}
+.chip .v{font:500 22px/1.1 ui-serif,"New York",Georgia,serif;color:var(--acc)}
 .chip .l{font:500 10px/1.25 inherit;color:var(--mut);letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
 .note{background:var(--box);border-left:3px solid var(--gold);border-radius:0 9px 9px 0;padding:12px 14px;margin:12px 0 0}
 .note b{display:block;font:650 10px/1 inherit;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
 .note.red{border-left-color:var(--acc)} .note.red b{color:var(--acc)}
-.quote{font:italic 400 17px/1.5 "Iowan Old Style",Georgia,serif;margin:14px 0 0;padding-left:16px;border-left:3px solid var(--gold)}
+.quote{font:italic 400 17px/1.5 ui-serif,"New York",Georgia,serif;margin:14px 0 0;padding-left:16px;border-left:3px solid var(--gold)}
 .quote span{display:block;font:400 12.5px/1.4 -apple-system,sans-serif;font-style:normal;color:var(--mut);margin-top:5px}
 /* liste secche */
 ul.k{list-style:none;margin:0 0 6px;padding:0}
@@ -46,9 +51,11 @@ details{margin:5px 0 0}
 details summary{cursor:pointer;color:var(--mut);font-size:13px;list-style:none;padding:4px 0}
 details summary::-webkit-details-marker{display:none}
 details summary::before{content:"+ perché"} details[open] summary::before{content:"− nascondi"}
+details#x{}
+#tlSum::before{content:"tutta la giornata"} details[open] #tlSum::before{content:"chiudi"}
 details .b{color:var(--mut);padding:2px 0 6px;line-height:1.55;font-size:14.5px}
 /* card */
-.card{background:var(--box);border-radius:12px;padding:15px 16px;margin:14px 0}
+.card{background:var(--box);border:1px solid var(--rule);border-radius:14px;padding:15px 16px;margin:14px 0}
 .card:last-child{margin-bottom:0}
 .row{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:11px}
 .row:last-child{margin-bottom:0}
@@ -93,10 +100,36 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--acc)}
 .tag{display:inline-block;font:650 9.5px/1 inherit;padding:3px 5px;border-radius:3px;letter-spacing:.05em;text-transform:uppercase;margin-left:6px;vertical-align:1px}
 .tg1{background:color-mix(in srgb,var(--acc2) 18%,transparent);color:var(--acc2)}
 .tg2{background:color-mix(in srgb,var(--gold) 24%,transparent);color:var(--gold)}
-.tg3{background:color-mix(in srgb,var(--acc) 15%,transparent);color:var(--acc)}
+.tg3{background:color-mix(in srgb,var(--mut) 16%,transparent);color:var(--mut)}
 .hist{display:flex;gap:3px;margin-top:13px;align-items:flex-end;height:42px}
 .hist div{flex:1;background:var(--rule);border-radius:2px 2px 0 0;min-height:2px}
 .hist div.ok{background:var(--acc2)} .hist div.no{background:var(--acc);opacity:.45}
+/* giornata */
+.now{background:var(--box);border:1px solid var(--rule);border-radius:14px;padding:15px 16px;margin:14px 0 0}
+.now .lb{font:600 10px/1 inherit;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:7px}
+.now .nm{font:500 25px/1.15 ui-serif,"New York",Georgia,serif;letter-spacing:-.01em}
+.now .de{font-size:14.5px;color:var(--mut);margin-top:3px}
+.bar{height:4px;border-radius:3px;background:var(--rule);margin:11px 0 8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc2B);border-radius:3px}
+.now .nx{font-size:14px;color:var(--mut)}
+.now .nx b{color:var(--ink);font-weight:600}
+.tl{margin:4px 0 0}
+.tl .r{display:grid;grid-template-columns:52px 12px 1fr;gap:9px;padding:7px 0;align-items:start}
+.tl .h{font:600 12.5px/1.5 ui-monospace,"SF Mono",Menlo,monospace;color:var(--mut);font-variant-numeric:tabular-nums}
+.tl .dot{position:relative;height:100%;display:flex;justify-content:center}
+.tl .dot::before{content:"";position:absolute;top:9px;bottom:-14px;width:1px;background:var(--rule)}
+.tl .r:last-child .dot::before{display:none}
+.tl .dot i{width:7px;height:7px;border-radius:50%;background:var(--rule);margin-top:5.5px;z-index:1;flex:none}
+.tl .n{font-size:15.5px;line-height:1.4}
+.tl .n span{color:var(--mut);font-size:13.5px}
+.tl .r.past .h,.tl .r.past .n{opacity:.45}
+.tl .r.past .dot i{background:var(--acc2)}
+.tl .r.on .h{color:var(--acc);opacity:1}
+.tl .r.on .n{font-weight:650}
+.tl .r.on .dot i{background:var(--acc);width:9px;height:9px;margin-top:4.5px;box-shadow:0 0 0 4px var(--glow)}
+.prof{display:flex;gap:7px;margin:12px 0 0}
+.prof button{flex:1;background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:9px;color:var(--mut);font:600 13.5px/1.2 inherit;cursor:pointer}
+.prof button.on{background:var(--acc2B);border-color:var(--acc2B);color:#fff}
 /* tabbar */
 nav{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);
  border-top:1px solid var(--rule);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:9}
@@ -117,6 +150,15 @@ nav button.on{color:var(--acc)}
 
 <!-- ============ OGGI ============ -->
 <section class="pane on" id="p-oggi">
+  <div class="now">
+    <div class="lb" id="nowLb">Adesso</div>
+    <div class="nm" id="nowNm">—</div>
+    <div class="de" id="nowDe"></div>
+    <div class="bar"><i id="nowBar" style="width:0"></i></div>
+    <div class="nx" id="nowNx"></div>
+    <div class="prof"><button type="button" id="pfCasa">A casa</button><button type="button" id="pfGio">Con Giordana</button></div>
+    <details style="margin-top:10px"><summary id="tlSum"></summary><div class="tl" id="tl"></div></details>
+  </div>
   <div class="strip">
     <div class="chip"><div class="v" id="kGiorni">—</div><div class="l">giorni all'esame</div></div>
     <div class="chip"><div class="v" id="kOre">—</div><div class="l">ore fatte</div></div>
@@ -284,13 +326,27 @@ nav button.on{color:var(--acc)}
 (function(){
 /* ============ CONFIG — si cambia solo qui ============ */
 var CFG={
-  chiave:'agosto2026',          // cambiala se duplichi il file
-  titolo:'Agosto',
+  chiave:'aurelius',          // cambiala se duplichi il file
+  titolo:'Aurelius',
   esame:'2026-09-03',
   oreTarget:123,
   giorniPersi:8,                // giorni che sai gia di perdere (mare, viaggi)
   soglia:{data:'2026-08-17', testo:'Ore che restano su POCI ≤110 → tieni due esami. Fra 110 e 136 → uno solo. Sopra → si rinegozia.'},
-  ritorni:[2,5,10]
+  ritorni:[2,5,10],
+  giornate:{
+    casa:[[6,0,'La Tromba','sveglia, in piedi subito'],[6,5,'Accensione','20\' progetto, timer visibile, si chiude a metà'],
+      [6,25,'Il Corpo','movimento, faccia fredda, luce fuori'],[6,45,'Primo Fuoco','due blocchi'],
+      [9,15,'Colazione','senza schermi'],[9,45,'Secondo Fuoco','tre blocchi'],
+      [12,30,'Cucina e pranzo','pausa manuale vera'],[14,0,'La Noia','15\' di niente'],
+      [14,15,'Terzo Fuoco','il blocco lungo'],[19,15,'Cucina e cena',''],
+      [21,0,'Ripasso a voce','libro chiuso, in piedi'],[22,30,'Il Consiglio della Sera','chiudi la giornata'],
+      [23,0,'Luci spente','']],
+    giordana:[[6,30,'Sveglia',''],[6,45,'Colazione insieme','un episodio, dichiarato prima'],
+      [7,20,'Transito','lavarsi, attivazione'],[7,45,'Studio affiancato','fino alle 11:15'],
+      [11,15,'Cucina e pranzo',''],[14,0,'Studio affiancato','il blocco lungo'],
+      [19,30,'Cucina e cena',''],[22,0,'Coda','finché regge'],
+      [23,0,'Consiglio e luci spente','']]
+  }
 };
 var PROC=['A — bilancio entalpico adiabatico','B — equilibrio multireazione','C — cinetica e regressione','D — reattore con scambio termico','E — flash multicomponente','F — layout d’impianto','G — riciclo con spurgo'];
 var UNI=[['Metanolo + esercitazioni',1],['Catalisi',1],['Meccanismi di ossidazione',1],['Materie prime',1],['Biomassa lignocellulosica',1],['Polimeri',1],['Aromatici',1],['Anidridi maleica/ftalica',1],['Fenolo',1],['Acido acetico',1],['Formaldeide',2],['Stirene',2],['Steam cracking',3],['VCM',3],['Refinery',3]];
@@ -467,6 +523,7 @@ function render(){
   }
 
   if(document.activeElement!==$('fTopic'))$('fTopic').value=S.topic||'';
+  renderGiornata();
   var h=$('hist');h.innerHTML='';var mx=1;
   for(var i=13;i>=0;i--){var oo=S.days[sh(-i)];if(oo&&+oo.ore>mx)mx=+oo.ore}
   for(var i=13;i>=0;i--){var kk=sh(-i),oo=S.days[kk]||{},el=document.createElement('div');
@@ -474,6 +531,44 @@ function render(){
     if(oo.chiuso===true)el.className='ok';else if(oo.chiuso===false)el.className='no';
     el.title=kk+' — '+(+oo.ore||0)+'h';h.appendChild(el)}
 }
+
+/* ---------- la giornata ---------- */
+function hm(h,m){return h+':'+('0'+m).slice(-2)}
+function profilo(){var o=S.days[oggi()]||{};return o.prof==='giordana'?'giordana':'casa'}
+function renderGiornata(){
+  var pf=profilo(), G=CFG.giornate[pf]||[];
+  $('pfCasa').className=(pf==='casa'?'on':''); $('pfGio').className=(pf==='giordana'?'on':'');
+  var n=new Date(), min=n.getHours()*60+n.getMinutes(), i=-1;
+  for(var j=0;j<G.length;j++){ if(G[j][0]*60+G[j][1]<=min) i=j; }
+  var L=$('tl'); L.innerHTML='';
+  G.forEach(function(b,j){
+    var el=document.createElement('div');
+    el.className='r'+(j<i?' past':(j===i?' on':''));
+    el.innerHTML='<div class="h">'+hm(b[0],b[1])+'</div><div class="dot"><i></i></div>'+
+      '<div class="n">'+esc(b[2])+(b[3]?'<span> — '+esc(b[3])+'</span>':'')+'</div>';
+    L.appendChild(el);
+  });
+  if(i<0){
+    $('nowLb').textContent='Non ancora iniziata';
+    $('nowNm').textContent='Prima cosa: '+G[0][2];
+    $('nowDe').textContent='alle '+hm(G[0][0],G[0][1]);
+    $('nowBar').style.width='0'; $('nowNx').textContent='';
+    return;
+  }
+  var b=G[i], nx=G[i+1];
+  var ini=b[0]*60+b[1], fin=nx?(nx[0]*60+nx[1]):(24*60);
+  $('nowLb').textContent='Adesso';
+  $('nowNm').textContent=b[2];
+  $('nowDe').textContent=(b[3]||'')+(nx?((b[3]?' · ':'')+'fino alle '+hm(nx[0],nx[1])):'');
+  $('nowBar').style.width=Math.max(0,Math.min(100,Math.round((min-ini)/Math.max(1,fin-ini)*100)))+'%';
+  if(nx){
+    var q=fin-min;
+    $('nowNx').innerHTML='Poi <b>'+esc(nx[2])+'</b> — fra '+(q>=60?(Math.floor(q/60)+'h '+(q%60)+'\''):(q+' minuti'));
+  } else $('nowNx').textContent='Ultimo blocco della giornata.';
+}
+function setProf(v){var t=oggi();S.days[t]=S.days[t]||{};S.days[t].prof=v;save();renderGiornata()}
+$('pfCasa').onclick=function(){setProf('casa')};
+$('pfGio').onclick=function(){setProf('giordana')};
 
 /* ---------- notifiche (ntfy) ---------- */
 function ntfy(o){
@@ -578,7 +673,8 @@ $('bImp').onclick=function(){var t=prompt('Incolla il backup:');if(!t)return;
     b.className='on'; $('p-'+b.dataset.p).className='pane on'; window.scrollTo(0,0);
   }});
 
-load();render();tick();
+load();render();renderGiornata();tick();
+setInterval(renderGiornata,60000);
 setInterval(tick,1000);
 var _g=oggi();setInterval(function(){if(oggi()!==_g){_g=oggi();render()}},30000);
 })();
