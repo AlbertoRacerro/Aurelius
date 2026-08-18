@@ -426,6 +426,12 @@ nav button.on{color:var(--acc)}
     <p class="small" id="inStato" style="margin:10px 0 0"></p>
   </div>
   <p class="small">Un comando per messaggio: <code>sonno 6.5</code> · <code>ore 2</code> · <code>blocco fugacità, non torna il segno</code> · <code>nota chiedere gli appunti a Giordana</code>. Aurelius li legge da solo quando lo apri.</p>
+  <details><summary>Sonno da Salute quando i campioni sono a fasi</summary>
+  <div class="b"><p>Se l'app di sonno scrive le fasi (veglia, REM, principale, profondo) la somma dei campioni <b>non</b> è il sonno: il campione «a letto» copre tutta la notte e conta due volte, e la veglia non è sonno. Manda i campioni grezzi e lascia fare il conto qui:</p>
+  <p><code>sonno-raw Principale;Profondo;REM;Veglia | 12:00;30;3:30;5:08:59</code></p>
+  <p>A sinistra del <code>|</code> i <b>Valori</b>, a destra le <b>Durate</b>, nello stesso ordine, unite con <code>;</code>. In Comandi Rapidi: <i>Trova campioni salute</i> (Sonno) → <i>Ottieni Valore da Campioni salute</i> → <i>Unisci testo</i> con <code>;</code> → <i>Ottieni Durata da Campioni salute</i> → <i>Unisci testo</i> con <code>;</code> → <i>Testo</i> → POST. Niente Somma, niente ÷3600.</p>
+  <p>Le durate le leggo come le scrive Comandi Rapidi: <code>30</code> = 30 secondi, <code>12:00</code> = 12 minuti, <code>5:08:59</code> = 5 ore. Scarto veglia e «a letto», sommo il resto.</p>
+  <p>Anche <code>sonno</code> da solo adesso accetta <code>5,8</code> · <code>5:47</code> · <code>5h47</code> · <code>347 min</code>. E se il numero è impossibile te lo dico invece di scriverlo storto.</p></div></details>
 </section>
 
 <nav>
@@ -446,7 +452,9 @@ var CFG={
   titolo:'Aurelius',
   esame:'2026-09-03',
   oreTarget:123,
-  giorniPersi:8,                // giorni che sai gia di perdere (mare, viaggi)
+  // giorni a capacita ridotta, con le date. 0.5 = mezza giornata, 0 = giornata persa.
+  // I giorni gia passati non contano piu: la capacita si ricalcola da oggi in avanti.
+  ridotti:[ {da:'2026-08-06', a:'2026-08-16', quota:.5} ],   // Taranto, mezze giornate
   soglia:{data:'2026-08-17', testo:'Ore che restano su POCI ≤110 → tieni due esami. Fra 110 e 136 → uno solo. Sopra → si rinegozia.'},
   ritorni:[2,5,10],
   giornate:{
@@ -516,6 +524,22 @@ function load(){var o=null;try{var r=localStorage.getItem(CFG.chiave);if(r)o=JSO
 }
 function save(){try{localStorage.setItem(CFG.chiave,JSON.stringify(S));if(typeof forse==='function')forse();return 1}catch(e){return 0}}
 function K(d){return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)}
+/* quanta giornata vale un giorno: 1 pieno, .5 mezzo, 0 perso */
+function quota(k){
+  var R=CFG.ridotti||[], q=1;
+  for(var i=0;i<R.length;i++){ if(R[i]&&k>=R[i].da&&k<=R[i].a) q=Math.min(q,Math.max(0,+R[i].quota||0)) }
+  return q;
+}
+/* giornate piene che restano da oggi (compreso) al giorno prima dell'esame */
+function capacita(){
+  var n=0, d=new Date(oggi()+'T12:00:00');
+  for(var i=0;i<400;i++){
+    var k=K(d); if(k>=CFG.esame)break;
+    n+=quota(k); d.setDate(d.getDate()+1);
+  }
+  return Math.round(n*100)/100;
+}
+function nGG(x){return String(Math.round(x*10)/10).replace('.',',')}
 function oggi(){return K(new Date())}
 function sh(n){var d=new Date();d.setDate(d.getDate()+n);return K(d)}
 var MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
@@ -548,17 +572,18 @@ function render(){
     if(o&&o.chiuso===true){fila++;d.setDate(d.getDate()-1)}else break;}
   $('kFila').textContent=fila;
 
-  var media=n7?u7/n7:0, utili=Math.max(0,gg-CFG.giorniPersi), pr=$('proiezione'), manca=CFG.oreTarget-tot;
+  var media=n7?u7/n7:0, utili=capacita(), pr=$('proiezione'), manca=CFG.oreTarget-tot;
+  var ggTxt='<b>'+gg+' giorn'+(gg===1?'o':'i')+'</b>'+(utili<gg-0.05?(' ('+nGG(utili)+' pien'+(Math.abs(utili-1)<0.05?'o':'i')+', contando le mezze giornate)'):'');
   soglia('kOre',false);
   if(media>0&&utili>0){
     var proj=Math.round(tot+media*utili);
-    pr.innerHTML='Restano <b>'+utili+' giorni utili</b>. A '+media.toFixed(1)+' h/g arrivi a <b>'+proj+' ore</b>: '+
+    pr.innerHTML='Restano '+ggTxt+'. A '+media.toFixed(1)+' h/g arrivi a <b>'+proj+' ore</b>: '+
       (proj>=CFG.oreTarget?'sopra le '+CFG.oreTarget+'.':'ne mancherebbero '+(CFG.oreTarget-proj)+'.')+
       (manca>0?' Da qui servono <b>'+(manca/utili).toFixed(1)+' h al giorno</b>.':'')+
       '<br><span style="opacity:.65">su '+n7+' giorn'+(n7==1?'o':'i')+' di dati'+(n7<4?' — ancora pochi per fidarsi.':'.')+'</span>';
     soglia('kOre',proj<CFG.oreTarget);
   } else if(utili>0){
-    pr.innerHTML='Restano <b>'+utili+' giorni utili</b> = <b>'+(CFG.oreTarget/utili).toFixed(1)+' h al giorno</b>. Segna le ore stasera.';
+    pr.innerHTML='Restano '+ggTxt+' = <b>'+(CFG.oreTarget/utili).toFixed(1)+' h al giorno</b>. Segna le ore stasera.';
   } else if(gg<=0){ pr.innerHTML='<b>Esame passato.</b> Cambia data e obiettivo in cima al file per ripartire.'; }
   else pr.innerHTML=(manca>0?'Mancano <b>'+Math.round(manca)+' ore</b>.':'<b>Ore fatte.</b> Adesso conta solo ripetere a voce e i temi a tempo.');
 
@@ -831,9 +856,64 @@ $('bTest').onclick=function(){
 
 /* ---------- ingresso da Comandi Rapidi ---------- */
 var LEGGO=false;
+/* durata di un campione di Salute, come la formatta Comandi Rapidi:
+   "30" = 30 secondi · "12:00" = 12 minuti · "5:08:59" = 5 ore 8 min 59 s. Torna secondi. */
+function durata(x){
+  var v=String(x||'').trim(); if(!v)return null;
+  var p=v.split(':');
+  for(var i=0;i<p.length;i++){ if(!/^\d+([.,]\d+)?$/.test(p[i].trim()))return null }
+  var q=p.map(function(y){return parseFloat(y.replace(',','.'))});
+  if(q.length===1)return q[0];
+  if(q.length===2)return q[0]*60+q[1];
+  if(q.length===3)return q[0]*3600+q[1]*60+q[2];
+  return null;
+}
+/* un numero di ore scritto in qualunque modo umano: 5.8 · 5,8 · 5:47 · 5h47 · 347 min */
+function oreDa(x){
+  var v=String(x||'').trim().toLowerCase().replace(',','.'), m;
+  if(!v)return null;
+  if((m=v.match(/^(\d+):([0-5]?\d)(?::([0-5]?\d))?$/)))
+    return +m[1]+(+m[2])/60+(m[3]?(+m[3])/3600:0);
+  if((m=v.match(/^(\d+(?:\.\d+)?)\s*(?:h|ore?)\s*(\d+)?\s*(?:m|min|minuti)?$/)))
+    return +m[1]+(m[2]?(+m[2])/60:0);
+  if((m=v.match(/^(\d+(?:\.\d+)?)\s*(?:m|min|minuti)$/))) return (+m[1])/60;
+  if((m=v.match(/^(\d+(?:\.\d+)?)/))) return +m[1];
+  return null;
+}
+function pezzi(x){
+  var a=String(x||'').split(/[;\n]+/);
+  if(a.length<2)a=String(x||'').split(/\s*,\s*/);
+  return a.map(function(y){return y.trim()}).filter(function(y){return y!==''});
+}
+/* "sonno-raw  Principale;Profondo;Veglia | 12:00;30;3:30"
+   valori a sinistra, durate a destra. Butta via veglia e "a letto": quelle
+   non sono sonno, e "a letto" copre tutta la notte, quindi la conterebbe due volte. */
+function scarta(v){
+  var x=String(v||'').trim().toLowerCase();
+  if(!x)return false;
+  if(/^[0-9]+$/.test(x))return (x==='0'||x==='2');       // HealthKit grezzo: 0 = a letto, 2 = veglia
+  return /veglia|sveglio|awake|letto|bed/.test(x);
+}
+function sonnoDaCampioni(a){
+  var s2=String(a||''), i=s2.indexOf('|'), val=[], dur=[];
+  if(i>=0){ val=pezzi(s2.slice(0,i)); dur=pezzi(s2.slice(i+1)); }
+  else dur=pezzi(s2);
+  if(val.length&&val.length!==dur.length)
+    return {err:'ho '+val.length+' valori e '+dur.length+' durate: le due liste non combaciano, non so quale campione buttare'};
+  var tot=0,n=0,sc=0,ill=0;
+  for(var j=0;j<dur.length;j++){
+    var sec=durata(dur[j]);
+    if(sec==null){ill++;continue}
+    if(val.length&&scarta(val[j])){sc++;continue}
+    tot+=sec;n++;
+  }
+  if(!n)return null;
+  return {h:tot/3600,n:n,sc:sc,ill:ill};
+}
 function eseguiComando(txt,ts){
   var t=String(txt||'').trim(); if(!t)return null;
-  var ALIAS=[['sonno','sonno'],['dormito','sonno'],['ore','ore'],['studiato','ore'],
+  var ALIAS=[['sonno-raw','sonnoraw'],['sonno raw','sonnoraw'],['sonnoraw','sonnoraw'],['salute','sonnoraw'],
+             ['sonno','sonno'],['dormito','sonno'],['ore','ore'],['studiato','ore'],
              ['blocco','blocco'],['bloccato','blocco'],['nota','nota'],['idea','nota'],['appunto','nota'],
              ['inizio','inizio'],['via','inizio'],['pausa','pausa'],['riprendi','riprendi'],['fine','fine']];
   ALIAS.sort(function(a,b){return b[0].length-a[0].length});
@@ -864,9 +944,28 @@ function eseguiComando(txt,ts){
   }
   if(!cmd)return null;
   var d=oggi(); S.days[d]=S.days[d]||{};
-  var n=parseFloat(String(arg).replace(',','.'));
-  if(cmd==='sonno'&&!isNaN(n)){ S.days[d].sonno=Math.min(16,Math.max(0,n)); return 'sonno '+S.days[d].sonno+' h'; }
-  if(cmd==='ore'&&!isNaN(n)){ S.days[d].ore=Math.min(24,Math.max(0,(+S.days[d].ore||0)+n)); return '+'+n+' h di studio'; }
+  if(cmd==='sonnoraw'){
+    var r=sonnoDaCampioni(arg);
+    if(!r)return 'sonno: nessun campione leggibile';
+    if(r.err)return 'sonno: '+r.err;
+    var hh=Math.round(r.h*10)/10;
+    if(hh>14)return 'sonno '+hh+' h da '+r.n+' campioni: impossibile, non l\u2019ho scritto. In Salute due app scrivono lo stesso sonno?';
+    if(hh<=0)return 'sonno: campioni a zero, non l\u2019ho scritto';
+    S.days[d].sonno=hh;
+    return 'sonno '+hh+' h \u00b7 '+r.n+' campioni'+(r.sc?', '+r.sc+' scartati (veglia o a letto)':'');
+  }
+  var n=oreDa(arg);
+  if(cmd==='sonno'){
+    if(n==null)return null;
+    var h2=Math.round(Math.max(0,n)*10)/10;
+    if(h2>14)return 'sonno '+h2+' h: impossibile, non l\u2019ho scritto';
+    S.days[d].sonno=h2; return 'sonno '+h2+' h';
+  }
+  if(cmd==='ore'&&n!=null){
+    if(n>16)return 'ore '+n+': impossibile in un colpo, non l\u2019ho scritto';
+    var a2=Math.round(Math.max(0,n)*100)/100;
+    S.days[d].ore=Math.min(24,Math.max(0,(+S.days[d].ore||0)+a2)); return '+'+a2+' h di studio';
+  }
   if(cmd==='blocco'&&arg){ S.pk.push({txt:arg,step:0,next:sh(CFG.ritorni[0]),done:0}); return 'parcheggiato'; }
   if(cmd==='nota'&&arg){ S.note.push({t:arg,d:d}); return 'nota presa'; }
 
@@ -1069,8 +1168,8 @@ function lineaAvanz(){
   var el=$('g3'); if(el)el.innerHTML=sv.join('');
   var c=$('c3'); if(c){
     var manca=Math.max(0,CFG.oreTarget-cum);
-    var util=Math.max(0,restanti-CFG.giorniPersi);
-    c.innerHTML='<b>'+(Math.round(cum*10)/10)+' h</b> accumulate. '+(manca>0?('Ne mancano '+Math.round(manca)+' in '+util+' giorni utili: <b>'+(util?(manca/util).toFixed(1):'—')+' h al giorno</b>.'):'Obiettivo raggiunto.');
+    var util=capacita();
+    c.innerHTML='<b>'+(Math.round(cum*10)/10)+' h</b> accumulate. '+(manca>0?('Ne mancano '+Math.round(manca)+' in '+nGG(util)+' giornate piene: <b>'+(util?(manca/util).toFixed(1):'—')+' h al giorno</b>.'):'Obiettivo raggiunto.');
   }
 }
 function renderDati(){
@@ -1085,7 +1184,7 @@ function renderDati(){
   $('dTot').textContent=Math.round(tot*10)/10;
   $('dFila').textContent=$('kFila').textContent;
   var restanti=Math.max(0,Math.round((new Date(CFG.esame)-new Date(oggi()))/864e5));
-  var util=Math.max(1,restanti-CFG.giorniPersi);
+  var util=Math.max(.5,capacita());
   var serve=Math.max(0,CFG.oreTarget-tot)/util;
   soglia('dMedia', n7>0 && serve>0 && (u7/n7)<serve);
   soglia('dSonno', m7>0 && (s7/m7)<7);
