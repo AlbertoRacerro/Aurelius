@@ -3,7 +3,7 @@
 // re-sends the whole list whenever the plan or the timer changes, so the worker never has to know the plan.
 
 import { occurrencesBetween } from './schedule.js';
-import { addDays, hm, partsAt } from './time.js';
+import { addDays, hm, partsAt, weekday, instantOf, parseHM } from './time.js';
 import { actById } from './stats.js';
 import { endsAt } from './timer.js';
 
@@ -37,6 +37,41 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS) {
   if (t && end && end > now) {
     items.push({ id: 'timer', at: end, title: `Focus finito: ${A[t.act]?.name || t.act}`,
       body: `${t.plannedMin}' completati. Conferma la sessione.`, url: `${baseUrl}?timer=1` });
+  }
+  // Private routine settings stay in the device state; the push worker only sees due messages.
+  const h = state.settings.habits || {};
+  const within = (at) => at > now && at <= now + horizonDays * 864e5;
+  const addHabit = (date, minute, code, title, body) => {
+    const at = instantOf(date, minute, tz);
+    if (!within(at)) return;
+    items.push({ id: `h${at.toString(36)}_${code}`, at, title, body, url: baseUrl });
+  };
+  for (let i = 0; i <= horizonDays; i++) {
+    const date = addDays(today, i);
+    if (weekday(date) < 5 && h.bottle?.enabled) {
+      const at = parseHM(h.bottle.time);
+      if (at != null && at < 1440) addHabit(date, at, 'bottle', 'Porta la borraccia',
+        'Prima di uscire: riempi e porta con te una bottiglia grande d’acqua.');
+    }
+    if (h.water?.enabled) {
+      const from = parseHM(h.water.from), to = parseHM(h.water.to);
+      const every = Number(h.water.everyMinutes);
+      if (from != null && to != null && from <= to && to < 1440
+          && Number.isInteger(every) && every >= 60 && every <= 360) {
+        for (let minute = from; minute <= to; minute += every) {
+          addHabit(date, minute, 'water', 'Bevi acqua',
+            'Interrompi per un momento quello che fai e bevi.');
+        }
+      }
+    }
+    for (const [key, title, body] of [
+      ['shutdown', 'Chiudi il lavoro', 'Niente nuovi task: domani serve lucidità, non un’altra ora di lavoro.'],
+      ['bedtime', 'È ora di dormire', 'Prepara tutto e vai a letto entro le 22:30.'],
+    ]) {
+      if (!h[key]?.enabled) continue;
+      const at = parseHM(h[key].time);
+      if (at != null && at < 1440) addHabit(date, at, key, title, body);
+    }
   }
   return items;
 }

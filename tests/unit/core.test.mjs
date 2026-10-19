@@ -17,6 +17,8 @@ function memStorage(init = {}) {
 }
 function plain() {
   const s = emptyState();
+  // Tests simulate Oct 19 morning; never derive tracking start from CI wall-clock time.
+  s.settings.trackFrom = at(MON, 0);
   for (let d = 0; d < 7; d++) s.template[d] = [];
   s.template[0] = [
     { id: 'a', start: '09:00', end: '10:00', act: 'atp' },

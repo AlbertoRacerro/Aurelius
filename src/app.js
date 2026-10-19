@@ -9,6 +9,7 @@ import * as L from './ledger.js';
 import * as T from './timer.js';
 import { actById, weeklyReview, legacyHistory } from './stats.js';
 import { reminderItems } from './reminders.js';
+import { applyPlanPatch } from './plan-import.js';
 import * as P from './push.js';
 import { APP_VERSION } from './config.js';
 
@@ -290,8 +291,10 @@ function viewStats() {
 
   // Backlog.
   out.push(`<h2>Backlog</h2><div class="card">${state.backlog.length ? '' : '<div class="mut small">Vuoto.</div>'}${state.backlog
-    .slice().sort((a, b) => a.done - b.done || b.at - a.at).map((x) => `<label class="opt"><input type="checkbox" data-act="bl-toggle" data-id="${esc(x.id)}"${x.done ? ' checked' : ''}>
+    .slice().sort((a, b) => a.done - b.done || ({P0:0,P1:1,P2:2,P3:3,D:4}[a.priority] ?? 3) - ({P0:0,P1:1,P2:2,P3:3,D:4}[b.priority] ?? 3) || (a.due || '9999').localeCompare(b.due || '9999') || b.at - a.at).map((x) => `<label class="opt"><input type="checkbox" data-act="bl-toggle" data-id="${esc(x.id)}"${x.done ? ' checked' : ''}>
     ${sw(x.act)}<span class="grow"${x.done ? ' style="text-decoration:line-through;opacity:.6"' : ''}>${esc(actName(x.act))}: ${esc(x.text)}</span>
+     ${x.priority ? `<span class="mut small">${esc(x.priority)}</span>` : ''}
+     ${x.due ? `<span class="mut small">${esc(x.due)}</span>` : ''}
     <button class="x" data-act="bl-del" data-id="${esc(x.id)}" aria-label="Elimina">×</button></label>`).join('')}
     <button class="btn sm" data-act="bl-add" style="margin-top:6px">+ Aggiungi</button></div>`);
 
@@ -339,6 +342,22 @@ function viewMore() {
       <label class="small">Codice di registrazione (se richiesto)<input type="text" id="f-enroll" autocomplete="off"></label>
       <label class="small">Canale ntfy di riserva (facoltativo)<input type="text" id="f-ntfy" value="${esc(s.ntfyTopic)}" placeholder="nome-canale-segreto"></label>
       <div class="btns" style="margin-top:8px"><button class="btn sm" data-act="adv-save">Salva</button></div></details></div>`);
+  // Daily reminders. These preferences are local; only the upcoming messages go to the push worker.
+  const h = s.habits;
+  out.push(`<h2>Promemoria quotidiani</h2><div class="card">
+    <p class="mut small">Notifiche programmate sul dispositivo (richiedono Web Push attivo per arrivare ad app chiusa).</p>
+    <label class="opt"><input type="checkbox" id="h-bottle-on"${h.bottle.enabled ? ' checked' : ''}> Borraccia prima delle lezioni (lun–ven)</label>
+    <label class="small">Orario<input type="time" id="h-bottle-at" value="${esc(h.bottle.time)}"></label>
+    <label class="opt"><input type="checkbox" id="h-water-on"${h.water.enabled ? ' checked' : ''}> Bere acqua ogni 2 ore (tutti i giorni)</label>
+    <div class="row">
+      <label class="small grow">Dalle<input type="time" id="h-water-from" value="${esc(h.water.from)}"></label>
+      <label class="small grow">Alle<input type="time" id="h-water-to" value="${esc(h.water.to)}"></label>
+    </div>
+    <label class="opt"><input type="checkbox" id="h-shutdown-on"${h.shutdown.enabled ? ' checked' : ''}> Chiusura del lavoro</label>
+    <label class="small">Orario<input type="time" id="h-shutdown-at" value="${esc(h.shutdown.time)}"></label>
+    <label class="opt"><input type="checkbox" id="h-bedtime-on"${h.bedtime.enabled ? ' checked' : ''}> Prepararsi per dormire (a letto alle 22:30)</label>
+    <label class="small">Orario<input type="time" id="h-bedtime-at" value="${esc(h.bedtime.time)}"></label>
+    <div class="btns"><button class="btn pri" data-act="habits-save">Salva promemoria</button></div></div>`);
   // Focus.
   out.push(`<h2>Focus</h2><div class="card"><div class="small mut">Durata predefinita</div><div class="chips" style="margin-top:6px">${s.focusChoices.map((m) =>
     `<button class="chip${m === s.focusMinutes ? ' on' : ''}" data-act="focus-default" data-min="${m}">${m}'</button>`).join('')}</div>
@@ -346,8 +365,9 @@ function viewMore() {
   // Data.
   const lastB = state.lastBackupAt ? new Date(state.lastBackupAt).toLocaleString('it-IT') : 'mai';
   out.push(`<h2>Dati</h2><div class="card"><div class="small">Tutto è salvato solo su questo dispositivo. Ultimo backup: ${esc(lastB)}.</div>
-    <div class="btns" style="margin-top:10px"><button class="btn pri" data-act="backup">Esporta backup</button><button class="btn" data-act="restore">Ripristina…</button></div>
+    <div class="btns" style="margin-top:10px"><button class="btn pri" data-act="backup">Esporta backup</button><button class="btn" data-act="restore">Ripristina…</button><button class="btn" data-act="plan-import">Importa piano personale…</button></div>
     <input type="file" id="f-restore" accept=".json,application/json,text/plain" hidden>
+    <input type="file" id="f-plan" accept=".json,application/json" hidden>
     <p class="mut small">Il ripristino accetta anche i backup dell'app estiva. Lo storico dell'estate non viene mai cancellato.${localStorage.getItem(LEGACY_KEY) ? ' I dati estivi originali sono ancora intatti.' : ''}</p></div>`);
   out.push(`<p class="mut small" style="text-align:center">Aurelius ${APP_VERSION} · <a href="legacy/estate-2026.html">app estate 2026</a></p>`);
   return out.join('');
@@ -687,6 +707,23 @@ const actions = {
   // more
   'focus-default'(el) { commit((s) => { s.settings.focusMinutes = Number(el.dataset.min); }); },
   sound(el) { commit((s) => { s.settings.sound = el.checked; }); },
+  'habits-save'() {
+    const t = (id) => document.getElementById(id)?.value;
+    const hours = ['h-bottle-at', 'h-water-from', 'h-water-to', 'h-shutdown-at', 'h-bedtime-at'].map(t);
+    if (hours.some((v) => v == null || parseHM(v) == null || parseHM(v) >= 1440)
+        || parseHM(hours[1]) > parseHM(hours[2])) {
+      toast('Controlla gli orari dei promemoria', 5000); return;
+    }
+    commit((st) => {
+      st.settings.habits = {
+        bottle: { enabled: $('#h-bottle-on').checked, time: hours[0] },
+        water: { enabled: $('#h-water-on').checked, from: hours[1], to: hours[2], everyMinutes: 120 },
+        shutdown: { enabled: $('#h-shutdown-on').checked, time: hours[3] },
+        bedtime: { enabled: $('#h-bedtime-on').checked, time: hours[4] },
+      };
+    }, { resync: true });
+    toast('Promemoria salvati');
+  },
   'adv-save'() {
     commit((s) => { s.settings.pushApi = $('#f-api').value.trim(); s.settings.ntfyTopic = $('#f-ntfy').value.trim(); }, { resync: true });
     toast('Salvato');
@@ -729,6 +766,7 @@ const actions = {
     }
   },
   restore() { $('#f-restore').click(); },
+  'plan-import'() { $('#f-plan').click(); },
 };
 
 async function onRestoreFile(file) {
@@ -744,6 +782,18 @@ async function onRestoreFile(file) {
     render();
     toast('Backup ripristinato');
   } catch (err) { toast(err.message, 6000); }
+}
+
+async function onPlanFile(file) {
+  try {
+    if (file.size > 100_000) throw new Error('File del piano troppo grande');
+    const plan = JSON.parse(await file.text());
+    const result = applyPlanPatch(state, plan);
+    if (result.alreadyApplied) { toast('Piano già importato; nessun duplicato'); return; }
+    if (!confirm(`Importare ${result.backlogAdded} attività e aggiornare ${result.daysEdited} giornate? Il registro delle ore già svolte resterà intatto. I dati rimarranno su questo dispositivo.`)) return;
+    commit((st) => Object.assign(st, result.state), { resync: true });
+    toast('Piano personale importato');
+  } catch (err) { toast(`Importazione non riuscita: ${err.message}`, 7000); }
 }
 
 // ---------- push sync ----------
@@ -868,6 +918,7 @@ document.addEventListener('click', (ev) => {
 document.addEventListener('change', (ev) => {
   const el = ev.target;
   if (el.id === 'f-restore' && el.files[0]) { onRestoreFile(el.files[0]); el.value = ''; return; }
+  if (el.id === 'f-plan' && el.files[0]) { onPlanFile(el.files[0]); el.value = ''; return; }
   if (el.tagName === 'INPUT' && el.type === 'checkbox' && el.dataset.act && actions[el.dataset.act]) actions[el.dataset.act](el);
   if (el.closest('#rows')) updateRemain();
   if (el.name === 'scope' && ui.sheet?.type === 'edit') { ui.sheet.rows = readEditRows(); renderSheet(); }

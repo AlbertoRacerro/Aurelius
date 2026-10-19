@@ -21,6 +21,7 @@ export const DEFAULT_ACTIVITIES = [
   { id: 'pausa', name: 'Pausa / pranzo', kind: 'break', study: false, color: '#A39E8F' },
   { id: 'palestra', name: 'Palestra', kind: 'gym', study: false, color: '#B4532A' },
   { id: 'bluerev', name: 'BlueRev / Jarvis', kind: 'project', study: false, color: '#2E6F78' },
+  { id: 'python', name: 'Python Kaggle', kind: 'project', study: false, color: '#396A82' },
   { id: 'review', name: 'Review', kind: 'review', study: false, color: '#6B5B95' },
   { id: 'routine', name: 'Routine mattina', kind: 'routine', study: false, color: '#9AA38F' },
   { id: 'vita', name: 'Vita / amici', kind: 'life', study: false, color: '#C08A3E' },
@@ -95,6 +96,12 @@ export function defaultSettings() {
     focusChoices: [25, 45, 60],
     sound: true,
     reminders: true,
+    habits: {
+      bottle: { enabled: true, time: '07:40' },
+      water: { enabled: true, from: '09:00', to: '21:00', everyMinutes: 120 },
+      shutdown: { enabled: true, time: '21:45' },
+      bedtime: { enabled: true, time: '22:20' },
+    },
     trackFrom: Date.now(),  // blocks that ended before this instant are never asked about
     push: null,             // { api, device, token, endpoint, at } once notifications are enabled
     pushApi: '',            // overrides config.js PUSH_API
@@ -116,6 +123,7 @@ export function emptyState() {
     accounts: {},        // per occurrence: { status, at, planned }
     timer: null,         // { act, plannedMin, startedAt, segments:[{s,e}], pausedAt?, occ? }
     backlog: [],         // { id, act, text, done, at }
+    importedPlans: [],   // IDs of local private plan patches applied; prevent duplicate imports
     targets: JSON.parse(JSON.stringify(DEFAULT_TARGETS)),
     issuesResolved: {},
     legacy: null,        // untouched copy of the summer 2026 state
