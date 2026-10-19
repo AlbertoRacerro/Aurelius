@@ -32,7 +32,7 @@ export function normalizeTaskInput(input, activities) {
   const act = String(input.act || '');
   if (!activities.some((a) => a.id === act)) throw new Error('Categoria non valida');
   const due = String(input.due || '');
-  if (due && (!/^\\d{4}-\\d{2}-\\d{2}$/.test(due) ||
-    Number.isNaN(Date.parse(due)))) throw new Error('Scadenza non valida');
+  if (due && (!/^\d{4}-\d{2}-\d{2}$/.test(due) ||
+    Number.isNaN(Date.parse(due)) || new Date(due + 'T00:00:00Z').toISOString().slice(0, 10) !== due)) throw new Error('Scadenza non valida');
   return { text, priority, act, due };
 }
