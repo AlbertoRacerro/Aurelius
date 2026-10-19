@@ -10,6 +10,8 @@ import * as T from './timer.js';
 import { actById, weeklyReview, legacyHistory } from './stats.js';
 import { reminderItems } from './reminders.js';
 import { applyPlanPatch } from './plan-import.js';
+import { PRIORITIES, normalizeTaskInput } from './todos.js';
+import { renderTodos } from './todo-view.js';
 import * as P from './push.js';
 import { APP_VERSION } from './config.js';
 
@@ -21,7 +23,7 @@ const now = () => Date.now();
 let { state, notice } = load(localStorage);
 // First run: persist at once so the adoption of summer data and trackFrom are fixed from now on.
 if (!localStorage.getItem('aurelius.v2')) save(localStorage, state);
-const ui = { tab: 'ora', sheet: null, planDate: null, statsDate: null, lastPaint: 0, lastEnded: null };
+const ui = { tab: 'ora', sheet: null, planDate: null, statsDate: null, todoFilter: 'open', lastPaint: 0, lastEnded: null };
 
 // ---------- persistence ----------
 
@@ -289,14 +291,9 @@ function viewStats() {
   if (r.backlogOpen.length) lines.push(`Backlog aperto: ${r.backlogOpen.length}.`);
   out.push(`<h2>Review della settimana</h2><div class="card small">${lines.map((x) => `<p style="margin:0 0 6px">${esc(x)}</p>`).join('')}</div>`);
 
-  // Backlog.
-  out.push(`<h2>Backlog</h2><div class="card">${state.backlog.length ? '' : '<div class="mut small">Vuoto.</div>'}${state.backlog
-    .slice().sort((a, b) => a.done - b.done || ({P0:0,P1:1,P2:2,P3:3,D:4}[a.priority] ?? 3) - ({P0:0,P1:1,P2:2,P3:3,D:4}[b.priority] ?? 3) || (a.due || '9999').localeCompare(b.due || '9999') || b.at - a.at).map((x) => `<label class="opt"><input type="checkbox" data-act="bl-toggle" data-id="${esc(x.id)}"${x.done ? ' checked' : ''}>
-    ${sw(x.act)}<span class="grow"${x.done ? ' style="text-decoration:line-through;opacity:.6"' : ''}>${esc(actName(x.act))}: ${esc(x.text)}</span>
-     ${x.priority ? `<span class="mut small">${esc(x.priority)}</span>` : ''}
-     ${x.due ? `<span class="mut small">${esc(x.due)}</span>` : ''}
-    <button class="x" data-act="bl-del" data-id="${esc(x.id)}" aria-label="Elimina">×</button></label>`).join('')}
-    <button class="btn sm" data-act="bl-add" style="margin-top:6px">+ Aggiungi</button></div>`);
+  // Task management now has its own prominent navigation tab.
+  out.push(`<div class="card soft small"><b>Da fare:</b> ${state.backlog.filter((x) => !x.done).length} attività aperte.
+    <button class="btn sm" data-act="goto-todos">Apri la checklist</button></div>`);
 
   // History.
   const from = instantOf(ws, 0, tz()), to = instantOf(addDays(ws, 7), 0, tz());
@@ -390,7 +387,7 @@ function renderSheet() {
   else if (s.type === 'manual') body = sheetManual(s);
   else if (s.type === 'session') body = sheetSession(s);
   else if (s.type === 'pending') body = sheetPending();
-  else if (s.type === 'backlog') body = sheetBacklog();
+  else if (s.type === 'backlog') body = sheetBacklog(s);
   el.innerHTML = `<div class="panel" role="dialog" aria-modal="true">${body}</div>`;
 }
 
@@ -467,11 +464,22 @@ function sheetPending() {
     <div class="btns"><button class="btn ghost" data-act="close">Chiudi</button></div>`;
 }
 
-function sheetBacklog() {
-  return `<h3>Nuovo elemento di backlog</h3>
-    <label class="small">Materia<select id="b-act">${actOptions(lastStudy())}</select></label>
-    <label class="small" style="display:block;margin-top:8px">Cosa<input type="text" id="b-text" placeholder="es. esercitazione 6, TDE 2023"></label>
-    <div class="btns" style="margin-top:12px"><button class="btn pri" data-act="bl-save">Aggiungi</button><button class="btn ghost" data-act="close">Annulla</button></div>`;
+function sheetBacklog(s) {
+  const item = s.id ? state.backlog.find((x) => x.id === s.id) : null;
+  if (s.id && !item) return `<p>Attività non trovata.</p><button class="btn" data-act="close">Chiudi</button>`;
+  const priority = item?.priority || 'P1';
+  return `<h3>${item ? 'Modifica attività' : 'Nuova attività'}</h3>
+    <label class="small" for="b-text">Cosa devi fare?
+      <textarea id="b-text" rows="3" maxlength="300" placeholder="Descrivi l'attività">${esc(item?.text || '')}</textarea></label>
+    <label class="small" for="b-priority">Priorità
+      <select id="b-priority">${PRIORITIES.map((p) =>
+        `<option value="${p.id}"${priority === p.id ? ' selected' : ''}>${p.id} · ${p.label}</option>`).join('')}</select></label>
+    <label class="small" for="b-act">Categoria<select id="b-act">${actOptions(item?.act || 'vita', { studyFirst: false })}</select></label>
+    <label class="small" for="b-due">Scadenza (facoltativa)<input type="date" id="b-due" value="${esc(item?.due || '')}"></label>
+    <div class="btns" style="margin-top:12px">
+      <button class="btn pri" data-act="bl-save">${item ? 'Salva modifiche' : 'Aggiungi'}</button>
+      ${item ? `<button class="btn bad" data-act="bl-del" data-id="${esc(item.id)}">Elimina</button>` : ''}
+      <button class="btn ghost" data-act="close">Annulla</button></div>`;
 }
 
 function readSplitRows() {
@@ -692,17 +700,55 @@ const actions = {
   },
   'issue-ok'(el) { commit((s) => { s.issuesResolved[el.dataset.id] = Date.now(); }); },
 
-  // stats
+  // stats + to-do list
   'stats-week'(el) { ui.statsDate = addDays(ui.statsDate || today(), Number(el.dataset.d)); render(); },
-  'bl-add'() { openSheet({ type: 'backlog' }); },
-  'bl-save'() {
-    const text = $('#b-text').value.trim();
-    if (!text) return;
-    commit((s) => s.backlog.push({ id: L.uid('k'), act: $('#b-act').value, text, done: false, at: Date.now() }));
-    closeSheet();
+  'goto-todos'() { ui.tab = 'todos'; location.hash = 'todos'; render(); },
+  'todo-filter'(el) {
+    if (['open', 'done', 'all'].includes(el.dataset.filter)) ui.todoFilter = el.dataset.filter;
+    render();
   },
-  'bl-toggle'(el) { commit((s) => { const x = s.backlog.find((b) => b.id === el.dataset.id); if (x) x.done = !x.done; }); },
-  'bl-del'(el) { commit((s) => { s.backlog = s.backlog.filter((b) => b.id !== el.dataset.id); }); },
+  'bl-quick-add'() {
+    try {
+      const input = normalizeTaskInput({
+        text: $('#q-text').value, priority: $('#q-priority').value,
+        act: $('#q-act').value, due: $('#q-due').value,
+      }, state.activities);
+      commit((st) => st.backlog.push({ id: L.uid('k'), ...input, done: false, at: Date.now() }));
+      ui.todoFilter = 'open';
+      toast('Attività aggiunta alla checklist');
+    } catch (err) { toast(err.message, 5000); }
+  },
+  'bl-add'() { openSheet({ type: 'backlog' }); },
+  'bl-edit'(el) { openSheet({ type: 'backlog', id: el.dataset.id }); },
+  'bl-save'() {
+    try {
+      const input = normalizeTaskInput({
+        text: $('#b-text').value, priority: $('#b-priority').value,
+        act: $('#b-act').value, due: $('#b-due').value,
+      }, state.activities);
+      const id = ui.sheet?.id;
+      if (id && !state.backlog.some((x) => x.id === id)) throw new Error('Attività non trovata');
+      commit((st) => {
+        if (id) Object.assign(st.backlog.find((x) => x.id === id), input);
+        else st.backlog.push({ id: L.uid('k'), ...input, done: false, at: Date.now() });
+      });
+      closeSheet();
+      toast(id ? 'Attività aggiornata' : 'Attività aggiunta');
+    } catch (err) { toast(err.message, 5000); }
+  },
+  'bl-toggle'(el) {
+    commit((st) => {
+      const x = st.backlog.find((b) => b.id === el.dataset.id);
+      if (x) { x.done = el.checked; x.completedAt = x.done ? Date.now() : null; }
+    });
+  },
+  'bl-del'(el) {
+    const id = el.dataset.id;
+    if (!state.backlog.some((x) => x.id === id) || !confirm('Eliminare definitivamente questa attività?')) return;
+    commit((st) => { st.backlog = st.backlog.filter((x) => x.id !== id); });
+    if (ui.sheet?.id === id) closeSheet();
+    toast('Attività eliminata');
+  },
 
   // more
   'focus-default'(el) { commit((s) => { s.settings.focusMinutes = Number(el.dataset.min); }); },
@@ -873,7 +919,9 @@ function render() {
     }
   }
   const main = $('#main');
-  main.innerHTML = ui.tab === 'piano' ? viewPlan() : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();
+  main.innerHTML = ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
+    ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
+    : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();
   ui.lastPaint = now();
 }
 
@@ -932,7 +980,7 @@ window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { sta
 function route() {
   const q = new URLSearchParams(location.search);
   const h = location.hash.replace('#', '');
-  if (['ora', 'piano', 'stats', 'altro'].includes(h)) ui.tab = h;
+  if (['ora', 'piano', 'todos', 'stats', 'altro'].includes(h)) ui.tab = h;
   const occId = q.get('occ');
   if (occId) {
     ui.tab = 'ora';
