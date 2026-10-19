@@ -27,7 +27,8 @@ test('imported backlog appears sorted; completion, adding and editing persist af
   await expect(page.locator('.todo-item').first()).toContainText('Costumi Halloween');
   await expect(page.locator('.todo-item').last()).toContainText('Avvocato IP');
 
-  await page.locator('[data-todo-id="p1"] input[type=checkbox]').check();
+  // A click redraws the row immediately; .check() waits on the detached checkbox.
+  await page.locator('[data-todo-id="p1"] input[type=checkbox]').click();
   await expect(page.locator('.todo-item')).toHaveCount(2);
   await page.getByRole('button', { name: 'Completate' }).click();
   await expect(page.locator('.todo-item')).toHaveCount(1);
