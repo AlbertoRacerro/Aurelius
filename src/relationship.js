@@ -23,18 +23,19 @@ function iso(ms) { return new Date(ms).toISOString().slice(0, 10); }
 export function validateRelationship(input, today) {
   if (input?.consent !== true) throw new Error('Serve l’accordo esplicito della persona interessata');
   const start = String(input.lastStart || '');
-  const days = Number(input.cycleDays);
+  const regular = input.regular === true;
+  const days = regular ? Number(input.cycleDays) : null;
   const periodDays = Number(input.periodDays);
   const current = day(today);
   const age = (current - day(start)) / 86400000;
   if (age < 0 || age > 366) throw new Error('Indica un inizio ciclo passato negli ultimi 12 mesi');
-  if (!Number.isInteger(days) || days < 21 || days > 35) throw new Error('Lunghezza tipica: 21–35 giorni');
+  if (regular && (!Number.isInteger(days) || days < 21 || days > 35)) throw new Error('Lunghezza tipica: 21–35 giorni');
   if (!Number.isInteger(periodDays) || periodDays < 2 || periodDays > 7) throw new Error('Durata tipica mestruazioni: 2–7 giorni');
   const allowed = new Set(GESTURES.map((g) => g.id));
   const gestures = Array.isArray(input.gestures) ? [...new Set(input.gestures)] : [];
   if (gestures.length > GESTURES.length || gestures.some((x) => !allowed.has(x))) throw new Error('Preferenze non valide');
   return { consent: true, lastStart: start, cycleDays: days, periodDays,
-    regular: input.regular === true, gestures };
+    regular, gestures };
 }
 export function loadRelationship(storage) {
   try {
