@@ -155,3 +155,16 @@ table.t td:first-child, table.t th:first-child { text-align: left; }
   .todo-fields { grid-template-columns: 1fr; }
   .todo-edit { font-size: 12px; padding: 6px 8px; }
 }
+
+/* Daily reflections and private relationship-care section */
+.ritual-preview p { font-size: 15px; line-height: 1.55; margin: 7px 0 12px; }
+.ritual-quote strong { font-size: 20px; font-weight: 700; }
+.ritual-quote > p { line-height: 1.55; }
+.ritual-quote a { color: var(--acc); }
+.ritual-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+.ritual-fields input[type=number] { min-width: 0; }
+#main details { margin-top: 12px; }
+#main details summary { cursor: pointer; font-weight: 650; }
+#main details label.small { display: block; margin-top: 12px; }
+#main details .opt { display: flex; }
+@media(max-width:360px) { .ritual-fields { grid-template-columns: 1fr; } }

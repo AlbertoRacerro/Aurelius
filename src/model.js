@@ -101,6 +101,8 @@ export function defaultSettings() {
       water: { enabled: true, from: '09:00', to: '21:00', everyMinutes: 120 },
       shutdown: { enabled: true, time: '21:45' },
       bedtime: { enabled: true, time: '22:20' },
+      quote: { enabled: true, time: '07:00' },
+      care: { enabled: false, time: '07:05' },
     },
     trackFrom: Date.now(),  // blocks that ended before this instant are never asked about
     push: null,             // { api, device, token, endpoint, at } once notifications are enabled
