@@ -46,9 +46,9 @@ test('imported backlog appears sorted; completion, adding and editing persist af
   await page.locator('#b-text').fill('Lavare vestiti delicati');
   await page.locator('#b-priority').selectOption('P0');
   await page.getByRole('button', { name: 'Salva modifiche' }).click();
-  await expect(page.locator('.todo-item').first()).toContainText('Lavare vestiti delicati');
+  await expect(page.locator('.todo-item').nth(1)).toContainText('Lavare vestiti delicati');
   await page.reload();
-  await expect(page.locator('.todo-item').first()).toContainText('Lavare vestiti delicati');
+  await expect(page.locator('.todo-item').nth(1)).toContainText('Lavare vestiti delicati');
   const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('aurelius.v2')));
   expect(saved.backlog).toHaveLength(4);
   expect(saved.backlog.find(x => x.id === 'p1').done).toBe(true);
