@@ -168,3 +168,17 @@ table.t td:first-child, table.t th:first-child { text-align: left; }
 #main details label.small { display: block; margin-top: 12px; }
 #main details .opt { display: flex; }
 @media(max-width:360px) { .ritual-fields { grid-template-columns: 1fr; } }
+
+/* Evidence-informed relationship guidance; never infer a person's temperament. */
+.phase-guide h3 { margin: 0 0 8px; font-size: 16px; }
+.phase-guide p { font-size: 14px; line-height: 1.52; }
+.phase-guide ul { padding-left: 20px; font-size: 14px; line-height: 1.5; }
+.phase-guide li { padding: 3px 0; }
+.phase-guide a { color: var(--acc); }
+.phase-timeline { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; margin: 10px 0; }
+.phase-range { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 11px; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.phase-range:last-child { border-bottom: 0; }
+.phase-range b { max-width: 57%; }
+.phase-range span { text-align: right; font-variant-numeric: tabular-nums; color: var(--mut); }
+.phase-library { padding: 10px 0; }
+.phase-library > summary { margin-bottom: 10px; }
