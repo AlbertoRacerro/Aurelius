@@ -23,8 +23,8 @@ function iso(ms) { return new Date(ms).toISOString().slice(0, 10); }
 export function validateRelationship(input, today) {
   if (input?.consent !== true) throw new Error('Serve l’accordo esplicito della persona interessata');
   const start = String(input.lastStart || '');
-  const days = Math.round(Number(input.cycleDays));
-  const periodDays = Math.round(Number(input.periodDays));
+  const days = Number(input.cycleDays);
+  const periodDays = Number(input.periodDays);
   const current = day(today);
   const age = (current - day(start)) / 86400000;
   if (age < 0 || age > 366) throw new Error('Indica un inizio ciclo passato negli ultimi 12 mesi');
