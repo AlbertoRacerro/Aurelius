@@ -1,5 +1,6 @@
 import { reflectionForDate } from './reflections.js';
 import { estimateCycle, suggestedGesture, GESTURES } from './relationship.js';
+import { PHASE_GUIDES, GUIDANCE_SOURCES, dailyGuidance, phaseOutlook } from './phase-guidance.js';
 
 // Rendering only. Do not include cycle dates in push payloads or exported backups.
 export function viewRituals(date, relationship, habits, esc) {
@@ -19,16 +20,36 @@ export function viewRituals(date, relationship, habits, esc) {
     </div>`,
   ];
   const status = relationship ? estimateCycle(relationship, date) : null;
+  const advice = dailyGuidance(status, date);
+  const outlook = relationship ? phaseOutlook(relationship, date, estimateCycle) : [];
+  const adviceSources = (guide) => guide.sourceIds.map((i) =>
+    `<a href="${esc(GUIDANCE_SOURCES[i].url)}" target="_blank" rel="noopener noreferrer">${esc(GUIDANCE_SOURCES[i].title)}</a>`).join(' · ');
+  const adviceCard = (guide) => `<div class="card soft phase-guide" data-phase="${guide.stage}">
+    <h3>${esc(guide.name)}</h3>
+    <p>${esc(guide.context)}</p>
+    <p><b>Idea di oggi:</b> ${esc(guide.suggestion || guide.ideas[0])}</p>
+    <p><b>Una domanda utile:</b> ${esc(guide.question)}</p>
+    <details><summary>Altre idee già pronte</summary><ul>
+      ${guide.ideas.map((idea) => `<li>${esc(idea)}</li>`).join('')}
+    </ul></details>
+    <p class="mut small">${esc(guide.evidence)} ${adviceSources(guide)}</p>
+  </div>`;
   out.push(`<h2>Attenzioni nella relazione</h2><div class="card">
-    <p class="small">Non si prevedono umore o comportamenti dalla fase del ciclo. I gesti proposti vengono solo dalle preferenze discusse insieme.</p>
+    <p class="small">I consigli sono già pronti e si adattano automaticamente alla <b>fase stimata</b> quando è possibile stimarla. Non prevedono l’umore, la fame o il comportamento individuale. I gesti personalizzati dipendono dalle preferenze concordate.</p>
     ${status ? `<div class="card soft">
       <b>${esc(status.label)}</b>
       ${status.dayInCycle ? `<div class="small">Giorno indicativo ${status.dayInCycle} del ciclo</div>` : ''}
       <p class="small">${esc(status.description)}</p>
       ${status.nextStart ? `<p class="small">Prossimo inizio stimato: ${esc(status.nextStart)} (non certo)</p>` : ''}
       </div>
-      <p><b>Un gesto possibile oggi:</b> ${esc(suggestedGesture(relationship, date))}</p>` :
-      '<p class="mut">Non ci sono dati salvati. Imposti soltanto le informazioni che la persona interessata ha accettato di condividere.</p>'}
+      ${adviceCard(advice)}
+      ${relationship?.gestures?.length ? `<p><b>Gesto personalizzato concordato:</b> ${esc(suggestedGesture(relationship, date))}</p>` : ''}
+      ${outlook.length ? `<h3>Come potrebbero susseguirsi le fasi</h3>
+      <p class="mut small">Finestre ipotetiche basate sulla durata media. Sono indicative e non determinano ovulazione né giorni fertili.</p>
+      <div class="phase-timeline">${outlook.map((segment) => `<div class="phase-range">
+        <b>${esc(segment.name)}</b><span>${esc(segment.from)} – ${esc(segment.to)}</span>
+      </div>`).join('')}</div>` : ''}` :
+      `<p class="mut">Nessuna data ancora inserita. I consigli per fase sono già disponibili qui sotto; per attivare il calendario serve il consenso e la data reale.</p>${adviceCard(advice)}`}
     <details ${relationship ? '' : 'open'}>
       <summary>Configura o aggiorna i dati (solo su questo iPhone)</summary>
       <p class="mut small">I dati riguardano la salute di un’altra persona: chiedile prima il permesso. Aurelius li conserva localmente in chiaro, fuori dal backup standard e senza inviarli al server delle notifiche. Sono leggibili da chi ha accesso all’app o al dispositivo.</p>
@@ -51,7 +72,11 @@ export function viewRituals(date, relationship, habits, esc) {
         ${relationship ? '<button class="btn bad" data-act="ritual-relationship-delete">Cancella dati e notifiche</button>' : ''}
       </div>
     </details>
-    <p class="mut small">La stima è solo orientativa, specialmente con cicli variabili. Non usare per calcolare giorni fertili, diagnosi o contraccezione. Nessuna informazione sanitaria va su GitHub o nelle notifiche.</p>
+    <details class="phase-library"><summary>Esplora tutte le quattro fasi e i consigli già inclusi</summary>
+      ${Object.entries(PHASE_GUIDES).filter(([key]) => key !== 'unknown').map(([stage, guide]) =>
+        adviceCard({ ...guide, stage })).join('')}
+    </details>
+    <p class="mut small">Il calendario non determina emozioni o comportamento. Con cicli irregolari o dati vecchi, la fase non viene prevista. Non usare per fertilità, contraccezione o diagnosi. I dati personali non vengono inclusi nelle notifiche.</p>
   </div>`);
   return out.join('');
 }
