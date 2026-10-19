@@ -58,7 +58,7 @@ export function viewRituals(date, relationship, habits, esc) {
       <div class="ritual-fields">
         <label class="small">Durata tipica se regolare (giorni)
           <input type="number" id="r-days" min="21" max="35" placeholder="Es. 28" value="${esc(relationship?.cycleDays ?? '')}"></label>
-        <label class="small">Mestruazioni (giorni)
+        <label class="small">Durata ipotizzata mestruazioni (giorni, 5 modificabile)
           <input type="number" id="r-period" min="2" max="7" value="${esc(relationship?.periodDays || 5)}"></label>
       </div>
       <label class="opt"><input type="checkbox" id="r-regular"${relationship?.regular ? ' checked' : ''}> Ciclo generalmente regolare (consente una stima approssimativa)</label>
@@ -66,7 +66,7 @@ export function viewRituals(date, relationship, habits, esc) {
       <p class="mut small">Selezionare solo quelli che avete effettivamente concordato. Nessuna preferenza sarà dedotta dalla fase.</p>
       ${GESTURES.map((g) => `<label class="opt"><input type="checkbox" data-gesture="${g.id}"${relationship?.gestures?.includes(g.id) ? ' checked' : ''}> ${esc(g.label)}</label>`).join('')}
       <label class="opt"><input type="checkbox" id="r-consent"${relationship?.consent ? ' checked' : ''}> Confermo che la persona interessata ha accettato questa raccolta e l’uso delle informazioni</label>
-      <label class="opt"><input type="checkbox" id="r-care-notify"${habits.care?.enabled ? ' checked' : ''}> Promemoria generico quotidiano di gentilezza (nessun dato sul ciclo nella notifica)</label>
+      <label class="opt"><input type="checkbox" id="r-care-notify"${(!relationship || habits.care?.enabled) ? ' checked' : ''}> Promemoria automatico alle 07:05: apri i consigli di oggi (senza dati sul ciclo nella notifica)</label>
       <div class="btns">
         <button class="btn pri" data-act="ritual-relationship-save">Salva sul dispositivo</button>
         ${relationship ? '<button class="btn bad" data-act="ritual-relationship-delete">Cancella dati e notifiche</button>' : ''}
