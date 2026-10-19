@@ -123,3 +123,35 @@ table.t td:first-child, table.t th:first-child { text-align: left; }
 #toast { position: fixed; left: 12px; right: 12px; bottom: calc(var(--nav) + env(safe-area-inset-bottom) + 12px); z-index: 20;
   background: var(--ink); color: var(--bg); border-radius: 12px; padding: 12px 14px; font-size: 15px; max-width: 616px; margin: 0 auto; }
 #toast[hidden] { display: none; }
+
+
+/* Personal to-do list, independent of study ledger. */
+.todo-add h2 { margin: 0 0 10px; }
+.todo-add > label { display: block; margin-top: 10px; }
+.todo-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.todo-fields label { min-width: 0; }
+.todo-fields select { margin-top: 4px; }
+.todo-filters { margin: 15px 0; }
+.todo-heading { display: flex; align-items: center; gap: 6px; }
+.todo-level { font-size: 11px; padding: 3px 8px; border-radius: 7px; background: var(--soft); font-weight: 700; }
+.todo-level-P0 { color: var(--bad); }
+.todo-level-P1 { color: var(--warn); }
+.todo-level-D { color: var(--mut); }
+.todo-list { padding: 2px 12px; }
+.todo-item { display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid var(--rule); padding: 12px 0; }
+.todo-item:last-child { border-bottom: 0; }
+.todo-main { display: flex; align-items: flex-start; gap: 10px; flex: 1; min-width: 0; cursor: pointer; }
+.todo-main input[type=checkbox] { width: 22px; height: 22px; flex: none; margin: 1px 0 0; accent-color: var(--acc); }
+.todo-body { min-width: 0; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.todo-text { font-size: 15px; font-weight: 600; line-height: 1.35; overflow-wrap: anywhere; }
+.todo-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; color: var(--mut); font-size: 12px; }
+.todo-meta .sw { width: 8px; height: 8px; }
+.todo-date { margin-left: 3px; font-variant-numeric: tabular-nums; }
+.todo-date.late { color: var(--bad); font-weight: 700; }
+.todo-item.is-done .todo-text { text-decoration: line-through; color: var(--mut); }
+.todo-edit { flex: none; }
+@media (max-width: 370px) {
+  #nav button { font-size: 11px; padding: 0 2px; }
+  .todo-fields { grid-template-columns: 1fr; }
+  .todo-edit { font-size: 12px; padding: 6px 8px; }
+}
