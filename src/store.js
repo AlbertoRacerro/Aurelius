@@ -38,6 +38,11 @@ export function normalize(s) {
   const base = emptyState();
   const out = { ...base, ...s };
   out.settings = { ...defaultSettings(), ...(s.settings || {}) };
+  const defaults = defaultSettings().habits;
+  const savedHabits = out.settings.habits || {};
+  out.settings.habits = Object.fromEntries(Object.entries(defaults).map(([k, v]) =>
+    [k, { ...v, ...(savedHabits[k] && typeof savedHabits[k] === 'object' ? savedHabits[k] : {}) }]));
+  out.importedPlans = Array.isArray(s.importedPlans) ? s.importedPlans.filter((x) => typeof x === 'string') : [];
   const acts = Array.isArray(s.activities) ? s.activities.filter((a) => a && a.id) : [];
   for (const d of DEFAULT_ACTIVITIES) if (!acts.some((a) => a.id === d.id)) acts.push({ ...d });
   out.activities = acts;
