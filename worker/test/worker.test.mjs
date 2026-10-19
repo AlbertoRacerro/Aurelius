@@ -205,3 +205,25 @@ test('an older schedule revision arriving late does not replace a newer one', as
   assert.equal(older.data.stale, true);
   assert.equal((await runDue(env, now, pushService().impl)).sent, 0);
 });
+
+test('a re-sync keeps a reminder waiting for retry after a transient failure', async () => {
+  const { env, call } = await setup();
+  const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
+  const now = Date.now();
+  await call('PUT', '/v1/schedule', { rev: 1, items: [{ id: 'r', at: now, title: 't', body: '', url: `${ORIGIN}/` }] }, reg.data.token);
+  assert.equal((await runDue(env, now, pushService(503).impl)).retried, 1);
+  await call('PUT', '/v1/schedule', { rev: 2, items: [] }, reg.data.token); // app re-syncs; the block is over
+  const ok = pushService(201);
+  assert.equal((await runDue(env, now + 60_000, ok.impl)).sent, 1);
+});
+
+test('concurrent schedules: the higher revision wins whatever the commit order', async () => {
+  for (const order of [[100, 200], [200, 100]]) {
+    const { env, call } = await setup();
+    const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
+    const now = Date.now();
+    const body = (rev) => ({ rev, items: rev === 100 ? [{ id: 'timer', at: now, title: 'old', body: '', url: `${ORIGIN}/` }] : [] });
+    await Promise.all(order.map((rev) => call('PUT', '/v1/schedule', body(rev), reg.data.token)));
+    assert.equal((await runDue(env, now, pushService().impl)).sent, 0, `order ${order}`);
+  }
+});

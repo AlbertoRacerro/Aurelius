@@ -329,3 +329,12 @@ test('statistics do not list a block as pending when a timer covered it', () => 
   const w = summarize(s, MON, MON, at(MON, 10, 5));
   assert.equal(w.pendingCount, 0);
 });
+
+test('a stored state without an entries list is treated as damaged', () => {
+  const good = plain();
+  good.entries = [{ id: 'e1', start: at(MON, 9), end: at(MON, 10), act: 'atp', at: 1 }];
+  const { entries, ...noEntries } = good;
+  void entries;
+  const storage = memStorage({ 'aurelius.v2': JSON.stringify(noEntries), 'aurelius.v2.prev': JSON.stringify(good) });
+  assert.equal(S.load(storage).state.entries.length, 1);
+});

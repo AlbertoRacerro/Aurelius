@@ -16,8 +16,8 @@ const isObj = (x) => !!x && typeof x === 'object' && !Array.isArray(x);
 
 /** Structural check before trusting stored or imported state: wrong shapes are treated as corruption. */
 export function sane(s) {
-  if (!isObj(s)) return false;
-  for (const k of ['entries', 'activities', 'backlog']) if (k in s && !Array.isArray(s[k])) return false;
+  if (!isObj(s) || !Array.isArray(s.entries)) return false; // every saved state has an entries list
+  for (const k of ['activities', 'backlog']) if (k in s && !Array.isArray(s[k])) return false;
   for (const k of ['settings', 'template', 'weekOverrides', 'dateOverrides', 'accounts', 'targets', 'issuesResolved']) {
     if (k in s && s[k] != null && !isObj(s[k])) return false;
   }

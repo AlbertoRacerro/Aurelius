@@ -135,17 +135,19 @@ async function schedule(req, env, dev) {
   const now = Date.now();
   const items = validItems(body.items, env, now);
   const ntfy = body.ntfy === undefined ? dev.ntfy : validTopic(body.ntfy);
-  // Schedules carry a client revision; an older one arriving late must not replace a newer one.
-  const rev = Number.isSafeInteger(body.rev) && body.rev > 0 ? body.rev : null;
-  if (rev !== null && rev <= dev.rev) return { count: 0, stale: true };
+  // Schedules carry a client revision. The check happens inside the transaction: an older schedule
+  // that arrives (or commits) after a newer one changes nothing.
+  const rev = Number.isSafeInteger(body.rev) && body.rev > 0 ? body.rev : now;
+  const current = '(SELECT rev FROM devices WHERE id = ?1) = ?2';
   const stmts = [
-    env.DB.prepare('DELETE FROM reminders WHERE device = ?').bind(dev.id),
-    env.DB.prepare('UPDATE devices SET seen = ?, ntfy = ?, rev = ? WHERE id = ?').bind(now, ntfy, rev ?? dev.rev, dev.id),
-    ...items.map((x) => env.DB.prepare(`INSERT INTO reminders (device, id, at, title, body, url)
-        SELECT ?1, ?2, ?3, ?4, ?5, ?6 WHERE NOT EXISTS (SELECT 1 FROM sent WHERE device = ?1 AND id = ?2 AND at = ?3)`)
-      .bind(dev.id, x.id, x.at, x.title, x.body, x.url)),
+    env.DB.prepare('UPDATE devices SET rev = ?2, seen = ?3, ntfy = ?4 WHERE id = ?1 AND rev < ?2').bind(dev.id, rev, now, ntfy),
+    env.DB.prepare(`DELETE FROM reminders WHERE device = ?1 AND state = 0 AND ${current}`).bind(dev.id, rev),
+    ...items.map((x) => env.DB.prepare(`INSERT OR IGNORE INTO reminders (device, id, at, title, body, url, state)
+        SELECT ?1, ?3, ?4, ?5, ?6, ?7, 0 WHERE ${current}`).bind(dev.id, rev, x.id, x.at, x.title, x.body, x.url)),
   ];
   await env.DB.batch(stmts);
+  const after = await env.DB.prepare('SELECT rev FROM devices WHERE id = ?').bind(dev.id).first();
+  if (after?.rev !== rev) return { count: 0, stale: true };
   return { count: items.length };
 }
 
@@ -182,13 +184,11 @@ export async function deliver(env, dev, r, fetchImpl = fetch) {
 
 /** Cron: claim due reminders atomically (so overlapping runs never send twice), then deliver them. */
 export async function runDue(env, now = Date.now(), fetchImpl = fetch) {
-  const { results } = await env.DB.prepare(`DELETE FROM reminders WHERE rowid IN
-      (SELECT rowid FROM reminders WHERE at <= ? ORDER BY at LIMIT 50) RETURNING *`).bind(now + LEAD_MS).all();
+  // Claiming is a single UPDATE, so overlapping cron runs and concurrent syncs can never send twice.
+  const { results } = await env.DB.prepare(`UPDATE reminders SET state = 1 WHERE rowid IN
+      (SELECT rowid FROM reminders WHERE state IN (0, 2) AND at <= ? ORDER BY at LIMIT 50) RETURNING *`).bind(now + LEAD_MS).all();
+  await env.DB.prepare('DELETE FROM reminders WHERE state = 1 AND at < ?').bind(now - 3 * 864e5).run();
   const out = { sent: 0, dropped: 0, retried: 0, failed: 0 };
-  if (results.length) {
-    await env.DB.batch(results.map((r) => env.DB.prepare('INSERT OR IGNORE INTO sent (device, id, at) VALUES (?, ?, ?)').bind(r.device, r.id, r.at)));
-  }
-  await env.DB.prepare('DELETE FROM sent WHERE at < ?').bind(now - 3 * 864e5).run();
   const devices = new Map();
   for (const r of results) {
     try {
@@ -210,8 +210,7 @@ async function deliverOne(env, r, now, devices, out, fetchImpl) {
   else if (res === 'gone') devices.set(r.device, null);
   else if (res === 'retry' && r.at > now - RETRY_MS) {
     out.retried += 1;
-    await env.DB.prepare('INSERT OR IGNORE INTO reminders (device, id, at, title, body, url) VALUES (?, ?, ?, ?, ?, ?)')
-      .bind(r.device, r.id, r.at, r.title, r.body, r.url).run();
+    await env.DB.prepare('UPDATE reminders SET state = 2 WHERE device = ? AND id = ? AND at = ?').bind(r.device, r.id, r.at).run();
   } else out.failed += 1;
 }
 
