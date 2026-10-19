@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS devices (
   created INTEGER NOT NULL,
   seen INTEGER NOT NULL,
   fails INTEGER NOT NULL DEFAULT 0,
-  rev INTEGER NOT NULL DEFAULT 0
+  rev INTEGER NOT NULL DEFAULT 0,
+  sched TEXT NOT NULL DEFAULT ''
 );
 -- state: 0 scheduled (replaced by each sync), 1 claimed for delivery (kept so a re-sync never re-sends
 -- the same id+time), 2 waiting for a retry after a transient failure (survives re-syncs).

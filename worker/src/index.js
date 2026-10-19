@@ -138,16 +138,19 @@ async function schedule(req, env, dev) {
   // Schedules carry a client revision. The check happens inside the transaction: an older schedule
   // that arrives (or commits) after a newer one changes nothing.
   const rev = Number.isSafeInteger(body.rev) && body.rev > 0 ? body.rev : now;
-  const current = '(SELECT rev FROM devices WHERE id = ?1) = ?2';
+  // Only the request whose UPDATE won (strictly higher revision) owns the device's schedule; it is
+  // identified by a per-request id, so even two requests with equal revisions cannot both apply.
+  const sched = b64uEncode(crypto.getRandomValues(new Uint8Array(12)));
+  const mine = '(SELECT sched FROM devices WHERE id = ?1) = ?2';
   const stmts = [
-    env.DB.prepare('UPDATE devices SET rev = ?2, seen = ?3, ntfy = ?4 WHERE id = ?1 AND rev < ?2').bind(dev.id, rev, now, ntfy),
-    env.DB.prepare(`DELETE FROM reminders WHERE device = ?1 AND state = 0 AND ${current}`).bind(dev.id, rev),
+    env.DB.prepare('UPDATE devices SET rev = ?2, sched = ?3, seen = ?4, ntfy = ?5 WHERE id = ?1 AND rev < ?2').bind(dev.id, rev, sched, now, ntfy),
+    env.DB.prepare(`DELETE FROM reminders WHERE device = ?1 AND state = 0 AND ${mine}`).bind(dev.id, sched),
     ...items.map((x) => env.DB.prepare(`INSERT OR IGNORE INTO reminders (device, id, at, title, body, url, state)
-        SELECT ?1, ?3, ?4, ?5, ?6, ?7, 0 WHERE ${current}`).bind(dev.id, rev, x.id, x.at, x.title, x.body, x.url)),
+        SELECT ?1, ?3, ?4, ?5, ?6, ?7, 0 WHERE ${mine}`).bind(dev.id, sched, x.id, x.at, x.title, x.body, x.url)),
   ];
   await env.DB.batch(stmts);
-  const after = await env.DB.prepare('SELECT rev FROM devices WHERE id = ?').bind(dev.id).first();
-  if (after?.rev !== rev) return { count: 0, stale: true };
+  const after = await env.DB.prepare('SELECT sched FROM devices WHERE id = ?').bind(dev.id).first();
+  if (after?.sched !== sched) return { count: 0, stale: true };
   return { count: items.length };
 }
 

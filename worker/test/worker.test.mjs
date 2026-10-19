@@ -227,3 +227,13 @@ test('concurrent schedules: the higher revision wins whatever the commit order',
     assert.equal((await runDue(env, now, pushService().impl)).sent, 0, `order ${order}`);
   }
 });
+
+test('two schedules with the same revision: only the first applies', async () => {
+  const { env, call } = await setup();
+  const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
+  const now = Date.now();
+  assert.equal((await call('PUT', '/v1/schedule', { rev: 200, items: [] }, reg.data.token)).data.count, 0);
+  const dup = await call('PUT', '/v1/schedule', { rev: 200, items: [{ id: 'timer', at: now, title: 'old', body: '', url: `${ORIGIN}/` }] }, reg.data.token);
+  assert.equal(dup.data.stale, true);
+  assert.equal((await runDue(env, now, pushService().impl)).sent, 0);
+});
