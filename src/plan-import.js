@@ -3,8 +3,8 @@
 import { dayPlan, validateBlocks } from './schedule.js';
 
 const ID = /^[A-Za-z0-9_-]{1,80}$/;
-const DATE = /^\\d{4}-\\d{2}-\\d{2}$/;
-const HM = /^([01]\\d|2[0-3]):[0-5]\\d$/;
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+const HM = /^([01]\d|2[0-3]):[0-5]\d$/;
 const PRIORITIES = new Set(['P0', 'P1', 'P2', 'P3', 'D']);
 
 function assert(ok, message) { if (!ok) throw new Error(message); }
