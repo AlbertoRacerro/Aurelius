@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Aurelius",
+  "short_name": "Aurelius",
+  "description": "Piano del semestre, focus e registro delle ore",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F6F8F2",
+  "theme_color": "#2F6149",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
