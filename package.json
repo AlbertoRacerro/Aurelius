@@ -3,10 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/unit/",
-    "e2e": "playwright test"
+    "test": "node --test tests/unit/*.test.mjs worker/test/*.test.mjs",
+    "e2e": "playwright test",
+    "icons": "node tools/icons.mjs",
+    "deploy:worker": "bash worker/deploy.sh"
   },
   "devDependencies": {
-    "@playwright/test": "1.55.0"
+    "@playwright/test": "1.55.0",
+    "http_ece": "^1.2.1"
   }
 }

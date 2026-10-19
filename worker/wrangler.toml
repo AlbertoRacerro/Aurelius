@@ -1,0 +1,19 @@
+name = "aurelius-push"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+ALLOWED_ORIGIN = "https://albertoracerro.github.io"
+APP_URL = "https://albertoracerro.github.io/Aurelius/"
+VAPID_SUBJECT = "https://albertoracerro.github.io/Aurelius/"
+MAX_DEVICES = "3"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aurelius-push"
+database_id = "REPLACE_WITH_D1_ID"
+
+# Secrets (wrangler secret put): VAPID_PRIVATE_JWK, VAPID_PUBLIC, optional ENROLL_KEY.
