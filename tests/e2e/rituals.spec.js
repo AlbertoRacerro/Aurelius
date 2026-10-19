@@ -28,6 +28,7 @@ test('rituals can store consented local data without adding it to Aurelius backu
   await page.locator('#r-quote-enable').uncheck();
   await page.getByRole('button', {name:'Salva notifica'}).click();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('aurelius.v2')).settings.habits.quote.enabled)).toBe(false);
+  await page.locator('#r-start').evaluate((el) => { el.closest('details').open = true; });
   page.once('dialog', (d) => d.accept());
   await page.getByRole('button', {name:'Cancella dati e notifiche'}).click();
   expect(await page.evaluate(() => localStorage.getItem('aurelius.relationship.local.v1'))).toBeNull();
