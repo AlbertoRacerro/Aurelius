@@ -12,6 +12,9 @@ import { reminderItems } from './reminders.js';
 import { applyPlanPatch } from './plan-import.js';
 import { PRIORITIES, normalizeTaskInput } from './todos.js';
 import { renderTodos } from './todo-view.js';
+import { reflectionForDate } from './reflections.js';
+import { loadRelationship, saveRelationship, deleteRelationship, GESTURES } from './relationship.js';
+import { viewRituals } from './rituals-view.js';
 import * as P from './push.js';
 import { APP_VERSION } from './config.js';
 
@@ -104,6 +107,12 @@ function viewNow() {
   const { current, next } = nowAndNext(state, t);
   const out = [];
   out.push(`<h1>${esc(longDate(today()))} · ${timeOf(t)}</h1>`);
+  const dailyThought = reflectionForDate(today());
+  out.push(`<div class="card soft ritual-preview">
+    <div class="mut small"><b>Riflessione di oggi · ${esc(dailyThought.title)}</b></div>
+    <p>${esc(dailyThought.thought)}</p>
+    <button class="btn sm" data-act="open-rituals">Apri Rituali e attenzioni</button>
+  </div>`);
 
   // Unsettled focus sessions first, then blocks awaiting accounting.
   for (const s of T.unconfirmedSessions(state)) {
@@ -339,6 +348,9 @@ function viewMore() {
       <label class="small">Codice di registrazione (se richiesto)<input type="text" id="f-enroll" autocomplete="off"></label>
       <label class="small">Canale ntfy di riserva (facoltativo)<input type="text" id="f-ntfy" value="${esc(s.ntfyTopic)}" placeholder="nome-canale-segreto"></label>
       <div class="btns" style="margin-top:8px"><button class="btn sm" data-act="adv-save">Salva</button></div></details></div>`);
+  out.push(`<h2>Rituali</h2><div class="card soft">
+    <p>Riflessioni quotidiane, cura della relazione e preferenze riservate.</p>
+    <button class="btn" data-act="open-rituals">Apri Rituali</button></div>`);
   // Daily reminders. These preferences are local; only the upcoming messages go to the push worker.
   const h = s.habits;
   out.push(`<h2>Promemoria quotidiani</h2><div class="card">
@@ -750,6 +762,40 @@ const actions = {
     toast('Attività eliminata');
   },
 
+  // Rituals: never copy third-party reproductive-health data into the global state or backup.
+  'open-rituals'() { ui.tab = 'rituali'; location.hash = 'rituali'; render(); window.scrollTo(0, 0); },
+  'ritual-quote-save'() {
+    const time = $('#r-quote-time')?.value;
+    const n = parseHM(time);
+    if (n == null || n >= 1440) { toast('Orario non valido', 5000); return; }
+    commit((st) => {
+      st.settings.habits.quote = { enabled: $('#r-quote-enable').checked, time };
+    }, { resync: true });
+    toast('Notifica del mattino aggiornata');
+  },
+  'ritual-relationship-save'() {
+    const enabled = $('#r-care-notify').checked;
+    const raw = {
+      consent: $('#r-consent').checked,
+      lastStart: $('#r-start').value,
+      cycleDays: Number($('#r-days').value),
+      periodDays: Number($('#r-period').value),
+      regular: $('#r-regular').checked,
+      gestures: GESTURES.filter((g) => document.querySelector(`[data-gesture="${g.id}"]`)?.checked).map((g) => g.id),
+    };
+    try {
+      saveRelationship(localStorage, raw, today());
+      commit((st) => { st.settings.habits.care = { enabled, time: '07:05' }; }, { resync: true });
+      toast('Preferenze salvate solo su questo dispositivo');
+    } catch (err) { toast(`Salvataggio non riuscito: ${err.message}`, 6000); }
+  },
+  'ritual-relationship-delete'() {
+    if (!confirm('Eliminare i dati locali sul ciclo e le preferenze? Il promemoria verrà disattivato.')) return;
+    deleteRelationship(localStorage);
+    commit((st) => { st.settings.habits.care = { enabled: false, time: '07:05' }; }, { resync: true });
+    toast('Dati della relazione eliminati dal dispositivo');
+  },
+
   // more
   'focus-default'(el) { commit((s) => { s.settings.focusMinutes = Number(el.dataset.min); }); },
   sound(el) { commit((s) => { s.settings.sound = el.checked; }); },
@@ -762,6 +808,7 @@ const actions = {
     }
     commit((st) => {
       st.settings.habits = {
+        ...st.settings.habits,
         bottle: { enabled: $('#h-bottle-on').checked, time: hours[0] },
         water: { enabled: $('#h-water-on').checked, from: hours[1], to: hours[2], everyMinutes: 120 },
         shutdown: { enabled: $('#h-shutdown-on').checked, time: hours[3] },
@@ -919,7 +966,9 @@ function render() {
     }
   }
   const main = $('#main');
-  main.innerHTML = ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
+  main.innerHTML = ui.tab === 'rituali'
+    ? viewRituals(today(), loadRelationship(localStorage), state.settings.habits, esc)
+    : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
     : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();
   ui.lastPaint = now();
@@ -980,7 +1029,7 @@ window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { sta
 function route() {
   const q = new URLSearchParams(location.search);
   const h = location.hash.replace('#', '');
-  if (['ora', 'piano', 'todos', 'stats', 'altro'].includes(h)) ui.tab = h;
+  if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali'].includes(h)) ui.tab = h;
   const occId = q.get('occ');
   if (occId) {
     ui.tab = 'ora';
