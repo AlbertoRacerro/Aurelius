@@ -56,25 +56,26 @@ export function deleteRelationship(storage) { storage.removeItem(RELATIONSHIP_KE
 export function estimateCycle(data, date) {
   if (!data || data.consent !== true) return null;
   const delta = Math.floor((day(date) - day(data.lastStart)) / 86400000);
-  if (delta < 0) return { label: 'Data iniziale nel futuro', description: 'Aggiorna la data registrata.', stale: true };
+  if (delta < 0) return { label: 'Data iniziale nel futuro', description: 'Aggiorna la data registrata.', stale: true, stage: 'unknown' };
   if (!data.regular) return {
     label: delta < data.periodDays ? 'Giorni mestruali (da data inserita)' : 'Fase non stimabile',
     description: 'Ciclo indicato come variabile: il calendario non può stimare in modo affidabile la fase o la prossima data.',
     stale: delta > 45,
+    stage: delta < data.periodDays && delta <= 45 ? 'menstrual' : 'unknown',
   };
   if (delta > data.cycleDays * 2) return {
     label: 'Data da aggiornare', description: 'Sono trascorsi più di due cicli stimati dall’ultima data inserita.',
-    stale: true,
+    stale: true, stage: 'unknown',
   };
   const dayInCycle = delta % data.cycleDays + 1;
   const ovulationApprox = data.cycleDays - 14; // heuristic only, NOT a fertility assessment
-  let label;
-  if (dayInCycle <= data.periodDays) label = 'Giorni mestruali (calendario)';
-  else if (dayInCycle < ovulationApprox - 2) label = 'Fase follicolare (stima)';
-  else if (dayInCycle <= ovulationApprox + 2) label = 'Transizione periovulatoria (molto incerta)';
-  else label = 'Fase luteale (stima)';
+  let label, stage;
+  if (dayInCycle <= data.periodDays) { label = 'Giorni mestruali (calendario)'; stage = 'menstrual'; }
+  else if (dayInCycle < ovulationApprox - 2) { label = 'Fase follicolare (stima)'; stage = 'follicular'; }
+  else if (dayInCycle <= ovulationApprox + 2) { label = 'Transizione periovulatoria (molto incerta)'; stage = 'periovulatory'; }
+  else { label = 'Fase luteale (stima)'; stage = 'luteal'; }
   const nextStart = day(data.lastStart) + (Math.floor(delta / data.cycleDays) + 1) * data.cycleDays * 86400000;
-  return { label, dayInCycle, nextStart: iso(nextStart), stale: false,
+  return { label, stage, dayInCycle, nextStart: iso(nextStart), stale: false,
     description: 'Stima da date e durata media, non osservazione ormonale. Non usare per diagnosi o contraccezione.' };
 }
 export function suggestedGesture(data, date) {
