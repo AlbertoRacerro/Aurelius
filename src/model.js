@@ -111,6 +111,7 @@ export function emptyState() {
     template: seedTemplate(),
     weekOverrides: {},   // { '2026-W43': { 0..6: blocks[] } }
     dateOverrides: {},   // { '2026-10-20': blocks[] }
+    quarantine: [],      // malformed entries found while loading, kept for manual recovery
     entries: [],         // actual time: { id, start, end, act, src, occ?, note?, approx?, at }
     accounts: {},        // per occurrence: { status, at, planned }
     timer: null,         // { act, plannedMin, startedAt, segments:[{s,e}], pausedAt?, occ? }

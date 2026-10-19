@@ -12,6 +12,18 @@ export const LEGACY_SNAPSHOT_KEY = 'aurelius.v1.snapshot';
 
 function parse(raw) { try { return raw ? JSON.parse(raw) : null; } catch { return null; } }
 
+const isObj = (x) => !!x && typeof x === 'object' && !Array.isArray(x);
+
+/** Structural check before trusting stored or imported state: wrong shapes are treated as corruption. */
+export function sane(s) {
+  if (!isObj(s)) return false;
+  for (const k of ['entries', 'activities', 'backlog']) if (k in s && !Array.isArray(s[k])) return false;
+  for (const k of ['settings', 'template', 'weekOverrides', 'dateOverrides', 'accounts', 'targets', 'issuesResolved']) {
+    if (k in s && s[k] != null && !isObj(s[k])) return false;
+  }
+  return true;
+}
+
 /** Brings any stored state to the current schema, without dropping data it does not understand. */
 export function migrate(s) {
   if (!s || typeof s !== 'object') return emptyState();
@@ -33,11 +45,16 @@ export function normalize(s) {
   for (let d = 0; d < 7; d++) out.template[d] = Array.isArray(s.template?.[d]) ? s.template[d] : (s.template ? [] : base.template[d]);
   out.weekOverrides = s.weekOverrides && typeof s.weekOverrides === 'object' ? s.weekOverrides : {};
   out.dateOverrides = s.dateOverrides && typeof s.dateOverrides === 'object' ? s.dateOverrides : {};
-  const seen = new Set();
-  out.entries = (Array.isArray(s.entries) ? s.entries : []).filter((e) => {
-    if (!e || !e.id || seen.has(e.id) || !(Number(e.end) > Number(e.start)) || !e.act) return false;
-    seen.add(e.id); return true;
-  });
+  // Malformed entries are kept aside in `quarantine`, never dropped; exact duplicates are merged.
+  const seen = new Map();
+  const quarantine = Array.isArray(s.quarantine) ? s.quarantine.slice() : [];
+  out.entries = [];
+  for (const e of Array.isArray(s.entries) ? s.entries : []) {
+    const ok = isObj(e) && e.id && e.act && Number.isFinite(Number(e.start)) && Number(e.end) > Number(e.start);
+    if (ok && !seen.has(e.id)) { seen.set(e.id, JSON.stringify(e)); out.entries.push(e); }
+    else if (!(ok && seen.get(e.id) === JSON.stringify(e))) quarantine.push(e);
+  }
+  out.quarantine = quarantine;
   out.accounts = s.accounts && typeof s.accounts === 'object' ? s.accounts : {};
   out.backlog = Array.isArray(s.backlog) ? s.backlog.filter((x) => x && x.id && x.text) : [];
   out.targets = { ...JSON.parse(JSON.stringify(DEFAULT_TARGETS)), ...(s.targets || {}) };
@@ -50,9 +67,10 @@ export function load(storage) {
   const raw = storage.getItem(KEY);
   let state = parse(raw);
   let notice = '';
-  if (raw && !state) {
+  if (raw && !sane(state)) {
     storage.setItem(`${KEY}.corrupt.${Date.now()}`, raw);
     state = parse(storage.getItem(PREV_KEY));
+    if (!sane(state)) state = null;
     notice = state ? 'I dati erano danneggiati: ripristinata la copia precedente (quella danneggiata è conservata).'
       : 'I dati erano danneggiati e sono stati conservati a parte; si riparte da un piano vuoto. Ripristina un backup.';
   }
@@ -94,12 +112,14 @@ export function importBackup(text, current) {
   const o = parse(t);
   if (!o || typeof o !== 'object') throw new Error('Backup non valido: niente è stato toccato');
   if (o.format === 'aurelius-backup' && o.state) {
+    if (!sane(o.state)) throw new Error('Backup danneggiato: niente è stato toccato');
     const s = migrate(o.state);
     if (!s.legacy && o.legacyRaw) s.legacy = parse(o.legacyRaw);
     if (!s.legacy && current?.legacy) s.legacy = current.legacy;
     return s;
   }
   if (o.schema >= 2) {
+    if (!sane(o)) throw new Error('Backup danneggiato: niente è stato toccato');
     const s = migrate(o);
     if (!s.legacy && current?.legacy) s.legacy = current.legacy;
     return s;

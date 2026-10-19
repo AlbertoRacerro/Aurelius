@@ -61,6 +61,15 @@ function validSubscription(sub, env) {
   let p, a;
   try { p = b64uDecode(sub.keys.p256dh); a = b64uDecode(sub.keys.auth); } catch { throw new HttpError(400, 'Chiavi non valide'); }
   if (p.length !== 65 || p[0] !== 4 || a.length !== 16) throw new HttpError(400, 'Chiavi non valide');
+  return p;
+}
+
+async function validPoint(p) {
+  // Rejects public keys that are not a point on P-256 (encryption would fail at send time).
+  try { await crypto.subtle.importKey('raw', p, { name: 'ECDH', namedCurve: 'P-256' }, false, []); } catch { throw new HttpError(400, 'Chiavi non valide'); }
+}
+
+function subscriptionFields(sub) {
   return { endpoint: sub.endpoint, p256dh: sub.keys.p256dh, auth: sub.keys.auth };
 }
 
@@ -87,7 +96,8 @@ async function authDevice(req, env) {
 async function register(req, env) {
   const body = await readJson(req);
   if (env.ENROLL_KEY && !timingSafeEqual(body.enroll || '', env.ENROLL_KEY)) throw new HttpError(403, 'Codice di registrazione errato');
-  const sub = validSubscription(body.subscription, env);
+  await validPoint(validSubscription(body.subscription, env));
+  const sub = subscriptionFields(body.subscription);
   const ntfy = validTopic(body.ntfy);
   const now = Date.now();
   const token = b64uEncode(crypto.getRandomValues(new Uint8Array(32)));
@@ -125,10 +135,14 @@ async function schedule(req, env, dev) {
   const now = Date.now();
   const items = validItems(body.items, env, now);
   const ntfy = body.ntfy === undefined ? dev.ntfy : validTopic(body.ntfy);
+  // Schedules carry a client revision; an older one arriving late must not replace a newer one.
+  const rev = Number.isSafeInteger(body.rev) && body.rev > 0 ? body.rev : null;
+  if (rev !== null && rev <= dev.rev) return { count: 0, stale: true };
   const stmts = [
     env.DB.prepare('DELETE FROM reminders WHERE device = ?').bind(dev.id),
-    env.DB.prepare('UPDATE devices SET seen = ?, ntfy = ? WHERE id = ?').bind(now, ntfy, dev.id),
-    ...items.map((x) => env.DB.prepare('INSERT INTO reminders (device, id, at, title, body, url) VALUES (?, ?, ?, ?, ?, ?)')
+    env.DB.prepare('UPDATE devices SET seen = ?, ntfy = ?, rev = ? WHERE id = ?').bind(now, ntfy, rev ?? dev.rev, dev.id),
+    ...items.map((x) => env.DB.prepare(`INSERT INTO reminders (device, id, at, title, body, url)
+        SELECT ?1, ?2, ?3, ?4, ?5, ?6 WHERE NOT EXISTS (SELECT 1 FROM sent WHERE device = ?1 AND id = ?2 AND at = ?3)`)
       .bind(dev.id, x.id, x.at, x.title, x.body, x.url)),
   ];
   await env.DB.batch(stmts);
@@ -171,22 +185,34 @@ export async function runDue(env, now = Date.now(), fetchImpl = fetch) {
   const { results } = await env.DB.prepare(`DELETE FROM reminders WHERE rowid IN
       (SELECT rowid FROM reminders WHERE at <= ? ORDER BY at LIMIT 50) RETURNING *`).bind(now + LEAD_MS).all();
   const out = { sent: 0, dropped: 0, retried: 0, failed: 0 };
+  if (results.length) {
+    await env.DB.batch(results.map((r) => env.DB.prepare('INSERT OR IGNORE INTO sent (device, id, at) VALUES (?, ?, ?)').bind(r.device, r.id, r.at)));
+  }
+  await env.DB.prepare('DELETE FROM sent WHERE at < ?').bind(now - 3 * 864e5).run();
   const devices = new Map();
   for (const r of results) {
-    if (r.at < now - STALE_MS) { out.dropped += 1; continue; }
-    if (!devices.has(r.device)) devices.set(r.device, await env.DB.prepare('SELECT * FROM devices WHERE id = ?').bind(r.device).first());
-    const dev = devices.get(r.device);
-    if (!dev) { out.dropped += 1; continue; }
-    const res = await deliver(env, dev, r, fetchImpl);
-    if (res === 'sent') out.sent += 1;
-    else if (res === 'gone') devices.set(r.device, null);
-    else if (res === 'retry' && r.at > now - RETRY_MS) {
-      out.retried += 1;
-      await env.DB.prepare('INSERT OR IGNORE INTO reminders (device, id, at, title, body, url) VALUES (?, ?, ?, ?, ?, ?)')
-        .bind(r.device, r.id, r.at, r.title, r.body, r.url).run();
-    } else out.failed += 1;
+    try {
+      await deliverOne(env, r, now, devices, out, fetchImpl);
+    } catch {
+      out.failed += 1; // one bad device or reminder never blocks the rest of the batch
+    }
   }
   return out;
+}
+
+async function deliverOne(env, r, now, devices, out, fetchImpl) {
+  if (r.at < now - STALE_MS) { out.dropped += 1; return; }
+  if (!devices.has(r.device)) devices.set(r.device, await env.DB.prepare('SELECT * FROM devices WHERE id = ?').bind(r.device).first());
+  const dev = devices.get(r.device);
+  if (!dev) { out.dropped += 1; return; }
+  const res = await deliver(env, dev, r, fetchImpl);
+  if (res === 'sent') out.sent += 1;
+  else if (res === 'gone') devices.set(r.device, null);
+  else if (res === 'retry' && r.at > now - RETRY_MS) {
+    out.retried += 1;
+    await env.DB.prepare('INSERT OR IGNORE INTO reminders (device, id, at, title, body, url) VALUES (?, ?, ?, ?, ?, ?)')
+      .bind(r.device, r.id, r.at, r.title, r.body, r.url).run();
+  } else out.failed += 1;
 }
 
 export default {

@@ -119,7 +119,7 @@ test('expired subscription (410) removes the device; transient failures are retr
   assert.equal((await runDue(env, now, flaky.impl)).retried, 1);
   assert.equal((await runDue(env, now + 60_000, flaky.impl)).retried, 1);
   assert.equal((await runDue(env, now + 11 * 60_000, flaky.impl)).failed, 1); // retry window over
-  await call('PUT', '/v1/schedule', { items: [{ id: 'a', at: now, title: 't', body: '', url: `${ORIGIN}/Aurelius/` }] }, reg.data.token);
+  await call('PUT', '/v1/schedule', { items: [{ id: 'a2', at: now, title: 't', body: '', url: `${ORIGIN}/Aurelius/` }] }, reg.data.token);
   const gone = pushService(410);
   await runDue(env, now, gone.impl);
   const again = await call('PUT', '/v1/schedule', { items: [] }, reg.data.token);
@@ -156,4 +156,52 @@ test('CORS refuses other origins; secrets never appear in responses', async () =
   assert.equal(res.headers.get('access-control-allow-origin'), null);
   const text = await res.text();
   assert.ok(!text.includes(JSON.parse(env.VAPID_PRIVATE_JWK).d));
+});
+
+test('a reminder already sent is not sent again when the app re-syncs before its time', async () => {
+  const { env, call } = await setup();
+  const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
+  const now = Date.now();
+  const item = { id: 'early', at: now + 20_000, title: 't', body: '', url: `${ORIGIN}/Aurelius/` };
+  await call('PUT', '/v1/schedule', { items: [item] }, reg.data.token);
+  const ps = pushService();
+  assert.equal((await runDue(env, now, ps.impl)).sent, 1);       // sent 20 s early
+  await call('PUT', '/v1/schedule', { items: [item] }, reg.data.token); // app re-syncs the same reminder
+  assert.equal((await runDue(env, now + 25_000, ps.impl)).sent, 0);
+  assert.equal(ps.sent.length, 1);
+  // A rescheduled reminder (same id, new time, e.g. timer resumed) is still delivered.
+  await call('PUT', '/v1/schedule', { items: [{ ...item, at: now + 600_000 }] }, reg.data.token);
+  assert.equal((await runDue(env, now + 600_000, ps.impl)).sent, 1);
+});
+
+test('an off-curve key is refused at registration; one failing reminder does not drop the batch', async () => {
+  const { env, call } = await setup();
+  const bad = browserSub();
+  const p = Buffer.from(b64uDecode(bad.json.keys.p256dh));
+  p[64] ^= 1; // still 65 bytes starting with 04, but no longer on the curve
+  bad.json.keys.p256dh = b64uEncode(p);
+  assert.equal((await call('POST', '/v1/register', { subscription: bad.json })).status, 400);
+
+  const a = await call('POST', '/v1/register', { subscription: browserSub().json });
+  const b = await call('POST', '/v1/register', { subscription: browserSub().json });
+  // Corrupt device a's stored key behind the API's back.
+  env.DB.raw.prepare('UPDATE devices SET p256dh = ? WHERE id = ?').run(b64uEncode(p), a.data.device);
+  const now = Date.now();
+  await call('PUT', '/v1/schedule', { items: [{ id: 'x', at: now, title: 't', body: '', url: `${ORIGIN}/` }] }, a.data.token);
+  await call('PUT', '/v1/schedule', { items: [{ id: 'y', at: now, title: 't', body: '', url: `${ORIGIN}/` }] }, b.data.token);
+  const ps = pushService();
+  const r = await runDue(env, now, ps.impl);
+  assert.equal(r.sent, 1);
+  assert.equal(r.failed, 1);
+});
+
+test('an older schedule revision arriving late does not replace a newer one', async () => {
+  const { env, call } = await setup();
+  const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
+  const now = Date.now();
+  const newer = await call('PUT', '/v1/schedule', { rev: 200, items: [] }, reg.data.token);
+  assert.equal(newer.data.count, 0);
+  const older = await call('PUT', '/v1/schedule', { rev: 100, items: [{ id: 'timer', at: now, title: 't', body: '', url: `${ORIGIN}/` }] }, reg.data.token);
+  assert.equal(older.data.stale, true);
+  assert.equal((await runDue(env, now, pushService().impl)).sent, 0);
 });

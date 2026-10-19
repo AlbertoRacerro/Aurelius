@@ -29,7 +29,9 @@ export function occurrences(state, date) {
         startMin: s, endMin: e,
       };
     })
-    .filter(Boolean)
+    // A block inside the spring DST gap (e.g. 02:30–03:15 on 28 Mar 2027) resolves to an empty or
+    // negative interval: such a block does not exist on that night.
+    .filter((o) => o && o.endMs > o.startMs)
     .sort((a, b) => a.startMs - b.startMs);
 }
 

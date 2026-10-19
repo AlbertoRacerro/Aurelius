@@ -2,7 +2,7 @@
 // Same-origin GETs are network-first with a short timeout, so updates arrive promptly and the app still
 // opens instantly offline or on a slow network.
 
-const CACHE = 'aurelius-v2.0.0';
+const CACHE = 'aurelius-v2.0.1';
 const SHELL = ['./', 'index.html', 'app.css', 'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
   'src/app.js', 'src/config.js', 'src/model.js', 'src/store.js', 'src/time.js', 'src/schedule.js', 'src/ledger.js',
   'src/timer.js', 'src/stats.js', 'src/reminders.js', 'src/push.js'];

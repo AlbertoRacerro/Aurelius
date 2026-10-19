@@ -218,3 +218,27 @@ test('backup export and restore round trip', async ({ page }) => {
   await expect(page.locator('#toast')).toHaveText('Backup ripristinato');
   expect(mins(await entries(page), 'lez-atp')).toBe(120);
 });
+
+test('split editor: suggested remaining minutes can always be saved (no rounding mismatch)', async ({ page }) => {
+  await boot(page, T('10:20'));
+  await page.getByRole('button', { name: /Avvia ATP/ }).click();
+  await page.clock.fastForward('25:10');
+  await page.getByRole('button', { name: 'Stop e registra' }).click();
+  await page.locator('[data-session]').getByRole('button', { name: 'Sì, giusto' }).click();
+  await page.clock.fastForward('03:00:00');
+  await page.reload();
+  await page.locator('.card.alert', { hasText: '10:15–13:15' }).getByRole('button', { name: 'Altro' }).click();
+  await page.locator('#sheet').getByRole('button', { name: '+ POCI' }).click();
+  await page.locator('#sheet').getByRole('button', { name: 'Salva' }).click();
+  await expect(page.locator('#sheet')).toBeHidden();
+  const es = await entries(page);
+  expect(mins(es)).toBeGreaterThan(179);
+  expect(mins(es)).toBeLessThanOrEqual(180);
+});
+
+test('a block in progress cannot be closed early', async ({ page }) => {
+  await boot(page, T('10:30'));
+  await page.locator('.day button', { hasText: '10:15–13:15' }).click();
+  await expect(page.locator('#sheet')).toContainText('potrai registrarlo allora');
+  await expect(page.locator('#sheet').getByRole('button', { name: 'Sì, tutto' })).toHaveCount(0);
+});

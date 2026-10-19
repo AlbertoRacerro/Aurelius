@@ -1,7 +1,7 @@
 // Statistics over effective (non-overlapping) entries and planned occurrences.
 // "Non registrato" = planned time that has ended and that no entry covers. It is reported as unknown, never as wasted.
 
-import { effective, gaps, union } from './ledger.js';
+import { effective, gaps, pending, union } from './ledger.js';
 import { occurrencesBetween } from './schedule.js';
 import { addDays, instantOf, partsAt, weekStart } from './time.js';
 
@@ -11,42 +11,59 @@ export function actById(state) {
   return Object.fromEntries(state.activities.map((a) => [a.id, a]));
 }
 
-/** Aggregates for [fromDate, toDate] inclusive, evaluated at `now`. */
+/** Splits [s,e) at local midnights in `tz`, so overnight time is attributed to each day it belongs to. */
+function byDay(s, e, tz) {
+  const out = [];
+  while (s < e) {
+    const d = partsAt(s, tz).date;
+    const mid = instantOf(addDays(d, 1), 0, tz);
+    const end = Math.min(e, mid);
+    out.push({ date: d, s, e: end });
+    s = end;
+  }
+  return out;
+}
+
+/** Aggregates for [fromDate, toDate] inclusive, evaluated at `now`. Everything is clipped to that range. */
 export function summarize(state, fromDate, toDate, now) {
   const tz = state.settings.tz;
   const A = actById(state);
   const from = instantOf(fromDate, 0, tz), to = instantOf(addDays(toDate, 1), 0, tz);
-  const occs = occurrencesBetween(state, fromDate, toDate).filter((o) => o.startMs < to);
+  // The previous day is included for blocks that run past midnight into the range.
+  const occs = occurrencesBetween(state, addDays(fromDate, -1), toDate).filter((o) => o.startMs < to && o.endMs > from);
+  const clip = (o) => ({ s: Math.max(o.startMs, from), e: Math.min(o.endMs, to) });
   const segs = effective(state, from, Math.min(to, Math.max(now, from)));
 
   const plannedBy = {}, actualBy = {}, daily = {};
   let plannedStudy = 0, actualStudy = 0, breaks = 0, plannedEnded = 0;
   for (const o of occs) {
-    const m = (o.endMs - o.startMs) / MIN;
+    const c = clip(o);
+    const m = (c.e - c.s) / MIN;
     plannedBy[o.act] = (plannedBy[o.act] || 0) + m;
     if (A[o.act]?.study) plannedStudy += m;
     if (o.endMs <= now) plannedEnded += m;
   }
-  for (const s of segs) {
-    const m = (s.e - s.s) / MIN;
-    actualBy[s.act] = (actualBy[s.act] || 0) + m;
-    const d = partsAt(s.s, tz).date;
-    daily[d] = daily[d] || { study: 0, byAct: {} };
-    daily[d].byAct[s.act] = (daily[d].byAct[s.act] || 0) + m;
-    if (A[s.act]?.study) { actualStudy += m; daily[d].study += m; }
-    if (A[s.act]?.kind === 'break') breaks += m;
+  for (const seg of segs) {
+    for (const p of byDay(seg.s, seg.e, tz)) {
+      const m = (p.e - p.s) / MIN;
+      actualBy[seg.act] = (actualBy[seg.act] || 0) + m;
+      daily[p.date] = daily[p.date] || { study: 0, byAct: {} };
+      daily[p.date].byAct[seg.act] = (daily[p.date].byAct[seg.act] || 0) + m;
+      if (A[seg.act]?.study) { actualStudy += m; daily[p.date].study += m; }
+      if (A[seg.act]?.kind === 'break') breaks += m;
+    }
   }
   // Unaccounted: ended planned windows minus everything recorded; dismissed blocks stay unknown too.
   // Time before tracking started is neither recorded nor "unaccounted".
   const since = state.settings.trackFrom || 0;
-  const endedWindows = union(occs.filter((o) => o.startMs < now && o.endMs > since)
-    .map((o) => ({ s: Math.max(o.startMs, since), e: Math.min(o.endMs, now) })));
-  const covered = segs.map((s) => ({ s: s.s, e: s.e }));
+  const endedWindows = union(occs.map(clip).map((c) => ({ s: Math.max(c.s, since), e: Math.min(c.e, now) })));
+  const covered = segs.map((x) => ({ s: x.s, e: x.e }));
   let unaccounted = 0;
   for (const w of endedWindows) unaccounted += gaps(covered, w.s, w.e).reduce((n, g) => n + (g.e - g.s), 0) / MIN;
 
-  const gymDays = new Set(segs.filter((s) => A[s.act]?.kind === 'gym' && s.e - s.s >= 20 * MIN).map((s) => partsAt(s.s, tz).date));
-  const pendingCount = occs.filter((o) => o.endMs <= now && o.endMs > since && !state.accounts[o.id]).length;
+  const gymDays = new Set(segs.filter((x) => A[x.act]?.kind === 'gym' && x.e - x.s >= 20 * MIN).map((x) => partsAt(x.s, tz).date));
+  // Same rule as the Now screen: ended, not accounted, and not already covered by other entries.
+  const pendingCount = pending(state, occs.filter((o) => o.endMs <= to), now).length;
   return { fromDate, toDate, plannedBy, actualBy, plannedStudy, actualStudy, breaks, unaccounted, plannedEnded,
     daily, gymSessions: gymDays.size, pendingCount };
 }

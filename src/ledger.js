@@ -52,8 +52,18 @@ function foreign(state, occId, from, to) {
   return live(state).filter((x) => x.occ !== occId && x.start < to && x.end > from);
 }
 
-/** Accountable window of an occurrence: the block, cut at `now` if it has not ended yet. */
-export function window(occ, now) { return { s: occ.startMs, e: Math.min(occ.endMs, now) }; }
+// A block can be accounted from shortly before its end (push reminders may arrive a little early);
+// from then on its window is the whole block. Before that it cannot be accounted at all, so a block is
+// never closed with part of its time silently left out.
+export const GRACE_MS = 2 * MIN;
+export function accountable(occ, now) { return now >= occ.endMs - GRACE_MS; }
+
+/** Accountable window of an occurrence. */
+export function window(occ, now) { return { s: occ.startMs, e: accountable(occ, now) ? occ.endMs : Math.min(occ.endMs, now) }; }
+
+function mustBeAccountable(occ, now) {
+  if (!accountable(occ, now)) throw new Error('Il blocco non è ancora finito: potrai registrarlo alla fine');
+}
 
 export function availableMinutes(state, occ, now) {
   const w = window(occ, now);
@@ -100,6 +110,7 @@ function fill(state, occ, allocations, now, src) {
 
 /** "Sì, tutto": the rest of the block was the planned activity (or `act` for a generic study block). */
 export function confirmAll(state, occ, now, act = occ.act) {
+  mustBeAccountable(occ, now);
   clearOwn(state, occ.id);
   const avail = availableMinutes(state, occ, now);
   fill(state, occ, avail > 0 ? [{ act, minutes: avail }] : [], now, 'confirm');
@@ -109,6 +120,7 @@ export function confirmAll(state, occ, now, act = occ.act) {
 
 /** "In parte" / "Altro": explicit minutes per activity; whatever is left stays unaccounted. */
 export function confirmSplit(state, occ, allocations, now, status = 'partial') {
+  mustBeAccountable(occ, now);
   const before = state.entries.slice();
   clearOwn(state, occ.id);
   try {

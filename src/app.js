@@ -162,7 +162,7 @@ function viewNow() {
 }
 
 function accountCard(o) {
-  const avail = Math.round(L.availableMinutes(state, o, now()));
+  const avail = Math.round(L.availableMinutes(state, o, now())); // label only; the split editor uses whole minutes
   const generic = isGeneric(o.act);
   const d = partsAt(o.startMs, tz()).date;
   const when = d === today() ? '' : `${GIORNI_BREVI[weekday(d)]} ${Number(d.slice(8))} · `;
@@ -377,7 +377,7 @@ function renderSheet() {
 function sheetSplit(s) {
   const occ = findOccurrence(state, s.occId);
   if (!occ) return `<p>Blocco non trovato.</p><button class="btn" data-act="close">Chiudi</button>`;
-  const avail = Math.round(L.availableMinutes(state, occ, now()));
+  const avail = Math.floor(L.availableMinutes(state, occ, now()));
   const used = s.rows.reduce((n, r) => n + (Number(r.minutes) || 0), 0);
   return `<h3>${s.mode === 'other' ? 'Cosa hai fatto?' : 'Quanto hai fatto?'}</h3>
     <div class="mut small">${esc(actName(occ.act))} · ${esc(occ.block.start)}–${esc(occ.block.end)} · ${dur(avail)} disponibili</div>
@@ -395,13 +395,11 @@ function sheetOcc(s) {
   if (!occ) return `<p>Blocco non trovato.</p><button class="btn" data-act="close">Chiudi</button>`;
   const acc = state.accounts[occ.id];
   const mine = state.entries.filter((x) => x.start < occ.endMs && x.end > occ.startMs);
-  const st = statusOf(occ);
-  const future = occ.endMs > now();
   return `<h3>${esc(actName(occ.act))}</h3><div class="mut small">${esc(longDate(occ.date))} · ${esc(occ.block.start)}–${esc(occ.block.end)}${occ.block.note ? ' · ' + esc(occ.block.note) : ''}</div>
     ${mine.length ? `<ul class="day card" style="margin-top:10px">${mine.map((x) => `<li><span class="t">${timeOf(x.start)}–${timeOf(x.end)}</span>${sw(x.act)}<span class="grow">${esc(actName(x.act))}</span><span class="mut small">${dur((x.end - x.start) / MIN)}</span></li>`).join('')}</ul>` : '<p class="mut small">Nessun tempo registrato in questo blocco.</p>'}
     ${acc ? `<p class="small">Registrato come <b>${esc(STATUS_LABEL[acc.status]?.[0] || acc.status)}</b>.</p>` : ''}
-    ${future && occ.startMs > now() ? '<p class="mut small">Il blocco non è ancora iniziato.</p>' : ''}
-    <div class="btns" style="margin-top:10px">${st === 'future' ? '' : `${acc ? '<button class="btn" data-act="acc-reopen">Annulla registrazione</button>' : ''}
+    ${!L.accountable(occ, now()) ? `<p class="mut small">Il blocco finisce alle ${esc(occ.block.end)}: potrai registrarlo allora (per altro tempo usa “Registra altro tempo”).</p>` : ''}
+    <div class="btns" style="margin-top:10px">${!L.accountable(occ, now()) ? '' : `${acc ? '<button class="btn" data-act="acc-reopen">Annulla registrazione</button>' : ''}
       ${!acc || acc.status !== 'all' ? '<button class="btn pri" data-act="acc-all-sheet">Sì, tutto</button>' : ''}
       <button class="btn" data-act="acc-partial">In parte</button><button class="btn" data-act="acc-other">Altro</button>`}
       <button class="btn ghost" data-act="close">Chiudi</button></div>`;
@@ -468,7 +466,7 @@ function updateRemain() {
   const occ = findOccurrence(state, s.occId);
   if (!occ) return;
   s.rows = readSplitRows();
-  const avail = Math.round(L.availableMinutes(state, occ, now()));
+  const avail = Math.floor(L.availableMinutes(state, occ, now()));
   const used = s.rows.reduce((n, r) => n + r.minutes, 0);
   const el = $('#remain');
   el.textContent = dur(avail - used);
@@ -494,7 +492,7 @@ function occFrom(el) {
 }
 
 function startSplit(occ, mode) {
-  const avail = Math.round(L.availableMinutes(state, occ, now()));
+  const avail = Math.floor(L.availableMinutes(state, occ, now()));
   const prev = state.accounts[occ.id]?.allocations;
   const rows = prev?.length ? prev.map((x) => ({ ...x }))
     : mode === 'partial' ? [{ act: isGeneric(occ.act) ? lastStudy() : occ.act, minutes: Math.max(0, Math.round(avail / 2 / 5) * 5) }] : [];
@@ -551,7 +549,7 @@ const actions = {
     updateRemain();
     const s = ui.sheet;
     const occ = findOccurrence(state, s.occId);
-    const avail = Math.round(L.availableMinutes(state, occ, now()));
+    const avail = Math.floor(L.availableMinutes(state, occ, now()));
     const used = s.rows.reduce((n, r) => n + r.minutes, 0);
     s.rows.push({ act: el.dataset.subj, minutes: Math.max(0, avail - used) });
     renderSheet();
@@ -761,15 +759,29 @@ function pushError(err) {
   commit((s) => { if (s.settings.push) s.settings.push.error = msg; }, { repaint: ui.tab === 'altro' });
 }
 
-async function syncNow(force) {
+// One sync at a time; changes made meanwhile trigger one more sync afterwards. Each schedule carries an
+// increasing revision so the worker can also ignore an older one that arrives late.
+let syncing = null, syncAgain = false;
+function syncNow(force) {
+  if (syncing) { syncAgain = true; return syncing; }
+  syncing = (async () => {
+    try { await syncOnce(force); } finally { syncing = null; }
+    if (syncAgain) { syncAgain = false; await syncNow(true); }
+  })();
+  return syncing;
+}
+
+async function syncOnce(force) {
   const push = state.settings.push;
   if (!push || !navigator.onLine) return;
   const base = location.origin + location.pathname.replace(/index\.html$/, '');
   const items = reminderItems(state, now(), base);
   const hash = P.hashItems(items, state.settings.ntfyTopic);
   if (!force && hash === push.syncedHash && now() - (push.lastSync || 0) < 6 * 3600e3) return;
+  const rev = Math.max(Date.now(), (push.rev || 0) + 1);
+  commit((s) => { if (s.settings.push) s.settings.push.rev = rev; }, { repaint: false });
   try {
-    await P.sync(push, items, state.settings.ntfyTopic);
+    await P.sync(push, items, state.settings.ntfyTopic, rev);
     commit((s) => { if (s.settings.push) Object.assign(s.settings.push, { syncedHash: hash, lastSync: Date.now(), error: '' }); },
       { repaint: ui.tab === 'altro' });
   } catch (err) { pushError(err); }

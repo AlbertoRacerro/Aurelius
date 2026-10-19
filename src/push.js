@@ -74,8 +74,8 @@ export function hashItems(items, extra = '') {
   return (h >>> 0).toString(36);
 }
 
-export async function sync(push, items, ntfy) {
-  return call(push.api, '/v1/schedule', { method: 'PUT', token: push.token, body: { items, ntfy: ntfy || '' } });
+export async function sync(push, items, ntfy, rev) {
+  return call(push.api, '/v1/schedule', { method: 'PUT', token: push.token, body: { items, ntfy: ntfy || '', rev } });
 }
 
 export async function test(push) {

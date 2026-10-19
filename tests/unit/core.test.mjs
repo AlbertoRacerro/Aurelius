@@ -272,3 +272,60 @@ test('reminders: one per future block end with a deep link, plus the timer end',
   const withTimer = reminderItems(s, at(MON, 9, 30), 'https://x.test/Aurelius/', 1);
   assert.equal(withTimer.find((x) => x.id === 'timer').at, at(MON, 9, 55));
 });
+
+test('structurally damaged state is archived and the previous valid copy restored, never emptied', () => {
+  const good = plain();
+  good.entries = [{ id: 'e1', start: at(MON, 9), end: at(MON, 10), act: 'atp', at: 1 }];
+  const storage = memStorage({ 'aurelius.v2': JSON.stringify({ ...good, entries: { broken: true } }), 'aurelius.v2.prev': JSON.stringify(good) });
+  const { state, notice } = S.load(storage);
+  assert.equal(state.entries.length, 1);
+  assert.match(notice, /danneggiati/);
+  assert.ok([...storage.m.keys()].some((k) => k.startsWith('aurelius.v2.corrupt.')));
+  // Malformed single entries are quarantined, not dropped.
+  const s2 = S.normalize({ ...good, entries: [...good.entries, { id: 'bad', start: 5, end: 1, act: 'atp' }] });
+  assert.equal(s2.entries.length, 1);
+  assert.equal(s2.quarantine.length, 1);
+  assert.throws(() => S.importBackup(JSON.stringify({ format: 'aurelius-backup', state: { ...good, entries: 'x' } }), good), /danneggiato/);
+});
+
+test('a block cannot be closed before it ends (it would hide the rest of its time)', () => {
+  const s = plain();
+  const occ = occurrences(s, MON).find((o) => o.block.id === 'a'); // 09:00-10:00
+  assert.throws(() => L.confirmAll(s, occ, at(MON, 9, 30)), /non è ancora finito/);
+  // Within the grace period before the end the whole block is accounted.
+  assert.equal(L.confirmAll(s, occ, at(MON, 9, 59)), 60);
+});
+
+test('overnight time is split at midnight; week totals are clipped to the week', () => {
+  const s = plain();
+  s.settings.trackFrom = 0;
+  s.template[6] = [{ id: 's', start: '23:00', end: '01:00', act: 'atp' }]; // every Sunday night into Monday
+  L.addManual(s, 'atp', at('2026-10-25', 23), at('2026-10-26', 1));
+  const now = at('2026-11-03', 12);
+  const w1 = summarize(s, '2026-10-19', '2026-10-25', now);
+  const w2 = summarize(s, '2026-10-26', '2026-11-01', now);
+  assert.equal(w1.daily['2026-10-25'].study, 60);
+  assert.equal(w2.daily['2026-10-26'].study, 60);
+  assert.equal(w1.actualStudy, 60);
+  assert.equal(w2.actualStudy, 60);
+  // Mon 09-10 ATP + Sunday 23-24 + the 00-01 spill from the previous Sunday = 180 planned in each week.
+  assert.equal(w1.plannedBy.atp, 180);
+  assert.equal(w2.plannedBy.atp, 180);
+});
+
+test('a block inside the spring DST gap does not exist that night', () => {
+  const s = plain();
+  s.dateOverrides['2027-03-28'] = [{ id: 'g', start: '02:30', end: '03:15', act: 'atp' }, { id: 'h', start: '09:00', end: '10:00', act: 'poci' }];
+  const occs = occurrences(s, '2027-03-28');
+  assert.deepEqual(occs.map((o) => o.block.id), ['h']);
+  assert.ok(occs.every((o) => o.endMs > o.startMs));
+});
+
+test('statistics do not list a block as pending when a timer covered it', () => {
+  const s = plain();
+  s.settings.trackFrom = 0;
+  T.start(s, 'atp', 60, at(MON, 9));
+  T.stop(s, at(MON, 10));
+  const w = summarize(s, MON, MON, at(MON, 10, 5));
+  assert.equal(w.pendingCount, 0);
+});
