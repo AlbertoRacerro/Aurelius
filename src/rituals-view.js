@@ -35,8 +35,8 @@ export function viewRituals(date, relationship, habits, esc) {
       <label class="small">Primo giorno dell’ultima mestruazione (confermato)
         <input type="date" id="r-start" value="${esc(relationship?.lastStart || '')}" max="${esc(date)}"></label>
       <div class="ritual-fields">
-        <label class="small">Durata tipica del ciclo (giorni)
-          <input type="number" id="r-days" min="21" max="35" value="${esc(relationship?.cycleDays || 28)}"></label>
+        <label class="small">Durata tipica se regolare (giorni)
+          <input type="number" id="r-days" min="21" max="35" placeholder="Es. 28" value="${esc(relationship?.cycleDays ?? '')}"></label>
         <label class="small">Mestruazioni (giorni)
           <input type="number" id="r-period" min="2" max="7" value="${esc(relationship?.periodDays || 5)}"></label>
       </div>
