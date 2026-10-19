@@ -14,6 +14,6 @@ MAX_DEVICES = "3"
 [[d1_databases]]
 binding = "DB"
 database_name = "aurelius-push"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "79633344-cd98-4d61-bdda-28d8743d5a9d"
 
 # Secrets (wrangler secret put): VAPID_PRIVATE_JWK, VAPID_PUBLIC, optional ENROLL_KEY.
