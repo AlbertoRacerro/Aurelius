@@ -6,6 +6,7 @@ import { occurrencesBetween } from './schedule.js';
 import { addDays, hm, partsAt, weekday, instantOf, parseHM } from './time.js';
 import { actById } from './stats.js';
 import { endsAt } from './timer.js';
+import { reflectionForDate } from './reflections.js';
 
 export const HORIZON_DAYS = 7;
 
@@ -41,13 +42,25 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS) {
   // Private routine settings stay in the device state; the push worker only sees due messages.
   const h = state.settings.habits || {};
   const within = (at) => at > now && at <= now + horizonDays * 864e5;
-  const addHabit = (date, minute, code, title, body) => {
+  const addHabit = (date, minute, code, title, body, url = baseUrl) => {
     const at = instantOf(date, minute, tz);
     if (!within(at)) return;
-    items.push({ id: `h${at.toString(36)}_${code}`, at, title, body, url: baseUrl });
+    items.push({ id: `h${at.toString(36)}_${code}`, at, title, body, url });
   };
   for (let i = 0; i <= horizonDays; i++) {
     const date = addDays(today, i);
+    const qTime = parseHM(h.quote?.time);
+    if (h.quote?.enabled && qTime != null && qTime < 1440) {
+      const q = reflectionForDate(date);
+      addHabit(date, qTime, 'quote', `Riflessione · ${q.title}`,
+        `${q.thought} — ${q.source}`, `${baseUrl}#rituali`);
+    }
+    const cTime = parseHM(h.care?.time);
+    if (h.care?.enabled && cTime != null && cTime < 1440) {
+      // Do NOT put phase, symptoms, dates or any inference about a third party in the worker.
+      addHabit(date, cTime, 'care', 'Un gesto di attenzione',
+        'Apri Aurelius per un’idea concordata di cura e ascolto.', `${baseUrl}#rituali`);
+    }
     if (weekday(date) < 5 && h.bottle?.enabled) {
       const at = parseHM(h.bottle.time);
       if (at != null && at < 1440) addHabit(date, at, 'bottle', 'Porta la borraccia',
