@@ -1,8 +1,9 @@
 import { reflectionForDate } from './reflections.js';
 import { estimateCycle, suggestedGesture, GESTURES } from './relationship.js';
+import { renderCareContext } from './care-view.js';
 
 // Rendering only. Do not include cycle dates in push payloads or exported backups.
-export function viewRituals(date, relationship, habits, esc) {
+export function viewRituals(date, relationship, habits, presence, days, esc) {
   const q = reflectionForDate(date);
   const out = [
     `<h1>Rituali · ${esc(date)}</h1>
@@ -20,7 +21,7 @@ export function viewRituals(date, relationship, habits, esc) {
   ];
   const status = relationship ? estimateCycle(relationship, date) : null;
   out.push(`<h2>Attenzioni nella relazione</h2><div class="card">
-    <p class="small">Non si prevedono umore o comportamenti dalla fase del ciclo. I gesti proposti vengono solo dalle preferenze discusse insieme.</p>
+    <p class="small">Il calendario orienta piccoli gesti di comfort; la libreria di 40 idee è già pronta anche senza selezionare preferenze.</p>
     ${status ? `<div class="card soft">
       <b>${esc(status.label)}</b>
       ${status.dayInCycle ? `<div class="small">Giorno indicativo ${status.dayInCycle} del ciclo</div>` : ''}
@@ -45,7 +46,7 @@ export function viewRituals(date, relationship, habits, esc) {
       <p class="mut small">Selezionare solo quelli che avete effettivamente concordato. Nessuna preferenza sarà dedotta dalla fase.</p>
       ${GESTURES.map((g) => `<label class="opt"><input type="checkbox" data-gesture="${g.id}"${relationship?.gestures?.includes(g.id) ? ' checked' : ''}> ${esc(g.label)}</label>`).join('')}
       <label class="opt"><input type="checkbox" id="r-consent"${relationship?.consent ? ' checked' : ''}> Confermo che la persona interessata ha accettato questa raccolta e l’uso delle informazioni</label>
-      <label class="opt"><input type="checkbox" id="r-care-notify"${habits.care?.enabled ? ' checked' : ''}> Promemoria generico quotidiano di gentilezza (nessun dato sul ciclo nella notifica)</label>
+      <label class="opt"><input type="checkbox" id="r-care-notify"${habits.care?.enabled ? ' checked' : ''}> Attiva i messaggi di coppia nei soli giorni e orari che confermo</label>
       <div class="btns">
         <button class="btn pri" data-act="ritual-relationship-save">Salva sul dispositivo</button>
         ${relationship ? '<button class="btn bad" data-act="ritual-relationship-delete">Cancella dati e notifiche</button>' : ''}
@@ -53,5 +54,8 @@ export function viewRituals(date, relationship, habits, esc) {
     </details>
     <p class="mut small">La stima è solo orientativa, specialmente con cicli variabili. Non usare per calcolare giorni fertili, diagnosi o contraccezione. Nessuna informazione sanitaria va su GitHub o nelle notifiche.</p>
   </div>`);
+  out.push(renderCareContext(date, presence, days, relationship, esc, {
+    full: true, soloEnabled: habits.personalPause?.enabled ?? true,
+  }));
   return out.join('');
 }
