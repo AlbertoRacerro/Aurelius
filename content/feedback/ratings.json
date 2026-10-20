@@ -1,4 +1,25 @@
 {
   "schema": 1,
-  "ratings": []
+  "ratings": [
+    {
+      "article_id": "future-20261020",
+      "score": 0,
+      "reasons": [
+        "style",
+        "verbose"
+      ],
+      "comment": "Questa parte di aggiornamenti deve essere più schematica e tecnica… non devi spiegarmi che cosa è un mcp o quali modi sono quelli giusti in cui interpretare la tecnologia… voglio che mi fai una panoramica delle novità schematica e a punti… ad esempio se esce un nuovo modello mi fai vedere benchmark interessanti e info generiche sul fatto che sia interessante per inferenza locale rispetto alle soluzioni usate oggi in jarvisOS oppure per velocità…",
+      "rated_at": "2026-10-20T14:51:54.458Z"
+    },
+    {
+      "article_id": "philosophy-20261020",
+      "score": 1,
+      "reasons": [
+        "style",
+        "verbose"
+      ],
+      "comment": "Non so una parte della lettura è assorbire per osmosi lo stile dello scrittore e questo stile mi sembra volutamente spinto per simulare la scrittura accademica letteraria. Capisco il tentativo ma vorrei più cura nel privilegiare sia lo stile dello scrittore degli estratti citati sia la comprensione dei contenuti, senza allungare il brodo per raggiungere le pagine ma piuttosto portando più contenuti a pari parole",
+      "rated_at": "2026-10-20T14:56:26.004Z"
+    }
+  ]
 }
