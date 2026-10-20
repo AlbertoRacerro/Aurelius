@@ -16,7 +16,7 @@ export function validateEdition(e) {
   if(!Array.isArray(a.sources)||!a.sources.length||a.sources.some(s=>typeof s.title!=='string'||!s.title||!safeUrl(s.url)||!validDate(s.accessed)||typeof s.edition!=='string'))throw Error('Fonti non valide');
   if(a.kind==='news'&&(!validDate(a.event_date)||!validDate(a.publication_date)))throw Error('Date notizia mancanti');
   const n=wordCount(a), [min,max]=[[500,800],[2200,3200],[1200,2000]][i];
-  if(n<(a.kind==='reduced'?150:min)||n>(a.kind==='reduced'?max:max))throw Error(`Lunghezza ${a.slot}: ${n}`);
+  if(n<(a.kind==='reduced'?150:min)||n>max)throw Error(`Lunghezza ${a.slot}: ${n}`);
  });return e;
 }
 export function sensitiveComment(x) {return /(?:gh[pousr]_[\w]{15,}|github_pat_|sk-[\w-]{12,}|Bearer\s+\S+|-----BEGIN|password\s*[:=]|token\s*[:=]|\b(?:pcos|insulina|contraccettiv\w*|mestru\w*|sanguin\w*|diagnos\w*|farmac\w*|salute|malatt\w*|giordana|fidanzat\w*|relazione|coppia)\b)/iu.test(x);}

@@ -6,6 +6,7 @@ export async function feedback(req,env){
  if(!equal(req.headers.get('authorization')||'',`Bearer ${env.FEEDBACK_TOKEN}`))return reply(401,{error:'Codice editoriale non valido'});
  const bucket=Math.floor(Date.now()/60000);
  const limit=await env.DB.prepare('INSERT INTO editorial_limits(bucket,count) VALUES (?,1) ON CONFLICT(bucket) DO UPDATE SET count=count+1 RETURNING count').bind(bucket).first();
+ await env.DB.prepare('DELETE FROM editorial_limits WHERE bucket<?').bind(bucket-60).run();
  if(limit.count>30)return reply(429,{error:'Troppi invii; riprova tra un minuto'});
  let r;try{const t=await req.text();if(t.length>4000)return reply(413,{error:'Voto troppo grande'});r=validateRating(JSON.parse(t));if(r.revision>Date.now()+300000)throw Error('Orologio del dispositivo troppo avanti');}catch(err){return reply(400,{error:err.message});}
  const prior=await env.DB.prepare('SELECT * FROM editorial_ratings WHERE article_id=?').bind(r.article_id).first();

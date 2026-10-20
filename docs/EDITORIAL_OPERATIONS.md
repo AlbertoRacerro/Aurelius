@@ -29,3 +29,13 @@ GitHub Actions: validazione su PR/push; riserva alle 03:31 UTC (05:31 estate, 04
 Idee: JSON e import locale con unione per ID, 47 idee iniziali. Punteggio zero disabilita una proposta, non elimina il record. Spesa: checked=in casa; import unisce senza cambiare voci esistenti. Metadata calendario `context: shopping`, scelto dall'editor, mai dedotto con regex dalla nota. Pianifica apre l'editor senza salvare automaticamente. Nudge nelle pause reali o prima di spesa, esclusi conflitti con lezioni/studio, più proposte distinte al giorno e toggle dedicato. Gli intervalli sono una rotazione riproducibile per data, non una telemetria di avvenuta consegna. Nessun arretrato o KPI delle idee. Co-presenza futura non inferita; vecchie 40 attenzioni preservate. Le pause dopo Pomodoro sono offerte dal link nella sessione conclusa, senza cambiare durata del timer.
 
 Restano future: archivio ricercabile, modifica vocale calendario, riserva reale di trenta articoli e raccomandazione statistica avanzata. I controlli semantici editoriali richiedono la ricerca e la revisione del redattore, non si ricavano dal solo passaggio dello schema.
+
+## Verifica di questa consegna
+
+- Baseline remoto ispezionato: `f08a4d0`, versione 2.5.0; nessuna modifica all'archivio `legacy/`.
+- 70 test unitari/Worker passati, inclusi migrazione ripetuta con sottoscrizione/reminder esistenti, auth indipendente dalle push, rate limit, conflitto SHA, retry durabile e aggiornamento concorrente.
+- 23 Playwright mobile passati a 390×844; compreso riavvio davvero offline con service worker attivo. Test esistenti di timer, split contabile, restore e piano conservati.
+- Screenshot bacheca/lettore ispezionati; nessun overflow orizzontale a 390 px; corpo lettore 18,4 px con interlinea 1,8.
+- Prima edizione validata: 542 / 2249 / 1243 parole. Radar etichettato evergreen. Fonti consultate con passaggi circoscritti; nessuna sintesi integrale o notizia non verificata.
+- Task ChatGPT creata e attiva: redazione quotidiana alle 05:00 Europe/Rome, dal 21 ottobre 2026. Creazione confermata dal servizio; prima esecuzione e futura pubblicazione autonoma non ancora verificate.
+- Feedback pubblico non provato contro D1/GitHub reali: mancano accesso Cloudflare e secret; i test usano SQLite reale come stand-in D1 e provider GitHub simulato. Il JSON iniziale dei voti è vuoto, senza voti di esempio spacciati per reali.
