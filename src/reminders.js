@@ -7,6 +7,7 @@ import { addDays, hm, partsAt, weekday, instantOf, parseHM } from './time.js';
 import { actById } from './stats.js';
 import { endsAt } from './timer.js';
 import { reflectionForDate } from './reflections.js';
+import { choiceForPresence, togetherToday, suggestionFor, SLOTS } from './care-moments.js';
 
 export const HORIZON_DAYS = 7;
 
@@ -15,7 +16,7 @@ export function reminderId(occ) {
   return `b${occ.startMs.toString(36)}${String(occ.block.id).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 24)}`;
 }
 
-export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS) {
+export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, privateRelationship = null) {
   const tz = state.settings.tz;
   const A = actById(state);
   const today = partsAt(now, tz).date;
@@ -55,11 +56,29 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS) {
       addHabit(date, qTime, 'quote', `Riflessione · ${q.title}`,
         `${q.thought} — ${q.source}`, `${baseUrl}#rituali`);
     }
-    const cTime = parseHM(h.care?.time);
-    if (h.care?.enabled && cTime != null && cTime < 1440) {
-      // Do NOT put phase, symptoms, dates or any inference about a third party in the worker.
-      addHabit(date, cTime, 'care', 'Un gesto di attenzione',
-        'Apri Aurelius per un’idea concordata di cura e ascolto.', `${baseUrl}#rituali`);
+    // The couple reminder is only scheduled when TODAY'S company has been expressly selected.
+    // Never send bleeding dates, pills, cycle labels or other health data to the worker.
+    const presence = state.settings.carePresence;
+    if (date === today && h.care?.enabled && togetherToday(presence, date)) {
+      const minuteNow = partsAt(now, tz).minute;
+      const choice = choiceForPresence(presence, date, privateRelationship,
+        state.settings.careDays || [], minuteNow);
+      const slot = choice && SLOTS.find(x => x.id === choice.slot);
+      if (slot && choice.moment) {
+        addHabit(date, slot.minute, 'careMoment', 'Una piccola attenzione',
+          choice.moment.text, `${baseUrl}#rituali`);
+      }
+    }
+    // A self-care nudge only three afternoons a week, regardless of relationship status.
+    // If they are together in the afternoon, avoid two overlapping reminders.
+    if (h.personalPause?.enabled && [0, 2, 4].includes(weekday(date))
+        && !(date === today && togetherToday(presence, date) && presence.slots.includes('afternoon'))) {
+      const minute = parseHM(h.personalPause.time);
+      const ord = Math.floor(Date.parse(date + 'T00:00:00Z') / 864e5 / 3);
+      const personal = suggestionFor(date, 'afternoon', 'solo', 'any', ord);
+      if (minute != null && minute < 1440 && personal)
+        addHabit(date, minute, 'personalPause', 'Pausa per te',
+          personal.text, `${baseUrl}#rituali`);
     }
     if (weekday(date) < 5 && h.bottle?.enabled) {
       const at = parseHM(h.bottle.time);
