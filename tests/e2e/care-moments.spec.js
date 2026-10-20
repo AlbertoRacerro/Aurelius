@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+test('one-day together wizard preserves choice, skips solo days, and exposes 40 curated ideas', async ({page})=>{
+  await page.clock.install({time:new Date('2026-10-19T10:00:00+02:00')});
+  await page.goto('./#rituali');
+  await expect(page.locator('.care-library')).toContainText('40 idee');
+  await page.locator('.care-library').evaluate(el=>{el.open=true;});
+  await expect(page.locator('.care-library li')).toHaveCount(40);
+  await page.getByRole('button',{name:'Sì, scegli i momenti'}).click();
+  await page.locator('[data-care-slot=afternoon]').check();
+  await page.locator('[data-care-slot=evening]').check();
+  await page.getByRole('button',{name:'Salva giornata'}).click();
+  await expect(page.locator('.care-card')).toContainText('Insieme: Pomeriggio, Sera.');
+  let saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('aurelius.v2')));
+  expect(saved.settings.carePresence.date).toBe('2026-10-19');
+  expect(saved.settings.carePresence.slots).toEqual(['afternoon','evening']);
+  expect(saved.settings.careDays).toContain('2026-10-19');
+  await page.reload();
+  await expect(page.locator('.care-card')).toContainText('Insieme: Pomeriggio, Sera.');
+  await page.getByRole('button',{name:'No, oggi no'}).click();
+  await expect(page.locator('.care-card')).toContainText('Oggi solo promemoria personali.');
+  saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('aurelius.v2')));
+  expect(saved.settings.carePresence.together).toBe(false);
+  expect(saved.settings.careDays).not.toContain('2026-10-19');
+});
+test('morning routine has a short specific checklist directly in the plan',async ({page})=>{
+  await page.clock.install({time:new Date('2026-10-19T06:05:00+02:00')});
+  await page.goto('./#ora');
+  await expect(page.locator('#main')).toContainText('Routine mattutina · 06:00–06:20');
+  await expect(page.locator('#main')).toContainText('Acqua e luce');
+  await page.locator('#nav [data-tab=piano]').click();
+  await expect(page.locator('.day.card details')).toContainText('Cosa fare (6:00–6:20)');
+});
