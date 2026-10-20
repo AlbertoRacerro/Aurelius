@@ -1,0 +1,43 @@
+name: Editorial validation and reserve publication
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths: ['content/**', 'src/editorial*.js', 'src/ideas.js', 'tools/*content*', 'tools/publish-ready.mjs', '.github/workflows/editorial.yml']
+  schedule:
+    - cron: '31 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: editorial-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/validate-content.mjs
+  publish-ready:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/publish-ready.mjs && node tools/validate-content.mjs
+      - name: Commit validated edition atomically
+        run: |
+          git config user.name 'Aurelius Editorial'
+          git config user.email 'aurelius-editorial@users.noreply.github.com'
+          git add content/editions content/manifest.json content/editorial/queue.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'editorial: publish validated ready edition'
+          git push origin HEAD:main

@@ -10,6 +10,9 @@ ALLOWED_ORIGIN = "https://albertoracerro.github.io"
 APP_URL = "https://albertoracerro.github.io/Aurelius/"
 VAPID_SUBJECT = "https://albertoracerro.github.io/Aurelius/"
 MAX_DEVICES = "3"
+CONTENT_REPO = "AlbertoRacerro/Aurelius"
+CONTENT_BRANCH = "main"
+FEEDBACK_PATH = "content/feedback/ratings.json"
 
 [[d1_databases]]
 binding = "DB"
@@ -17,3 +20,8 @@ database_name = "aurelius-push"
 database_id = "79633344-cd98-4d61-bdda-28d8743d5a9d"
 
 # Secrets (wrangler secret put): VAPID_PRIVATE_JWK, VAPID_PUBLIC, optional ENROLL_KEY.
+
+# Temporary public content area until the separate content repo can be provisioned.
+# Owner code: FEEDBACK_TOKEN (>=32 random URL-safe chars, shared only with owner device).
+# GitHub fine-grained contents-write credential: GITHUB_EDITORIAL_TOKEN (Worker secret).
+# Neither credential is embedded in the PWA or its backups.

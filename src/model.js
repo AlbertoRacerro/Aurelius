@@ -103,6 +103,7 @@ export function defaultSettings() {
       bedtime: { enabled: true, time: '22:20' },
       quote: { enabled: true, time: '07:00' },
       care: { enabled: false, time: '07:05' },
+      ideas: { enabled: true },
       personalPause: { enabled: true, time: '15:45' },
     },
     trackFrom: Date.now(),  // blocks that ended before this instant are never asked about

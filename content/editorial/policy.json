@@ -1,0 +1,552 @@
+{
+  "schema": 1,
+  "language": "it",
+  "timezone": "Europe/Rome",
+  "topics": [
+    {
+      "id": "t01",
+      "name": "Civiltà perdute, archeologia, misteri storici",
+      "interest": 1
+    },
+    {
+      "id": "t02",
+      "name": "Roma antica, imperi, strategia politica",
+      "interest": 2
+    },
+    {
+      "id": "t03",
+      "name": "Mitologia norrena, greca e medievale",
+      "interest": 2
+    },
+    {
+      "id": "t04",
+      "name": "Tolkien, Terra di Mezzo",
+      "interest": 1
+    },
+    {
+      "id": "t05",
+      "name": "Westeros, dinastie e Martin",
+      "interest": 1
+    },
+    {
+      "id": "t06",
+      "name": "Zen, Giappone, samurai, arti marziali",
+      "interest": 2
+    },
+    {
+      "id": "t07",
+      "name": "Stoicismo, serenità, rapporto col tempo",
+      "interest": 3
+    },
+    {
+      "id": "t08",
+      "name": "Psicologia cognitiva, persuasione, comportamento",
+      "interest": 3
+    },
+    {
+      "id": "t09",
+      "name": "Futuro post-lavoro, reddito universale, automazione",
+      "interest": 3
+    },
+    {
+      "id": "t10",
+      "name": "Geopolitica, potenze, ordine mondiale",
+      "interest": 3
+    },
+    {
+      "id": "t11",
+      "name": "Biotecnologie, microalghe, ecosistemi artificiali",
+      "interest": 3
+    },
+    {
+      "id": "t12",
+      "name": "Autonomia energetica e ricostruzione tecnologia",
+      "interest": 2
+    },
+    {
+      "id": "t13",
+      "name": "Natura, autosufficienza, costruzioni in legno",
+      "interest": 2
+    },
+    {
+      "id": "t14",
+      "name": "Antropologia e altre culture",
+      "interest": 3
+    },
+    {
+      "id": "t15",
+      "name": "Spazio, futuro civiltà",
+      "interest": 2
+    },
+    {
+      "id": "t16",
+      "name": "IA, coscienza ed etica delle macchine",
+      "interest": 3
+    }
+  ],
+  "works": [
+    {
+      "id": "b01",
+      "title": "Pensieri",
+      "suggestion_interest": 3,
+      "reading_status": "unknown",
+      "ownership": "owned"
+    },
+    {
+      "id": "b02",
+      "title": "Gesù figlio dell’uomo",
+      "suggestion_interest": 3,
+      "reading_status": "unknown",
+      "ownership": "owned"
+    },
+    {
+      "id": "b03",
+      "title": "Manuale",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b04",
+      "title": "Lettere a Lucilio",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b05",
+      "title": "La brevità della vita",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b06",
+      "title": "Discorsi",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b07",
+      "title": "A Guide to the Good Life",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b08",
+      "title": "Il libro dei cinque anelli",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b09",
+      "title": "Hagakure",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b10",
+      "title": "La mente senza catene",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b11",
+      "title": "The Book of Tea",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b12",
+      "title": "Zen Mind, Beginner’s Mind",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b13",
+      "title": "Sapiens",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b14",
+      "title": "Homo Deus",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b15",
+      "title": "Nexus",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b16",
+      "title": "21 lezioni per il XXI secolo",
+      "suggestion_interest": 0,
+      "reading_status": "completed",
+      "appreciation": "very_high",
+      "rating_note": "Lo zero del questionario indicava già letto, non disinteresse"
+    },
+    {
+      "id": "b17",
+      "title": "The Coming Wave",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b18",
+      "title": "Co-Intelligence",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b19",
+      "title": "Life 3.0",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b20",
+      "title": "Human Compatible",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b21",
+      "title": "The Alignment Problem",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b22",
+      "title": "Power and Progress",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b23",
+      "title": "Utopia for Realists",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b24",
+      "title": "Why Nations Fail",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b25",
+      "title": "Pensieri lenti e veloci",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b26",
+      "title": "Introducing NLP",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b27",
+      "title": "The Knowledge",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b28",
+      "title": "Primitive Technology",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b29",
+      "title": "The Self-Sufficient Life",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b30",
+      "title": "How to Invent Everything",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b31",
+      "title": "The Way Things Work",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b32",
+      "title": "Bushcraft 101",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b33",
+      "title": "SAS Survival Handbook",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b34",
+      "title": "Structures",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b35",
+      "title": "A Sand County Almanac",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b36",
+      "title": "Into the Wild",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b37",
+      "title": "Walden",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "b38",
+      "title": "Manuale tecnico BlueRev",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s01",
+      "title": "Shōgun",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s02",
+      "title": "The Expanse",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s03",
+      "title": "Dark",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s04",
+      "title": "Severance",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s05",
+      "title": "Foundation",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s06",
+      "title": "Il problema dei 3 corpi",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s07",
+      "title": "The Last Kingdom",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s08",
+      "title": "Vikings",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s09",
+      "title": "Gli Anelli del Potere",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s10",
+      "title": "La Ruota del Tempo",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s11",
+      "title": "His Dark Materials",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s12",
+      "title": "The Sandman",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s13",
+      "title": "House of the Dragon",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s14",
+      "title": "The Legend of Vox Machina",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s15",
+      "title": "The Witcher",
+      "suggestion_interest": 2,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "s16",
+      "title": "Black Mirror",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a01",
+      "title": "Frieren",
+      "suggestion_interest": 3,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a02",
+      "title": "Delicious in Dungeon",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a03",
+      "title": "Mushishi",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a04",
+      "title": "Vinland Saga",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a05",
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a06",
+      "title": "Dr. Stone",
+      "suggestion_interest": 1,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a07",
+      "title": "Steins;Gate",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a08",
+      "title": "Ghost in the Shell: Stand Alone Complex",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a09",
+      "title": "Psycho-Pass",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a10",
+      "title": "Spice and Wolf",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a11",
+      "title": "Natsume’s Book of Friends",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a12",
+      "title": "Made in Abyss",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a13",
+      "title": "Planetes",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a14",
+      "title": "Orb: On the Movements of the Earth",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a15",
+      "title": "Samurai Champloo",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    },
+    {
+      "id": "a16",
+      "title": "Attack on Titan",
+      "suggestion_interest": 0,
+      "reading_status": "unknown"
+    }
+  ],
+  "selection_weights_advisory": {
+    "interest_3": 0.7,
+    "interest_2": 0.25,
+    "exploration_1": 0.05
+  },
+  "strands": [
+    "filosofie e tempo",
+    "mente e comportamento",
+    "culture e religioni",
+    "civiltà e geopolitica",
+    "natura e tecnologia",
+    "biotecnologie e sistemi viventi",
+    "IA e futuro sociale"
+  ],
+  "traditions": [
+    "stoicismo",
+    "cristianesimo",
+    "pensiero islamico",
+    "induismo",
+    "buddhismo",
+    "Zen",
+    "taoismo",
+    "ebraismo"
+  ],
+  "rules": [
+    "Tre slot già scelti, nessun backlog né scelta obbligatoria.",
+    "500–800 parole filosofia; 2200–3200 biblioteca; 1200–2000 radar. Riduzione solo esplicitamente etichettata e motivata.",
+    "Testo originale; no pseudo-capitoli cuciti da opere contemporanee. Citazioni brevi, attribuite, diritti e traduzioni verificati.",
+    "Consultare realmente le fonti; mai dichiarare lettura integrale senza averla effettuata.",
+    "Radar: fonti primarie, data evento e pubblicazione, risultati e limiti. Se evidenza insufficiente usare evergreen dichiarato.",
+    "Per microalghe: ceppo, scala, PBR, produttività e unità, luce, CO2 e condizioni; niente marketing o bandi.",
+    "Religioni come filosofia e antropologia, senza proselitismo e senza appiattire le differenze.",
+    "NLP: distanza critica dalle affermazioni non comprovate.",
+    "Feedback verboso: rivedere stile prima dell’affinità; positivo+corto: aumentare profondità; nessun voto non significa disinteresse.",
+    "Non cambiare preferenze per un singolo voto; separare ipotesi, interesse tematico e stato lettura.",
+    "Mai acquisire dati locali del calendario, salute, relazione o routine personali.",
+    "Non usare API AI a consumo o servizi email.",
+    "Harness² e Liquid 24B sono piste da verificare, non fatti acquisiti."
+  ]
+}

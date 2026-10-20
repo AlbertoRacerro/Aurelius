@@ -8,6 +8,7 @@
 //   POST   /v1/test                       (Bearer token) -> { status }
 //   DELETE /v1/device                     (Bearer token)
 
+import { feedback, flushFeedback } from './editorial.js';
 import { b64uDecode, b64uEncode, sendPush } from './webpush.js';
 
 const PUSH_HOSTS = [/^web\.push\.apple\.com$/, /\.push\.apple\.com$/, /^fcm\.googleapis\.com$/,
@@ -224,6 +225,7 @@ export default {
     try {
       if (req.method === 'GET' && pathname === '/v1/vapid') return json(req, env, 200, { key: vapid(env).publicKey });
       if (req.method === 'GET' && pathname === '/v1/health') return json(req, env, 200, { ok: true });
+      if (req.method === 'PUT' && pathname === '/v1/feedback') {const r=await feedback(req,env);return json(req,env,r.status,r.body);}
       if (req.method === 'POST' && pathname === '/v1/register') return json(req, env, 200, await register(req, env));
       if (req.method === 'PUT' && pathname === '/v1/schedule') return json(req, env, 200, await schedule(req, env, await authDevice(req, env)));
       if (req.method === 'POST' && pathname === '/v1/test') {
@@ -245,5 +247,6 @@ export default {
   },
   async scheduled(_event, env, ctx) {
     ctx.waitUntil(runDue(env));
+    ctx.waitUntil(flushFeedback(env).catch(()=>console.error('Editorial publication failed; durable queue retained')));
   },
 };

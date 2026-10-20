@@ -3,6 +3,7 @@
 // under 'aurelius.v1.snapshot', and stores its own state under 'aurelius.v2'. The legacy page in /legacy/
 // keeps working on the original key.
 
+import { validateCatalog } from './ideas.js';
 import { SCHEMA_VERSION, DEFAULT_ACTIVITIES, defaultSettings, emptyState, DEFAULT_TARGETS } from './model.js';
 
 export const KEY = 'aurelius.v2';
@@ -16,7 +17,9 @@ const isObj = (x) => !!x && typeof x === 'object' && !Array.isArray(x);
 
 /** Structural check before trusting stored or imported state: wrong shapes are treated as corruption. */
 export function sane(s) {
-  if (!isObj(s) || !Array.isArray(s.entries)) return false; // every saved state has an entries list
+  if (!isObj(s) || !Array.isArray(s.entries)) return false;
+  if ('ideaCatalog' in s) {try {validateCatalog({schema:1,ideas:s.ideaCatalog});}catch{return false;}}
+  if ('shopping' in s && (!Array.isArray(s.shopping)||s.shopping.some(x=>!x||typeof x.id!=='string'||typeof x.name!=='string'||!x.name.trim()||x.name.length>100||typeof x.inHouse!=='boolean'))) return false; // every saved state has an entries list
   for (const k of ['activities', 'backlog']) if (k in s && !Array.isArray(s[k])) return false;
   for (const k of ['settings', 'template', 'weekOverrides', 'dateOverrides', 'accounts', 'targets', 'issuesResolved']) {
     if (k in s && s[k] != null && !isObj(s[k])) return false;
@@ -100,9 +103,11 @@ export function save(storage, state) {
 }
 
 export function exportBackup(state, storage) {
+  const safe=JSON.parse(JSON.stringify(state));
+  if(safe.settings?.push)safe.settings.push=null;
   return JSON.stringify({
     format: 'aurelius-backup', version: SCHEMA_VERSION, exportedAt: new Date().toISOString(),
-    state, legacyRaw: storage ? storage.getItem(LEGACY_KEY) : null,
+    state:safe, legacyRaw: storage ? storage.getItem(LEGACY_KEY) : null,
   });
 }
 

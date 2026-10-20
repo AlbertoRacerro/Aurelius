@@ -1,0 +1,880 @@
+{
+  "schema": 1,
+  "ideas": [
+    {
+      "id": "i01",
+      "title": "Minecraft con amici",
+      "variants": [
+        "Ti andrebbe: minecraft con amici? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 120,
+      "min_interval_days": 5,
+      "contexts": [
+        "sociale",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i02",
+      "title": "Minecraft in solitaria",
+      "variants": [
+        "Ti andrebbe: minecraft in solitaria? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 1,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i03",
+      "title": "Fortnite",
+      "variants": [
+        "Ti andrebbe: fortnite? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 0,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": false
+    },
+    {
+      "id": "i04",
+      "title": "GTA",
+      "variants": [
+        "Ti andrebbe: gta? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 0,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": false
+    },
+    {
+      "id": "i05",
+      "title": "Nuovi videogiochi indie",
+      "variants": [
+        "Ti andrebbe: nuovi videogiochi indie? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 0,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": false
+    },
+    {
+      "id": "i06",
+      "title": "Organizzare D&D",
+      "variants": [
+        "Ti andrebbe: organizzare d&d? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 120,
+      "min_interval_days": 5,
+      "contexts": [
+        "sociale",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i07",
+      "title": "Preparare D&D",
+      "variants": [
+        "Ti andrebbe: preparare d&d? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i08",
+      "title": "Giochi da tavolo",
+      "variants": [
+        "Ti andrebbe: giochi da tavolo? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 120,
+      "min_interval_days": 5,
+      "contexts": [
+        "sociale",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i09",
+      "title": "Chitarra per piacere",
+      "variants": [
+        "Cinque minuti di chitarra, anche solo un giro di accordi?",
+        "Una pausa con la chitarra, senza esercizi da finire?",
+        "Puoi suonare quello che viene: nessuna lezione da completare.",
+        "Dieci minuti di musica, per il piacere di sentirla.",
+        "Ti va di ritrovare un vecchio accordo?",
+        "Anche una canzone a metà può essere una buona pausa."
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 10,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "pausa",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i10",
+      "title": "Una canzone facile",
+      "variants": [
+        "Ti va una versione semplice di Stand by Me?",
+        "Knockin’ on Heaven’s Door con calma, senza doverla finire?"
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 10,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "pausa",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i11",
+      "title": "Registrare un brano",
+      "variants": [
+        "Ti andrebbe: registrare un brano? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 0,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": false
+    },
+    {
+      "id": "i12",
+      "title": "Leggere senza obblighi",
+      "variants": [
+        "Ti andrebbe: leggere senza obblighi? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 3,
+      "duration_minutes": 15,
+      "min_interval_days": 5,
+      "contexts": [
+        "solo",
+        "mattino",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i13",
+      "title": "Filosofia",
+      "variants": [
+        "Ti andrebbe: filosofia? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i14",
+      "title": "Giapponese",
+      "variants": [
+        "Ti andrebbe: giapponese? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i15",
+      "title": "Disegno",
+      "variants": [
+        "Ti andrebbe: disegno? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 1,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i16",
+      "title": "Fai-da-te",
+      "variants": [
+        "Ti andrebbe: fai-da-te? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "sera"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i17",
+      "title": "Ragù per il freezer",
+      "variants": [
+        "Ti andrebbe: ragù per il freezer? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true,
+      "recipe": "Ragù in pentola, poi porzioni per il freezer. Per riscaldare usa contenitori idonei aperti: niente vetro sigillato nel microonde né shock termici."
+    },
+    {
+      "id": "i18",
+      "title": "Sughi in porzioni",
+      "variants": [
+        "Ti andrebbe: sughi in porzioni? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i19",
+      "title": "Un buon piatto di pasta",
+      "variants": [
+        "Ti andrebbe: un buon piatto di pasta? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i20",
+      "title": "Pancake avena e castagne",
+      "variants": [
+        "Ti andrebbe: pancake avena e castagne? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [
+        "Farina di avena",
+        "Farina di castagne",
+        "Uova"
+      ],
+      "action": "plan",
+      "enabled": true,
+      "recipe": "50 g farina d’avena, 30–40 g castagne, un uovo e acqua quanto basta; cottura in padella."
+    },
+    {
+      "id": "i21",
+      "title": "Crêpes avena e castagne",
+      "variants": [
+        "Ti andrebbe: crêpes avena e castagne? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [
+        "Farina di avena",
+        "Farina di castagne",
+        "Uova"
+      ],
+      "action": "plan",
+      "enabled": true,
+      "recipe": "30 g avena, 20 g castagne, un uovo e acqua; cottura in padella."
+    },
+    {
+      "id": "i22",
+      "title": "Biscotti ceci e fondente",
+      "variants": [
+        "Ti andrebbe: biscotti ceci e fondente? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true,
+      "recipe": "Scegli una ricetta verificata per friggitrice ad aria o microonde: non serve forno convenzionale."
+    },
+    {
+      "id": "i23",
+      "title": "Banana bread senza forno",
+      "variants": [
+        "Ti andrebbe: banana bread senza forno? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true,
+      "recipe": "Scegli una ricetta verificata per friggitrice ad aria o microonde: non serve forno convenzionale."
+    },
+    {
+      "id": "i24",
+      "title": "Cucina asiatica",
+      "variants": [
+        "Ti andrebbe: cucina asiatica? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 2,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i25",
+      "title": "Mela, carota e zenzero",
+      "variants": [
+        "Ti andrebbe: mela, carota e zenzero? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i26",
+      "title": "Centrifugato di verdure",
+      "variants": [
+        "Ti andrebbe: centrifugato di verdure? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i27",
+      "title": "Tè del pomeriggio",
+      "variants": [
+        "Ti andrebbe: tè del pomeriggio? Senza obblighi."
+      ],
+      "category": "cucina",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "casa",
+        "spesa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i28",
+      "title": "Camminata nel verde",
+      "variants": [
+        "Ti andrebbe: camminata nel verde? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 40,
+      "min_interval_days": 5,
+      "contexts": [
+        "fuori",
+        "solo"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i29",
+      "title": "Funghi con un esperto",
+      "variants": [
+        "Ti andrebbe: funghi con un esperto? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 1,
+      "duration_minutes": 40,
+      "min_interval_days": 5,
+      "contexts": [
+        "fuori",
+        "solo"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i30",
+      "title": "Pesca",
+      "variants": [
+        "Ti andrebbe: pesca? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 1,
+      "duration_minutes": 40,
+      "min_interval_days": 5,
+      "contexts": [
+        "fuori",
+        "solo"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i31",
+      "title": "Bicicletta",
+      "variants": [
+        "Ti andrebbe: bicicletta? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 0,
+      "duration_minutes": 40,
+      "min_interval_days": 5,
+      "contexts": [
+        "fuori",
+        "solo"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": false
+    },
+    {
+      "id": "i32",
+      "title": "Fotografare un panorama",
+      "variants": [
+        "Ti andrebbe: fotografare un panorama? Senza obblighi."
+      ],
+      "category": "hobby",
+      "priority": 2,
+      "duration_minutes": 40,
+      "min_interval_days": 5,
+      "contexts": [
+        "fuori",
+        "solo"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i33",
+      "title": "Vasetti di DAS",
+      "variants": [
+        "Ti andrebbe: vasetti di das? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i34",
+      "title": "Pittura e acquerelli",
+      "variants": [
+        "Ti andrebbe: pittura e acquerelli? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i35",
+      "title": "Cucito e lana",
+      "variants": [
+        "Ti andrebbe: cucito e lana? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i36",
+      "title": "Album fotografico",
+      "variants": [
+        "Ti andrebbe: album fotografico? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i37",
+      "title": "Decorare tazze",
+      "variants": [
+        "Ti andrebbe: decorare tazze? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i38",
+      "title": "Origami",
+      "variants": [
+        "Ti andrebbe: origami? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i39",
+      "title": "Film, coperta e tisana",
+      "variants": [
+        "Ti andrebbe: film, coperta e tisana? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "i40",
+      "title": "Un dolce pronto o fiori",
+      "variants": [
+        "Ti andrebbe: un dolce pronto o fiori? Senza obblighi."
+      ],
+      "category": "creativita",
+      "priority": 3,
+      "duration_minutes": 30,
+      "min_interval_days": 5,
+      "contexts": [
+        "coppia",
+        "casa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "mokuso",
+      "title": "Mokuso o meditazione",
+      "variants": [
+        "Ti andrebbe: mokuso o meditazione? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 15,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "matcha",
+      "title": "Matcha preparato con calma",
+      "variants": [
+        "Ti andrebbe: matcha preparato con calma? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 10,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "mobility",
+      "title": "Movimenti morbidi e relax",
+      "variants": [
+        "Ti andrebbe: movimenti morbidi e relax? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 10,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "air",
+      "title": "Cambiare aria nella stanza",
+      "variants": [
+        "Ti andrebbe: cambiare aria nella stanza? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 5,
+      "min_interval_days": 3,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "swiffer",
+      "title": "Una passata di Swiffer",
+      "variants": [
+        "Ti andrebbe: una passata di swiffer? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 10,
+      "min_interval_days": 4,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "vacuum",
+      "title": "Aspirapolvere senza maratona",
+      "variants": [
+        "Ti andrebbe: aspirapolvere senza maratona? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 15,
+      "min_interval_days": 4,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    },
+    {
+      "id": "bathroom",
+      "title": "Pulizia rapida del bagno",
+      "variants": [
+        "Ti andrebbe: pulizia rapida del bagno? È soltanto una possibilità."
+      ],
+      "category": "pausa",
+      "priority": 3,
+      "duration_minutes": 15,
+      "min_interval_days": 4,
+      "contexts": [
+        "solo",
+        "casa",
+        "pausa"
+      ],
+      "materials": [],
+      "action": "plan",
+      "enabled": true
+    }
+  ]
+}
