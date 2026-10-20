@@ -58,11 +58,11 @@ test('push offers one selected couple nudge today; never projects company for to
   items=reminderItems(s,when,url,2,diary);
   const couple=items.filter(x=>x.id.endsWith('_careMoment'));
   assert.equal(couple.length,1);
-  assert.equal(couple[0].at,new Date('2026-10-19T15:45:00+02:00').getTime());
+  assert.equal(couple[0].at,new Date('2026-10-19T21:00:00+02:00').getTime());
   assert.doesNotMatch(couple[0].title+couple[0].body+couple[0].url,/2026-10-18|menstru|ovul|sanguinamento|pillola/i);
   assert.equal(items.filter(x=>x.id.endsWith('_personalPause') && x.at===couple[0].at).length,0);
   s.settings.carePresence=normalizePresence(today,false,[]);
   items=reminderItems(s,when,url,2,diary);
   assert.equal(items.filter(x=>x.id.endsWith('_careMoment')).length,0);
-  assert.ok(items.some(x=>x.id.endsWith('_personalPause')));
+  assert.equal(items.filter(x=>x.id.endsWith('_personalPause')).length,0); // configured time is inside deep study on this horizon
 });

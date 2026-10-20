@@ -6,7 +6,8 @@
     "test": "node --test tests/unit/*.test.mjs worker/test/*.test.mjs",
     "e2e": "playwright test",
     "icons": "node tools/icons.mjs",
-    "deploy:worker": "bash worker/deploy.sh"
+    "deploy:worker": "bash worker/deploy.sh",
+    "validate:content": "node tools/validate-content.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.55.0",

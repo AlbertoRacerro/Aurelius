@@ -4,15 +4,15 @@ import { renderCareContext } from './care-view.js';
 import { hypotheticalStage } from './care-moments.js';
 
 // Rendering only. Do not include cycle dates in push payloads or exported backups.
-export function viewRituals(date, relationship, habits, presence, days, esc) {
+export function viewRituals(date, relationship, habits, presence, days, esc, hasEdition = false) {
   const q = reflectionForDate(date);
   const out = [
     `<h2>Preferenze e attenzioni</h2>
     <div class="card ritual-quote">
       <h2>Pensiero del giorno</h2>
-      <strong>${esc(q.title)}</strong>
-      <p>${esc(q.thought)}</p>
-      <p class="small"><b>Da praticare:</b> ${esc(q.practice)}</p>
+      ${hasEdition ? '' : `<strong>${esc(q.title)}</strong>`}
+      ${hasEdition ? '<p class="small">Il pensiero completo è nella bacheca qui sopra.</p>' : `<p>${esc(q.thought)}</p>`}
+      ${hasEdition ? '' : `<p class="small"><b>Da praticare:</b> ${esc(q.practice)}</p>`}
       <p class="mut small">${q.url ? `<a href="${esc(q.url)}" target="_blank" rel="noopener noreferrer">${esc(q.source)}</a>` : esc(q.source)}.
       Le riflessioni sono parafrasi o testi originali, non citazioni letterali.</p>
       <label class="opt"><input type="checkbox" id="r-quote-enable"${habits.quote?.enabled ? ' checked' : ''}> Notifica quotidiana con pensiero</label>

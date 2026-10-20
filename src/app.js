@@ -18,15 +18,21 @@ import { viewRituals } from './rituals-view.js';
 import { renderCareContext } from './care-view.js';
 import { SLOTS, normalizePresence } from './care-moments.js';
 import * as P from './push.js';
+import { validateCatalog, mergeShopping } from './ideas.js';
+import { renderIdeas, renderShopping } from './ideas-view.js';
 import { loadEdition, romeDate, queueRating, syncFeedback, AUTH_KEY } from './editorial.js';
 import { renderEditorial } from './editorial-view.js';
 import { CONTENT_BASE } from './config.js';
 import { APP_VERSION } from './config.js';
 
+let defaultIdeas=[];
+fetch('./content/ideas.json').then(r=>r.json()).then(data=>{defaultIdeas=validateCatalog(data);if(ui.tab==='idee')render();scheduleSync();}).catch(()=>{});
+const ideas=()=>state.ideaCatalog||defaultIdeas;
 let editorial=null, editorialDate=null, articleSelection=null, ratingScore=null, editorialRequest=0;
 async function refreshEditorial(date=romeDate()) {
  const request=++editorialRequest; editorialDate=date;
- const result=await loadEdition(localStorage,new URL(CONTENT_BASE,location.href),date);
+ let result=await loadEdition(localStorage,new URL(CONTENT_BASE,location.href),date);
+ if(!result.edition&&CONTENT_BASE!=='./content/')result=await loadEdition(localStorage,new URL('./content/',location.href),date);
  if(request!==editorialRequest)return;
  editorial=result;
  if(ui.tab==='rituali'&&!document.activeElement?.closest('#article-feedback'))render();
@@ -146,7 +152,7 @@ function viewNow() {
   // Unsettled focus sessions first, then blocks awaiting accounting.
   for (const s of T.unconfirmedSessions(state)) {
     out.push(`<div class="card alert" data-session="${esc(s.session)}">
-      <div class="row">${sw(s.act)}<b class="grow">Focus ${esc(actName(s.act))} · ${dur(s.minutes)}</b><span class="mut small">${timeOf(s.start)}–${timeOf(s.end)}</span></div>
+      <div class="row">${sw(s.act)}<b class="grow">Focus ${esc(actName(s.act))} · ${dur(s.minutes)}</b><span class="mut small">${timeOf(s.start)}–${timeOf(s.end)}</span></div><p class="small"><a href="#idee">Ti va una pausa? Idee da 10–15 minuti, senza obblighi.</a></p>
       <p class="mut small" style="margin:6px 0 10px">Registrata dal timer. È giusto?</p>
       <div class="btns"><button class="btn pri" data-act="session-ok">Sì, giusto</button>
       <button class="btn" data-act="session-edit">Correggi</button></div></div>`);
@@ -475,7 +481,7 @@ function sheetEdit(s) {
     <div id="erows">${s.rows.map((r, i) => `<div class="erow" data-i="${i}">
       <input type="time" data-f="start" value="${esc(r.start)}" aria-label="Inizio"><input type="time" data-f="end" value="${esc(r.end)}" aria-label="Fine">
       <select data-f="act">${actOptions(r.act)}</select><button class="x" data-act="erow-del" data-i="${i}" aria-label="Elimina">×</button>
-      <input class="note" type="text" data-f="note" value="${esc(r.note || '')}" placeholder="Nota (facoltativa)"></div>`).join('')}</div>
+      <select data-f="context" aria-label="Contesto"><option value="">Nessun contesto</option><option value="shopping"${r.context === 'shopping' ? ' selected' : ''}>Spesa</option></select><input class="note" type="text" data-f="note" value="${esc(r.note || '')}" placeholder="Nota (facoltativa)"></div>`).join('')}</div>
     <div class="btns" style="margin-top:8px"><button class="btn sm" data-act="erow-add">+ Blocco</button></div>
     ${s.scope === 'template' ? `<div class="small mut" style="margin-top:12px">Copia anche su</div><div class="chips" style="margin-top:6px">${GIORNI_BREVI.map((g, i) => i === wd ? '' :
       `<label class="chip"><input type="checkbox" data-copy="${i}"${s.copy?.includes(i) ? ' checked' : ''} style="margin-right:4px">${g}</label>`).join('')}</div>` : ''}
@@ -551,7 +557,7 @@ function readEditRows() {
   return [...document.querySelectorAll('#erows .erow')].map((row, i) => {
     const prev = ui.sheet.rows[i] || {};
     return { ...prev, start: row.querySelector('[data-f=start]').value, end: row.querySelector('[data-f=end]').value,
-      act: row.querySelector('[data-f=act]').value, note: row.querySelector('[data-f=note]').value.trim() };
+      act: row.querySelector('[data-f=act]').value, context:row.querySelector('[data-f=context]').value, note: row.querySelector('[data-f=note]').value.trim() };
   });
 }
 
@@ -581,6 +587,13 @@ function sheetCareContext() {
 }
 
 const actions = {
+ 'ideas-import'(){$('#ideas-file').click();},
+ 'shopping-import'(){$('#shopping-file').click();},
+ 'ideas-toggle'(el){commit(s=>{s.settings.habits.ideas={enabled:el.checked};},{resync:true});},
+ 'shopping-add'(){try{const list=mergeShopping(state.shopping||[],[{name:$('#shopping-name').value,inHouse:false}]);commit(s=>{s.shopping=list;});}catch(e){toast(e.message);}},
+ 'shopping-check'(el){commit(s=>{const item=s.shopping.find(x=>x.id===el.dataset.id);if(item)item.inHouse=el.checked;});},
+ 'idea-ingredients'(el){const idea=ideas().find(x=>x.id===el.dataset.id);if(!idea)return;commit(s=>{s.shopping=mergeShopping(s.shopping||[],idea.materials.map(name=>({name,inHouse:false})));});toast('Ingredienti aggiunti alla lista');},
+ 'idea-plan'(el){const idea=ideas().find(x=>x.id===el.dataset.id);if(!idea)return;const date=ui.planDate||today();const {blocks}=dayPlan(state,date);openSheet({type:'edit',date,scope:'date',rows:[...blocks.map(b=>({...b})),{id:L.uid('b'),start:'',end:'',act:'vita',note:idea.title}],copy:[]});},
  'open-stats'(){ui.tab='stats';location.hash='stats';render();},
  'editorial-rate'(el){ratingScore=Number(el.dataset.score);$('#rating-details').hidden=false;document.querySelectorAll('[data-act=editorial-rate]').forEach(b=>b.classList.toggle('on',b===el));},
  'editorial-send'(){sendEditorial(false);},
@@ -729,7 +742,7 @@ const actions = {
     s.rows = readEditRows();
     const { errors, blocks } = validateBlocks(s.rows.filter((r) => r.start || r.end));
     if (errors.length) { s.errors = errors; renderSheet(); return; }
-    const clean = blocks.map((b) => ({ id: b.id || L.uid('b'), start: b.start, end: b.end, act: b.act, note: b.note || '', provisional: false }));
+    const clean = blocks.map((b) => ({ id: b.id || L.uid('b'), start: b.start, end: b.end, act: b.act, note: b.note || '', provisional: false, ...(b.context?{context:b.context}:{}) }));
     const wd = weekday(s.date);
     commit((st) => {
       if (s.scope === 'template') {
@@ -996,7 +1009,7 @@ async function syncOnce(force) {
   const push = state.settings.push;
   if (!push || !navigator.onLine) return;
   const base = location.origin + location.pathname.replace(/index\.html$/, '');
-  const items = reminderItems(state, now(), base, undefined, loadRelationship(localStorage));
+  const items = reminderItems(state, now(), base, undefined, loadRelationship(localStorage), ideas());
   const hash = P.hashItems(items, state.settings.ntfyTopic);
   if (!force && hash === push.syncedHash && now() - (push.lastSync || 0) < 6 * 3600e3) return;
   const rev = Math.max(Date.now(), (push.rev || 0) + 1);
@@ -1044,9 +1057,9 @@ function render() {
     }
   }
   const main = $('#main');
-  main.innerHTML = ui.tab === 'rituali'
+  main.innerHTML = ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
     ? renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
-        state.settings.carePresence, state.settings.careDays || [], esc))
+        state.settings.carePresence, state.settings.careDays || [], esc, !!editorial?.edition))
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
     : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();
@@ -1094,6 +1107,7 @@ document.addEventListener('click', (ev) => {
 });
 document.addEventListener('change', (ev) => {
   const el = ev.target;
+  if(['ideas-file','shopping-file'].includes(el.id)&&el.files[0]){const kind=el.id,file=el.files[0];file.text().then(text=>{if(text.length>500000)throw Error('File troppo grande');const data=JSON.parse(text);if(kind==='ideas-file'){const catalog=validateCatalog(data);const merged=new Map(ideas().map(x=>[x.id,x]));catalog.forEach(x=>merged.set(x.id,x));commit(s=>{s.ideaCatalog=[...merged.values()];},{resync:true});}else{const list=mergeShopping(state.shopping||[],data.items);commit(s=>{s.shopping=list;});}toast('Dati uniti sul dispositivo');}).catch(e=>toast(e.message,6000));el.value='';return;}
   if (el.id === 'f-restore' && el.files[0]) { onRestoreFile(el.files[0]); el.value = ''; return; }
   if (el.id === 'f-plan' && el.files[0]) { onPlanFile(el.files[0]); el.value = ''; return; }
   if (el.tagName === 'INPUT' && el.type === 'checkbox' && el.dataset.act && actions[el.dataset.act]) actions[el.dataset.act](el);
@@ -1114,7 +1128,7 @@ function route() {
   articleSelection=null;
   if(h.startsWith('article/')){const [,id,date]=h.split('/');if(/^[a-z0-9_-]{1,80}$/.test(id)&&/^\d{4}-\d{2}-\d{2}$/.test(date)){ui.tab='rituali';articleSelection=id;refreshEditorial(date);}}
   if(h==='relationship')ui.tab='rituali';
-  if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali'].includes(h)) ui.tab = h;
+  if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali','idee','spesa'].includes(h)) ui.tab = h;
   const occId = q.get('occ');
   if (occId) {
     ui.tab = 'ora';

@@ -4,7 +4,7 @@
 
 const CACHE = 'aurelius-v2.6.0';
 const SHELL = ['./', 'index.html', 'app.css', 'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
-  'src/editorial-contract.js','src/editorial.js','src/editorial-view.js','src/app.js', 'src/config.js', 'src/model.js', 'src/store.js', 'src/time.js', 'src/schedule.js', 'src/ledger.js',
+  'src/ideas.js','src/ideas-view.js','content/ideas.json','content/manifest.json','content/editions/2026-10-20.json','src/editorial-contract.js','src/editorial.js','src/editorial-view.js','src/app.js', 'src/config.js', 'src/model.js', 'src/store.js', 'src/time.js', 'src/schedule.js', 'src/ledger.js',
   'src/timer.js', 'src/stats.js', 'src/reminders.js', 'src/plan-import.js', 'src/todos.js', 'src/todo-view.js', 'src/reflections.js', 'src/relationship.js', 'src/rituals-view.js', 'src/care-moments.js', 'src/care-view.js', 'src/push.js'];
 
 self.addEventListener('install', (ev) => {

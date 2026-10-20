@@ -6,4 +6,5 @@ export const PUSH_API = 'https://aurelius-push.albertoracerro.workers.dev';
 export const VAPID_PUBLIC = 'BJBx7D6coDykgoTrTjMFlakT2TsrvUOC4Vdrx61SylKb2d24rKkwxId4I2DHTDsw46pYChcA5dSUR7sEHFyKZII';
 
 // Move to a separate public content repository by changing only this URL.
-export const CONTENT_BASE = './content/';
+export const CONTENT_BASE = ['localhost','127.0.0.1'].includes(globalThis.location?.hostname)
+  ? './content/' : 'https://raw.githubusercontent.com/AlbertoRacerro/Aurelius/main/content/';

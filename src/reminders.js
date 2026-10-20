@@ -1,3 +1,4 @@
+import { ideaReminders } from './ideas.js';
 // Reminders for the push worker: one at the end of every planned block (linking to its accounting) and one
 // when a running focus timer reaches its planned length. The worker only stores and sends these; the app
 // re-sends the whole list whenever the plan or the timer changes, so the worker never has to know the plan.
@@ -16,7 +17,7 @@ export function reminderId(occ) {
   return `b${occ.startMs.toString(36)}${String(occ.block.id).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 24)}`;
 }
 
-export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, privateRelationship = null) {
+export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, privateRelationship = null, ideas = []) {
   const tz = state.settings.tz;
   const A = actById(state);
   const today = partsAt(now, tz).date;
@@ -46,6 +47,7 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, p
   const addHabit = (date, minute, code, title, body, url = baseUrl) => {
     const at = instantOf(date, minute, tz);
     if (!within(at)) return;
+    if (['personalPause','careMoment'].includes(code) && occs.some(o=>o.startMs<=at&&o.endMs>at&&['study','lesson'].includes(A[o.act]?.kind))) return;
     items.push({ id: `h${at.toString(36)}_${code}`, at, title, body, url });
   };
   for (let i = 0; i <= horizonDays; i++) {
@@ -61,9 +63,14 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, p
     const presence = state.settings.carePresence;
     if (date === today && h.care?.enabled && togetherToday(presence, date)) {
       const minuteNow = partsAt(now, tz).minute;
-      const choice = choiceForPresence(presence, date, privateRelationship,
+      let choice = choiceForPresence(presence, date, privateRelationship,
         state.settings.careDays || [], minuteNow);
-      const slot = choice && SLOTS.find(x => x.id === choice.slot);
+      let slot = choice && SLOTS.find(x => x.id === choice.slot);
+      // Try another expressly confirmed slot when the first lies inside study/lesson.
+      while(slot && occs.some(o=>o.startMs<=instantOf(date,slot.minute,tz)&&o.endMs>instantOf(date,slot.minute,tz)&&['study','lesson'].includes(A[o.act]?.kind))){
+        choice=choiceForPresence(presence,date,privateRelationship,state.settings.careDays||[],slot.minute);
+        slot=choice&&SLOTS.find(x=>x.id===choice.slot);
+      }
       if (slot && choice.moment) {
         addHabit(date, slot.minute, 'careMoment', 'Una piccola attenzione',
           choice.moment.text, `${baseUrl}#rituali`);
@@ -105,5 +112,6 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, p
       if (at != null && at < 1440) addHabit(date, at, key, title, body);
     }
   }
+  for(const item of ideaReminders(state,ideas,occs,now,baseUrl)){if(items.length<400&&!items.some(x=>Math.abs(x.at-item.at)<60000))items.push(item);}
   return items;
 }
