@@ -18,8 +18,26 @@ import { viewRituals } from './rituals-view.js';
 import { renderCareContext } from './care-view.js';
 import { SLOTS, normalizePresence } from './care-moments.js';
 import * as P from './push.js';
+import { loadEdition, romeDate, queueRating, syncFeedback, AUTH_KEY } from './editorial.js';
+import { renderEditorial } from './editorial-view.js';
+import { CONTENT_BASE } from './config.js';
 import { APP_VERSION } from './config.js';
 
+let editorial=null, editorialDate=null, articleSelection=null, ratingScore=null, editorialRequest=0;
+async function refreshEditorial(date=romeDate()) {
+ const request=++editorialRequest; editorialDate=date;
+ const result=await loadEdition(localStorage,new URL(CONTENT_BASE,location.href),date);
+ if(request!==editorialRequest)return;
+ editorial=result;
+ if(ui.tab==='rituali'&&!document.activeElement?.closest('#article-feedback'))render();
+}
+async function sendEditorial(skip=false) {
+ const id=$('#article-feedback')?.dataset.article;if(!id||ratingScore==null)return;
+ try {
+ queueRating(localStorage,{article_id:id,score:ratingScore,reasons:skip?[]:[...document.querySelectorAll('[data-reason]:checked')].map(x=>x.dataset.reason),comment:skip?'':$('#rating-comment').value});
+ render();await syncFeedback(localStorage,P.apiBase(state));if(ui.tab==='rituali')render();
+ }catch(err){toast(err.message,6000);}
+}
 const MIN = 60000;
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -341,7 +359,7 @@ function viewMore() {
   const sup = P.support();
   const api = P.apiBase(state);
   const out = [];
-  out.push(`<h1>Altro</h1>`);
+  out.push(`<h1>Altro</h1><button class="btn" data-act="open-stats">Statistiche</button>`);
   // Notifications.
   let status;
   if (s.push) status = `Attive su questo iPhone dal ${new Date(s.push.at).toLocaleDateString('it-IT')}.${s.push.lastSync ? ` Ultimo aggiornamento promemoria: ${timeOf(s.push.lastSync)}.` : ''}${s.push.error ? ` <span class="err">${esc(s.push.error)}</span>` : ''}`;
@@ -563,6 +581,11 @@ function sheetCareContext() {
 }
 
 const actions = {
+ 'open-stats'(){ui.tab='stats';location.hash='stats';render();},
+ 'editorial-rate'(el){ratingScore=Number(el.dataset.score);$('#rating-details').hidden=false;document.querySelectorAll('[data-act=editorial-rate]').forEach(b=>b.classList.toggle('on',b===el));},
+ 'editorial-send'(){sendEditorial(false);},
+ 'editorial-skip'(){sendEditorial(true);},
+ async 'editorial-connect'(){const token=$('#editorial-token').value.trim();if(!/^[A-Za-z0-9_-]{32,100}$/.test(token)){toast('Codice non valido (32–100 caratteri)');return;}localStorage.setItem(AUTH_KEY,token);await syncFeedback(localStorage,P.apiBase(state));render();},
   'acc-all'(el) {
     const occ = occFrom(el);
     if (!occ) return;
@@ -1022,8 +1045,8 @@ function render() {
   }
   const main = $('#main');
   main.innerHTML = ui.tab === 'rituali'
-    ? viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
-        state.settings.carePresence, state.settings.careDays || [], esc)
+    ? renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
+        state.settings.carePresence, state.settings.careDays || [], esc))
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
     : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();
@@ -1042,6 +1065,7 @@ function settleTimer() {
 
 function tick() {
   const t = now();
+  if(!articleSelection&&editorialDate!==romeDate(t))refreshEditorial();
   let repaint = false;
   if (settleTimer()) { chime(); toast('Focus completato: conferma la sessione'); repaint = true; }
   // Block boundaries since last tick.
@@ -1078,13 +1102,18 @@ document.addEventListener('change', (ev) => {
 });
 document.addEventListener('input', (ev) => { if (ev.target.closest('#rows')) updateRemain(); });
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') { settleTimer(); render(); syncNow(false); }
+  if (document.visibilityState === 'visible') {settleTimer();render();syncNow(false);syncFeedback(localStorage,P.apiBase(state));if(!articleSelection&&editorialDate!==romeDate())refreshEditorial();}
 });
+window.addEventListener('hashchange',()=>{route();render();window.scrollTo(0,0);});
+window.addEventListener('online',()=>{refreshEditorial(articleSelection?editorialDate:romeDate());syncFeedback(localStorage,P.apiBase(state));});
 window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { state = load(localStorage).state; render(); } });
 
 function route() {
   const q = new URLSearchParams(location.search);
   const h = location.hash.replace('#', '');
+  articleSelection=null;
+  if(h.startsWith('article/')){const [,id,date]=h.split('/');if(/^[a-z0-9_-]{1,80}$/.test(id)&&/^\d{4}-\d{2}-\d{2}$/.test(date)){ui.tab='rituali';articleSelection=id;refreshEditorial(date);}}
+  if(h==='relationship')ui.tab='rituali';
   if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali'].includes(h)) ui.tab = h;
   const occId = q.get('occ');
   if (occId) {
@@ -1093,6 +1122,8 @@ function route() {
     if (occ) openSheet({ type: 'occ', occId: occ.id });
   }
   if (q.get('timer')) ui.tab = 'ora';
+  if(q.get('edition')&&h==='rituali'){const date=q.get('edition');if(/^\d{4}-\d{2}-\d{2}$/.test(date)){ui.tab='rituali';articleSelection='philosophy';refreshEditorial(date);history.replaceState(null,'',location.pathname+'#article/philosophy/'+date);}}
+  if(ui.tab==='rituali'&&!articleSelection&&editorialDate!==romeDate())refreshEditorial();
   if (occId || q.get('timer')) history.replaceState(null, '', location.pathname + (ui.tab !== 'ora' ? '#' + ui.tab : ''));
 }
 
@@ -1109,4 +1140,6 @@ render();
 if (notice) toast(notice, 6000);
 setInterval(tick, 1000);
 syncNow(false);
+if(!editorialRequest)refreshEditorial();
+syncFeedback(localStorage,P.apiBase(state));
 window.__aurelius = { get state() { return state; }, render, now };

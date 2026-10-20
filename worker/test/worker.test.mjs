@@ -163,14 +163,14 @@ test('a reminder already sent is not sent again when the app re-syncs before its
   const reg = await call('POST', '/v1/register', { subscription: browserSub().json });
   const now = Date.now();
   const item = { id: 'early', at: now + 20_000, title: 't', body: '', url: `${ORIGIN}/Aurelius/` };
-  await call('PUT', '/v1/schedule', { items: [item] }, reg.data.token);
+  await call('PUT', '/v1/schedule', { items: [item], rev: 1 }, reg.data.token);
   const ps = pushService();
   assert.equal((await runDue(env, now, ps.impl)).sent, 1);       // sent 20 s early
-  await call('PUT', '/v1/schedule', { items: [item] }, reg.data.token); // app re-syncs the same reminder
+  await call('PUT', '/v1/schedule', { items: [item], rev: 2 }, reg.data.token); // app re-syncs the same reminder
   assert.equal((await runDue(env, now + 25_000, ps.impl)).sent, 0);
   assert.equal(ps.sent.length, 1);
   // A rescheduled reminder (same id, new time, e.g. timer resumed) is still delivered.
-  await call('PUT', '/v1/schedule', { items: [{ ...item, at: now + 600_000 }] }, reg.data.token);
+  await call('PUT', '/v1/schedule', { items: [{ ...item, at: now + 600_000 }], rev: 3 }, reg.data.token);
   assert.equal((await runDue(env, now + 600_000, ps.impl)).sent, 1);
 });
 

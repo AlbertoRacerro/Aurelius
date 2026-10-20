@@ -53,8 +53,8 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, p
     const qTime = parseHM(h.quote?.time);
     if (h.quote?.enabled && qTime != null && qTime < 1440) {
       const q = reflectionForDate(date);
-      addHabit(date, qTime, 'quote', `Riflessione · ${q.title}`,
-        `${q.thought} — ${q.source}`, `${baseUrl}#rituali`);
+      addHabit(date, qTime, 'quote', 'Pensiero del mattino',
+        'L’edizione di oggi ti aspetta: apri il pensiero del mattino.', `${baseUrl}?edition=${date}#rituali`);
     }
     // The couple reminder is only scheduled when TODAY'S company has been expressly selected.
     // Never send bleeding dates, pills, cycle labels or other health data to the worker.

@@ -7,7 +7,7 @@ import { hypotheticalStage } from './care-moments.js';
 export function viewRituals(date, relationship, habits, presence, days, esc) {
   const q = reflectionForDate(date);
   const out = [
-    `<h1>Rituali · ${esc(date)}</h1>
+    `<h2>Preferenze e attenzioni</h2>
     <div class="card ritual-quote">
       <h2>Pensiero del giorno</h2>
       <strong>${esc(q.title)}</strong>
@@ -30,7 +30,7 @@ export function viewRituals(date, relationship, habits, presence, days, esc) {
   };
   const calendarLabel = status?.stale ? 'Data da aggiornare'
     : labelByStage[hypotheticalStage(relationship, date)];
-  out.push(`<h2>Attenzioni nella relazione</h2><div class="card">
+  out.push(`<h2 id="relationship">Attenzioni nella relazione</h2><div class="card">
     <p class="small">Il calendario orienta piccoli gesti di comfort; la libreria di 40 idee è già pronta anche senza selezionare preferenze.</p>
     ${status ? `<div class="card soft">
       <b>${esc(calendarLabel)}</b>

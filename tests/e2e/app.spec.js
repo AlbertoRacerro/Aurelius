@@ -189,7 +189,8 @@ test('summer data is adopted as history and left untouched', async ({ page }) =>
   await boot(page, T('10:30'), { legacy });
   expect(await page.evaluate(() => localStorage.getItem('aurelius'))).toBe(legacy);
   expect(await page.evaluate(() => localStorage.getItem('aurelius.v1.snapshot'))).toBe(legacy);
-  await page.click('#nav [data-tab=stats]');
+  await page.click('#nav [data-tab=altro]');
+  await page.click('[data-act=open-stats]');
   await expect(page.locator('text=2 giorni registrati, 8,5 h')).toBeVisible();
 });
 
@@ -197,7 +198,8 @@ test('statistics: study vs plan, unaccounted is not wasted', async ({ page }) =>
   await boot(page, T('13:20'));
   await page.locator('.card.alert', { hasText: 'Lezione ATP' }).getByRole('button', { name: /Sì, tutto/ }).click();
   await page.locator('.card.alert', { hasText: '10:15–13:15' }).getByRole('button', { name: 'CPPOM / Plants' }).click();
-  await page.click('#nav [data-tab=stats]');
+  await page.click('#nav [data-tab=altro]');
+  await page.click('[data-act=open-stats]');
   await expect(page.locator('.kpi', { hasText: 'studio registrato' })).toContainText('3,0 h');
   // Lessons do not count as study; 06:00–08:00 was never confirmed -> unaccounted.
   await expect(page.locator('.kpi', { hasText: 'non registrato' })).toContainText('2,1 h');
