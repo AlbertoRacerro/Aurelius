@@ -17,7 +17,7 @@ export function ideaReminders(state,ideas,occs,now,base){
  if(at<=now||at>now+7*86400000||(!shopping&&o.endMs-at<10*60000)||occs.some(b=>b!==o&&b.startMs<=at&&b.endMs>at&&['study','lesson'].includes(acts[b.act]?.kind)))continue;
  const idea=chooseIdea(ideas.filter(x=>!seen.has(o.date+x.id)),o.date,shopping?'spesa':'pausa',{maxMinutes:shopping?240:Math.floor((o.endMs-at)/60000),lastSuggested:state.ideaLastSuggested||{}});
  if(!idea||seen.has(o.date+idea.id)||out.some(x=>Math.abs(x.at-at)<60000))continue;seen.add(o.date+idea.id);
- out.push({id:`idea_${o.startMs.toString(36)}_${idea.id}`,at,title:shopping?'Prima della spesa':'Un’idea per la pausa',body:ideaText(idea,o.date),url:`${base}#${shopping?'spesa':'idee'}`});
+ out.push({id:`idea_${o.startMs.toString(36)}_${idea.id.slice(0,32)}_${hash(idea.id).toString(36)}`,at,title:shopping?'Prima della spesa':'Un’idea per la pausa',body:ideaText(idea,o.date),url:`${base}#${shopping?'spesa':'idee'}`});
  }return out;
 }
 export function mergeShopping(existing,input){

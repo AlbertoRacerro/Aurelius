@@ -33,7 +33,7 @@ Restano future: archivio ricercabile, modifica vocale calendario, riserva reale 
 ## Verifica di questa consegna
 
 - Baseline remoto ispezionato: `f08a4d0`, versione 2.5.0; nessuna modifica all'archivio `legacy/`.
-- 70 test unitari/Worker passati, inclusi migrazione ripetuta con sottoscrizione/reminder esistenti, auth indipendente dalle push, rate limit, conflitto SHA, retry durabile e aggiornamento concorrente.
+- 71 test unitari/Worker passati, inclusi migrazione ripetuta con sottoscrizione/reminder esistenti, auth indipendente dalle push, rate limit, conflitto SHA, retry durabile e aggiornamento concorrente.
 - 24 Playwright mobile passati a 390×844; compreso riavvio davvero offline con service worker attivo e risposta editoriale ritardata mentre si modifica un modulo locale. Test esistenti di timer, split contabile, restore e piano conservati.
 - Screenshot bacheca/lettore ispezionati; nessun overflow orizzontale a 390 px; corpo lettore 18,4 px con interlinea 1,8.
 - Prima edizione validata: 542 / 2249 / 1243 parole. Radar etichettato evergreen. Fonti consultate con passaggi circoscritti; nessuna sintesi integrale o notizia non verificata.
@@ -41,3 +41,5 @@ Restano future: archivio ricercabile, modifica vocale calendario, riserva reale 
 - Feedback pubblico non provato contro D1/GitHub reali: mancano accesso Cloudflare e secret; i test usano SQLite reale come stand-in D1 e provider GitHub simulato. Il JSON iniziale dei voti è vuoto, senza voti di esempio spacciati per reali.
 
 Versione correttiva 2.6.1: una risposta editoriale asincrona non ridisegna più un modulo durante la digitazione. Test prima riprodotto fallente (data del modulo cancellata), poi passato; cache shell incrementata. Deploy 2.6 iniziale confermato dal workflow Pages sul merge `384183e`; correzione distribuita separatamente dopo CI. È stata richiesta anche una prova immediata della task editoriale, asincrona: non equivale a esecuzione completata.
+
+Versione correttiva 2.6.2: ID importati lunghi fino a 80 caratteri sono trasformati in identificativi push entro i 64 caratteri del Worker. Test riprodotto prima fallente: il catalogo accettava un ID che rendeva invalida la sincronizzazione dei reminder; ora il contratto è rispettato.
