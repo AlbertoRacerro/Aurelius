@@ -168,3 +168,14 @@ table.t td:first-child, table.t th:first-child { text-align: left; }
 #main details label.small { display: block; margin-top: 12px; }
 #main details .opt { display: flex; }
 @media(max-width:360px) { .ritual-fields { grid-template-columns: 1fr; } }
+
+/* Aurelius contextual care, no new navigation item needed */
+.care-card { margin: 12px 0; }
+.care-card .btns { display:flex; flex-wrap:wrap; gap:8px; }
+.care-card .card.soft { margin:10px 0 0; }
+.care-card .small { line-height:1.5; }
+.care-library { margin-top:12px; }
+.care-library > summary { font-weight:650; cursor:pointer; }
+.care-library h3 { font-size:15px; margin:16px 0 8px; }
+.care-library ul { padding-left:18px; font-size:14px; line-height:1.55; }
+.care-library li { margin-bottom:12px; }
