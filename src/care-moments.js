@@ -95,7 +95,7 @@ export const MOMENTS = [
     "id": "m11",
     "title": "Passeggiata con luce",
     "text": "Se finite il pranzo in tempo, proponi una passeggiata di quindici minuti prima di tornare sui libri.",
-    "slot": "afternoon",
+    "slot": "lunch",
     "who": "together",
     "stage": "after",
     "minutes": 15
@@ -131,7 +131,7 @@ export const MOMENTS = [
     "id": "m15",
     "title": "Gelato organizzato",
     "text": "Se ha voglia di gelato, proponi una porzione semplice in un momento tranquillo, senza insistere.",
-    "slot": "afternoon",
+    "slot": "lunch",
     "who": "together",
     "stage": "after",
     "minutes": 15
@@ -398,10 +398,11 @@ export function suggestionFor(date, slot, who='together', stage='any', ordinal=0
   if(!pool.length)return null;
   return pool[((ordinal%pool.length)+pool.length)%pool.length];
 }
-export function choiceForPresence(presence,date,record,confirmedDates=[]) {
+export function choiceForPresence(presence,date,record,confirmedDates=[],afterMinute=-1) {
   if (!togetherToday(presence,date)) return null;
-  const priority=['afternoon','evening','lunch','dinner','morning'];
-  const slot=priority.find(x=>presence.slots.includes(x));
+  const slot=SLOTS.filter(x=>presence.slots.includes(x.id)&&x.minute>afterMinute)
+    .sort((a,b)=>a.minute-b.minute)[0]?.id;
+  if (!slot) return null;
   const stage=hypotheticalStage(record,date);
   const ordinal=confirmedDates.filter(x=>x<date).length;
   return { slot, stage, moment:suggestionFor(date,slot,'together',stage,ordinal) };
