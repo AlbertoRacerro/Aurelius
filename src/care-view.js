@@ -5,7 +5,7 @@ export function renderCareContext(date, presence, days, record, esc, { full = fa
   const alone = presence?.date===date && presence.together===false;
   const pick = choiceForPresence(presence,date,record,days);
   const pickedSlots=together ? SLOTS.filter(x=>presence.slots.includes(x.id)).map(x=>x.title).join(', ') : '';
-  const out = [`<div class="card care-card"><h2>Oggi con Giordana?</h2>
+  const out = [`<div class="card care-card"><h2>Oggi siete insieme?</h2>
     <p class="mut small">Solo per oggi. Se non siete insieme, nessuna proposta per due va nelle notifiche.</p>
     <div class="btns">
       <button class="btn ${together?'pri':''}" data-act="care-together">Sì, scegli i momenti</button>
