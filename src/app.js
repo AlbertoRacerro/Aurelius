@@ -35,13 +35,13 @@ async function refreshEditorial(date=romeDate()) {
  if(!result.edition&&CONTENT_BASE!=='./content/')result=await loadEdition(localStorage,new URL('./content/',location.href),date);
  if(request!==editorialRequest)return;
  editorial=result;
- if(ui.tab==='rituali'&&!document.activeElement?.closest('#article-feedback'))render();
+ if(ui.tab==='rituali'&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName||'')&&!document.activeElement?.closest('#article-feedback'))render();
 }
 async function sendEditorial(skip=false) {
  const id=$('#article-feedback')?.dataset.article;if(!id||ratingScore==null)return;
  try {
  queueRating(localStorage,{article_id:id,score:ratingScore,reasons:skip?[]:[...document.querySelectorAll('[data-reason]:checked')].map(x=>x.dataset.reason),comment:skip?'':$('#rating-comment').value});
- render();await syncFeedback(localStorage,P.apiBase(state));if(ui.tab==='rituali')render();
+ render();await syncFeedback(localStorage,P.apiBase(state));if(ui.tab==='rituali'&&$('#rating-details')?.hidden!==false)render();
  }catch(err){toast(err.message,6000);}
 }
 const MIN = 60000;
