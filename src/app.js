@@ -15,6 +15,8 @@ import { renderTodos } from './todo-view.js';
 import { reflectionForDate } from './reflections.js';
 import { loadRelationship, saveRelationship, deleteRelationship, GESTURES } from './relationship.js';
 import { viewRituals } from './rituals-view.js';
+import { renderCareContext } from './care-view.js';
+import { SLOTS, normalizePresence } from './care-moments.js';
 import * as P from './push.js';
 import { APP_VERSION } from './config.js';
 
@@ -112,6 +114,15 @@ function viewNow() {
     <div class="mut small"><b>Riflessione di oggi · ${esc(dailyThought.title)}</b></div>
     <p>${esc(dailyThought.thought)}</p>
     <button class="btn sm" data-act="open-rituals">Apri Rituali e attenzioni</button>
+  </div>`);
+
+  // Daily presence is confirmed explicitly and expires at midnight.
+  out.push(renderCareContext(today(), state.settings.carePresence, state.settings.careDays || [],
+    loadRelationship(localStorage), esc));
+  const minOfDay = partsAt(t, tz()).minute;
+  if (minOfDay >= 330 && minOfDay <= 510) out.push(`<div class="card soft">
+    <b>Routine mattutina · 06:00–06:20</b>
+    <div class="small">Acqua e luce → igiene → vestirsi → colazione, se prevista → materiale pronto e inizio studio/lezioni.</div>
   </div>`);
 
   // Unsettled focus sessions first, then blocks awaiting accounting.
@@ -233,7 +244,8 @@ function viewPlan() {
     out.push(`<ul class="day card">`);
     for (const o of occs) {
       out.push(`<li><span class="t">${esc(o.block.start)}–${esc(o.block.end)}</span>${sw(o.act)}<span class="grow">${esc(actName(o.act))}
-        ${o.block.provisional ? '<span class="tag warn">provv.</span>' : ''}${o.block.note ? `<div class="mut small">${esc(o.block.note)}</div>` : ''}</span></li>`);
+        ${o.block.provisional ? '<span class="tag warn">provv.</span>' : ''}${o.block.note ? `<div class="mut small">${esc(o.block.note)}</div>` : ''}
+        ${o.act === 'routine' ? '<details class="mut small"><summary>Cosa fare (6:00–6:20)</summary>Acqua e luce · Igiene · Vestirsi · Colazione se prevista · Preparare il materiale per lo studio o le lezioni.</details>' : ''}</span></li>`);
     }
     out.push(`</ul>`);
   }
@@ -400,6 +412,7 @@ function renderSheet() {
   else if (s.type === 'session') body = sheetSession(s);
   else if (s.type === 'pending') body = sheetPending();
   else if (s.type === 'backlog') body = sheetBacklog(s);
+  else if (s.type === 'care-context') body = sheetCareContext();
   el.innerHTML = `<div class="panel" role="dialog" aria-modal="true">${body}</div>`;
 }
 
@@ -537,6 +550,16 @@ function startSplit(occ, mode) {
   const rows = prev?.length ? prev.map((x) => ({ ...x }))
     : mode === 'partial' ? [{ act: isGeneric(occ.act) ? lastStudy() : occ.act, minutes: Math.max(0, Math.round(avail / 2 / 5) * 5) }] : [];
   openSheet({ type: 'split', occId: occ.id, mode, rows });
+}
+
+function sheetCareContext() {
+  const current = state.settings.carePresence;
+  const slots = current?.date === today() && current.together ? current.slots : [];
+  return `<h2>Oggi insieme: quando?</h2>
+    <p class="mut small">Seleziona quando sarete realmente insieme oggi. Aurelius proporrà un solo piccolo gesto in uno dei momenti selezionati.</p>
+    ${SLOTS.map(x => `<label class="opt"><input type="checkbox" data-care-slot="${x.id}"${slots.includes(x.id) ? ' checked' : ''}> ${x.title}</label>`).join('')}
+    <div class="btns"><button class="btn pri" data-act="care-save">Salva giornata</button>
+      <button class="btn ghost" data-act="close">Annulla</button></div>`;
 }
 
 const actions = {
@@ -762,6 +785,38 @@ const actions = {
     toast('Attività eliminata');
   },
 
+  // Explicit daily presence; dates when alone never consume an idea.
+  'care-together'() { openSheet({type:'care-context'}); },
+  'care-alone'() {
+    const date = today();
+    commit(st => {
+      st.settings.carePresence = normalizePresence(date, false, []);
+      st.settings.careDays = (st.settings.careDays || []).filter(x => x !== date);
+    }, {resync:true});
+    toast('Oggi solo promemoria personali');
+  },
+  'care-save'() {
+    try {
+      const date = today();
+      const slots = [...document.querySelectorAll('[data-care-slot]:checked')].map(x=>x.dataset.careSlot);
+      const selected = normalizePresence(date, true, slots);
+      commit(st => {
+        st.settings.carePresence = selected;
+        st.settings.careDays = [...new Set([...(st.settings.careDays || []), date])]
+          .sort().slice(-200);
+        st.settings.habits.care = {enabled:true,time:'07:05'};
+      }, {resync:true});
+      closeSheet();
+      toast('Giornata salvata: suggerimenti filtrati');
+    } catch(err) { toast(err.message, 5000); }
+  },
+  'care-solo-save'() {
+    const enabled=$('#care-solo-push')?.checked;
+    commit(st => { st.settings.habits.personalPause = {enabled:!!enabled,time:'15:45'}; },
+      {resync:true});
+    toast('Pausa personale aggiornata');
+  },
+
   // Rituals: never copy third-party reproductive-health data into the global state or backup.
   'open-rituals'() { ui.tab = 'rituali'; location.hash = 'rituali'; render(); window.scrollTo(0, 0); },
   'ritual-quote-save'() {
@@ -918,7 +973,7 @@ async function syncOnce(force) {
   const push = state.settings.push;
   if (!push || !navigator.onLine) return;
   const base = location.origin + location.pathname.replace(/index\.html$/, '');
-  const items = reminderItems(state, now(), base);
+  const items = reminderItems(state, now(), base, undefined, loadRelationship(localStorage));
   const hash = P.hashItems(items, state.settings.ntfyTopic);
   if (!force && hash === push.syncedHash && now() - (push.lastSync || 0) < 6 * 3600e3) return;
   const rev = Math.max(Date.now(), (push.rev || 0) + 1);
@@ -967,7 +1022,8 @@ function render() {
   }
   const main = $('#main');
   main.innerHTML = ui.tab === 'rituali'
-    ? viewRituals(today(), loadRelationship(localStorage), state.settings.habits, esc)
+    ? viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
+        state.settings.carePresence, state.settings.careDays || [], esc)
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
     : ui.tab === 'stats' ? viewStats() : ui.tab === 'altro' ? viewMore() : viewNow();

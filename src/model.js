@@ -103,8 +103,11 @@ export function defaultSettings() {
       bedtime: { enabled: true, time: '22:20' },
       quote: { enabled: true, time: '07:00' },
       care: { enabled: false, time: '07:05' },
+      personalPause: { enabled: true, time: '15:45' },
     },
     trackFrom: Date.now(),  // blocks that ended before this instant are never asked about
+    carePresence: null,    // explicit slots for today only; never forecast togetherness
+    careDays: [],          // confirmed together-day dates used for rotation, so alone days do not use ideas
     push: null,             // { api, device, token, endpoint, at } once notifications are enabled
     pushApi: '',            // overrides config.js PUSH_API
     ntfyTopic: '',          // optional fallback channel used by the push worker

@@ -59,15 +59,17 @@ test('proposed gestures only come from explicit preferences, not presumed mood',
 test('07:00 reminder is from verified reflection; relationship push contains no reproductive data', () => {
   const s = emptyState();
   s.settings.habits.care.enabled = true;
+  s.settings.carePresence = { date:'2026-10-19', together:true, slots:['morning'] };
+  s.settings.careDays = ['2026-10-19'];
   const when = new Date('2026-10-19T06:00:00+02:00').getTime();
   const items = reminderItems(s, when, 'https://example.com/Aurelius/');
   const quote = items.find((i) => i.id.endsWith('_quote') && i.at ===
     new Date('2026-10-19T07:00:00+02:00').getTime());
-  const care = items.find((i) => i.id.endsWith('_care') && i.at ===
-    new Date('2026-10-19T07:05:00+02:00').getTime());
+  const care = items.find((i) => i.id.endsWith('_careMoment') && i.at ===
+    new Date('2026-10-19T08:05:00+02:00').getTime());
   assert.ok(quote && care);
   assert.match(quote.url, /#rituali$/);
-  assert.equal(care.body, 'Apri Aurelius per un’idea concordata di cura e ascolto.');
+  assert.match(care.body, /bigliettino|messaggio|fiore|ingredienti/i);
   assert.doesNotMatch(care.title + care.body + care.url, /mestru|ciclo|fase|ovul|2026-10-01/i);
   assert.equal(new Set(items.map((x) => x.id)).size, items.length);
   assert.ok(items.length < 400);

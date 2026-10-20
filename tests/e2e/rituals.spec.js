@@ -14,7 +14,7 @@ test('rituals can store consented local data without adding it to Aurelius backu
   await page.locator('#r-care-notify').check();
   await page.getByRole('button', { name: 'Salva sul dispositivo' }).click();
   await expect(page.locator('h1')).toContainText('Rituali');
-  await expect(page.locator('.card', {hasText:'Giorno indicativo'}).first()).toBeVisible();
+  await expect(page.locator('.card', {hasText:'Giorno 19 del calendario'}).first()).toBeVisible();
   let saved = await page.evaluate(() => ({
     privateData: localStorage.getItem('aurelius.relationship.local.v1'),
     main: localStorage.getItem('aurelius.v2'),
