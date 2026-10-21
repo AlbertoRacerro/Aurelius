@@ -24,6 +24,9 @@ import { loadEdition, romeDate, queueRating, syncFeedback, AUTH_KEY } from './ed
 import { renderEditorial } from './editorial-view.js';
 import { CONTENT_BASE } from './config.js';
 import { APP_VERSION } from './config.js';
+import { PUSH_API } from './config.js';
+import { addNote, applyResult, undoResult, pollIds, personalRequest, PERSONAL_AUTH } from './inbox.js';
+import { renderInbox, renderPersonalItems } from './inbox-view.js';
 
 let defaultIdeas=[];
 fetch('./content/ideas.json').then(r=>r.json()).then(data=>{defaultIdeas=validateCatalog(data);if(ui.tab==='idee')render();scheduleSync();}).catch(()=>{});
@@ -73,6 +76,43 @@ function toast(msg, ms = 3200) {
   el.hidden = false;
   clearTimeout(toast.t);
   toast.t = setTimeout(() => { el.hidden = true; }, ms);
+}
+
+// ---------- private note synchronization ----------
+let inboxDraft=sessionStorage.getItem('aurelius.inbox.draft')||'', inboxStatus='', personalBusy=false, personalEpoch=0;
+function mutatePersonal(fn) {
+ // Re-read persisted state before a synchronous merge, including edits from another tab.
+ const current=load(localStorage).state, next=fn(current);
+ save(localStorage,next);state=next;return next;
+}
+function inboxPaint() {
+ const status=$('#inbox-status');if(status)status.textContent=inboxStatus;
+ if(ui.tab==='inbox'&&!ui.sheet&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName||''))render();
+}
+async function syncPersonal() {
+ const token=localStorage.getItem(PERSONAL_AUTH);if(personalBusy||!token||!PUSH_API)return;
+ personalBusy=true;const epoch=personalEpoch;inboxStatus='Sincronizzazione…';inboxPaint();
+ try {
+  const queued=(state.personalInbox?.notes||[]).filter(x=>x.status==='queued').slice(0,5);
+  for(const record of queued){
+   const response=await personalRequest(PUSH_API,token,'/v1/personal/notes',record.note);
+   if(epoch!==personalEpoch)return;
+   if(response.received!==true||response.id!==record.note.id)throw Error('Conferma di invio non valida');
+   mutatePersonal(s=>{const r=s.personalInbox?.notes.find(x=>x.note.id===record.note.id);if(r&&r.status==='queued'){r.status='sent';delete r.error;}return s;});
+  }
+  const ids=pollIds(state);
+  if(ids.length){
+   const response=await personalRequest(PUSH_API,token,'/v1/personal/poll',{ids});
+   if(epoch!==personalEpoch)return;
+   if(!Array.isArray(response.results)||response.results.length>10||!Array.isArray(response.errors)||response.results.some(x=>!ids.includes(x.note_id))||response.errors.some(id=>!ids.includes(id)))throw Error('Risultati del server non validi');
+   for(const result of response.results)mutatePersonal(s=>applyResult(s,result));
+   mutatePersonal(s=>{for(const r of s.personalInbox?.notes||[]){if(ids.includes(r.note.id)){r.checkedAt=Date.now();if(response.errors.includes(r.note.id))r.error='Risultato da correggere prima di applicarlo';}}return s;});
+   if(response.results.length)scheduleSync();
+  }
+  const waiting=(state.personalInbox?.notes||[]).filter(x=>x.status==='sent').length, remaining=(state.personalInbox?.notes||[]).filter(x=>x.status==='queued').length;
+  inboxStatus=remaining?`${remaining} note da inviare · ${waiting} in attesa`:'Archivio sincronizzato'+(waiting?` · ${waiting} in attesa`:'');
+ }catch(e){inboxStatus=e.message;}
+ finally{personalBusy=false;inboxPaint();}
 }
 
 // ---------- helpers ----------
@@ -132,7 +172,9 @@ function viewNow() {
   const t = now();
   const { current, next } = nowAndNext(state, t);
   const out = [];
-  out.push(`<h1>${esc(longDate(today()))} · ${timeOf(t)}</h1>`);
+  out.push(`<h1>${esc(longDate(today()))} · ${timeOf(t)}</h1><a class="btn sm" href="#inbox">Appunti</a>`);
+  const privateTasks=(state.backlog||[]).filter(x=>x.sourceNote&&!x.done).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999')).slice(0,3);
+  if(privateTasks.length)out.push(`<div class="card"><h2>Da ricordare</h2>${privateTasks.map(x=>`<p>${esc(x.text)}${x.due?' · '+esc(x.due):''}</p>`).join('')}<a class="btn sm" href="#todos">Apri Da fare</a></div>`);
   const dailyThought = reflectionForDate(today());
   out.push(`<div class="card soft ritual-preview">
     <div class="mut small"><b>Riflessione di oggi · ${esc(dailyThought.title)}</b></div>
@@ -365,7 +407,7 @@ function viewMore() {
   const sup = P.support();
   const api = P.apiBase(state);
   const out = [];
-  out.push(`<h1>Altro</h1><button class="btn" data-act="open-stats">Statistiche</button>`);
+  out.push(`<h1>Altro</h1><a class="btn" href="#inbox">Appunti e liste</a> <button class="btn" data-act="open-stats">Statistiche</button>`);
   // Notifications.
   let status;
   if (s.push) status = `Attive su questo iPhone dal ${new Date(s.push.at).toLocaleDateString('it-IT')}.${s.push.lastSync ? ` Ultimo aggiornamento promemoria: ${timeOf(s.push.lastSync)}.` : ''}${s.push.error ? ` <span class="err">${esc(s.push.error)}</span>` : ''}`;
@@ -409,7 +451,7 @@ function viewMore() {
     <label class="opt"><input type="checkbox" data-act="sound"${s.sound ? ' checked' : ''}> Suono a fine blocco/focus (app aperta)</label></div>`);
   // Data.
   const lastB = state.lastBackupAt ? new Date(state.lastBackupAt).toLocaleString('it-IT') : 'mai';
-  out.push(`<h2>Dati</h2><div class="card"><div class="small">Tutto è salvato solo su questo dispositivo. Ultimo backup: ${esc(lastB)}.</div>
+  out.push(`<h2>Dati</h2><div class="card"><div class="small">I dati sono salvati sul dispositivo. Le note collegate vengono sincronizzate con l’archivio privato. Ultimo backup: ${esc(lastB)}.</div>
     <div class="btns" style="margin-top:10px"><button class="btn pri" data-act="backup">Esporta backup</button><button class="btn" data-act="restore">Ripristina…</button><button class="btn" data-act="plan-import">Importa piano personale…</button></div>
     <input type="file" id="f-restore" accept=".json,application/json,text/plain" hidden>
     <input type="file" id="f-plan" accept=".json,application/json" hidden>
@@ -587,6 +629,12 @@ function sheetCareContext() {
 }
 
 const actions = {
+ 'inbox-add'(){try{const text=$('#inbox-text').value;mutatePersonal(s=>addNote(s,text));inboxDraft='';sessionStorage.removeItem('aurelius.inbox.draft');inboxStatus='Nota salvata sul dispositivo';render();syncPersonal();}catch(e){toast(e.message,6000);}},
+ 'inbox-sync'(){syncPersonal();},
+ 'inbox-connect'(){try{const token=$('#personal-token').value.trim();if(!/^[A-Za-z0-9_-]{32,128}$/.test(token))throw Error('Codice personale non valido');localStorage.setItem(PERSONAL_AUTH,token);personalEpoch++;render();syncPersonal();}catch(e){toast(e.message);}},
+ 'inbox-disconnect'(){personalEpoch++;localStorage.removeItem(PERSONAL_AUTH);inboxStatus='Archivio scollegato; note conservate sul dispositivo';render();},
+ 'inbox-undo'(el){try{let kept=0;mutatePersonal(s=>{const r=undoResult(s,el.dataset.id);kept=r.kept;return r.state;});scheduleSync();render();toast(kept?'Annullato; conservate le voci già modificate':'Aggiunte annullate');}catch(e){toast(e.message);}},
+ 'inbox-item'(el){try{mutatePersonal(s=>{const item=s.personalInbox?.items.find(x=>x.id===el.dataset.id);if(item)item.done=el.checked;return s;});render();}catch(e){toast(e.message);}},
  'ideas-import'(){$('#ideas-file').click();},
  'shopping-import'(){$('#shopping-file').click();},
  'ideas-toggle'(el){commit(s=>{s.settings.habits.ideas={enabled:el.checked};},{resync:true});},
@@ -1057,7 +1105,7 @@ function render() {
     }
   }
   const main = $('#main');
-  main.innerHTML = ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
+  main.innerHTML = ui.tab==='inbox'?renderInbox(state,esc,!!localStorage.getItem(PERSONAL_AUTH),inboxStatus,inboxDraft):ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc)+renderPersonalItems(state,esc,'idea'):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
     ? renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
         state.settings.carePresence, state.settings.careDays || [], esc, !!editorial?.edition))
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
@@ -1114,12 +1162,12 @@ document.addEventListener('change', (ev) => {
   if (el.closest('#rows')) updateRemain();
   if (el.name === 'scope' && ui.sheet?.type === 'edit') { ui.sheet.rows = readEditRows(); renderSheet(); }
 });
-document.addEventListener('input', (ev) => { if (ev.target.closest('#rows')) updateRemain(); });
+document.addEventListener('input', (ev) => { if (ev.target.closest('#rows')) updateRemain(); if(ev.target.id==='inbox-text'){inboxDraft=ev.target.value;try{sessionStorage.setItem('aurelius.inbox.draft',inboxDraft);}catch{/* editor remains usable */}} });
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {settleTimer();render();syncNow(false);syncFeedback(localStorage,P.apiBase(state));if(!articleSelection&&editorialDate!==romeDate())refreshEditorial();}
+  if (document.visibilityState === 'visible') {syncPersonal();settleTimer();render();syncNow(false);syncFeedback(localStorage,P.apiBase(state));if(!articleSelection&&editorialDate!==romeDate())refreshEditorial();}
 });
 window.addEventListener('hashchange',()=>{route();render();window.scrollTo(0,0);});
-window.addEventListener('online',()=>{refreshEditorial(articleSelection?editorialDate:romeDate());syncFeedback(localStorage,P.apiBase(state));});
+window.addEventListener('online',()=>{syncPersonal();refreshEditorial(articleSelection?editorialDate:romeDate());syncFeedback(localStorage,P.apiBase(state));});
 window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { state = load(localStorage).state; render(); } });
 
 function route() {
@@ -1128,7 +1176,7 @@ function route() {
   articleSelection=null;
   if(h.startsWith('article/')){const [,id,date]=h.split('/');if(/^[a-z0-9_-]{1,80}$/.test(id)&&/^\d{4}-\d{2}-\d{2}$/.test(date)){ui.tab='rituali';articleSelection=id;refreshEditorial(date);}}
   if(h==='relationship')ui.tab='rituali';
-  if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali','idee','spesa'].includes(h)) ui.tab = h;
+  if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali','idee','spesa','inbox'].includes(h)) ui.tab = h;
   const occId = q.get('occ');
   if (occId) {
     ui.tab = 'ora';
@@ -1156,4 +1204,6 @@ setInterval(tick, 1000);
 syncNow(false);
 if(!editorialRequest)refreshEditorial();
 syncFeedback(localStorage,P.apiBase(state));
+syncPersonal();
+setInterval(()=>{if(document.visibilityState==='visible')syncPersonal();},60000);
 window.__aurelius = { get state() { return state; }, render, now };

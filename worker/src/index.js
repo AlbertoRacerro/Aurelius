@@ -8,6 +8,7 @@
 //   POST   /v1/test                       (Bearer token) -> { status }
 //   DELETE /v1/device                     (Bearer token)
 
+import { personal } from './personal.js';
 import { feedback, flushFeedback } from './editorial.js';
 import { b64uDecode, b64uEncode, sendPush } from './webpush.js';
 
@@ -222,6 +223,10 @@ export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors(req, env) });
     const { pathname } = new URL(req.url);
+    if(pathname.startsWith('/v1/personal/')) {
+      const r=await personal(req,env);
+      const response=json(req,env,r.status,r.body);response.headers.set('cache-control','no-store');return response;
+    }
     try {
       if (req.method === 'GET' && pathname === '/v1/vapid') return json(req, env, 200, { key: vapid(env).publicKey });
       if (req.method === 'GET' && pathname === '/v1/health') return json(req, env, 200, { ok: true });

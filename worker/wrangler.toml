@@ -13,6 +13,7 @@ MAX_DEVICES = "3"
 CONTENT_REPO = "AlbertoRacerro/Aurelius"
 CONTENT_BRANCH = "main"
 FEEDBACK_PATH = "content/feedback/ratings.json"
+PERSONAL_REPO = "AlbertoRacerro/-Aurelius-Personal"
 
 [[d1_databases]]
 binding = "DB"
@@ -25,3 +26,6 @@ database_id = "79633344-cd98-4d61-bdda-28d8743d5a9d"
 # Owner code: FEEDBACK_TOKEN (>=32 random URL-safe chars, shared only with owner device).
 # GitHub fine-grained contents-write credential: GITHUB_EDITORIAL_TOKEN (Worker secret).
 # Neither credential is embedded in the PWA or its backups.
+
+# Private inbox secrets: PERSONAL_TOKEN (32–128 URL-safe chars), GITHUB_PERSONAL_TOKEN
+# GITHUB_PERSONAL_TOKEN: fine-grained Contents read/write for the PRIVATE personal repo only.
