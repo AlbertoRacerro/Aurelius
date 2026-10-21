@@ -19,3 +19,11 @@ test('bullets count as reading; chart rejects nonfinite, negative and unlabeled 
  assert.doesNotThrow(()=>validateEdition(e));
  for(const change of [c=>c.bars[0].value=-1,c=>c.bars[0].value=Infinity,c=>c.source_url='javascript:bad',c=>c.unit='',c=>c.bars.forEach(b=>b.value=0)]){const bad=structuredClone(e);change(bad.articles[2].sections[0].chart);assert.throws(()=>validateEdition(bad));}
 });
+
+test('compact Radar admits 500 words but retains a lower bound and the other slot ranges',()=>{
+ const e=edition(),a=e.articles[2];a.sections=[{heading:'Notizie brevi',paragraphs:['Novità'],bullets:[Array(499).fill('dato').join(' ')]}];
+ assert.doesNotThrow(()=>validateEdition(e));
+ const short=structuredClone(e);short.articles[2].sections[0].bullets=[Array(498).fill('dato').join(' ')];assert.throws(()=>validateEdition(short),/Lunghezza future: 499/);
+ for(const i of [0,1]){const bad=structuredClone(e);bad.articles[i].sections[0].paragraphs=[Array(i?2199:499).fill('x').join(' ')];assert.throws(()=>validateEdition(bad));}
+ const tooLong=structuredClone(e);tooLong.articles[2].sections=[{heading:'',paragraphs:[Array(2001).fill('x').join(' ')]}];assert.throws(()=>validateEdition(tooLong),/Lunghezza future: 2001/);
+});
