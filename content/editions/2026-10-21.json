@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T21:30:53.337637+00:00",
+  "updated_at": "2026-10-21T21:32:36.535804+00:00",
   "articles": [
     {
       "slot": "philosophy",
@@ -123,76 +123,57 @@
     {
       "slot": "future",
       "id": "future-20261021",
-      "title": "Radar · AI locale, usi e possibilità",
+      "title": "Radar · quattro schede tecniche",
       "kind": "evergreen",
-      "basis": "Approfondimento sui rilasci Liquid AI (13 ottobre), Harness² (9), Apple MLX (15) e Anthropic (12): revisione delle schede già pubblicate, non notizie delle ultime 24 ore. Esempi d’uso proposti dalla redazione distinti dai risultati misurati.",
+      "basis": "Revisione delle quattro notizie già selezionate, del 9–15 ottobre 2026: approfondimento storico, non nuovo bollettino. Risultati degli autori distinti dalle possibilità d’impiego.",
       "sections": [
         {
-          "heading": "1 · Un assistente che lavora sui documenti senza spedirli a un servizio AI",
+          "heading": "Liquid AI · LFM2.5-24B-A2B",
           "paragraphs": [
-            "La possibilità interessante di Liquid LFM2.5 è costruire un assistente che usi strumenti sul proprio computer. Il vantaggio concreto sarebbe poter lavorare su documenti riservati mantenendo l’elaborazione del modello sulla macchina. Liquid lo ha presentato il 13 ottobre: qui ne approfondiamo gli utilizzi, senza presentarlo come un annuncio di oggi."
+            "13 ottobre · Modello open weights per reasoning e agenti, disponibile anche in GGUF per inferenza locale."
           ],
           "bullets": [
-            "Esempio d’uso proposto: si potrebbe chiedere di trovare le fatture di un mese e preparare un prospetto delle spese. L’applicazione dovrebbe fornire al modello uno strumento per cercare i file e uno per leggere i dati: il modello da solo non acquista accesso ai documenti.",
-            "Che cosa cambia: questo modello è addestrato anche a scegliere strumenti e concatenare azioni. Non deve limitarsi a suggerire «apri il foglio»: può produrre una richiesta che il programma traduce in un’operazione autorizzata.",
-            "Perché il nome inganna: contiene 24 miliardi di parametri, ma ne usa circa 2,45 miliardi per ciascun frammento di testo generato. È come avere molti specialisti e chiamarne solo alcuni per ogni passaggio: si riduce il lavoro di calcolo, non scompare il resto del modello da conservare in memoria.",
-            "Prova disponibile: nei test di Liquid supera Qwen3.6-35B-A3B su LiveClaw (48,09 contro 38,19), ma resta indietro nel coding SWE-Bench Verified (51 contro 66,2). È un candidato per agenti, non il vincitore di ogni attività.",
-            "Per usarlo: occorrono un programma compatibile per eseguire il modello e un’applicazione che interpreti correttamente le richieste agli strumenti. La scheda documenta l’italiano e le chiamate a funzioni; la qualità sul proprio lavoro va ancora misurata.",
-            "Primo esperimento proposto: dieci documenti di prova, una domanda precisa, nessun permesso di modificare gli originali. Contare quante risposte sono corrette e quanto si attende aiuta a capire più di una conversazione riuscita una sola volta."
+            "Architettura: MoE ibrido, 24B parametri totali, 2,45B attivi per token. Contesto dichiarato: 131.072 token; italiano e tool calling supportati.",
+            "Quantizzazioni ufficiali: QAD Q4_0 ≈13,6 GB; Q4_K_M ≈14,5 GB; Q5_K_M ≈17 GB. Il più piccolo è ≈12,67 GiB: niente caricamento integrale su 12 GiB di VRAM, già prima di cache e buffer. Offload da misurare.",
+            "Benchmark Liquid: LiveClaw 48,09 contro 38,19 di Qwen3.6-35B-A3B; SWE-Bench Verified 51 contro 66,2. Vantaggio sui primi compiti, non superiorità generale nel coding.",
+            "Uso: candidato per agenti locali con strumenti e memoria sufficiente. Per GPU da 12 GiB resta una prova con offload, non una sostituzione già validata. Licenza LFM, non Apache. Fonte: annuncio e model card Liquid AI."
           ]
         },
         {
-          "heading": "2 · Prima del download: il modello entra davvero nel computer?",
+          "heading": "Google Research · Harness²",
           "paragraphs": [
-            "La domanda utile non è soltanto «è abbastanza intelligente?», ma «con la memoria disponibile resta utilizzabile?». Le versioni GGUF ufficiali sono file preparati per eseguire il modello con strumenti come llama.cpp. La quantizzazione ne riduce il peso rappresentando i numeri con meno precisione."
+            "9 ottobre · Paper e repository per migliorare il sistema attorno a un agente mantenendo fissi i pesi del modello."
           ],
           "bullets": [
-            "Dato da controllare prima: il file QAD Q4_0 è circa 13,6 GB; il Q4_K_M circa 14,5 GB. Il primo equivale a circa 12,67 GiB: supera già una memoria grafica da 12 GiB, prima dello spazio necessario per la conversazione e per il programma.",
-            "Possibilità concreta: una parte del lavoro può essere spostata sulla memoria e sul processore del computer. Questo può consentire l’esecuzione, ma il tempo di risposta va misurato sulla configurazione effettiva.",
-            "Esempio d’uso proposto: un riordino notturno di appunti può tollerare attese che renderebbero scomodo un assistente vocale. Lo stesso modello può quindi essere interessante per un lavoro in background e poco adatto a una conversazione immediata.",
-            "Che cosa misurare: il tempo fra invio e risultato utilizzabile, con un documento rappresentativo. Leggere un numero alto di token al secondo non dice quanto tempo passa prima che una richiesta completa sia terminata.",
-            "Percorso disponibile: la pagina ufficiale mostra l’avvio tramite llama.cpp e applicazioni compatibili. Prima di collegarlo ai propri archivi conviene provare il solo modello su file sacrificabili e verificare l’occupazione di memoria durante il compito.",
-            "Esempio di confronto proposto: ripetere la stessa estrazione di dati su venti file, annotando durata, errori e correzioni manuali. Una soluzione leggermente più lenta può comunque far risparmiare lavoro se richiede meno interventi."
+            "Meccanismo: propone modifiche a istruzioni, strumenti e procedure; confronta le esecuzioni; conserva lezioni per i compiti successivi. L’automiglioramento riguarda l’harness, non un riaddestramento della rete.",
+            "Risultati degli autori: fino a +11,5 punti su WorkBuddy-Bench, +4,5 su JobBench, +11,8 punti percentuali sul partial pass rate di LAB. Configurazioni con GLM-5 e Gemini 3.5 Flash; sono massimi su test diversi.",
+            "Accesso: Linux/Python 3.12; executor OpenCode e Codex già documentati nell’upstream. Demo deterministica senza credenziali; benchmark con modelli a pagamento. Eventuali fork vanno confrontati con queste capacità già presenti nell’upstream.",
+            "Integrazione possibile: confrontare procedure o skill versionate su compiti separati e a budget uguale. Permessi e criteri di accettazione fuori dal perimetro modificabile. Nessun miglioramento già dimostrato per JarvisOS. Fonte: paper e README upstream."
           ]
         },
         {
-          "heading": "3 · Migliorare il modo di lavorare dell’AI senza cambiare modello",
+          "heading": "Apple · MLX e inferenza distribuita",
           "paragraphs": [
-            "Harness² affronta una possibilità diversa: un assistente può migliorare perché impara a organizzare il lavoro, anche mantenendo lo stesso modello. L’harness è l’insieme di istruzioni, strumenti e memoria che lo circonda. Il paper è del 9 ottobre; il codice è pubblico."
+            "15 ottobre · Report su grandi modelli distribuiti fra Mac Studio, con RDMA su Thunderbolt."
           ],
           "bullets": [
-            "Come funziona: il sistema propone modifiche al proprio modo di affrontare un compito, le prova e confronta i comportamenti ottenuti. Poi ricava indicazioni da riutilizzare nei compiti successivi. Cambia il metodo di lavoro, non i pesi della rete neurale.",
-            "Esempio d’uso proposto: un assistente che sbaglia spesso a consegnare un foglio potrebbe confrontare due procedure: scrivere subito le formule oppure controllare prima colonne e unità. L’esperimento serve a scegliere una procedura, non a proclamare più intelligente il modello.",
-            "Che cosa è stato osservato: gli autori riportano miglioramenti su tre raccolte di compiti professionali, fino a 11,5 punti su WorkBuddy-Bench in una delle configurazioni. Il dato indica una possibilità sperimentale; il vantaggio sul proprio lavoro resta da verificare.",
-            "Come esplorarlo: il repository offre una demo locale senza credenziali di modelli. Le prove con veri modelli richiedono invece configurazione e possono consumare API a pagamento.",
-            "Vincolo pratico: lasciare che il sistema riscriva una procedura non richiede di lasciargli cambiare anche i permessi. Una prova proposta può limitare gli interventi a istruzioni e sequenza di lavoro, conservando fuori dal suo controllo gli accessi e i criteri di accettazione.",
-            "Quando avrebbe valore: per attività ripetute con errori ricorrenti, purché il miglioramento regga anche su casi nuovi. Un documento riuscito dopo molti tentativi è utile, ma bisogna confrontarlo con lo stesso budget di tempo e calcolo."
+            "Possibilità: sommare memoria di più macchine per eseguire localmente modelli che non entrano su una sola. Il collegamento deve sostenere gli scambi durante il calcolo.",
+            "Dimostrazione Apple: Muse Spark Open, 816B totali/42B attivi, quantizzazione NVFP4, oltre 36 token/s su quattro M5 Ultra con contesto di 8.192 token.",
+            "Metrica da separare: velocità di generazione e tempo al primo token. Un modello può produrre testo rapidamente dopo un’attesa iniziale lunga; i due valori servono a valutare usi diversi.",
+            "Hardware: soluzione misurata su Mac con memoria unificata e interconnessione specifica. I risultati non si trasferiscono automaticamente a due PC NVIDIA collegati in rete domestica.",
+            "Uso potenziale: postazione privata condivisa per modelli grandi. È una pista per infrastrutture future, non un upgrade software capace di aggiungere memoria alla GPU esistente. Fonte: Apple Machine Learning Research."
           ]
         },
         {
-          "heading": "4 · Più computer possono diventare la memoria di un solo grande modello",
+          "heading": "Anthropic · modelli su hardware economico",
           "paragraphs": [
-            "Apple mostra come dividere un modello molto grande fra più Mac Studio. La possibilità pratica è eseguire localmente modelli che una singola macchina non riesce a contenere. Il report MLX è del 15 ottobre e misura un collegamento specifico fra Mac, non una rete domestica generica."
+            "12 ottobre · Ricerca del Frontier Red Team sulla possibilità di avviare inferenza e replicazione su piccoli dispositivi."
           ],
           "bullets": [
-            "Come funziona: parti del modello risiedono su macchine diverse, che si scambiano dati durante l’elaborazione. RDMA indica un trasferimento diretto fra memorie che riduce parte del lavoro normalmente richiesto al processore per comunicare.",
-            "Dimostrazione: quattro Mac Studio M5 Ultra eseguono Muse Spark Open da 816 miliardi di parametri in formato NVFP4 e superano 36 token al secondo con 8.192 token di contesto. Sono misure Apple sulla propria configurazione.",
-            "Esempio d’uso proposto: un laboratorio potrebbe valutare una postazione condivisa per analizzare documentazione interna con un modello grande, invece di inviarla a un fornitore esterno. La prima domanda sarebbe quante richieste e quanta attesa quella postazione può sostenere.",
-            "Limite che cambia la scelta: i computer devono comunicare mentre lavorano. Aggiungere memoria distribuita non garantisce una risposta più rapida; hardware e collegamento contano insieme.",
-            "Per decidere: distinguere l’attesa prima della prima parola dalla velocità con cui arrivano le successive. Un sistema che scrive velocemente dopo una lunga pausa può andare bene per un’analisi estesa e risultare scomodo in un dialogo."
-          ]
-        },
-        {
-          "heading": "5 · Anche macchine piccole possono eseguire AI: quale uso ne segue?",
-          "paragraphs": [
-            "Anthropic ha studiato la capacità di avviare modelli su dispositivi economici. Il risultato del 12 ottobre riguarda la fattibilità tecnica e i rischi di replicazione autonoma: non propone un prodotto domestico pronto."
-          ],
-          "bullets": [
-            "Il dato concreto: un modello da 9 miliardi di parametri è stato avviato su otto delle nove tipologie hardware provate. In una dimostrazione distinta, quindici TV box da circa 55 dollari ciascuno eseguono Gemma4-26B-A4B a 0,39 token al secondo.",
-            "Che cosa significa: il modello può funzionare senza un datacenter, ma in quella dimostrazione genera meno di un token al secondo. Per una conversazione rapida il risultato è poco interessante; per capire quali dispositivi possono ospitare un modello è significativo.",
-            "Possibile ricerca applicativa, proposta dalla redazione: valutare elaborazioni rare e non urgenti su hardware già disponibile. Prima di parlarne come risparmio servirebbe però misurare consumi, tempo, manutenzione e risultato ottenuto.",
-            "Confine della prova: avviare l’inferenza è solo una parte della replicazione. Il report usa valutazioni semplificate e distingue i singoli passaggi dall’intera catena autonoma.",
-            "Conseguenza per chi costruisce agenti: eseguire il modello in casa risolve una parte del problema di dove passano i dati. Bisogna ancora decidere quali file, comandi e connessioni il programma che lo usa può raggiungere."
+            "Prova: un modello 9B avviato su 8 delle 9 tipologie hardware testate. Dimostrazione distinta: Gemma4-26B-A4B su 15 TV box da circa 55 dollari ciascuno, a 0,39 token/s.",
+            "Significato: inferenza tecnicamente possibile senza datacenter; quel throughput è insufficiente per una chat rapida. Prezzo basso dei singoli dispositivi non prova un vantaggio di costo dell’intero sistema.",
+            "Confine sperimentale: avviare un modello non equivale a completare autonomamente tutta la catena di replicazione. Gli autori distinguono passaggi singoli, valutazioni semplificate e prestazioni end-to-end.",
+            "Ricaduta per agenti locali: dimensioni del modello e capacità operative sono questioni diverse. File accessibili, comandi e rete dipendono dal programma che lo esegue. Da considerare nell’isolamento degli agenti; nessuna nuova funzione da installare. Fonte: report Anthropic."
           ]
         }
       ],
