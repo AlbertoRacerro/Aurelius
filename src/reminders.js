@@ -112,6 +112,11 @@ export function reminderItems(state, now, baseUrl, horizonDays = HORIZON_DAYS, p
       if (at != null && at < 1440) addHabit(date, at, key, title, body);
     }
   }
+  // Only expressly requested instants; never infer a reminder time from a due date.
+  for(const task of state.backlog||[]){
+    if(!task.sourceNote||task.done||!Number.isSafeInteger(task.remindAt)||!within(task.remindAt)||items.length>=390)continue;
+    items.push({id:'n_'+task.sourceNote+'_'+[...task.id].reduce((h,c)=>Math.imul(h^c.charCodeAt(0),16777619)>>>0,2166136261).toString(36),at:task.remindAt,title:'Da ricordare',body:task.text.slice(0,300),url:`${baseUrl}#todos`});
+  }
   for(const item of ideaReminders(state,ideas,occs,now,baseUrl)){if(items.length<400&&!items.some(x=>Math.abs(x.at-item.at)<60000))items.push(item);}
   return items;
 }

@@ -3,6 +3,7 @@
 // under 'aurelius.v1.snapshot', and stores its own state under 'aurelius.v2'. The legacy page in /legacy/
 // keeps working on the original key.
 
+import { validateNote, validateResult } from './inbox-contract.js';
 import { validateCatalog } from './ideas.js';
 import { SCHEMA_VERSION, DEFAULT_ACTIVITIES, defaultSettings, emptyState, DEFAULT_TARGETS } from './model.js';
 
@@ -18,6 +19,13 @@ const isObj = (x) => !!x && typeof x === 'object' && !Array.isArray(x);
 /** Structural check before trusting stored or imported state: wrong shapes are treated as corruption. */
 export function sane(s) {
   if (!isObj(s) || !Array.isArray(s.entries)) return false;
+  if ('personalInbox' in s) {
+    const box=s.personalInbox;
+    if(!isObj(box)||!Array.isArray(box.notes)||box.notes.length>400||!Array.isArray(box.items)||!Array.isArray(box.receipts))return false;
+    try{for(const r of box.notes){validateNote(r.note);if(!['queued','sent','applied'].includes(r.status))return false;if(r.result)validateResult(r.result,r.note.id);}}catch{return false;}
+    if(box.items.some(x=>!isObj(x)||typeof x.id!=='string'||typeof x.text!=='string'||typeof x.done!=='boolean'||!['list','idea','proposal','clarify'].includes(x.type)))return false;
+    if(box.receipts.some(x=>!isObj(x)||typeof x.note_id!=='string'||typeof x.summary!=='string'||!Array.isArray(x.created)||x.created.some(c=>!isObj(c)||!['backlog','personalItems'].includes(c.collection)||typeof c.id!=='string'||typeof c.snapshot!=='string')))return false;
+  }
   if ('ideaCatalog' in s) {try {validateCatalog({schema:1,ideas:s.ideaCatalog});}catch{return false;}}
   if ('shopping' in s && (!Array.isArray(s.shopping)||s.shopping.some(x=>!x||typeof x.id!=='string'||typeof x.name!=='string'||!x.name.trim()||x.name.length>100||typeof x.inHouse!=='boolean'))) return false; // every saved state has an entries list
   for (const k of ['activities', 'backlog']) if (k in s && !Array.isArray(s[k])) return false;
