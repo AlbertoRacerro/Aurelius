@@ -126,9 +126,9 @@
     {
       "slot": "future",
       "id": "future-20261021",
-      "title": "Radar · cosa possiamo fare con agenti locali e sistemi che imparano a lavorare",
+      "title": "Radar · AI locale, usi e possibilità",
       "kind": "evergreen",
-      "basis": "Revisione divulgativa delle schede già pubblicate: approfondimento su rilasci del 9–15 ottobre 2026, non bollettino delle ultime 24 ore. Fonti primarie rilette: Liquid AI (13 ottobre), Harness² (9 ottobre), Apple MLX (15 ottobre), Anthropic (12 ottobre). Gli esempi proposti sono ipotesi d’uso della redazione; i risultati misurati sono attribuiti alle rispettive fonti.",
+      "basis": "Approfondimento sui rilasci Liquid AI (13 ottobre), Harness² (9), Apple MLX (15) e Anthropic (12): revisione delle schede già pubblicate, non notizie delle ultime 24 ore. Esempi d’uso proposti dalla redazione distinti dai risultati misurati.",
       "sections": [
         {
           "heading": "1 · Un assistente che lavora sui documenti senza spedirli a un servizio AI",
