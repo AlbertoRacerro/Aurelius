@@ -1,45 +1,50 @@
 {
   "schema": 1,
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T19:41:23.137576+00:00",
+  "updated_at": "2026-10-21T21:03:36.045905+00:00",
   "articles": [
     {
       "slot": "philosophy",
       "id": "philosophy-20261021",
-      "title": "La collera, le redini e il bisogno di essere approvati",
+      "title": "Il carro, la freccia e la roccia",
       "kind": "synthesis",
-      "basis": "Dhammapada, raccolta buddhista tradizionale: capitolo I, versi 3–6, e XVII, versi 222–234; sintesi a partire dalla traduzione inglese di F. Max Müller, The Sacred Books of the East, vol. X, parte I (1881). Sintesi e interpretazione originali su ostilità, azione e giudizio altrui; non un estratto. Breve citazione inglese da traduzione in pubblico dominio; resa italiana della redazione.",
+      "basis": "Dhammapada, capitoli I (1–6, 13–14, 19–20), III (33–36), VI (80–82) e XVII (221–234). Selezione tematica con tagli e nuova traduzione italiana dalla versione inglese di F. Max Müller (1881), in pubblico dominio: educare il pensiero, trattenere la collera, attraversare lode e biasimo.",
       "sections": [
         {
-          "heading": "Una frase che continua a tornare",
+          "heading": "La ruota e l’ombra",
           "paragraphs": [
-            "Nel Dhammapada, ai versi 3 e 4, torna la stessa sequenza: qualcuno mi ha insultato, colpito, sconfitto, derubato. Cambia ciò che facciamo di questo ricordo. Trattenerlo alimenta l'ostilità; smettere di coltivarlo ne interrompe la continuità. Il testo non contesta che l'offesa sia avvenuta. Indica il lavoro ulteriore con cui la riproduciamo, anche quando l'altra persona è assente.",
-            "Al verso 5, nella traduzione inglese di Max Müller, leggiamo: «For hatred does not cease by hatred». L'odio non cessa per mezzo dell'odio: questa resa italiana è nostra. La seconda parte del verso parla di amore nella traduzione consultata. È una risposta etica alla riproduzione dell'ostilità, non una garanzia che la benevolenza disarmi ogni aggressore. Da questi versi non discende l'obbligo di restare esposti a un danno.",
-            "Il verso 6 aggiunge un elemento diverso: riconoscere che tutti arriveremo alla fine può porre termine alle contese. Non perché ogni contrasto diventi insignificante, ma perché la prospettiva della morte modifica il peso che attribuiamo alla vittoria. Il ricordo dell'offesa e la coscienza del limite sono due modi di tenere presente qualcosa; soltanto uno dei due, nel passaggio, scioglie il conflitto."
+            "Tutto ciò che siamo nasce da ciò che abbiamo pensato: sui pensieri si fonda, di pensieri è fatto. Se un uomo parla o agisce con un pensiero malvagio, il dolore lo segue come la ruota segue il piede del bue che trascina il carro. Se parla o agisce con un pensiero puro, la felicità lo accompagna come un’ombra che non lo abbandona.",
+            "«Mi ha insultato, mi ha colpito, mi ha sconfitto, mi ha derubato»: in chi custodisce questi pensieri, l’odio non si spegne. «Mi ha insultato, mi ha colpito, mi ha sconfitto, mi ha derubato»: in chi non custodisce questi pensieri, l’odio si spegne. Mai, in nessun tempo, l’odio cessa per mezzo dell’odio. Cessa per mezzo dell’amore: questa è un’antica legge.",
+            "Il mondo non sa che qui tutti dobbiamo giungere alla fine. In coloro che lo sanno, le contese si placano.",
+            "Come la pioggia penetra in una casa dal tetto mal coperto, così la passione penetra in una mente che non riflette. Come la pioggia non penetra in una casa ben coperta, così la passione non penetra in una mente che sa riflettere.",
+            "Un uomo può recitare molte parole della legge e tuttavia non metterle in pratica: è come un mandriano che conta le vacche altrui. Un altro ne conosce poche, ma ha lasciato passione, odio e stoltezza, possiede conoscenza e serenità, non si aggrappa a nulla in questo mondo o nell’altro: egli partecipa davvero alla vita spirituale."
           ]
         },
         {
-          "heading": "Guidare quando la collera sale",
+          "heading": "Chi tiene davvero le redini",
           "paragraphs": [
-            "Nel capitolo XVII, verso 222, il vero guidatore è chi trattiene la collera mentre cresce, come si arresta un carro in movimento. Gli altri tengono soltanto le redini. L'immagine distingue il possesso apparente del controllo dalla capacità di esercitarlo nel momento difficile. Avere imparato un principio non significa ancora saperlo praticare quando la situazione cambia.",
-            "Il verso 223 amplia il discorso con quattro risposte differenti: alla collera la benevolenza, al male il bene, all'avarizia la generosità, alla menzogna la verità. La precisione della serie conta. Non viene proposta un'unica disposizione vaga, come essere più tranquilli. Ogni comportamento richiede una qualità che ne interrompa il meccanismo: la generosità modifica il rapporto col possesso; la verità quello con le parole e con ciò che gli altri possono sapere.",
-            "Ai versi 231–234 l'esercizio riguarda separatamente corpo, lingua e mente. Questa articolazione impedisce di ridurre la nonviolenza alla sola assenza di un gesto aggressivo. Si può trattenere la mano e continuare a ferire con le parole; si può tacere e continuare a nutrire l'intenzione di umiliare. Il testo considera tutte e tre le dimensioni, senza sostenere che siano sempre ugualmente visibili agli altri."
+            "Come chi fabbrica frecce raddrizza l’asta, così il saggio raddrizza il pensiero tremante e instabile, difficile da custodire, difficile da trattenere. Come un pesce tolto dalla sua dimora nell’acqua e gettato sulla terra asciutta, il nostro pensiero si dibatte per sfuggire al dominio del tentatore.",
+            "È bene domare la mente: è difficile da frenare, volubile, corre dovunque le piaccia. Una mente domata porta felicità. Il saggio custodisca i propri pensieri: sono sottili, difficili da percepire, corrono dovunque vogliano. Pensieri ben custoditi portano felicità.",
+            "Lascia la collera, abbandona l’orgoglio, sciogli ogni legame. Chi non si aggrappa al nome e alla forma, chi non chiama nulla suo, non è raggiunto dalla sofferenza.",
+            "Chi trattiene la collera che sale, come si arresta un carro lanciato nella corsa, quello io chiamo un vero auriga. Gli altri tengono soltanto le redini.",
+            "Vinci la collera con l’amore, il male con il bene, l’avarizia con la generosità, la menzogna con la verità. Di’ il vero, non cedere alla collera; dona, quando ti viene chiesto anche poco. Per questi tre passi ti avvicinerai agli dèi."
           ]
         },
         {
-          "heading": "Il consenso non è il criterio finale",
+          "heading": "La roccia e il vento",
           "paragraphs": [
-            "Poi il capitolo compie una svolta molto concreta. Al verso 227 vengono biasimati chi tace, chi parla molto e chi parla poco. Non esiste una posizione che renda immuni dalla critica. Cercare la misura perfetta soltanto attraverso le reazioni del pubblico porta dunque a un compito impossibile: anche due condotte opposte possono ricevere disapprovazione.",
-            "Il verso successivo esclude tanto la lode universale quanto il biasimo universale. Ma ai versi 229–230 non segue l'indifferenza verso ogni giudizio: conta la valutazione delle persone capaci di discernimento, fondata su saggezza e condotta. La distinzione è fra reputazione indiscriminata e giudizio qualificato. Non tutte le critiche hanno lo stesso valore; non basta neppure che una critica ci faccia soffrire per renderla ingiusta.",
-            "Questi passaggi appartengono a una raccolta buddhista orientata alla liberazione, non a un manuale moderno di gestione delle emozioni. Leggerli oggi può aprire una domanda più circoscritta: quale risposta interrompe davvero il comportamento che rifiutiamo? Rinunciare alla vendetta, dire il vero e porre un limite possono essere azioni diverse, compatibili nella stessa situazione. Nessuna richiede di dichiarare buono ciò che è stato subito."
+            "È un detto antico, o Atula, non una cosa di oggi: biasimano chi rimane in silenzio, biasimano chi parla molto, biasimano anche chi parla poco. Non c’è sulla terra nessuno che non venga biasimato. Non vi fu, non vi sarà, non vi è ora un uomo sempre biasimato o un uomo sempre lodato.",
+            "Ma chi oserebbe biasimare colui che le persone capaci di discernimento lodano giorno dopo giorno, trovandolo irreprensibile, saggio, ricco di conoscenza e di virtù, simile a una moneta d’oro puro?",
+            "Chi scava canali conduce l’acqua; chi fabbrica frecce piega l’asta; il falegname lavora il legno; i saggi plasmano se stessi. Come una roccia salda non è scossa dal vento, così i saggi non vacillano fra biasimo e lode. Dopo aver ascoltato la legge, diventano sereni come un lago profondo, limpido e quieto.",
+            "Guardati dalla collera del corpo e governa il corpo. Guardati dalla collera della lingua e governa la lingua. Guardati dalla collera della mente e governa la mente. I saggi che custodiscono il corpo, custodiscono la parola e custodiscono il pensiero sono davvero padroni di sé."
           ]
         }
       ],
       "sources": [
         {
-          "title": "Dhammapada, capitoli I e XVII",
+          "title": "Dhammapada, capitoli I, III, VI e XVII",
           "url": "https://www.gutenberg.org/cache/epub/2017/pg2017-images.html",
-          "edition": "Traduzione inglese F. Max Müller (1823–1900), 1881; versi indicati consultati; testo e traduzione storica in pubblico dominio, nessuna traduzione italiana moderna riprodotta.",
+          "edition": "F. Max Müller, The Sacred Books of the East, vol. X, parte I (1881). Passaggi indicati in basis riletti; selezione non continua, traduzione italiana nuova dalla versione storica in pubblico dominio.",
           "accessed": "2026-10-21"
         }
       ]
@@ -121,59 +126,76 @@
     {
       "slot": "future",
       "id": "future-20261021",
-      "title": "Radar tecnico: Liquid 24B, Harness² e quattro verifiche utili",
-      "kind": "news",
-      "event_date": "2026-10-15",
-      "publication_date": "2026-10-21",
-      "basis": "Newsletter originale di sei schede tecniche da fonti primarie: Liquid AI LFM2.5-24B-A2B (13 ottobre), GGUF ufficiali consultati il 21 ottobre, Harness² arXiv:2610.14224v1 (9 ottobre), report MLX Apple (15 ottobre), LRFB arXiv:2610.12778v1 (8 ottobre), Anthropic Frontier Red Team (12 ottobre 2026). Date specifiche in ogni scheda; event_date indica la pubblicazione primaria più recente datata fra le notizie, publication_date questa sintesi. Dati vendor/autori separati dalle deduzioni; nessun benchmark locale o replica indipendente eseguito.",
+      "title": "Radar · AI locale, usi e possibilità",
+      "kind": "evergreen",
+      "basis": "Approfondimento sui rilasci Liquid AI (13 ottobre), Harness² (9), Apple MLX (15) e Anthropic (12): revisione delle schede già pubblicate, non notizie delle ultime 24 ore. Esempi d’uso proposti dalla redazione distinti dai risultati misurati.",
       "sections": [
         {
-          "heading": "1 · Liquid LFM2.5-24B-A2B: agente locale, con limiti di memoria",
+          "heading": "1 · Un assistente che lavora sui documenti senza spedirli a un servizio AI",
           "paragraphs": [
-            "• Evento e pubblicazione: 13 ottobre 2026. Fonti primarie: annuncio Liquid AI e model card ufficiale, collegati nelle fonti. Modello testuale reasoning-only: 24 miliardi di parametri totali, 2,45 miliardi attivi per token; contesto dichiarato di 131.072 token; 40 strati, di cui 10 GQA e 30 a convoluzioni corte. L'italiano è fra le lingue dichiarate. Il formato di chiamata strumenti predefinito è una lista in sintassi Python; la card consente di richiedere JSON. È quindi necessario verificare il parser, non assumere compatibilità dal solo endpoint.",
-            "• Benchmark del produttore, non replica indipendente: LiveClaw 48,09 contro 38,19 di Qwen3.6-35B-A3B; BFCLv4 65,01 contro 65,00. Nel coding SWE-Bench Verified con OpenCode il confronto si inverte: 51,00 contro 66,20. Il quasi pareggio su BFCL non dimostra equivalenza su compiti lunghi; il vantaggio su LiveClaw non dimostra superiorità generale nel coding. Non è un confronto con un Gemma 12B sullo stesso hardware.",
-            "• Velocità dichiarate: 184 token/s su Apple M5 Max e 114 su Ryzen AI Max+ 395. Il picco oltre 21.000 token/s su B300 è throughput aggregato sotto concorrenza sostenuta, BF16, SGLang 0.5.22, input di 1.024 token e output fino a 256. Non è la velocità interattiva di una singola richiesta né una previsione per una GPU portatile. Le condizioni complete dei test edge non vengono equiparate a quelle B300."
+            "La possibilità interessante di Liquid LFM2.5 è costruire un assistente che usi strumenti sul proprio computer. Il vantaggio concreto sarebbe poter lavorare su documenti riservati mantenendo l’elaborazione del modello sulla macchina. Liquid lo ha presentato il 13 ottobre: qui ne approfondiamo gli utilizzi, senza presentarlo come un annuncio di oggi."
+          ],
+          "bullets": [
+            "Esempio d’uso proposto: si potrebbe chiedere di trovare le fatture di un mese e preparare un prospetto delle spese. L’applicazione dovrebbe fornire al modello uno strumento per cercare i file e uno per leggere i dati: il modello da solo non acquista accesso ai documenti.",
+            "Che cosa cambia: questo modello è addestrato anche a scegliere strumenti e concatenare azioni. Non deve limitarsi a suggerire «apri il foglio»: può produrre una richiesta che il programma traduce in un’operazione autorizzata.",
+            "Perché il nome inganna: contiene 24 miliardi di parametri, ma ne usa circa 2,45 miliardi per ciascun frammento di testo generato. È come avere molti specialisti e chiamarne solo alcuni per ogni passaggio: si riduce il lavoro di calcolo, non scompare il resto del modello da conservare in memoria.",
+            "Prova disponibile: nei test di Liquid supera Qwen3.6-35B-A3B su LiveClaw (48,09 contro 38,19), ma resta indietro nel coding SWE-Bench Verified (51 contro 66,2). È un candidato per agenti, non il vincitore di ogni attività.",
+            "Per usarlo: occorrono un programma compatibile per eseguire il modello e un’applicazione che interpreti correttamente le richieste agli strumenti. La scheda documenta l’italiano e le chiamate a funzioni; la qualità sul proprio lavoro va ancora misurata.",
+            "Primo esperimento proposto: dieci documenti di prova, una domanda precisa, nessun permesso di modificare gli originali. Contare quante risposte sono corrette e quanto si attende aiuta a capire più di una conversazione riuscita una sola volta."
           ]
         },
         {
-          "heading": "2 · I GGUF Liquid: il vincolo che il nome A2B nasconde",
+          "heading": "2 · Prima del download: il modello entra davvero nel computer?",
           "paragraphs": [
-            "• Disponibilità verificata il 21 ottobre nel repository ufficiale GGUF, collegato nelle fonti: QAD Q4_0 circa 13,6 GB; Q4_K_M 14,5 GB; Q5_K_M 17 GB; Q6_K 19,7 GB; Q8_0 25,5 GB. La pagina descrive QAD come distillazione per recuperare accuratezza dopo quantizzazione. Non fornisce, nei passaggi consultati, una misura indipendente della perdita qualitativa per tutti questi formati.",
-            "• Conseguenza aritmetica: 13,6 GB decimali sono circa 12,67 GiB. Già il file più piccolo elencato supera 12 GiB, prima di cache e buffer. Due miliardi di parametri attivi riducono il calcolo per token; non rendono residenti soltanto due miliardi di pesi. Su una GPU da 12 GB serve valutare offload o altri formati, senza promettere una velocità non misurata. La dimensione del file non coincide esattamente con l'allocazione runtime, ma basta a escludere l'ipotesi ingenua che tutti i pesi entrino comodamente.",
-            "• Licenza: LFM Open License v1.0, non Apache-2.0; il testo ufficiale contiene una soglia commerciale di ricavi annui pari a 10 milioni di dollari. Per JarvisOS: candidato da provare in un ambiente separato, misurando esiti validi, memoria, latenza completa e token di ragionamento. Questi ultimi possono ridurre il vantaggio dei token/s quando interessa il tempo fino alla risposta utilizzabile. Nessuna misura locale è stata eseguita per questa newsletter."
+            "La domanda utile non è soltanto «è abbastanza intelligente?», ma «con la memoria disponibile resta utilizzabile?». Le versioni GGUF ufficiali sono file preparati per eseguire il modello con strumenti come llama.cpp. La quantizzazione ne riduce il peso rappresentando i numeri con meno precisione."
+          ],
+          "bullets": [
+            "Dato da controllare prima: il file QAD Q4_0 è circa 13,6 GB; il Q4_K_M circa 14,5 GB. Il primo equivale a circa 12,67 GiB: supera già una memoria grafica da 12 GiB, prima dello spazio necessario per la conversazione e per il programma.",
+            "Possibilità concreta: una parte del lavoro può essere spostata sulla memoria e sul processore del computer. Questo può consentire l’esecuzione, ma il tempo di risposta va misurato sulla configurazione effettiva.",
+            "Esempio d’uso proposto: un riordino notturno di appunti può tollerare attese che renderebbero scomodo un assistente vocale. Lo stesso modello può quindi essere interessante per un lavoro in background e poco adatto a una conversazione immediata.",
+            "Che cosa misurare: il tempo fra invio e risultato utilizzabile, con un documento rappresentativo. Leggere un numero alto di token al secondo non dice quanto tempo passa prima che una richiesta completa sia terminata.",
+            "Percorso disponibile: la pagina ufficiale mostra l’avvio tramite llama.cpp e applicazioni compatibili. Prima di collegarlo ai propri archivi conviene provare il solo modello su file sacrificabili e verificare l’occupazione di memoria durante il compito.",
+            "Esempio di confronto proposto: ripetere la stessa estrazione di dati su venti file, annotando durata, errori e correzioni manuali. Una soluzione leggermente più lenta può comunque far risparmiare lavoro se richiede meno interventi."
           ]
         },
         {
-          "heading": "3 · Harness²: risultati verificati, adozione da circoscrivere",
+          "heading": "3 · Migliorare il modo di lavorare dell’AI senza cambiare modello",
           "paragraphs": [
-            "• Evento e pubblicazione del paper: 9 ottobre 2026, arXiv:2610.14224v1, Xu e colleghi; repository pubblico google-research/harness2 consultato il 21 ottobre. Il lavoro modifica il sistema attorno al modello mantenendone fissi i pesi: prova modifiche sul compito corrente, confronta le esecuzioni e conserva esperienza utile per compiti successivi. È un risultato di ricerca sull'ottimizzazione dell'esecuzione, non una nuova architettura neurale.",
-            "• Risultati degli autori: un passo di ricorsione porta guadagni massimi di 11,5 punti su WorkBuddy-Bench, 4,5 su JobBench e 11,8 punti percentuali sul partial pass rate di LAB. Le configurazioni coinvolgono GLM-5 e Gemini 3.5 Flash con due executor. Sono massimi su configurazioni e metriche diverse: non una media universale, né un guadagno dimostrato per qualsiasi modello locale. Manca qui una replica indipendente e non viene stimato il costo per un flusso JarvisOS.",
-            "• Dettaglio operativo dal README: Python 3.12 e Linux; executor OpenCode e Codex; demo locale deterministica senza credenziali, benchmark con modelli a pagamento. Licenza Apache-2.0 per il progetto; dipendenze e benchmark mantengono le proprie licenze. Il repository avverte che l'executor può avere rete senza restrizioni e Codex sandbox disattivata: servono restrizioni per impedire l'accesso online alle risposte dei benchmark. Non viene eseguito nulla di questo durante la preparazione editoriale.",
-            "• Proposta per JarvisOS, distinta dai risultati pubblicati: sperimentare modifiche a prompt e skill come patch versionate, mantenendo fuori dal perimetro modificabile permessi, segreti e criteri di accettazione. Confrontare a budget di inferenza uguale il sistema originale e quello modificato su compiti tenuti separati. Una soluzione migliore ottenuta dopo molte più esecuzioni può essere interessante, ma non dimostra da sola che la modifica del sistema sia la causa del vantaggio."
+            "Harness² affronta una possibilità diversa: un assistente può migliorare perché impara a organizzare il lavoro, anche mantenendo lo stesso modello. L’harness è l’insieme di istruzioni, strumenti e memoria che lo circonda. Il paper è del 9 ottobre; il codice è pubblico."
+          ],
+          "bullets": [
+            "Come funziona: il sistema propone modifiche al proprio modo di affrontare un compito, le prova e confronta i comportamenti ottenuti. Poi ricava indicazioni da riutilizzare nei compiti successivi. Cambia il metodo di lavoro, non i pesi della rete neurale.",
+            "Esempio d’uso proposto: un assistente che sbaglia spesso a consegnare un foglio potrebbe confrontare due procedure: scrivere subito le formule oppure controllare prima colonne e unità. L’esperimento serve a scegliere una procedura, non a proclamare più intelligente il modello.",
+            "Che cosa è stato osservato: gli autori riportano miglioramenti su tre raccolte di compiti professionali, fino a 11,5 punti su WorkBuddy-Bench in una delle configurazioni. Il dato indica una possibilità sperimentale; il vantaggio sul proprio lavoro resta da verificare.",
+            "Come esplorarlo: il repository offre una demo locale senza credenziali di modelli. Le prove con veri modelli richiedono invece configurazione e possono consumare API a pagamento.",
+            "Vincolo pratico: lasciare che il sistema riscriva una procedura non richiede di lasciargli cambiare anche i permessi. Una prova proposta può limitare gli interventi a istruzioni e sequenza di lavoro, conservando fuori dal suo controllo gli accessi e i criteri di accettazione.",
+            "Quando avrebbe valore: per attività ripetute con errori ricorrenti, purché il miglioramento regga anche su casi nuovi. Un documento riuscito dopo molti tentativi è utile, ma bisogna confrontarlo con lo stesso budget di tempo e calcolo."
           ]
         },
         {
-          "heading": "4 · MLX e RDMA: numeri utili, piattaforma diversa",
+          "heading": "4 · Più computer possono diventare la memoria di un solo grande modello",
           "paragraphs": [
-            "• Evento e pubblicazione: 15 ottobre 2026, report Apple Machine Learning Research. Apple misura Muse Spark Open da 816B, 42B attivi, in NVFP4 su quattro Mac Studio M5 Ultra: oltre 36 token/s con contesto di 8.192 token. I test distinguono tempo al primo token, generazione e potenza, usando mlx_lm.benchmark; l'esempio di benchmark ha batch 1 e 128 token generati.",
-            "• Dato sul collegamento: a 65.536 token di contesto, quattro M5 Ultra con due cavi per collegamento riducono il TTFT di Muse da circa 50,5 a 40,6 secondi rispetto a un cavo. Tensor parallelism e pipeline parallelism non sono intercambiabili: la comunicazione può annullare parte del vantaggio nel prefill. Sono misure Apple, non indipendenti, su memoria unificata e Thunderbolt RDMA.",
-            "• Utilità concreta: il risultato documenta una possibilità di inferenza distribuita, ma non dimostra prestazioni analoghe collegando due PC con GPU NVIDIA e una normale rete. Per JarvisOS è un riferimento di architettura e metodologia; non una ragione sufficiente per cambiare hardware. Prezzi, consumi dell'intero sistema e prestazioni per euro non sono confrontati qui."
+            "Apple mostra come dividere un modello molto grande fra più Mac Studio. La possibilità pratica è eseguire localmente modelli che una singola macchina non riesce a contenere. Il report MLX è del 15 ottobre e misura un collegamento specifico fra Mac, non una rete domestica generica."
+          ],
+          "bullets": [
+            "Come funziona: parti del modello risiedono su macchine diverse, che si scambiano dati durante l’elaborazione. RDMA indica un trasferimento diretto fra memorie che riduce parte del lavoro normalmente richiesto al processore per comunicare.",
+            "Dimostrazione: quattro Mac Studio M5 Ultra eseguono Muse Spark Open da 816 miliardi di parametri in formato NVFP4 e superano 36 token al secondo con 8.192 token di contesto. Sono misure Apple sulla propria configurazione.",
+            "Esempio d’uso proposto: un laboratorio potrebbe valutare una postazione condivisa per analizzare documentazione interna con un modello grande, invece di inviarla a un fornitore esterno. La prima domanda sarebbe quante richieste e quanta attesa quella postazione può sostenere.",
+            "Limite che cambia la scelta: i computer devono comunicare mentre lavorano. Aggiungere memoria distribuita non garantisce una risposta più rapida; hardware e collegamento contano insieme.",
+            "Per decidere: distinguere l’attesa prima della prima parola dalla velocità con cui arrivano le successive. Un sistema che scrive velocemente dopo una lunga pausa può andare bene per un’analisi estesa e risultare scomodo in un dialogo."
           ]
         },
         {
-          "heading": "5 · Valutare le specifiche: una baseline banale quasi pareggia i giudici",
+          "heading": "5 · Anche macchine piccole possono eseguire AI: quale uso ne segue?",
           "paragraphs": [
-            "• Evento e pubblicazione: 8 ottobre 2026, preprint di Grynets, Fedorchuk e Lyashkevych, arXiv:2610.12778v1. Oggetto ristretto: specifiche generate da AI per migrazioni Oracle PL/SQL. Il benchmark contiene 494 coppie sorgente-specifica su 19 metriche; 247 record sono tenuti separati per la valutazione. Gli autori sigillano le etichette e impiegano controlli canary e permutazioni.",
-            "• Risultati dichiarati: balanced accuracy 0,87 per GPT-4o, 0,89 per DeepSeek V4 Pro e 0,81 per Claude Sonnet 4.5; la baseline basata sulla lunghezza della specifica raggiunge 0,88. I test appaiati non separano statisticamente i giudici dalla baseline. Ciò non dimostra che siano equivalenti in ogni impiego. Le categorie di difetto compaiono nei rilievi nell'84–92% dei casi violati, con sovrapposizione fra evidenza citata e passaggio etichettato nel 92–93%.",
-            "• Ricaduta per le revisioni AI: chiedere rilievi tipizzati con passaggi verificabili è più informativo di un solo semaforo. Il dominio e il dataset sono limitati; non trasferire quelle percentuali alle specifiche ingegneristiche o al codice generale. È una pista metodologica recente, non un benchmark eseguito su JarvisOS."
-          ]
-        },
-        {
-          "heading": "6 · Anthropic: inferenza su dispositivi piccoli, replica ancora semplificata",
-          "paragraphs": [
-            "• Evento e pubblicazione: 12 ottobre 2026, report del Frontier Red Team firmato William Zhou e Daniel Freeman. Un modello da 9B riesce ad avviare inferenza su otto delle nove tipologie hardware provate. Una dimostrazione separata distribuisce Gemma4-26B-A4B su quindici TV box da circa 55 dollari ciascuno e ottiene 0,39 token/s. È una prova di fattibilità con latenza elevata, non una soluzione interattiva competitiva.",
-            "• Limite decisivo: le prove semplificano la catena di replicazione e non dimostrano che piccoli modelli completino autonomamente tutti i passaggi su Internet. I risultati end-to-end riportati riguardano modelli più capaci, fra cui GLM-5.2, nell'ambiente valutato. La previsione di progressi entro fine anno è un'estrapolazione degli autori, non un evento osservato.",
-            "• Conseguenza progettuale proposta: per agenti locali, il confine dei privilegi conta anche quando l'inferenza non usa un provider cloud. Un processo che può scaricare componenti, lanciare servizi e raggiungere liberamente la rete possiede capacità operative indipendenti dalla dimensione del modello. Il report motiva test di isolamento e tracciamento degli effetti; non offre una misura della sicurezza di un'installazione personale specifica."
+            "Anthropic ha studiato la capacità di avviare modelli su dispositivi economici. Il risultato del 12 ottobre riguarda la fattibilità tecnica e i rischi di replicazione autonoma: non propone un prodotto domestico pronto."
+          ],
+          "bullets": [
+            "Il dato concreto: un modello da 9 miliardi di parametri è stato avviato su otto delle nove tipologie hardware provate. In una dimostrazione distinta, quindici TV box da circa 55 dollari ciascuno eseguono Gemma4-26B-A4B a 0,39 token al secondo.",
+            "Che cosa significa: il modello può funzionare senza un datacenter, ma in quella dimostrazione genera meno di un token al secondo. Per una conversazione rapida il risultato è poco interessante; per capire quali dispositivi possono ospitare un modello è significativo.",
+            "Possibile ricerca applicativa, proposta dalla redazione: valutare elaborazioni rare e non urgenti su hardware già disponibile. Prima di parlarne come risparmio servirebbe però misurare consumi, tempo, manutenzione e risultato ottenuto.",
+            "Confine della prova: avviare l’inferenza è solo una parte della replicazione. Il report usa valutazioni semplificate e distingue i singoli passaggi dall’intera catena autonoma.",
+            "Conseguenza per chi costruisce agenti: eseguire il modello in casa risolve una parte del problema di dove passano i dati. Bisogna ancora decidere quali file, comandi e connessioni il programma che lo usa può raggiungere."
           ]
         }
       ],
@@ -197,18 +219,6 @@
           "accessed": "2026-10-21"
         },
         {
-          "title": "LiquidAI — QAD Q4_0",
-          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-GGUF",
-          "edition": "README ufficiale, sezione QAD Q4_0; consultato il 21 ottobre 2026.",
-          "accessed": "2026-10-21"
-        },
-        {
-          "title": "LiquidAI — LFM Open License v1.0",
-          "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B/blob/main/LICENSE",
-          "edition": "Testo della licenza del checkpoint; indicazione della soglia commerciale, non parere legale.",
-          "accessed": "2026-10-21"
-        },
-        {
           "title": "Xu e colleghi — Harness²",
           "url": "https://arxiv.org/abs/2610.14224v1",
           "edition": "Preprint v1, 9 ottobre 2026; abstract e sezioni consultate, risultati degli autori; nessuna citazione letterale.",
@@ -224,12 +234,6 @@
           "title": "Apple — Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio",
           "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
           "edition": "Report del produttore, 15 ottobre 2026, metodologia e sezioni inferenza singola/distribuita.",
-          "accessed": "2026-10-21"
-        },
-        {
-          "title": "Grynets, Fedorchuk, Lyashkevych — Leakage-Resistant Evaluation",
-          "url": "https://arxiv.org/abs/2610.12778v1",
-          "edition": "Preprint v1, 8 ottobre 2026; risultati riportati nell’abstract, non replica indipendente.",
           "accessed": "2026-10-21"
         },
         {
