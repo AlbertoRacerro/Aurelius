@@ -85,13 +85,13 @@ function mutatePersonal(fn) {
  const current=load(localStorage).state, next=fn(current);
  save(localStorage,next);state=next;return next;
 }
-function inboxPaint() {
+function inboxPaint(changed=false) {
  const status=$('#inbox-status');if(status)status.textContent=inboxStatus;
- if(ui.tab==='inbox'&&!ui.sheet&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName||''))render();
+ if((ui.tab==='inbox'||(changed&&['ora','todos','idee'].includes(ui.tab)))&&!ui.sheet&&!/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName||''))render();
 }
 async function syncPersonal() {
  const token=localStorage.getItem(PERSONAL_AUTH);if(personalBusy||!token||!PUSH_API)return;
- personalBusy=true;const epoch=personalEpoch;inboxStatus='Sincronizzazione…';inboxPaint();
+ personalBusy=true;let updated=false;const epoch=personalEpoch;inboxStatus='Sincronizzazione…';inboxPaint();
  try {
   const queued=(state.personalInbox?.notes||[]).filter(x=>x.status==='queued').slice(0,5);
   for(const record of queued){
@@ -107,12 +107,12 @@ async function syncPersonal() {
    if(!Array.isArray(response.results)||response.results.length>10||!Array.isArray(response.errors)||response.results.some(x=>!ids.includes(x.note_id))||response.errors.some(id=>!ids.includes(id)))throw Error('Risultati del server non validi');
    for(const result of response.results)mutatePersonal(s=>applyResult(s,result));
    mutatePersonal(s=>{for(const r of s.personalInbox?.notes||[]){if(ids.includes(r.note.id)){r.checkedAt=Date.now();if(response.errors.includes(r.note.id))r.error='Risultato da correggere prima di applicarlo';}}return s;});
-   if(response.results.length)scheduleSync();
+   if(response.results.length){updated=true;scheduleSync();}
   }
   const waiting=(state.personalInbox?.notes||[]).filter(x=>x.status==='sent').length, remaining=(state.personalInbox?.notes||[]).filter(x=>x.status==='queued').length;
   inboxStatus=remaining?`${remaining} note da inviare · ${waiting} in attesa`:'Archivio sincronizzato'+(waiting?` · ${waiting} in attesa`:'');
  }catch(e){inboxStatus=e.message;}
- finally{personalBusy=false;inboxPaint();}
+ finally{personalBusy=false;inboxPaint(updated);}
 }
 
 // ---------- helpers ----------
