@@ -10,6 +10,10 @@ import * as T from './timer.js';
 import { actById, weeklyReview, legacyHistory } from './stats.js';
 import { reminderItems } from './reminders.js';
 import { applyPlanPatch } from './plan-import.js';
+import { remainingWindow, replanRemaining } from './replan.js';
+import { applyReaderPreferences, saveReaderPreferences } from './reader.js';
+import { renderHomeCycle } from './care-view.js';
+import { orderedTasks } from './todos.js';
 import { PRIORITIES, normalizeTaskInput } from './todos.js';
 import { renderTodos } from './todo-view.js';
 import { reflectionForDate } from './reflections.js';
@@ -52,6 +56,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const now = () => Date.now();
 
+applyReaderPreferences(localStorage);
 let { state, notice } = load(localStorage);
 // First run: persist at once so the adoption of summer data and trackFrom are fixed from now on.
 if (!localStorage.getItem('aurelius.v2')) save(localStorage, state);
@@ -172,9 +177,50 @@ function viewNow() {
   const t = now();
   const { current, next } = nowAndNext(state, t);
   const out = [];
-  out.push(`<h1>${esc(longDate(today()))} · ${timeOf(t)}</h1><a class="btn sm" href="#inbox">Appunti</a>`);
-  const privateTasks=(state.backlog||[]).filter(x=>x.sourceNote&&!x.done).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999')).slice(0,3);
-  if(privateTasks.length)out.push(`<div class="card"><h2>Da ricordare</h2>${privateTasks.map(x=>`<p>${esc(x.text)}${x.due?' · '+esc(x.due):''}</p>`).join('')}<a class="btn sm" href="#todos">Apri Da fare</a></div>`);
+  out.push(`<h1>${esc(longDate(today()))} · ${timeOf(t)}</h1>`);
+  // What now.
+  out.push(`<h2>Adesso</h2>`);
+  if (current) {
+    const total = current.endMs - current.startMs, done = t - current.startMs;
+    const note = current.block.note ? `<div class="mut small" style="margin-top:6px">${esc(current.block.note)}</div>` : '';
+    const prov = current.block.provisional ? ' <span class="tag warn">provvisorio</span>' : '';
+    out.push(`<div class="card now" data-occ="${esc(current.id)}">
+      <div class="row">${sw(current.act)}<span class="when">${esc(current.block.start)}–${esc(current.block.end)}${prov}</span></div>
+      <div class="what">${esc(actName(current.act))}</div>
+      <div class="left">mancano ${until(current.endMs - t)}</div>
+      <div class="bar"><i style="width:${Math.min(100, (100 * done) / total).toFixed(1)}%"></i></div>${note}<button class="btn" data-act="replan-open" style="margin-top:14px">Modifica il tempo rimanente</button></div>`);
+  } else {
+    out.push(`<div class="card now"><div class="what" style="font-size:24px">Niente in programma</div>
+      <div class="when">${next ? `Prossimo blocco tra ${until(next.startMs - t)}` : 'Nessun blocco nei prossimi giorni'}</div></div>`);
+  }
+  if (next) {
+    const nd = partsAt(next.startMs, tz()).date;
+    out.push(`<div class="card soft next">${sw(next.act)}<span class="grow"><b>Dopo:</b> ${esc(actName(next.act))}</span>
+      <span class="mut small">${nd !== today() ? GIORNI_BREVI[weekday(nd)] + ' ' : ''}${esc(next.block.start)}–${esc(next.block.end)}</span></div>`);
+  }
+
+  out.push(renderHomeCycle(today(), loadRelationship(localStorage), esc));
+  const waitingNotes=(state.personalInbox?.notes||[]).filter(x=>x.status!=='applied').length;
+  out.push(`<a class="card home-inbox" href="#inbox"><span><b>Appunti</b><span class="small mut">${waitingNotes ? `${waitingNotes} da organizzare` : 'Scrivi un pensiero o qualcosa da fare'}</span></span><span aria-hidden="true">↗</span></a>`);
+  const dailyTasks=orderedTasks(state.backlog,'all').filter(x=>!x.done&&(!x.due||x.due<=today())||x.done&&partsAt(x.completedAt||0,tz()).date===today());
+  out.push(`<section class="home-checklist"><div class="row"><h2 class="grow">Checklist di oggi</h2><a class="btn sm" href="#todos">Tutte le attività</a></div><div class="card todo-list">${dailyTasks.length?dailyTasks.map(x=>`<label class="todo-item${x.done?' is-done':''}"><span class="todo-main"><input type="checkbox" data-act="bl-toggle" data-id="${esc(x.id)}"${x.done?' checked':''}><span class="todo-text">${esc(x.text)}</span></span></label>`).join(''):'<p class="small mut">Nessuna attività da fare oggi.</p>'}</div></section>`);
+
+
+  // Today.
+  const occs = occurrences(state, today());
+  if (occs.length) {
+    out.push(`<h2>Oggi</h2><ul class="day card">`);
+    for (const o of occs) {
+      const st = statusOf(o);
+      const cls = o === current || o.id === current?.id ? 'cur' : o.endMs <= t ? 'past' : '';
+      const lab = STATUS_LABEL[st];
+      out.push(`<li class="${cls}"${cls==='cur'?' aria-current="time"':''}><button class="li" data-act="open-occ" data-occ="${esc(o.id)}">
+        <span class="t">${esc(o.block.start)}–${esc(o.block.end)}</span>${sw(o.act)}<span class="grow">${esc(actName(o.act))}</span>
+        ${lab ? `<span class="st ${lab[1]}">${lab[0]}</span>` : ''}</button></li>`);
+    }
+    out.push(`</ul>`);
+  }
+  out.push(viewTimer(current));
   const dailyThought = reflectionForDate(today());
   out.push(`<div class="card soft ritual-preview">
     <div class="mut small"><b>Riflessione di oggi · ${esc(dailyThought.title)}</b></div>
@@ -209,43 +255,6 @@ function viewNow() {
     }
   }
 
-  // What now.
-  out.push(`<h2>Adesso</h2>`);
-  if (current) {
-    const total = current.endMs - current.startMs, done = t - current.startMs;
-    const note = current.block.note ? `<div class="mut small" style="margin-top:6px">${esc(current.block.note)}</div>` : '';
-    const prov = current.block.provisional ? ' <span class="tag warn">provvisorio</span>' : '';
-    out.push(`<div class="card now" data-occ="${esc(current.id)}">
-      <div class="row">${sw(current.act)}<span class="when">${esc(current.block.start)}–${esc(current.block.end)}${prov}</span></div>
-      <div class="what">${esc(actName(current.act))}</div>
-      <div class="left">mancano ${until(current.endMs - t)}</div>
-      <div class="bar"><i style="width:${Math.min(100, (100 * done) / total).toFixed(1)}%"></i></div>${note}</div>`);
-  } else {
-    out.push(`<div class="card now"><div class="what" style="font-size:24px">Niente in programma</div>
-      <div class="when">${next ? `Prossimo blocco tra ${until(next.startMs - t)}` : 'Nessun blocco nei prossimi giorni'}</div></div>`);
-  }
-  if (next) {
-    const nd = partsAt(next.startMs, tz()).date;
-    out.push(`<div class="card soft next">${sw(next.act)}<span class="grow"><b>Dopo:</b> ${esc(actName(next.act))}</span>
-      <span class="mut small">${nd !== today() ? GIORNI_BREVI[weekday(nd)] + ' ' : ''}${esc(next.block.start)}–${esc(next.block.end)}</span></div>`);
-  }
-
-  out.push(viewTimer(current));
-
-  // Today.
-  const occs = occurrences(state, today());
-  if (occs.length) {
-    out.push(`<h2>Oggi</h2><ul class="day card">`);
-    for (const o of occs) {
-      const st = statusOf(o);
-      const cls = o === current || o.id === current?.id ? 'cur' : o.endMs <= t ? 'past' : '';
-      const lab = STATUS_LABEL[st];
-      out.push(`<li class="${cls}"><button class="li" data-act="open-occ" data-occ="${esc(o.id)}">
-        <span class="t">${esc(o.block.start)}–${esc(o.block.end)}</span>${sw(o.act)}<span class="grow">${esc(actName(o.act))}</span>
-        ${lab ? `<span class="st ${lab[1]}">${lab[0]}</span>` : ''}</button></li>`);
-    }
-    out.push(`</ul>`);
-  }
   out.push(`<div class="btns"><button class="btn ghost" data-act="manual">+ Registra altro tempo</button></div>`);
   return out.join('');
 }
@@ -485,17 +494,21 @@ function renderSheet() {
 function sheetSplit(s) {
   const occ = findOccurrence(state, s.occId);
   if (!occ) return `<p>Blocco non trovato.</p><button class="btn" data-act="close">Chiudi</button>`;
-  const avail = Math.floor(L.availableMinutes(state, occ, now()));
+  const planning = s.mode === 'plan';
+  const avail = planning ? splitAvailable(s, occ) : Math.floor(L.availableMinutes(state, occ, now()));
   const used = s.rows.reduce((n, r) => n + (Number(r.minutes) || 0), 0);
-  return `<h3>${s.mode === 'other' ? 'Cosa hai fatto?' : 'Quanto hai fatto?'}</h3>
+  const window=planning?remainingWindow(state,occ,Math.min(now(),occ.endMs-1)):null;
+  const originalLeft=planning?occ.endMin-window.start-used:avail-used;
+  return `<h3>${planning ? 'Come usi il tempo rimanente?' : s.mode === 'other' ? 'Cosa hai fatto?' : 'Quanto hai fatto?'}</h3>
     <div class="mut small">${esc(actName(occ.act))} · ${esc(occ.block.start)}–${esc(occ.block.end)} · ${dur(avail)} disponibili</div>
     <div id="rows">${s.rows.map((r, i) => `<div class="alloc" data-i="${i}"><select data-f="act">${actOptions(r.act)}</select>
-      <div class="step"><button data-act="step" data-d="-15" data-i="${i}">−</button><input type="number" inputmode="numeric" min="0" step="5" data-f="min" value="${r.minutes}"><button data-act="step" data-d="15" data-i="${i}">+</button></div></div>`).join('')}</div>
+      <div class="step"><button data-act="step" data-d="-15" data-i="${i}">−</button><input type="number" inputmode="numeric" min="0" step="${planning?15:5}" max="${avail}" aria-label="Minuti attività ${i+1}" data-f="min" value="${r.minutes}"><button data-act="step" data-d="15" data-i="${i}">+</button></div></div>`).join('')}</div>
     <div class="chips" style="margin:10px 0">${[...studyActs(), A().pausa, A().altro].filter(Boolean).map((a) =>
       `<button class="chip" data-act="split-add" data-subj="${esc(a.id)}">+ ${esc(a.name)}</button>`).join('')}</div>
-    <div class="small">Restano <span class="remain${used > avail ? ' over' : ''}" id="remain">${dur(avail - used)}</span> non registrati (né studio né perso).</div>
+    <div class="small">Restano <span class="remain${used > avail ? ' over' : ''}" id="remain">${dur(originalLeft)}</span> ${planning?'sull’attività originale.':'non registrati (né studio né perso).'}</div>
+    ${planning?`<p class="small mut">Cambiamento dalle ${hm(window.start)} · durate in passi di 15 minuti.</p>`:''}
     <div class="err" id="err"></div>
-    <div class="btns" style="margin-top:12px"><button class="btn pri" data-act="split-save">Salva</button><button class="btn ghost" data-act="close">Annulla</button></div>`;
+    <div class="btns" style="margin-top:12px"><button class="btn pri" data-act="split-save">${planning?'Aggiorna piano':'Salva'}</button><button class="btn ghost" data-act="close">Annulla</button></div>`;
 }
 
 function sheetOcc(s) {
@@ -507,7 +520,7 @@ function sheetOcc(s) {
     ${mine.length ? `<ul class="day card" style="margin-top:10px">${mine.map((x) => `<li><span class="t">${timeOf(x.start)}–${timeOf(x.end)}</span>${sw(x.act)}<span class="grow">${esc(actName(x.act))}</span><span class="mut small">${dur((x.end - x.start) / MIN)}</span></li>`).join('')}</ul>` : '<p class="mut small">Nessun tempo registrato in questo blocco.</p>'}
     ${acc ? `<p class="small">Registrato come <b>${esc(STATUS_LABEL[acc.status]?.[0] || acc.status)}</b>.</p>` : ''}
     ${!L.accountable(occ, now()) ? `<p class="mut small">Il blocco finisce alle ${esc(occ.block.end)}: potrai registrarlo allora (per altro tempo usa “Registra altro tempo”).</p>` : ''}
-    <div class="btns" style="margin-top:10px">${!L.accountable(occ, now()) ? '' : `${acc ? '<button class="btn" data-act="acc-reopen">Annulla registrazione</button>' : ''}
+    <div class="btns" style="margin-top:10px">${!L.accountable(occ, now()) ? '<button class="btn pri" data-act="replan-open">Modifica il tempo rimanente</button>' : `${acc ? '<button class="btn" data-act="acc-reopen">Annulla registrazione</button>' : ''}
       ${!acc || acc.status !== 'all' ? '<button class="btn pri" data-act="acc-all-sheet">Sì, tutto</button>' : ''}
       <button class="btn" data-act="acc-partial">In parte</button><button class="btn" data-act="acc-other">Altro</button>`}
       <button class="btn ghost" data-act="close">Chiudi</button></div>`;
@@ -580,15 +593,22 @@ function readSplitRows() {
   }));
 }
 
+function splitAvailable(s, occ) {
+  if(s.mode!=='plan')return Math.floor(L.availableMinutes(state,occ,now()));
+  try{return remainingWindow(state,occ,now()).minutes;}catch{return 0;}
+}
+
 function updateRemain() {
   const s = ui.sheet;
   const occ = findOccurrence(state, s.occId);
   if (!occ) return;
   s.rows = readSplitRows();
-  const avail = Math.floor(L.availableMinutes(state, occ, now()));
+  const avail = splitAvailable(s, occ);
   const used = s.rows.reduce((n, r) => n + r.minutes, 0);
   const el = $('#remain');
-  el.textContent = dur(avail - used);
+  let left=avail-used;
+  if(s.mode==='plan'&&now()<occ.endMs)left=occ.endMin-remainingWindow(state,occ,now()).start-used;
+  el.textContent = dur(left);
   el.classList.toggle('over', used > avail);
 }
 
@@ -688,15 +708,21 @@ const actions = {
     updateRemain();
     const i = Number(el.dataset.i);
     const r = ui.sheet.rows[i];
-    r.minutes = Math.max(0, r.minutes + Number(el.dataset.d));
+    const max=splitAvailable(ui.sheet,findOccurrence(state,ui.sheet.occId));
+    const other=ui.sheet.rows.reduce((n,x,j)=>n+(j===i?0:x.minutes),0);
+    r.minutes = Math.max(0, Math.min(ui.sheet.mode==='plan'?max-other:Infinity, r.minutes + Number(el.dataset.d)));
     document.querySelectorAll('#rows .alloc')[i].querySelector('[data-f=min]').value = r.minutes;
     updateRemain();
+  },
+  'replan-open'(el) {
+    const occ=occFrom(el);if(!occ)return;
+    try { const w=remainingWindow(state,occ,now());if(!w.minutes)throw Error('Restano meno di 15 minuti.');openSheet({type:'split',occId:occ.id,mode:'plan',expectedBlock:JSON.stringify(occ.block),rows:[]}); } catch(e){toast(e.message);}
   },
   'split-add'(el) {
     updateRemain();
     const s = ui.sheet;
     const occ = findOccurrence(state, s.occId);
-    const avail = Math.floor(L.availableMinutes(state, occ, now()));
+    const avail = splitAvailable(s, occ);
     const used = s.rows.reduce((n, r) => n + r.minutes, 0);
     s.rows.push({ act: el.dataset.subj, minutes: Math.max(0, avail - used) });
     renderSheet();
@@ -707,6 +733,11 @@ const actions = {
     const occ = findOccurrence(state, s.occId);
     try {
       const rows = s.rows.filter((r) => r.minutes > 0);
+      if(s.mode==='plan'){
+        const latest=load(localStorage).state;
+        const next=replanRemaining(latest,s.occId,s.expectedBlock,rows,now(),()=>L.uid('b'));
+        save(localStorage,next);state=next;closeSheet();render();scheduleSync();toast('Piano aggiornato solo per questa data');return;
+      }
       const prov = JSON.parse(JSON.stringify(state));
       L.confirmSplit(prov, occ, rows, now(), s.mode === 'other' ? 'other' : 'partial');
       commit((st) => L.confirmSplit(st, occ, rows, now(), s.mode === 'other' ? 'other' : 'partial'));
@@ -1105,6 +1136,7 @@ function render() {
     }
   }
   const main = $('#main');
+  document.documentElement.classList.toggle('reading',ui.tab==='rituali'&&!!articleSelection);
   main.innerHTML = ui.tab==='inbox'?renderInbox(state,esc,!!localStorage.getItem(PERSONAL_AUTH),inboxStatus,inboxDraft):ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc)+renderPersonalItems(state,esc,'idea'):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
     ? renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
         state.settings.carePresence, state.settings.careDays || [], esc, !!editorial?.edition))
@@ -1138,7 +1170,7 @@ function tick() {
     const el = $('#tclock');
     if (el) el.textContent = clock(state.timer.plannedMin * MIN - T.elapsedMs(state.timer, t));
   }
-  const typing = document.activeElement && /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
+  const typing = ui.sheet || document.activeElement && /INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
   if (!typing && (repaint || (ui.tab === 'ora' && t - ui.lastPaint > 20000))) render();
 }
 
@@ -1150,11 +1182,13 @@ document.addEventListener('click', (ev) => {
   if (ev.target.id === 'sheet') { closeSheet(); return; }
   const el = ev.target.closest('[data-act]');
   if (!el || el.tagName === 'INPUT') return;
+  if(el.dataset.act==='reader-reset'){saveReaderPreferences(localStorage,{theme:'paper',font:'serif',size:20});render();return;}
   const fn = actions[el.dataset.act];
   if (fn) { ev.preventDefault(); fn(el); }
 });
 document.addEventListener('change', (ev) => {
   const el = ev.target;
+  if(el.dataset.reader){saveReaderPreferences(localStorage,{[el.dataset.reader]:el.value});return;}
   if(['ideas-file','shopping-file'].includes(el.id)&&el.files[0]){const kind=el.id,file=el.files[0];file.text().then(text=>{if(text.length>500000)throw Error('File troppo grande');const data=JSON.parse(text);if(kind==='ideas-file'){const catalog=validateCatalog(data);const merged=new Map(ideas().map(x=>[x.id,x]));catalog.forEach(x=>merged.set(x.id,x));commit(s=>{s.ideaCatalog=[...merged.values()];},{resync:true});}else{const list=mergeShopping(state.shopping||[],data.items);commit(s=>{s.shopping=list;});}toast('Dati uniti sul dispositivo');}).catch(e=>toast(e.message,6000));el.value='';return;}
   if (el.id === 'f-restore' && el.files[0]) { onRestoreFile(el.files[0]); el.value = ''; return; }
   if (el.id === 'f-plan' && el.files[0]) { onPlanFile(el.files[0]); el.value = ''; return; }

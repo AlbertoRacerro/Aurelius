@@ -1,3 +1,5 @@
+import { estimateCycle, suggestedGesture } from './relationship.js';
+import { hypotheticalStage } from './care-moments.js';
 import { MOMENTS, SLOTS, choiceForPresence } from './care-moments.js';
 
 export function renderCareContext(date, presence, days, record, esc, { full = false, soloEnabled = true } = {}) {
@@ -31,4 +33,12 @@ export function renderCareContext(date, presence, days, record, esc, { full = fa
     </details>`);
   }
   return out.join('');
+}
+
+// Same local, explicitly consented calendar as Rituali; no natural ovarian-phase inference.
+export function renderHomeCycle(date, record, esc) {
+ const status=record?estimateCycle(record,date):null;
+ const labels={bleed:'Sanguinamento da sospensione (ipotesi)',pre:'Prima del sanguinamento previsto (ipotesi)',after:'Dopo il sanguinamento (ipotesi)',any:'Periodo non classificato'};
+ const phase=!status?'Calendario non configurato':status.stale?'Data da aggiornare':!record.regular?'Fase non stimabile':labels[hypotheticalStage(record,date)];
+ return `<section class="card soft home-cycle"><h2>Calendario e consiglio di oggi</h2>${status?.dayInCycle?`<b>Giorno ${status.dayInCycle} del calendario</b>`:''}<p>${esc(phase)}</p><p>${esc(suggestedGesture(record,date))}</p><p class="small mut">Indicazione da calendario, non misura ormonale né previsione dell’umore.</p><a class="btn sm" href="#relationship">${record?'Aggiorna calendario':'Configura calendario'}</a></section>`;
 }
