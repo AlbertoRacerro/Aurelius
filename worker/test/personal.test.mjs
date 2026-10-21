@@ -36,3 +36,20 @@ test('bounded request body and rate limiting retain queued notes',async()=>{
  for(let i=0;i<30;i++)assert.equal((await personal(req('poll',{ids:[]}),env,f.fn)).status,200);
  assert.equal((await personal(req('poll',{ids:[]}),env,f.fn)).status,429);
 });
+
+test('operational diagnostics distinguish database, read and write failures without leaking upstream content',async()=>{
+ const broken={...setup(),DB:{prepare(){throw Error('private SQL data fake-secret');}}};
+ const db=await personal(req('notes',note),broken,fake().fn);assert.equal(db.body.code,'PERSONAL_DATABASE_UNAVAILABLE');
+ const network=await personal(req('notes',note),setup(),async()=>{throw Error('private network URL fake-secret');});assert.equal(network.body.code,'PERSONAL_REPOSITORY_UNAVAILABLE');
+ const response=async(failStage,status)=>personal(req('notes',note),setup(),async(url,init)=>{
+  const stage=!url.includes('/contents/')?'repository':init.method==='PUT'?'write':url.includes('/inbox?')?'list':'read';
+  if(stage===failStage)return new Response('private upstream data fake-secret',{status});
+  if(stage==='repository')return Response.json({private:true});
+  if(stage==='list')return Response.json([]);
+  return Response.json({},{status:404});
+ });
+ for(const [stage,code,status] of [['repository','REPOSITORY',401],['read','NOTE_READ',403],['list','INBOX_LIST',500],['write','NOTE_WRITE',403]]){
+  const r=await response(stage,status);assert.equal(r.body.code,`PERSONAL_${code}_${status}`);assert.equal(r.status,503);assert.equal(JSON.stringify(r).includes('fake-secret'),false);assert.equal(JSON.stringify(r).includes('private upstream data'),false);
+ }
+ const parse=await personal(req('notes',note),setup(),async()=>new Response('secret invalid JSON'));assert.equal(parse.body.code,'PERSONAL_REPOSITORY_UNAVAILABLE');assert.equal(JSON.stringify(parse).includes('secret invalid JSON'),false);
+});
