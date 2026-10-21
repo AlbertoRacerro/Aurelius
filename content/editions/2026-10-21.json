@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "date": "2026-10-21",
-  "updated_at": "2026-10-21T21:32:36.535804+00:00",
+  "updated_at": "2026-10-21T21:54:55.022280+00:00",
   "articles": [
     {
       "slot": "philosophy",
-      "id": "philosophy-20261021",
+      "id": "philosophy-20261021-r2",
       "title": "Tenere le redini non basta",
       "kind": "synthesis",
       "basis": "Dhammapada, capitoli I, III, VI e XVII, dalla traduzione inglese di F. Max Müller (1881), in pubblico dominio. Rielaborazione con parafrasi e chiarimenti editoriali: governare la collera e distinguere il proprio valore dal giudizio altrui.",
@@ -48,7 +48,7 @@
     },
     {
       "slot": "books",
-      "id": "books-20261021",
+      "id": "books-20261021-r2",
       "title": "Il tè, il sentiero e l’arpa",
       "kind": "synthesis",
       "basis": "Okakura Kakuzō, The Book of Tea (1906), capitoli II, IV e V. Selezione, nuova traduzione italiana e adattamento con tagli dall’originale in pubblico dominio: preparare il tè, entrare nella stanza, lasciare spazio all’arte.",
@@ -122,13 +122,123 @@
     },
     {
       "slot": "future",
-      "id": "future-20261021",
-      "title": "Radar · quattro schede tecniche",
+      "id": "future-20261021-r2",
+      "title": "Radar · AI, industria, politica ed esteri",
       "kind": "evergreen",
-      "basis": "Revisione delle quattro notizie già selezionate, del 9–15 ottobre 2026: approfondimento storico, non nuovo bollettino. Risultati degli autori distinti dalle possibilità d’impiego.",
+      "basis": "Preview ampliata del 21 ottobre: dieci schede su sviluppi del 20–21 ottobre, poi le quattro schede AI già presenti, mantenute come approfondimenti del 9–15 ottobre. Non è un bollettino composto interamente da notizie delle ultime 24 ore. Le conseguenze proposte sono valutazioni redazionali; risultati e dichiarazioni restano attribuiti alle fonti.",
       "sections": [
         {
-          "heading": "Liquid AI · LFM2.5-24B-A2B",
+          "heading": "AI / Hermes Agent · v0.22.4",
+          "paragraphs": [
+            "21 ottobre · Nuova patch per CLI, desktop, Docker e Hermes Cloud."
+          ],
+          "bullets": [
+            "Plugin catalog: nuovi backend bubblewrap e Singularity/Apptainer; mcp-serve espone Hermes come server MCP, agent-importers aggiunge Cursor.",
+            "Plugin senza dipendenze: eliminato il consenso vuoto all’installazione. Correzioni anche al riabbinamento WhatsApp.",
+            "Interesse: isolamento ed esportazione di strumenti verso altri agenti; capacità del catalogo da valutare, non un’integrazione JarvisOS già provata. Fonte: release notes NousResearch."
+          ]
+        },
+        {
+          "heading": "Industria AI / NVIDIA DSX · meno acqua ed energia",
+          "paragraphs": [
+            "21 ottobre · NVIDIA presenta progetti di infrastrutture AI per l’ecosistema europeo."
+          ],
+          "bullets": [
+            "Raffreddamento liquido a circuito chiuso e dry cooler: consumo idrico di raffreddamento dell’impianto prossimo a zero, secondo NVIDIA.",
+            "Il produttore dichiara fino al 30% di energia in meno a parità di output AI. Risultato di sistema, non un benchmark di una singola GPU.",
+            "Interesse: progettazione termica ed efficienza dei datacenter; le percentuali annunciate richiedono verifica nelle condizioni effettive. Fonte: NVIDIA."
+          ]
+        },
+        {
+          "heading": "UE / Digital Omnibus · dati, cookie e incidenti",
+          "paragraphs": [
+            "21 ottobre · Il Consiglio approva la propria posizione negoziale sulla semplificazione digitale."
+          ],
+          "bullets": [
+            "Interventi su GDPR, cookie, riuso dei dati e notifiche cyber. Il mandato mantiene l’attuale definizione di dato personale.",
+            "Per gli incidenti propone punti d’ingresso nazionali e un punto informativo europeo: non un unico sportello UE per tutte le notifiche.",
+            "Interesse: costi di conformità e sviluppo di servizi digitali. È una posizione per il negoziato, non la nuova disciplina già applicabile. Fonte: Consiglio UE."
+          ]
+        },
+        {
+          "heading": "Clima e industria / ETS · riserva più ampia",
+          "paragraphs": [
+            "Accordo del 20, comunicato del 21 ottobre · Consiglio e Parlamento raggiungono un’intesa provvisoria sulla riserva del mercato delle emissioni."
+          ],
+          "bullets": [
+            "Soglia di invalidazione delle quote: da 400 a 700 milioni, dopo l’adozione formale. Più quote conservate nella riserva come cuscinetto.",
+            "Obiettivo dichiarato: maggiore prevedibilità e capacità di reagire a scarsità future. Non è l’abolizione dell’ETS né un taglio già misurato dei prezzi.",
+            "Da seguire per acciaio, chimica ed energia: il costo della CO₂ entra nell’economia degli impianti. Fonte: Consiglio UE."
+          ]
+        },
+        {
+          "heading": "Imprese UE / Imballaggi · meno rappresentanti nazionali",
+          "paragraphs": [
+            "21 ottobre · Il Consiglio fissa la posizione su una sospensione di alcuni obblighi amministrativi nel PPWR."
+          ],
+          "bullets": [
+            "Oggetto: nomina di un rappresentante per la responsabilità estesa del produttore in ciascuno Stato in cui si vendono imballaggi o prodotti confezionati.",
+            "Obiettivo: alleggerire gli oneri sproporzionati per i piccoli produttori che operano oltre confine.",
+            "Interesse: accesso al mercato unico per piccole imprese. È un mandato negoziale; la responsabilità ambientale del produttore non viene cancellata. Fonte: Consiglio UE."
+          ]
+        },
+        {
+          "heading": "Mediterraneo / Libia–Turchia · scontro sui confini marittimi",
+          "paragraphs": [
+            "21 ottobre · L’UE reagisce alla ratifica libica del memorandum marittimo del 2019."
+          ],
+          "bullets": [
+            "Il voto della Camera libica è del 20 ottobre; il nuovo sviluppo odierno è la risposta diplomatica europea.",
+            "Posizioni opposte: Ankara accoglie il voto come tutela degli interessi comuni; l’UE ritiene l’intesa lesiva dei diritti di Stati terzi e senza effetti per loro.",
+            "Posta in gioco: giurisdizioni nel Mediterraneo orientale e rapporti con Grecia e Cipro. Fonte: dichiarazione UE; reazione turca riportata da LANA."
+          ]
+        },
+        {
+          "heading": "Italia / Autotrasporto · rifornimenti e sospensione in Calabria",
+          "paragraphs": [
+            "21 ottobre · La protesta sul caro carburante continua a incidere sulla distribuzione nel Mezzogiorno."
+          ],
+          "bullets": [
+            "ANSA documenta code e distributori senza carburante; l’aggiornamento successivo riferisce la sospensione della protesta proclamata da Fedralog in Calabria.",
+            "La sospensione regionale non dimostra il ritorno alla normalità di tutti i rifornimenti né la fine dei blocchi nel resto del Sud.",
+            "Da seguire: ripresa delle consegne e attuazione degli impegni governativi, oltre agli annunci. Fonti: ANSA; AP per il quadro delle carenze alimentari e di carburante."
+          ]
+        },
+        {
+          "heading": "Francia / Nuove proteste · Macron promette ordine",
+          "paragraphs": [
+            "21 ottobre · Il presidente annuncia misure per evitare il ripetersi delle violenze nelle prossime manifestazioni."
+          ],
+          "bullets": [
+            "UNEF chiede nuove mobilitazioni sabato; anche i Gilet gialli preparano una marcia a Parigi.",
+            "Macron respinge le critiche di alcuni leader stranieri: il conflitto interno diventa anche scontro diplomatico.",
+            "Da seguire: capacità di gestire le nuove piazze e risposta alle richieste sociali, distinguendo manifestazioni e violenze. Fonte: Reuters."
+          ]
+        },
+        {
+          "heading": "Politica UE / Patriots for Europe · perquisizioni sui fondi",
+          "paragraphs": [
+            "21 ottobre · La Procura europea perquisisce uffici del gruppo al Parlamento europeo, riferisce Reuters."
+          ],
+          "bullets": [
+            "L’inchiesta riguarda finanziamenti; il gruppo ritiene i controlli collegati al precedente gruppo Identità e Democrazia.",
+            "La vicenda tocca gestione dei fondi e responsabilità delle strutture parlamentari, non soltanto lo scontro fra partiti.",
+            "Stato: indagine e perquisizioni, senza equipararle a una condanna. Fonte: Reuters; il collegamento preciso con ID è attribuito al gruppo."
+          ]
+        },
+        {
+          "heading": "Energia / Petrolio · Hormuz e negoziati pesano in direzioni opposte",
+          "paragraphs": [
+            "21 ottobre · Il Brent chiude pressoché stabile a 108,82 dollari/barile; WTI a 97,15."
+          ],
+          "bullets": [
+            "Reuters riporta rischi alle rotte del Golfo e segnali di disponibilità russa a riprendere colloqui sull’Ucraina.",
+            "Scorte USA: greggio in calo di 3,06 milioni di barili; distillati in aumento di 1,68 milioni.",
+            "Lettura: prezzo quasi fermo non significa rischio sparito; domanda, scorte e prospettive diplomatiche si compensano. Fonte: Reuters."
+          ]
+        },
+        {
+          "heading": "Approfondimento già presente · Liquid AI · LFM2.5-24B-A2B",
           "paragraphs": [
             "13 ottobre · Modello open weights per reasoning e agenti, disponibile anche in GGUF per inferenza locale."
           ],
@@ -140,7 +250,7 @@
           ]
         },
         {
-          "heading": "Google Research · Harness²",
+          "heading": "Approfondimento già presente · Google Research · Harness²",
           "paragraphs": [
             "9 ottobre · Paper e repository per migliorare il sistema attorno a un agente mantenendo fissi i pesi del modello."
           ],
@@ -152,7 +262,7 @@
           ]
         },
         {
-          "heading": "Apple · MLX e inferenza distribuita",
+          "heading": "Approfondimento già presente · Apple · MLX e inferenza distribuita",
           "paragraphs": [
             "15 ottobre · Report su grandi modelli distribuiti fra Mac Studio, con RDMA su Thunderbolt."
           ],
@@ -165,7 +275,7 @@
           ]
         },
         {
-          "heading": "Anthropic · modelli su hardware economico",
+          "heading": "Approfondimento già presente · Anthropic · modelli su hardware economico",
           "paragraphs": [
             "12 ottobre · Ricerca del Frontier Red Team sulla possibilità di avviare inferenza e replicazione su piccoli dispositivi."
           ],
@@ -218,6 +328,78 @@
           "title": "Zhou e Freeman — AI models may be capable of self-replicating without access to a datacenter",
           "url": "https://www.anthropic.com/research/self-replicating-ai",
           "edition": "Report Anthropic Frontier Red Team, 12 ottobre 2026; risultati sperimentali distinti dalla previsione.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "NousResearch — Hermes Agent v0.22.4",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.4",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "NVIDIA — infrastrutture europee DSX",
+          "url": "https://nvidianews.nvidia.com/news/european-ecosystem-builds-worlds-most-efficient-ai-factories-with-nvidia-dsx",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Consiglio UE — Digital rulebook",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/digital-rulebook-council-agrees-position-to-simplify-data-protection-privacy-and-cyber-reporting-rules/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Consiglio UE — riserva ETS",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/ets-market-stability-reserve-council-and-parliament-reach-provisional-agreement-on-targeted-amendment/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Consiglio UE — piccoli produttori di imballaggi",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/simplification-council-agrees-negotiating-stance-to-cut-red-tape-for-small-packaging-producers/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Consiglio UE — memorandum Libia–Turchia",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/libyaturkiye-statement-by-the-high-representative-on-behalf-of-the-eu-on-the-ratification-of-the-libya-turkiye-mou-by-libya-s-house-of-representatives/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "LANA — reazione della presidenza turca",
+          "url": "https://lana.gov.ly/post.php?id=368155&lang=en",
+          "edition": "21 ottobre 2026: posizione turca attribuita, non arbitrato indipendente sulla validità giuridica.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "ANSA — aggiornamenti sulla protesta autotrasporto",
+          "url": "https://www.ansa.it/sito/notizie/cronaca/2026/10/21/viminale-1.339-identificati-e-71-denunciati-per-i-blocchi.-i-sindaci-di-bari-e-napoli-rischio_9c1d4f81-b58b-423e-aef2-9fa4b224c7bf.html",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "AP — carenze nel Sud Italia",
+          "url": "https://apnews.com/article/f488c47abce9295b30e040c1584e31ae",
+          "edition": "Cronaca del 20 ottobre consultata come contesto, non nuova notizia del 21.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Reuters — Macron e nuove proteste",
+          "url": "https://www.reuters.com/world/europe/french-government-faces-fresh-test-yellow-vests-mobilise-2026-10-21/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Reuters — perquisizioni Patriots for Europe",
+          "url": "https://www.reuters.com/world/patriots-europe-group-says-prosecutors-raided-its-offices-european-parliament-2026-10-21/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
+          "accessed": "2026-10-21"
+        },
+        {
+          "title": "Reuters — petrolio e rischi geopolitici",
+          "url": "https://www.reuters.com/business/energy/oil-rises-middle-east-supply-worries-2026-10-21/",
+          "edition": "Notizia o comunicato del 21 ottobre 2026; dati e attribuzioni verificati nei passaggi consultati.",
           "accessed": "2026-10-21"
         }
       ]
