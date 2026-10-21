@@ -46,3 +46,12 @@ test.describe('installed inbox',()=>{
   await context.setOffline(true);await page.locator('#inbox-text').fill('Nota offline sintetica');await page.getByRole('button',{name:'Salva nota',exact:true}).click();await page.reload();await expect(page.locator('.inbox-note')).toContainText('Nota offline sintetica');await expect(page.locator('.inbox-note')).toContainText('Sul dispositivo');
  });
 });
+
+test('completing a note-derived task removes its scheduled push reminder',async({page})=>{
+ await clock(page);const at=Date.parse('2026-10-21T13:00:00+02:00');let deliveries=[];
+ await page.addInitScript(at=>{localStorage.setItem('aurelius.v2',JSON.stringify({schema:2,entries:[],backlog:[{id:'inbox_test',sourceNote:'12345678-1234-4123-8123-123456789abc',text:'Attività di prova',act:'vita',done:false,priority:'P3',at:1,remindAt:at}],settings:{push:{api:'https://push.test',token:'test-token',device:'test-device',at:1}}}));},at);
+ await page.route('https://push.test/v1/schedule',async r=>{deliveries.push(r.request().postDataJSON().items);await r.fulfill({json:{count:0}});});
+ await page.goto('./#todos');await expect.poll(()=>deliveries.length).toBeGreaterThan(0);expect(deliveries.at(-1).some(x=>x.id.startsWith('n_'))).toBe(true);
+ await page.locator('.todo-item input[type=checkbox]').click();await page.clock.runFor(1600);
+ await expect.poll(()=>deliveries.at(-1).some(x=>x.id.startsWith('n_'))).toBe(false);
+});

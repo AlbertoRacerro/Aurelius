@@ -850,7 +850,7 @@ const actions = {
       commit((st) => {
         if (id) Object.assign(st.backlog.find((x) => x.id === id), input);
         else st.backlog.push({ id: L.uid('k'), ...input, done: false, at: Date.now() });
-      });
+      }, { resync: true });
       closeSheet();
       toast(id ? 'Attività aggiornata' : 'Attività aggiunta');
     } catch (err) { toast(err.message, 5000); }
@@ -859,12 +859,12 @@ const actions = {
     commit((st) => {
       const x = st.backlog.find((b) => b.id === el.dataset.id);
       if (x) { x.done = el.checked; x.completedAt = x.done ? Date.now() : null; }
-    });
+    }, { resync: true });
   },
   'bl-del'(el) {
     const id = el.dataset.id;
     if (!state.backlog.some((x) => x.id === id) || !confirm('Eliminare definitivamente questa attività?')) return;
-    commit((st) => { st.backlog = st.backlog.filter((x) => x.id !== id); });
+    commit((st) => { st.backlog = st.backlog.filter((x) => x.id !== id); }, { resync: true });
     if (ui.sheet?.id === id) closeSheet();
     toast('Attività eliminata');
   },
