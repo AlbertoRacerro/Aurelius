@@ -2,6 +2,13 @@
   "schema": 1,
   "ratings": [
     {
+      "article_id": "books-20261021",
+      "score": 3,
+      "reasons": [],
+      "comment": "",
+      "rated_at": "2026-10-21T20:44:30.779Z"
+    },
+    {
       "article_id": "future-20261020",
       "score": 0,
       "reasons": [
