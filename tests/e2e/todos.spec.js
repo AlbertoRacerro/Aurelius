@@ -72,6 +72,7 @@ test('personal plan import feeds Da fare without duplicating tasks', async ({ pa
   await page.locator('#f-plan').setInputFiles({
     name:'plan.json', mimeType:'application/json', buffer:Buffer.from(JSON.stringify(plan)),
   });
+  await expect(page.getByText('Piano personale importato', { exact: true })).toBeVisible();
   await page.locator('#nav [data-tab=todos]').click();
   await expect(page.locator('.todo-item')).toContainText('Pulizia e riordino');
   const state = await page.evaluate(() => JSON.parse(localStorage.getItem('aurelius.v2')));
