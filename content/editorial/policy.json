@@ -536,7 +536,7 @@
   ],
   "rules": [
     "Tre slot già scelti, nessun backlog né scelta obbligatoria.",
-    "500–800 parole filosofia; 2200–3200 biblioteca; 1200–2000 radar. Riduzione solo esplicitamente etichettata e motivata.",
+    "500–800 parole filosofia; 2200–3200 biblioteca; 500–2000 radar. Riduzione solo esplicitamente etichettata e motivata.",
     "Testo originale o traduzione propria da originale in pubblico dominio; no pseudo-capitoli cuciti da opere contemporanee. Citazioni brevi, attribuite, diritti e traduzioni verificati.",
     "Consultare realmente le fonti; mai dichiarare lettura integrale senza averla effettuata.",
     "Radar: solo novità delle ultime 24 ore verificate da fonti primarie; Hacker News come scoperta. Elenchi puntati, dati e grafici confrontabili; in carenza di novità slot reduced dichiarato. Eventuale evergreen etichettato separatamente.",
@@ -550,7 +550,10 @@
     "Harness² e Liquid 24B sono piste da verificare, non fatti acquisiti.",
     "Filosofia e Biblioteca: immersione in due o tre passaggi autentici, non riassunto accademico o massimo numero di concetti. Conservare esempi, metafore e prospettiva della fonte quando lecito; preferire nuova traduzione di originali in pubblico dominio.",
     "Fonte e natura dell’adattamento brevemente in basis; niente metacommenti ripetuti nel corpo, scene inventate attribuite all’autore o pagine sostitutive di opere protette.",
-    "Pensiero mattutino: la stessa immersione di Biblioteca; entrare nei passaggi autentici e nelle immagini, senza commento scolastico o disclaimer ripetuti. Selezionare materiale sufficiente, non dilatare aforismi con spiegazioni esterne.",
-    "Radar: priorità alla comprensione di potenzialità e utilizzi, poi al numero di notizie. Prima risultato pratico ed esempi (proposte distinte da dimostrazioni), poi meccanismo semplice, pochi dati decisivi, requisiti e limiti. Sigle spiegate al primo uso, veri bullets brevi, nessun catalogo di benchmark."
+    "Pensiero mattutino e Biblioteca: immersione comprensibile. Sciogliere passaggi enigmatici con parafrasi naturali e conseguenze concrete; morale chiara alla fine. Attribuire in basis i chiarimenti editoriali, senza presentarli come parole dell’autore. Niente commento scolastico o disclaimer ripetuti.",
+    "Radar: appunti tecnici da scorrere e salvare in screenshot. Indicativamente 8–15 schede da 40–100 parole, senza quote rigide o riempitivi; titolo con nome/versione, chi/data/novità, 3–5 bullets con tecnica, distribuzione/costi, benchmark/requisiti e uso pertinente. Linguaggio tecnico corretto, niente tutorial introduttivi. Obiettivo 600–1400 parole, intervallo ammesso 500–2000; meno materiale verificato: reduced motivato.",
+    "Radar: AI e software, politica italiana/europea, economia e geopolitica, industria/energia ed eventi locali trascurati ma rilevanti e verificabili. Selezione per conseguenze concrete, non curiosità da engagement o affinità ideologica del lettore.",
+    "Anti-ripetizione: controllare fino a 30 giorni di edizioni e riserve per entità+evento/versione. Riprendere temi già trattati solo con un delta sostanziale, subito se importante; eventuale ritorno dopo 2–3 settimane solo con sviluppi utili. Cambiare titolo o fonte non crea una notizia nuova.",
+    "Dati hardware: parametri totali/attivi distinti, file quantizzato diverso da memoria runtime e cache; fit, offload e velocità soltanto se documentabili. Progetti/fork/versioni citati come esempi sono piste da verificare, non fatti acquisiti."
   ]
 }
