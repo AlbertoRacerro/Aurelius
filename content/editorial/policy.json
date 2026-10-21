@@ -537,9 +537,9 @@
   "rules": [
     "Tre slot già scelti, nessun backlog né scelta obbligatoria.",
     "500–800 parole filosofia; 2200–3200 biblioteca; 1200–2000 radar. Riduzione solo esplicitamente etichettata e motivata.",
-    "Testo originale; no pseudo-capitoli cuciti da opere contemporanee. Citazioni brevi, attribuite, diritti e traduzioni verificati.",
+    "Testo originale o traduzione propria da originale in pubblico dominio; no pseudo-capitoli cuciti da opere contemporanee. Citazioni brevi, attribuite, diritti e traduzioni verificati.",
     "Consultare realmente le fonti; mai dichiarare lettura integrale senza averla effettuata.",
-    "Radar: fonti primarie, data evento e pubblicazione, risultati e limiti. Se evidenza insufficiente usare evergreen dichiarato.",
+    "Radar: solo novità delle ultime 24 ore verificate da fonti primarie; Hacker News come scoperta. Elenchi puntati, dati e grafici confrontabili; in carenza di novità slot reduced dichiarato. Eventuale evergreen etichettato separatamente.",
     "Per microalghe: ceppo, scala, PBR, produttività e unità, luce, CO2 e condizioni; niente marketing o bandi.",
     "Religioni come filosofia e antropologia, senza proselitismo e senza appiattire le differenze.",
     "NLP: distanza critica dalle affermazioni non comprovate.",
@@ -547,6 +547,8 @@
     "Non cambiare preferenze per un singolo voto; separare ipotesi, interesse tematico e stato lettura.",
     "Mai acquisire dati locali del calendario, salute, relazione o routine personali.",
     "Non usare API AI a consumo o servizi email.",
-    "Harness² e Liquid 24B sono piste da verificare, non fatti acquisiti."
+    "Harness² e Liquid 24B sono piste da verificare, non fatti acquisiti.",
+    "Filosofia e Biblioteca: immersione in due o tre passaggi autentici, non riassunto accademico o massimo numero di concetti. Conservare esempi, metafore e prospettiva della fonte quando lecito; preferire nuova traduzione di originali in pubblico dominio.",
+    "Fonte e natura dell’adattamento brevemente in basis; niente metacommenti ripetuti nel corpo, scene inventate attribuite all’autore o pagine sostitutive di opere protette."
   ]
 }

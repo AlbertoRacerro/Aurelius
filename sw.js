@@ -2,8 +2,8 @@
 // Same-origin GETs are network-first with a short timeout, so updates arrive promptly and the app still
 // opens instantly offline or on a slow network.
 
-const CACHE = 'aurelius-v2.7.0';
-const SHELL = ['src/inbox.js','src/inbox-contract.js','src/inbox-view.js','./', 'index.html', 'app.css', 'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
+const CACHE = 'aurelius-v2.8.0';
+const SHELL = ['src/replan.js','src/reader.js','src/inbox.js','src/inbox-contract.js','src/inbox-view.js','./', 'index.html', 'app.css', 'manifest.webmanifest', 'icons/icon-180.png', 'icons/icon-192.png',
   'src/ideas.js','src/ideas-view.js','content/ideas.json','content/manifest.json','content/editions/2026-10-20.json','src/editorial-contract.js','src/editorial.js','src/editorial-view.js','src/app.js', 'src/config.js', 'src/model.js', 'src/store.js', 'src/time.js', 'src/schedule.js', 'src/ledger.js',
   'src/timer.js', 'src/stats.js', 'src/reminders.js', 'src/plan-import.js', 'src/todos.js', 'src/todo-view.js', 'src/reflections.js', 'src/relationship.js', 'src/rituals-view.js', 'src/care-moments.js', 'src/care-view.js', 'src/push.js'];
 
