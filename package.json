@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.55.0",
-    "http_ece": "^1.2.1"
+    "http_ece": "^1.2.1",
+    "miniflare": "5.20261019.1-beta"
   }
 }

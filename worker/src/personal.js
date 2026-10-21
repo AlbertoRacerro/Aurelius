@@ -31,8 +31,10 @@ export async function personal(req,env,fetchImpl=fetch) {
  const base=`https://api.github.com/repos/${TARGET}`;
  const gh=async(url,init={},operation)=>{
   stage=operation;upstreamStatus=0;
-  const res=await fetchImpl(url,{...init,headers,signal:AbortSignal.timeout(10000),redirect:'error'});
+  // workerd supports follow/manual only. Never forward the private token to a redirect target.
+  const res=await fetchImpl(url,{...init,headers,signal:AbortSignal.timeout(10000),redirect:'manual'});
   upstreamStatus=res.ok?0:res.status;
+  if(res.status>=300&&res.status<400){await res.body?.cancel();return {status:res.status,ok:false,data:null};}
   const raw=await res.text();if(raw.length>2000000)throw Error('GitHub response limit');
   return {status:res.status,ok:res.ok,data:res.ok?JSON.parse(raw):null};
  };
