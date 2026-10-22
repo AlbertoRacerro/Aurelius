@@ -8,6 +8,7 @@
 //   POST   /v1/test                       (Bearer token) -> { status }
 //   DELETE /v1/device                     (Bearer token)
 
+import {snapshotRequest,pausePrivate,refreshSuggestions,suggestionStillValid} from './private-sync.js';
 import { personal } from './personal.js';
 import { feedback, flushFeedback } from './editorial.js';
 import { b64uDecode, b64uEncode, sendPush } from './webpush.js';
@@ -121,7 +122,7 @@ function validItems(items, env, now) {
   const allowed = origins(env);
   const seen = new Set();
   return items.map((x) => {
-    if (!x || !ID_RE.test(x.id) || seen.has(x.id)) throw new HttpError(400, 'Id promemoria non valido');
+    if (!x || !ID_RE.test(x.id) || x.id.startsWith('ai_') || seen.has(x.id)) throw new HttpError(400, 'Id promemoria non valido');
     seen.add(x.id);
     const at = Number(x.at);
     if (!Number.isFinite(at) || at < now - STALE_MS || at > now + 9 * 864e5) throw new HttpError(400, 'Orario promemoria non valido');
@@ -146,7 +147,7 @@ async function schedule(req, env, dev) {
   const mine = '(SELECT sched FROM devices WHERE id = ?1) = ?2';
   const stmts = [
     env.DB.prepare('UPDATE devices SET rev = ?2, sched = ?3, seen = ?4, ntfy = ?5 WHERE id = ?1 AND rev < ?2').bind(dev.id, rev, sched, now, ntfy),
-    env.DB.prepare(`DELETE FROM reminders WHERE device = ?1 AND state = 0 AND ${mine}`).bind(dev.id, sched),
+    env.DB.prepare(`DELETE FROM reminders WHERE device = ?1 AND state = 0 AND substr(id,1,3) != 'ai_' AND ${mine}`).bind(dev.id, sched),
     ...items.map((x) => env.DB.prepare(`INSERT OR IGNORE INTO reminders (device, id, at, title, body, url, state)
         SELECT ?1, ?3, ?4, ?5, ?6, ?7, 0 WHERE ${mine}`).bind(dev.id, sched, x.id, x.at, x.title, x.body, x.url)),
   ];
@@ -206,6 +207,7 @@ export async function runDue(env, now = Date.now(), fetchImpl = fetch) {
 }
 
 async function deliverOne(env, r, now, devices, out, fetchImpl) {
+  if(r.id.startsWith('ai_')&&!await suggestionStillValid(env,r,now)){out.dropped+=1;return;}
   if (r.at < now - STALE_MS) { out.dropped += 1; return; }
   if (!devices.has(r.device)) devices.set(r.device, await env.DB.prepare('SELECT * FROM devices WHERE id = ?').bind(r.device).first());
   const dev = devices.get(r.device);
@@ -223,6 +225,8 @@ export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors(req, env) });
     const { pathname } = new URL(req.url);
+    if(pathname==='/v1/personal/pause'){const r=await pausePrivate(req,env);const response=json(req,env,r.status,r.body);response.headers.set('cache-control','no-store');return response;}
+    if(pathname==='/v1/personal/snapshot'){const r=await snapshotRequest(req,env);const response=json(req,env,r.status,r.body);response.headers.set('cache-control','no-store');return response;}
     if(pathname.startsWith('/v1/personal/')) {
       const r=await personal(req,env);
       const response=json(req,env,r.status,r.body);response.headers.set('cache-control','no-store');return response;
@@ -251,7 +255,7 @@ export default {
     }
   },
   async scheduled(_event, env, ctx) {
-    ctx.waitUntil(runDue(env));
+    ctx.waitUntil((async()=>{try{await refreshSuggestions(env);}catch{/* Private refresh failures never leak data or block normal reminders. */}await runDue(env);})());
     ctx.waitUntil(flushFeedback(env).catch(()=>console.error('Editorial publication failed; durable queue retained')));
   },
 };

@@ -8,6 +8,7 @@ cd worker
 npx -y wrangler@4 whoami
 npx -y wrangler@4 d1 execute aurelius-push --remote --file migrations/0002_editorial.sql -y
 npx -y wrangler@4 d1 execute aurelius-push --remote --file migrations/0003_personal.sql -y
+npx -y wrangler@4 d1 execute aurelius-push --remote --file migrations/0004_private_sync.sql -y
 # Provision FEEDBACK_TOKEN and GITHUB_EDITORIAL_TOKEN through wrangler secret put first.
 # Existing VAPID and ENROLL_KEY secrets stay untouched.
 npx -y wrangler@4 deploy

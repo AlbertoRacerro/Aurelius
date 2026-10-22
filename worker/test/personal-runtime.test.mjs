@@ -13,7 +13,7 @@ test('Cloudflare runtime uploads private notes and refuses redirects without for
  let redirectAt = '';
  const mf = new Miniflare(convertV4MiniflareOptions({
   modulesRoot: fileURLToPath(new URL('../../', import.meta.url)),
-  modules: ['worker/src/index.js', 'worker/src/personal.js', 'worker/src/editorial.js', 'worker/src/webpush.js', 'src/inbox-contract.js', 'src/editorial-contract.js'].map(path => ({ type: 'ESModule', path: fileURLToPath(new URL('../../' + path, import.meta.url)) })),
+  modules: ['worker/src/index.js','worker/src/private-sync.js','src/private-sync-contract.js','src/store.js','src/model.js','src/ideas.js','src/schedule.js','src/time.js', 'worker/src/personal.js', 'worker/src/editorial.js', 'worker/src/webpush.js', 'src/inbox-contract.js', 'src/editorial-contract.js'].map(path => ({ type: 'ESModule', path: fileURLToPath(new URL('../../' + path, import.meta.url)) })),
   compatibilityDate: '2026-10-01',
   d1Databases: ['DB'],
   bindings: { PERSONAL_TOKEN: token, GITHUB_PERSONAL_TOKEN: 'synthetic-github-token', PERSONAL_REPO: 'AlbertoRacerro/-Aurelius-Personal' },
@@ -50,4 +50,21 @@ test('Cloudflare runtime uploads private notes and refuses redirects without for
  } finally {
   await mf.dispose();
  }
+});
+
+test('Cloudflare runtime accepts a private state copy, proves context digest and never forwards credentials on a redirect',async()=>{
+ const {makeSnapshot}=await import('../../src/private-sync.js');const {emptyState}=await import('../../src/model.js');
+ const files=new Map(),storage=new Map(),store={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};let redirected=false;
+ const mf=new Miniflare(convertV4MiniflareOptions({
+  modulesRoot:fileURLToPath(new URL('../../',import.meta.url)),
+  modules:['worker/src/index.js','worker/src/private-sync.js','src/private-sync-contract.js','src/store.js','src/model.js','src/ideas.js','src/schedule.js','src/time.js','worker/src/personal.js','worker/src/editorial.js','worker/src/webpush.js','src/inbox-contract.js','src/editorial-contract.js'].map(path=>({type:'ESModule',path:fileURLToPath(new URL('../../'+path,import.meta.url))})),
+  compatibilityDate:'2026-10-01',d1Databases:['DB'],bindings:{PERSONAL_TOKEN:token,GITHUB_PERSONAL_TOKEN:'synthetic-github-token',PERSONAL_REPO:'AlbertoRacerro/-Aurelius-Personal'},
+  outboundService:async request=>{assert.equal(new URL(request.url).hostname,'api.github.com');if(redirected)return new Response(null,{status:302,headers:{location:'https://unexpected.example/private'}});if(!request.url.includes('/contents/'))return Response.json({private:true});if(request.method==='PUT'){const body=await request.json();files.set(request.url,{content:body.content,sha:'synthetic-sha'});return Response.json({content:{sha:'synthetic-sha'}});}return Response.json({},{status:404});}
+ }));
+ try{
+  const db=await mf.getD1Database('DB');for(const file of ['migrations/0003_personal.sql','migrations/0004_private_sync.sql'])await db.exec(readFileSync(new URL('../'+file,import.meta.url),'utf8').replace(/^--.*$/gm,'').replace(/\n/g,' '));
+  const body=await makeSnapshot(emptyState(),store);const send=()=>mf.dispatchFetch('https://worker.test/v1/personal/snapshot',{method:'POST',headers:{authorization:'Bearer '+token},body:JSON.stringify({...body,device_token:''})});
+  const accepted=await send();assert.equal(accepted.status,200,await accepted.text());assert.equal(files.size,1);const copy=JSON.parse(Buffer.from([...files.values()][0].content,'base64'));assert.equal(copy.context_hash,body.context_hash);assert.doesNotMatch(JSON.stringify(copy),/synthetic-github-token|device_token/);
+  redirected=true;const refused=await send();assert.equal(refused.status,503);assert.doesNotMatch(await refused.text(),/synthetic-github-token|unexpected/);
+ }finally{await mf.dispose();}
 });
