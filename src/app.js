@@ -31,6 +31,9 @@ import { APP_VERSION } from './config.js';
 import { PUSH_API } from './config.js';
 import { addNote, applyResult, undoResult, pollIds, personalRequest, PERSONAL_AUTH } from './inbox.js';
 import { renderInbox, renderPersonalItems } from './inbox-view.js';
+import {loadMicro} from './microlearning.js';
+import {renderMicro} from './microlearning-view.js';
+import {uploadSnapshot,syncMeta,pausePrivateCopy} from './private-sync.js';
 
 let defaultIdeas=[];
 fetch('./content/ideas.json').then(r=>r.json()).then(data=>{defaultIdeas=validateCatalog(data);if(ui.tab==='idee')render();scheduleSync();}).catch(()=>{});
@@ -62,10 +65,27 @@ let { state, notice } = load(localStorage);
 if (!localStorage.getItem('aurelius.v2')) save(localStorage, state);
 const ui = { tab: 'ora', sheet: null, planDate: null, statsDate: null, todoFilter: 'open', lastPaint: 0, lastEnded: null };
 
+let micro=null, microDate=null, microMode='feed', microRequest=0;
+async function refreshMicro(date=romeDate()) {
+ const request=++microRequest;microDate=date;
+ let result=await loadMicro(localStorage,new URL(CONTENT_BASE,location.href),date);
+ if(!result.edition&&CONTENT_BASE!=='./content/')result=await loadMicro(localStorage,new URL('./content/',location.href),date);
+ if(request!==microRequest)return;micro=result;if(ui.tab==='microlearning')render();
+}
+let snapshotBusy=false,snapshotAgain=false,snapshotTimer=null,privateStatus='';
+function scheduleSnapshot(){clearTimeout(snapshotTimer);snapshotTimer=setTimeout(()=>syncSnapshot(),2500);}
+async function syncSnapshot(force=false){
+ if(snapshotBusy){snapshotAgain=true;return;}
+ if(!localStorage.getItem(PERSONAL_AUTH)||state.settings.privateSync===false||!navigator.onLine)return;
+ snapshotBusy=true;const epoch=personalEpoch;
+ try{const result=await uploadSnapshot(state,localStorage,PUSH_API,{force});if(epoch!==personalEpoch)return;if(result){privateStatus='Copia privata aggiornata alle '+new Date(result.synced_at).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});}}
+ catch(e){privateStatus=e.message;}
+ finally{snapshotBusy=false;const el=$('#private-sync-status');if(el)el.textContent=privateStatus;if(snapshotAgain){snapshotAgain=false;scheduleSnapshot();}}
+}
 // ---------- persistence ----------
 
 function persist() {
-  try { save(localStorage, state); } catch (err) { toast(`Salvataggio non riuscito: ${err.message}. Esporta un backup.`); }
+  try { save(localStorage, state); scheduleSnapshot(); } catch (err) { toast(`Salvataggio non riuscito: ${err.message}. Esporta un backup.`); }
 }
 
 function commit(fn, { repaint = true, resync = false } = {}) {
@@ -88,7 +108,7 @@ let inboxDraft=sessionStorage.getItem('aurelius.inbox.draft')||'', inboxStatus='
 function mutatePersonal(fn) {
  // Re-read persisted state before a synchronous merge, including edits from another tab.
  const current=load(localStorage).state, next=fn(current);
- save(localStorage,next);state=next;return next;
+ save(localStorage,next);state=next;scheduleSnapshot();return next;
 }
 function inboxPaint(changed=false) {
  const status=$('#inbox-status');if(status)status.textContent=inboxStatus;
@@ -117,7 +137,7 @@ async function syncPersonal() {
   const waiting=(state.personalInbox?.notes||[]).filter(x=>x.status==='sent').length, remaining=(state.personalInbox?.notes||[]).filter(x=>x.status==='queued').length;
   inboxStatus=remaining?`${remaining} note da inviare · ${waiting} in attesa`:'Archivio sincronizzato'+(waiting?` · ${waiting} in attesa`:'');
  }catch(e){inboxStatus=e.message;}
- finally{personalBusy=false;inboxPaint(updated);}
+ finally{personalBusy=false;inboxPaint(updated);syncSnapshot();}
 }
 
 // ---------- helpers ----------
@@ -416,7 +436,7 @@ function viewMore() {
   const sup = P.support();
   const api = P.apiBase(state);
   const out = [];
-  out.push(`<h1>Altro</h1><a class="btn" href="#inbox">Appunti e liste</a> <button class="btn" data-act="open-stats">Statistiche</button>`);
+  out.push(`<h1>Altro</h1><a class="btn" href="#microlearning">Microlearning</a> <a class="btn" href="#inbox">Appunti e liste</a> <button class="btn" data-act="open-stats">Statistiche</button>`);
   // Notifications.
   let status;
   if (s.push) status = `Attive su questo iPhone dal ${new Date(s.push.at).toLocaleDateString('it-IT')}.${s.push.lastSync ? ` Ultimo aggiornamento promemoria: ${timeOf(s.push.lastSync)}.` : ''}${s.push.error ? ` <span class="err">${esc(s.push.error)}</span>` : ''}`;
@@ -649,6 +669,11 @@ function sheetCareContext() {
 }
 
 const actions = {
+ 'micro-retry'(){refreshMicro(microDate||romeDate());},
+ 'micro-save'(el){const c=micro?.edition?.cards.find(x=>x.id===el.dataset.id)||(state.microSaved||[]).find(x=>x.id===el.dataset.id);if(!c)return;commit(s=>{s.microSaved||=[];const i=s.microSaved.findIndex(x=>x.id===c.id);if(i>=0)s.microSaved.splice(i,1);else if(s.microSaved.length<2000)s.microSaved.push({...c,date:el.dataset.date});else toast('Archivio delle preferite pieno: esporta un backup.');},{repaint:false});el.setAttribute('aria-pressed',String(el.getAttribute('aria-pressed')!=='true'));el.textContent=el.getAttribute('aria-pressed')==='true'?'Conservata ✓':'Conserva';},
+ 'private-sync-now'(){syncSnapshot(true);},
+ async 'private-sync-toggle'(el){commit(s=>{s.settings.privateSync=el.checked;},{repaint:false});if(el.checked)syncSnapshot(true);else {try{await pausePrivateCopy(localStorage,PUSH_API);privateStatus='Copia automatica e suggerimenti remoti sospesi; copie già salvate conservate';}catch(e){privateStatus=e.message;}const status=$('#private-sync-status');if(status)status.textContent=privateStatus;}},
+ 'ai-suggestions-toggle'(el){commit(s=>{s.settings.aiSuggestions=el.checked;},{repaint:false});syncSnapshot(true);},
  'inbox-add'(){try{const text=$('#inbox-text').value;mutatePersonal(s=>addNote(s,text));inboxDraft='';sessionStorage.removeItem('aurelius.inbox.draft');inboxStatus='Nota salvata sul dispositivo';render();syncPersonal();}catch(e){toast(e.message,6000);}},
  'inbox-sync'(){syncPersonal();},
  'inbox-connect'(){try{const token=$('#personal-token').value.trim();if(!/^[A-Za-z0-9_-]{32,128}$/.test(token))throw Error('Codice personale non valido');localStorage.setItem(PERSONAL_AUTH,token);personalEpoch++;render();syncPersonal();}catch(e){toast(e.message);}},
@@ -736,7 +761,7 @@ const actions = {
       if(s.mode==='plan'){
         const latest=load(localStorage).state;
         const next=replanRemaining(latest,s.occId,s.expectedBlock,rows,now(),()=>L.uid('b'));
-        save(localStorage,next);state=next;closeSheet();render();scheduleSync();toast('Piano aggiornato solo per questa data');return;
+        save(localStorage,next);state=next;scheduleSnapshot();closeSheet();render();scheduleSync();toast('Piano aggiornato solo per questa data');return;
       }
       const prov = JSON.parse(JSON.stringify(state));
       L.confirmSplit(prov, occ, rows, now(), s.mode === 'other' ? 'other' : 'partial');
@@ -1136,9 +1161,10 @@ function render() {
     }
   }
   const main = $('#main');
+  document.documentElement.classList.toggle('micro-reading',ui.tab==='microlearning');
   document.documentElement.classList.toggle('reading',ui.tab==='rituali'&&!!articleSelection);
-  main.innerHTML = ui.tab==='inbox'?renderInbox(state,esc,!!localStorage.getItem(PERSONAL_AUTH),inboxStatus,inboxDraft):ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc)+renderPersonalItems(state,esc,'idea'):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
-    ? renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
+  main.innerHTML = ui.tab==='microlearning'?renderMicro(micro,esc,state.microSaved||[],microMode):ui.tab==='inbox'?renderInbox(state,esc,!!localStorage.getItem(PERSONAL_AUTH),inboxStatus,inboxDraft)+privateControls():ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc)+renderPersonalItems(state,esc,'idea'):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
+    ? (articleSelection?'':'<a class="card home-micro" href="#microlearning"><div><b>Microlearning</b><span class="small mut">Quattro idee da scorrere, quando vuoi.</span></div><span aria-hidden="true">↗</span></a>')+renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
         state.settings.carePresence, state.settings.careDays || [], esc, !!editorial?.edition))
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })
@@ -1182,13 +1208,13 @@ document.addEventListener('click', (ev) => {
   if (ev.target.id === 'sheet') { closeSheet(); return; }
   const el = ev.target.closest('[data-act]');
   if (!el || el.tagName === 'INPUT') return;
-  if(el.dataset.act==='reader-reset'){saveReaderPreferences(localStorage,{theme:'paper',font:'serif',size:20});render();return;}
+  if(el.dataset.act==='reader-reset'){saveReaderPreferences(localStorage,{theme:'paper',font:'serif',size:20});scheduleSnapshot();render();return;}
   const fn = actions[el.dataset.act];
   if (fn) { ev.preventDefault(); fn(el); }
 });
 document.addEventListener('change', (ev) => {
   const el = ev.target;
-  if(el.dataset.reader){saveReaderPreferences(localStorage,{[el.dataset.reader]:el.value});return;}
+  if(el.dataset.reader){saveReaderPreferences(localStorage,{[el.dataset.reader]:el.value});scheduleSnapshot();return;}
   if(['ideas-file','shopping-file'].includes(el.id)&&el.files[0]){const kind=el.id,file=el.files[0];file.text().then(text=>{if(text.length>500000)throw Error('File troppo grande');const data=JSON.parse(text);if(kind==='ideas-file'){const catalog=validateCatalog(data);const merged=new Map(ideas().map(x=>[x.id,x]));catalog.forEach(x=>merged.set(x.id,x));commit(s=>{s.ideaCatalog=[...merged.values()];},{resync:true});}else{const list=mergeShopping(state.shopping||[],data.items);commit(s=>{s.shopping=list;});}toast('Dati uniti sul dispositivo');}).catch(e=>toast(e.message,6000));el.value='';return;}
   if (el.id === 'f-restore' && el.files[0]) { onRestoreFile(el.files[0]); el.value = ''; return; }
   if (el.id === 'f-plan' && el.files[0]) { onPlanFile(el.files[0]); el.value = ''; return; }
@@ -1198,16 +1224,17 @@ document.addEventListener('change', (ev) => {
 });
 document.addEventListener('input', (ev) => { if (ev.target.closest('#rows')) updateRemain(); if(ev.target.id==='inbox-text'){inboxDraft=ev.target.value;try{sessionStorage.setItem('aurelius.inbox.draft',inboxDraft);}catch{/* editor remains usable */}} });
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {syncPersonal();settleTimer();render();syncNow(false);syncFeedback(localStorage,P.apiBase(state));if(!articleSelection&&editorialDate!==romeDate())refreshEditorial();}
+  if (document.visibilityState === 'visible') {if(ui.tab==='microlearning')refreshMicro(/^#microlearning\/\d/.test(location.hash)?microDate:romeDate());syncPersonal();settleTimer();render();syncNow(false);syncFeedback(localStorage,P.apiBase(state));if(!articleSelection&&editorialDate!==romeDate())refreshEditorial();}
 });
 window.addEventListener('hashchange',()=>{route();render();window.scrollTo(0,0);});
 window.addEventListener('online',()=>{syncPersonal();refreshEditorial(articleSelection?editorialDate:romeDate());syncFeedback(localStorage,P.apiBase(state));});
-window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { state = load(localStorage).state; render(); } });
+window.addEventListener('storage', (ev) => { if (ev.key === 'aurelius.v2') { state = load(localStorage).state; scheduleSnapshot(); render(); } });
 
 function route() {
   const q = new URLSearchParams(location.search);
   const h = location.hash.replace('#', '');
   articleSelection=null;
+  if(h==='microlearning'||h.startsWith('microlearning/')){const part=h.split('/')[1];ui.tab='microlearning';microMode=['archive','saved'].includes(part)?part:'feed';const d=/^\d{4}-\d{2}-\d{2}$/.test(part||'')?part:romeDate();if(microDate!==d||!microRequest)refreshMicro(d);}
   if(h.startsWith('article/')){const [,id,date]=h.split('/');if(/^[a-z0-9_-]{1,80}$/.test(id)&&/^\d{4}-\d{2}-\d{2}$/.test(date)){ui.tab='rituali';articleSelection=id;refreshEditorial(date);}}
   if(h==='relationship')ui.tab='rituali';
   if (['ora', 'piano', 'todos', 'stats', 'altro', 'rituali','idee','spesa','inbox'].includes(h)) ui.tab = h;
@@ -1241,3 +1268,8 @@ syncFeedback(localStorage,P.apiBase(state));
 syncPersonal();
 setInterval(()=>{if(document.visibilityState==='visible')syncPersonal();},60000);
 window.__aurelius = { get state() { return state; }, render, now };
+
+function privateControls(){
+ if(!localStorage.getItem(PERSONAL_AUTH))return '';
+ return `<section class="card private-status"><h2>Memoria privata</h2><p class="small">Una copia distinta per ogni dispositivo nel repository privato: piano, attività, storico, appunti, preferite e preferenze di lettura. I dati sanitari del calendario indicativo restano locali. Elaborazione tramite Cloudflare, GitHub e ChatGPT. Credenziali e sottoscrizioni push restano fuori dalla copia. Il ripristino fra dispositivi resta esplicito tramite backup: nessuna copia remota sostituisce automaticamente il piano locale.</p><label><input type="checkbox" data-act="private-sync-toggle" ${state.settings.privateSync!==false?'checked':''}> Copia privata automatica</label><label><input type="checkbox" data-act="ai-suggestions-toggle" ${state.settings.aiSuggestions!==false?'checked':''}> Suggerimenti personalizzati nelle notifiche</label><p class="small mut">Fino a tre al giorno, fra le 8 e le 21, evitando studio e lezioni. Per attivarli servono il Worker aggiornato e le notifiche abilitate su questo dispositivo.</p><button class="btn sm" data-act="private-sync-now">Aggiorna copia privata</button><p id="private-sync-status" role="status" class="small">${esc(privateStatus||'In attesa della prima copia privata.')}</p></section>`;
+}

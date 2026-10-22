@@ -1,3 +1,4 @@
+import {validateMicroEdition,validateMicroManifest} from '../src/microlearning.js';
 import {readFile,readdir}from'node:fs/promises';
 import {validateEdition,validDate,wordCount}from'../src/editorial-contract.js';
 import {validateCatalog}from'../src/ideas.js';
@@ -8,6 +9,8 @@ export async function validateContent(root='content'){
  for(const file of await readdir(root+'/editions')){if(!file.endsWith('.json'))continue;const e=validateEdition(await read('editions/'+file));if(file!==e.date+'.json')throw Error('Filename/data non coerenti');for(const a of e.articles){if(ids.has(a.id))throw Error('ID articolo già pubblicato: '+a.id);ids.set(a.id,e.date);const text=a.sections.flatMap(s=>s.paragraphs).join(' ').replace(/\s+/g,' ').trim();if(texts.has(text))throw Error('Testo identico già pubblicato');texts.add(text);}console.log(`${e.date}: ${e.articles.map(a=>a.slot+' '+wordCount(a)).join(', ')}`);}
  for(const date of m.editions){if(!validDate(date))throw Error('Data manifest non valida');const e=validateEdition(await read(`editions/${date}.json`));if(e.date!==date)throw Error('Manifest incoerente');}
  if([...m.editions].sort().at(-1)!==m.latest)throw Error('Latest non è l’ultima edizione');
+ const micro=validateMicroManifest(await read('microlearning/manifest.json')), microIds=new Set();
+ for(const date of micro.editions){const e=validateMicroEdition(await read('microlearning/editions/'+date+'.json'));if(e.date!==date)throw Error('Data microlearning incoerente');for(const c of e.cards){if(microIds.has(c.id))throw Error('Scheda duplicata');microIds.add(c.id);}}
  validateCatalog(await read('ideas.json'));
  const f=await read('feedback/ratings.json');if(f.schema!==1||!Array.isArray(f.ratings))throw Error('Feedback non valido');
  const q=await read('editorial/queue.json');if(q.schema!==1||!Array.isArray(q.ready))throw Error('Coda non valida');

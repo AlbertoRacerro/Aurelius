@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "cards": [
+    {
+      "id": "micro-20261022-leaf",
+      "topic": "Natura · il mondo vicino",
+      "title": "Una foglia è anche una via d’acqua.",
+      "hook": "L’acqua che entra dalle radici può uscire dalla chioma, senza che tu la veda.",
+      "tone": "sage",
+      "visual": {
+        "kind": "flow",
+        "labels": [
+          "Suolo",
+          "Radici e foglie",
+          "Vapore"
+        ]
+      },
+      "paragraphs": [
+        "La pianta assorbe acqua dal terreno e ne restituisce una parte all’atmosfera attraverso piccoli pori delle foglie: gli stomi. Questo percorso si chiama traspirazione.",
+        "Non è la stessa cosa dell’acqua che evapora direttamente dal terreno. Quando i due flussi vengono considerati insieme, si parla di evapotraspirazione: una parola lunga per un paesaggio che scambia acqua con l’aria."
+      ],
+      "takeaway": "Guardare un albero significa guardare anche un tratto del ciclo dell’acqua.",
+      "basis": "Esposizione autonoma dalla Water Science School di USGS. Il disegno rappresenta il percorso, non la scala o il meccanismo della risalita.",
+      "sources": [
+        {
+          "title": "USGS · Evapotraspirazione",
+          "url": "https://www.usgs.gov/media/images/evapotranspiration-sum-plant-transpiration-and-evaporation"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261022-rule30",
+      "topic": "Wolfram · semplicità e complessità",
+      "title": "Otto casi. E nasce questo disegno.",
+      "hook": "Ogni nuova cella dipende soltanto da tre celle della riga precedente.",
+      "tone": "plum",
+      "visual": {
+        "kind": "automaton",
+        "labels": [
+          "Regola 30 · 24 generazioni da una cella"
+        ]
+      },
+      "paragraphs": [
+        "Nessuno ha disegnato a mano questo intreccio. La regola 30 assegna bianco o nero alle otto possibili combinazioni di tre celle. Ripetendo sempre quelle stesse istruzioni, da un solo punto compare una trama sorprendentemente irregolare.",
+        "Conoscere una regola semplice non rende automaticamente semplice prevederne tutti gli effetti. Wolfram usa questi sistemi per esplorare il rapporto fra computazione e complessità. Il disegno, da solo, non dimostra l’assenza di scorciatoie matematiche."
+      ],
+      "takeaway": "La complessità del risultato non misura la complessità delle istruzioni.",
+      "basis": "Esposizione autonoma da un articolo di Stephen Wolfram, collegata ai temi di What Ultimately Is There? L’immagine è calcolata dalla regola 30. Non è una dimostrazione dell’irriducibilità computazionale.",
+      "sources": [
+        {
+          "title": "Stephen Wolfram · The Rule 30 Prize Problems",
+          "url": "https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261022-empathy",
+      "topic": "Persone e AI · progettare meglio",
+      "title": "La risposta veloce può arrivare troppo presto.",
+      "hook": "Prima di automatizzare una soluzione, bisogna capire quale difficoltà sta vivendo la persona.",
+      "tone": "clay",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Produrre più risposte",
+          "Capire quale aiuto serve"
+        ]
+      },
+      "paragraphs": [
+        "Immagina un assistente che, per aiutarti, trasformi ogni pensiero in un’attività e ogni attività in una notifica. Ha prodotto molto. Ma forse ti serviva soltanto liberare la testa.",
+        "Nella presentazione del suo libro, Francesca Mastrogiacomi collega il Design Thinking all’AI: partire dall’ascolto delle persone e arrivare alla soluzione, mantenendo al centro valori umani ed empatia. L’esempio dell’assistente è nostro: mostra perché la qualità dell’aiuto dipende anche da ciò che scegliamo di non automatizzare."
+      ],
+      "takeaway": "Una soluzione utile parte da un bisogno compreso, non da una funzione disponibile.",
+      "basis": "Rielaborazione autonoma della presentazione editoriale di Empathy and Artificial Intelligence in Action. Esempio originale di Aurelius; non viene attribuito all’autrice. Non è un estratto del volume integrale.",
+      "sources": [
+        {
+          "title": "Francesca Mastrogiacomi · Presentazione del libro",
+          "url": "https://link.springer.com/book/10.1007/978-3-032-35370-2"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261022-feynman",
+      "topic": "Pensiero critico · Richard Feynman",
+      "title": "Il risultato che vorresti nascondere.",
+      "hook": "Un esperimento diventa più credibile quando mostri anche ciò che potrebbe smentirlo.",
+      "tone": "blue",
+      "visual": {
+        "kind": "question",
+        "labels": [
+          "Che cosa mi farebbe cambiare idea?"
+        ]
+      },
+      "paragraphs": [
+        "Hai trovato un metodo che sembra funzionare. Poi arriva una prova contraria: la tentazione è pensare che quella volta non conti. È proprio lì che comincia il lavoro difficile.",
+        "Nel discorso Cargo Cult Science, Feynman chiede una forma esigente di onestà: rendere disponibili anche i dettagli capaci di indebolire la propria conclusione. Il punto non è sembrare imparziali, ma consentire ad altri di giudicare davvero il risultato."
+      ],
+      "takeaway": "Prima di difendere una conclusione, cerca la prova che la metterebbe in difficoltà.",
+      "basis": "Parafrasi autonoma di un principio del discorso di Feynman a Caltech, 1974. L’esempio iniziale è editoriale, non una citazione.",
+      "sources": [
+        {
+          "title": "Richard Feynman · Cargo Cult Science, Caltech",
+          "url": "https://calteches.library.caltech.edu/51/2/CargoCult.htm"
+        }
+      ]
+    }
+  ]
+}

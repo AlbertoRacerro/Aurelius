@@ -39,3 +39,11 @@ Finché mancano configurazione, token o deploy, la nota resta sul dispositivo. E
 Massimo 400 note locali, 20 operazioni per nota, 5 invii e 10 verifiche per ciclo di sincronizzazione, 20 note per esecuzione AI. Nessuna cancellazione automatica. Il server interrompe i nuovi invii se la directory inbox raggiunge 900 elementi: prima di quel limite serve una procedura esplicita di archiviazione. L'automazione non deve interpretare un elenco troncato come completo.
 
 Le voci delle liste e le idee si spuntano in Appunti. L'annullamento è locale e non è una sincronizzazione bidirezionale di tutte le modifiche tra dispositivi. Non viene condiviso automaticamente il calendario: le proposte temporali non possono presumere di conoscere i suoi slot liberi. Il codice personale resta in localStorage: non è incluso nei backup, ma è leggibile da JavaScript della stessa origine come la credenziale editoriale esistente.
+
+## Memoria privata e suggerimenti — aggiornamento 2.9 (22 ottobre 2026)
+
+La precedente esclusione di tutto lo stato locale dall'archivio è superata dalla richiesta esplicita del proprietario. `src/private-sync.js` archivia automaticamente, con il codice personale collegato, copie distinte per dispositivo di stato locale e preferenze selezionate. Credenziali, sottoscrizioni push e canale ntfy sono esclusi; il record sanitario separato del calendario indicativo resta locale ed è escluso sia dalla copia sia dal contesto del pianificatore. Non esiste un merge automatico fra telefono e tablet. Le copie remote non sostituiscono mai lo stato locale.
+
+Richieste POST aggiuntive: `/v1/personal/snapshot` e `/v1/personal/pause`. Migrazione idempotente `0004_private_sync.sql`; eseguire lo script aggiornato `bash worker/upgrade-editorial.sh` per applicare tutte le migrazioni e distribuire. Nessun nuovo segreto richiesto. Senza aggiornamento Worker gli Appunti continuano a funzionare, mentre lo stato della copia privata segnala il blocco e conserva i dati sul dispositivo.
+
+Il pianificatore notturno scrive solo `planning/reminders.json` nell'archivio privato; il Worker importa e controlla le proposte e le manda attraverso Web Push esistente, anche ad app chiusa. Vedere `docs/PRIVATE_PLANNING_AUTOMATION.md`. Le informazioni remote sono l'ultima copia confermata, non il contenuto corrente di un dispositivo offline.

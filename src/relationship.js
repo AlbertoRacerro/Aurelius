@@ -1,5 +1,5 @@
 // Relationship-support preferences are stored SEPARATELY from Aurelius state.
-// Never upload dates, preferences or phase to the public repository, backup JSON or push worker.
+// Never upload dates, preferences or phase to the public repository, standard backup or private planner.
 export const RELATIONSHIP_KEY = 'aurelius.relationship.local.v1';
 export const GESTURES = [
   { id: 'tea', label: 'Proporre un tè o una bevanda calda', text: 'Potresti proporre spontaneamente una bevanda calda, senza insistere.' },
