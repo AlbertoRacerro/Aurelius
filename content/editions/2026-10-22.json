@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "date": "2026-10-22",
+  "updated_at": "2026-10-22T03:04:40.931723+00:00",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261022",
+      "title": "I libri non insegnano da soli a usarli",
+      "kind": "synthesis",
+      "basis": "Francis Bacon, Essays or Counsels, Civil and Moral, «Of Studies» (redazione del 1625). Adattamento italiano da un originale in pubblico dominio, con parafrasi e chiarimenti editoriali: leggere per pesare le ragioni, senza confondere studio e giudizio.",
+      "sections": [
+        {
+          "heading": "Una pianta da potare",
+          "paragraphs": [
+            "Lo studio può darci piacere, rendere più ricca una conversazione e aiutarci a decidere. Sono tre beni diversi. Nella solitudine un libro offre compagnia e ampiezza; quando parliamo, ci procura parole e distinzioni; davanti a una questione difficile, ci permette di ordinare ciò che sappiamo. Il rischio comincia quando chiediamo a uno di questi beni di sostituire gli altri: quando una bella frase ci sembra già una buona decisione.",
+            "Le capacità naturali somigliano a piante che hanno bisogno di potatura. Crescono, ma non sempre nella direzione migliore. Lo studio le forma, toglie qualche ramo, ne sostiene un altro. A sua volta, però, lo studio deve essere corretto dall’esperienza. Una regola imparata sulla pagina si presenta ampia e ordinata; il caso che incontriamo ha particolari, ostacoli, eccezioni. Per applicarla dobbiamo capire quali particolari contino davvero.",
+            "Passare tutto il tempo sui libri può diventare un modo di sottrarsi alle cose. Servirsene soprattutto per apparire colti può trasformarli in ornamenti. Giudicare ogni situazione soltanto con le loro regole significa scambiare una guida per il terreno su cui camminiamo. Non occorre scegliere fra imparare e osservare: occorre lasciare che ciascuna attività corregga l’altra."
+          ]
+        },
+        {
+          "heading": "Assaggiare, masticare, digerire",
+          "paragraphs": [
+            "Non leggere soltanto per trovare qualcosa da contraddire. Non leggere neppure per credere a tutto ciò che trovi, o per raccogliere materiale da esibire alla prossima conversazione. Leggi per pesare e considerare. Questo richiede una piccola sospensione: prima di assentire o respingere, lascia che un ragionamento mostri su quali passaggi si regge.",
+            "Alcuni libri si possono assaggiare; altri attraversare senza fermarsi a ogni riga; pochi meritano di essere masticati e digeriti. L’immagine diventa chiara se pensiamo alla differenza fra incontrare un’idea e farla nostra. Assaggiarla significa riconoscerne il sapore. Digerirla significa riuscire a ricostruirne le ragioni, distinguerne i limiti, vedere che cosa cambia nel nostro modo di giudicare.",
+            "Non è quindi necessario dedicare a ogni pagina la stessa attenzione. Sarebbe un’uguaglianza soltanto apparente, perché sottrarrebbe tempo ai passaggi che lo richiedono. Anche gli estratti preparati da altri possono servire; ma, nelle questioni che contano, una versione distillata rischia di lasciarci soltanto un aroma. Abbiamo il risultato, senza aver seguito il movimento che lo rende comprensibile."
+          ]
+        },
+        {
+          "heading": "La precisione viene alla luce",
+          "paragraphs": [
+            "Leggere ci riempie di materia; discutere ci rende pronti; scrivere ci obbliga alla precisione. Nella conversazione incontriamo una domanda che non avevamo previsto. Nella scrittura scopriamo che due idee, finché restavano nella mente, sembravano collegarsi meglio di quanto riescano a fare sulla pagina. Il vuoto fra loro diventa visibile, e proprio per questo possiamo lavorarci.",
+            "Una conoscenza ancora indistinta può sembrare vastissima. Quando dobbiamo darle una forma, emergono parole di cui non sappiamo bene il significato e conclusioni che avevamo accettato senza passaggi intermedi. Non è un motivo per smettere: è il momento in cui lo studio comincia a produrre discernimento, perché ci mostra insieme ciò che possediamo e ciò che manca.",
+            "La morale è questa: non basta aver frequentato molti libri per saper usare ciò che contengono. Lo studio acquista valore quando ci rende capaci di considerare meglio una cosa concreta, e l’esperienza acquista profondità quando trova nello studio parole e ragioni per essere compresa. La pianta cresce; la potatura le dà forma; nessuna delle due, da sola, fa il lavoro dell’altra."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Francis Bacon — Of Studies",
+          "url": "https://www.gutenberg.org/files/575/575-h/575-h.htm",
+          "edition": "Essays, saggio Of Studies; originale inglese in pubblico dominio. Selezione consultata, non lettura integrale della raccolta.",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261022",
+      "title": "Il bosco che comincia da una recinzione",
+      "kind": "synthesis",
+      "basis": "Charles Darwin, On the Origin of Species (1859, prima edizione), capitolo III, «Struggle for Existence». Selezione e adattamento italiano dall’originale in pubblico dominio, con chiarimenti editoriali. Osservazioni e ipotesi sono presentate nel loro contesto storico: non una rassegna scientifica aggiornata né una regola per giudicare le società umane.",
+      "sections": [
+        {
+          "heading": "La quiete e ciò che non vediamo",
+          "paragraphs": [
+            "Guardiamo la natura in una giornata luminosa. Gli uccelli cantano, il terreno è coperto di piante, in alcuni punti il cibo sembra abbondare. È facile pensare che ogni essere occupi semplicemente il posto che gli è stato assegnato. Eppure il canto non ci mostra gli insetti divorati, i semi scomparsi, le uova che non si schiuderanno. Quello che abbiamo davanti è già il risultato di moltissimi tentativi che non sono arrivati fino a noi.",
+            "Per comprendere questa scena dobbiamo allargare il significato della parola lotta. Due animali affamati possono contendersi direttamente lo stesso cibo. Una pianta sul margine di un deserto, invece, dipende dall’umidità: non combatte con la siccità come se fosse un avversario. Un seme cade dove altre radici occupano già il terreno. Il suo problema è trovare una possibilità di crescere fra esseri che sono arrivati prima.",
+            "La lotta per l’esistenza comprende anche la dipendenza, e non riguarda soltanto la sopravvivenza di un individuo. Conta che lasci discendenti capaci a loro volta di vivere. Un organismo può durare a lungo senza lasciare una generazione successiva; un altro può vivere poco e contribuire molto alla popolazione futura. La continuità della vita non si legge soltanto contando quanti corpi restano in piedi in un dato momento.",
+            "Prendiamo il vischio. Dipende dall’albero su cui cresce; se troppi parassiti gravano sullo stesso ospite, possono indebolirlo fino a farlo morire. Pianticelle vicine sul medesimo ramo possono ostacolarsi. Ma il vischio dipende anche dagli uccelli che ne trasportano i semi. Quella che sembrava una relazione a due diventa subito una rete: ospite, parassita, uccello, altre piante i cui frutti attirano lo stesso visitatore.",
+            "Non basta dunque guardare l’organismo e chiedersi quanto sia forte. Bisogna chiedere da che cosa dipenda, che cosa lo distrugga, chi trasporti i suoi semi, dove i suoi discendenti possano trovare spazio. La parola lotta raccoglie questi rapporti diversi; se la immaginiamo soltanto come un duello, perdiamo proprio la parte più interessante del ragionamento.",
+            "La ragione per cui questi rapporti contano tanto è semplice. Le possibilità di riprodursi superano le possibilità di sopravvivere. Se ogni seme diventasse una pianta adulta, e ogni nuova pianta producesse semi altrettanto fortunati, il numero crescerebbe di generazione in generazione. Non occorre che ogni individuo sia molto prolifico: anche una crescita lenta, ripetuta abbastanza a lungo senza perdite, finirebbe per superare lo spazio disponibile.",
+            "Questo non significa che in ogni momento tutte le popolazioni stiano aumentando. Significa che dobbiamo spiegare che cosa trattenga una capacità di aumento così grande. Una popolazione stabile non è una popolazione nella quale non accade nulla. Può esserci una nascita continua e una perdita altrettanto continua; il numero finale nasconde entrambi i movimenti.",
+            "Per la stessa ragione, il numero di uova o semi non ci dice da solo quanto una specie sarà abbondante. Molti discendenti possono compensare una distruzione enorme nelle prime fasi della vita. Pochi discendenti, ben protetti, possono bastare a mantenere una popolazione. Guardare soltanto la fecondità significa vedere l’ingresso e ignorare tutto ciò che succede lungo il percorso.",
+            "Un caso rivelatore è quello degli animali e delle piante introdotti in un territorio nuovo. Alcuni diventano numerosi in tempi che sorprendono chi li osserva. Non è necessario supporre che abbiano improvvisamente acquistato una fecondità diversa: può essere diminuita la distruzione che prima ne limitava i discendenti. La stessa capacità di produrre nuovi individui, incontrando meno ostacoli, dà un risultato molto diverso. La crescita rende visibile una possibilità che esisteva già, ma che altrove veniva contenuta.",
+            "Il confronto con gli animali domestici può invece ingannarci. Li vediamo nutriti e protetti, e non vediamo intorno a loro la stessa distruzione che colpisce molti organismi selvatici. Eppure anche il loro numero viene trattenuto: una parte viene macellata. Se immaginiamo che tutti sopravvivano e si riproducano, cancelliamo un passaggio essenziale del sistema che stiamo osservando. Una popolazione mantenuta dall’uomo non è un esempio di crescita senza limiti; è una popolazione i cui limiti vengono organizzati in un altro modo.",
+            "Pensiamo poi a un albero molto longevo. In condizioni ideali, per sostituirlo basterebbe che nell’intera sua vita un solo seme arrivasse a maturità e occupasse un posto adatto. I moltissimi semi che produce non corrispondono dunque ad altrettanti alberi futuri. Sono esposti a perdite, distanze, stagioni sfavorevoli e terreno già occupato. La sproporzione fra ciò che nasce e ciò che resta non è un’anomalia da eliminare dal racconto: è una delle cose che il racconto deve spiegare. Per questo il capitolo ci invita a guardare insieme riproduzione e distruzione, senza lasciare che l’abbondanza di un momento nasconda la scarsità di un altro."
+          ]
+        },
+        {
+          "heading": "Trecentocinquantasette pianticelle",
+          "paragraphs": [
+            "Su un piccolo pezzo di terreno scavato e ripulito, Darwin segna le pianticelle delle erbe spontanee mentre spuntano. Non devono ancora farsi strada in una vegetazione fitta: il terreno è stato liberato. Ne conta 357. Di queste, 295 vengono distrutte, soprattutto da lumache e insetti. La scena dura abbastanza da rivelare ciò che una singola visita avrebbe nascosto: il terreno apparentemente vuoto non è un luogo privo di ostacoli.",
+            "Se fossimo arrivati soltanto alla fine, avremmo contato le piante rimaste e forse avremmo pensato che poche fossero germinate. Il segno posto accanto a ciascuna pianticella cambia la spiegazione. La differenza fra non nascere e nascere per poi essere distrutti diventa osservabile. Per capire un risultato, a volte bisogna seguire chi scompare, non soltanto descrivere chi resta.",
+            "Anche un prato può trasformarsi senza ricevere nuove specie. Se smettiamo di tagliarlo, alcune piante crescono più vigorosamente e ne soffocano altre. Nel piccolo appezzamento descritto nel capitolo, nove delle venti specie inizialmente presenti scompaiono quando alle altre viene permesso di svilupparsi liberamente. La falciatura non era soltanto una mutilazione: modificava il rapporto fra vicini, impedendo ad alcuni di occupare tutto lo spazio.",
+            "Ora guardiamo un giardino. Una pianta può tollerare perfettamente il clima e tuttavia non diffondersi fuori dall’aiuola. Sopportare la temperatura non basta a superare le piante locali, i consumatori di semi, gli animali che ne mangiano i germogli. La possibilità di vivere sotto cura non coincide con quella di mantenersi e riprodursi in mezzo a tutti gli altri.",
+            "Anche il clima può agire passando attraverso queste relazioni. Se una specie diventa rara verso il limite del suo territorio, siamo tentati di attribuire tutto al freddo o alla siccità. Ma un cambiamento può favorire il suo concorrente o il suo nemico. La specie che diminuisce non deve necessariamente essere colpita soltanto dall’aria o dall’acqua: può trovarsi davanti un vicino che ora cresce meglio di prima.",
+            "Questa distinzione conta perché cambia ciò che cercheremmo sul campo. Una foglia danneggiata dal gelo suggerisce un percorso; una pianta intatta, ma privata dei semi dai suoi consumatori, ne suggerisce un altro. Due popolazioni possono diminuire nello stesso inverno per motivi diversi. Dire che il clima conta è l’inizio della domanda, non sempre la sua conclusione.",
+            "Neppure essere numerosi ha un solo significato. Un gruppo fitto può offrire a parassiti e malattie occasioni di diffusione. In altri casi, invece, una grande quantità di semi permette che almeno una parte sfugga ai consumatori. Gli uccelli possono ripulire pochi esemplari coltivati in un giardino, mentre non riescono a consumare tutti i semi di un campo intero.",
+            "Non c’è contraddizione: sono rapporti diversi. Il vantaggio di stare insieme dipende da quale perdita prevalga e da come cambino i consumatori. Per questo una specie rara su un territorio vasto può essere abbondantissima nei pochi luoghi in cui riesce a mantenersi. La mappa della presenza non racconta soltanto il clima; racconta anche dove la trama delle relazioni consente una continuità."
+          ]
+        },
+        {
+          "heading": "Ventisei anni sotto l’erica",
+          "paragraphs": [
+            "Nelle brughiere del Surrey ci sono gruppi di vecchi pini silvestri sulle sommità lontane. Alcune aree vengono recintate, e all’interno cominciano a crescere giovani pini fittissimi. Non sono stati seminati. Fuori dalla recinzione, osservando da vari punti centinaia di acri, sembra non esserci un solo giovane albero. È naturale domandarsi che cosa abbia impedito ai semi di arrivare fin lì.",
+            "Avvicinandosi, però, Darwin trova fra i fusti dell’erica moltissime piantine e piccoli alberi. I semi erano arrivati. Le piantine erano nate. Il bestiame continuava a brucarle, impedendo loro di emergere. In una iarda quadrata conta trentadue piccoli pini. Uno, giudicando dagli anelli di accrescimento, aveva tentato per ventisei anni di sollevare la testa sopra l’erica senza riuscirci.",
+            "La recinzione non crea la fertilità del seme e non inventa una nuova capacità dell’albero. Toglie un ostacolo che si ripeteva. Ciò che prima appariva come assenza diventa una folla di possibilità trattenute. Per spiegare la comparsa del bosco, occorre allora guardare anche il recinto e l’animale che non può più attraversarlo.",
+            "È una correzione del nostro modo di vedere. Dal panorama avevamo dedotto che il pino non crescesse in quel luogo; guardando fra gli steli scopriamo che cresceva e veniva continuamente ridotto. La stessa superficie contiene due storie, e la seconda diventa visibile soltanto cambiando distanza e seguendo un organismo abbastanza a lungo.",
+            "In un’altra brughiera, nello Staffordshire, il terreno recintato e piantato a pini mostra una vegetazione molto diversa dalla parte rimasta aperta. Dodici specie di piante, senza contare graminacee e carici, prosperano nella piantagione ma non si trovano sulla brughiera. Anche gli uccelli insettivori cambiano. L’albero introdotto non aggiunge soltanto un tronco al paesaggio: modifica condizioni alle quali altri organismi rispondono.",
+            "Occorre però conservare un particolare del confronto: insieme ai pini c’è stata una recinzione. L’effetto dell’albero e quello dell’esclusione del bestiame non sono automaticamente la stessa cosa. La seconda osservazione aiuta a vedere quanto il recinto possa essere decisivo. Il dettaglio che sembrava amministrativo entra nella spiegazione biologica.",
+            "Il ragionamento si allarga poi al Paraguay. Nel capitolo viene riportato che una mosca, attaccando i neonati, impedisce a certi animali domestici di stabilire popolazioni selvatiche come avviene altrove. Da qui parte una possibilità: se gli uccelli che mangiano quegli insetti aumentassero, le mosche potrebbero diminuire; il bestiame potrebbe espandersi e trasformare la vegetazione.",
+            "È una catena proposta per ragionare, non la descrizione di un esperimento che abbia già verificato tutti i passaggi. E il cerchio non finisce lì. Una vegetazione diversa cambia gli insetti; insetti diversi cambiano gli uccelli. Siamo tornati al punto di partenza dopo aver attraversato animali molto lontani fra loro. L’ordine del paesaggio non può essere ricavato dalla biografia di una sola specie."
+          ]
+        },
+        {
+          "heading": "Un fiore, un topo, un gatto",
+          "paragraphs": [
+            "Il capitolo segue ancora un’altra rete: i fiori visitati dai bombi, i nidi dei bombi danneggiati dai topi, i topi cacciati dai gatti. Da questi rapporti nasce l’ipotesi che la presenza dei gatti possa contribuire, indirettamente, alla frequenza di certi fiori. L’immagine è memorabile proprio perché collega esseri che, a prima vista, non sembrano avere nulla da dirsi.",
+            "La sorpresa non autorizza però a trasformare la catena in una ricetta. Il passaggio sui gatti è presentato come possibilità plausibile, sostenuta dalle osservazioni disponibili nel testo. Non dimostra che aggiungere gatti in qualsiasi ambiente faccia aumentare i fiori. Ogni passaggio ha condizioni, e nel paesaggio reale esistono altri rapporti che possono rafforzarlo o contrastarlo.",
+            "Possiamo allora immaginare una riva coperta da cespugli e piante intrecciate. Le proporzioni fra le specie ci sembrano casuali. Ma ogni pianta adulta ha attraversato una successione di incontri: semi sparsi, germinazione, ombra, radici vicine, consumatori, periodi secchi. La forma attuale della riva è una traccia di queste vicende, anche quando non sappiamo ricostruirle tutte.",
+            "L’ignoranza delle cause non è una prova della loro assenza. Una manciata di piume cade secondo relazioni fisiche definite; tuttavia prevedere la composizione di un bosco richiede seguire un intreccio incomparabilmente più ricco. La difficoltà non deve spingerci a inventare una spiegazione solenne. Può invitarci, più semplicemente, a osservare meglio prima di dichiarare inevitabile ciò che vediamo.",
+            "Fra tutti questi rapporti, la competizione può essere particolarmente intensa fra organismi simili. Frequentano lo stesso terreno, cercano lo stesso cibo, affrontano pericoli analoghi. Una differenza piccola può contare molto proprio perché quasi tutto il resto è condiviso. Lontananza e diversità non significano automaticamente rivalità maggiore; talvolta il concorrente più vicino è quello che ci somiglia di più.",
+            "Se seminiamo insieme varietà di una stessa pianta e riseminiamo ogni anno il raccolto mescolato, alcune possono diventare più frequenti di altre. Per conservare certe proporzioni occorre raccogliere separatamente e ricomporre il miscuglio. L’aspetto iniziale non si conserva da solo. Anche qui il risultato dipende da un processo che il semplice elenco delle varietà non rende visibile.",
+            "Guardiamo infine un seme di tarassaco che il vento porta lontano. Le sue piume sembrano un rapporto fra una forma e l’aria. Ma il vantaggio di allontanarsi riguarda anche le piante che occupano già il terreno vicino. Lo stesso carattere mette in relazione il seme con il mezzo che lo trasporta e con gli organismi dai quali può sottrarsi raggiungendo uno spazio libero.",
+            "Una forma utile non è dunque utile in assoluto. Lo è dentro una certa rete di rapporti. Spostare un organismo in un paese dal clima simile può cambiargli profondamente la vita, perché cambiano concorrenti, nemici e dipendenze. Aver trovato la temperatura giusta non significa aver ricostruito tutto il suo ambiente.",
+            "La morale di questa passeggiata è un modo più paziente di cercare le cause. Prima di dire che una cosa manca perché non può esistere, guardiamo se venga continuamente fermata. Prima di chiamare stabile un paesaggio, chiediamoci quali nascite e perdite ne conservino l’aspetto. Il piccolo pino sotto l’erica non era un albero impossibile: per ventisei anni era stato un albero interrotto."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Charles Darwin — On the Origin of Species, capitolo III",
+          "url": "https://www.gutenberg.org/files/1228/1228-h/1228-h.htm",
+          "edition": "Prima edizione inglese, 1859, capitolo III consultato. Adattamento storico con selezione; ipotesi sugli intrecci ecologici non presentate come esperimenti moderni.",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261022",
+      "title": "Radar · coding locale, sicurezza e industria",
+      "kind": "reduced",
+      "event_date": "2026-10-21",
+      "publication_date": "2026-10-22",
+      "basis": "Dieci notizie distinte del 21 ottobre, nella finestra 21/10 ore 04:57–22/10 ore 04:57 Europe/Rome. Edizione ridotta nel numero di schede: esclusi gli eventi già presenti nella preview e le piste senza novità recente verificata. Hacker News usata per scoperta, fonti originali per verifica; orari indicati dove disponibili. Valutazioni d’uso e conseguenze sono editoriali.",
+      "sections": [
+        {
+          "heading": "Recursive Flint · 39,8B / 2,5B attivi",
+          "paragraphs": [
+            "21 ottobre · Recursive rilascia un MoE per coding agent locale, con pesi Apache 2.0."
+          ],
+          "bullets": [
+            "49 layer; 6 esperti instradati su 256, più uno condiviso. Checkpoint BF16 circa 80 GB; quantizzazioni separate per NVIDIA e Apple.",
+            "Terminal-Bench 2.1: 54,9%; SWE-bench Verified: 74,2%, misurati dal produttore con harness dichiarati. Nessuna classifica omogenea ricostruita.",
+            "12 GiB: nessun fit interamente in VRAM dimostrato. I 2,5B attivi riducono calcolo, non i pesi da conservare. Fonte: model card Recursive."
+          ]
+        },
+        {
+          "heading": "OpenAI su Google Cloud · private preview",
+          "paragraphs": [
+            "21 ottobre · Google avvia l’accesso enterprise a GPT-6 Astra, GPT-6.1 Sol e GPT-6 Luna nel model garden."
+          ],
+          "bullets": [
+            "API e workflow Codex CLI/Desktop collegabili all’inferenza Google; fatturazione Marketplace e consumo degli impegni cloud esistenti.",
+            "Zero Data Retention e Confidential Compute sono annunciati come successivi, non già disponibili.",
+            "Interesse: scelta di provider per agenti enterprise; nessun nuovo modello locale o prezzo comparabile verificato. Fonte: Google Cloud."
+          ]
+        },
+        {
+          "heading": "LiteLLM 1.107.0 · release PyPI compromessa",
+          "paragraphs": [
+            "21 ottobre, upload 11:39–11:40 UTC · SafeDep documenta credenziali sottratte e backdoor nei pacchetti distribuiti."
+          ],
+          "bullets": [
+            "I wheel aggiungono cook.pth, cook.py e sitecustomize.py; attivazione all’avvio di Python, anche senza importare LiteLLM.",
+            "Release rimossa da PyPI entro le 13:40 UTC secondo la cronologia del ricercatore; sorgente GitHub e artefatto distribuito divergono.",
+            "Impatto: gateway AI e ambienti di sviluppo. Su host esposti, il semplice downgrade non dimostra la rimozione della persistenza. Fonte: analisi originale SafeDep."
+          ]
+        },
+        {
+          "heading": "PHP 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35",
+          "paragraphs": [
+            "21 ottobre · Rilasci di sicurezza contro due vulnerabilità critiche con possibile RCE non autenticata."
+          ],
+          "bullets": [
+            "CVE-2026-109618 e CVE-2026-109619; la prima comunicazione indicava CVSS 4.0 pari a 9,2 per entrambe.",
+            "PHP dichiara che le mitigazioni non sono complete: l’aggiornamento resta necessario.",
+            "Rilevanza: applicazioni e servizi web esposti; PHP 8.2 termina il supporto il 31 dicembre 2026. Fonte: PHP.net, avviso e release."
+          ]
+        },
+        {
+          "heading": "Node.js 22.23.4 / 24.22.1 / 26.12.1",
+          "paragraphs": [
+            "21 ottobre · Disponibili le patch di sicurezza per i tre rami supportati indicati dal progetto."
+          ],
+          "bullets": [
+            "Correzioni high per DNS, verifica hostname TLS e decoder Brotli; quest’ultimo include una scrittura fuori limite con possibile RCE.",
+            "Aggiornati anche dipendenze e certificati, con intervento sul caso eMudhra.",
+            "Per harness e servizi Node: controllare il runtime effettivamente distribuito, compresi container e binari incorporati. Fonte: bollettino Node.js."
+          ]
+        },
+        {
+          "heading": "UE · accordo sulle cartolarizzazioni",
+          "paragraphs": [
+            "21 ottobre, comunicato 23:17 · Consiglio e Parlamento raggiungono un’intesa politica provvisoria sul mercato del credito cartolarizzato."
+          ],
+          "bullets": [
+            "Minori requisiti patrimoniali per operazioni a basso rischio e nuova categoria “resilient”; rafforzato il quadro STS.",
+            "Obiettivo dichiarato: liberare capacità di credito per famiglie, PMI e infrastrutture. È capacità potenziale, non prestiti già erogati.",
+            "Testi da finalizzare e approvare formalmente. Il nodo: finanziare investimenti conservando una valutazione prudente del rischio. Fonte: Consiglio UE."
+          ]
+        },
+        {
+          "heading": "Regno Unito · via libera al giacimento Jackdaw",
+          "paragraphs": [
+            "21 ottobre · Arriva il nuovo consenso per il progetto gas nel Mare del Nord, dopo lo stop giudiziario."
+          ],
+          "bullets": [
+            "Operatore Adura, joint venture Shell–Equinor; il governo prevede forniture entro fine mese.",
+            "Picco: circa +6% sulla produzione nazionale, meno del 4% della domanda giornaliera secondo il calcolo Reuters.",
+            "Governo: sicurezza energetica; oppositori: costo climatico. Il consenso non dimostra un calo delle bollette. Fonti: atti GOV.UK e Reuters, 05:58 UTC."
+          ]
+        },
+        {
+          "heading": "Marcianise · sciopero Barilla e tavolo sulla cessione",
+          "paragraphs": [
+            "21 ottobre · Lavoratori mobilitati e confronto regionale sul passaggio dello stabilimento al Pastificio Liguori."
+          ],
+          "bullets": [
+            "Barilla ribadisce continuità produttiva e occupazionale, con contratti pluriennali di fornitura.",
+            "I sindacati chiedono garanzie durature e un confronto ministeriale: rassicurazioni aziendali e accordo vincolante restano distinti.",
+            "Posta in gioco: lavoro, investimenti e controllo della filiera industriale nel Casertano. Fonti: nota Barilla riportata da ANSA, 18:20; cronaca e dichiarazioni sindacali su Fanpage."
+          ]
+        },
+        {
+          "heading": "Italia · guida MEF sul patrimonio immobiliare pubblico",
+          "paragraphs": [
+            "21 ottobre · Presentata la guida agli enti locali per valorizzare gli immobili pubblici."
+          ],
+          "bullets": [
+            "Giorgetti collega il patrimonio a rigenerazione urbana, investimenti e valore sociale; ruolo operativo degli enti territoriali.",
+            "Novità: strumenti di indirizzo pubblicati, non una vendita generalizzata né risorse già incassate.",
+            "Da seguire: come gli indirizzi diventano progetti e risultati misurabili sui territori. Fonti: comunicazione MEF e cronaca ANSA, 11:53."
+          ]
+        },
+        {
+          "heading": "Ucraina–Russia–USA · apertura a nuovi colloqui",
+          "paragraphs": [
+            "21 ottobre, Reuters 19:32 UTC · Zelensky sostiene la proposta americana di negoziati trilaterali entro l’inizio di novembre."
+          ],
+          "bullets": [
+            "Anche il Cremlino comunica disponibilità dopo l’incontro Putin–Witkoff; si parla di squadre negoziali, non di un vertice dei tre presidenti già fissato.",
+            "Kyiv cita cessate il fuoco, tregua energetica e misure umanitarie fra gli obiettivi.",
+            "Delta: convergenza dichiarata sul formato; nessuna tregua conclusa o calendario definitivo. Fonti: dichiarazioni dirette riportate da Reuters e riscontro Al Jazeera."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flint — model card",
+          "url": "https://huggingface.co/RecursiveSI/flint",
+          "edition": "Rilascio del 21 ottobre 2026; specifiche e benchmark del produttore, non misure della redazione.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Flint — annuncio Recursive",
+          "url": "https://recursive.com/updates/introducing-recursive-flint",
+          "edition": "Annuncio del 21 ottobre 2026; nessuna velocità trasferita a GPU non misurate.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Google Cloud — OpenAI models",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+          "edition": "21 ottobre 2026; private preview, roadmap distinta dalla disponibilità.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "SafeDep — LiteLLM PyPI compromise",
+          "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
+          "edition": "Ricerca originale del 21 ottobre 2026; timeline UTC e analisi degli artefatti. Causa ultima non confermata.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "PHP — archivio avvisi e release",
+          "url": "https://www.php.net/archive/2026.php",
+          "edition": "Avvisi 20–21 ottobre 2026; nuove patch del 21 ottobre, non solo preannuncio.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Node.js — October security releases",
+          "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+          "edition": "Aggiornamento del 21 ottobre 2026; elenco delle release disponibili e vulnerabilità.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Consiglio UE — cartolarizzazioni",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/savings-and-investments-union-council-and-parliament-strike-deal-to-revitalise-the-eu-s-securitisation-market/",
+          "edition": "21 ottobre 2026, 23:17; accordo provvisorio, non entrata in vigore.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "GOV.UK — Jackdaw Field Development",
+          "url": "https://www.gov.uk/government/publications/jackdaw-field-development",
+          "edition": "Nuovi atti pubblicati il 21 ottobre 2026; cronologia del consenso.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Reuters — Jackdaw",
+          "url": "https://www.reuters.com/business/energy/uk-approves-long-delayed-jackdaw-gas-field-2026-10-21/",
+          "edition": "21 ottobre 2026, 05:58 UTC; cronaca indipendente e posizioni contrapposte.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "ANSA — Barilla Marcianise",
+          "url": "https://www.ansa.it/sito/notizie/economia/2026/10/21/barilla-confermata-continuita-occupazione-e-produttiva-marcianise_f13048a6-0e22-48e4-9e43-f2f62366080a.html",
+          "edition": "21 ottobre 2026, 18:20; dichiarazione aziendale riportata dalla testata.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Fanpage — lavoratori Barilla in sciopero",
+          "url": "https://www.fanpage.it/napoli/a-marcianise-lavoratori-barilla-in-sciopero-contro-la-cessione-dello-stabilimento/",
+          "edition": "21 ottobre 2026; cronaca locale e dichiarazioni delle organizzazioni sindacali.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "MEF — guida agli enti locali",
+          "url": "https://www.dag.mef.gov.it/inevidenza/La-Guida-agli-Enti-locali-per-la-valorizzazione-del-patrimonio-immobiliare-pubblico/",
+          "edition": "Comunicazione del 21 ottobre 2026 verificata nell’indice pubblico; documento integrale non acquisito (403).",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "ANSA — patrimonio pubblico",
+          "url": "https://www.ansa.it/sito/notizie/economia/real_estate/2026/10/21/giorgetti-al-lavoro-per-una-politica-industriale-del-patrimonio-pubblico_2f618d0d-5c32-499d-848d-99b911e61749.html",
+          "edition": "21 ottobre 2026, 11:53; presentazione della guida e dichiarazioni del ministro.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Reuters — nuovi colloqui Ucraina",
+          "url": "https://www.reuters.com/world/europe/ukraines-zelenskiy-hopes-new-talks-with-russia-us-by-early-november-2026-10-21/",
+          "edition": "21 ottobre 2026, 19:32 UTC; dichiarazioni dirette del presidente ai giornalisti.",
+          "accessed": "2026-10-22"
+        },
+        {
+          "title": "Al Jazeera — convergenza sui colloqui",
+          "url": "https://www.aljazeera.com/news/2026/10/21/witkoff-in-russia-for-putin-meeting-after-positive-talks-with-zelenskyy",
+          "edition": "21 ottobre 2026; cronaca delle dichiarazioni delle parti, anche su dispacci Reuters/AFP.",
+          "accessed": "2026-10-22"
+        }
+      ]
+    }
+  ]
+}
