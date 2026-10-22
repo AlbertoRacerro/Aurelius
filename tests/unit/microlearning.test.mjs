@@ -20,3 +20,16 @@ test('offline reopen retains exact date and archive; an unavailable old edition 
  const old=await loadMicro(store,new URL('https://example.test/content/'),'2026-10-21',offline);assert.equal(old.edition,null);assert.match(old.error,/non è salvata/);
  assert.ok(JSON.parse(store.getItem(MICRO_CACHE)).editions[edition.date]);
 });
+
+test('twenty-card editions load online and offline, keep saved cards valid, and render their actual size',async()=>{
+ const twenty={...structuredClone(edition),cards:Array.from({length:20},(_,i)=>({...structuredClone(edition.cards[i%4]),id:'twenty-'+i}))};
+ assert.equal(validateMicroEdition(twenty).cards.length,20);
+ for(const n of [0,1,5,19,21,100])assert.throws(()=>validateMicroEdition({...twenty,cards:Array.from({length:n},(_,i)=>({...twenty.cards[0],id:'bad-'+i}))}));
+ const duplicate=structuredClone(twenty);duplicate.cards[19].id=duplicate.cards[0].id;assert.throws(()=>validateMicroEdition(duplicate));
+ const html=renderMicro({edition:twenty,dates:[edition.date]},String,[],'feed');assert.match(html,/20 idee/);assert.equal((html.match(/class="micro-card /g)||[]).length,20);
+ const store=storage(),manifest={schema:1,latest:edition.date,editions:[edition.date]};
+ const online=async url=>Response.json(String(url).endsWith('manifest.json')?manifest:twenty);
+ assert.equal((await loadMicro(store,new URL('https://example.test/content/'),edition.date,online)).edition.cards.length,20);
+ const offline=async()=>{throw Error('offline');};assert.equal((await loadMicro(store,new URL('https://example.test/content/'),edition.date,offline)).edition.cards.length,20);
+ assert.match(renderMicro(null,String,[twenty.cards[19]],'saved'),/twenty-19/);
+});

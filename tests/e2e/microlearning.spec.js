@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+import {readFileSync} from 'node:fs';
 test('four finite cards, optional sources, saved copies and archive without a completion counter',async({page})=>{
  await page.clock.install({time:new Date('2026-10-22T12:00:00+02:00')});await page.goto('./#microlearning');
  await expect(page.locator('.micro-card')).toHaveCount(4);await expect(page.getByRole('heading',{name:'Per oggi è tutto.'})).toBeVisible();
@@ -20,3 +21,18 @@ test.describe('installed microlearning',()=>{test.use({serviceWorkers:'allow'});
  await page.clock.install({time:new Date('2026-10-22T12:00:00+02:00')});await page.goto('./#microlearning');await expect(page.locator('.micro-card')).toHaveCount(4);await page.evaluate(async()=>navigator.serviceWorker.ready);await page.reload();
  await page.locator('.micro-card').first().getByRole('button',{name:'Conserva',exact:true}).click();await context.setOffline(true);await page.reload();await expect(page.locator('.micro-card')).toHaveCount(4);await page.getByRole('link',{name:'Le tue salvate'}).click();await expect(page.locator('.micro-card')).toHaveCount(1);
 });});
+
+test('twenty cards show the actual count and preserve the last card when saved',async({page})=>{
+ await page.clock.install({time:new Date('2026-10-22T12:00:00+02:00')});
+ await page.route('**/microlearning/editions/2026-10-22.json',async route=>{
+  const edition=JSON.parse(readFileSync(new URL('../../content/microlearning/editions/2026-10-22.json',import.meta.url)));const pilot=edition.cards;
+  edition.cards=Array.from({length:20},(_,i)=>({...pilot[i%4],id:'twenty-'+i}));await route.fulfill({json:edition});
+ });
+ await page.goto('./#microlearning');await expect(page.locator('.micro-card')).toHaveCount(20);
+ await expect(page.locator('.micro-meta')).toContainText('20 idee');
+ await page.locator('.micro-card').last().getByRole('button',{name:'Conserva',exact:true}).click();
+ await page.getByRole('link',{name:'Le tue salvate'}).click();await expect(page.locator('.micro-card')).toHaveCount(1);
+ await page.reload();await expect(page.locator('.micro-card')).toHaveCount(1);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.unrouteAll({behavior:'wait'});
+});
