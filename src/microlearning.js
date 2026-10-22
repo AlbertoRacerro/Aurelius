@@ -6,7 +6,7 @@ export function validateMicroCard(c){
  const e={schema:1,date:'2026-10-22',cards:Array.from({length:4},(_,i)=>({...c,id:'validated-'+i}))};validateMicroEdition(e);if(!id.test(c.id))throw Error('ID scheda non valido');return c;
 }
 export function validateMicroEdition(e){
- if(e?.schema!==1||!validDate(e.date)||!Array.isArray(e.cards)||e.cards.length!==4)throw Error('Edizione microlearning non valida');
+ if(e?.schema!==1||!validDate(e.date)||!Array.isArray(e.cards)||![4,20].includes(e.cards.length))throw Error('Edizione microlearning non valida');
  const ids=new Set();
  for(const c of e.cards){
   if(!id.test(c.id)||ids.has(c.id)||!txt(c.topic,50)||!txt(c.title,100)||!txt(c.hook,180)||!Array.isArray(c.paragraphs)||c.paragraphs.length<1||c.paragraphs.length>3||c.paragraphs.some(p=>!txt(p,650))||!txt(c.takeaway,250)||!txt(c.basis,450)||!['automaton','flow','contrast','question'].includes(c.visual?.kind)||!Array.isArray(c.visual.labels)||c.visual.labels.length<1||c.visual.labels.length>3||c.visual.labels.some(x=>!txt(x,90))||!['sage','clay','plum','blue'].includes(c.tone)||!Array.isArray(c.sources)||!c.sources.length||c.sources.length>3)throw Error('Scheda microlearning non valida');
