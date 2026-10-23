@@ -1,0 +1,528 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "cards": [
+    {
+      "id": "micro-20261023-scaler",
+      "topic": "Machine learning",
+      "title": "Anche una media può sbirciare il futuro.",
+      "hook": "La fuga di informazioni può cominciare prima di addestrare il modello.",
+      "paragraphs": [
+        "Vuoi prevedere la resa di una fermentazione. Prima normalizzi tutte le misure usando la loro media, poi separi addestramento e test. Sembra una preparazione innocente, ma il test ha già contribuito a scegliere la trasformazione con cui il modello imparerà.",
+        "La separazione va fatta prima: media e dispersione si stimano sui soli dati di addestramento; gli stessi parametri si applicano poi al test. Una pipeline include questi passaggi nella validazione. Il voto finale misura così meglio la capacità di affrontare dati nuovi."
+      ],
+      "takeaway": "Il test deve restare sconosciuto anche a chi prepara i dati.",
+      "basis": "Documentazione, §12.2. Esempio della fermentazione editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Prima: separare",
+          "Poi: stimare la trasformazione"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn · Common pitfalls, data leakage",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-lichen",
+      "topic": "Natura",
+      "title": "Quel colore sulla roccia è una convivenza.",
+      "hook": "Un lichene non è semplicemente un piccolo muschio.",
+      "paragraphs": [
+        "Su un masso compare una crosta arancione. Può sembrare una pianta minuscola, ma un lichene nasce da un’associazione: un fungo offre una struttura in cui un partner fotosintetico produce sostanze nutritive usando la luce. Forme simili possono vestirsi di grigio, verde, giallo o nero.",
+        "Questa vita discreta abita superfici che di solito guardiamo soltanto come sfondo, dalle cortecce alle pietre. Fermarsi a osservare una macchia cambia la scala del paesaggio: il masso non è più soltanto un oggetto, ma anche un luogo abitato."
+      ],
+      "takeaway": "Una superficie apparentemente vuota può essere già un ecosistema.",
+      "basis": "Consultata la spiegazione della simbiosi. Osservazione del masso ed effetto percettivo editoriali. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Roccia",
+          "Vita sulla roccia"
+        ]
+      },
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "National Park Service · Lichen: The Little Things That Matter",
+          "url": "https://www.nps.gov/articles/lichen-and-our-air.htm"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-weak-form",
+      "topic": "FEM",
+      "title": "Perché una formula si chiama debole?",
+      "hook": "Nel metodo degli elementi finiti, “debole” non significa meno rigorosa.",
+      "paragraphs": [
+        "Per descrivere una temperatura puoi chiedere che un’equazione valga punto per punto. Oppure puoi moltiplicarla per funzioni di prova e integrare sul dominio: ottieni una formulazione variazionale. Per l’equazione di Poisson, l’integrazione per parti trasferisce una derivata alla funzione di prova.",
+        "Così compaiono derivate prime al posto delle seconde dell’incognita: è più naturale usare approssimazioni costruite su piccoli elementi. I termini sul bordo contano ancora; nel caso con temperatura imposta, le funzioni di prova si annullano lì. Cambia la forma matematica del problema, non la necessità di definirlo bene."
+      ],
+      "takeaway": "La forma debole rende trattabile un problema attraverso integrali e funzioni di prova.",
+      "basis": "Consultata la derivazione variazionale. Temperatura come interpretazione fisica esemplificativa. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Equazione puntuale",
+          "Identità integrale"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "FEniCSx tutorial · Solving the Poisson equation",
+          "url": "https://jsdokken.com/dolfinx-tutorial/chapter1/fundamentals.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-retry",
+      "topic": "Sistemi distribuiti",
+      "title": "Hai riprovato. Hai creato due cose?",
+      "hook": "Una risposta persa non significa che l’operazione sia fallita.",
+      "paragraphs": [
+        "Un servizio riceve la richiesta di creare una risorsa, la crea, ma la risposta si perde. Il client riprova: senza un accordo preciso può comparire una seconda risorsa identica. Confrontare soltanto i parametri non basta: due richieste uguali potrebbero essere entrambe intenzionali.",
+        "Una chiave di idempotenza identifica invece la stessa intenzione attraverso i tentativi. Il server riconosce la chiave già elaborata e restituisce un risultato coerente. Registrare la chiave e produrre l’effetto deve avvenire atomicamente: se i due passi si separano, un crash può riaprire il problema."
+      ],
+      "takeaway": "Per riprovare in sicurezza occorre riconoscere l’intenzione, non soltanto il testo della richiesta.",
+      "basis": "Consultate le sezioni su identificatori del client e atomicità. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Stessa intenzione",
+          "Stessa chiave"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "AWS Builders’ Library · Making retries safe with idempotent APIs",
+          "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-coral",
+      "topic": "Biologia marina",
+      "title": "Bianco non significa ancora morto.",
+      "hook": "Lo sbiancamento di un corallo è la perdita di una relazione vitale.",
+      "paragraphs": [
+        "Molti coralli ospitano nei tessuti alghe simbionti. Quando condizioni come temperatura, luce o nutrienti diventano stressanti, possono perderle e apparire bianchi. Il cambiamento di colore segnala una crisi, ma non coincide automaticamente con la morte del corallo.",
+        "Se lo stress si attenua, il recupero è possibile; se persiste e la perdita delle alghe si prolunga, il rischio di morte aumenta. Anche il freddo può provocare sbiancamento. Il colore racconta dunque uno stato della relazione fra organismi, non un interruttore semplice fra vivo e morto."
+      ],
+      "takeaway": "Una crisi biologica può essere reversibile, senza essere innocua.",
+      "basis": "Consultata la spiegazione NOAA; nessuna statistica recente o immagine riprodotta. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Sbiancato",
+          "Morto"
+        ]
+      },
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "NOAA · What is coral bleaching?",
+          "url": "https://oceanservice.noaa.gov/facts/coral_bleach.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-stiff",
+      "topic": "Calcolo numerico",
+      "title": "Il processo lento che impone passi minuscoli.",
+      "hook": "Una dinamica quasi invisibile può dettare il costo della simulazione.",
+      "paragraphs": [
+        "Immagina un sistema in cui una componente si rilassa molto rapidamente mentre un’altra evolve lentamente. Anche quando il transitorio rapido sembra finito, un metodo esplicito può dover mantenere passi piccoli per ragioni di stabilità. Questa separazione delle scale è una situazione tipica dei problemi stiff.",
+        "La documentazione di SciPy distingue metodi espliciti per problemi non stiff e metodi impliciti, come Radau o BDF, per quelli stiff. Moltissimi passi con RK45 sono un indizio da investigare, non una diagnosi automatica. Il metodo giusto dipende dalle equazioni, oltre che dall’accuratezza richiesta."
+      ],
+      "takeaway": "Il passo numerico può dipendere dalla stabilità, anche quando la curva visibile cambia poco.",
+      "basis": "Consultata la selezione dei metodi. Scenario delle due scale editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Scala rapida",
+          "Scala lenta"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "SciPy · solve_ivp",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-octopus",
+      "topic": "Animali",
+      "title": "Il polpo cambia pelle con i muscoli.",
+      "hook": "Il colore può cambiare senza fabbricare ogni volta nuovo pigmento.",
+      "paragraphs": [
+        "Sotto la pelle dei cefalopodi si trovano cromatofori: strutture con una sacca elastica piena di pigmento. Nervi e muscoli ne controllano l’espansione. Allargare la sacca rende più visibile il colore che era già presente: una trasformazione meccanica contribuisce così al cambiamento dell’aspetto.",
+        "Il travestimento non finisce con il colore. I polpi possono anche modificare le papille della pelle, passando da una superficie più liscia a rilievi che ricordano il fondale. Quello che sembra una semplice tinta è una coordinazione di forme, superfici e luce."
+      ],
+      "takeaway": "Il mimetismo lavora sulla geometria della pelle oltre che sul colore.",
+      "basis": "Consultata la spiegazione di cromatofori e papille. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Pigmento presente",
+          "Superficie variabile"
+        ]
+      },
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Smithsonian Ocean · How Octopuses and Squids Change Color",
+          "url": "https://ocean.si.edu/ocean-life/invertebrates/how-octopuses-and-squids-change-color"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-mesh",
+      "topic": "CFD",
+      "title": "Tre reti per una sola risposta.",
+      "hook": "Una simulazione può essere stabile e dipendere ancora dalla dimensione delle celle.",
+      "paragraphs": [
+        "Calcoli la forza su un oggetto e ottieni un numero preciso. Ripeti con celle più piccole: il numero cambia. Non è necessariamente un guasto; stai osservando l’errore introdotto dalla discretizzazione. Per misurarlo conviene seguire la stessa grandezza su una famiglia coerente di griglie.",
+        "La guida NASA raccomanda tre livelli per stimare l’ordine di convergenza e controllare il regime asintotico. Due risultati vicini, soprattutto su griglie quasi uguali, possono ingannare. La convergenza di griglia riguarda la soluzione delle equazioni scelte: non certifica da sola che descrivano bene l’esperimento."
+      ],
+      "takeaway": "La precisione delle cifre stampate non misura l’errore dovuto alla griglia.",
+      "basis": "Consultate le indicazioni sul GCI. Forza come esempio editoriale; nessun risultato CFD inventato. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Celle grandi",
+          "Celle medie",
+          "Celle piccole"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NASA NPARC · Examining Spatial (Grid) Convergence",
+          "url": "https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-groups",
+      "topic": "Machine learning",
+      "title": "Mille misure non sono mille esperimenti.",
+      "hook": "Un modello può riconoscere il lotto invece di imparare il fenomeno.",
+      "paragraphs": [
+        "Raccogli cento misure da ciascuna di dieci colture. Se distribuisci casualmente le righe fra addestramento e test, la stessa coltura può comparire da entrambe le parti. Il modello incontra nel test caratteristiche del lotto già viste: un ottimo punteggio può nascondere scarsa generalizzazione.",
+        "Se vuoi prevedere una coltura nuova, separa per coltura. GroupKFold mantiene ogni gruppo fuori dall’addestramento quando lo usa per la verifica. La scelta del gruppo dipende dalla domanda: nuovi lotti, nuovi impianti o nuovi soggetti richiedono prove differenti, anche partendo dalla stessa tabella."
+      ],
+      "takeaway": "La vera unità della verifica dipende da ciò che vuoi generalizzare.",
+      "basis": "Consultato §3.1.2.4. Scenario delle colture e numeri illustrativi originali. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Nuove righe",
+          "Nuove colture"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn · Cross-validation, grouped data",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-hume",
+      "topic": "Filosofia · David Hume",
+      "title": "La fiamma che scalda anche il pensiero.",
+      "hook": "Prima ancora di toccare il fuoco, ci aspettiamo il calore.",
+      "paragraphs": [
+        "Vedi una fiamma e ti aspetti calore. Per Hume, questo passaggio non nasce ogni volta da una dimostrazione: la ripetizione ha formato un’abitudine. Due eventi osservati insieme diventano un’attesa che orienta il comportamento, anche quando non conosciamo il potere che li collega.",
+        "L’esperienza resta indispensabile: senza queste attese non sapremmo scegliere mezzi adatti ai nostri scopi. Ma aspettarsi che il futuro somigli al passato non equivale a dimostrarlo logicamente. Hume mette a fuoco proprio questa distanza fra la forza pratica di una convinzione e il tipo di fondamento che possiamo darle."
+      ],
+      "takeaway": "Un’attesa può guidare bene la vita senza essere una dimostrazione.",
+      "basis": "Parafrasi dei §§35–38 dell’originale inglese in pubblico dominio; nessuna traduzione moderna usata. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Ripetizione",
+          "Aspettativa"
+        ]
+      },
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "David Hume · An Enquiry Concerning Human Understanding, sezione V",
+          "url": "https://www.gutenberg.org/files/9662/old/8echu10h.htm"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-units",
+      "topic": "CFD · unità",
+      "title": "Quel numero ha sette esponenti.",
+      "hook": "OpenFOAM può distinguere quantità che un foglio di numeri confonderebbe.",
+      "paragraphs": [
+        "In un file OpenFOAM, la sequenza [0 2 -1 0 0 0 0] indica una lunghezza al quadrato divisa per un tempo: sono le dimensioni della viscosità cinematica. I sette posti rappresentano gli esponenti delle grandezze fondamentali, dalla massa all’intensità luminosa.",
+        "Associare dimensioni ai campi permette di intercettare operazioni fisicamente prive di senso, come sommare una velocità a una pressione. Rimane però una differenza decisiva: metri e millimetri hanno le stesse dimensioni. Il controllo dimensionale non può salvare un valore inserito nella scala sbagliata senza una corretta conversione."
+      ],
+      "takeaway": "Dimensioni coerenti e unità coerenti sono due controlli diversi.",
+      "basis": "Consultati formato degli esponenti e controllo dimensionale; esempio metri/millimetri editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Dimensione: lunghezza",
+          "Unità: m oppure mm"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "OpenFOAM v13 User Guide · §4.2.6 Dimensional units",
+          "url": "https://doc.cfd.direct/openfoam/user-guide-v13/basic-file-format"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-moon",
+      "topic": "Scienza · misurare",
+      "title": "La Luna risponde con un’eco di luce.",
+      "hook": "Per misurare una distanza enorme puoi cronometrare un viaggio.",
+      "paragraphs": [
+        "Un impulso laser parte dalla Terra, raggiunge un retroriflettore lunare e torna. Misurando il tempo di andata e ritorno, si ricava la distanza. Il principio elementare è d = c·t/2: si divide per due perché la luce percorre il tragitto due volte.",
+        "Con un tempo illustrativo di 2,5 secondi e c circa 300.000 chilometri al secondo, il conto dà circa 375.000 chilometri. È soltanto una stima: le misure precise correggono atmosfera, geometria e altri effetti. Il fascino sta nel principio: trasformare una distanza in un intervallo di tempo misurabile."
+      ],
+      "takeaway": "Un cronometro, con le opportune correzioni, può diventare un righello astronomico.",
+      "basis": "Consultata la spiegazione del laser ranging. Calcolo arrotondato editoriale, non misura della distanza attuale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Andata + ritorno",
+          "Distanza = c·t/2"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NASA · Laser Beams Reflected Between Earth and Moon Boost Science",
+          "url": "https://www.nasa.gov/missions/laser-beams-reflected-between-earth-and-moon-boost-science/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-residence",
+      "topic": "Reattori",
+      "title": "Quanto tempo rimane, in media?",
+      "hook": "Il tempo di residenza mette in rapporto contenuto e attraversamento.",
+      "paragraphs": [
+        "Un reattore contiene 2 chilogrammi di fluido e ne attraversano 0,1 chilogrammi al secondo. Il rapporto fra massa contenuta e portata massica dà 20 secondi. Nell’esempio Cantera, proprio questo rapporto definisce il tempo di residenza e viene usato per regolare la portata.",
+        "È una scala media di ricambio, non un cronometro identico per ogni molecola. In un recipiente ben miscelato, alcune porzioni possono uscire presto e altre restare più a lungo. Confondere la media con un unico tempo di permanenza rende simili, sulla carta, reattori che mescolano in modi molto diversi."
+      ],
+      "takeaway": "La media del tempo di permanenza non descrive da sola la sua distribuzione.",
+      "basis": "Consultata la definizione massa/portata. Numeri e confronto qualitativo con il recipiente miscelato editoriali. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Massa: kg",
+          "Portata: kg/s",
+          "Rapporto: s"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Cantera · Combustor residence time",
+          "url": "https://cantera.org/stable/examples/python/reactors/combustor.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-manufactured",
+      "topic": "FEM · verifica",
+      "title": "Prima scegli la risposta. Poi l’equazione.",
+      "hook": "Un problema artificiale può mettere alla prova un solver reale.",
+      "paragraphs": [
+        "Per verificare un codice puoi scegliere una funzione liscia come soluzione desiderata. Nell’equazione di Poisson, -Δu = f, calcoli allora il termine f applicando il Laplaciano alla funzione scelta e cambiandone il segno. Imposti sul bordo i valori coerenti con quella stessa funzione.",
+        "Ora conosci la risposta prima di eseguire il solver. Raffinando la mesh puoi misurare come diminuisce l’errore rispetto alla soluzione costruita. Questo metodo delle soluzioni fabbricate controlla l’implementazione e la convergenza; non dimostra che un modello fisico rappresenti un determinato materiale reale."
+      ],
+      "takeaway": "Una risposta nota permette di verificare il calcolo senza confonderlo con l’esperimento.",
+      "basis": "Consultato il problema fabbricato con f = -div(grad(u)). Formulazione originale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Soluzione scelta",
+          "Sorgente ricavata"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "FEniCSx tutorial · Error control: Computing convergence rates",
+          "url": "https://jsdokken.com/dolfinx-tutorial/chapter4/convergence.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-harrison",
+      "topic": "Storia delle invenzioni",
+      "title": "Un orologio non bastava: doveva viaggiare.",
+      "hook": "Il tempo preciso cambia significato quando il pavimento è una nave.",
+      "paragraphs": [
+        "John Harrison cercava un orologio capace di mantenere l’ora in mare, utile a determinare la longitudine. H1 fu provato verso Lisbona nel 1736: non bastava farlo funzionare in una stanza, bisognava portarlo nel movimento e nelle condizioni del viaggio.",
+        "La strada passò per altri strumenti, modifiche e nuove prove. Nel 1761 suo figlio William partì verso la Giamaica con H4. Anche dopo i successi, la diffusione dei cronometri rimase lenta perché erano costosi. Altri orologiai semplificarono i progetti: rendere riproducibile un’invenzione fu un lavoro distinto dal dimostrarla."
+      ],
+      "takeaway": "Fra inventare uno strumento e renderlo comune c’è un’altra storia tecnica.",
+      "basis": "Consultate cronologia H1/H4 e diffusione dei cronometri. Sintesi originale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Prototipo che funziona",
+          "Strumento riproducibile"
+        ]
+      },
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Royal Museums Greenwich · Longitude found: Harrison’s timekeepers",
+          "url": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-robust-fit",
+      "topic": "Modellazione",
+      "title": "Un punto può trascinare tutta la curva.",
+      "hook": "Nei minimi quadrati, raddoppiare un errore ne quadruplica il peso.",
+      "paragraphs": [
+        "Stai adattando una curva a misure sperimentali. Con i minimi quadrati ordinari, un residuo di 10 contribuisce quanto cento residui di 1: tutti espressi nella stessa scala. Un solo dato molto lontano può quindi spostare sensibilmente i parametri stimati.",
+        "Funzioni di perdita robuste, come Huber o soft_l1, attenuano l’influenza dei residui grandi. Non decidono però se un punto sia un errore strumentale o un fenomeno interessante. La scala che separa deviazioni piccole e grandi deve avere un significato rispetto al rumore dei dati, non soltanto produrre una curva gradevole."
+      ],
+      "takeaway": "Una perdita robusta cambia il peso dei dati, non ne spiega l’origine.",
+      "basis": "Consultate loss e f_scale. Confronto numerico editoriale sul contributo quadratico. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Residuo 1 → peso 1",
+          "Residuo 10 → peso 100"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "SciPy · least_squares, robust loss functions",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-map",
+      "topic": "Libri · Lewis Carroll",
+      "title": "La mappa così precisa da coprire il paese.",
+      "hook": "Una rappresentazione può diventare inutilizzabile proprio mentre sembra perfetta.",
+      "paragraphs": [
+        "In Sylvie and Bruno Concluded, Mein Herr racconta una cartografia sempre più ambiziosa. Si arriva a una mappa in scala uno a uno: un miglio di carta per ogni miglio di paese. Nessuno però l’ha mai stesa: i contadini protestano perché coprirebbe i campi e toglierebbe la luce.",
+        "La battuta porta all’estremo una domanda seria. Una mappa serve perché seleziona e riduce: permette di vedere relazioni che, attraversando il territorio, sfuggono. Se conserva ogni dettaglio nelle dimensioni originali, perde proprio il vantaggio per cui la volevamo. L’omissione può essere una funzione, non soltanto una mancanza."
+      ],
+      "takeaway": "Per orientare, una rappresentazione deve anche scegliere cosa lasciare fuori.",
+      "basis": "Parafrasi del passaggio cartografico dall’originale inglese del 1893 in pubblico dominio. Lettura finale editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Territorio completo",
+          "Mappa utilizzabile"
+        ]
+      },
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Lewis Carroll · Sylvie and Bruno Concluded, capitolo XI",
+          "url": "https://etc.usf.edu/lit2go/211/sylvie-and-bruno-concluded/4652/chapter-11-the-man-in-the-moon/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-snapshot",
+      "topic": "Database",
+      "title": "Due letture, due fotografie.",
+      "hook": "Una transazione non garantisce sempre di rivedere gli stessi dati.",
+      "paragraphs": [
+        "Un’applicazione legge il numero di campioni disponibili. Poco dopo ripete la query nella stessa transazione e trova un numero diverso: nel frattempo un altro operatore ha confermato una modifica. In PostgreSQL, al livello predefinito Read Committed, ogni comando può vedere una nuova fotografia dei dati confermati.",
+        "Non è una lettura di dati ancora provvisori: è il passaggio fra due stati validi del database. Se una decisione richiede una visione stabile attraverso più query, bisogna scegliere un isolamento adeguato. L’unità del ragionamento applicativo può essere più ampia dell’unità della singola lettura."
+      ],
+      "takeaway": "“Dentro una transazione” non significa automaticamente “dentro la stessa fotografia”.",
+      "basis": "Consultato §13.2.1. Esempio dei campioni editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Prima query",
+          "Seconda query"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "PostgreSQL · Transaction Isolation, Read Committed",
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-observer",
+      "topic": "Wolfram · idee da esplorare",
+      "title": "Quanta realtà entra in una descrizione?",
+      "hook": "Osservare significa anche comprimere ciò che accade.",
+      "paragraphs": [
+        "Per descrivere un fluido puoi seguire moti microscopici oppure parlare di campi medi. Nel saggio What Ultimately Is There?, Wolfram collega la descrizione del mondo alle capacità limitate dell’osservatore: alcuni aspetti collettivi diventano accessibili senza ricostruire ogni dettaglio.",
+        "La proposta invita a domandarsi quali differenze sappiamo distinguere e quali riuniamo nella stessa categoria. È parte di un quadro teorico e metafisico di Wolfram, non una prova che la realtà sia una simulazione. Il punto da esplorare è più concreto: una descrizione maneggevole dipende anche dalle domande e dalle risorse di chi osserva."
+      ],
+      "takeaway": "Cambiare osservatore o scala può cambiare quali caratteristiche diventano visibili.",
+      "basis": "Consultata la sezione The Significance of the Observer del saggio pubblico; non il volume integrale. Esposizione e interpretazione originali. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "Dettagli microscopici",
+          "Caratteristiche collettive"
+        ]
+      },
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Stephen Wolfram · What Ultimately Is There? Metaphysics and the Ruliad",
+          "url": "https://writings.stephenwolfram.com/2026/02/what-ultimately-is-there-metaphysics-and-the-ruliad/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261023-deadlock",
+      "topic": "Architetture informatiche",
+      "title": "Il lavoratore che aspetta sé stesso.",
+      "hook": "A volte la coda è ferma anche senza errori e senza lavoro pesante.",
+      "paragraphs": [
+        "Un pool dispone di un solo lavoratore. Il compito A occupa quel posto, accoda un compito B nello stesso pool e aspetta che B finisca. Ma B non può iniziare finché A non libera il posto: nessuno dei due può avanzare. È un deadlock, non una semplice lentezza.",
+        "La documentazione Python mostra questo caso con ThreadPoolExecutor. Aggiungere lavoratori può nascondere il blocco senza eliminare la dipendenza problematica, soprattutto se i compiti si annidano. Separare coordinamento ed esecuzione permette di attendere i risultati senza occupare tutte le risorse necessarie a produrli."
+      ],
+      "takeaway": "Chi aspetta un risultato non dovrebbe trattenere l’unica risorsa capace di produrlo.",
+      "basis": "Consultato il caso del pool con un solo worker. Proposta sul coordinamento editoriale. Fonte consultata il 23 ottobre 2026; esposizione originale, senza riproduzioni di testo o immagini.",
+      "visual": {
+        "kind": "contrast",
+        "labels": [
+          "A occupa il posto",
+          "B aspetta il posto"
+        ]
+      },
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Python · concurrent.futures, ThreadPoolExecutor deadlocks",
+          "url": "https://docs.python.org/3/library/concurrent.futures.html"
+        }
+      ]
+    }
+  ]
+}
