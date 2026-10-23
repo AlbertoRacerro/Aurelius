@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "updated_at": "2026-10-23T03:09:48Z",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261023",
+      "title": "Un amico a cui fare posto",
+      "kind": "synthesis",
+      "basis": "Seneca, Lettere a Lucilio, IX, §§ 3–13 e 17. Adattamento italiano originale dal latino in pubblico dominio, con raccordi e chiarimenti editoriali: bastare a sé stessi e desiderare un amico.",
+      "sections": [
+        {
+          "heading": "La porta resta aperta",
+          "paragraphs": [
+            "Il saggio basta a sé stesso. Appena pronunciata, questa frase sembra chiudere una porta: dentro una persona intera, fuori gli altri, diventati superflui. Ma il saggio di Seneca desidera un amico, un vicino, qualcuno con cui vivere. Sente ciò che lo ferisce; la sua forza consiste nel reggerlo, non nel non accorgersene. Non si rende insensibile per proteggersi dai legami.",
+            "Può sopportare di perdere un amico, ma non desidera perderlo. La differenza è quella che passa fra poter continuare a vivere dopo una mancanza e scegliere quella mancanza come condizione migliore. Resistere alla solitudine non la rende preferibile alla compagnia. La capacità di restare in piedi non impone di tenere sempre le braccia strette al corpo.",
+            "Quando Lucilio sente parlare di autosufficienza, deve dunque chiedersi: sufficienza per che cosa? Per mantenere un animo giusto, risponde Seneca, non per provvedere da solo a ogni necessità dell’esistenza. Il valore morale non viene consegnato alla fortuna; la vita quotidiana continua ad avere bisogno di molti aiuti. L’indipendenza interiore non cancella la nostra natura socievole."
+          ]
+        },
+        {
+          "heading": "Da quale lato del letto",
+          "paragraphs": [
+            "Ecco una stanza, e nella stanza un amico malato. Si può desiderare l’amicizia pensando al giorno in cui qualcuno siederà accanto al nostro letto. Seneca rovescia il punto di vista: desidero un amico anche per avere qualcuno accanto al cui letto sedermi io. La stessa relazione cambia significato quando smetto di guardarla soltanto dal posto di chi riceve.",
+            "L’aiuto resta prezioso. Ma, se è l’unica ragione del legame, ogni cambiamento delle circostanze riapre il conto. Chi si avvicina perché gli conviene può allontanarsi per la stessa ragione. Quando comincia a risuonare una catena, l’amico cercato come assicurazione contro la prigionia potrebbe essere già in fuga. Il pericolo ha fatto salire troppo il prezzo dell’accordo.",
+            "Un’amicizia scelta per sé stessa non elimina la paura, la fatica o il desiderio di essere ricambiati. Toglie però alla convenienza il diritto di decidere ogni volta se l’altra persona merita ancora la nostra presenza. Per questo posso voler bene anche se non sono disperato, anche se non cerco un salvatore, anche se la mia vita non presenta un vuoto da riempire."
+          ]
+        },
+        {
+          "heading": "Il piacere del quadro ancora incompiuto",
+          "paragraphs": [
+            "Seneca porta poi lo sguardo sulla mano di un pittore. C’è piacere nel guardare il quadro finito; ce n’è un altro nel dipingerlo. Mentre il lavoro è in corso, l’attenzione stessa è viva: trovare una forma, accostare un colore, vedere qualcosa comparire. Anche l’amicizia ha questo tempo presente. Non è soltanto un bene acquisito da conservare.",
+            "Il paragone non fa dell’amico un oggetto da modellare. Illumina il piacere del legame mentre nasce e cresce, prima di poterlo contare fra le certezze della propria vita. Come seminare è diverso dal raccogliere, avvicinarsi a qualcuno può avere una gioia propria. Non occorre aspettare che l’altro garantisca ogni futura delusione per cominciare a volergli bene.",
+            "La porta può quindi restare aperta senza che dietro di essa ci sia una persona incompleta. Coltivare forza interiore serve anche a questo: non far pesare sull’amico l’intero compito di salvarci, e avere qualcosa da offrirgli quando è lui a vacillare. L’autosufficienza diventa allora una forma di disponibilità. Posso stare con te perché ti desidero nella mia vita, e posso restare quando, per un tratto, sarò io a doverti sostenere."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Seneca — Epistulae morales ad Lucilium, liber I, IX",
+          "url": "https://www.thelatinlibrary.com/sen/seneca.ep1.shtml",
+          "edition": "Testo latino, lettera IX, §§ 3–13 e 17, effettivamente consultati. Opera antica in pubblico dominio; traduzione/adattamento italiano nuovi, senza riprodurre traduzioni moderne.",
+          "accessed": "2026-10-23"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261023",
+      "title": "Quante persone ci sono in uno spillo",
+      "kind": "synthesis",
+      "basis": "Adam Smith, An Inquiry into the Nature and Causes of the Wealth of Nations (1776), libro I, capitoli I–III. Selezione e adattamento italiano originali dell’inglese in pubblico dominio; raccordi e interpretazione editoriale dichiarati. Tre passaggi: la manifattura, lo scambio, la distanza.",
+      "sections": [
+        {
+          "heading": "Il lavoro che l’occhio riesce a seguire",
+          "paragraphs": [
+            "Cominciamo da uno spillo. È abbastanza piccolo da sembrare privo di storia: un filo di metallo, una punta, una testa. Chi non conosce il mestiere potrebbe immaginare che bastino una mano ferma e un po’ di pazienza. Ma, entrando nel processo che lo produce, l’oggetto si apre. Uno tira il filo; un altro lo raddrizza; un altro lo taglia. Poi occorre formare la punta, preparare l’estremità che riceverà la testa, fabbricare la testa e fissarla. Anche disporre gli spilli nella carta è un’operazione distinta. Il prodotto è uno, il lavoro che lo rende possibile è già una piccola società.",
+            "Nella manifattura descritta da Smith lavorano dieci persone. Non possiedono attrezzature particolarmente ricche; alcune svolgono due o tre operazioni. Insieme, quando si applicano, producono circa dodici libbre di spilli al giorno: secondo il conteggio riportato nel libro, oltre quarantottomila pezzi. La quota media è di quattromilaottocento spilli per persona. Separati, inesperti del mestiere e delle sue macchine, quei lavoratori non arriverebbero ciascuno a venti, forse neppure a uno. Sono le quantità di un esempio settecentesco, non un rendimento promesso a qualunque officina. La sorpresa rimane: fra le due situazioni non è cambiato soltanto quanto ciascuno si sforza. È cambiato il modo in cui i loro gesti si uniscono.",
+            "La scelta di un oggetto tanto minuto è decisiva. In una grande industria, i reparti possono essere lontani e il numero delle persone troppo elevato per abbracciarlo con lo sguardo. Si vede un frammento e lo si scambia facilmente per il tutto. Qui, invece, la divisione del lavoro sta quasi interamente davanti agli occhi. Lo spillo non è l’attività più importante del paese; è una finestra attraverso cui osservare un’organizzazione che altrove rimane dispersa. Per capire un sistema vasto può servire un oggetto modesto, purché non lo si isoli dai passaggi che lo fanno esistere.",
+            "Il primo vantaggio è nelle dita. Ripetendo una stessa operazione si acquista una destrezza che la buona volontà, da sola, non sostituisce. Sapere usare un martello non equivale a saper fabbricare rapidamente buoni chiodi. Il fabbro che vi si prova occasionalmente, quello che li produce spesso e il giovane che non ha praticato altro mestiere non lavorano con la stessa scioltezza. La competenza prende corpo in differenze minuscole: dove cade il colpo, quanto ferro viene scaldato, quando cambiare utensile. A un osservatore esterno sembrano tutti movimenti semplici. È la loro concatenazione, appresa nel tempo, a fare la differenza.",
+            "Il secondo vantaggio appare nello spazio fra due lavori. Il tessitore che coltiva anche un campo deve lasciare il telaio, raggiungere il terreno, prepararsi a un’altra attività e poi tornare. Non si perde soltanto il tempo del tragitto. All’inizio del nuovo lavoro la mente può essere ancora occupata da quello precedente; la mano deve ritrovare il suo andamento. Anche quando gli utensili sono nella stessa stanza, passare continuamente da un compito all’altro ha un costo. Il lavoro diviso risparmia una parte di questi intervalli. Non rende più lunga la giornata: rende meno numerose le ripartenze necessarie per usarla.",
+            "Il terzo vantaggio riguarda gli strumenti. Chi concentra l’attenzione su un’operazione può notare un movimento inutile, una presa difficile, un passaggio che una macchina eseguirebbe meglio. Smith attribuisce molte invenzioni ai lavoratori impegnati proprio nel pezzo di processo da migliorare. Ma non si ferma a loro: anche i costruttori di macchine e chi studia fenomeni lontani possono trovare combinazioni nuove. L’attenzione ravvicinata vede un attrito che agli altri sfugge; quella capace di collegare campi diversi riconosce una soluzione arrivata da altrove. L’una e l’altra entrano nella crescita della capacità produttiva.",
+            "Il vantaggio non si presenta però allo stesso modo in ogni attività. Nei campi, arare, seminare e raccogliere tornano in stagioni diverse: una sola persona non può sempre dedicare tutto l’anno a una soltanto di queste operazioni. Il pastore e il coltivatore non si separano necessariamente come il filatore e il tessitore. La natura del lavoro pone dunque condizioni alla sua suddivisione. Osservare quarantottomila spilli non autorizza a pretendere un aumento simile da qualunque terreno o mestiere: bisogna prima capire se i compiti possono essere davvero separati e svolti con continuità.",
+            "Usciamo adesso dalla manifattura e guardiamo un cappotto di lana, anche grossolano. Vi hanno lavorato il pastore, chi ha selezionato e preparato la lana, chi l’ha filata, tinta, tessuta e rifinita. I materiali hanno viaggiato; per alcuni coloranti sono serviti commerci e navigazione. Le cesoie del pastore richiedono a loro volta minerale, forno, combustibile, ferro lavorato. Ogni strumento apre un’altra catena di mani. Non occorre che il cappotto sia lussuoso perché abbia questa profondità. La semplicità dell’uso nasconde la complessità della produzione: una persona lo indossa, migliaia hanno contribuito a renderlo disponibile.",
+            "Qui il benessere assume una forma concreta. Non è soltanto la ricchezza accumulata in un punto, ma la quantità di cose utili che un insieme di persone riesce a rendersi reciprocamente accessibile. Smith lega la diffusione dell’abbondanza a una società ben governata: non basta contare gli spilli per descrivere come vive ciascuno. Prima ancora di discutere la distribuzione, però, c’è una scoperta da conservare. Il lavoro di un individuo produce di più quando incontra quello degli altri in una combinazione adatta. La capacità che sembra appartenere alla singola mano dipende anche dall’organizzazione che la circonda."
+          ]
+        },
+        {
+          "heading": "Il pane non deve aspettare l’amicizia",
+          "paragraphs": [
+            "Come si arriva a questa separazione dei mestieri? Non occorre immaginare qualcuno che abbia disegnato in anticipo l’intera officina della società. La ricostruzione proposta da Smith parte da scambi ripetuti. Una persona fabbrica archi e frecce con particolare abilità. Li cede ad altri in cambio di bestiame o selvaggina. A poco a poco scopre che le conviene dedicarsi a quel lavoro invece di procurarsi direttamente tutto il cibo. Un’altra sa costruire le strutture e le coperture delle abitazioni. Anche il suo lavoro può diventare un’occupazione distinta. Sono esempi del ragionamento, non una cronaca documentata delle origini di ogni mestiere.",
+            "La condizione è poter cedere ciò che avanza. Un produttore di frecce non può vivere soltanto di frecce, per quanto ben fatte. Deve trovare qualcuno disposto a offrirgli in cambio le cose di cui ha bisogno. La specializzazione guarda quindi in due direzioni: verso il compito che si impara a svolgere e verso le altre persone che lo rendono sostenibile. Se il secondo lato scompare, anche il primo si restringe. Il lavoratore torna a occuparsi di molte necessità perché non può più contare sullo scambio dei propri prodotti con quelli altrui.",
+            "È a questo punto che compaiono il macellaio, il birraio e il fornaio. Quando chiediamo la cena non possiamo aspettare che ognuno di loro diventi nostro amico. La vita richiede l’assistenza di moltissime persone, mentre il tempo permette di coltivare un numero limitato di amicizie. Un’offerta di scambio rende possibile collaborare anche a chi non si conosce intimamente: dammi ciò che mi serve e avrai ciò che serve a te. La richiesta viene formulata mostrando il vantaggio dell’altro, non soltanto esponendo il proprio bisogno. Così la cooperazione può estendersi oltre la cerchia degli affetti.",
+            "La scena non dimostra che la benevolenza sia inutile o che nessuno agisca generosamente. Il ragionamento è più preciso: l’assistenza quotidiana di una società numerosa non può dipendere soltanto da essa. Anche chi riceve un’elemosina deve poi scegliere come usarla; con il denaro compra cibo, oppure scambia un vestito ricevuto con qualcosa di più adatto. La generosità può fornire i mezzi, mentre lo scambio permette di adattarli alle necessità del momento. Confondere queste funzioni porterebbe a chiedere all’amicizia di organizzare da sola una rete troppo vasta, e al commercio di avere la stessa natura di un’amicizia.",
+            "L’interesse personale diventa quindi un punto da comprendere, prima che un’etichetta da lodare o condannare. Il fornaio deve poter proseguire il suo lavoro; chi compra deve trovare un pane che desidera e che può ottenere alle condizioni proposte. Nell’offerta, ciascuno presenta all’altro una ragione per collaborare. Il fatto che le ragioni siano diverse non impedisce l’incontro. Il pasto arriva sulla tavola attraverso questa possibilità di accordarsi. Nei capitoli che stiamo leggendo non c’è una garanzia che qualunque vantaggio privato produca sempre un bene comune: c’è l’analisi di un meccanismo che allarga la collaborazione fra persone differenti.",
+            "Anche quelle differenze, osserva Smith, potrebbero essere meno originarie di quanto sembrano. Il filosofo e il facchino appaiono lontanissimi quando sono adulti. Ma quanta parte della distanza è cresciuta attraverso abitudini, educazione e occupazioni? Da bambini potevano somigliarsi molto più di quanto il filosofo, divenuto vanitoso, sia disposto a ricordare. Il mestiere non esprime soltanto un talento già pronto: contribuisce a svilupparlo. Non tutte le capacità sono identiche, ma sarebbe un errore attribuire interamente alla nascita ciò che anni di esercizio e condizioni diverse hanno reso evidente.",
+            "Lo scambio fa poi qualcosa di ulteriore: permette a capacità differenti di diventare utili le une alle altre. Non devo possedere nella mia persona tutte le abilità necessarie al cappotto, al pane e agli utensili. Una parte del mio lavoro può procurarmi il prodotto di competenze che non ho. La varietà dei talenti diventa una risorsa condivisa attraverso i loro risultati. Chi trasporta un peso e chi svolge un ragionamento astratto partecipano così a una rete in cui il bisogno dell’uno può incontrare l’opera dell’altro. La distanza fra i mestieri non è una misura della distanza fra il valore delle persone."
+          ]
+        },
+        {
+          "heading": "Il mestiere che una nave rende possibile",
+          "paragraphs": [
+            "Rimane un limite che la destrezza non supera. Immaginiamo un fabbricante di chiodi in una zona remota delle Highlands scozzesi. Al ritmo usato nell’esempio di Smith, mille chiodi al giorno per trecento giorni fanno trecentomila chiodi all’anno. Ma nei dintorni potrebbe non riuscire a vendere neppure il prodotto di una giornata. Il problema non è imparare a lavorare più rapidamente. È trovare abbastanza persone a cui serva il risultato del suo lavoro e che possano offrire qualcosa in cambio. Senza questo sbocco, un mestiere strettissimo non gli garantisce da vivere.",
+            "Per questo il falegname di campagna assume molti compiti. Si occupa di oggetti e strutture differenti, purché il materiale e le competenze siano abbastanza vicini: lavori da mobiliere, da costruttore di ruote o di carri, da artigiano del legno. Il fabbro fa altrettanto con il ferro. Non sono necessariamente meno intelligenti dell’artigiano specializzato di una città. Vivono in una rete di richieste diversa. La varietà del loro lavoro risponde alla scarsità di clienti per ciascuna singola operazione. Prima di interpretare un’organizzazione come arretrata, bisogna guardare la dimensione dello scambio che può sostenerla.",
+            "Il mercato, in questo passaggio, ha una geografia. Una popolazione numerosa può essere vicina sulla carta e lontana per il costo di raggiungerla. Le coste e i fiumi navigabili aprono sbocchi che una strada difficile non consente allo stesso prezzo. Smith confronta il trasporto fra Londra ed Edimburgo: un carro largo, due uomini e otto cavalli muovono circa quattro tonnellate in un viaggio di andata e ritorno di sei settimane; una nave con sei od otto uomini può trasportarne circa duecento in un tempo simile. Sono ordini di grandezza riferiti ai mezzi descritti nel suo secolo, con i rischi del trasporto marittimo da aggiungere al conto.",
+            "Per muovere via terra quelle duecento tonnellate occorrerebbero, nel confronto, cinquanta carri, cento uomini e quattrocento cavalli. Ogni animale deve essere mantenuto, i carri si consumano, gli uomini devono vivere durante il viaggio. Questi costi non rimangono separati dal carico: finiscono per pesare sul prezzo delle merci. Se il trasporto è troppo oneroso, solo beni molto preziosi rispetto al loro peso possono affrontarlo. Molti prodotti comuni restano invece confinati in un raggio piccolo. Una nave cambia dunque non soltanto la velocità del viaggio, ma l’insieme delle cose che conviene produrre e scambiare.",
+            "La nave, inoltre, non cancella ogni costo. Va costruita e mantenuta, l’equipaggio deve vivere, il viaggio comporta un rischio che nel confronto entra attraverso l’assicurazione. Il vantaggio del trasporto marittimo emerge dal conto complessivo, non dall’idea che l’acqua renda gratuito il movimento. È proprio includendo queste spese che il confronto acquista senso: collega mezzi, carico e distanza, anziché limitarsi a celebrare la grandezza di una nave.",
+            "Ritorniamo al fabbricante di chiodi. Se può raggiungere altri centri a un costo sostenibile, la domanda accessibile cresce. Una quantità che il suo villaggio non assorbirebbe mai può trovare impiego altrove. Diventa ragionevole affinare un mestiere, dedicargli utensili e ripetere un’operazione abbastanza a lungo da migliorarla. La strada o il fiume non fabbricano materialmente il chiodo, eppure partecipano alle condizioni che lo fanno produrre. L’infrastruttura entra nell’officina prima ancora che arrivi una nuova macchina. Collega il lavoro di oggi alla possibilità di procurarsi, domani, ciò che quel lavoratore non produce.",
+            "I tre passaggi tornano così a tenersi insieme. Nella manifattura, la combinazione delle operazioni aumenta ciò che si riesce a fare. Fra i mestieri, lo scambio permette di vivere producendo soltanto una parte delle cose necessarie. Fra i luoghi, il trasporto allarga il numero di persone con cui questa cooperazione può avvenire. Se uno di questi collegamenti si restringe, gli altri incontrano un limite. Lo spillo non racconta soltanto una vittoria della velocità. Racconta una capacità collettiva fatta di esercizio, strumenti, accordi e distanze percorribili.",
+            "Possiamo infine guardare di nuovo il cappotto senza considerarlo un oggetto semplice o un prodigio senza cause. Il suo calore arriva da molte competenze e da legami spesso invisibili a chi lo indossa. Riconoscerli cambia anche il modo di giudicare il lavoro: un risultato individuale non nasce mai soltanto dalla volontà di chi appare per ultimo nella catena. Prima di chiedere a qualcuno di fare di più, vale la pena capire quali strumenti, collaborazioni e possibilità di scambio gli sono realmente disponibili. La ricchezza che Smith rende visibile comincia da questa domanda concreta: come possono le capacità di persone diverse arrivare a sostenersi a vicenda?"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Adam Smith — The Wealth of Nations, libro I, capitoli I–III",
+          "url": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+          "edition": "An Inquiry into the Nature and Causes of the Wealth of Nations, prima pubblicazione 1776; testo inglese Project Gutenberg n. 3300. Consultati i capitoli I–III: spilli, destrezza/strumenti, cappotto, scambio, mestieri e trasporto. Originale in pubblico dominio; nuova esposizione e traduzione italiana, non una traduzione moderna riprodotta. Esempi quantitativi storici del testo, non dati contemporanei.",
+          "accessed": "2026-10-23"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261023",
+      "title": "Radar · API rapide, prove del codice e scelte europee",
+      "kind": "reduced",
+      "event_date": "2026-10-22",
+      "publication_date": "2026-10-23",
+      "basis": "Dieci novità del 22 ottobre 2026 verificate su fonti primarie e confrontate con le edizioni precedenti. Radar ridotto: altre piste non soddisfacevano attualità, verifica o novità. Le implicazioni sono valutazioni editoriali; orari indicati quando disponibili.",
+      "sections": [
+        {
+          "heading": "Regolamento metano UE · il Parlamento chiede più tempo",
+          "paragraphs": [
+            "Il 22 ottobre il Parlamento europeo ha approvato una posizione che rinvia di tre anni alcuni obblighi sul metano. Reuters ha pubblicato la notizia alle 10:56 UTC; il testo adottato è P10_TA(2026)0360."
+          ],
+          "bullets": [
+            "Importatori: dimostrazione dell’equivalenza dei controlli proposta al 31 maggio 2031 per i contratti interessati.",
+            "La Commissione proponeva un anno: ora servono negoziati con il Consiglio; il voto non modifica da solo le scadenze vigenti.",
+            "Posta in gioco: più tempo alle forniture energetiche, ma più tardi dati verificati sulle perdite. Il rinvio proposto non sospende l’intero regolamento."
+          ]
+        },
+        {
+          "heading": "Houthis e ASPIDES · risoluzione del Parlamento europeo",
+          "paragraphs": [
+            "Il 22 ottobre la risoluzione P10_TA(2026)0366 chiede al Consiglio l’inserimento degli Houthis nella lista terroristica UE e più mezzi per ASPIDES. Testo primario confrontato con 2EU."
+          ],
+          "bullets": [
+            "Richieste: nuove risorse navali e aeree, proroga oltre febbraio 2027, esenzioni umanitarie chiaramente definite.",
+            "Designazione e dispiegamenti richiedono decisioni separate: nessuna nuova missione autorizzata da questo voto.",
+            "Per l’Europa la conseguenza cercata è assicurare più scorte alle navi mercantili. Il risultato dipenderà da navi effettivamente fornite, non dalla sola risoluzione."
+          ]
+        },
+        {
+          "heading": "CGUE · il ritardo dell’avvocato non cancella la difesa",
+          "paragraphs": [
+            "Il 22 ottobre la Corte di giustizia ha accolto i ricorsi contro Ungheria e Cechia, cause C-660/24 e C-681/24. Fonte: comunicato 152/26, verificato con la cronaca di 2EU."
+          ],
+          "bullets": [
+            "L’indisponibilità del legale o la scadenza di un termine nazionale non autorizzano automaticamente l’interrogatorio senza assistenza.",
+            "Possibili un altro avvocato disponibile o deroghe eccezionali motivate individualmente; partecipazione effettiva da garantire.",
+            "Gli Stati devono adeguarsi. Non sono state inflitte multe né annullate automaticamente precedenti condanne: la decisione riguarda le garanzie procedurali."
+          ]
+        },
+        {
+          "heading": "UE–Vietnam · incontro a Bruxelles sulle filiere",
+          "paragraphs": [
+            "Il comunicato congiunto del 22 ottobre, ore 16:20 di Bruxelles, segue l’incontro di Tô Lâm con António Costa e Ursula von der Leyen. Consilium e 2EU confermano le priorità industriali."
+          ],
+          "bullets": [
+            "Cooperazione da sviluppare su materie prime critiche, tecnologia e infrastrutture; richiesta di ratificare rapidamente l’accordo di protezione degli investimenti.",
+            "Il partenariato strategico risale a gennaio: questa visita rinnova l’impegno, non istituisce un nuovo accordo minerario.",
+            "Interesse concreto: diversificare filiere e partner nell’Indo-Pacifico. Nessun nuovo volume di forniture o finanziamento è annunciato; le ratifiche restano decisive."
+          ]
+        },
+        {
+          "heading": "OpenAI Decisions API · disponibilità generale",
+          "paragraphs": [
+            "OpenAI annuncia il 22 ottobre la GA della Decisions API, basata su GPT-6 Luna per risposte vincolate: probabilità, scelta fra opzioni o punteggio. Fonte: annuncio OpenAI."
+          ],
+          "bullets": [
+            "Novità dalla beta: 400 domande per richiesta, il doppio; JSON nativo, immagini nelle istruzioni, caching e inference residency USA/UE.",
+            "Integrazione nativa con GPT-Live; possibile interesse per routing e selezione di azioni negli agenti.",
+            "Fino a 10× più rapida della stessa Luna via Responses secondo il fornitore: non è un benchmark universale. Servizio API, non modello locale per GPU da 12 GiB."
+          ]
+        },
+        {
+          "heading": "Anthropic e Theorem · prove formali su 123 librerie",
+          "paragraphs": [
+            "Il rapporto del 22 ottobre descrive prove per 239 entry point OSS-Fuzz di 123 librerie. Claude genera le prove; il kernel Rocq ne controlla la validità. Fonte: ricerca Anthropic/Theorem."
+          ],
+          "bullets": [
+            "Proprietà: assenza di crash per input sotto 64 MB entro il modello specificato, su binari statici RISC-V single-thread.",
+            "Pubblicati un sottoinsieme di prove e le semantiche di CPU/OS; alcune prove possono richiedere centinaia di milioni di token.",
+            "Non certifica ogni comportamento della libreria su x86/ARM o in concorrenza. Per agenti di coding, interesse nella separazione fra generazione e verifica deterministica."
+          ]
+        },
+        {
+          "heading": "METR · audit del monitoraggio interno OpenAI",
+          "paragraphs": [
+            "METR pubblica il 22 ottobre i risultati del pilot con Redwood Research, svolto dal 21 luglio all’11 agosto. È nuovo il rapporto pubblico; il sistema valutato è quello storico di luglio."
+          ],
+          "bullets": [
+            "Esaminati copertura, compaction e possibilità di aggirare il monitoraggio; non stabilita la copertura del sistema attuale.",
+            "OpenAI dichiara corrette le vulnerabilità delle protezioni in produzione; METR non ha verificato quelle correzioni.",
+            "Lezione operativa: misurare quali azioni arrivano davvero al controllo, distinguendo traffico eleggibile e traffico effettivamente analizzato. Fonte primaria: METR, con limiti dell’esercizio espliciti."
+          ]
+        },
+        {
+          "heading": "Quad9 · annunciato il ritiro dalla Francia",
+          "paragraphs": [
+            "Il 22 ottobre Quad9 annuncia l’uscita dal mercato francese dal 24 novembre, dopo una decisione giudiziaria nel contenzioso con beIN. Comunicato Quad9 confrontato con TorrentFreak."
+          ],
+          "bullets": [
+            "Il resolver cita un’astreinte di 1.000 euro al giorno e altri procedimenti pendenti.",
+            "Quad9 contesta la fattibilità dei blocchi DNS limitati alla giurisdizione e la compatibilità con il proprio modello di privacy: è la sua posizione, non una conclusione neutrale del tribunale.",
+            "Effetto pratico annunciato: gli utenti francesi perderanno il servizio. Il delta è il ritiro deciso, rispetto all’ipotesi discussa nelle settimane precedenti."
+          ]
+        },
+        {
+          "heading": "eMudhra · uscita dal business SSL/TLS globale",
+          "paragraphs": [
+            "Il consiglio di eMudhra annuncia il 22 ottobre il ritiro volontario dal business globale dei certificati SSL/TLS. Fonte: comunicato societario, che lega la decisione a costi, conformità e recente incidente."
+          ],
+          "bullets": [
+            "Le radici G1 RSA continueranno a servire i clienti durante la transizione, coordinata con i programmi dei browser.",
+            "Prevista sostituzione gratuita tramite partner; revoche e verifica dello stato resteranno operative fino a scadenza o sostituzione di ogni certificato.",
+            "La società afferma che non vi siano stati certificati finali emessi dalle CA interessate né compromissione dell’infrastruttura: dichiarazioni aziendali, non audit indipendente."
+          ]
+        },
+        {
+          "heading": "Arc · stop ai nuovi account e calendario di chiusura",
+          "paragraphs": [
+            "Dal 22 ottobre non si possono più creare account Arc. The Browser Company annuncia la chiusura di Arc per macOS e Windows il 22 dicembre 2026. Fonte: pagina ufficiale di dismissione."
+          ],
+          "bullets": [
+            "Gli account esistenti continuano fino alla chiusura; esportazione dei dati o importazione in Dia disponibili prima del 22 dicembre.",
+            "Arc Search: funzioni AI e accesso/sync si fermano il 23 novembre; la versione Android termina il 22 dicembre, mentre iOS mantiene una versione ridotta.",
+            "Il cambiamento richiede migrazione anche a chi usa soltanto il browser: non è una semplice fine degli aggiornamenti."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Parlamento europeo — emendamenti metano del 22 ottobre",
+          "url": "https://data.europarl.europa.eu/distribution/doc/TA-10-2026-0360_en.pdf",
+          "edition": "P10_TA(2026)0360, adottato 22/10/2026; letti calendario, emendamenti e rinvio ai negoziati interistituzionali.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "Reuters — voto sul rinvio degli obblighi metano",
+          "url": "https://www.reuters.com/business/energy/european-parliament-votes-approve-three-year-delay-eu-methane-rules-2026-10-22/",
+          "edition": "22/10/2026, 10:56 UTC; cronaca indipendente, non dichiarazione di entrata in vigore.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "Parlamento europeo — Houthis e sicurezza regionale",
+          "url": "https://data.europarl.europa.eu/distribution/doc/TA-10-2026-0366_en.pdf",
+          "edition": "P10_TA(2026)0366, 22/10/2026; consultati punti 12–19 e passaggi su ASPIDES, dispiegamenti ed esenzioni.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "2EU — richiesta di designazione degli Houthis e ASPIDES",
+          "url": "https://2eu.brussels/index.php/en/news/european-parliament-calls-for-houthi-terrorist-listing-and-stronger-aspides-naval-mission",
+          "edition": "22/10/2026; cronaca distinta dal testo parlamentare, con distinzione fra risoluzione, sanzioni e mezzi effettivi.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "CGUE — accesso all’avvocato, comunicato 152/26",
+          "url": "https://curia.europa.eu/site/upload/docs/application/pdf/2026-10/cp260152en.pdf",
+          "edition": "22/10/2026; cause C-660/24 e C-681/24, comunicato ufficiale di due pagine consultato.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "2EU — le sentenze sul diritto all’avvocato",
+          "url": "https://2eu.brussels/index.php/en/news/eu-court-rules-suspects-cannot-be-questioned-without-a-lawyer-simply-because-one-is-late",
+          "edition": "22/10/2026; cronaca di confronto sulle garanzie e sugli effetti delle sentenze.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "Consilium — visita del presidente vietnamita Tô Lâm",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/22/joint-press-release-following-general-secretary-of-the-central-committee-of-the-communist-party-of-viet-nam-and-president-of-the-socialist-republic-of-viet-nam-to-lam-s-visit-to-the-european-council-and-the-european-commission/",
+          "edition": "22/10/2026, 16:20; comunicato congiunto, cooperazione da sviluppare e ratifiche ancora richieste.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "2EU — UE e Vietnam, materie prime e investimenti",
+          "url": "https://2eu.brussels/index.php/en/news/eu-and-vietnam-seek-closer-critical-raw-materials-cooperation-and-faster-investment-protection-agreement",
+          "edition": "22/10/2026; cronaca confrontata con il comunicato, inclusa la continuità con gennaio e l’assenza di nuovi stanziamenti.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "OpenAI — Decisions API GA",
+          "url": "https://openai.com/index/decisions-api/",
+          "edition": "22/10/2026; annuncio primario, funzioni dalla beta e claim di latenza attribuito al fornitore.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "Anthropic — LLMs and formal software verification",
+          "url": "https://www.anthropic.com/research/formal-verification",
+          "edition": "22/10/2026; ricerca con Theorem, letti metodo, numero di librerie/entry point e limiti di architettura, specifica e costo.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "METR — Red-Teaming OpenAI’s Internal Agent Monitoring Systems",
+          "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+          "edition": "22/10/2026; audit storico luglio–agosto, vulnerabilità e stato delle correzioni dichiarato; nessuna verifica del sistema corrente da parte di METR.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "Quad9 — Farewell, France",
+          "url": "https://quad9.net/news/blog/au-revoir-france/",
+          "edition": "22/10/2026; annuncio del ritiro dal 24/11/2026 e posizione della fondazione sul contenzioso.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "TorrentFreak — Quad9 lascia la Francia",
+          "url": "https://torrentfreak.com/dns-resolver-quad9-will-leave-france-after-court-orders-piracy-blocking-penalty/",
+          "edition": "22/10/2026; cronaca indipendente della decisione, della penalità e dei procedimenti pendenti.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "eMudhra — Exit global SSL/TLS certificate business",
+          "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
+          "edition": "22/10/2026; decisione del consiglio e transizione; affermazioni sull’incidente attribuite alla società.",
+          "accessed": "2026-10-23"
+        },
+        {
+          "title": "The Browser Company — A farewell to Arc",
+          "url": "https://arc.net/",
+          "edition": "Pagina ufficiale consultata 23/10/2026: nuovi account chiusi dal 22/10; scadenze distinte desktop, iOS e Android e percorso di esportazione.",
+          "accessed": "2026-10-23"
+        }
+      ]
+    }
+  ]
+}
