@@ -1164,7 +1164,7 @@ function render() {
   document.documentElement.classList.toggle('micro-reading',ui.tab==='microlearning');
   document.documentElement.classList.toggle('reading',ui.tab==='rituali'&&!!articleSelection);
   main.innerHTML = ui.tab==='microlearning'?renderMicro(micro,esc,state.microSaved||[],microMode):ui.tab==='inbox'?renderInbox(state,esc,!!localStorage.getItem(PERSONAL_AUTH),inboxStatus,inboxDraft)+privateControls():ui.tab==='idee'?renderIdeas(ideas(),today(),!!state.settings.habits.ideas?.enabled,esc)+renderPersonalItems(state,esc,'idea'):ui.tab==='spesa'?renderShopping(state.shopping||[],esc):ui.tab === 'rituali'
-    ? (articleSelection?'':'<a class="card home-micro" href="#microlearning"><div><b>Microlearning</b><span class="small mut">Quattro idee da scorrere, quando vuoi.</span></div><span aria-hidden="true">↗</span></a>')+renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
+    ? (articleSelection?'':'<nav class="btns ritual-shortcuts" aria-label="Esplora e annota"><a class="btn" href="#inbox">Appunti</a><a class="btn" href="#microlearning">Microlearning</a></nav>')+renderEditorial(editorial,articleSelection,esc,localStorage)+(articleSelection?'':viewRituals(today(), loadRelationship(localStorage), state.settings.habits,
         state.settings.carePresence, state.settings.careDays || [], esc, !!editorial?.edition))
     : ui.tab === 'piano' ? viewPlan() : ui.tab === 'todos'
     ? renderTodos(state, ui.todoFilter, today(), { esc, actOptions, sw, actName })

@@ -2,6 +2,14 @@ import {validDate} from './editorial-contract.js';
 export const MICRO_CACHE='aurelius.microlearning.v1';
 const id=/^[a-z0-9_-]{1,80}$/;
 const txt=(x,n)=>typeof x==='string'&&x.trim().length>0&&x.length<=n;
+export function validateMicroVisual(v){
+ if(v?.kind==='image'){
+  // Same-origin checked-in assets only: no remote trackers, credentials or active URLs from backups.
+  if(!/^content\/microlearning\/media\/[a-z0-9][a-z0-9_-]*\.(svg|png|jpe?g|webp)$/.test(v.src)||!txt(v.alt,500)||!txt(v.caption,220)||!txt(v.credit,200)||!txt(v.license,150)||!txt(v.source,1200))throw Error('Immagine microlearning non valida');
+  const u=new URL(v.source);if(u.protocol!=='https:'||u.username||u.password)throw Error('Provenienza immagine non sicura');
+ }else if(!['automaton','flow','contrast','question'].includes(v?.kind)||!Array.isArray(v.labels)||v.labels.length<1||v.labels.length>3||v.labels.some(x=>!txt(x,90)))throw Error('Visual non valido');
+ return v;
+}
 export function validateMicroCard(c){
  const e={schema:1,date:'2026-10-22',cards:Array.from({length:4},(_,i)=>({...c,id:'validated-'+i}))};validateMicroEdition(e);if(!id.test(c.id))throw Error('ID scheda non valido');return c;
 }
@@ -9,7 +17,8 @@ export function validateMicroEdition(e){
  if(e?.schema!==1||!validDate(e.date)||!Array.isArray(e.cards)||![4,20].includes(e.cards.length))throw Error('Edizione microlearning non valida');
  const ids=new Set();
  for(const c of e.cards){
-  if(!id.test(c.id)||ids.has(c.id)||!txt(c.topic,50)||!txt(c.title,100)||!txt(c.hook,180)||!Array.isArray(c.paragraphs)||c.paragraphs.length<1||c.paragraphs.length>3||c.paragraphs.some(p=>!txt(p,650))||!txt(c.takeaway,250)||!txt(c.basis,450)||!['automaton','flow','contrast','question'].includes(c.visual?.kind)||!Array.isArray(c.visual.labels)||c.visual.labels.length<1||c.visual.labels.length>3||c.visual.labels.some(x=>!txt(x,90))||!['sage','clay','plum','blue'].includes(c.tone)||!Array.isArray(c.sources)||!c.sources.length||c.sources.length>3)throw Error('Scheda microlearning non valida');
+  if(!id.test(c.id)||ids.has(c.id)||!txt(c.topic,50)||!txt(c.title,100)||!txt(c.hook,180)||!Array.isArray(c.paragraphs)||c.paragraphs.length<1||c.paragraphs.length>3||c.paragraphs.some(p=>!txt(p,650))||!txt(c.takeaway,250)||!txt(c.basis,450)||!['sage','clay','plum','blue'].includes(c.tone)||!Array.isArray(c.sources)||!c.sources.length||c.sources.length>3)throw Error('Scheda microlearning non valida');
+  validateMicroVisual(c.visual);
   for(const s of c.sources){if(!txt(s.title,200)||!txt(s.url,1200))throw Error('Fonte non valida');const u=new URL(s.url);if(u.protocol!=='https:'||u.username||u.password)throw Error('Fonte non sicura');}
   ids.add(c.id);
  }return e;

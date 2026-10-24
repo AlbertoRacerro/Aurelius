@@ -33,3 +33,13 @@ test('twenty-card editions load online and offline, keep saved cards valid, and 
  const offline=async()=>{throw Error('offline');};assert.equal((await loadMicro(store,new URL('https://example.test/content/'),edition.date,offline)).edition.cards.length,20);
  assert.match(renderMicro(null,String,[twenty.cards[19]],'saved'),/twenty-19/);
 });
+
+test('image cards only accept checked-in assets with provenance, including saved backup copies',()=>{
+ const e=structuredClone(edition);const v=e.cards[0].visual;assert.equal(v.kind,'image');
+ for(const src of ['https://tracker.test/x.jpg','//tracker.test/x.jpg','content/microlearning/media/../x.svg','data:image/svg+xml,bad','content/microlearning/media/x.svg?track=1']){
+  const bad=structuredClone(e);bad.cards[0].visual.src=src;assert.throws(()=>validateMicroEdition(bad));
+  assert.doesNotMatch(renderMicro(null,String,[bad.cards[0]],'saved'),/micro-card /);
+ }
+ const bad=structuredClone(e);bad.cards[0].visual.source='javascript:alert(1)';assert.throws(()=>validateMicroEdition(bad));
+ const html=renderMicro({edition:e,dates:[e.date]},String);assert.match(html,/<img /);assert.match(html,/loading="lazy"/);assert.doesNotMatch(html,/micro-hook|micro-takeaway/);
+});

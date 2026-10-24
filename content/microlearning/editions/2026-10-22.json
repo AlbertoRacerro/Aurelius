@@ -9,16 +9,16 @@
       "hook": "L’acqua che entra dalle radici può uscire dalla chioma, senza che tu la veda.",
       "tone": "sage",
       "visual": {
-        "kind": "flow",
-        "labels": [
-          "Suolo",
-          "Radici e foglie",
-          "Vapore"
-        ]
+        "kind": "image",
+        "src": "content/microlearning/media/leaf-water.svg",
+        "alt": "Percorso schematico dell’acqua dallo xilema all’uscita come vapore attraverso gli stomi",
+        "caption": "Schema illustrativo · Percorso schematico dell’acqua dallo xilema all’uscita come vapore attraverso gli stomi",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
       },
       "paragraphs": [
-        "La pianta assorbe acqua dal terreno e ne restituisce una parte all’atmosfera attraverso piccoli pori delle foglie: gli stomi. Questo percorso si chiama traspirazione.",
-        "Non è la stessa cosa dell’acqua che evapora direttamente dal terreno. Quando i due flussi vengono considerati insieme, si parla di evapotraspirazione: una parola lunga per un paesaggio che scambia acqua con l’aria."
+        "La pianta assorbe acqua dal terreno e ne restituisce una parte all’atmosfera attraverso piccoli pori delle foglie: gli stomi. Questo percorso si chiama traspirazione. Non è la stessa cosa dell’acqua che evapora direttamente dal terreno. Quando i due flussi vengono considerati insieme, si parla di evapotraspirazione: una parola lunga per un paesaggio che scambia acqua con l’aria."
       ],
       "takeaway": "Guardare un albero significa guardare anche un tratto del ciclo dell’acqua.",
       "basis": "Esposizione autonoma dalla Water Science School di USGS. Il disegno rappresenta il percorso, non la scala o il meccanismo della risalita.",
@@ -36,14 +36,16 @@
       "hook": "Ogni nuova cella dipende soltanto da tre celle della riga precedente.",
       "tone": "plum",
       "visual": {
-        "kind": "automaton",
-        "labels": [
-          "Regola 30 · 24 generazioni da una cella"
-        ]
+        "kind": "image",
+        "src": "content/microlearning/media/rule30-generations.svg",
+        "alt": "36 generazioni della regola 30 calcolate da una singola cella iniziale",
+        "caption": "Schema illustrativo · 36 generazioni della regola 30 calcolate da una singola cella iniziale",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
       },
       "paragraphs": [
-        "Nessuno ha disegnato a mano questo intreccio. La regola 30 assegna bianco o nero alle otto possibili combinazioni di tre celle. Ripetendo sempre quelle stesse istruzioni, da un solo punto compare una trama sorprendentemente irregolare.",
-        "Conoscere una regola semplice non rende automaticamente semplice prevederne tutti gli effetti. Wolfram usa questi sistemi per esplorare il rapporto fra computazione e complessità. Il disegno, da solo, non dimostra l’assenza di scorciatoie matematiche."
+        "Nessuno ha disegnato a mano questo intreccio. La regola 30 assegna bianco o nero alle otto possibili combinazioni di tre celle. Ripetendo sempre quelle stesse istruzioni, da un solo punto compare una trama sorprendentemente irregolare. Conoscere una regola semplice non rende automaticamente semplice prevederne tutti gli effetti. Wolfram usa questi sistemi per esplorare il rapporto fra computazione e complessità. Il disegno, da solo, non dimostra l’assenza di scorciatoie matematiche."
       ],
       "takeaway": "La complessità del risultato non misura la complessità delle istruzioni.",
       "basis": "Esposizione autonoma da un articolo di Stephen Wolfram, collegata ai temi di What Ultimately Is There? L’immagine è calcolata dalla regola 30. Non è una dimostrazione dell’irriducibilità computazionale.",
@@ -61,15 +63,16 @@
       "hook": "Prima di automatizzare una soluzione, bisogna capire quale difficoltà sta vivendo la persona.",
       "tone": "clay",
       "visual": {
-        "kind": "contrast",
-        "labels": [
-          "Produrre più risposte",
-          "Capire quale aiuto serve"
-        ]
+        "kind": "image",
+        "src": "content/microlearning/media/human-choice.svg",
+        "alt": "Una proposta AI e una scelta umana restano passaggi distinti: esempio editoriale",
+        "caption": "Schema illustrativo · Una proposta AI e una scelta umana restano passaggi distinti: esempio editoriale",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
       },
       "paragraphs": [
-        "Immagina un assistente che, per aiutarti, trasformi ogni pensiero in un’attività e ogni attività in una notifica. Ha prodotto molto. Ma forse ti serviva soltanto liberare la testa.",
-        "Nella presentazione del suo libro, Francesca Mastrogiacomi collega il Design Thinking all’AI: partire dall’ascolto delle persone e arrivare alla soluzione, mantenendo al centro valori umani ed empatia. L’esempio dell’assistente è nostro: mostra perché la qualità dell’aiuto dipende anche da ciò che scegliamo di non automatizzare."
+        "Immagina un assistente che, per aiutarti, trasformi ogni pensiero in un’attività e ogni attività in una notifica. Ha prodotto molto. Ma forse ti serviva soltanto liberare la testa. Nella presentazione del suo libro, Francesca Mastrogiacomi collega il Design Thinking all’AI: partire dall’ascolto delle persone e arrivare alla soluzione, mantenendo al centro valori umani ed empatia. L’esempio dell’assistente è nostro: mostra perché la qualità dell’aiuto dipende anche da ciò che scegliamo di non automatizzare."
       ],
       "takeaway": "Una soluzione utile parte da un bisogno compreso, non da una funzione disponibile.",
       "basis": "Rielaborazione autonoma della presentazione editoriale di Empathy and Artificial Intelligence in Action. Esempio originale di Aurelius; non viene attribuito all’autrice. Non è un estratto del volume integrale.",
@@ -87,14 +90,16 @@
       "hook": "Un esperimento diventa più credibile quando mostri anche ciò che potrebbe smentirlo.",
       "tone": "blue",
       "visual": {
-        "kind": "question",
-        "labels": [
-          "Che cosa mi farebbe cambiare idea?"
-        ]
+        "kind": "image",
+        "src": "content/microlearning/media/honest-evidence.svg",
+        "alt": "Esempio schematico: un dato discordante non va nascosto perché contraddice l’ipotesi",
+        "caption": "Schema illustrativo · Esempio schematico: un dato discordante non va nascosto perché contraddice l’ipotesi",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
       },
       "paragraphs": [
-        "Hai trovato un metodo che sembra funzionare. Poi arriva una prova contraria: la tentazione è pensare che quella volta non conti. È proprio lì che comincia il lavoro difficile.",
-        "Nel discorso Cargo Cult Science, Feynman chiede una forma esigente di onestà: rendere disponibili anche i dettagli capaci di indebolire la propria conclusione. Il punto non è sembrare imparziali, ma consentire ad altri di giudicare davvero il risultato."
+        "Hai trovato un metodo che sembra funzionare. Poi arriva una prova contraria: la tentazione è pensare che quella volta non conti. È proprio lì che comincia il lavoro difficile. Nel discorso Cargo Cult Science, Feynman chiede una forma esigente di onestà: rendere disponibili anche i dettagli capaci di indebolire la propria conclusione. Il punto non è sembrare imparziali, ma consentire ad altri di giudicare davvero il risultato."
       ],
       "takeaway": "Prima di difendere una conclusione, cerca la prova che la metterebbe in difficoltà.",
       "basis": "Parafrasi autonoma di un principio del discorso di Feynman a Caltech, 1974. L’esempio iniziale è editoriale, non una citazione.",
