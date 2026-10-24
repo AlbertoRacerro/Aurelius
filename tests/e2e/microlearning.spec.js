@@ -36,3 +36,17 @@ test('twenty cards show the actual count and preserve the last card when saved',
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.unrouteAll({behavior:'wait'});
 });
+
+test('Rituali gives equal access to Appunti and Microlearning; every current card has a real local image',async({page})=>{
+ await page.clock.install({time:new Date('2026-10-24T12:00:00+02:00')});await page.goto('./#rituali');
+ const shortcuts=page.getByRole('navigation',{name:'Esplora e annota'});await expect(shortcuts.getByRole('link',{name:'Appunti',exact:true})).toBeVisible();
+ await shortcuts.getByRole('link',{name:'Microlearning',exact:true}).click();await expect(page.locator('.micro-card')).toHaveCount(20);
+ for(const card of await page.locator('.micro-card').all()){
+  const img=card.locator('.micro-visual img');await img.scrollIntoViewIfNeeded();
+  await expect.poll(()=>img.evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+  await expect(card.locator('.micro-body')).toBeVisible();
+ }
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.locator('.micro-card').first().scrollIntoViewIfNeeded();await page.screenshot({path:'test-results/micro-images-phone.png'});
+ await page.setViewportSize({width:820,height:1180});await page.screenshot({path:'test-results/micro-images-tablet.png'});
+});

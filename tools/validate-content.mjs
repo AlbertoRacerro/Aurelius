@@ -10,7 +10,19 @@ export async function validateContent(root='content'){
  for(const date of m.editions){if(!validDate(date))throw Error('Data manifest non valida');const e=validateEdition(await read(`editions/${date}.json`));if(e.date!==date)throw Error('Manifest incoerente');}
  if([...m.editions].sort().at(-1)!==m.latest)throw Error('Latest non è l’ultima edizione');
  const micro=validateMicroManifest(await read('microlearning/manifest.json')), microIds=new Set();
- for(const date of micro.editions){const e=validateMicroEdition(await read('microlearning/editions/'+date+'.json'));if(e.date!==date)throw Error('Data microlearning incoerente');for(const c of e.cards){if(microIds.has(c.id))throw Error('Scheda duplicata');microIds.add(c.id);}}
+ for(const date of micro.editions){const e=validateMicroEdition(await read('microlearning/editions/'+date+'.json'));if(e.date!==date)throw Error('Data microlearning incoerente');for(const c of e.cards){if(microIds.has(c.id))throw Error('Scheda duplicata');microIds.add(c.id);
+  if(c.visual.kind==='image'){
+   const asset=await readFile(root+'/'+c.visual.src.replace(/^content\//,''));
+   if(!asset.length||asset.length>1000000)throw Error('Immagine vuota o troppo grande: '+c.visual.src);
+   if(c.visual.src.endsWith('.svg')){
+    const svg=asset.toString('utf8');
+    if(!/<svg\b[^>]*viewBox=/.test(svg)||/<(?:script|foreignObject|image|use|style|a)\b|\bon[a-z]+\s*=|(?:href|src)\s*=|<!DOCTYPE|<!ENTITY|url\s*\(/i.test(svg))throw Error('SVG non statico: '+c.visual.src);
+   }else{
+    const ext=c.visual.src.split('.').at(-1);
+    const ok=ext==='png'?asset.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])):ext==='webp'?asset.toString('ascii',0,4)==='RIFF'&&asset.toString('ascii',8,12)==='WEBP':asset[0]===255&&asset[1]===216&&asset[2]===255;
+    if(!ok)throw Error('Formato immagine incoerente: '+c.visual.src);
+   }
+  }}}
  validateCatalog(await read('ideas.json'));
  const f=await read('feedback/ratings.json');if(f.schema!==1||!Array.isArray(f.ratings))throw Error('Feedback non valido');
  const q=await read('editorial/queue.json');if(q.schema!==1||!Array.isArray(q.ready))throw Error('Coda non valida');
