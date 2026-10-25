@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "updated_at": "2026-10-25T04:01:05Z",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261025",
+      "title": "Il retrobottega che ci appartiene",
+      "kind": "synthesis",
+      "basis": "Michel de Montaigne, Essais, I, 39, «De la solitude», testo francese storico in pubblico dominio. Selezione e nuova traduzione italiana con tagli, raccordi e chiarimenti editoriali, soprattutto nella chiusura: ritirarsi senza portare intatta con sé la dipendenza dal giudizio altrui.",
+      "sections": [
+        {
+          "heading": "Il viaggiatore che porta sé stesso",
+          "paragraphs": [
+            "Si raccontava a Socrate che un uomo non era affatto migliorato dopo un viaggio. «Lo credo bene», rispose: «si era portato con sé». L'ambizione, l'avidità, l'incertezza e la paura non ci abbandonano perché cambiamo paese. Ci seguono perfino nei chiostri e nelle scuole di filosofia. Non bastano i deserti, le grotte, il cilicio o il digiuno a liberarcene.",
+            "Spesso crediamo di aver lasciato gli affari; li abbiamo soltanto cambiati. Governare una famiglia può dare quasi altrettanto tormento che governare uno Stato. Dove l'anima è occupata, lo è tutta: le faccende domestiche, per essere meno importanti, non sono meno moleste. E quando ci siamo liberati della corte e del mercato, non per questo ci siamo liberati dei principali tormenti della vita.",
+            "Se prima non alleggeriamo l'anima del peso che la opprime, il movimento finirà per gravarla di più. Su una nave il carico disturba meno quando è ben assestato. Non basta dunque essersi allontanati dalla folla; non basta cambiare luogo. Bisogna allontanarsi dalle abitudini della folla che sono dentro di noi, ritirarsi e riprendere possesso di sé.",
+            "Ci portiamo dietro le catene. Non siamo interamente liberi finché continuiamo a voltarci verso ciò che abbiamo lasciato e a riempircene l'immaginazione. La vera solitudine può essere goduta anche in mezzo alle città e alle corti dei re; soltanto, è più comodo cercarla in disparte."
+          ]
+        },
+        {
+          "heading": "Una stanza tutta nostra",
+          "paragraphs": [
+            "Chi può, abbia famiglia, beni e soprattutto salute; ma non vi si attacchi in modo che tutta la sua felicità ne dipenda. Bisogna riservarsi un retrobottega tutto nostro, completamente libero, dove stabilire la nostra vera libertà e il nostro principale rifugio.",
+            "Lì dobbiamo imparare a intrattenerci abitualmente con noi stessi, con un'intimità in cui nessuna conoscenza esterna venga a occupare ogni posto. La nostra anima sa ripiegarsi su di sé e farsi compagnia: ha di che attaccare e di che difendersi, di che ricevere e di che dare. Non temiamo di imputridire, in questa solitudine, dentro un ozio noioso.",
+            "Usiamo i vantaggi che ci vengono da fuori finché ci danno piacere, senza farne il nostro fondamento. Perché mettere la nostra contentezza in potere d'altri? E tuttavia privarsi in anticipo di ogni comodità, dormire sulla terra nuda, gettare le ricchezze nel fiume e andare in cerca del dolore mi sembra una virtù eccessiva. Per me c'è abbastanza da fare senza spingersi tanto oltre.",
+            "Non stimo meno il filosofo Arcesilao perché usava utensili d'oro e d'argento, come la sua condizione gli permetteva. Lo apprezzo anzi per averne usato con misura e liberalità, invece di essersene sbarazzato. Il difficile non è soltanto perdere ciò che possediamo: è saperlo possedere senza esserne posseduti."
+          ]
+        },
+        {
+          "heading": "Non essere di peso a sé stessi",
+          "paragraphs": [
+            "La cosa più grande del mondo è saper appartenere a sé stessi. Quando raccogliamo in noi le nostre forze, guardiamoci dal diventare proprio a noi stessi molesti, pesanti e inutili. Accarezziamoci pure, ma soprattutto impariamo a governarci, rispettando la nostra ragione e la nostra coscienza.",
+            "Un luogo appartato può aiutarci, ma non farà questo lavoro al posto nostro. Se nel rifugio portiamo intatta la necessità di essere ammirati e l'agitazione per ogni giudizio, avremo soltanto dato nuove pareti alla stessa dipendenza. Il riposo comincia quando possiamo stare con noi senza dover subito tornare, col pensiero, davanti al tribunale degli altri."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Montaigne — De la solitude",
+          "url": "https://fr.wikisource.org/wiki/Essais/Livre_I/Chapitre_39",
+          "edition": "Testo francese dell’Exemplaire de Bordeaux, come identificato dalla trascrizione; opera cinquecentesca, autore morto nel 1592. Originale in pubblico dominio in Italia/UE e USA; nessuna traduzione moderna riprodotta. Passaggi consultati sul viaggio, il retrobottega e l’uso moderato dei beni. Titolo e sezioni redazionali.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Unione europea — durata del diritto d’autore",
+          "url": "https://europa.eu/youreurope/business/growing/protecting-intellectual-property/copyright/index_en.htm",
+          "edition": "Verifica separata dei diritti: termine ordinario vita dell’autore più 70 anni nell’UE. Traduzioni qui nuove dagli originali storici, non da edizioni italiane moderne. Metadati Gutenberg per Thoreau: 1817–1862, originale dichiarato public domain in the USA; Wikisource per Montaigne: 1533–1592.",
+          "accessed": "2026-10-25"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261025",
+      "title": "Un uomo contro una strolaga",
+      "kind": "synthesis",
+      "basis": "Henry David Thoreau, Walden (1854), «Brute Neighbors». Nuova traduzione italiana selettiva dall’inglese in pubblico dominio: vicini della capanna, battaglia delle formiche, inseguimento sul lago. Tagli fra e dentro gli episodi, titoli redazionali; conservati prima persona, ironia e immagini dell’originale.",
+      "sections": [
+        {
+          "heading": "Una briciola sulla manica",
+          "paragraphs": [
+            "I topi che frequentavano la mia casa non erano quelli comuni, che si dice siano stati introdotti nel paese, ma una specie selvatica del luogo, assente dal villaggio. Ne mandai uno a un naturalista illustre, e lo interessò molto. Mentre costruivo, uno di loro aveva il nido sotto la casa. Prima ancora che avessi posato il secondo pavimento e spazzato via i trucioli, usciva regolarmente all'ora del pranzo a raccogliere le briciole fra i miei piedi.",
+            "Probabilmente non aveva mai visto un uomo. Presto divenne tanto familiare da correre sulle mie scarpe e arrampicarsi sui vestiti. Saliva lungo le pareti della stanza a piccoli slanci, come uno scoiattolo, al quale somigliava nei movimenti. Un giorno, mentre stavo appoggiato col gomito alla panca, risalì i miei abiti, percorse la manica e si mise a girare intorno alla carta che conteneva il pranzo.",
+            "Io tenevo la carta chiusa, mi sottraevo e giocavo con lui a nascondermi. Finalmente rimasi immobile, con un pezzetto di formaggio stretto fra pollice e indice. Venne a rosicchiarlo, seduto nella mia mano; poi si ripulì il muso e le zampe, come una mosca, e se ne andò.",
+            "Un pigliamosche costruì presto il nido nel mio capanno, e un pettirosso cercò protezione in un pino che cresceva contro la casa. In giugno un uccello assai schivo, il tetraone dal collare, condusse la covata davanti alle mie finestre, dal bosco sul retro verso il lato anteriore. Chiocciava e chiamava i piccoli come una gallina; in ogni gesto si mostrava la gallina dei boschi.",
+            "A un segnale della madre i piccoli si disperdono all'improvviso quando vi avvicinate, come se una raffica li avesse spazzati via. Somigliano così esattamente alle foglie secche e ai ramoscelli che molti viaggiatori hanno posato il piede in mezzo alla covata, udito il frullo della madre e i suoi richiami ansiosi, senza sospettare quanto fossero vicini i pulcini.",
+            "La madre talvolta si rotola e si agita davanti a voi in uno scompiglio tale che per qualche istante non riuscite nemmeno a riconoscere quale creatura sia. I piccoli restano bassi e immobili, spesso con la testa infilata sotto una foglia. Badano soltanto alle istruzioni che arrivano da lontano; il vostro avvicinarvi non li induce a correre e a tradirsi.",
+            "Ne ho tenuti nella mano aperta in quei momenti. La loro sola preoccupazione era restare accovacciati, senza paura né tremito, obbedienti alla madre e all'istinto. Una volta, dopo che li avevo rimessi sulle foglie, uno cadde accidentalmente sul fianco; dieci minuti più tardi era ancora lì, nella stessa posizione degli altri.",
+            "L'espressione adulta e insieme innocente dei loro occhi aperti e sereni rimane nella memoria. Vi sembra riflessa tutta l'intelligenza. Suggeriscono la purezza dell'infanzia, ma anche una saggezza resa limpida dall'esperienza. Un occhio simile non pare nato insieme all'uccello: sembra antico quanto il cielo che riflette. Il bosco non offre un'altra gemma di quella specie. Non capita spesso, a chi cammina, di affacciarsi a un pozzo tanto chiaro.",
+            "Queste erano le mie galline e i miei pulcini. È sorprendente quante creature vivano selvatiche e libere, eppure nascoste, nei boschi vicini alle città, dove soltanto i cacciatori sospettano la loro presenza. Quanto riesce a vivere appartata la lontra! Diventa grande quanto un bambino, forse senza che nessun essere umano riesca a scorgerla. Può raggiungere quattro piedi di lunghezza, circa un metro e venti.",
+            "Dopo aver piantato, a mezzogiorno riposavo di solito un'ora o due all'ombra. Pranzavo e leggevo un poco presso una sorgente che alimentava una palude e un ruscello, a circa mezzo miglio dal mio campo. Per arrivarci attraversavo una successione di conche erbose, sempre più basse, piene di giovani pini, fino a un bosco più grande intorno alla palude.",
+            "Sotto un pino bianco dai rami larghi, in un luogo appartato e ombroso, trovavo ancora un prato pulito e saldo su cui sedermi. Avevo scavato la sorgente, ricavandone una pozza d'acqua grigia e trasparente, dove potevo immergere il secchio senza intorbidirla. In piena estate, quando il lago era più caldo, venivo qui quasi ogni giorno.",
+            "Anche la beccaccia portava qui i piccoli, a cercare vermi nel fango. Volava appena sopra di loro lungo la sponda, mentre sotto le correvano dietro in gruppo. Scorgendomi, lasciava la covata e cominciava a girarmi intorno, sempre più vicina, fingendo ali e zampe spezzate per attirare la mia attenzione. Intanto i piccoli si erano già rimessi in marcia, in fila attraverso la palude, con sottili pigolii.",
+            "Sopra la sorgente si posavano le tortore, o passavano da un ramo all'altro dei pini bianchi; lo scoiattolo rosso percorreva il ramo più vicino, curioso e straordinariamente familiare. Basta rimanere seduti abbastanza a lungo in un luogo invitante del bosco perché tutti gli abitanti si mostrino, uno dopo l'altro."
+          ]
+        },
+        {
+          "heading": "La battaglia fra i ceppi",
+          "paragraphs": [
+            "Fui testimone anche di avvenimenti meno pacifici. Un giorno uscii verso la catasta della legna, o piuttosto verso il mucchio dei ceppi, e osservai due grosse formiche impegnate in una lotta furiosa. Una era rossa; l'altra, molto più grande, quasi mezzo pollice di lunghezza, era nera. Una volta afferratesi non si lasciavano più, ma si contorcevano, lottavano e rotolavano senza tregua sui trucioli.",
+            "Guardando meglio, scoprii con sorpresa che i trucioli erano coperti di combattenti. Non era un duello, era una guerra: le rosse sempre contro le nere, spesso due rosse per una nera. Le legioni di quei minuscoli guerrieri coprivano tutte le colline e le valli del mio cortile, e il terreno era già disseminato di morti e moribondi, rossi e neri.",
+            "Era l'unica battaglia alla quale avessi mai assistito, l'unico campo di battaglia che avessi percorso mentre ancora si combatteva. Da una parte i repubblicani rossi, dall'altra gli imperialisti neri. Ovunque si lottava mortalmente, eppure senza alcun rumore che io potessi udire. Soldati umani non si sono mai battuti con maggiore ostinazione.",
+            "Osservai una coppia strettamente avvinghiata, in una piccola valle assolata fra i trucioli. Era mezzogiorno; sembravano pronte a continuare fino al tramonto o fino alla morte. Il piccolo campione rosso si era fissato come una morsa alla parte anteriore dell'avversario. In mezzo a tutti i capitomboli non aveva cessato un istante di rosicchiare un'antenna vicino alla radice, dopo aver già fatto cadere l'altra.",
+            "La formica nera, più forte, lo sbatteva da una parte all'altra. Guardando da vicino vidi che gli aveva già strappato parecchi arti. Lottavano con più tenacia dei bulldog. Nessuna mostrava la minima disposizione alla ritirata. Il loro grido di guerra doveva essere: vincere o morire.",
+            "Intanto sopraggiunse sul pendio una formica rossa, sola, visibilmente eccitata. Aveva forse già finito il suo avversario, o non era ancora entrata in battaglia; probabilmente la seconda cosa, perché non le mancava nessun arto. Sua madre le aveva ordinato di tornare con lo scudo o sopra lo scudo. O forse era un Achille che aveva nutrito in disparte la propria collera e arrivava ora a vendicare o a salvare il suo Patroclo.",
+            "Vide da lontano il combattimento impari, poiché le nere erano quasi il doppio delle rosse. Si avvicinò in fretta, si fermò in guardia a mezzo pollice dai combattenti, aspettò l'occasione e balzò sul guerriero nero, attaccandolo presso la radice della zampa anteriore destra. Ora erano in tre, uniti per la vita, come se fosse stata scoperta una nuova forza d'attrazione, capace di far vergognare serrature e cementi.",
+            "A quel punto non mi sarei meravigliato di trovare le loro bande musicali appostate sopra qualche truciolo eminente, intente a suonare inni nazionali per incitare i lenti e confortare i moribondi. Mi ero anch'io eccitato quasi come se fossero uomini. Quanto più ci si pensa, tanto meno grande sembra la differenza.",
+            "Per numero di combattenti e per carneficina era un'Austerlitz o una Dresda. La battaglia di Concord! Due morti dalla parte dei patrioti, e Luther Blanchard ferito! Qui invece migliaia condividevano la stessa sorte. Non c'era un solo mercenario. Non dubitavo che combattessero per un principio, quanto i nostri antenati, e non per sottrarsi a una tassa di tre soldi sul tè.",
+            "Raccolsi il truciolo sul quale lottavano i tre guerrieri che ho descritto, lo portai in casa e lo misi sotto un bicchiere, sul davanzale, per vedere come sarebbe finita. Con una lente osservai la prima formica rossa: continuava a mordere una zampa dell'avversario, ma il suo petto era ormai lacerato ed esposto alle mandibole della nera, la cui corazza sembrava troppo spessa per essere perforata.",
+            "Combatterono ancora mezz'ora sotto il bicchiere. Quando guardai di nuovo, il soldato nero aveva separato dal corpo le teste dei nemici. Le teste ancora vive gli pendevano ai due lati, saldamente attaccate, come orribili trofei all'arcione. Privo di antenne, con appena il resto di una zampa e non so quante altre ferite, tentava debolmente di liberarsene.",
+            "Ci riuscì dopo un'altra mezz'ora. Sollevai il bicchiere, ed egli si allontanò sul davanzale in quello stato mutilato. Non so se sia sopravvissuto e abbia trascorso il resto dei suoi giorni in qualche ospizio per invalidi; pensai soltanto che da allora la sua operosità non avrebbe più reso molto.",
+            "Non seppi mai quale parte avesse vinto, né la causa della guerra. Ma per il resto della giornata mi sentii scosso e straziato, come se avessi assistito alla lotta, alla ferocia e alla carneficina di una battaglia umana davanti alla mia porta."
+          ]
+        },
+        {
+          "heading": "La pedina scompare sotto la scacchiera",
+          "paragraphs": [
+            "In autunno arrivava, come al solito, la strolaga, a mutare le penne e a bagnarsi nel lago. Prima ancora che mi alzassi, la sua risata selvaggia faceva risuonare i boschi. Alla notizia del suo arrivo i cacciatori del villaggio si mettevano subito in movimento, in carrozza e a piedi, a due e a tre, con fucili e cannocchiali: almeno dieci uomini per una strolaga.",
+            "Alcuni si appostavano su una sponda, altri su quella opposta. Il povero uccello non poteva essere dappertutto; se si tuffava qui, doveva pure riemergere là. Ma si alzava il buon vento d'ottobre, faceva frusciare le foglie e increspava l'acqua. Non era più possibile vederlo né udirlo. Le onde si sollevavano generosamente, prendendo le parti degli uccelli acquatici; i cacciatori dovevano ritirarsi verso il paese, le botteghe e i lavori incompiuti.",
+            "Un pomeriggio d'ottobre straordinariamente calmo remavo lungo la sponda settentrionale. Avevo cercato invano una strolaga per tutto il lago, quando una uscì dalla riva proprio davanti a me, diretta verso il centro. Lanciò la sua risata e si tradì. La inseguii con la pagaia; si tuffò, ma quando riemerse mi trovavo più vicino di prima.",
+            "Si tuffò di nuovo. Questa volta sbagliai la direzione che avrebbe preso e, quando tornò in superficie, eravamo lontani più di duecento metri: avevo contribuito io stesso ad aumentare la distanza. Rise ancora, forte e a lungo, con maggior ragione di prima. Manovrava con tanta astuzia che non riuscivo ad avvicinarmi.",
+            "Ogni volta che riemergeva voltava il capo da una parte e dall'altra, osservando freddamente terra e acqua. Pareva scegliere la rotta che le avrebbe permesso di ricomparire dove c'era più spazio e più lontano dalla barca. Mi condusse subito nella parte più larga del lago, e non fu possibile scacciarla di lì.",
+            "Mentre lei pensava una cosa nel suo cervello, io cercavo di indovinarla nel mio. Era un bel gioco sulla superficie liscia del lago: un uomo contro una strolaga. A un tratto la pedina dell'avversario scompare sotto la scacchiera, e il problema è collocare la vostra il più vicino possibile al punto dove riapparirà. Talvolta riemergeva inaspettatamente dalla parte opposta, dopo essere passata, a quanto pareva, proprio sotto la barca.",
+            "Aveva tanto fiato ed era così instancabile che, dopo aver nuotato lontano, si immergeva subito di nuovo. Nessuna astuzia poteva indovinare dove corresse allora, come un pesce, sotto la superficie immobile. Come dovevano stupirsi i pesci, vedendo quel visitatore sgraziato di un altro mondo attraversare i loro branchi! Eppure sott'acqua sembrava conoscere la strada tanto bene quanto in superficie, e nuotava molto più velocemente.",
+            "Una o due volte vidi un'increspatura: si avvicinava alla superficie, metteva fuori soltanto la testa per esplorare e si rituffava immediatamente. Scoprii che per me era altrettanto vantaggioso fermarmi sui remi e aspettare quanto tentare di calcolare dove sarebbe riemersa. Più volte, mentre aguzzavo gli occhi da una parte, la sua risata ultraterrena mi sorprendeva alle spalle.",
+            "Ma perché, dopo tanta astuzia, tradirsi immancabilmente con quella risata? Non bastava già il bianco del petto? Era davvero una sciocca strolaga, pensavo. Dopo un'ora sembrava fresca come all'inizio: si tuffava altrettanto volentieri e nuotava ancora più lontano. Sorprendeva vederla scivolare così serena, col petto immobile, mentre sotto l'acqua faceva tutto il lavoro con i piedi palmati.",
+            "Ogni tanto, dopo avermi eluso con particolare successo, emetteva un ululato prolungato, più simile a quello di un lupo che alla voce di un uccello. Era forse il suono più selvaggio che si udisse da quelle parti. Conclusi che rideva dei miei sforzi, sicura delle proprie risorse.",
+            "Il cielo si era coperto, ma il lago era ancora tanto liscio che potevo vedere dove rompeva la superficie anche quando non la sentivo. Il petto bianco, l'immobilità dell'aria e la calma dell'acqua erano tutti contro di lei. Finalmente riemerse lontano, lanciò uno di quegli ululati, come se chiamasse in aiuto il dio delle strolaghe, e subito arrivò un vento da est. Increspò la superficie e riempì l'aria di pioggia nebulosa. Mi sembrò che la sua preghiera fosse stata esaudita e che il suo dio fosse adirato con me. La lasciai scomparire lontano, sull'acqua agitata."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Henry David Thoreau — Walden, Brute Neighbors",
+          "url": "https://www.gutenberg.org/files/205/205-h/205-h.htm#chap13",
+          "edition": "Originale inglese del 1854, autore morto nel 1862; pubblico dominio in Italia/UE e USA. Episodi consultati direttamente, non traduzione moderna. «Repubblicani», «imperialisti», Achille e gli inni sono paragoni ironici del narratore, non spiegazioni entomologiche. Colymbus glacialis reso con strolaga; Tetrao umbellus con tetraone dal collare. Cinquanta rods resi con più di duecento metri (circa 251 m). Omesse la digressione del gatto alato e le cronache storiche delle guerre fra formiche.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Unione europea — durata del diritto d’autore",
+          "url": "https://europa.eu/youreurope/business/growing/protecting-intellectual-property/copyright/index_en.htm",
+          "edition": "Verifica separata dei diritti: termine ordinario vita dell’autore più 70 anni nell’UE. Traduzioni qui nuove dagli originali storici, non da edizioni italiane moderne. Metadati Gutenberg per Thoreau: 1817–1862, originale dichiarato public domain in the USA; Wikisource per Montaigne: 1533–1592.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Project Gutenberg — metadati e diritti di Walden",
+          "url": "https://www.gutenberg.org/ebooks/205",
+          "edition": "Scheda dell’ebook 205 consultata: testo inglese, autore 1817–1862, public domain in the USA. Nuova traduzione, esclusi apparati e traduzioni moderne.",
+          "accessed": "2026-10-25"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261025",
+      "title": "Radar · Kimi, memoria degli agenti e piazze europee",
+      "kind": "reduced",
+      "event_date": "2026-10-24",
+      "publication_date": "2026-10-25",
+      "basis": "Sei sviluppi del 24 ottobre verificati nella finestra 24/10 ore 06:01 CEST–25/10 ore 05:01 CET (24 ore effettive, cambio dell’ora incluso). Radar ridotto: esclusi rilasci precedenti, notizie senza data sufficiente e duplicati delle quattro edizioni disponibili; nessuna riserva in coda. Cercati anche geopolitica ed energia, senza aggiungere sviluppi fuori finestra. Fonti primarie per tecnica e dichiarazioni, cronaca indipendente per le proteste; implicazioni e limiti metodologici sono valutazioni editoriali. Hacker News usata soltanto per scoperta.",
+      "sections": [
+        {
+          "heading": "Kimi K3.1 Pro · lancio e controlli cyber",
+          "paragraphs": [
+            "24 ottobre · Moonshot presenta K3.1 Pro e Highspeed: contesto da un milione di token, accesso via app, Kimi Code e API."
+          ],
+          "bullets": [
+            "Pesi completi promessi entro il 4 novembre: non ancora un download locale disponibile. Classe 3T; nessun impiego su 12 GiB documentato.",
+            "Nel test interno cyber pass@3: 81,0%, contro 90,5% del checkpoint senza filtri sui dati. Riduzione rispetto al potenziale della stessa pipeline, non assenza di capacità offensive.",
+            "Highspeed: velocità dichiarata 2–3×; mancano qui misure omogenee. Fonte: Moonshot; annuncio riscontrato da Reuters alle 04:25 UTC."
+          ]
+        },
+        {
+          "heading": "AtMem 2.3.10 · ricerca separata dalla memoria inserita",
+          "paragraphs": [
+            "24 ottobre · Javad Taghia presenta una modalità opzionale, in sola lettura, per esplorare prove nella memoria persistente degli agenti."
+          ],
+          "bullets": [
+            "memory_search e memory_inspect permettono ricerche successive con limiti condivisi; identità e autorizzazioni vengono ricontrollate prima di restituire i passaggi.",
+            "DolphinBench: 390/600 task superati, 65,0%, con candidato 2.3.10b1 e lettore Hermes/Luna. Autotest di una configurazione, senza confronto controllato con 2.3.9.",
+            "Interesse per un harness: recuperare una fonte senza autorizzare automaticamente modifiche o azioni. L’installazione non abilita da sola ricerca semantica o servizi remoti. Fonte: rapporto dell’autore."
+          ]
+        },
+        {
+          "heading": "oai-math-revised · revisione pubblica dei testi matematici",
+          "paragraphs": [
+            "24 ottobre · Un gruppo di matematici annuncia sul blog di Terence Tao un progetto collettivo per correggere i manoscritti matematici prodotti da OpenAI."
+          ],
+          "bullets": [
+            "Obiettivo: esposizione comprensibile, citazioni complete, identificazione e correzione degli errori; contributi tramite issue, note e pull request.",
+            "Il fork mantiene testi TeX e PDF consultabili: migliora la tracciabilità della revisione, senza trasformare ogni risultato in una dimostrazione già verificata.",
+            "La novità è l’apertura del lavoro comunitario, non un nuovo record matematico. Fonti: annuncio dei promotori e repository mathcommunity."
+          ]
+        },
+        {
+          "heading": "Apollo · dove cercare il rendimento economico dell’AI",
+          "paragraphs": [
+            "24 ottobre · Torsten Slok pubblica una nota critica: nei grafici di Apollo ricavi per addetto e margini migliorano per i sette grandi titoli tecnologici, non per il resto dell’S&P 500."
+          ],
+          "bullets": [
+            "La tesi riguarda la diffusione dei benefici nell’economia: spesa in token e investimenti non equivalgono automaticamente a maggiori margini.",
+            "Il confronto aggregato non isola l’effetto causale dell’AI e non misura ogni impresa utilizzatrice. È un’interpretazione economica, non la prova che nessuna applicazione produca valore.",
+            "Da seguire: risultati operativi fuori dai fornitori tecnologici. Fonte: Apollo, The Daily Spark; grafici non riprodotti."
+          ]
+        },
+        {
+          "heading": "Italia · nuove proteste, esiti diversi fra città",
+          "paragraphs": [
+            "24 ottobre · Cortei contro guerra e carovita; Reuters descrive scontri a Torino, Roma e Bologna, mentre a Milano la giornata è stata in gran parte pacifica."
+          ],
+          "bullets": [
+            "La mobilitazione prosegue dopo il fine settimana precedente: il dato nuovo sono gli esiti di questo sabato, non un nuovo annuncio delle stesse proteste.",
+            "Meloni e Piantedosi difendono il dispositivo di sicurezza; la premier richiama anche la tutela del diritto di manifestare.",
+            "Posta in gioco: risposta al disagio sociale e proporzionalità dell’ordine pubblico. Le situazioni locali non vanno fuse in un unico racconto di violenza. Fonti: Reuters e dichiarazioni riportate da Agenzia DIRE."
+          ]
+        },
+        {
+          "heading": "Francia · secondo sabato di mobilitazione",
+          "paragraphs": [
+            "24 ottobre · Nuove proteste per potere d’acquisto e servizi pubblici, dopo le direttive del ministero dell’Interno su percorsi, controlli e prevenzione dei disordini."
+          ],
+          "bullets": [
+            "La cronaca di Agenzia DIRE documenta scontri in più città e un corteo parigino prevalentemente pacifico, seguito da tensioni finali.",
+            "Il ministro Nuñez riferisce quasi mille fermi e giudica la giornata diversa dal 17 ottobre: conteggio e valutazione sono attribuiti al governo, non verdetti giudiziari.",
+            "Il confronto politico si sposta sulla continuità della mobilitazione e sui limiti delle restrizioni. Fonti: ministero dell’Interno e Agenzia DIRE, aggiornamento delle 21:55."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Moonshot — Introducing Kimi K3.1 Pro",
+          "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+          "edition": "Comunicato e rapporto tecnico consultati: disponibilità, rilascio futuro dei pesi e valutazione cyber interna. Parametri esatti, licenza dei pesi futuri e prezzo non dedotti dal marketing.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Reuters — Moonshot curbs hacking ability in new Kimi model",
+          "url": "https://www.reuters.com/technology/moonshot-curbs-hacking-ability-new-kimi-model-fears-grow-over-ai-powered-2026-10-24/",
+          "edition": "24 ottobre 2026, 04:25 UTC. Riscontro della presentazione e delle dichiarazioni del produttore; risultati cyber non verificati indipendentemente.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Javad Taghia — AtMem 2.3.10: Bounded Evidence Discovery",
+          "url": "https://huggingface.co/blog/javadtaghia/atmem-2310-bounded-evidence-discovery-for-persiste",
+          "edition": "Articolo primario del 24 ottobre 2026. Consultate sezioni su meccanismo, configurazione DolphinBench, risultati e limiti; test 2.3.10b1. Nessuna superiorità causale o disponibilità gratuita dell’intera configurazione inferita.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Nellore, Schmitt, Villar, Ward — oai-math-revised",
+          "url": "https://terrytao.wordpress.com/2026/10/24/oai-math-revised-a-community-hub-for-revising-openais-math-write-ups/",
+          "edition": "Annuncio ospitato da Terence Tao, 24 ottobre 2026: progetto di revisione, non attribuzione a Tao della paternità dei manoscritti.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "mathcommunity — oai-math-revised",
+          "url": "https://github.com/mathcommunity/oai-math-revised",
+          "edition": "README consultato: workflow di contributo, TeX, PDF e note; nessuna lettura o validazione integrale dei manoscritti dichiarata.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Torsten Slok — No Signs of AI Payoff Outside the Tech Sector",
+          "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "edition": "Nota primaria datata 24 ottobre 2026. Sintesi autonoma della tesi, senza riproduzione delle tavole; limiti dell’inferenza causale aggiunti editorialmente.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Reuters — Protests sweep Italian cities",
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/24/protests-sweep-italian-cities-amid-heavy-security-presence-some-violence-reported",
+          "edition": "Cronaca Reuters del 24 ottobre 2026, letta nel testo inglese ripubblicato da Internazionale. Nessun totale nazionale dei partecipanti inferito.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Agenzia DIRE — Meloni e Piantedosi dopo le manifestazioni",
+          "url": "https://www.dire.it/24-10-2026/1280355-meloni-grazie-alle-forze-dellordine-il-diritto-di-manifestare-va-sempre-garantito-piantedosi-isolati-i-violenti/",
+          "edition": "24 ottobre 2026, 21:49, aggiornamento 23:00. Dichiarazioni dirette dei due rappresentanti del governo riportate da www.dire.it; cronaca triangolata con Reuters.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Ministère de l’Intérieur — Journée de mobilisation du samedi 24 octobre 2026",
+          "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse/journee-de-mobilisation-du-samedi-24-octobre-2026",
+          "edition": "Comunicato del 23 ottobre sul dispositivo applicato il 24: contesto primario, non presentato come nuova decisione del 24. La notizia è lo svolgimento della mobilitazione successiva.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Agenzia DIRE — La Francia è tornata in piazza",
+          "url": "https://www.dire.it/24-10-2026/1280251-la-francia-e-tornata-in-piazza-disordini-a-tolosa-marsiglia-lille-e-strasburgo-a-parigi-corteo-e-finale-di-scontri/",
+          "edition": "24 ottobre 2026, 18:17, aggiornamento 21:55, www.dire.it. Cronaca e dichiarazioni ministeriali; «fermi» non equiparati a condanne.",
+          "accessed": "2026-10-25"
+        },
+        {
+          "title": "Hacker News — selezione del 24 ottobre",
+          "url": "https://news.ycombinator.com/front?day=2026-10-24",
+          "edition": "Usata per individuare piste, non come prova delle notizie. Esclusi OBS Studio 33.0.0 (release 23 ottobre 22:20 UTC), LogSync (comunicato 23 ottobre), OlmoEarth v1.3 (22 ottobre), e ulteriori contenuti fuori finestra o senza riscontro cronologico sufficiente.",
+          "accessed": "2026-10-25"
+        }
+      ]
+    }
+  ]
+}
