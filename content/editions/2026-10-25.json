@@ -8,7 +8,7 @@
       "id": "philosophy-20261025",
       "title": "Il retrobottega che ci appartiene",
       "kind": "synthesis",
-      "basis": "Michel de Montaigne, Essais, I, 39, «De la solitude», testo francese storico in pubblico dominio. Selezione e nuova traduzione italiana con tagli, raccordi e chiarimenti editoriali, soprattutto nella chiusura: ritirarsi senza portare intatta con sé la dipendenza dal giudizio altrui.",
+      "basis": "Michel de Montaigne, Essais, I, 39, «De la solitude». Selezione e nuova traduzione dal francese storico in pubblico dominio, con tagli e chiarimenti editoriali: il viaggio, il rifugio interiore, l’uso dei beni.",
       "sections": [
         {
           "heading": "Il viaggiatore che porta sé stesso",
@@ -40,7 +40,7 @@
         {
           "title": "Montaigne — De la solitude",
           "url": "https://fr.wikisource.org/wiki/Essais/Livre_I/Chapitre_39",
-          "edition": "Testo francese dell’Exemplaire de Bordeaux, come identificato dalla trascrizione; opera cinquecentesca, autore morto nel 1592. Originale in pubblico dominio in Italia/UE e USA; nessuna traduzione moderna riprodotta. Passaggi consultati sul viaggio, il retrobottega e l’uso moderato dei beni. Titolo e sezioni redazionali.",
+          "edition": "Testo francese dell’Exemplaire de Bordeaux, come identificato dalla trascrizione; opera cinquecentesca, autore morto nel 1592. Originale in pubblico dominio in Italia/UE e USA; nessuna traduzione moderna riprodotta. Passaggi consultati sul viaggio, il retrobottega e l’uso moderato dei beni. Titolo e sezioni redazionali. Chiusura rielaborata editorialmente per rendere esplicito il nesso fra ritiro e dipendenza dal giudizio; non presentata come citazione letterale.",
           "accessed": "2026-10-25"
         },
         {
@@ -56,7 +56,7 @@
       "id": "books-20261025",
       "title": "Un uomo contro una strolaga",
       "kind": "synthesis",
-      "basis": "Henry David Thoreau, Walden (1854), «Brute Neighbors». Nuova traduzione italiana selettiva dall’inglese in pubblico dominio: vicini della capanna, battaglia delle formiche, inseguimento sul lago. Tagli fra e dentro gli episodi, titoli redazionali; conservati prima persona, ironia e immagini dell’originale.",
+      "basis": "Henry David Thoreau, Walden (1854), «Brute Neighbors». Selezione e nuova traduzione dall’inglese in pubblico dominio, con tagli: i vicini della capanna, la battaglia delle formiche, l’inseguimento della strolaga.",
       "sections": [
         {
           "heading": "Una briciola sulla manica",
@@ -139,7 +139,7 @@
       "kind": "reduced",
       "event_date": "2026-10-24",
       "publication_date": "2026-10-25",
-      "basis": "Sei sviluppi del 24 ottobre verificati nella finestra 24/10 ore 06:01 CEST–25/10 ore 05:01 CET (24 ore effettive, cambio dell’ora incluso). Radar ridotto: esclusi rilasci precedenti, notizie senza data sufficiente e duplicati delle quattro edizioni disponibili; nessuna riserva in coda. Cercati anche geopolitica ed energia, senza aggiungere sviluppi fuori finestra. Fonti primarie per tecnica e dichiarazioni, cronaca indipendente per le proteste; implicazioni e limiti metodologici sono valutazioni editoriali. Hacker News usata soltanto per scoperta.",
+      "basis": "Sei sviluppi del 24 ottobre: modelli, memoria degli agenti, ricerca matematica, economia e proteste europee. Radar ridotto: altre piste erano fuori dalle ultime 24 ore o prive di riscontri sufficienti. Fonti per ogni scheda; implicazioni editoriali.",
       "sections": [
         {
           "heading": "Kimi K3.1 Pro · lancio e controlli cyber",
@@ -272,7 +272,7 @@
         {
           "title": "Hacker News — selezione del 24 ottobre",
           "url": "https://news.ycombinator.com/front?day=2026-10-24",
-          "edition": "Usata per individuare piste, non come prova delle notizie. Esclusi OBS Studio 33.0.0 (release 23 ottobre 22:20 UTC), LogSync (comunicato 23 ottobre), OlmoEarth v1.3 (22 ottobre), e ulteriori contenuti fuori finestra o senza riscontro cronologico sufficiente.",
+          "edition": "Usata per individuare piste, non come prova delle notizie. Esclusi OBS Studio 33.0.0 (release 23 ottobre 22:20 UTC), LogSync (comunicato 23 ottobre), OlmoEarth v1.3 (22 ottobre), e ulteriori contenuti fuori finestra o senza riscontro cronologico sufficiente. Finestra editoriale: 24/10 ore 06:01 CEST–25/10 ore 05:01 CET, 24 ore effettive. Confrontate tutte e quattro le edizioni disponibili e la coda riserve vuota. Ricercate anche politica, geopolitica ed energia; nessun evergreen inserito per raggiungere un numero di notizie.",
           "accessed": "2026-10-25"
         }
       ]
