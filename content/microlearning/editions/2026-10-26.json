@@ -1,0 +1,550 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "cards": [
+    {
+      "id": "micro-20261026-accuracy",
+      "topic": "Machine learning",
+      "title": "Il 99% che non trova un solo difetto.",
+      "hook": "La percentuale complessiva può nascondere la classe che interessa.",
+      "paragraphs": [
+        "Su mille pezzi, dieci sono difettosi. Un classificatore che risponde sempre “buono” ottiene il 99% di accuratezza, ma lascia passare ogni difetto. La balanced accuracy media il richiamo delle due classi: qui vale il 50%. Dare lo stesso peso alle classi cambia completamente la fotografia del risultato."
+      ],
+      "takeaway": "La percentuale complessiva può nascondere la classe che interessa.",
+      "basis": "Consultato § Balanced accuracy score. Conteggi inventati a scopo didattico, non dati industriali. Media dei richiami senza correzione per il caso. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-accuracy.svg",
+        "alt": "Matrice di confusione con 990 buoni riconosciuti, dieci difetti mancati e nessuna previsione di difetto.",
+        "caption": "Esempio sintetico: tutti i pezzi previsti buoni.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "scikit-learn · Balanced accuracy",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#balanced-accuracy-score"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-snow",
+      "topic": "Natura",
+      "title": "Sei braccia, nessuna regia centrale.",
+      "hook": "Somigliarsi non richiede sempre comunicare.",
+      "paragraphs": [
+        "Le ramificazioni di un cristallo di neve crescono separatamente, ma attraversano quasi le stesse variazioni di temperatura e umidità. Per questo possono somigliarsi tanto: condividono le condizioni, senza scambiarsi istruzioni. La simmetria a sei direzioni nasce dal reticolo del ghiaccio; i cristalli quasi perfetti delle fotografie sono una selezione, non la forma più comune."
+      ],
+      "takeaway": "Somigliarsi non richiede sempre comunicare.",
+      "basis": "Consultati i paragrafi su simmetria, crescita indipendente e irregolarità di Libbrecht. Foto: prime due righe della tavola XIX, Monthly Weather Review 1902, collezione storica NWS; autore e pubblico dominio verificati su Commons. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-snow.jpg",
+        "alt": "Sei fotomicrografie storiche di cristalli di neve: piastre esagonali e ramificazioni diverse.",
+        "caption": "Sei cristalli fotografati da Bentley nel 1902.",
+        "credit": "Wilson A. Bentley · tavola XIX, 1902; ritaglio Aurelius",
+        "license": "Pubblico dominio · opera del 1902, autore morto nel 1931",
+        "source": "https://commons.wikimedia.org/wiki/File:SnowflakesWilsonBentley.jpg"
+      },
+      "sources": [
+        {
+          "title": "Kenneth Libbrecht · Snowflake Science",
+          "url": "https://www.snowcrystals.com/science/science.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-hats",
+      "topic": "Elementi finiti",
+      "title": "La soluzione si costruisce con piccoli cappelli.",
+      "hook": "Il coefficiente di una base nodale è il valore nel nodo.",
+      "paragraphs": [
+        "Ogni funzione a cappello vale uno nel proprio nodo e zero negli altri, poi si spegne oltre i due elementi vicini. Moltiplicandola per un coefficiente e sommando i contributi, costruisci una curva continua a tratti. Nei nodi, quei coefficienti sono proprio i valori della soluzione: una descrizione globale nasce da mattoni locali."
+      ],
+      "takeaway": "Il coefficiente di una base nodale è il valore nel nodo.",
+      "basis": "Consultate le sezioni sulle basi FEM locali di Langtangen. Disegno originale in coordinate adimensionali; mostrati tre nodi interni, non un problema completo con condizioni al contorno. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-hats.svg",
+        "alt": "Tre funzioni triangolari su nodi equidistanti: ognuna raggiunge uno nel proprio nodo e zero nei nodi vicini.",
+        "caption": "Basi lineari 1D: ciascuna ha supporto locale.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Hans Petter Langtangen · Basic finite element methods",
+          "url": "https://hplgit.github.io/INF5620/doc/notes/fem-sphinx/main_fem.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-reynolds",
+      "topic": "Fluidodinamica",
+      "title": "Un modello più piccolo può chiedere più velocità.",
+      "hook": "La scala geometrica e quella della velocità possono compensarsi.",
+      "paragraphs": [
+        "Dimezza tutte le lunghezze di un modello e raddoppia la velocità, usando lo stesso fluido: il numero di Reynolds resta uguale, perché contiene il prodotto UL. Conservi così il rapporto fra inerzia e viscosità. È una chiave della similitudine, ma onde libere o comprimibilità possono imporre anche altri rapporti da rispettare."
+      ],
+      "takeaway": "La scala geometrica e quella della velocità possono compensarsi.",
+      "basis": "Consultata la derivazione NASA Re = ρUL/μ = UL/ν. Numeri illustrativi, ν = 10⁻⁶ m²/s; non basta uguagliare Re per ogni tipo di esperimento. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-reynolds.svg",
+        "alt": "Due corpi geometricamente simili, con lunghezza dimezzata e velocità raddoppiata; viscosità cinematica identica.",
+        "caption": "Due scale, stesso Re: 10.000 nell’esempio.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NASA Glenn · Reynolds Number",
+          "url": "https://www.grc.nasa.gov/www/k-12/airplane/reynolds.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-mangrove",
+      "topic": "Ecologia costiera",
+      "title": "Le radici fanno rallentare anche la costa.",
+      "hook": "Una forma vivente può modificare il movimento dell’acqua.",
+      "paragraphs": [
+        "Tra le radici delle mangrovie l’acqua incontra ostacoli e rallenta. I sedimenti possono così depositarsi e contribuire a costruire il fondo fangoso. Lo stesso intreccio offre riparo a pesci e altri organismi: la struttura dell’albero modifica il luogo in cui vive, e quel luogo diventa abitabile per molti altri."
+      ],
+      "takeaway": "Una forma vivente può modificare il movimento dell’acqua.",
+      "basis": "Consultata NOAA su radici, sedimentazione e habitat. Foto Steve Hillebrand/USFWS, 1 febbraio 2009: autore e pubblico dominio verificati sulla scheda originale; compressione JPEG con metadati conservati. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-mangrove.jpg",
+        "alt": "Intreccio di radici esposte e giovani foglie in un ambiente di mangrovia.",
+        "caption": "Radici di mangrovia al rifugio J.N. “Ding” Darling.",
+        "credit": "Steve Hillebrand / USFWS",
+        "license": "Public Domain · USFWS",
+        "source": "https://www.fws.gov/media/mangrove-swamp-1"
+      },
+      "sources": [
+        {
+          "title": "NOAA · What is a mangrove forest?",
+          "url": "https://oceanservice.noaa.gov/facts/mangroves.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-amdahl",
+      "topic": "Architetture informatiche",
+      "title": "Trentadue processori non fanno trentadue volte prima.",
+      "hook": "Il beneficio dipende anche da ciò che non si parallelizza.",
+      "paragraphs": [
+        "Se il 20% del tempo resta seriale, anche infiniti processori non possono superare un’accelerazione di cinque volte, a problema fisso. Con otto processori il modello di Amdahl dà circa 3,33 volte. Il tratto seriale continua a occupare tempo intero mentre quello parallelo si accorcia: è lì che la curva comincia ad appiattirsi."
+      ],
+      "takeaway": "Il beneficio dipende anche da ciò che non si parallelizza.",
+      "basis": "Consultata la sezione Amdahl’s Law di LLNL. S = 1/(0,2 + 0,8/N); frazioni riferite al tempo seriale iniziale. Grafico analitico, non benchmark; comunicazione e sbilanciamenti esclusi. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-amdahl.svg",
+        "alt": "Accelerazione secondo Amdahl per uno fino a 32 processori; limite asintotico a cinque.",
+        "caption": "Curva analitica: 80% parallelizzabile, overhead nullo.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "LLNL · Introduction to Parallel Computing, Amdahl’s Law",
+          "url": "https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-diffusion",
+      "topic": "Trasporto",
+      "title": "Per andare due volte più lontano serve quattro volte il tempo.",
+      "hook": "La distanza diffusiva cresce come √t, non come t.",
+      "paragraphs": [
+        "Una macchia che si allarga per sola diffusione non avanza a velocità costante. In una dimensione, la distanza quadratica media è 2Dt: la larghezza caratteristica cresce come la radice del tempo. A diffusività invariata, raddoppiare quella distanza richiede quattro volte il tempo. Nei canali piccoli, questo rende le distanze di mescolamento una scelta decisiva."
+      ],
+      "takeaway": "La distanza diffusiva cresce come √t, non come t.",
+      "basis": "Consultata la soluzione gaussiana nella pagina Random Walk. Diffusione 1D libera, D costante, impulso iniziale all’origine, nessun flusso o reazione. D = 1 mm²/s è illustrativo; larghezza σ = √(2Dt). Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-diffusion.svg",
+        "alt": "Due gaussiane normalizzate per diffusività di un millimetro quadrato al secondo: a quattro secondi la distribuzione è due volte più larga.",
+        "caption": "Distribuzioni gaussiane analitiche a 1 e 4 secondi.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "University of Florida · Random Walk",
+          "url": "https://cmp.phys.ufl.edu/PHZ4710/files/unit1/random-walk.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-banquet",
+      "topic": "Filosofia",
+      "title": "La porzione più grande non è sempre la scelta migliore.",
+      "hook": "Uno stesso gesto appartiene a più di una relazione.",
+      "paragraphs": [
+        "A un banchetto, prendere il pezzo più grande può soddisfare l’appetito e insieme guastare lo stare a tavola con gli altri. Epitteto usa proprio questo contrasto: lo stesso gesto va considerato rispetto al corpo e rispetto alla compagnia. Il piacere del boccone non esaurisce ciò che sta accadendo intorno al piatto."
+      ],
+      "takeaway": "Uno stesso gesto appartiene a più di una relazione.",
+      "basis": "Parafrasi autonoma di Enchiridion XXXVI, letto nella traduzione Higginson; nessuna riproduzione estesa né uso dell’introduzione moderna. Diagramma editoriale: proporzioni illustrative, non prescritte da Epitteto. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-banquet.svg",
+        "alt": "Due piatti suddivisi fra quattro commensali: porzioni uguali e una porzione dominante, senza indicare una regola numerica morale.",
+        "caption": "Ripartizioni illustrative di un unico piatto condiviso.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Epitteto · Enchiridion, XXXVI; trad. T. W. Higginson",
+          "url": "https://www.gutenberg.org/files/45109/45109-h/45109-h.htm"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-semaphore",
+      "topic": "Orchestrazione software",
+      "title": "Tre posti possono governare cento richieste.",
+      "hook": "Concorrenza massima e frequenza delle richieste sono limiti diversi.",
+      "paragraphs": [
+        "Un semaforo con tre permessi lascia entrare al massimo tre operazioni nella sezione protetta. Le altre aspettano; quando una esce, libera un posto. Un coordinatore può così accettare molte richieste senza avviarle tutte insieme contro una risorsa limitata. Il limite riguarda quante sono attive contemporaneamente, non quante possono partire in un minuto."
+      ],
+      "takeaway": "Concorrenza massima e frequenza delle richieste sono limiti diversi.",
+      "basis": "Consultata la documentazione asyncio.Semaphore: contatore, attesa e rilascio. Gantt illustrativo con tempi adimensionali; l’ordine delle attese non è garantito qui. Non è un rate limiter né una primitiva thread-safe. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-semaphore.svg",
+        "alt": "Tre corsie occupate; una nuova richiesta comincia solo quando termina quella della terza corsia.",
+        "caption": "Schema temporale: un posto liberato viene riutilizzato.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Python · asyncio.Semaphore",
+          "url": "https://docs.python.org/3/library/asyncio-sync.html#semaphore"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-sparse",
+      "topic": "Calcolo scientifico",
+      "title": "La matrice enorme è quasi tutta vuota.",
+      "hook": "Le interazioni locali si riconoscono nella struttura della matrice.",
+      "paragraphs": [
+        "Nella diffusione su una griglia 1D, un nodo interno comunica direttamente solo con i due vicini. Il sistema lineare può quindi avere tre diagonali non nulle. Per n incognite, sono appena 3n − 2 coefficienti invece di n²: un archivio sparso conserva valori e posizioni, lasciando impliciti tutti quegli zeri."
+      ],
+      "takeaway": "Le interazioni locali si riconoscono nella struttura della matrice.",
+      "basis": "Consultata la costruzione tridiagonale sparsa nella demo Cambridge. Estensione editoriale al caso generale con diagonale centrale non nulla: conteggio 3n − 2. La sparsità cambia con discretizzazione e ordinamento. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-sparse.svg",
+        "alt": "Matrice a tre diagonali evidenziate; 25 celle occupate su 81 e stencil con il nodo centrale e i due vicini.",
+        "caption": "Esempio 9 × 9: 25 coefficienti non nulli.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Cambridge · Stability of Finite Difference Methods",
+          "url": "https://www.damtp.cam.ac.uk/user/hf323/M21-II-NA/demos/pde_stability/pde_stability.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-marine-snow",
+      "topic": "Oceano",
+      "title": "Nel buio profondo continua a nevicare.",
+      "hook": "La superficie alimenta anche una parte del mare senza luce.",
+      "paragraphs": [
+        "Dalla superficie scende una pioggia di frammenti biologici, escreti e altre particelle: la neve marina. Gli aggregati possono crescere durante la discesa e diventano cibo per organismi che vivono lontano dalla luce. Molto materiale viene consumato prima del fondo; ciò che arriva laggiù collega comunque la vita superficiale alle profondità."
+      ],
+      "takeaway": "La superficie alimenta anche una parte del mare senza luce.",
+      "basis": "Consultate NOAA Marine Snow e la scheda del ctenoforo. Foto NOAA OER, Windows to the Deep 2019; riuso verificato nelle FAQ e nel Media Kit, senza copyright separato. Compressione JPEG con metadati originali conservati. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-marine-snow.jpg",
+        "alt": "Ctenoforo trasparente fra piccoli frammenti sospesi nell’acqua profonda.",
+        "caption": "Un ctenoforo si nutre di neve marina · NOAA, 2019.",
+        "credit": "NOAA Office of Ocean Exploration and Research · Windows to the Deep 2019",
+        "license": "Public Domain · NOAA Ocean Exploration",
+        "source": "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-ex1903-dailyupdates-june22-media-ctenophore/"
+      },
+      "sources": [
+        {
+          "title": "NOAA · What is marine snow?",
+          "url": "https://oceanservice.noaa.gov/facts/marinesnow.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-stability",
+      "topic": "Metodi numerici",
+      "title": "Metà passo nello spazio, un quarto nel tempo.",
+      "hook": "Il costo del raffinamento include anche i passi temporali.",
+      "paragraphs": [
+        "Per la diffusione 1D, Euler esplicito con differenze centrate richiede DΔt/Δx² ≤ 1/2. Se dimezzi la distanza fra nodi, devi ridurre di quattro volte il passo temporale massimo. A parità di intervallo simulato, raddoppiano circa i nodi e quadruplicano i passi: il lavoro può crescere di otto volte, anche in una sola dimensione."
+      ],
+      "takeaway": "Il costo del raffinamento include anche i passi temporali.",
+      "basis": "Consultata la sezione Diffusion Equation (Euler Method) di Cambridge. D costante positivo, griglia uniforme, schema FTCS 1D. Stima di costo per aggiornamento lineare nel numero di nodi; non valida per ogni solver. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-stability.svg",
+        "alt": "Griglia con spaziatura dimezzata e barra del passo temporale ridotta a un quarto.",
+        "caption": "Confronto del limite di stabilità, non di tempi misurati.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Cambridge · Diffusion Equation, Euler Method",
+          "url": "https://www.damtp.cam.ac.uk/user/hf323/M21-II-NA/demos/pde_stability/pde_stability.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-adiabatic",
+      "topic": "Termodinamica",
+      "title": "Scaldare un gas senza passargli calore.",
+      "hook": "Calore e lavoro sono due modi diversi di trasferire energia.",
+      "paragraphs": [
+        "Un gas può diventare più caldo anche quando non riceve calore dall’esterno: basta compiere lavoro comprimendolo. Per un gas ideale con γ = 1,4, una compressione adiabatica reversibile a metà volume porta 300 K a circa 396 K. L’energia attraversa il confine come lavoro; “adiabatico” descrive lo scambio di calore, non una temperatura immobile."
+      ],
+      "takeaway": "Calore e lavoro sono due modi diversi di trasferire energia.",
+      "basis": "Consultate le relazioni NASA per compressione isentropica. Sistema chiuso, gas ideale, calori specifici costanti, γ = cp/cv = 1,4; reversibilità oltre all’assenza di calore. Calcolo editoriale 300·2^0,4. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-adiabatic.svg",
+        "alt": "Due cilindri con la stessa massa di gas: volume dimezzato dal pistone e temperatura da 300 a 396 kelvin.",
+        "caption": "Calcolo ideale: T₂/T₁ = (V₁/V₂)^0,4.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NASA Glenn · Isentropic Compression",
+          "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/isentrophic-compression/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-upwelling",
+      "topic": "Natura e clima",
+      "title": "Il vento può portare il nutrimento dal fondo.",
+      "hook": "Una corrente verticale può cambiare la fertilità del mare.",
+      "paragraphs": [
+        "Quando il vento favorisce l’allontanamento dell’acqua superficiale dalla costa, acqua più profonda risale per sostituirla. È spesso fredda e ricca di nutrienti, che alimentano la produzione biologica nella zona illuminata. Un tratto di mare molto produttivo può quindi dipendere da un movimento che comincia nell’aria e prosegue sotto la superficie."
+      ],
+      "takeaway": "Una corrente verticale può cambiare la fertilità del mare.",
+      "basis": "Consultata la pagina NOAA Upwelling. Schema qualitativo del ricambio; la direzione del trasporto dipende da vento, emisfero e geometria. Nessuna corrispondenza universale tra direzione del vento e freccia orizzontale. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-upwelling.svg",
+        "alt": "Sezione del mare vicino a una costa: trasporto superficiale verso il largo e risalita di acqua profonda.",
+        "caption": "Upwelling costiero: superficie via, acqua profonda su.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NOAA · What is upwelling?",
+          "url": "https://oceanservice.noaa.gov/facts/upwelling.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-wal",
+      "topic": "Database",
+      "title": "Il registro arriva sul disco prima delle pagine.",
+      "hook": "Una modifica registrata può essere ricostruita dopo un crash.",
+      "paragraphs": [
+        "Un database può confermare una transazione senza aver ancora riscritto tutte le pagine delle tabelle. Con il write-ahead log registra prima in modo durevole le modifiche necessarie. Se arriva un crash, il recupero può ripeterle sulle pagine rimaste indietro. Separare registro sequenziale e pagine dati rende possibili scritture efficienti senza perdere quel percorso di ricostruzione."
+      ],
+      "takeaway": "Una modifica registrata può essere ricostruita dopo un crash.",
+      "basis": "Consultata l’introduzione WAL di PostgreSQL. Diagramma semplificato con durabilità sincrona; non descrive ogni configurazione di commit. Le pagine possono essere scritte in altri momenti rispettando la precedenza del WAL. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-wal.svg",
+        "alt": "Sequenza: WAL durevole, conferma del commit, aggiornamento successivo delle pagine; recupero REDO disponibile dopo un crash.",
+        "caption": "Ordine semplificato di una scrittura durevole.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "PostgreSQL · Write-Ahead Logging",
+          "url": "https://www.postgresql.org/docs/current/wal-intro.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-aliasing",
+      "topic": "Segnali e controllo",
+      "title": "Due frequenze diverse, gli stessi punti.",
+      "hook": "Campionare non conserva automaticamente la frequenza originale.",
+      "paragraphs": [
+        "Campiona un coseno a 900 Hz mille volte al secondo: i punti coincidono con quelli di un coseno a 100 Hz, con la stessa fase iniziale. Dai soli campioni non distingui i due segnali. È aliasing: le oscillazioni oltre la banda utile possono travestirsi da oscillazioni lente. Per evitarlo, la banda va limitata prima del campionamento."
+      ],
+      "takeaway": "Campionare non conserva automaticamente la frequenza originale.",
+      "basis": "Consultata la derivazione del campionamento Analog Devices. Esempio originale con coseni unitari, fase zero e campioni ideali. Per una banda base limitata B, fs > 2B; un filtro analogico anti-alias precede l’ADC. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-aliasing.svg",
+        "alt": "Coseni di 100 e 900 hertz fra zero e dieci millisecondi; i campioni a mille hertz sono identici.",
+        "caption": "Curve analitiche; punti comuni ogni millisecondo.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Analog Devices · Basics of Band-Limited Sampling and Aliasing",
+          "url": "https://www.analog.com/en/resources/technical-articles/basics-of-bandlimited-sampling-and-aliasing.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-tides",
+      "topic": "Terra e cielo",
+      "title": "La marea cambia anche fra una settimana e l’altra.",
+      "hook": "L’escursione di marea segue anche un ritmo legato alle fasi.",
+      "paragraphs": [
+        "Vicino a Luna nuova e piena, Sole, Terra e Luna sono allineati: l’effetto solare rafforza quello lunare e l’escursione fra alta e bassa marea tende ad aumentare. Ai quarti, la geometria ad angolo retto la riduce. È un ritmo diverso da quello delle singole maree; coste, fondali e meteo ne modificano la manifestazione locale."
+      ],
+      "takeaway": "L’escursione di marea segue anche un ritmo legato alle fasi.",
+      "basis": "Consultata la pagina NOAA Spring and Neap Tides. Illustrata la Luna nuova come una delle due sizigie; nessuna previsione locale né altezza numerica. Le geometrie sono indicative, non un modello idrodinamico. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-tides.svg",
+        "alt": "Confronto tra allineamento Sole-Luna-Terra e angolo retto Sole-Terra-Luna: escursione di marea rispettivamente maggiore e minore.",
+        "caption": "Sizigia e quadratura, senza scala astronomica.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NOAA · What are spring and neap tides?",
+          "url": "https://oceanservice.noaa.gov/facts/springtide.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-rounding",
+      "topic": "Calcolo numerico",
+      "title": "Un’unità può sparire prima della sottrazione.",
+      "hook": "L’ordine delle operazioni conta quando la precisione è finita.",
+      "paragraphs": [
+        "In aritmetica binary64, vicino a 10¹⁶ i numeri rappresentabili distano due unità. Aggiungere uno a 10¹⁶ arrotonda quindi di nuovo a 10¹⁶, nella modalità usuale al più vicino con pareggi al pari. Sottraendo poi 10¹⁶ ottieni zero, mentre il risultato matematico sarebbe uno. L’ultima sottrazione rende visibile una perdita avvenuta prima."
+      ],
+      "takeaway": "L’ordine delle operazioni conta quando la precisione è finita.",
+      "basis": "Consultate le sezioni di Goldberg su arrotondamento e cancellazione. Esempio editoriale verificato con Number JavaScript IEEE 754 binary64; round-to-nearest, ties-to-even. Non tutte le sottrazioni vicine introducono errore. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-rounding.svg",
+        "alt": "Numeri rappresentabili distanziati di due vicino a dieci alla sedicesima; il punto intermedio dieci alla sedicesima più uno viene arrotondato in basso.",
+        "caption": "Esempio calcolato in binary64, arrotondamento standard.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "David Goldberg · Floating-Point Arithmetic, Oracle",
+          "url": "https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-worms",
+      "topic": "Storia naturale",
+      "title": "La pietra si seppellisce mentre il suolo sale.",
+      "hook": "Un processo lento diventa visibile se conserva una traccia.",
+      "paragraphs": [
+        "Darwin seguì frammenti sparsi nei prati e ritrovati anni dopo sotto uno strato di terra fine. I lombrichi portavano materiale in superficie; pioggia e vento lo distribuivano, coprendo gradualmente gli oggetti. Per capire quel lento cambiamento bastava anche una sezione del prato: un piccolo lavoro ripetuto lasciava una traccia leggibile nel terreno."
+      ],
+      "takeaway": "Un processo lento diventa visibile se conserva una traccia.",
+      "basis": "Consultato Darwin, The Formation of Vegetable Mould (1881), cap. III, pp. 129–134, osservazioni di calce e ceneri. Parafrasi originale; disegno qualitativo, senza attribuire tassi universali alle sue misure locali. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-worms.svg",
+        "alt": "Due sezioni di prato: frammenti inizialmente in superficie e poi coperti dalla terra portata in alto dai lombrichi.",
+        "caption": "Ricostruzione qualitativa del seppellimento descritto.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Charles Darwin · The Formation of Vegetable Mould, cap. III, pp. 129–134",
+          "url": "https://darwin-online.org.uk/content/contentblock?basepage=1&itemID=F1357&hitpage=1&viewtype=text"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261026-rule110",
+      "topic": "Wolfram e computazione",
+      "title": "Una riga di celle può diventare un computer.",
+      "hook": "L’universalità riguarda i calcoli realizzabili, non l’aspetto della macchina.",
+      "paragraphs": [
+        "La regola 110 aggiorna ogni cella usando soltanto tre valori: il proprio e quelli dei due vicini. Matthew Cook ha dimostrato che, con condizioni iniziali e sfondi opportunamente codificati, può realizzare computazione universale. Il salto curioso è questo: la capacità di calcolare non richiede componenti dall’aspetto di un processore. Questa trama mostra l’evoluzione, non la dimostrazione."
+      ],
+      "takeaway": "L’universalità riguarda i calcoli realizzabili, non l’aspetto della macchina.",
+      "basis": "Letti abstract di Cook e descrizione della regola su Wolfram MathWorld. Non è dichiarata lettura della dimostrazione integrale. Visual calcolato dagli otto bit di 110, non riprodotto da una figura protetta. Fonti consultate il 26 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261026-rule110.svg",
+        "alt": "Cinquantasei generazioni della regola 110 partendo da una singola cella attiva su sfondo inattivo.",
+        "caption": "Evoluzione calcolata da una cella; non un programma universale.",
+        "credit": "Aurelius · visual originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Matthew Cook · Universality in Elementary Cellular Automata, abstract",
+          "url": "https://www.complex-systems.com/abstracts/v15_i01_a01/"
+        },
+        {
+          "title": "Wolfram MathWorld · Rule 110",
+          "url": "https://mathworld.wolfram.com/Rule110.html"
+        }
+      ]
+    }
+  ]
+}
