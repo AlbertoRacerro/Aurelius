@@ -1,0 +1,546 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "cards": [
+    {
+      "id": "micro-20261027-calibration",
+      "topic": "Machine learning",
+      "title": "Ottanta per cento di che cosa?",
+      "hook": "Ottanta per cento di che cosa?",
+      "paragraphs": [
+        "Un modello assegna probabilità 0,8 a cento casi simili. Se è ben calibrato, circa ottanta dovrebbero risultare positivi: il numero descrive una frequenza nel gruppo, non la certezza sul singolo caso. Un sistema può ordinare bene i casi dal meno al più rischioso e avere comunque probabilità sistematicamente troppo alte."
+      ],
+      "takeaway": "Calibrazione e capacità di distinguere le classi sono proprietà diverse.",
+      "basis": "Esplorazione indipendente dalla documentazione scikit-learn, sezioni sulla calibrazione e sui reliability diagram. Conteggi illustrativi; nessun dataset reale. Non è materiale di un corso.",
+      "sources": [
+        {
+          "title": "scikit-learn — Probability calibration",
+          "url": "https://scikit-learn.org/stable/modules/calibration.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-calibration.svg",
+        "alt": "Dieci cerchi, otto verdi e due grigi: un gruppo illustrativo con frequenza positiva 80%.",
+        "caption": "Una probabilità si controlla su molti casi.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://scikit-learn.org/stable/modules/calibration.html"
+      }
+    },
+    {
+      "id": "micro-20261027-beaver",
+      "topic": "Natura",
+      "title": "Una casa che cambia il torrente",
+      "hook": "Una casa che cambia il torrente",
+      "paragraphs": [
+        "Il castoro costruisce una diga per mantenere acqua abbastanza profonda da proteggersi e raggiungere il cibo. Il livello sale anche intorno: compaiono stagni, suoli più umidi e rifugi per altri animali. Il suo riparo trasforma quindi un intero tratto di paesaggio, senza che l’animale stia progettando un ecosistema per tutti."
+      ],
+      "takeaway": "Una modifica locale può creare habitat per molte altre specie.",
+      "basis": "Montana FWP, sezioni Dams and Other Activity ed Ecosystem Services. Foto USFWS di una diga a Seneca Creek, West Virginia; non raffigura una tana. Non tutti i castori costruiscono dighe.",
+      "sources": [
+        {
+          "title": "Montana FWP — Living With Beavers",
+          "url": "https://fwp.mt.gov/conservation/living-with-wildlife/beavers"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-beaver.jpg",
+        "alt": "Diga di rami costruita da castori sul Seneca Creek, con acqua trattenuta a monte.",
+        "caption": "Una diga di castori sul Seneca Creek.",
+        "credit": "Brett Billings / USFWS",
+        "license": "Pubblico dominio (opera federale USA)",
+        "source": "https://www.fws.gov/media/beaver-built-dam"
+      }
+    },
+    {
+      "id": "micro-20261027-pca",
+      "topic": "Machine learning",
+      "title": "Una nuvola può avere una spina dorsale",
+      "hook": "Una nuvola può avere una spina dorsale",
+      "paragraphs": [
+        "Se due misure crescono quasi insieme, i punti si allungano lungo una direzione. La prima componente principale sceglie l’asse che conserva più variabilità; proiettarvi i punti comprime due coordinate in una. Non cerca però la direzione più utile per prevedere un risultato: la PCA guarda la forma dei dati, senza conoscere le etichette."
+      ],
+      "takeaway": "Massima varianza non significa automaticamente massima utilità predittiva.",
+      "basis": "Documentazione PCA: proiezione lineare, centratura e direzioni di massima varianza. Illustrazione geometrica originale, non fit su misure. La scala delle variabili influenza il risultato.",
+      "sources": [
+        {
+          "title": "scikit-learn — PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-pca.svg",
+        "alt": "Nuvola allungata di otto punti con proiezioni perpendicolari su un asse obliquo.",
+        "caption": "La proiezione conserva l’allungamento principale.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html"
+      }
+    },
+    {
+      "id": "micro-20261027-nullspace",
+      "topic": "FEM e algebra",
+      "title": "La soluzione può scivolare tutta insieme",
+      "hook": "La soluzione può scivolare tutta insieme",
+      "paragraphs": [
+        "Imponi soltanto la derivata normale sul bordo di un problema di Poisson. Aggiungere una costante alla soluzione non cambia né quelle derivate né il laplaciano. Se il problema è compatibile, esiste così una famiglia di soluzioni: manca un livello di riferimento. Fissare la media elimina questa libertà, senza cambiare i gradienti."
+      ],
+      "takeaway": "Uno spazio nullo può esprimere una libertà del problema, non un guasto del solver.",
+      "basis": "PETSc MatSetNullSpace, sistemi singolari e famiglia x + αn. Applicazione originale a Poisson con condizioni tutte di Neumann; la compatibilità fra sorgente e flusso resta necessaria. Curve illustrative.",
+      "sources": [
+        {
+          "title": "PETSc — MatSetNullSpace",
+          "url": "https://petsc.org/release/manualpages/Mat/MatSetNullSpace/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-nullspace.svg",
+        "alt": "Due curve cosinusoidali identiche traslate verticalmente: stessa pendenza e diverso livello.",
+        "caption": "Cambiare il livello lascia intatte le derivate.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://petsc.org/release/manualpages/Mat/MatSetNullSpace/"
+      }
+    },
+    {
+      "id": "micro-20261027-sequoia",
+      "topic": "Natura",
+      "title": "Un archivio di semi sopra la foresta",
+      "hook": "Un archivio di semi sopra la foresta",
+      "paragraphs": [
+        "I coni della sequoia gigante possono restare chiusi per molti anni. L’aria calda di un incendio li dissecca e favorisce il rilascio dei semi, mentre il fuoco libera porzioni di suolo minerale e apre spazi alla luce. Ma un incendio troppo intenso può distruggere anche coni e alberi: essere adattati al fuoco non significa resistere a qualsiasi incendio."
+      ],
+      "takeaway": "L’effetto ecologico del fuoco dipende anche dalla sua intensità.",
+      "basis": "NPS, Giant Sequoias, sezioni su coni e fuoco e collegamento alle minacce recenti. Illustrazione originale del meccanismo, non disegno botanico in scala. Anche animali e altri processi possono liberare i semi.",
+      "sources": [
+        {
+          "title": "NPS — Giant Sequoias",
+          "url": "https://www.nps.gov/seki/learn/nature/bigtrees.htm"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-sequoia.svg",
+        "alt": "Due coni schematici di sequoia: uno chiuso e uno con squame aperte e semi in caduta.",
+        "caption": "Il disseccamento apre i coni e libera i semi.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.nps.gov/seki/learn/nature/bigtrees.htm"
+      }
+    },
+    {
+      "id": "micro-20261027-conditioning",
+      "topic": "Calcolo numerico",
+      "title": "Un residuo piccolo può nascondere un errore grande",
+      "hook": "Un residuo piccolo può nascondere un errore grande",
+      "paragraphs": [
+        "Considera A = diag(1; 0,001) e una soluzione approssimata che sbaglia di uno soltanto nella seconda componente. Moltiplicando per A, quell’errore produce un residuo di appena 0,001. La matrice attenua proprio la direzione sbagliata: il suo numero di condizionamento vale mille. Per giudicare una soluzione servono quindi anche scala e sensibilità del sistema."
+      ],
+      "takeaway": "Residuo ed errore della soluzione non sono lo stesso numero.",
+      "basis": "Definizione del numero di condizionamento dalla documentazione NumPy. Esempio algebrico originale: norma 2, matrice diagonale adimensionale, errore (0,1), residuo di modulo (0,0.001). Barre esatte, non risultati sperimentali.",
+      "sources": [
+        {
+          "title": "NumPy — numpy.linalg.cond",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.cond.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-conditioning.svg",
+        "alt": "Barra dell’errore lunga uno e barra del residuo lunga un millesimo, con valori espliciti.",
+        "caption": "La matrice può attenuare l’errore osservato nel residuo.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.cond.html"
+      }
+    },
+    {
+      "id": "micro-20261027-advection",
+      "topic": "CFD",
+      "title": "Una macchia viaggia senza allargarsi",
+      "hook": "Una macchia viaggia senza allargarsi",
+      "paragraphs": [
+        "Nel trasporto ideale a velocità costante, una macchia conserva la forma: cambia soltanto posizione. Con velocità di un metro al secondo, dopo tre secondi ogni dettaglio si è spostato di tre metri. Se una simulazione la appiattisce, sta introducendo diffusione numerica oppure rappresenta altri fenomeni: l’advezione pura, da sola, non la allarga."
+      ],
+      "takeaway": "La soluzione analitica distingue trasporto fisico e diffusione introdotta dal calcolo.",
+      "basis": "Clawpack Riemann Book, Advection e Characteristics: q(x,t)=q₀(x−at). Esempio originale gaussiano con a=1 m/s; nessuna diffusione, reazione o deformazione del campo di velocità.",
+      "sources": [
+        {
+          "title": "Clawpack — Advection",
+          "url": "https://www.clawpack.org/riemann_book/html/Advection.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-advection.svg",
+        "alt": "Due gaussiane identiche centrate a due e cinque metri per tempi zero e tre secondi.",
+        "caption": "Advezione pura: stessa forma, posizione diversa.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.clawpack.org/riemann_book/html/Advection.html"
+      }
+    },
+    {
+      "id": "micro-20261027-vent",
+      "topic": "Oceano",
+      "title": "Un ecosistema senza alba",
+      "hook": "Un ecosistema senza alba",
+      "paragraphs": [
+        "Intorno a certe sorgenti idrotermali, microrganismi ricavano energia da reazioni chimiche e la usano per costruire materia organica a partire da carbonio inorganico. Da questa produzione dipendono comunità animali nel buio. Il combustibile non è il calore in sé: conta l’energia chimica disponibile quando sostanze del fluido incontrano un ambiente con cui possono reagire."
+      ],
+      "takeaway": "La produzione primaria può usare energia chimica invece della luce.",
+      "basis": "NOAA Ocean Exploration, confronto fotosintesi/chemiosintesi. Foto della spedizione Marianas 2016, con camino e fauna; non raffigura direttamente batteri o reazioni. Testo originale; nessuna equazione semplificata riprodotta.",
+      "sources": [
+        {
+          "title": "NOAA — Photosynthesis and chemosynthesis",
+          "url": "https://oceanexplorer.noaa.gov/ocean-fact/photochemo/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-vent.jpg",
+        "alt": "Camino idrotermale attivo, con pennacchio scuro e piccoli animali sulla superficie.",
+        "caption": "Un camino e la comunità che gli vive intorno.",
+        "credit": "NOAA Ocean Exploration · Deepwater Exploration of the Marianas, 2016",
+        "license": "Pubblico dominio (opera federale USA)",
+        "source": "https://oceanexplorer.noaa.gov/multimedia/daily-image-media-20210304/"
+      }
+    },
+    {
+      "id": "micro-20261027-flux",
+      "topic": "Metodi numerici",
+      "title": "Il confine sparisce quando fai la somma",
+      "hook": "Il confine sparisce quando fai la somma",
+      "paragraphs": [
+        "In un metodo ai volumi finiti, il flusso che esce da una cella entra nella vicina. Usando lo stesso valore sulla faccia condivisa, i contributi interni si cancellano quando sommi i bilanci. Il totale cambia solo attraverso il bordo esterno, più eventuali sorgenti: la conservazione nasce anche da come organizzi gli scambi fra celle."
+      ],
+      "takeaway": "Condividere il flusso rende conservativa la somma dei bilanci.",
+      "basis": "Clawpack Riemann Book, Conservation of mass. Trasposizione discreta originale del bilancio integrale: facce interne condivise, segni opposti. Schema senza sorgenti; nessun valore sperimentale.",
+      "sources": [
+        {
+          "title": "Clawpack — Conservation of mass",
+          "url": "https://www.clawpack.org/riemann_book/html/Advection.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-flux.svg",
+        "alt": "Tre celle contigue; alle due facce interne le coppie di contributi hanno somma zero.",
+        "caption": "Un’uscita e un ingresso sono lo stesso scambio.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.clawpack.org/riemann_book/html/Advection.html"
+      }
+    },
+    {
+      "id": "micro-20261027-half-life",
+      "topic": "Cinetica",
+      "title": "Ogni metà richiede lo stesso tempo",
+      "hook": "Ogni metà richiede lo stesso tempo",
+      "paragraphs": [
+        "In una reazione del primo ordine, la velocità diminuisce insieme alla concentrazione. Eppure il tempo necessario a dimezzare ciò che rimane resta costante. Se l’emivita è dieci secondi, dopo venti ne resta un quarto e dopo trenta un ottavo. Non scompare la stessa quantità a ogni intervallo: scompare la stessa frazione."
+      ],
+      "takeaway": "L’emivita costante è una proprietà del primo ordine, non di ogni reazione.",
+      "basis": "Purdue Chemistry, Half Lives. Esempio analitico originale C/C₀=2^(−t/10), k=ln(2)/10 s⁻¹; temperatura e k costanti, sistema omogeneo a volume costante. Proprietà specifica del primo ordine.",
+      "sources": [
+        {
+          "title": "Purdue — Half Lives",
+          "url": "https://www.chem.purdue.edu/gchelp/howtosolveit/Kinetics/Halflife.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-half-life.svg",
+        "alt": "Curva esponenziale con valori uno, metà, un quarto e un ottavo ai tempi 0, 10, 20, 30 secondi.",
+        "caption": "Intervalli uguali, frazioni residue dimezzate.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.chem.purdue.edu/gchelp/howtosolveit/Kinetics/Halflife.html"
+      }
+    },
+    {
+      "id": "micro-20261027-parallax",
+      "topic": "Astronomia",
+      "title": "Due occhi grandi quanto un’orbita",
+      "hook": "Due occhi grandi quanto un’orbita",
+      "paragraphs": [
+        "Tieni un dito davanti a te e guarda prima con un occhio, poi con l’altro: il dito cambia posizione rispetto allo sfondo. Per misurare le stelle vicine, il cambio di punto di vista viene dal moto della Terra. Osservazioni distanziate di sei mesi usano estremi opposti dell’orbita: più lontana è la stella, più piccolo è lo spostamento apparente."
+      ],
+      "takeaway": "La distanza si può misurare da uno spostamento apparente.",
+      "basis": "ESA, Gaia — Parallax. Illustrazione originale della geometria; angoli enormemente amplificati. Lo spostamento fra estremi opposti corrisponde a due volte l’angolo di parallasse annua; nessuna misura ricavata dal disegno.",
+      "sources": [
+        {
+          "title": "ESA — Parallax",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Gaia/Parallax"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-parallax.svg",
+        "alt": "Due posizioni terrestri osservano una stella vicina lungo linee che si proiettano su punti diversi dello sfondo.",
+        "caption": "L’orbita fornisce due punti di osservazione.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.esa.int/Science_Exploration/Space_Science/Gaia/Parallax"
+      }
+    },
+    {
+      "id": "micro-20261027-bernoulli",
+      "topic": "Fluidodinamica",
+      "title": "La strozzatura accelera l’acqua",
+      "hook": "La strozzatura accelera l’acqua",
+      "paragraphs": [
+        "In un tubo orizzontale, dimezzare la sezione raddoppia la velocità a portata costante. Nel modello ideale di Bernoulli, passare da uno a due metri al secondo con acqua di densità mille kg/m³ riduce la pressione statica di 1.500 pascal. Una parte dell’energia di pressione diventa energia del moto, senza bisogno di una pompa nella strozzatura."
+      ],
+      "takeaway": "Portata ed energia collegano area, velocità e pressione.",
+      "basis": "NASA Glenn, Bernoulli’s Equation; calcolo originale con continuità. Flusso stazionario incomprimibile lungo una linea di corrente, quota invariata, senza perdite viscose né lavoro aggiunto. Un tubo reale richiede anche le perdite.",
+      "sources": [
+        {
+          "title": "NASA Glenn — Bernoulli’s Equation",
+          "url": "https://www.grc.nasa.gov/www/k-12/airplane/bern.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-bernoulli.svg",
+        "alt": "Tubo che si restringe da area A ad A/2; velocità da 1 a 2 m/s, differenza di pressione 1500 Pa.",
+        "caption": "La pressione statica diminuisce nella sezione più stretta.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.grc.nasa.gov/www/k-12/airplane/bern.html"
+      }
+    },
+    {
+      "id": "micro-20261027-strides",
+      "topic": "Architetture informatiche",
+      "title": "La memoria non conosce righe e colonne",
+      "hook": "La memoria non conosce righe e colonne",
+      "paragraphs": [
+        "Una matrice è mostrata come una tabella, ma i suoi dati occupano indirizzi di memoria. In un array 3 × 4 contiguo in ordine C, con numeri da otto byte, avanzare di una colonna costa otto byte; passare alla riga successiva, trentadue. Gli strides descrivono questi salti e permettono anche viste diverse degli stessi dati."
+      ],
+      "takeaway": "La geometria logica di un array e la sua disposizione in memoria sono diverse.",
+      "basis": "NumPy, ndarray, Memory layout e strides. Esempio originale 3×4 float64 contiguo in ordine C: strides (32,8) byte. Nessun benchmark o promessa di accelerazione; viste e trasposizioni possono avere stride diversi.",
+      "sources": [
+        {
+          "title": "NumPy — The N-dimensional array",
+          "url": "https://numpy.org/doc/stable/reference/arrays.ndarray.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-strides.svg",
+        "alt": "Griglia 3 per 4 con offset byte da 0 a 88; colori diversi per le tre righe.",
+        "caption": "La forma è una tabella; gli stride descrivono gli indirizzi.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://numpy.org/doc/stable/reference/arrays.ndarray.html"
+      }
+    },
+    {
+      "id": "micro-20261027-seasons",
+      "topic": "Terra",
+      "title": "Due estati non arrivano insieme",
+      "hook": "Due estati non arrivano insieme",
+      "paragraphs": [
+        "Quando nell’emisfero nord è estate, a sud è inverno: entrambi si trovano praticamente alla stessa distanza dal Sole. La differenza viene dall’asse inclinato. L’emisfero rivolto verso il Sole riceve raggi più diretti e giornate più lunghe; sei mesi dopo i ruoli si invertono. La distanza orbitale non spiega questa opposizione simultanea."
+      ],
+      "takeaway": "Le stagioni dipendono soprattutto da inclinazione e durata dell’illuminazione.",
+      "basis": "NASA Space Place, What Causes the Seasons? Schema originale con assi paralleli ai due solstizi. Dimensioni, inclinazione e orbita schematiche. Nessuna ricostruzione climatica o temperatura prevista.",
+      "sources": [
+        {
+          "title": "NASA Space Place — What Causes the Seasons?",
+          "url": "https://spaceplace.nasa.gov/seasons/en/"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-seasons.svg",
+        "alt": "Sole al centro e due Terre ai lati, con assi paralleli inclinati: giugno a sinistra, dicembre a destra.",
+        "caption": "Lo stesso asse produce stagioni opposte nei due emisferi.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://spaceplace.nasa.gov/seasons/en/"
+      }
+    },
+    {
+      "id": "micro-20261027-cas",
+      "topic": "Sistemi concorrenti",
+      "title": "Salva solo se nessuno è passato prima",
+      "hook": "Salva solo se nessuno è passato prima",
+      "paragraphs": [
+        "Due editor aprono la revisione sette. Il primo salva e la porta a otto. Il secondo chiede di aggiornare soltanto se la revisione è ancora sette: la condizione fallisce, quindi il suo testo non cancella il lavoro appena salvato. Confronto della versione e modifica devono avvenire insieme; una verifica separata lascerebbe aperta la stessa corsa."
+      ],
+      "takeaway": "Un controllo atomico impedisce una sovrascrittura basata su dati superati.",
+      "basis": "PostgreSQL, Read Committed: dopo un aggiornamento concorrente la condizione WHERE viene rivalutata. Esempio originale di UPDATE condizionato da revisione e incremento atomico, controllando le righe aggiornate. Non è una fusione automatica dei testi.",
+      "sources": [
+        {
+          "title": "PostgreSQL — Transaction Isolation",
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-cas.svg",
+        "alt": "Due linee temporali: A aggiorna revisione 7 a 8; la scrittura di B basata su 7 viene rifiutata.",
+        "caption": "Il numero di revisione rileva una modifica concorrente.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.postgresql.org/docs/current/transaction-iso.html"
+      }
+    },
+    {
+      "id": "micro-20261027-queue",
+      "topic": "Orchestrazione software",
+      "title": "Una coda piena può essere un buon segnale",
+      "hook": "Una coda piena può essere un buon segnale",
+      "paragraphs": [
+        "Se un produttore invia lavoro più rapidamente del consumatore, una coda illimitata continua a crescere. Una coda con capacità finita può invece fermare l’inserimento quando è piena. Questa attesa riporta la pressione verso chi produce: il sistema riconosce il proprio limite invece di trasformare ogni richiesta in altra memoria occupata."
+      ],
+      "takeaway": "La backpressure limita l’accumulo, senza rendere più veloce il consumatore.",
+      "basis": "Python queue.Queue(maxsize), put bloccante e capacità. Esempio originale con quattro posti; il limite riguarda gli elementi in attesa, non quelli già estratti e in esecuzione. La coda non aumenta la capacità del consumatore.",
+      "sources": [
+        {
+          "title": "Python — queue",
+          "url": "https://docs.python.org/3/library/queue.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-queue.svg",
+        "alt": "Quattro posti del buffer occupati e un quinto elemento fermo fuori dal buffer.",
+        "caption": "Il quinto elemento aspetta uno spazio libero.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.python.org/3/library/queue.html"
+      }
+    },
+    {
+      "id": "micro-20261027-concrete",
+      "topic": "Storia dei materiali",
+      "title": "Quel grumo bianco non era soltanto un difetto",
+      "hook": "Quel grumo bianco non era soltanto un difetto",
+      "paragraphs": [
+        "In campioni di calcestruzzo romano, inclusioni ricche di calcio possono diventare una riserva reattiva. Se una fessura le attraversa e arriva acqua, il calcio disciolto può precipitare come carbonato e contribuire a richiuderla. Uno studio ha riprodotto il meccanismo in miscele sperimentali: l’eterogeneità, in quel caso, aiutava il materiale a ripararsi."
+      ],
+      "takeaway": "Una disomogeneità può avere una funzione, invece di essere solo un difetto.",
+      "basis": "MIT, resoconto degli autori dello studio Hot mixing (Science Advances, 2023). Rielaborazione autonoma; schema originale, non immagine del paper. Risultato specifico delle formulazioni studiate, non garanzia su qualsiasi calcestruzzo antico.",
+      "sources": [
+        {
+          "title": "MIT — Why was Roman concrete so durable?",
+          "url": "https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-concrete.svg",
+        "alt": "Due sezioni di calcestruzzo con inclusione chiara e fessura; nella seconda si deposita materiale nella frattura.",
+        "caption": "Il calcio disponibile può alimentare la chiusura della fessura.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://news.mit.edu/2023/roman-concrete-durability-lime-casts-0106"
+      }
+    },
+    {
+      "id": "micro-20261027-windup",
+      "topic": "Controllo",
+      "title": "La valvola è già tutta aperta",
+      "hook": "La valvola è già tutta aperta",
+      "paragraphs": [
+        "Il controllore continua a integrare l’errore, ma la valvola ha raggiunto il massimo: più comando non produce più apertura. Quando l’errore cambia segno, l’integratore deve prima smaltire quanto ha accumulato, ritardando il recupero. Le strategie anti-windup tengono conto della saturazione per evitare che lo stato interno continui a crescere nella direzione ormai inutile."
+      ],
+      "takeaway": "Un limite fisico deve essere rappresentato anche nella memoria del controllore.",
+      "basis": "MathWorks, Anti-Windup Control Using PID Controller Block: saturazione, back-calculation e clamping. Curva statica originale di saturazione a 0,6; non simula la risposta dinamica del loro esempio e non prescrive guadagni.",
+      "sources": [
+        {
+          "title": "MathWorks — Anti-Windup Control",
+          "url": "https://www.mathworks.com/help/simulink/slref/anti-windup-control-using-a-pid-controller.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-saturation.svg",
+        "alt": "Retta del comando crescente e uscita dell’attuatore che si ferma al valore normalizzato 0,6.",
+        "caption": "Oltre il limite, il comando cresce ma l’attuatore no.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.mathworks.com/help/simulink/slref/anti-windup-control-using-a-pid-controller.html"
+      }
+    },
+    {
+      "id": "micro-20261027-handles",
+      "topic": "Filosofia",
+      "title": "Da quale manico lo prendi?",
+      "hook": "Da quale manico lo prendi?",
+      "paragraphs": [
+        "Tuo fratello ti ha fatto un torto. Puoi afferrare l’accaduto soltanto dalla ferita, oppure ricordare anche che siete cresciuti insieme. Epitteto immagina due manici sullo stesso oggetto: cambiare presa non cancella il torto, ma cambia il modo di portarlo. Il fatto rimane; la relazione offre un altro punto da cui affrontarlo."
+      ],
+      "takeaway": "La prospettiva può cambiare senza negare ciò che è successo.",
+      "basis": "Epitteto, Manuale XLIII, consultato nella traduzione storica di George Long su Wikisource. Rielaborazione italiana autonoma, non citazione; ultimo chiarimento editoriale. Illustrazione della metafora, non di un reperto antico.",
+      "sources": [
+        {
+          "title": "Epitteto — Manuale, XLIII",
+          "url": "https://en.wikisource.org/wiki/The_Discourses_of_Epictetus/The_Encheiridion%2C_or_Manual"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-handles.svg",
+        "alt": "Un vaso a due manici con le etichette il torto e il legame.",
+        "caption": "Due prese possibili sullo stesso fatto.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://en.wikisource.org/wiki/The_Discourses_of_Epictetus/The_Encheiridion%2C_or_Manual"
+      }
+    },
+    {
+      "id": "micro-20261027-venus",
+      "topic": "Astronomia",
+      "title": "Su Venere la parola giorno inganna",
+      "hook": "Su Venere la parola giorno inganna",
+      "paragraphs": [
+        "Venere impiega circa 243 giorni terrestri per ruotare rispetto alle stelle e 225 per orbitare intorno al Sole. Ma fra due albe ne passano circa 117: la rotazione è retrograda, quindi il moto orbitale contribuisce a riportare il Sole nella stessa direzione. “Un giorno più lungo di un anno” vale per il periodo di rotazione, non per l’intervallo fra albe."
+      ],
+      "takeaway": "Un periodo dipende dal riferimento rispetto al quale lo misuri.",
+      "basis": "NASA Space Place, All About Venus; distinzione fra giorno siderale, anno e giorno solare. Grafico originale con valori arrotondati 243, 225 e 117 giorni terrestri; nessuna scala dimensionale del pianeta.",
+      "sources": [
+        {
+          "title": "NASA Space Place — All About Venus",
+          "url": "https://spaceplace.nasa.gov/all-about-venus/en/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261027-venus.svg",
+        "alt": "Tre barre con periodi 243, 225 e 117 giorni: rotazione, orbita, intervallo fra albe.",
+        "caption": "Rotazione e ciclo delle albe misurano cose diverse.",
+        "credit": "Aurelius · grafico o illustrazione originale",
+        "license": "CC BY 4.0",
+        "source": "https://spaceplace.nasa.gov/all-about-venus/en/"
+      }
+    }
+  ]
+}
