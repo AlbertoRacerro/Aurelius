@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "updated_at": "2026-10-27T04:02:24Z",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261027",
+      "title": "Vuoi vincere a Olimpia?",
+      "kind": "synthesis",
+      "basis": "Epitteto, Manuale, XXIX. Nuova traduzione selettiva dalla versione inglese di George Long (1877), in pubblico dominio, con parafrasi, chiarimenti e conclusione editoriali: desiderare un risultato e scegliere anche ciò che richiede.",
+      "sections": [
+        {
+          "heading": "Prima della corona",
+          "paragraphs": [
+            "Vuoi vincere ai giochi di Olimpia? Anch’io, per gli dèi: è una bella cosa. Ma considera ciò che viene prima e ciò che segue, e soltanto allora mettiti all’opera. Altrimenti comincerai pieno d’entusiasmo, senza aver guardato le conseguenze; poi, quando compariranno le difficoltà, ti tirerai indietro con vergogna.",
+            "Dovrai sottoporti a una disciplina, mangiare secondo una regola, rinunciare alle ghiottonerie, allenarti nelle ore stabilite, al caldo e al freddo. Non berrai vino ogni volta che ti piacerà. In una parola, ti affiderai all’allenatore come ci si affida a un medico. Poi entrerai nella gara.",
+            "E durante la gara potrai slogarti una caviglia, farti male a una mano, inghiottire molta polvere, ricevere colpi. Dopo tutto questo, potrai anche essere sconfitto. Hai considerato queste cose? Se lo desideri ancora, va’ a gareggiare.",
+            "La corona si vede subito; la preparazione e la possibilità di perdere restano facilmente fuori dall’immagine. Eppure appartengono alla stessa scelta. Se desideri soltanto il momento della vittoria, non hai ancora deciso se vuoi la vita dell’atleta. Hai scelto una scena, lasciando che tutto il resto debba sorprenderti."
+          ]
+        },
+        {
+          "heading": "I giochi dei bambini",
+          "paragraphs": [
+            "Guarda i bambini: ora giocano ai lottatori, ora ai flautisti; poi diventano gladiatori, suonatori di tromba, attori tragici. Anche tu puoi passare dall’atleta all’oratore, dall’oratore al filosofo, senza essere niente con tutta l’anima. Ogni cosa che vedi ti piace a turno; imiti l’una e l’altra, perché non ne hai esaminata nessuna abbastanza da scegliere davvero.",
+            "Hai ascoltato un filosofo parlare magnificamente, e subito vuoi essere filosofo. Ma prima guarda che cosa sia questa vita, poi esamina te stesso: puoi sostenerne la parte? Vuoi essere un lottatore? Guarda le braccia, le cosce, la schiena. Persone diverse sono adatte a cose diverse.",
+            "Non basta dunque l’ammirazione. La voce di chi parla può averti conquistato senza che tu abbia ancora compreso il lavoro che la sostiene. Il desiderio passa dall’effetto che hai ricevuto all’immagine di te capace di produrlo; nel mezzo, però, ci sono abitudini da cambiare, fatica e rinunce. Saltare quel tratto non lo fa scomparire.",
+            "Pensi di poter diventare filosofo continuando a mangiare, bere e reagire a ogni contrarietà esattamente come prima? Dovrai vegliare, faticare, sopportare di contare meno negli onori e nelle cariche. Considera se vuoi dare queste cose in cambio della libertà e della tranquillità che cerchi. Non prenderle entrambe sulla parola: guarda ciò che abbandoni e ciò che vuoi coltivare."
+          ]
+        },
+        {
+          "heading": "Un desiderio che ha guardato il terreno",
+          "paragraphs": [
+            "Esaminare il prezzo di una scelta non significa spegnere ogni entusiasmo. L’invito rimane: se, dopo aver considerato tutto, vuoi ancora gareggiare, entra nella gara. La difficoltà prevista non diventa piacevole; smette però di sembrarti un tradimento, qualcosa che non avrebbe dovuto far parte della strada. Sapere in anticipo che potrai perdere ti permette di domandarti se l’impegno conservi un valore anche senza il successo.",
+            "La morale è scegliere un impegno intero, per quanto possiamo conoscerlo, invece di prometterci soltanto il suo esito più bello. Nessuna preparazione garantisce la corona. Ma un desiderio che ha guardato anche la polvere, l’allenamento e la possibile sconfitta è già diverso da quello che si accende a ogni nuova figura ammirata. Può cominciare con meno clamore e restare più a lungo."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Epitteto — The Encheiridion or Manual, XXIX",
+          "url": "https://en.wikisource.org/wiki/The_Discourses_of_Epictetus;_with_the_Encheiridion_and_Fragments/The_Encheiridion_or_Manual",
+          "edition": "Versione George Long, 1877, capitolo XXIX consultato. Long morì nel 1879; edizione storica libera in Italia/UE e USA. Traduzione italiana nuova, tagli e chiarimenti editoriali; le prescrizioni atletiche sono quelle dell’esempio antico, non indicazioni sportive attuali.",
+          "accessed": "2026-10-27"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261027",
+      "title": "La foresta dove non si può parlare",
+      "kind": "synthesis",
+      "basis": "Jules Verne, Ventimila leghe sotto i mari, parte I, XVI–XVII, edizione francese Hetzel (1870). Selezione e nuova traduzione dall’originale in pubblico dominio, con tagli e raccordi minimi. Narra il professor Aronnax: dal Nautilus alla foresta dell’isola Crespo.",
+      "sections": [
+        {
+          "heading": "Una mandorla nel suo guscio",
+          "paragraphs": [
+            "Quella cabina era, propriamente, l’arsenale e lo spogliatoio del Nautilus. Una dozzina di scafandri, appesi alla parete, aspettavano i passeggiatori. Vedendoli, Ned Land manifestò un’evidente ripugnanza a indossarli.",
+            "«Ma, mio bravo Ned», gli dissi, «le foreste dell’isola Crespo sono soltanto foreste sottomarine!».",
+            "«Ah!», fece il fiociniere deluso, vedendo svanire i suoi sogni di carne fresca. «E voi, signor Aronnax, avete intenzione di infilarvi in quei vestiti?».",
+            "«Bisogna pure, mastro Ned».",
+            "«Liberissimo, signore», rispose alzando le spalle. «Quanto a me, a meno che non mi ci costringano, non entrerò mai là dentro».",
+            "«Non sarete costretto», disse il capitano Nemo.",
+            "«E Conseil si arrischierà?».",
+            "«Seguo il signore dovunque vada il signore», rispose Conseil.",
+            "A un richiamo del capitano, due uomini dell’equipaggio vennero ad aiutarci a indossare quei pesanti abiti impermeabili, fatti di caucciù senza cuciture e preparati per resistere a pressioni considerevoli. Sembravano un’armatura insieme flessibile e resistente. I pantaloni terminavano in scarpe spesse, munite di pesanti suole di piombo; il petto era protetto da lamelle di rame. Le maniche finivano in guanti morbidi, che lasciavano liberi i movimenti della mano.",
+            "Nemo, un suo compagno dalla forza prodigiosa, Conseil e io fummo presto vestiti. Non restava che racchiudere la testa nella sfera metallica. Prima di farlo, domandai però il permesso di esaminare i fucili destinati a noi. Un uomo mi presentò un’arma il cui calcio d’acciaio, cavo all’interno, serviva da serbatoio per l’aria compressa. Una valvola azionata dal grilletto la lasciava passare nella canna.",
+            "«Capitano», dissi, «quest’arma è perfetta e facile da maneggiare. Non chiedo altro che provarla. Ma come raggiungeremo il fondo del mare?».",
+            "«In questo momento il Nautilus è posato sotto dieci metri d’acqua. Non dobbiamo far altro che partire».",
+            "«Ma come usciremo?».",
+            "«Lo vedrete».",
+            "Nemo introdusse la testa nella calotta sferica. Conseil e io facemmo altrettanto, non senza aver udito il canadese augurarci ironicamente buona caccia. Il casco si avvitava sul collare di rame dello scafandro. Tre aperture, protette da vetri spessi, permettevano di guardare in ogni direzione, voltando la testa dentro la sfera. Gli apparecchi per la respirazione, collocati sulla schiena, cominciarono a funzionare: per conto mio, respiravo comodamente.",
+            "La lampada appesa alla cintura, il fucile in mano, ero pronto. Ma, per essere sincero, imprigionato in quegli abiti pesanti e inchiodato al ponte dalle suole di piombo, mi sarebbe stato impossibile fare un passo.",
+            "Il caso era previsto. Mi sentii spingere in una piccola camera accanto allo spogliatoio; i compagni mi seguivano, rimorchiati nello stesso modo. Udii una porta richiudersi e una profonda oscurità ci avvolse.",
+            "Dopo pochi minuti, un forte sibilo mi giunse all’orecchio. Sentii il freddo salire dai piedi al petto. Dall’interno avevano aperto un rubinetto all’acqua esterna, che ci invadeva: ben presto la camera ne fu piena. Una seconda porta, praticata nel fianco del Nautilus, si aprì. Entrò una mezza luce. Un istante dopo, i nostri piedi calpestavano il fondo del mare.",
+            "Come potrei ora descrivere le impressioni di quella passeggiata? Le parole sono impotenti davanti a simili meraviglie. Se il pennello stesso non sa rendere gli effetti propri dell’acqua, come potrebbe riuscirvi la penna?",
+            "Nemo camminava davanti; il suo compagno ci seguiva a pochi passi. Conseil e io restavamo vicini, come se fosse possibile scambiarci una parola attraverso le nostre corazze metalliche. Già non sentivo più la pesantezza degli abiti, delle scarpe, del serbatoio, né il peso della grossa sfera dentro cui la testa mi ballava come una mandorla nel guscio. Immersi nell’acqua, quegli oggetti ricevevano la spinta del liquido spostato: mi trovavo benissimo con la legge riconosciuta da Archimede. Non ero più una massa inerte; godevo di una libertà di movimento relativamente grande."
+          ]
+        },
+        {
+          "heading": "Una festa che Conseil non può sentire",
+          "paragraphs": [
+            "La forza della luce mi stupì. Distinguevo nettamente gli oggetti lontani; più in là, il fondo assumeva delicate gradazioni d’oltremare, diventava azzurro nella distanza e infine si cancellava in una vaga oscurità. L’acqua che mi circondava sembrava una specie d’aria, più densa di quella terrestre, ma quasi altrettanto trasparente. Sopra di me scorgevo la calma superficie del mare.",
+            "Camminavamo su una sabbia fine, uniforme, senza le increspature che sulle spiagge conservano l’impronta delle onde. Quel tappeto abbagliante respingeva i raggi del sole con un’intensità sorprendente. Per un quarto d’ora calcai la sabbia luminosa, seminata di un’impalpabile polvere di conchiglie.",
+            "Lo scafo del Nautilus, disegnato come un lungo scoglio, scompariva a poco a poco. Quando la notte fosse scesa nell’acqua, il suo faro avrebbe dovuto guidare il nostro ritorno. Intanto avanzavamo e la vasta pianura sembrava non avere confini. Scostavo con la mano le tende liquide, che si richiudevano dietro di me; la traccia dei passi scompariva subito.",
+            "Presto, forme ancora sfumate nella lontananza cominciarono a delinearsi. Riconobbi magnifici gruppi di rocce, coperti di animali che sembravano piante. Era una meraviglia, una festa per gli occhi: un intreccio di verde, giallo, arancio, violetto, indaco, azzurro, tutta la tavolozza di un colorista sfrenato!",
+            "Quanto avrei voluto comunicare a Conseil le sensazioni che mi salivano al cervello, gareggiare con lui in esclamazioni ammirate! Quanto avrei voluto saper scambiare i pensieri con segni convenuti, come Nemo e il suo compagno! In mancanza di meglio parlavo da solo, gridavo nella scatola di rame che mi copriva il capo, spendendo forse in parole inutili più aria del necessario.",
+            "Davanti a quello spettacolo Conseil si era fermato come me. Evidentemente, alla vista di tanti esemplari, il bravo ragazzo classificava, classificava sempre. Polipi ed echinodermi abbondavano sul terreno. Le oculine, un tempo chiamate corallo bianco, le fungie simili a funghi, gli anemoni aderenti con il loro disco muscolare formavano un’aiuola di fiori. Le stelle marine costellavano la sabbia; altre forme, come merletti ricamati dalle naiadi, oscillavano debolmente al nostro passaggio.",
+            "Provavo un vero dispiacere a schiacciare sotto i piedi i brillanti molluschi sparsi a migliaia sul fondo: pettini, martelli, donaci dalle conchiglie saltellanti, trochi, caschi rossi, strombi ad ala d’angelo e tanti altri prodotti di quell’inesauribile oceano.",
+            "Ma bisognava camminare. Sopra le nostre teste passavano gruppi di fisalie, trascinando tentacoli color oltremare; meduse dall’ombrello opalino o rosa pallido, orlato d’azzurro, ci riparavano dal sole. Seguivo Nemo, che con un gesto mi richiamava avanti, e tutte quelle meraviglie mi apparivano quasi senza che potessi fermarmi.",
+            "Il terreno cambiò. Alla sabbia seguì uno strato di fango vischioso; poi attraversammo un prato d’alghe, ancora attaccate al fondo e piene di una vegetazione impetuosa. Quei tappeti fitti, morbidi al piede, avrebbero potuto gareggiare con i più soffici tessuti umani. E il verde, mentre si distendeva sotto i passi, non abbandonava le nostre teste: una leggera volta di piante marine si intrecciava sopra di noi.",
+            "Vedevo galleggiare lunghi nastri di fuchi, alcuni rigonfi, altri tubolari; laurenzie, cladostefi dal fogliame sottilissimo, rodimenie simili a ventagli. Non erano più gli esemplari raccolti e conservati nel salone: vivevano intorno a noi, nell’acqua che li sosteneva.",
+            "Procedevamo con passo regolare. I minimi rumori arrivavano con un’intensità sorprendente, diversa da quella a cui l’orecchio è abituato sulla terra. Il suolo cominciò ad abbassarsi lungo una pendenza pronunciata; la luce perse a poco a poco i suoi colori, diventò più uniforme e poi debole. Allo splendore era succeduta una specie di crepuscolo. Vedevamo ancora abbastanza per condurci e non avevamo acceso le lampade.",
+            "Nemo si fermò. Aspettò che lo raggiungessi e, con il dito, indicò alcune masse oscure che si distinguevano poco lontano nell’ombra.",
+            "«È la foresta dell’isola Crespo», pensai. Non mi sbagliavo."
+          ]
+        },
+        {
+          "heading": "Il regno della verticalità",
+          "paragraphs": [
+            "Eravamo infine arrivati al margine di quella foresta, senza dubbio una delle più belle nell’immenso dominio del capitano Nemo. Egli la considerava sua e si attribuiva su di essa gli stessi diritti dei primi uomini nei primi giorni del mondo. Del resto, chi avrebbe potuto disputargli quel possesso? Quale pioniere più ardito sarebbe venuto, scure in mano, a dissodarne i boschetti oscuri?",
+            "La foresta era composta di grandi piante arborescenti. Appena entrammo sotto le sue vaste arcate, mi colpì una singolare disposizione dei rami. Nessuna delle erbe che coprivano il suolo, nessun ramo degli arbusti strisciava, si incurvava o si stendeva orizzontalmente. Tutto saliva verso la superficie. Non un filamento, non un nastro, per quanto sottile, che non si mantenesse diritto come una verga di ferro.",
+            "Quando scostavo quelle piante con la mano, riprendevano subito la posizione di prima. Era il regno della verticalità.",
+            "Mi abituai presto a quella disposizione bizzarra e all’oscurità relativa che ci avvolgeva. Il terreno era disseminato di blocchi appuntiti, difficili da evitare. Per qualche minuto confusi involontariamente i regni della natura, prendendo animali per piante. E chi non si sarebbe ingannato? In quel mondo sommerso, la fauna e la flora si toccavano tanto da vicino!",
+            "Osservai che le alghe tenevano al fondo soltanto mediante un attacco superficiale. Il corpo solido che le sosteneva — sabbia, conchiglia, guscio o ciottolo — offriva loro un punto d’appoggio. Era l’acqua a sostenerle e a nutrirle. In luogo di foglie, molte sviluppavano lamine dalle forme capricciose, entro una gamma di rosa, carminio, verde, olivastro, fulvo e bruno.",
+            "Rividi padine aperte a ventaglio, come se chiedessero una brezza; ceramie scarlatte, laminarie che allungavano i giovani germogli; nereocisti filiformi, slanciate in alto, e mazzi di acetabularie. Questa volta non erano essiccate come gli esemplari del Nautilus. Intorno a noi si spiegavano le loro forme vive, tutte prive di fiori.",
+            "«Curiosa anomalia», aveva detto un arguto naturalista, «un elemento in cui il regno animale fiorisce e il regno vegetale non fiorisce!».",
+            "Fra quegli arbusti, grandi come alberi delle zone temperate, e sotto la loro ombra umida, si addensavano veri cespugli di fiori viventi. Coralli percorsi da solchi tortuosi, tentacoli diafani, ciuffi di zoantari completavano l’illusione. I pesci passavano da ramo a ramo come uno sciame di colibrì; altri si levavano sotto i nostri passi, simili a una compagnia di beccaccini.",
+            "Verso l’una Nemo diede il segnale della sosta. Per conto mio ne fui soddisfatto. Ci stendemmo sotto una pergola di alghe, le cui lunghe lamine assottigliate si drizzavano come frecce. Quel riposo mi parve delizioso. Ci mancava soltanto il piacere della conversazione.",
+            "Ma era impossibile parlare, impossibile rispondere. Avvicinai soltanto la mia grossa testa di rame a quella di Conseil. Vidi brillare di contentezza gli occhi del bravo ragazzo; per manifestare la propria soddisfazione, si agitò nella corazza con l’aria più comica del mondo.",
+            "Dopo quella lunga passeggiata mi stupivo di non provare una gran fame. In compenso, mi prese una voglia irresistibile di dormire. Gli occhi si chiusero dietro il vetro spesso. Nemo e il suo robusto compagno, distesi in quel limpido cristallo, ci davano l’esempio del sonno."
+          ]
+        },
+        {
+          "heading": "La terra comincia qui",
+          "paragraphs": [
+            "Non seppi valutare quanto tempo fossi rimasto assopito. Quando mi destai, mi sembrò che il sole scendesse verso l’orizzonte. Nemo si era già alzato; cominciavo a sgranchirmi le membra, quando un’apparizione inattesa mi rimise bruscamente in piedi.",
+            "A pochi passi, un mostruoso ragno di mare mi guardava con gli occhi obliqui, pronto a slanciarsi. Benché lo scafandro fosse abbastanza spesso da difendermi dai suoi morsi, non potei trattenere un movimento d’orrore. Anche Conseil e il marinaio si svegliarono. Nemo indicò il crostaceo al compagno: un colpo di calcio lo abbatté, e vidi le zampe contorcersi.",
+            "Quell’incontro mi fece pensare che animali più temibili dovessero abitare il fondo oscuro. Non ci avevo pensato fino a quel momento. Decisi di tenermi in guardia. Credevo anche che la sosta segnasse la fine della passeggiata; ma mi sbagliavo. Invece di tornare al Nautilus, Nemo continuò l’escursione.",
+            "Il suolo scendeva ancora. La pendenza ci condusse in una valle stretta fra alte pareti a picco. L’oscurità divenne profonda: non distinguevo più gli oggetti a dieci passi. Procedevo a tentoni, quando vidi brillare all’improvviso una luce bianca. Nemo aveva acceso il suo apparecchio elettrico; il compagno lo imitò. Conseil e io facemmo altrettanto, e il mare si illuminò intorno alle nostre quattro lanterne.",
+            "Continuammo nelle profondità della foresta, dove gli arbusti diventavano sempre più radi. Osservai che la vita vegetale scompariva più rapidamente di quella animale. Le piante abbandonavano già il suolo, mentre una quantità prodigiosa di animali lo popolava ancora. Pensavo che la luce avrebbe dovuto attirare qualche abitante di quelle tenebre; se si avvicinavano, però, restavano a una distanza spiacevole per dei cacciatori.",
+            "Infine una muraglia di rocce si levò davanti a noi. Blocchi giganteschi, un’enorme scogliera di granito scavata da grotte oscure: nessuna rampa praticabile. Erano i fianchi dell’isola Crespo. Era la terra.",
+            "Nemo si arrestò. Un suo gesto ci fermò tutti. Per quanto desiderassi superare quella muraglia, dovetti anch’io fermarmi. Lì terminavano i domini del capitano. Non voleva oltrepassarli. Al di là cominciava quella parte del globo sulla quale non avrebbe più dovuto posare il piede."
+          ]
+        },
+        {
+          "heading": "Un gruppo a testa in giù",
+          "paragraphs": [
+            "Il ritorno cominciò. Nemo aveva ripreso la testa della piccola comitiva e si dirigeva senza esitare. Mi parve che non seguissimo la stessa strada. Il nuovo percorso, molto ripido e perciò faticoso, ci riavvicinava rapidamente alla superficie. La luce ricomparve e crebbe; presto ci trovammo fra piccoli pesci d’ogni specie, più numerosi degli uccelli nell’aria, e anche più agili.",
+            "Per un’ora, una pianura di sabbia si distese davanti ai nostri passi. Spesso risaliva fino a meno di due metri dalla superficie. Allora vedevo la nostra immagine riflessa con precisione, disegnata al contrario: sopra di noi appariva un gruppo identico, che riproduceva tutti i movimenti e tutti i gesti. Era in ogni cosa simile a noi, salvo che camminava con la testa in basso e i piedi in aria.",
+            "Notai un altro effetto: passavano nuvole spesse, che si formavano e svanivano rapidamente. Riflettendo, compresi che quelle presunte nuvole dipendevano dallo spessore variabile delle lunghe onde. Scorgevo persino i fiocchi di schiuma prodotti dalle loro creste. Riuscivo anche a cogliere il rapido passaggio dell’ombra dei grandi uccelli che volavano sopra le nostre teste.",
+            "Attraversammo ancora pianure sabbiose e prati di alghe, penosi da percorrere. Infine il faro del Nautilus ruppe l’oscurità dell’acqua. Quando raggiungemmo il battello, Nemo chiuse la porta esterna della camera e premette un pulsante. Udii azionarsi le pompe dentro la nave; sentii l’acqua abbassarsi intorno a me. In pochi istanti la camera fu vuota. La porta interna si aprì e passammo nello spogliatoio. Mi tolsero, non senza fatica, lo scafandro. Esausto, vinto dalla fame e dal sonno, tornai nella mia cabina, ancora meravigliato da quella sorprendente escursione sul fondo dei mari."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jules Verne — Vingt mille lieues sous les mers, I, XVI",
+          "url": "https://fr.wikisource.org/wiki/Vingt_mille_lieues_sous_les_mers/Partie_1/Chapitre_16",
+          "edition": "J. Hetzel, Parigi, 1870, pp. 118–125. Capitolo consultato integralmente. Originale francese, autore morto nel 1905, libero in Italia/UE e USA; nessuna traduzione moderna usata. Selezione con omissioni di cataloghi e spiegazioni ottiche/fisiche storiche; titoli redazionali.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Jules Verne — Vingt mille lieues sous les mers, I, XVII",
+          "url": "https://fr.wikisource.org/wiki/Vingt_mille_lieues_sous_les_mers/Partie_1/Chapitre_17",
+          "edition": "Stessa edizione, pp. 125–132. Capitolo consultato; selezione della foresta, parete dell’isola e ritorno, con taglio della caccia a lontra e albatros e dell’incontro con gli squali; raccordo minimo sul rientro. È fantascienza ottocentesca narrata da Aronnax: scafandri, fenomeni luminosi e fauna non sono una guida scientifica o subacquea attuale. Eliminate generalizzazioni botaniche e indicazioni numeriche fuorvianti; conservata l’immaginazione della foresta verticale.",
+          "accessed": "2026-10-27"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261027",
+      "title": "Radar · agenti visuali, documenti e decisioni europee",
+      "kind": "reduced",
+      "basis": "Sette sviluppi nella finestra 26 ottobre 05:02–27 ottobre 05:02 Europe/Rome. Radar ridotto: escluse release vecchie, eventi già trattati e piste senza fonte primaria recuperabile. Risultati aziendali attribuiti; implicazioni e limiti sono valutazioni editoriali.",
+      "event_date": "2026-10-26",
+      "publication_date": "2026-10-26",
+      "sections": [
+        {
+          "heading": "GPT-6.1 Terra · computer use a prezzo ridotto",
+          "paragraphs": [
+            "26 ottobre · OpenAI rende disponibile Terra in ChatGPT Work, Codex e API."
+          ],
+          "bullets": [
+            "API standard: $1 input, $0,05 input in cache, $5 output per milione di token; metà del prezzo di GPT-6.1 Sol.",
+            "Agents’ Last Exam, effort medium: +15 punti percentuali su GPT-5.6 Terra a circa un terzo del costo per task, secondo OpenAI.",
+            "Interesse: operazioni visuali frequenti e agenti su applicazioni. Modello cloud, senza pesi locali; prestazioni da confrontare sul proprio harness."
+          ]
+        },
+        {
+          "heading": "Drex for Search · l’agente legge meno documenti",
+          "paragraphs": [
+            "26 ottobre · Nace.AI lancia una ricerca che seleziona cartella, file e pagina prima della lettura."
+          ],
+          "bullets": [
+            "CLI, SDK Python/TypeScript, MCP e REST; utilizzabile da Codex, Claude Code e altri agenti. Servizio con workspace e chiave Console.",
+            "529 domande, sei benchmark del produttore: accuratezza 63,1→67,1%; −56% token input degli agenti, senza contare le decisioni Drex.",
+            "Interesse: recupero documentale con riferimenti alle pagine. Le prove OfficeQA includono parsing diverso e una sola esecuzione Drex: vantaggio da replicare."
+          ]
+        },
+        {
+          "heading": "Ucraina · il Consiglio UE attiva circa €4,9 miliardi",
+          "paragraphs": [
+            "26 ottobre, 17:45 · Otto decisioni rendono utilizzabili fondi dello European Peace Facility."
+          ],
+          "bullets": [
+            "€4,7 miliardi rimborsano parzialmente aiuti militari già consegnati dagli Stati; €230 milioni finanziano ulteriormente l’addestramento EUMAM.",
+            "Delta: attuazione dell’accordo politico di settembre, non €4,9 miliardi interamente destinati a nuove forniture.",
+            "Conseguenza: ripartizione europea dei costi già sostenuti e continuità della formazione. Rimborsi e addestramento hanno tempi ed effetti diversi dalle consegne sul campo. Fonti: Consiglio e Interfax-Ukraine."
+          ]
+        },
+        {
+          "heading": "Baltico · quote 2027 più alte per aringhe e spratti",
+          "paragraphs": [
+            "26 ottobre, 17:50 · Accordo politico dei ministri UE sui limiti di pesca."
+          ],
+          "bullets": [
+            "Aringa del Baltico centrale: +71%; spratto: +44%. Per il merluzzo restano soltanto catture accessorie, ai livelli 2026.",
+            "Mantenute chiusure riproduttive e divieto di pesca ricreativa del merluzzo; adozione formale ancora da completare.",
+            "Posta in gioco: reddito delle flotte e recupero degli stock. Il Consiglio presenta l’equilibrio come sostenibile; RMF24 evidenzia che non sono passati i tagli proposti per alcune catture accessorie."
+          ]
+        },
+        {
+          "heading": "Germania · indice ifo a 90,2",
+          "paragraphs": [
+            "26 ottobre · L’indagine su circa 9.000 imprese sale da 89,9 di settembre."
+          ],
+          "bullets": [
+            "Aspettative: 90,4→91,6; situazione corrente: 89,5→88,8. L’ottimismo aggregato riguarda soprattutto i prossimi sei mesi.",
+            "Manifattura in miglioramento, servizi in arretramento; crescono gli ordini industriali e i programmi di produzione.",
+            "Per le filiere europee è un segnale di domanda potenziale, da confrontare con ordini e produzione effettivi. Il sondaggio misura giudizi delle imprese, non crescita del PIL già realizzata. Fonte: ifo."
+          ]
+        },
+        {
+          "heading": "Galp–Moeve · salta l’unione nella raffinazione",
+          "paragraphs": [
+            "26 ottobre, comunicazione distribuita alle 06:36 UTC · Interrotte le trattative avviate a gennaio."
+          ],
+          "bullets": [
+            "Il progetto riguardava raffinazione, chimica e commercializzazione dei carburanti; nessun accordo sui termini commerciali.",
+            "Galp afferma che l’esito non cambia le operazioni esistenti; Moeve conferma la propria strategia di trasformazione autonoma.",
+            "Conseguenza: niente aggregazione industriale iberica prevista, mentre proseguono investimenti separati. La volatilità energetica rende più difficile accordarsi sulle valutazioni, secondo la ricostruzione Reuters; non significa chiusura delle raffinerie."
+          ]
+        },
+        {
+          "heading": "Mattarella · sanità al centro del Festival delle Regioni",
+          "paragraphs": [
+            "26 ottobre · A Firenze il Presidente richiama la priorità della tutela del Servizio sanitario nazionale."
+          ],
+          "bullets": [
+            "Intervento istituzionale sulla difesa di un sistema universalistico e del diritto costituzionale alla salute.",
+            "Fedriga chiede riforme continue e un confronto che non si riduca alla convenienza elettorale; sono indicazioni politiche, senza nuovi stanziamenti deliberati.",
+            "La posta in gioco per Stato e Regioni è tradurre il richiamo in risorse, organizzazione e accesso ai servizi. La novità è il confronto aperto al Festival, non una riforma già approvata. Fonti: intervento Quirinale/Vista e Rai."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "OpenAI — Introducing GPT-6.1 Terra",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "edition": "Annuncio del 26 ottobre 2026, sezioni computer use, prezzi e disponibilità. Benchmark del produttore, non test indipendente.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Nace.AI — Introducing Drex for Search",
+          "url": "https://www.nace.ai/blog/introducing-drex-for-search",
+          "edition": "Annuncio datato 26 ottobre 2026. Risultati aggregati, metodologia OfficeQA e interfacce consultati; nessun prezzo non verificato attribuito al servizio.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Consiglio UE — fondi EPF per l’Ucraina",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/26/eu-support-for-ukraine-council-mobilises-49-billion-under-the-european-peace-facility/",
+          "edition": "Comunicato del 26 ottobre 2026, 17:45. Importi delle decisioni odierne; evitati i totali storici e il refuso sull’anno dell’accordo presenti nel background.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Interfax-Ukraine — decisioni EPF",
+          "url": "https://en.interfax.com.ua/news/general/1226387.html",
+          "edition": "Cronaca del 26 ottobre, 20:29, riscontro di importi e distinzione rimborsi/addestramento.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Consiglio UE — pesca nel Baltico 2027",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/26/baltic-sea-council-reaches-agreement-on-fishing-opportunities-for-2027/",
+          "edition": "Comunicato del 26 ottobre 2026, 17:50. Quote, catture accessorie, chiusure e passaggi successivi.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "RMF24 — quote e mancati tagli alle catture accessorie",
+          "url": "https://www.rmf24.pl/fakty/polska/news-limity-polowow-na-baltyku-bez-ciec-przylowow-dorsza-i-sledzi,nIdn,1023496",
+          "edition": "Cronaca del 26 ottobre, 19:49; riscontro indipendente del negoziato e della differenza dalle proposte iniziali.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "ifo — Business Climate, October 2026",
+          "url": "https://www.ifo.de/en/facts/2026-10-26/ifo-business-climate-rises-october-2026",
+          "edition": "Pubblicazione primaria del 26 ottobre 2026; tabella destagionalizzata, base 2015=100; settori e metodologia consultati.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Galp — fine dei negoziati con Moeve",
+          "url": "https://in.marketscreener.com/news/galp-energia-sgps-s-a-and-moeve-end-negotiations-on-a-potential-downstream-combination-ce785cdcd988f223",
+          "edition": "Comunicato originale Galp ripubblicato integralmente e senza modifiche da Publicnow il 26 ottobre 2026, distribuzione 06:36 UTC.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Reuters — Galp e Moeve interrompono la fusione downstream",
+          "url": "https://www.reuters.com/business/energy/galp-moeve-scrap-talks-combine-refining-fuel-retail-businesses-2026-10-26/",
+          "edition": "Cronaca del 26 ottobre 2026; ragioni commerciali, volatilità e configurazione del progetto.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "Quirinale / Agenzia Vista — intervento di Mattarella",
+          "url": "https://www.la7.it/camera-con-vista/video/mattarella-tutelare-servizio-sanitario-nazionale-priorita-diritto-garantito-dalla-costituzione-26-10-2026-663319",
+          "edition": "Intervento del 26 ottobre 2026, video courtesy Quirinale e trascrizione di Agenzia Vista; parafrasi senza estratto lungo.",
+          "accessed": "2026-10-27"
+        },
+        {
+          "title": "RaiNews — Festival delle Regioni a Firenze",
+          "url": "https://www.rainews.it/maratona/2026/10/presidenti-commissioni-firenze-regioni-dialogano-futuro-intelligenza-artificiale-mattarella-governo-dialogo-istituzioni-stato-territorio-378fa5e6-2cc8-4846-8ef4-1f4d7c8796b5.html",
+          "edition": "Cronaca del 26 ottobre 2026: apertura, dichiarazioni di Fedriga e programma. Gli appuntamenti del 27 non sono presentati come già avvenuti.",
+          "accessed": "2026-10-27"
+        }
+      ]
+    }
+  ]
+}
