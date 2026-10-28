@@ -1,0 +1,546 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "cards": [
+    {
+      "id": "micro-20261028-logsum",
+      "topic": "Calcolo per il machine learning",
+      "title": "Sottrarre prima di fare l’esponenziale",
+      "hook": "Sottrarre prima di fare l’esponenziale",
+      "paragraphs": [
+        "Con due punteggi di 1000 e 1001, calcolare direttamente gli esponenziali supera la capacità del formato binary64. Per sommarli dentro un logaritmo, sottrai prima il massimo: restano −1 e 0. Poi calcoli 1001 + log(1 + e⁻¹), circa 1001,313. La quantità matematica è la stessa; il percorso numerico evita numeri intermedi enormi."
+      ],
+      "takeaway": "Stesso risultato matematico, intermedi rappresentabili.",
+      "basis": "Consultati documentazione e sorgente SciPy logsumexp. Esempio editoriale reale a pesi positivi: m + log Σ exp(x − m). Logaritmo naturale; non una misura di prestazioni. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-logsum.svg",
+        "alt": "Due punteggi 1000 e 1001 vengono traslati a meno uno e zero; esponenziali 0,368 e 1, risultato 1001,313.",
+        "caption": "Stesso risultato matematico, intermedi rappresentabili.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "SciPy · logsumexp e implementazione",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.logsumexp.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-monarch",
+      "topic": "Natura · migrazioni",
+      "title": "Un viaggio che dura più di una vita",
+      "hook": "Un viaggio che dura più di una vita",
+      "paragraphs": [
+        "Le monarche orientali lasciano il Messico e avanzano verso nord attraverso più generazioni: lungo il percorso nascono farfalle che continuano il viaggio. In autunno una generazione più longeva vola verso i luoghi di svernamento. La rotta annuale appartiene dunque alla popolazione: una singola farfalla non percorre tutto il ciclo che vediamo sulla mappa."
+      ],
+      "takeaway": "Monarca su asclepiade · Sam Stukel/USFWS.",
+      "basis": "Letta la pagina NPS sul ciclo delle popolazioni orientali. Foto della specie su asclepiade, non documentazione di un individuo in migrazione. Scheda originale USFWS: Sam Stukel, 26 agosto 2018; Public Domain; ridimensionata senza ritaglio. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-monarch.jpg",
+        "alt": "Monarca dalle ali arancioni e nere appesa a una pianta di asclepiade.",
+        "caption": "Monarca su asclepiade · Sam Stukel/USFWS.",
+        "credit": "Sam Stukel/USFWS",
+        "license": "Public Domain",
+        "source": "https://www.fws.gov/media/monarch-butterfly-54"
+      },
+      "sources": [
+        {
+          "title": "National Park Service · Continental Nomads",
+          "url": "https://www.nps.gov/subjects/pollinators/migratingmonarchs.htm"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-tree",
+      "topic": "Machine learning",
+      "title": "Centimetri o metri: il taglio resta lì",
+      "hook": "Centimetri o metri: il taglio resta lì",
+      "paragraphs": [
+        "Un albero separa i campioni chiedendo se l’altezza supera 150 centimetri. Riscrivere tutte le altezze in metri sposta la soglia a 1,5, ma lascia gli stessi campioni sui due lati. Una riscalatura positiva conserva l’ordine: per questo gli alberi sono in genere poco sensibili alle unità, mentre un metodo basato sulle distanze può cambiare molto."
+      ],
+      "takeaway": "La scala cambia; l’ordine dei campioni no.",
+      "basis": "Consultato l’esempio scikit-learn sulla scala. Esempio originale di singola soglia; equivalenza matematica per trasformazione lineare positiva, non garanzia bit per bit fra implementazioni con arrotondamenti. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-tree.svg",
+        "alt": "Gli stessi quattro campioni a 100, 140, 160, 190 centimetri e 1, 1,4, 1,6, 1,9 metri; soglie allineate a 150 e 1,5.",
+        "caption": "La scala cambia; l’ordine dei campioni no.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "scikit-learn · Importance of Feature Scaling",
+          "url": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-pipe",
+      "topic": "Fluidodinamica",
+      "title": "Un piccolo restringimento pesa alla quarta",
+      "hook": "Un piccolo restringimento pesa alla quarta",
+      "paragraphs": [
+        "In un tubo circolare con flusso laminare pienamente sviluppato, la portata cresce con la quarta potenza del raggio, a parità di fluido, lunghezza e differenza di pressione. Ridurre il raggio del 20% lascia circa il 41% della portata iniziale. Un deposito sottile sulla parete può quindi pesare molto più della sua modesta riduzione geometrica."
+      ],
+      "takeaway": "Curva analitica · pressione e viscosità costanti.",
+      "basis": "Letta la definizione COMSOL di Poiseuille. Esempio Q/Q₀ = (r/r₀)⁴ = 0,8⁴ = 0,4096. Fluido newtoniano incomprimibile, regime stazionario, parete senza scorrimento; non legge generale per moto turbolento. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-pipe.svg",
+        "alt": "Sezioni circolari con raggi relativi 1 e 0,8; curva analitica della portata relativa proporzionale alla quarta potenza del raggio.",
+        "caption": "Curva analitica · pressione e viscosità costanti.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "COMSOL · Glossary, Poiseuille’s law",
+          "url": "https://doc.comsol.com/6.4/doc/com.comsol.help.cfd/cfd_ug_glossary.15.2.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-tablet",
+      "topic": "Storia · archivi",
+      "title": "Una lite conservata nell’argilla",
+      "hook": "Una lite conservata nell’argilla",
+      "paragraphs": [
+        "Due mercanti si accusano di aver sottratto un archivio: dentro c’erano sigilli e tavolette, anche affidate da altre persone. La deposizione è rimasta su questa tavoletta assira, custodita in una busta d’argilla. Conosciamo la contesa, ma non il verdetto. Un oggetto largo appena 7,3 centimetri conserva così la traccia concreta di fiducia, proprietà e conflitto commerciale."
+      ],
+      "takeaway": "Deposizione assira · The Met, 66.245.5a.",
+      "basis": "Letta la scheda museale 66.245.5a, XX–XIX sec. a.C., probabilmente Kültepe. Parafrasi, non traduzione del cuneiforme. Foto The Met dichiarata Public Domain, Open Access CC0 verificato nella policy; sola riduzione JPEG. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-tablet.jpg",
+        "alt": "Tavoletta d’argilla allungata, fittamente coperta da piccole righe di scrittura cuneiforme.",
+        "caption": "Deposizione assira · The Met, 66.245.5a.",
+        "credit": "The Metropolitan Museum of Art · Gift of Mr. and Mrs. J. J. Klejman, 1966",
+        "license": "CC0 1.0 · Open Access",
+        "source": "https://www.metmuseum.org/art/collection/search/325846"
+      },
+      "sources": [
+        {
+          "title": "The Met · Cuneiform tablet: record of a lawsuit, 66.245.5a",
+          "url": "https://www.metmuseum.org/art/collection/search/325846"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-broadcast",
+      "topic": "Architetture di calcolo",
+      "title": "Sette numeri possono riempire una tabella",
+      "hook": "Sette numeri possono riempire una tabella",
+      "paragraphs": [
+        "Somma una colonna di tre valori a una riga di quattro. Il broadcasting combina ogni valore della colonna con ogni valore della riga e produce dodici somme, senza costruire prima due copie complete degli operandi. Il risultato, però, occupa spazio: due vettori lunghi centomila elementi possono generare una matrice da dieci miliardi di celle."
+      ],
+      "takeaway": "Esempio calcolato · (3,1) + (1,4) dà (3,4).",
+      "basis": "Letta la guida NumPy, regole e caso (5,1) con (1,6). Esempio editoriale (3,1)+(1,4). Nessuna promessa di memoria nulla: un normale risultato materializzato richiede i propri dati. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-broadcast.svg",
+        "alt": "Colonna 1, 2, 3 più riga 10, 20, 30, 40 generano una matrice con dodici somme da 11 a 43.",
+        "caption": "Esempio calcolato · (3,1) + (1,4) dà (3,4).",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NumPy · Broadcasting",
+          "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-biot",
+      "topic": "Scambio termico",
+      "title": "Quando basta una temperatura sola",
+      "hook": "Quando basta una temperatura sola",
+      "paragraphs": [
+        "Una piccola sfera metallica può raffreddarsi quasi uniformemente, mentre una sfera isolante mantiene il centro più caldo della superficie. Il numero di Biot confronta conduzione interna e scambio esterno. Se è abbastanza piccolo, spesso sotto 0,1, trattare il corpo con una sola temperatura diventa una buona approssimazione: il calore si redistribuisce dentro più facilmente di quanto esca."
+      ],
+      "takeaway": "Profili illustrativi · Bi è adimensionale.",
+      "basis": "Letta la teoria COMSOL del modello a capacità concentrata. Bi = hLc/k, con Lc = V/A nell’esempio. Profili solo qualitativi, non soluzioni misurate. Soglia indicativa, proprietà e h assunti costanti. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-biot.svg",
+        "alt": "Due sfere: una quasi uniforme con Bi piccolo e una con centro caldo e superficie fredda; formula hLc/k e unità di h e k.",
+        "caption": "Profili illustrativi · Bi è adimensionale.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "COMSOL · Lumped Thermal Capacitance Model",
+          "url": "https://doc.comsol.com/6.4/doc/com.comsol.help.heat/heat_ug_theory.07.039.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-crabs",
+      "topic": "Ecologia · legami invisibili",
+      "title": "Le uova che alimentano un volo artico",
+      "hook": "Le uova che alimentano un volo artico",
+      "paragraphs": [
+        "Nella baia del Delaware, le uova dei limuli offrono ai piovanelli maggiori una sosta ricchissima di cibo prima della ripartenza verso l’Artico. Arrivano da voli lunghi e devono ricostruire riserve: la deposizione sulla spiaggia diventa parte del loro viaggio. La migrazione di un uccello dipende anche da ciò che un altro animale lascia nella sabbia."
+      ],
+      "takeaway": "Limuli a Mispillion Harbor · Gregory Breese/USFWS.",
+      "basis": "Letta USFWS Rufa Red Knot, sezioni Food e migrazione. Foto di Limulus polyphemus a Mispillion Harbor: Gregory Breese/USFWS, maggio 2009, Public Domain. Mostra adulti, non uova né uccelli. Ridimensionamento senza ritaglio. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-crabs.jpg",
+        "alt": "Due limuli dall’ampio carapace arrotondato nell’acqua bassa a Mispillion Harbor.",
+        "caption": "Limuli a Mispillion Harbor · Gregory Breese/USFWS.",
+        "credit": "Gregory Breese/USFWS",
+        "license": "Public Domain",
+        "source": "https://www.fws.gov/media/horseshoe-crabs-1"
+      },
+      "sources": [
+        {
+          "title": "USFWS · Rufa Red Knot, Food",
+          "url": "https://www.fws.gov/species/rufa-red-knot-calidris-canutus-rufa"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-catalyst",
+      "topic": "Cinetica chimica",
+      "title": "Accorcia l’attesa, non cambia l’arrivo",
+      "hook": "Accorcia l’attesa, non cambia l’arrivo",
+      "paragraphs": [
+        "In una reazione reversibile, un catalizzatore accelera il raggiungimento dell’equilibrio senza spostarne la composizione, a temperatura fissata. Nell’esempio illustrato, due miscele partono uguali e raggiungono la stessa concentrazione finale con tempi diversi. Se osservi soltanto dopo pochi minuti, quella catalizzata sembra produrre di più: stai confrontando velocità di avvicinamento, non due equilibri differenti."
+      ],
+      "takeaway": "Modello reversibile analitico · stesso equilibrio.",
+      "basis": "Letta OpenStax, sezione Catalysts Do Not Affect Equilibrium. Curve originali del modello A ⇌ B, k avanti = k indietro, entrambi moltiplicati per cinque; B/Btot = 0,5(1 − exp(−2kt)). Tempo normalizzato, dati non sperimentali. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-catalyst.svg",
+        "alt": "Due curve analitiche di frazione B: una raggiunge rapidamente 0,5, l’altra lentamente; identico asintoto di equilibrio.",
+        "caption": "Modello reversibile analitico · stesso equilibrio.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "OpenStax · Catalysts Do Not Affect Equilibrium",
+          "url": "https://openstax.org/books/chemistry-atoms-first-2e/pages/17-7-catalysis"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-counter",
+      "topic": "Ingegneria di processo",
+      "title": "L’uscita fredda può superare quella calda",
+      "hook": "L’uscita fredda può superare quella calda",
+      "paragraphs": [
+        "In controcorrente, il fluido da scaldare può uscire a 70 °C mentre quello che cede calore esce a 50 °C. Non si sono scambiati calore contro il gradiente: le due uscite si trovano a estremità opposte. Nel nostro esempio il caldo resta trenta gradi sopra il freddo in ogni sezione, lungo tutto lo scambiatore."
+      ],
+      "takeaway": "Profili ideali · le uscite sono su lati opposti.",
+      "basis": "Letti i Fundamentals ASHRAE, incluso temperature cross. Esempio originale: caldo 100→50 °C, freddo 20→70 °C, capacità termiche di portata uguali, U costante, nessuna perdita o fase variabile. Profili lineari coerenti, non dati impianto. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-counter.svg",
+        "alt": "Profili lungo uno scambiatore in controcorrente: caldo da 100 a 50 gradi verso destra, freddo da 20 a 70 verso sinistra; scarto locale costante 30 kelvin.",
+        "caption": "Profili ideali · le uscite sono su lati opposti.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "ASHRAE · Heat Exchangers, Fundamentals",
+          "url": "https://handbook.ashrae.org/Handbooks/S16/SI/s16_ch48/s16_ch48_si.aspx"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-moon",
+      "topic": "Terra e cielo",
+      "title": "Il lato nascosto ha anche il suo mezzogiorno",
+      "hook": "Il lato nascosto ha anche il suo mezzogiorno",
+      "paragraphs": [
+        "Quando dalla Terra vediamo la Luna nuova, il lato opposto riceve piena luce solare. “Nascosto” significa rivolto lontano da noi, non condannato al buio. La rotazione sincrona mantiene circa la stessa faccia verso la Terra; l’illuminazione segue invece la direzione del Sole. Visibilità e giorno lunare sono due geometrie diverse."
+      ],
+      "takeaway": "Luna nuova · lato lontano illuminato, lato vicino buio.",
+      "basis": "Letta NASA Moon Facts, Orbit and Rotation. Schema senza scala: vista dall’alto, raggi paralleli e Luna nuova idealizzata fuori dall’allineamento esatto che produrrebbe eclissi. Trascurate librazioni. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-moon.svg",
+        "alt": "Sole a sinistra, Luna nuova al centro e Terra a destra: metà lunare rivolta al Sole illuminata, faccia rivolta alla Terra in ombra.",
+        "caption": "Luna nuova · lato lontano illuminato, lato vicino buio.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NASA · Moon Facts, Orbit and Rotation",
+          "url": "https://science.nasa.gov/moon/facts/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-rigid",
+      "topic": "FEM · meccanica",
+      "title": "Una struttura può muoversi senza deformarsi",
+      "hook": "Una struttura può muoversi senza deformarsi",
+      "paragraphs": [
+        "Trasla un triangolo intero: tutti i suoi punti cambiano posizione, ma le distanze fra loro rimangono uguali. Il moto rigido non genera deformazione elastica. In un modello strutturale statico non sufficientemente vincolato, questa libertà può rendere singolare la matrice di rigidezza. In tre dimensioni un corpo libero possiede sei modi rigidi: tre traslazioni e tre rotazioni."
+      ],
+      "takeaway": "Traslazione rigida: cambia la posizione, non la forma.",
+      "basis": "Letta COMSOL Rigid Body Motion, tabella 2-9. Triangolo illustrativo 2D; sei modi riferiti al 3D. Occorrono vincoli fisicamente corretti; non si suggerisce di bloccare nodi arbitrari. Moto rigido ammesso nelle analisi dinamiche. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-rigid.svg",
+        "alt": "Due triangoli identici traslati, lati con lunghezze invariate; confronto con un triangolo deformato che cambia la lunghezza di un lato.",
+        "caption": "Traslazione rigida: cambia la posizione, non la forma.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "COMSOL · Rigid Body Motion",
+          "url": "https://doc.comsol.com/6.4/doc/com.comsol.help.sme/sme_ug_modeling.05.081.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-index",
+      "topic": "Database",
+      "title": "L’ordine dei nomi cambia la ricerca",
+      "hook": "L’ordine dei nomi cambia la ricerca",
+      "paragraphs": [
+        "Un indice B-tree su città e cognome raggruppa prima le città, poi ordina i cognomi dentro ciascun gruppo. Cercare un cognome in una città restringe subito l’intervallo. Cercarlo in tutte le città lascia più lavoro: PostgreSQL può anche usare uno skip scan, ma la convenienza dipende da quanti gruppi attraversa. Le stesse colonne in ordine diverso organizzano un altro percorso."
+      ],
+      "takeaway": "Dati illustrativi · indice (città, cognome).",
+      "basis": "Letta documentazione PostgreSQL 18 sugli indici multicolonna, inclusa skip scan. Tabella inventata e dichiarata illustrativa; ordine lessicografico semplificato. Non affermazione che una query senza prima colonna non usi mai l’indice. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-index.svg",
+        "alt": "Indice illustrativo ordinato per Bologna, Milano e Roma, ciascuna con Bianchi e Rossi; evidenziato solo l’intervallo Milano-Rossi.",
+        "caption": "Dati illustrativi · indice (città, cognome).",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "PostgreSQL 18 · Multicolumn Indexes",
+          "url": "https://www.postgresql.org/docs/18/indexes-multicolumn.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-ship",
+      "topic": "Filosofia · identità",
+      "title": "Quante assi può cambiare una nave?",
+      "hook": "Quante assi può cambiare una nave?",
+      "paragraphs": [
+        "Gli Ateniesi conservano la nave di Teseo sostituendo il legname che marcisce con tavole nuove. La manutenzione la mantiene riconoscibile, ma cambia la materia che la compone. Plutarco ricorda che i filosofi ne discutevano: è ancora la stessa nave? La domanda nasce proprio da una cura riuscita, non dalla distruzione dell’oggetto."
+      ],
+      "takeaway": "Illustrazione del problema · stessa forma, legname sostituito.",
+      "basis": "Letto Vita di Teseo 23.1, traduzione Perrin consultabile su Lexundria. Rielaborazione italiana autonoma del problema, senza estratti né soluzione attribuita a Plutarco. Disegno concettuale, non ricostruzione archeologica. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-ship.svg",
+        "alt": "Tre scafi di identica forma: inizialmente otto assi antiche, poi quattro antiche e quattro nuove, infine tutte nuove.",
+        "caption": "Illustrazione del problema · stessa forma, legname sostituito.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Plutarco · Vita di Teseo, 23.1",
+          "url": "https://lexundria.com/plut_thes/23/prr"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-fft",
+      "topic": "Segnali e immagini",
+      "title": "Perché la sfocatura scurisce il bordo?",
+      "hook": "Perché la sfocatura scurisce il bordo?",
+      "paragraphs": [
+        "Un filtro medio applicato a un’immagine uniforme dovrebbe lasciarla uniforme. Se però fuori dal fotogramma aggiungi zeri, vicino al bordo la finestra include anche quei valori neri: la media scende. La convoluzione con padding a zero può quindi creare una cornice scura. Il filtro è lo stesso; sono le ipotesi su ciò che esiste oltre il bordo a cambiare il risultato."
+      ],
+      "takeaway": "Convoluzione calcolata · zeri esterni, filtro di tre punti.",
+      "basis": "Letti parametri ed esempio Gaussian blur di scipy.signal.fftconvolve. Visual originale 1D: cinque valori unitari, filtro [1/3,1/3,1/3], output same [2/3,1,1,1,2/3]. Non riproduzione dell’immagine SciPy. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-fft.svg",
+        "alt": "Cinque campioni unitari circondati da zeri; la media mobile a tre campioni produce due terzi alle estremità e uno al centro.",
+        "caption": "Convoluzione calcolata · zeri esterni, filtro di tre punti.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "SciPy · fftconvolve, esempio di sfocatura",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-derivative",
+      "topic": "Controllo",
+      "title": "La derivata sente forte le vibrazioni rapide",
+      "hook": "La derivata sente forte le vibrazioni rapide",
+      "paragraphs": [
+        "Una piccola oscillazione può avere una pendenza enorme se è molto rapida. Derivando un seno di ampiezza A, l’ampiezza diventa Aω: raddoppiare la frequenza raddoppia il contributo. Per questo la parte derivativa di un PID usa spesso un filtro. Il suo guadagno alle alte frequenze resta limitato, invece di crescere senza fine insieme al rumore."
+      ],
+      "takeaway": "Curve analitiche · derivata ideale e derivata filtrata.",
+      "basis": "Letta la forma continua parallela MathWorks: Kd s/(Tf s+1). Curve originali normalizzate: Ω e Ω/sqrt(1+Ω²), con Ω=ωTf e guadagno diviso Kd/Tf. Il filtro limita, non elimina, rumore e introduce dinamica. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-derivative.svg",
+        "alt": "Guadagno derivativo normalizzato in funzione della frequenza normalizzata: retta ideale crescente e curva filtrata che si appiattisce verso uno.",
+        "caption": "Curve analitiche · derivata ideale e derivata filtrata.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "MathWorks · Continuous-Time PID Controller Representations",
+          "url": "https://www.mathworks.com/help/control/ug/proportional-integral-derivative-pid-controllers.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-pendulum",
+      "topic": "Scienza quotidiana",
+      "title": "Il peso non decide il ritmo",
+      "hook": "Il peso non decide il ritmo",
+      "paragraphs": [
+        "Due pendoli con filo della stessa lunghezza, ma masse diverse, oscillano quasi con lo stesso periodo quando gli angoli sono piccoli. La gravità tira più forte la massa maggiore, che oppone però più inerzia: i due effetti si compensano. Allungare il filo conta davvero: quadruplicare la lunghezza raddoppia il tempo di un’oscillazione completa."
+      ],
+      "takeaway": "Calcolo ideale a piccoli angoli · g = 9,81 m/s².",
+      "basis": "Letta la derivazione di Russell, Penn State. Calcoli propri T=2π√(L/g), g=9,81 m/s², massa puntiforme, filo senza massa, attrito trascurato e piccoli angoli. Nessuna animazione o figura NC-ND della fonte riutilizzata. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-pendulum.svg",
+        "alt": "Due pendoli lunghi un metro con masse m e 2m hanno entrambi periodo circa due secondi; un pendolo lungo quattro metri ha periodo circa quattro secondi.",
+        "caption": "Calcolo ideale a piccoli angoli · g = 9,81 m/s².",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Daniel A. Russell, Penn State · Oscillation of a Simple Pendulum",
+          "url": "https://www.acs.psu.edu/drussell/Demos/Pendulum/Pendulum.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-caps",
+      "topic": "Orchestrazione e sistemi",
+      "title": "Un riferimento apre una risorsa, non tutto",
+      "hook": "Un riferimento apre una risorsa, non tutto",
+      "paragraphs": [
+        "Un componente può ricevere un riferimento che gli permette di leggere un singolo file, senza ottenere accesso agli altri. È l’idea delle capability: il permesso viaggia con un riferimento controllato dal runtime, non con una frase che promette prudenza. In WASI questi handle sono non falsificabili; passare una risorsa a un componente è quindi anche una decisione su che cosa gli consenti."
+      ],
+      "takeaway": "Esempio di accesso circoscritto a una sola risorsa.",
+      "basis": "Letto WebAssembly/WASI Capabilities, link-time e runtime capabilities. Esempio editoriale di handle in sola lettura: i diritti effettivi dipendono dall’interfaccia e dall’host. Nessun suggerimento che ogni runtime autorizzi automaticamente il minimo. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-caps.svg",
+        "alt": "Tre file nell’host, ma solo il file dati è collegato alla tabella di handle del componente; permesso di sola lettura, nessun collegamento ai file segreti.",
+        "caption": "Esempio di accesso circoscritto a una sola risorsa.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "WebAssembly/WASI · Capabilities",
+          "url": "https://github.com/WebAssembly/WASI/blob/main/docs/Capabilities.md"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-orchid",
+      "topic": "Storia naturale",
+      "title": "Un fiore chiuso può comunque fare semi",
+      "hook": "Un fiore chiuso può comunque fare semi",
+      "paragraphs": [
+        "Nel 1863 Darwin riceve osservazioni di orchidee che formano capsule senza aprire i fiori. In alcune, i tubi pollinici raggiungono lo stigma mentre il polline resta al suo posto. L’insetto non è sempre necessario: la fecondazione può avvenire dentro il fiore. Quei casi lo convincono a riconoscere di aver sottovalutato questa possibilità nelle orchidee tropicali."
+      ],
+      "takeaway": "Schema qualitativo del meccanismo riferito a Darwin.",
+      "basis": "Letta integralmente la nota Fertilisation of orchids, 31 marzo 1863, p.237, testo F1724a Darwin Online. Parafrasi originale; schema del meccanismo riferito, non anatomia di una specie identificata né regola per tutte le orchidee. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-orchid.svg",
+        "alt": "Sezione botanica schematica di fiore chiuso: polline nella parte superiore, tubi pollinici diretti allo stigma e ovario sottostante.",
+        "caption": "Schema qualitativo del meccanismo riferito a Darwin.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Charles Darwin · Fertilisation of orchids, 31 marzo 1863, p. 237",
+          "url": "https://darwin-online.org.uk/converted/published/1863_orchids_F1724a.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261028-feather",
+      "topic": "Natura · luce",
+      "title": "Il blu può essere un’architettura",
+      "hook": "Il blu può essere un’architettura",
+      "paragraphs": [
+        "Nel collo del pavone, il blu nasce anche dalla disposizione microscopica di melanosomi, aria e cheratina nelle piume. Queste strutture selezionano la luce riflessa: cambia l’angolo e può cambiare il colore che raggiunge l’occhio. Il pigmento non è l’unica tavolozza della natura; conta anche come la materia è organizzata su distanze paragonabili alle lunghezze d’onda."
+      ],
+      "takeaway": "Architettura fotonica qualitativa · non una micrografia.",
+      "basis": "Letti abstract e didascalie di Freyer, Wilts e Stavenga (2019), DOI 10.1098/rsfs.2018.0043. Non dichiarata lettura integrale. Sezione originale qualitativa del reticolo, senza spettro empirico inventato o dimensioni attribuite alla misura. Fonti consultate il 28 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261028-feather.svg",
+        "alt": "Sezione schematica con bastoncelli di melanina e canali d’aria ordinati nella cheratina; due direzioni di luce riflessa colorata indicano dipendenza dall’angolo.",
+        "caption": "Architettura fotonica qualitativa · non una micrografia.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Freyer, Wilts e Stavenga · Peacock feathers, abstract e didascalie",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30603065/"
+        }
+      ]
+    }
+  ]
+}
