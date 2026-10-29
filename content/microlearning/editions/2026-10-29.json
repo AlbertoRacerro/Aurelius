@@ -1,0 +1,558 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "cards": [
+    {
+      "id": "micro-20261029-loss",
+      "topic": "Machine learning",
+      "title": "Sbagliare con sicurezza costa di più",
+      "hook": "Sbagliare con sicurezza costa di più",
+      "paragraphs": [
+        "Due modelli scelgono entrambi la classe sbagliata. Il primo aveva assegnato alla risposta vera il 40% di probabilità, il secondo soltanto l’1%. La log loss distingue questi errori: circa 0,92 contro 4,61. Non conta soltanto la casella scelta, ma quanto il modello aveva escluso ciò che è poi accaduto. Per questo le probabilità raccontano più delle sole etichette."
+      ],
+      "takeaway": "Probabilità della classe vera · perdita −ln(p).",
+      "basis": "Letta la definizione scikit-learn di log_loss. Esempio binario con y=1: perdita −ln(p). Curva analitica, non benchmark; logaritmo naturale. Probabilità illustrative, nessuna previsione reale. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-loss.svg",
+        "alt": "Curva meno logaritmo naturale di p, con punti a 0,01 e 0,40: perdite 4,61 e 0,92.",
+        "caption": "Probabilità della classe vera · perdita −ln(p).",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "scikit-learn · log_loss",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.log_loss.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-otter",
+      "topic": "Natura · mammiferi marini",
+      "title": "Il cappotto che non può sporcarsi",
+      "hook": "Il cappotto che non può sporcarsi",
+      "paragraphs": [
+        "La lontra marina resta calda nell’acqua del Pacifico soprattutto grazie alla pelliccia fittissima e al metabolismo elevato, senza lo spesso strato di grasso di foche e balene. Pulire il pelo è quindi manutenzione dell’isolamento. Se sostanze oleose ne alterano le proprietà, il freddo diventa un pericolo: un gesto che sembra vanità protegge in realtà il calore del corpo."
+      ],
+      "takeaway": "Lontra meridionale fra le alghe · Lilian Carswell/USFWS.",
+      "basis": "Letta USFWS, Physical Characteristics. Foto della lontra meridionale a Moss Landing: Lilian Carswell/USFWS, Public Domain; ridimensionata senza ritaglio. Non vengono attribuiti al soggetto fotografato comportamenti non visibili. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-otter.jpg",
+        "alt": "Lontra marina meridionale distesa sul dorso fra fronde di kelp, con pelliccia bagnata e muso chiaro.",
+        "caption": "Lontra meridionale fra le alghe · Lilian Carswell/USFWS.",
+        "credit": "Lilian Carswell/USFWS",
+        "license": "Public Domain",
+        "source": "https://www.fws.gov/media/sea-otter-0"
+      },
+      "sources": [
+        {
+          "title": "USFWS · Southern Sea Otter, caratteristiche fisiche",
+          "url": "https://www.fws.gov/species/southern-sea-otter-enhydra-lutris-nereis"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-gauss",
+      "topic": "Calcolo numerico · FEM",
+      "title": "Due punti possono integrare una cubica",
+      "hook": "Due punti possono integrare una cubica",
+      "paragraphs": [
+        "Per integrare un polinomio cubico fra −1 e 1 non occorre campionarlo fittamente. La quadratura di Gauss a due punti sceglie posizioni precise, ±1/√3, con pesi uguali a uno. Nell’esempio basta sommare due valori per ottenere esattamente 8/3. Il vantaggio nasce dalla scelta dei punti, non dall’aumento indiscriminato del loro numero."
+      ],
+      "takeaway": "Polinomio illustrativo · integrale esatto 8/3.",
+      "basis": "Letta NumPy leggauss: n punti integrano polinomi fino al grado 2n−1 su [−1,1], peso unitario. Esempio f(x)=1+x+x²+x³. Esattezza matematica, salvo arrotondamenti; non estesa a funzioni arbitrarie o Jacobiani variabili. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-gauss.svg",
+        "alt": "Grafico di 1+x+x²+x³ e due campioni a meno e più uno su radice di tre, la cui somma è otto terzi.",
+        "caption": "Polinomio illustrativo · integrale esatto 8/3.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "NumPy · Gauss-Legendre quadrature",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.polynomial.legendre.leggauss.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-heat",
+      "topic": "Trasporto di calore",
+      "title": "Lo strato lento si prende quasi tutto il salto",
+      "hook": "Lo strato lento si prende quasi tutto il salto",
+      "paragraphs": [
+        "Due strati di uguale spessore conducono lo stesso flusso di calore. Quello con conducibilità dieci volte minore richiede però una caduta di temperatura dieci volte maggiore. Nel disegno, venti gradi si perdono nel primo e soltanto due nel secondo. La conducibilità equivalente non è la media aritmetica: lo strato più isolante pesa molto sul percorso complessivo."
+      ],
+      "takeaway": "Stesso flusso: 400 W/m² · k in W/(m·K).",
+      "basis": "Letta COMSOL, Plane Shell e Thermal Resistances in Series. Conduzione 1D stazionaria, contatto perfetto, k costanti: due spessori da 1 cm, k=0,2 e 2 W/(m·K), q=400 W/m². Temperature 100, 80 e 78 °C; esempio analitico. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-heat.svg",
+        "alt": "Due strati spessi un centimetro: temperatura da 100 a 80 gradi nel primo e da 80 a 78 nel secondo.",
+        "caption": "Stesso flusso: 400 W/m² · k in W/(m·K).",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "COMSOL · Conductive Thermal Resistor",
+          "url": "https://doc.comsol.com/6.4/doc/com.comsol.help.heat/heat_ug_theory.07.044.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-beaver",
+      "topic": "Biologia · materiali",
+      "title": "Arancione e ferro: il nesso è meno semplice",
+      "hook": "Arancione e ferro: il nesso è meno semplice",
+      "paragraphs": [
+        "Gli incisivi del castoro contengono uno smalto ricco di ferro, resistente agli acidi. Ma il colore arancione non è semplicemente quel ferro che si vede: uno studio del 2024 sui roditori distingue le tasche minerali protettive da un sottile strato superficiale che genera la colorazione. Due proprietà vicine nello stesso dente possono dipendere da strutture diverse."
+      ],
+      "takeaway": "Incisivi visibili · Mike Budd/USFWS.",
+      "basis": "Letti abstract di Srot et al., ACS Nano 2024, DOI 10.1021/acsnano.4c00578, e comunicato ACS sui risultati. Non dichiarata lettura integrale. Foto Castor canadensis: Mike Budd/USFWS, Public Domain, 13 aprile 2023; compressa senza ritaglio. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-beaver.jpg",
+        "alt": "Castoro sulla riva con incisivi arancioni visibili sotto il muso.",
+        "caption": "Incisivi visibili · Mike Budd/USFWS.",
+        "credit": "Mike Budd/USFWS",
+        "license": "Public Domain",
+        "source": "https://www.fws.gov/media/beaver-its-orange-teeth"
+      },
+      "sources": [
+        {
+          "title": "Srot et al. · Ingenious Architecture and Coloration Generation, abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38629732/"
+        },
+        {
+          "title": "ACS · risultati su smalto e colore",
+          "url": "https://www.acs.org/pressroom/presspacs/2024/april/iron-rich-enamel-protects-but-doesnt-color-rodents-orange-brown-incisors.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-cfl",
+      "topic": "CFD · propagazione",
+      "title": "Il segnale deve restare raggiungibile",
+      "hook": "Il segnale deve restare raggiungibile",
+      "paragraphs": [
+        "Un metodo esplicito che usa soltanto il nodo corrente e quello a monte non può seguire un segnale che, in un passo, percorre più di una cella. Per l’advezione a velocità costante, il numero di Courant confronta proprio queste distanze. Con celle da un centimetro e velocità di due metri al secondo, il limite CFL corrisponde a cinque millisecondi."
+      ],
+      "takeaway": "Dominio numerico a monte · confronto di due passi.",
+      "basis": "Letto Driscoll e Braun, §12.2: dominio di dipendenza e CFL. Esempio originale: C=cΔt/Δx, c>0, stencil a monte, Euler esplicito. C≤1 è il vincolo mostrato; rispettarlo non rende stabile qualunque altro schema. Grafico senza scala fisica. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-cfl.svg",
+        "alt": "Due diagrammi spazio-tempo: il punto fisico a monte è dentro lo stencil per C=0,5 e fuori per C=1,5.",
+        "caption": "Dominio numerico a monte · confronto di due passi.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Driscoll e Braun · Upwinding and stability, §12.2",
+          "url": "https://tobydriscoll.net/fnc-julia/advection/upwind.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-michaelis",
+      "topic": "Cinetica enzimatica",
+      "title": "Raddoppiare il cibo non raddoppia il ritmo",
+      "hook": "Raddoppiare il cibo non raddoppia il ritmo",
+      "paragraphs": [
+        "Quando un enzima segue Michaelis–Menten, aumentare il substrato produce incrementi sempre più piccoli della velocità iniziale. A concentrazione Km raggiunge metà del limite; a dieci volte Km arriva a circa il 91%. Gran parte della capacità è già impegnata. Aggiungere ancora substrato e aggiungere altro enzima sono quindi due interventi diversi, anche se entrambi sembrano “dare di più” alla reazione."
+      ],
+      "takeaway": "Velocità iniziale · enzima e temperatura fissi.",
+      "basis": "Letta la definizione IUPAC M03892 reperibile nei risultati indicizzati e la legge enzimatica di Fogler, §3. v/Vmax=S/(Km+S), condizioni iniziali e substrato in eccesso sull’enzima; concentrazione enzimatica e temperatura fisse. Curva analitica adimensionale, non dati. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-michaelis.svg",
+        "alt": "Iperbole v/Vmax contro S/Km, con punti a 1 e 10 che danno 0,5 e 0,91.",
+        "caption": "Velocità iniziale · enzima e temperatura fissi.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "IUPAC · Michaelis–Menten kinetics",
+          "url": "https://goldbook.iupac.org/terms/view/M03892"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-plato",
+      "topic": "Filosofia · geometria",
+      "title": "Il doppio non si trova raddoppiando",
+      "hook": "Il doppio non si trova raddoppiando",
+      "paragraphs": [
+        "Nel Menone, un ragazzo pensa che per raddoppiare un quadrato basti raddoppiarne il lato. Il disegno lo smentisce: l’area diventa quattro volte maggiore. Socrate gli fa poi riconoscere la diagonale: costruendo su quella il nuovo quadrato, l’area raddoppia davvero. L’errore si scioglie cambiando la figura che si riesce a vedere, non ripetendo con più forza la prima risposta."
+      ],
+      "takeaway": "Lato 1: area 1 · diagonale √2: area 2.",
+      "basis": "Letto il passaggio geometrico del Menone, 82b–85b, nella traduzione Jowett su Fordham. Parafrasi italiana autonoma, senza citazioni; nessuna tesi sulla reminiscenza presentata come prova scientifica. Figura originale con quadrato unitario e quadrato sulla diagonale. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-plato.svg",
+        "alt": "Quattro quadrati unitari formano un quadrato grande; le loro diagonali delimitano un rombo quadrato di area due.",
+        "caption": "Lato 1: area 1 · diagonale √2: area 2.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Platone · Menone, esperimento geometrico",
+          "url": "https://sourcebooks.web.fordham.edu/ancient/plato-meno.asp"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-timeout",
+      "topic": "Sistemi asincroni",
+      "title": "Il timeout può finire dopo il timeout",
+      "hook": "Il timeout può finire dopo il timeout",
+      "paragraphs": [
+        "Impostare un secondo in asyncio.wait_for non garantisce che la chiamata ritorni esattamente entro un secondo. Alla scadenza viene richiesta la cancellazione, ma la funzione aspetta che questa si completi. Se la coroutine deve chiudere una risorsa, anche quella pulizia richiede tempo. La scadenza avvia quindi un arresto cooperativo, invece di tagliare istantaneamente l’esecuzione."
+      ],
+      "takeaway": "Esempio temporale · cancellare può richiedere pulizia.",
+      "basis": "Letta documentazione Python, wait_for e Task cancellation. Linea temporale illustrativa con scadenza 1 s e pulizia di 0,4 s; nessuna misura runtime. Riferito al caso ordinario di cancellazione propagata; codice che la sopprime o blocca l’event loop richiede ulteriori considerazioni. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-timeout.svg",
+        "alt": "Un intervallo di lavoro termina alla richiesta di cancellazione a un secondo, seguito da pulizia fino a 1,4 secondi.",
+        "caption": "Esempio temporale · cancellare può richiedere pulizia.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Python · asyncio.wait_for e cancellazione",
+          "url": "https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-arrhenius",
+      "topic": "Cinetica chimica",
+      "title": "Dieci gradi non hanno un moltiplicatore fisso",
+      "hook": "Dieci gradi non hanno un moltiplicatore fisso",
+      "paragraphs": [
+        "Con un’energia di attivazione di 50 kJ/mol, passare da 300 a 310 kelvin moltiplica la costante cinetica per circa 1,91. Da 400 a 410 kelvin, gli stessi dieci gradi danno circa 1,44. Nella legge di Arrhenius conta la differenza fra temperature inverse: la regola “ogni dieci gradi raddoppia” è soltanto una possibile approssimazione locale."
+      ],
+      "takeaway": "Stesso aumento di 10 K · Ea = 50 kJ/mol.",
+      "basis": "Letto Fogler, Rate Constant k: forma e rapporto di Arrhenius. A ed Ea costanti nel range illustrativo; R=8,314 J/(mol·K), Ea=50000 J/mol. Rapporti calcolati, non dati di una reazione identificata. Nessuna estrapolazione a denaturazione o cambi di meccanismo. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-arrhenius.svg",
+        "alt": "Due barre con origine zero: k(T+10)/k(T) vale 1,91 a 300 kelvin e 1,44 a 400 kelvin.",
+        "caption": "Stesso aumento di 10 K · Ea = 50 kJ/mol.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Fogler · Rate Laws, Rate Constant k",
+          "url": "https://websites.umich.edu/~elements/7e/03chap/summary.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-astro",
+      "topic": "Storia · strumenti",
+      "title": "Un principe con un certificato da artigiano",
+      "hook": "Un principe con un certificato da artigiano",
+      "paragraphs": [
+        "Questo astrolabio del 1291 porta il nome di un principe rasulide, Umar ibn Yusuf. Non resta soltanto l’oggetto: un suo trattato sulla costruzione degli astrolabi, conservato al Cairo, contiene la descrizione di questo pezzo e attestazioni dei maestri sulla sua competenza. In questo caso, il lavoro manuale e il sapere astronomico lasciano insieme una documentazione insolitamente precisa."
+      ],
+      "takeaway": "Astrolabio del 1291 · The Metropolitan Museum of Art.",
+      "basis": "Letta la scheda Met 91.1.535, data 690 AH/1291 CE e descrizione documentale. Nessuna consultazione diretta del manoscritto dichiarata. Foto Met Open Access, opera e immagine in pubblico dominio secondo la scheda e policy CC0; ridimensionata senza ritaglio. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-astro.jpg",
+        "alt": "Astrolabio circolare d’ottone, con reticolo traforato e scale incise, sormontato da un anello.",
+        "caption": "Astrolabio del 1291 · The Metropolitan Museum of Art.",
+        "credit": "The Metropolitan Museum of Art",
+        "license": "CC0 1.0 · Public Domain",
+        "source": "https://www.metmuseum.org/art/collection/search/444408"
+      },
+      "sources": [
+        {
+          "title": "The Met · Astrolabe of Umar ibn Yusuf, 1291",
+          "url": "https://www.metmuseum.org/art/collection/search/444408"
+        },
+        {
+          "title": "The Met · Open Access image policy",
+          "url": "https://www.metmuseum.org/policies/image-resources"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-sharing",
+      "topic": "Architetture · cache",
+      "title": "Due contatori litigano senza toccarsi",
+      "hook": "Due contatori litigano senza toccarsi",
+      "paragraphs": [
+        "Due core aggiornano contatori diversi, ma i contatori occupano la stessa linea di cache. Il protocollo di coerenza tratta quel blocco come un’unità: le scritture possono costringerlo a passare continuamente fra i core. È false sharing. Il programma condivide poco sul piano logico e molto su quello fisico; separare opportunamente i dati può ridurre questo traffico."
+      ],
+      "takeaway": "Una sola linea fisica · due contatori indipendenti.",
+      "basis": "Letta Oracle, What Is False Sharing, inclusa esclusione dei dati di sola lettura. Linea da 64 byte scelta come esempio illustrativo, non dimensione universale. Schema delle scritture, senza benchmark né speedup promesso. Il padding è una scelta da verificare sul caso reale. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-sharing.svg",
+        "alt": "Una linea di cache da 64 byte contiene contatore A nei primi otto byte e B nei successivi otto; core distinti li scrivono.",
+        "caption": "Una sola linea fisica · due contatori indipendenti.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Oracle · OpenMP, What Is False Sharing?",
+          "url": "https://docs.oracle.com/cd/E19205-01/819-5270/aewcy/index.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-owl",
+      "topic": "Natura · percezione",
+      "title": "Due orecchie diverse per vedere il buio",
+      "hook": "Due orecchie diverse per vedere il buio",
+      "paragraphs": [
+        "Il barbagianni raccoglie i suoni con il disco di piume a forma di cuore. Le aperture delle orecchie, nascoste dietro gli occhi, hanno forma e altezza diverse. Lo stesso fruscio arriva così con caratteristiche differenti ai due lati: il cervello usa queste differenze per localizzare la preda. Le piume visibili non sono due padiglioni auricolari simili ai nostri."
+      ],
+      "takeaway": "Aperture normalmente nascoste dalle piume · schema.",
+      "basis": "Letta Barn Owl Trust, Hearing. Illustrazione concettuale originale del disco facciale e delle aperture asimmetriche, rese visibili schematicamente; non sezione anatomica in scala. Non attribuita la stessa asimmetria a tutte le specie di rapaci notturni. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-owl.svg",
+        "alt": "Volto a cuore di barbagianni, con aperture auricolari schematiche poste ad altezze diverse dietro gli occhi.",
+        "caption": "Aperture normalmente nascoste dalle piume · schema.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Barn Owl Trust · Adaptations, Hearing",
+          "url": "https://www.barnowltrust.org.uk/barn-owl-facts/barn-owl-adaptations/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-observe",
+      "topic": "Controllo · osservabilità",
+      "title": "Una fotografia non dice da che parte vai",
+      "hook": "Una fotografia non dice da che parte vai",
+      "paragraphs": [
+        "Due carrelli possono trovarsi nello stesso punto mentre uno va a destra e l’altro a sinistra. Una sola lettura di posizione non distingue i loro stati. Una seconda lettura, con un modello di moto a velocità costante, permette di ricavare anche la velocità. Osservabilità significa poter distinguere lo stato interno attraverso le uscite nel tempo, non soltanto contarne i sensori."
+      ],
+      "takeaway": "Modello illustrativo · velocità +1 e −1 m/s.",
+      "basis": "Letti control.obsv e implementazione Python Control. Esempio discreto esatto: stato [x,v], A=[[1,Δt],[0,1]], C=[1,0]. Matrice [C;CA] di rango 2 per Δt≠0. Traiettorie x=±t in metri, t in secondi; misure ideali, nessun rumore o accelerazione. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-observe.svg",
+        "alt": "Due rette posizione-tempo partono da zero: una arriva a un metro, l’altra a meno un metro dopo un secondo.",
+        "caption": "Modello illustrativo · velocità +1 e −1 m/s.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Python Control · Observability matrix e sorgente",
+          "url": "https://python-control.readthedocs.io/en/latest/generated/control.obsv.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-rainbow",
+      "topic": "Ottica · cielo",
+      "title": "Il secondo arco rovescia i colori",
+      "hook": "Il secondo arco rovescia i colori",
+      "paragraphs": [
+        "Nell’arcobaleno secondario, più esterno e più debole, il violetto occupa il bordo esterno e il rosso quello interno: l’ordine si inverte rispetto all’arco principale. Il percorso nella goccia comprende due riflessioni interne anziché una. Non stai guardando una copia sbiadita dello stesso arco, ma luce che ha compiuto un viaggio differente prima di raggiungere gli occhi."
+      ],
+      "takeaway": "Ordine dei colori invertito · schema non in scala.",
+      "basis": "Letta Met Office, Double rainbows. Archi originali schematici centrati sul punto antisolare; colori discreti per leggibilità, spettro reale continuo. Raggi e distanza fra archi non in scala angolare; nessuna foto del Met Office riprodotta. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-rainbow.svg",
+        "alt": "Due archi concentrici: nel principale rosso fuori e violetto dentro; nel secondario violetto fuori e rosso dentro.",
+        "caption": "Ordine dei colori invertito · schema non in scala.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "Met Office · Rainbows, Double rainbows",
+          "url": "https://weather.metoffice.gov.uk/learn-about/weather/optical-effects/rainbows"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-little",
+      "topic": "Sistemi · code",
+      "title": "Sei richieste abitano quei tre minuti",
+      "hook": "Sei richieste abitano quei tre minuti",
+      "paragraphs": [
+        "Se entrano due richieste al minuto e ciascuna rimane nel sistema in media tre minuti, ne trovi mediamente sei fra attesa ed esecuzione. È la legge di Little. I confini devono coincidere: se misuri il tempo solo nella coda, devi contare soltanto chi aspetta. Una latenza e un numero di operazioni diventano confrontabili quando descrivono lo stesso pezzo del sistema."
+      ],
+      "takeaway": "Esempio stazionario · 2/min × 3 min = 6.",
+      "basis": "Letto abstract di Little, Operations Research 1961, DOI 10.1287/opre.9.3.383. L=λW, regime stazionario con medie finite; esempio originale senza perdite. Gantt con arrivi ogni 0,5 min e permanenza di 3 min, non misure di un servizio reale. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-little.svg",
+        "alt": "Sei intervalli di durata tre minuti attraversano una linea del presente; arrivi separati da mezzo minuto.",
+        "caption": "Esempio stazionario · 2/min × 3 min = 6.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "John D. C. Little · A Proof for the Queuing Formula, abstract",
+          "url": "https://pubsonline.informs.org/doi/abs/10.1287/opre.9.3.383"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-dropout",
+      "topic": "Machine learning · reti neurali",
+      "title": "Allenarsi con qualche segnale in meno",
+      "hook": "Allenarsi con qualche segnale in meno",
+      "paragraphs": [
+        "Durante l’addestramento, il dropout azzera casualmente alcune attivazioni. Con probabilità di esclusione pari a metà, PyTorch raddoppia quelle rimaste: il valore atteso di ogni componente resta invariato. A ogni passaggio cambia la maschera. In modalità di valutazione il modulo lascia invece passare i valori: la perturbazione serve ad allenare la rete, non a spegnerne permanentemente una parte."
+      ],
+      "takeaway": "Una possibile maschera · valori attivi moltiplicati per 2.",
+      "basis": "Letta documentazione torch.nn.Dropout. Esempio originale con p=0,5, input [1,2,3,4] e una possibile maschera [1,0,1,0], output [2,0,6,0]. Non si impone di eliminare esattamente metà degli elementi in ogni campione. Regularizzazione, non compressione del modello. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-dropout.svg",
+        "alt": "Quattro valori 1,2,3,4 attraversano una maschera 1,0,1,0 e diventano 2,0,6,0 con dropout p=0,5.",
+        "caption": "Una possibile maschera · valori attivi moltiplicati per 2.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "PyTorch · torch.nn.Dropout",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-mars",
+      "topic": "Esplorazione · luce",
+      "title": "Il pianeta rosso tramonta nel blu",
+      "hook": "Il pianeta rosso tramonta nel blu",
+      "paragraphs": [
+        "Il 15 aprile 2015 Curiosity fotografò questo tramonto nel cratere Gale. La polvere marziana distribuisce i colori in modo diverso dall’atmosfera terrestre: il blu resta concentrato vicino alla direzione del Sole, mentre gialli e rossi si diffondono più ampiamente. La stessa stella può quindi calare in un alone che ci sembra rovesciato, perché cambia la materia attraversata dalla luce."
+      ],
+      "takeaway": "Gale, 15 aprile 2015 · Curiosity/Mastcam.",
+      "basis": "Letta NASA/JPL PIA19400, sol 956: Mastcam sinistra, colori calibrati e bilanciamento del bianco per artefatti della camera. Foto ridimensionata senza ritaglio. Riuso educativo con credito secondo JPL Image Use Policy; non presentata come colore grezzo del sensore. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-mars.jpg",
+        "alt": "Sole basso su un orizzonte marziano scuro, circondato da cielo azzurro nel cratere Gale.",
+        "caption": "Gale, 15 aprile 2015 · Curiosity/Mastcam.",
+        "credit": "NASA/JPL-Caltech/MSSS/Texas A&M Univ.",
+        "license": "Uso educativo consentito · JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia19400-sunset-in-mars-gale-crater/"
+      },
+      "sources": [
+        {
+          "title": "NASA/JPL · Sunset in Mars Gale Crater, PIA19400",
+          "url": "https://www.jpl.nasa.gov/images/pia19400-sunset-in-mars-gale-crater/"
+        },
+        {
+          "title": "JPL · Image Use Policy",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-permute",
+      "topic": "Machine learning · interpretazione",
+      "title": "Mescolare una colonna rivela una dipendenza",
+      "hook": "Mescolare una colonna rivela una dipendenza",
+      "paragraphs": [
+        "Lascia fermo un modello già addestrato e mescola i valori di una sola colonna nei dati di verifica. Se il punteggio peggiora, quel collegamento aiutava il modello a prevedere. La permutation importance misura questa dipendenza concreta, non una proprietà eterna della variabile. Due colonne molto correlate possono sostituirsi: mescolarne una sola può far sembrare entrambe poco importanti."
+      ],
+      "takeaway": "Esempio sintetico · si mescola una sola colonna.",
+      "basis": "Letta scikit-learn, §5.2, inclusa sezione sulle feature correlate. Tabella sintetica, nessun punteggio sperimentale inventato. Importanza riferita a modello, dataset e metrica scelti; non misura di causalità. Permutazione con modello fisso e dati tenuti da parte. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-permute.svg",
+        "alt": "Due tabelle con stessa colonna temperatura e stessa risposta, mentre solo i quattro valori della colonna portata cambiano ordine.",
+        "caption": "Esempio sintetico · si mescola una sola colonna.",
+        "credit": "Aurelius · diagramma originale",
+        "license": "CC BY 4.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius"
+      },
+      "sources": [
+        {
+          "title": "scikit-learn · Permutation feature importance",
+          "url": "https://scikit-learn.org/stable/modules/permutation_importance.html"
+        }
+      ]
+    },
+    {
+      "id": "micro-20261029-basalt",
+      "topic": "Geologia · forme naturali",
+      "title": "La roccia si divide raffreddandosi",
+      "hook": "La roccia si divide raffreddandosi",
+      "paragraphs": [
+        "Le colonne di Devils Postpile non sono blocchi scolpiti e impilati. La lava già solidificata, ancora calda, si contrae mentre perde calore: le fratture avanzano verso l’interno e separano prismi. Molte sezioni hanno sei lati, ma non tutte. La regolarità che ricorda un pavimento progettato è una traccia del raffreddamento, rimasta nella pietra anche dopo l’erosione."
+      ],
+      "takeaway": "Sommità delle colonne di Devils Postpile · NPS.",
+      "basis": "Letta NPS, Columnar Jointing, formazione e Devils Postpile. Foto della superficie superiore, credito originale NPS; policy NPS sui contenuti governativi verificata. Autore individuale non indicato; ridimensionata senza ritaglio. Nessuna misura di età o raffreddamento dedotta dalla sola foto. Fonti consultate il 29 ottobre 2026; esposizione originale.",
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261029-basalt.jpg",
+        "alt": "Superficie superiore delle colonne basaltiche di Devils Postpile: fratture delimitano poligoni irregolari, molti a sei lati.",
+        "caption": "Sommità delle colonne di Devils Postpile · NPS.",
+        "credit": "National Park Service",
+        "license": "Public Domain · opera NPS",
+        "source": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm"
+      },
+      "sources": [
+        {
+          "title": "National Park Service · Columnar Jointing",
+          "url": "https://www.nps.gov/subjects/volcanoes/columnar-jointing.htm"
+        }
+      ]
+    }
+  ]
+}
