@@ -111,20 +111,20 @@
       }
     },
     {
-      "id": "micro-20261101-pine",
-      "topic": "Ecologia",
-      "title": "Una pigna sigillata per anni",
-      "hook": "Una pigna sigillata per anni",
+      "id": "micro-20261101-saguaro",
+      "topic": "Natura del deserto",
+      "title": "Le pieghe di una riserva d’acqua",
+      "hook": "Le pieghe di una riserva d’acqua",
       "paragraphs": [
-        "Alcune pigne del pino contorto custodiscono i semi dietro un sigillo di resina. Il calore di un incendio può scioglierlo, liberando una riserva accumulata per anni. Dopo il fuoco, il terreno più libero e la luce favoriscono le piantine. L’albero adulto può morire: a sopravvivere è una possibilità della generazione successiva."
+        "Le scanalature del saguaro non sono soltanto un disegno sulla superficie. Dopo una pioggia, il cactus assorbe acqua e le pieghe permettono al fusto di espandersi come una fisarmonica. Quando consuma la riserva, si richiudono. Una forma che sembra rigida accompagna così variazioni di volume: il serbatoio cresce e si restringe restando parte della pianta."
       ],
-      "takeaway": "La rigenerazione può dipendere da semi conservati prima dell’incendio.",
-      "basis": "National Park Service, Wildland Fire in Lodgepole Pine: pigne serotine e non serotine, resina e rigenerazione. Non tutti i coni sono serotini e incendi troppo ravvicinati possono ostacolare il recupero. Foto NPS/J Jerrett, pubblico dominio secondo la pagina e la policy NPS; ritagliata e ottimizzata.",
+      "takeaway": "Le pieghe consentono al fusto di cambiare volume con la riserva d’acqua.",
+      "basis": "National Park Service, The Saguaro Cactus, sezione Why are saguaros pleated?: assorbimento, espansione e contrazione. Esposizione autonoma. Foto ravvicinata NPS/T. Wiewel delle pieghe, inclusa una biforcazione legata alla crescita; non è un confronto prima/dopo la pioggia. Opera NPS in pubblico dominio secondo la policy collegata, ritagliata e ottimizzata.",
       "tone": "sage",
       "sources": [
         {
-          "title": "NPS · Wildland Fire in Lodgepole Pine",
-          "url": "https://www.nps.gov/articles/wildland-fire-lodgepole-pine.htm"
+          "title": "NPS · The Saguaro Cactus, Why are saguaros pleated?",
+          "url": "https://www.nps.gov/sagu/learn/nature/saguaro.htm"
         },
         {
           "title": "NPS · condizioni di riuso delle opere governative",
@@ -133,12 +133,12 @@
       ],
       "visual": {
         "kind": "image",
-        "src": "content/microlearning/media/20261101-pine.jpg",
-        "alt": "Pigna di pino contorto aperta dal calore del Maple Fire, appoggiata su un guanto annerito.",
-        "caption": "Una pigna aperta dopo il Maple Fire a Yellowstone.",
-        "credit": "NPS/J Jerrett · ritaglio",
+        "src": "content/microlearning/media/20261101-saguaro.jpg",
+        "alt": "Dettaglio fotografico del fusto verde di un saguaro: profonde pieghe verticali con file di spine e una scanalatura biforcata.",
+        "caption": "Le pieghe longitudinali del saguaro, viste da vicino.",
+        "credit": "NPS/T. Wiewel · ritaglio",
         "license": "Pubblico dominio · opera del Governo USA",
-        "source": "https://www.nps.gov/articles/wildland-fire-lodgepole-pine.htm"
+        "source": "https://www.nps.gov/sagu/learn/nature/saguaro.htm"
       }
     },
     {
@@ -358,30 +358,30 @@
       }
     },
     {
-      "id": "micro-20261101-pca",
+      "id": "micro-20261101-ridge",
       "topic": "Machine learning",
-      "title": "La direzione in cui i dati si allargano",
-      "hook": "La direzione in cui i dati si allargano",
+      "title": "Il fit perfetto non è più il minimo",
+      "hook": "Il fit perfetto non è più il minimo",
       "paragraphs": [
-        "Se lunghezza e larghezza crescono quasi insieme, una nube di punti diventa allungata. La prima componente principale segue la direzione di maggiore varianza; proiettare lì i punti comprime due coordinate in una. Rimane però fuori lo scarto trasversale: se contiene un’informazione importante, una buona compressione geometrica può essere una cattiva scelta per il problema."
+        "Con un solo dato x = 1, y = 1 e senza intercetta, il coefficiente w = 1 dà un fit perfetto. Ridge aggiunge però una penalità sui coefficienti: minimizzando (1 − w)² + w², il valore migliore diventa 0,5. Accetta un residuo per ridurre il peso: cambia la definizione di soluzione migliore, non soltanto il modo di calcolarla."
       ],
-      "takeaway": "Massima varianza conservata non significa massima utilità conservata.",
-      "basis": "scikit-learn, Decomposing signals, §2.5.1: componenti ortogonali e massima varianza, dati centrati ma non scalati automaticamente. Nube sintetica simmetrica e proiezioni costruite per il disegno, con assi nella stessa unità arbitraria. Nessun dato sperimentale o risultato predittivo.",
+      "takeaway": "La regolarizzazione modifica l’obiettivo da ottimizzare.",
+      "basis": "scikit-learn, Linear Models, §1.1.2.1: regressione Ridge e penalità L2. Esempio scalare originale con X = [1], y = [1], α = 1 e intercetta nulla: w ottimo = 1/(1+α). Curve analitiche in unità arbitrarie, non dati sperimentali; nessuna prestazione predittiva dedotta da questo unico dato.",
       "tone": "blue",
       "sources": [
         {
-          "title": "scikit-learn · Principal component analysis",
-          "url": "https://scikit-learn.org/stable/modules/decomposition.html#pca"
+          "title": "scikit-learn · Ridge regression",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification"
         }
       ],
       "visual": {
         "kind": "image",
-        "src": "content/microlearning/media/20261101-pca.svg",
-        "alt": "Nube sintetica allungata lungo una retta obliqua PC1; segmenti perpendicolari tratteggiati mostrano le proiezioni e gli scarti persi.",
-        "caption": "La proiezione conserva una coordinata; gli scarti si perdono.",
+        "src": "content/microlearning/media/20261101-ridge.svg",
+        "alt": "Tre parabole: errore sui dati, penalità w al quadrato e somma. Il minimo della somma è a w uguale a 0,5, fra i minimi delle due componenti.",
+        "caption": "Un dato, nessuna intercetta, penalità α = 1.",
         "credit": "Aurelius · grafica originale",
         "license": "CC BY 4.0",
-        "source": "https://scikit-learn.org/stable/modules/decomposition.html#pca"
+        "source": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification"
       }
     },
     {
