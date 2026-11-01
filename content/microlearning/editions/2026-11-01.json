@@ -1,0 +1,550 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "cards": [
+    {
+      "id": "micro-20261101-precision",
+      "topic": "Machine learning",
+      "title": "Trovare molto non significa trovare bene",
+      "hook": "Trovare molto non significa trovare bene",
+      "paragraphs": [
+        "Un motore restituisce venti documenti, ma soltanto dieci sono pertinenti: precisione 50%. Se i documenti pertinenti disponibili erano quindici, ne ha recuperati due terzi: richiamo 67% circa. Le due percentuali rispondono a domande diverse: quanto è pulita la selezione e quanto materiale utile è rimasto fuori."
+      ],
+      "takeaway": "Precisione e richiamo misurano errori differenti.",
+      "basis": "Rielaborazione autonoma delle definizioni di precision e recall nella documentazione scikit-learn. Conteggi costruiti per l’esempio, non risultati di un sistema reale.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn · Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-precision.svg",
+        "alt": "Venti punti nella selezione: dieci pertinenti e dieci falsi positivi. Cinque punti pertinenti restano fuori.",
+        "caption": "Un esempio con 15 documenti pertinenti in totale.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html"
+      }
+    },
+    {
+      "id": "micro-20261101-enceladus",
+      "topic": "Sistema solare",
+      "title": "Una luna che spruzza ghiaccio",
+      "hook": "Una luna che spruzza ghiaccio",
+      "paragraphs": [
+        "Quelle scie luminose non sono nuvole sopra un paesaggio terrestre. Cassini le ha fotografate al polo sud di Encelado: ghiaccio d’acqua e vapore escono da grandi fratture della crosta. La luce radente rende visibile il materiale sospeso, permettendo di individuare i getti su una luna che, da lontano, sembra una sfera gelata."
+      ],
+      "takeaway": "Il controluce rivela particelle che la superficie chiara nasconderebbe.",
+      "basis": "NASA, scheda PIA11688: descrizione del mosaico e dei getti. Foto scaricata dalla copia USGS, indicata esplicitamente come pubblico dominio; ridimensionata. Nessuna elaborazione scientifica aggiunta.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NASA · PIA11688, geyser basin of Enceladus",
+          "url": "https://science.nasa.gov/photojournal/bursting-at-the-seams-the-geyser-basin-of-enceladus/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-enceladus.jpg",
+        "alt": "Mosaico Cassini con getti luminosi che emergono dal bordo ghiacciato di Encelado contro lo spazio nero.",
+        "caption": "Il bacino dei geyser ripreso da Cassini.",
+        "credit": "NASA/JPL/Space Science Institute · copia USGS",
+        "license": "Pubblico dominio · opera del Governo USA",
+        "source": "https://www.usgs.gov/media/images/geysers-south-pole-saturns-moon-enceladus"
+      }
+    },
+    {
+      "id": "micro-20261101-beam",
+      "topic": "Meccanica delle strutture",
+      "title": "Girare un listello cambia tutto",
+      "hook": "Girare un listello cambia tutto",
+      "paragraphs": [
+        "Un listello da 20 × 60 millimetri diventa nove volte più rigido a flessione quando lo metti di taglio anziché piatto, a parità di materiale e lunghezza. Non hai aggiunto legno: hai allontanato più materiale dall’asse neutro. Il momento d’area della sezione rettangolare dipende dal cubo dell’altezza, oltre che dalla larghezza."
+      ],
+      "takeaway": "La posizione del materiale conta quanto la sua quantità.",
+      "basis": "Swarthmore Engineering, ENGR 059, laboratorio 3, sezioni 1.2–1.3. Calcolo originale I = b h³/12: 40 000 e 360 000 mm⁴. Elasticità lineare, trave snella, piccoli spostamenti, stesso carico e vincoli; confronto di rigidezza, non di carico di rottura.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Swarthmore Engineering · Stiffness of Beams under Bending",
+          "url": "https://emadmasroor.github.io/E59-F26/Lab3.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-beam.svg",
+        "alt": "Due sezioni rettangolari della stessa area ruotate di 90 gradi, con asse neutro tratteggiato e momenti d’area 40 000 e 360 000 millimetri alla quarta.",
+        "caption": "La sezione ruota; l’area resta 1 200 mm².",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://emadmasroor.github.io/E59-F26/Lab3.html"
+      }
+    },
+    {
+      "id": "micro-20261101-causal",
+      "topic": "Architetture AI",
+      "title": "La parola successiva resta coperta",
+      "hook": "La parola successiva resta coperta",
+      "paragraphs": [
+        "Nell’attenzione causale, la posizione di «un» in «ieri ho visto un gatto» può consultare «ieri», «ho», «visto» e sé stessa. «Gatto» resta nascosto. Durante l’addestramento l’intera frase è disponibile, ma questa maschera impedisce al modello di leggere la risposta che deve ancora prevedere: una restrizione geometrica applicata ai punteggi di attenzione."
+      ],
+      "takeaway": "Il testo completo può essere presente senza essere tutto visibile al modello.",
+      "basis": "Documentazione ufficiale PyTorch, scaled_dot_product_attention: maschera triangolare inferiore nel caso quadrato con is_causal=True. Esempio linguistico e matrice schematici originali; le parole rappresentano posizioni, senza affermare una particolare tokenizzazione.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "PyTorch · scaled_dot_product_attention",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-causal.svg",
+        "alt": "Matrice cinque per cinque: soltanto la diagonale e il triangolo inferiore sono colorati. La riga un include le prime quattro colonne.",
+        "caption": "Maschera causale quadrata: colore = accesso consentito.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html"
+      }
+    },
+    {
+      "id": "micro-20261101-saguaro",
+      "topic": "Natura del deserto",
+      "title": "Le pieghe di una riserva d’acqua",
+      "hook": "Le pieghe di una riserva d’acqua",
+      "paragraphs": [
+        "Le scanalature del saguaro non sono soltanto un disegno sulla superficie. Dopo una pioggia, il cactus assorbe acqua e le pieghe permettono al fusto di espandersi come una fisarmonica. Quando consuma la riserva, si richiudono. Una forma che sembra rigida accompagna così variazioni di volume: il serbatoio cresce e si restringe restando parte della pianta."
+      ],
+      "takeaway": "Le pieghe consentono al fusto di cambiare volume con la riserva d’acqua.",
+      "basis": "National Park Service, The Saguaro Cactus, sezione Why are saguaros pleated?: assorbimento, espansione e contrazione. Esposizione autonoma. Foto ravvicinata NPS/T. Wiewel delle pieghe, inclusa una biforcazione legata alla crescita; non è un confronto prima/dopo la pioggia. Opera NPS in pubblico dominio secondo la policy collegata, ritagliata e ottimizzata.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "NPS · The Saguaro Cactus, Why are saguaros pleated?",
+          "url": "https://www.nps.gov/sagu/learn/nature/saguaro.htm"
+        },
+        {
+          "title": "NPS · condizioni di riuso delle opere governative",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-saguaro.jpg",
+        "alt": "Dettaglio fotografico del fusto verde di un saguaro: profonde pieghe verticali con file di spine e una scanalatura biforcata.",
+        "caption": "Le pieghe longitudinali del saguaro, viste da vicino.",
+        "credit": "NPS/T. Wiewel · ritaglio",
+        "license": "Pubblico dominio · opera del Governo USA",
+        "source": "https://www.nps.gov/sagu/learn/nature/saguaro.htm"
+      }
+    },
+    {
+      "id": "micro-20261101-reaction",
+      "topic": "Reattori e cinetica",
+      "title": "Aspettare può consumare il prodotto",
+      "hook": "Aspettare può consumare il prodotto",
+      "paragraphs": [
+        "In una reazione A → B → C, aspettare di più non garantisce più B: mentre si forma, B viene già consumato. Se i due passaggi hanno la stessa costante cinetica k e sono del primo ordine, B raggiunge il massimo a t = 1/k. Con k = 0,1 min⁻¹, il momento migliore arriva dopo dieci minuti."
+      ],
+      "takeaway": "Un intermedio utile ha una finestra di raccolta.",
+      "basis": "LearnChemE, Series Reactions in Batch Reactors, bilanci di reazioni consecutive del primo ordine. Caso particolare derivato autonomamente: k₁ = k₂ = k, batch isotermo a volume costante, solo A all’inizio. B/A₀ = kt exp(−kt); massimo 1/e. Grafico analitico, non dati sperimentali.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "University of Colorado Boulder · Series Reactions in Batch Reactors",
+          "url": "https://learncheme.github.io/demos/SeriesReactionsInBatchReactor/index.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-reaction.svg",
+        "alt": "Curve analitiche normalizzate: A scende, B sale fino a kt uguale a uno e poi cala, C cresce.",
+        "caption": "Stesse velocità cinetiche nei due passaggi; B iniziale nullo.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://learncheme.github.io/demos/SeriesReactionsInBatchReactor/index.html"
+      }
+    },
+    {
+      "id": "micro-20261101-ensemble",
+      "topic": "Machine learning",
+      "title": "Cento copie non fanno cento pareri",
+      "hook": "Cento copie non fanno cento pareri",
+      "paragraphs": [
+        "Fare la media aiuta quando gli errori cambiano da un modello all’altro. Se invece sbagliano insieme, una parte dell’errore resta anche aggiungendo altri modelli. Nell’esempio, errori con uguale varianza e correlazione 0,5 lasciano alla media di cento modelli il 50,5% della varianza iniziale. Cento errori indipendenti ne lascerebbero soltanto l’1%."
+      ],
+      "takeaway": "La diversità degli errori determina quanto può aiutare una media.",
+      "basis": "scikit-learn, sezione Bagging: aggregazione e riduzione della varianza. Derivazione matematica originale per errori di uguale varianza σ² e correlazione comune ρ: Var(media)/σ² = ρ + (1−ρ)/M. Non è un benchmark né una previsione di accuratezza; il bias non è rappresentato.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn · Bagging meta-estimator",
+          "url": "https://scikit-learn.org/stable/modules/ensemble.html#bagging-meta-estimator"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-ensemble.svg",
+        "alt": "Varianza normalizzata della media contro numero di modelli: la curva indipendente tende a zero, quella con correlazione 0,5 tende a 0,5.",
+        "caption": "Curve teoriche per errori con uguale varianza.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://scikit-learn.org/stable/modules/ensemble.html#bagging-meta-estimator"
+      }
+    },
+    {
+      "id": "micro-20261101-epicurus",
+      "topic": "Filosofia",
+      "title": "Quando il pane basta davvero",
+      "hook": "Quando il pane basta davvero",
+      "paragraphs": [
+        "Pane e acqua possono dare un piacere pieno quando rispondono alla fame e alla sete. Per Epicuro, il lusso aggiunge una variazione, ma non rende infinito il sollievo da un bisogno già soddisfatto. Saper godere del poco non significa proibire una tavola ricca: significa poterla apprezzare senza dipenderne per stare bene."
+      ],
+      "takeaway": "L’autosufficienza epicurea lascia spazio al lusso senza farne una necessità.",
+      "basis": "Epicuro, Lettera a Meneceo, passo su autosufficienza, pane e acqua; consultata nella versione di R. D. Hicks ospitata dal MIT. Esposizione autonoma italiana, senza citazioni o riproduzione della traduzione. Natura del piacere presentata come posizione filosofica, non risultato sperimentale. Illustrazione originale.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Epicuro · Lettera a Meneceo, piacere e autosufficienza",
+          "url": "https://classics.mit.edu/Epicurus/menoec.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-epicurus.svg",
+        "alt": "Illustrazione di una pagnotta e un bicchiere d’acqua sopra un piatto, i due oggetti dell’esempio di Epicuro.",
+        "caption": "Un bisogno concreto dà una misura al piacere.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://classics.mit.edu/Epicurus/menoec.html"
+      }
+    },
+    {
+      "id": "micro-20261101-roofline",
+      "topic": "Architetture informatiche",
+      "title": "Il processore aspetta i byte",
+      "hook": "Il processore aspetta i byte",
+      "paragraphs": [
+        "Un calcolo può fermarsi al traffico di memoria prima di esaurire la potenza del processore. Se ogni byte trasferito permette due operazioni e la banda è 100 GB/s, il tetto è 200 GFLOP/s, anche con un picco di calcolo molto superiore. Riutilizzare i dati già vicini al processore può quindi contare più di ridurre qualche operazione."
+      ],
+      "takeaway": "Le operazioni per byte collegano calcolo e traffico di memoria.",
+      "basis": "NERSC, Roofline Performance Model e Arithmetic Intensity. Esempio teorico originale: banda decimale 100 GB/s, picco 800 GFLOP/s, P ≤ min(800,100 I). Byte riferiti allo stesso livello di memoria; trasferimenti letti e scritti inclusi. Non rappresenta una GPU reale né prestazioni misurate.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NERSC · Roofline Performance Model",
+          "url": "https://docs.nersc.gov/tools/performance/roofline/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-roofline.svg",
+        "alt": "Tetto teorico: una retta di pendenza 100 raggiunge il limite di 800 GFLOP/s a otto FLOP per byte. Punto evidenziato: due FLOP per byte, 200 GFLOP/s.",
+        "caption": "Architettura illustrativa; il tetto non è una velocità garantita.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.nersc.gov/tools/performance/roofline/"
+      }
+    },
+    {
+      "id": "micro-20261101-otter",
+      "topic": "Ecosistemi marini",
+      "title": "Una lontra difende una foresta",
+      "hook": "Una lontra difende una foresta",
+      "paragraphs": [
+        "La lontra marina mangia ricci di mare; i ricci, a loro volta, possono distruggere il kelp consumandone le strutture di ancoraggio. Il predatore protegge così indirettamente una foresta sommersa, dove trovano riparo pesci e invertebrati. È una cascata trofica: l’effetto attraversa più livelli della rete alimentare, invece di fermarsi alla preda catturata."
+      ],
+      "takeaway": "Un predatore può proteggere una pianta senza toccarla.",
+      "basis": "NOAA, What lives in a kelp forest: consumo dei ricci e loro effetto sul kelp. La cascata descrive una relazione ecologica, non garantisce il recupero di ogni foresta. Fotografia di Benjamin Weitzman, USGS, esplicitamente in pubblico dominio; ridimensionata.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "NOAA · What lives in a kelp forest",
+          "url": "https://oceanservice.noaa.gov/facts/kelplives.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-otter.jpg",
+        "alt": "Una lontra marina fotografata in acqua fra fronde di kelp, in Alaska.",
+        "caption": "Lontra marina nel kelp dell’Alaska.",
+        "credit": "Benjamin Weitzman / U.S. Geological Survey",
+        "license": "Pubblico dominio · opera del Governo USA",
+        "source": "https://www.usgs.gov/media/images/alaskan-sea-otter-kelp"
+      }
+    },
+    {
+      "id": "micro-20261101-plane",
+      "topic": "FEM e continui",
+      "title": "Il piano nasconde la terza dimensione",
+      "hook": "Il piano nasconde la terza dimensione",
+      "paragraphs": [
+        "Due modelli FEM possono avere la stessa mesh piana e rappresentare oggetti diversi. Nella tensione piana, una lastra libera può assottigliarsi: la tensione fuori piano è nulla. Nella deformazione piana, l’allungamento fuori piano è impedito e può comparire una tensione in quella direzione. La scelta cambia la legge elastica, anche se il disegno resta bidimensionale."
+      ],
+      "takeaway": "Una mesh 2D non determina da sola la fisica fuori piano.",
+      "basis": "Jérémy Bleyer, 2D linear elasticity, relazione costitutiva per elasticità isotropa a piccole deformazioni. Schema originale: σzz = 0 nella tensione piana; εzz = 0 nella deformazione piana, con componenti di taglio fuori piano nulle. Sono idealizzazioni legate a geometria, carichi e vincoli, non semplicemente allo spessore.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Jérémy Bleyer · 2D linear elasticity",
+          "url": "https://comet-fenics.readthedocs.io/en/latest/demo/elasticity/2D_elasticity.py.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-plane.svg",
+        "alt": "Lastra sottile libera in spessore accanto alla sezione di un solido vincolato lungo z; sono evidenziate le diverse condizioni σzz uguale a zero ed εzz uguale a zero.",
+        "caption": "Due idealizzazioni tridimensionali dietro un calcolo 2D.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://comet-fenics.readthedocs.io/en/latest/demo/elasticity/2D_elasticity.py.html"
+      }
+    },
+    {
+      "id": "micro-20261101-taskgroup",
+      "topic": "Concorrenza",
+      "title": "I lavori paralleli hanno un’uscita comune",
+      "hook": "I lavori paralleli hanno un’uscita comune",
+      "paragraphs": [
+        "Tre coroutine costruiscono dati, indice e riepilogo. Dentro un TaskGroup, se una fallisce con un errore ordinario, le altre ricevono la cancellazione; il gruppo ne aspetta la conclusione prima di uscire. La pulizia può richiedere tempo. Questo dà un confine alla vita dei lavori: l’errore non lascia automaticamente due operazioni dimenticate a correre sullo sfondo."
+      ],
+      "takeaway": "La concorrenza strutturata lega le attività alla durata del loro gruppo.",
+      "basis": "Documentazione Python, asyncio.TaskGroup e Task cancellation; comportamento disponibile da Python 3.11. Esempio e tempi schematici, non misurati. La cancellazione è cooperativa: finally per la pulizia e normale propagazione di CancelledError. Le eccezioni ordinarie vengono poi raggruppate; non si afferma un rollback di effetti esterni.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Python · Task groups e cancellazione",
+          "url": "https://docs.python.org/3/library/asyncio-task.html#task-groups"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-taskgroup.svg",
+        "alt": "Tre intervalli di lavoro paralleli: il primo termina con un errore; gli altri proseguono solo per la pulizia, prima dell’uscita del gruppo.",
+        "caption": "Cronologia schematica: cancellare non significa interrompere all’istante.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.python.org/3/library/asyncio-task.html#task-groups"
+      }
+    },
+    {
+      "id": "micro-20261101-gecko",
+      "topic": "Biologia",
+      "title": "Aderire senza una goccia di colla",
+      "hook": "Aderire senza una goccia di colla",
+      "paragraphs": [
+        "Le dita del geco portano milioni di setole, suddivise in terminazioni minuscole. Questa geometria moltiplica i contatti ravvicinati con la superficie, dove agiscono forze di van der Waals. Gli esperimenti con superfici idrofobe hanno mostrato che l’acqua non è necessaria al meccanismo: l’adesione può essere asciutta e dipendere dalla struttura delle punte."
+      ],
+      "takeaway": "Un adesivo biologico può funzionare grazie alla forma, senza colla liquida.",
+      "basis": "Autumn e collaboratori, PNAS 2002, Evidence for van der Waals adhesion in gecko setae: abstract e descrizioni delle figure consultati via PubMed. Rielaborazione autonoma; schema gerarchico originale non in scala, senza riprodurre micrografie. Le prove riguardano superfici polarizzabili e non implicano adesione uguale su ogni materiale.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "Autumn et al. · Evidence for van der Waals adhesion in gecko setae",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12198184/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-gecko.svg",
+        "alt": "Schema ingrandito di una seta ramificata che termina in molte piccole spatole a contatto con una superficie.",
+        "caption": "La geometria divide un contatto in tanti contatti più piccoli.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://pubmed.ncbi.nlm.nih.gov/12198184/"
+      }
+    },
+    {
+      "id": "micro-20261101-ridge",
+      "topic": "Machine learning",
+      "title": "Il fit perfetto non è più il minimo",
+      "hook": "Il fit perfetto non è più il minimo",
+      "paragraphs": [
+        "Con un solo dato x = 1, y = 1 e senza intercetta, il coefficiente w = 1 dà un fit perfetto. Ridge aggiunge però una penalità sui coefficienti: minimizzando (1 − w)² + w², il valore migliore diventa 0,5. Accetta un residuo per ridurre il peso: cambia la definizione di soluzione migliore, non soltanto il modo di calcolarla."
+      ],
+      "takeaway": "La regolarizzazione modifica l’obiettivo da ottimizzare.",
+      "basis": "scikit-learn, Linear Models, §1.1.2.1: regressione Ridge e penalità L2. Esempio scalare originale con X = [1], y = [1], α = 1 e intercetta nulla: w ottimo = 1/(1+α). Curve analitiche in unità arbitrarie, non dati sperimentali; nessuna prestazione predittiva dedotta da questo unico dato.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn · Ridge regression",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-ridge.svg",
+        "alt": "Tre parabole: errore sui dati, penalità w al quadrato e somma. Il minimo della somma è a w uguale a 0,5, fra i minimi delle due componenti.",
+        "caption": "Un dato, nessuna intercetta, penalità α = 1.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification"
+      }
+    },
+    {
+      "id": "micro-20261101-climber",
+      "topic": "Natura e libri",
+      "title": "Un fusto esplora senza camminare",
+      "hook": "Un fusto esplora senza camminare",
+      "paragraphs": [
+        "Un giovane fusto rampicante può far descrivere al proprio apice ampi giri, prima ancora di toccare un sostegno. Darwin osservò questo movimento e lo collegò alla crescita che prevale successivamente sui diversi lati del fusto. Quando il fusto incontra un appoggio adatto, il movimento libero può trasformarsi in un avvolgimento: esplorare lo spazio senza spostare le radici."
+      ],
+      "takeaway": "La crescita differenziale può produrre un movimento esplorativo.",
+      "basis": "Charles Darwin, The Movements and Habits of Climbing Plants, seconda edizione, capitolo I: natura del movimento e salita dei fusti volubili. Passaggi sulla crescita successiva dei lati e sul contatto con un sostegno. Esposizione autonoma, non estratto; schema originale senza tempi, traiettorie misurate o intento cosciente attribuito alla pianta.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "Darwin · The Movements and Habits of Climbing Plants, I",
+          "url": "https://www.gutenberg.org/cache/epub/2485/pg2485-images.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-climber.svg",
+        "alt": "A sinistra quattro posizioni successive dell’apice attorno al fusto radicato; a destra un fusto si avvolge attorno a un sostegno.",
+        "caption": "Movimento libero e avvolgimento, in uno schema non in scala.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.gutenberg.org/cache/epub/2485/pg2485-images.html"
+      }
+    },
+    {
+      "id": "micro-20261101-shadow",
+      "topic": "Ottimizzazione",
+      "title": "Quanto costa stringere un vincolo?",
+      "hook": "Quanto costa stringere un vincolo?",
+      "paragraphs": [
+        "Supponi di minimizzare il costo x² imponendo x ≥ b, con b positivo. Il minimo è b²: a b = 2 costa 4. Alzare il requisito a 2,1 porta il costo a 4,41. Il moltiplicatore ottimo vale 4 nel punto iniziale: quantifica la sensibilità locale, prevedendo circa 0,4 di aumento per quel piccolo irrigidimento."
+      ],
+      "takeaway": "Un moltiplicatore ottimo misura una sensibilità, con condizioni precise.",
+      "basis": "Boyd e Vandenberghe, Convex Optimization, §5.6.3, sensitività locale: dualità forte e valore ottimo differenziabile. Problema scalare ed esempio numerico originali, grandezze in unità arbitrarie. Con L = x² + λ(b−x), λ = 2b; approssimazione locale, non previsione esatta per variazioni finite.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Boyd e Vandenberghe · Convex Optimization, §5.6.3",
+          "url": "https://www.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-shadow.svg",
+        "alt": "Parabola del costo ottimo b al quadrato e tangente nel punto b uguale a due, costo quattro, con pendenza quattro.",
+        "caption": "La tangente stima il costo di una piccola variazione del requisito.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf"
+      }
+    },
+    {
+      "id": "micro-20261101-polarizers",
+      "topic": "Fisica della luce",
+      "title": "Aggiungere un filtro fa passare luce",
+      "hook": "Aggiungere un filtro fa passare luce",
+      "paragraphs": [
+        "Due polarizzatori ideali incrociati bloccano la luce. Inseriscine un terzo in mezzo, ruotato di 45 gradi: una parte ricompare. Ogni filtro trasmette la componente del campo lungo il proprio asse e cambia la polarizzazione del fascio uscente. Il filtro intermedio prepara così una componente che l’ultimo può lasciar passare, invece di aggiungere semplicemente un altro ostacolo."
+      ],
+      "takeaway": "Un filtro orientato cambia anche lo stato della luce trasmessa.",
+      "basis": "Feynman, Leighton e Sands, The Feynman Lectures on Physics I, §33-3, legge cos² e terzo polarizzatore. Rielaborazione autonoma senza estratti o figure copiate. Schema per luce iniziale non polarizzata, filtri ideali: I₀/2, I₀/4, I₀/8; nella pratica restano perdite e trasmissione residua.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "The Feynman Lectures on Physics · I, 33, Polarization",
+          "url": "https://www.feynmanlectures.caltech.edu/I_33.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-polarizers.svg",
+        "alt": "Due percorsi: polarizzatori a zero e 90 gradi senza uscita; polarizzatori a zero, 45 e 90 gradi con intensità finale pari a un ottavo di quella iniziale.",
+        "caption": "Il confronto usa filtri ideali e luce iniziale non polarizzata.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.feynmanlectures.caltech.edu/I_33.html"
+      }
+    },
+    {
+      "id": "micro-20261101-nulls",
+      "topic": "Database",
+      "title": "Unico, anche quando manca?",
+      "hook": "Unico, anche quando manca?",
+      "paragraphs": [
+        "In PostgreSQL, una colonna con vincolo UNIQUE può contenere più righe con NULL: i valori mancanti non sono considerati uguali nel controllo di unicità predefinito. Con UNIQUE NULLS NOT DISTINCT, invece, un secondo NULL viene rifiutato. Se «codice ancora sconosciuto» deve essere ammesso una sola volta, la differenza è una regola sui dati, non un dettaglio grafico."
+      ],
+      "takeaway": "Il significato dell’unicità va deciso anche per i dati mancanti.",
+      "basis": "Documentazione PostgreSQL 18, §5.5.3 Unique Constraints: comportamento di NULL e clausola NULLS NOT DISTINCT. Esempio originale per un vincolo su una sola colonna nullable; non viene generalizzata la regola agli altri DBMS né al confronto SQL ordinario con NULL.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "PostgreSQL 18 · Unique Constraints",
+          "url": "https://www.postgresql.org/docs/18/ddl-constraints.html#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-nulls.svg",
+        "alt": "Due tabelle con due righe NULL: il vincolo UNIQUE le ammette, NULLS NOT DISTINCT rifiuta la seconda riga.",
+        "caption": "Due possibili politiche per lo stesso valore mancante.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.postgresql.org/docs/18/ddl-constraints.html#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS"
+      }
+    },
+    {
+      "id": "micro-20261101-newton",
+      "topic": "Storia della scienza",
+      "title": "Rimettere insieme il bianco",
+      "hook": "Rimettere insieme il bianco",
+      "paragraphs": [
+        "Un prisma separa la luce del Sole in colori. Ma forse li sta creando? Newton descrisse anche il percorso inverso: fece convergere e mescolare i colori separati, ritrovando una luce bianca. La ricomposizione rende più forte l’idea che il prisma distingua componenti già presenti, anziché dipingere di nuovo una luce inizialmente priva di colori."
+      ],
+      "takeaway": "Un esperimento inverso può distinguere spiegazioni che sembravano equivalenti.",
+      "basis": "Isaac Newton, Draft of A Theory Concerning Light and Colors, proposizione 7, manoscritto trascritto dal Newton Project di Oxford. Passaggio sulla ricomposizione realmente consultato. Esposizione autonoma italiana; schema ottico originale non in scala, con lente come esempio di convergenza, non facsimile dell’apparato descritto.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Newton Project · A Theory Concerning Light and Colors, proposizione 7",
+          "url": "https://newtonproject.ox.ac.uk/view/texts/normalized/NATP00003"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-newton.svg",
+        "alt": "Schema di luce bianca separata da un prisma in raggi colorati e ricomposta in un punto da una lente.",
+        "caption": "Separazione e ricomposizione: schema qualitativo, non in scala.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://newtonproject.ox.ac.uk/view/texts/normalized/NATP00003"
+      }
+    },
+    {
+      "id": "micro-20261101-peclet",
+      "topic": "CFD e discretizzazione",
+      "title": "Una griglia può inventare oscillazioni",
+      "hook": "Una griglia può inventare oscillazioni",
+      "paragraphs": [
+        "In un trasporto con diffusione, una concentrazione dovrebbe restare tra i valori imposti ai bordi. Eppure una discretizzazione centrata può produrre valori negativi. Nell’esempio il Péclet di cella vale 4: il trasporto domina troppo la diffusione su ciascun intervallo. Ridurre la cella cambia questo rapporto; non basta chiedere al solutore una tolleranza più stretta."
+      ],
+      "takeaway": "Errore di discretizzazione e tolleranza del solutore sono cose diverse.",
+      "basis": "NIST FiPy, Numerical Schemes: positività dei coefficienti e |Pe di cella| < 2 per schema centrato. Esempio originale 1D stazionario, velocità e diffusività costanti, φ(0)=0 e φ(L)=1, Pe globale 20, cinque intervalli uniformi. Curva esatta (exp(20x/L)−1)/(exp(20)−1); nodi centrati calcolati, non dati sperimentali.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NIST FiPy · Numerical Schemes",
+          "url": "https://pages.nist.gov/fipy/en/3.4.5/numerical/scheme.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261101-peclet.svg",
+        "alt": "Soluzione esatta positiva del trasporto diffusivo e sei nodi della discretizzazione centrata: la soluzione discreta oscilla sotto zero vicino al bordo.",
+        "caption": "Esempio calcolato: Pe globale 20, cinque intervalli, Pe di cella 4.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://pages.nist.gov/fipy/en/3.4.5/numerical/scheme.html"
+      }
+    }
+  ]
+}
