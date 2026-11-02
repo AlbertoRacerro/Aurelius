@@ -1,0 +1,554 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "cards": [
+    {
+      "id": "ml-20261102-bootstrap",
+      "topic": "Machine learning",
+      "title": "Estrarre dieci volte lascia qualcuno fuori",
+      "hook": "Estrarre dieci volte lascia qualcuno fuori",
+      "paragraphs": [
+        "Estrai dieci nomi da un elenco di dieci, rimettendo ogni volta il nome nel sacchetto. Alcuni ricompaiono; altri non escono mai. È il bootstrap. Con elenchi grandi resta fuori, in media, circa il 37% degli esempi: ciascun modello può essere valutato anche sui dati che quella sua estrazione non ha usato."
+      ],
+      "takeaway": "L’esempio va valutato usando soltanto i modelli per cui era fuori campione; restano necessarie ipotesi adeguate sui dati.",
+      "basis": "Esplorazione indipendente. Letta l’introduzione di Breiman: valutazione con predizioni dei soli modelli che non hanno incluso l’esempio. P(esclusione)=(1−1/n)^n, limite e⁻¹. Il disegno è un singolo campione illustrativo, non il valore medio. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Leo Breiman · Out-of-bag estimation, introduzione",
+          "url": "https://www.stat.berkeley.edu/pub/users/breiman/OOBestimation.pdf"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-bootstrap.svg",
+        "alt": "Dieci osservazioni e dieci estrazioni con ripetizioni; i numeri 3, 6, 7 e 10 restano fuori dal campione illustrato.",
+        "caption": "Un campione possibile: quattro esempi non estratti.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.stat.berkeley.edu/pub/users/breiman/OOBestimation.pdf"
+      }
+    },
+    {
+      "id": "ml-20261102-sundew",
+      "topic": "Natura",
+      "title": "Quella rugiada è una trappola",
+      "hook": "Quella rugiada è una trappola",
+      "paragraphs": [
+        "Sulle foglie della drosera brillano gocce che sembrano rugiada. Sono secrezioni adesive: trattengono piccoli insetti, che vengono poi digeriti con enzimi. In una torbiera povera di nutrienti, una foglia può così diventare anche una trappola. Le gocce fotografate mostrano il punto d’incontro tra richiamo, cattura e digestione."
+      ],
+      "takeaway": "La pagina NPS attribuisce la foto a Crystal Lewis; riuso secondo la politica sui materiali governativi NPS.",
+      "basis": "Articolo e fotografia originali NPS consultati il 02/11/2026. Foto ridimensionata, senza ricostruzioni. Il testo riguarda Drosera rotundifolia; nessuna velocità di cattura attribuita alla foto.",
+      "sources": [
+        {
+          "title": "National Park Service · Carnivorous Plants at Acadia",
+          "url": "https://www.nps.gov/articles/000/carnivorous-plants-acadia.htm"
+        },
+        {
+          "title": "NPS · proprietà e riuso dei materiali",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-sundew.jpg",
+        "alt": "Foglie rossastre di drosera a foglia rotonda, coperte da tentacoli con gocce trasparenti alle estremità.",
+        "caption": "Drosera rotundifolia: gocce adesive sui tentacoli.",
+        "credit": "NPS / Crystal Lewis",
+        "license": "Pubblico dominio · opera NPS (17 USC 105)",
+        "source": "https://www.nps.gov/articles/000/carnivorous-plants-acadia.htm"
+      }
+    },
+    {
+      "id": "ml-20261102-accumulation",
+      "topic": "Machine learning",
+      "title": "Un batch grande, un pezzo alla volta",
+      "hook": "Un batch grande, un pezzo alla volta",
+      "paragraphs": [
+        "Quattro gruppi da otto esempi possono contribuire a un solo aggiornamento su trentadue. Calcoli un gradiente per volta, lo accumuli e aggiorni i pesi alla fine. Con loss medie e gruppi uguali, ogni contributo va diviso per quattro. Conservi i gradienti, evitando di tenere contemporaneamente le attivazioni di tutti i trentadue esempi."
+      ],
+      "takeaway": "Normalizzazione, clipping e aggiornamento devono riferirsi al batch effettivo; l’ultimo gruppo incompleto richiede pesi coerenti.",
+      "basis": "Letta la sezione Gradient accumulation. Esempio originale 4×8. Equivalenza al batch completo per loss separabile sugli esempi e pesi fissi durante l’accumulo; operazioni dipendenti dal batch, come BatchNorm, possono cambiarla. Non è una stima della VRAM di un modello. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "PyTorch · Gradient accumulation",
+          "url": "https://docs.pytorch.org/docs/2.15/notes/amp_examples.html#gradient-accumulation"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-accumulation.svg",
+        "alt": "Quattro gruppi di otto punti convergono nella somma g1/4 più g2/4 più g3/4 più g4/4, prima dell’aggiornamento dei pesi.",
+        "caption": "Quattro contributi normalizzati, un solo aggiornamento.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.pytorch.org/docs/2.15/notes/amp_examples.html#gradient-accumulation"
+      }
+    },
+    {
+      "id": "ml-20261102-cfl",
+      "topic": "CFD",
+      "title": "L’informazione arriva da troppo lontano",
+      "hook": "L’informazione arriva da troppo lontano",
+      "paragraphs": [
+        "Un profilo viaggia a 2 m/s su celle distanti 1 cm. In 0,01 s percorre due celle: l’upwind esplicito, che usa il nodo corrente e quello immediatamente a monte, non riesce a seguirlo stabilmente. Il numero di Courant lega questi tre valori. Per questo schema il limite è Δt ≤ Δx/u: qui 0,005 s."
+      ],
+      "takeaway": "Il limite riguarda lo schema esplicito indicato, non ogni integratore o ogni equazione.",
+      "basis": "Letti dominio di dipendenza e criterio CFL. Advezione lineare 1D a velocità positiva costante, upwind del primo ordine ed Euler esplicito. Formula e numeri ricalcolati; il visual usa C=1,5 per rendere evidente il difetto geometrico. CFL non basta a garantire la correttezza di qualunque schema. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Toby Driscoll · The CFL condition",
+          "url": "https://tobydriscoll.net/fd-spectral-notes/advection/cfl.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-cfl.svg",
+        "alt": "Nel diagramma spazio-tempo il nuovo nodo dipende numericamente da due nodi, mentre la caratteristica rossa parte oltre il vicino a monte.",
+        "caption": "C = 1,5: l’origine fisica cade fuori dallo stencil.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://tobydriscoll.net/fd-spectral-notes/advection/cfl.html"
+      }
+    },
+    {
+      "id": "ml-20261102-nautilus",
+      "topic": "Biologia marina",
+      "title": "La casa ha stanze che non abita",
+      "hook": "La casa ha stanze che non abita",
+      "paragraphs": [
+        "Il nautilus vive nella camera più grande della conchiglia, ma conserva dietro di sé le camere precedenti. Un sottile tessuto, il sifuncolo, le collega e permette di regolare il liquido al loro interno, contribuendo al galleggiamento. Per avanzare usa invece un getto d’acqua: sostegno nell’acqua e propulsione hanno meccanismi diversi."
+      ],
+      "takeaway": "Le camere interne contribuiscono al galleggiamento; non sono tutte occupate dal corpo.",
+      "basis": "Letta la descrizione NOAA di camere, sifuncolo e getto. Illustrazione anatomica originale semplificata, non fotografia né scala metrica; cercata una foto NOAA ma il download non era disponibile. Non rappresenta la regolazione come una pompa rapida. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "NOAA National Ocean Service · What is a nautilus?",
+          "url": "https://oceanservice.noaa.gov/facts/nautilus.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-nautilus.svg",
+        "alt": "Spirale sezionata con pareti che separano camere sempre più grandi; è indicata l’ultima camera, occupata dall’animale.",
+        "caption": "Camere successive nella sezione schematica di una conchiglia.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://oceanservice.noaa.gov/facts/nautilus.html"
+      }
+    },
+    {
+      "id": "ml-20261102-wall",
+      "topic": "Trasporto di calore",
+      "title": "Il calore passa, la pendenza cambia",
+      "hook": "Il calore passa, la pendenza cambia",
+      "paragraphs": [
+        "Due strati di uguale spessore possono spartirsi molto diversamente la caduta di temperatura. Se uno conduce dieci volte meno dell’altro, sostiene dieci volte il salto termico, in conduzione stazionaria. Il calore attraversa entrambi con lo stesso flusso: cambia la pendenza della temperatura. Fare la media aritmetica delle conducibilità nasconderebbe proprio questa resistenza."
+      ],
+      "takeaway": "Il profilo ha pendenze diverse ma resta continuo all’interfaccia ideale.",
+      "basis": "Letta la sezione 16.4. Esempio analitico originale: conduzione 1D stazionaria, area uguale, k costanti, nessuna generazione o resistenza di contatto. R=L/(kA); per strati uguali k equivalente=2/(1/k₁+1/k₂). Valori illustrativi. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "MIT Unified Engineering · Thermal Resistance Circuits",
+          "url": "https://web.mit.edu/16.unified/www/FALL/thermodynamics/notes/node118.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-wall.svg",
+        "alt": "Profilo continuo della temperatura da 100 a 0 gradi attraverso due strati uguali con conducibilità 1 e 0,1 watt per metro kelvin.",
+        "caption": "Due strati da 10 mm: circa 9 K contro 91 K di caduta.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://web.mit.edu/16.unified/www/FALL/thermodynamics/notes/node118.html"
+      }
+    },
+    {
+      "id": "ml-20261102-tanks",
+      "topic": "Reattori",
+      "title": "Dividere una vasca cambia la conversione",
+      "hook": "Dividere una vasca cambia la conversione",
+      "paragraphs": [
+        "Con una reazione irreversibile del primo ordine e kτ totale uguale a uno, una vasca perfettamente mescolata converte il 50% del reagente. Dividerne il volume in due vasche uguali in serie porta al 55,6%. Nella prima la concentrazione resta più alta e la reazione corre di più: stessa portata e stesso volume, diversa organizzazione."
+      ],
+      "takeaway": "Il vantaggio illustrato dipende dalla cinetica specificata: non è una graduatoria universale dei reattori.",
+      "basis": "Letta Web17.4.2, formula 5-15. Esempio originale: n CSTR ideali uguali, isoterma, densità e portata costanti, primo ordine irreversibile. X=1−(1+kτ/n)⁻ⁿ, τ=V totale/portata. Curve calcolate, non dati di impianto; nessuna associazione a un corso del lettore. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "H. Scott Fogler · Tanks-in-Series, sezione Web17.4.2",
+          "url": "https://websites.umich.edu/~elements/5e/17chap/Fogler_Ch17_Web_17.4_Tanks-in-Series.pdf"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-tanks.svg",
+        "alt": "Conversione crescente con kτ; a parità di ascissa le curve per due e otto vasche superano quella per una vasca.",
+        "caption": "Curve analitiche per 1, 2 e 8 vasche uguali in serie.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://websites.umich.edu/~elements/5e/17chap/Fogler_Ch17_Web_17.4_Tanks-in-Series.pdf"
+      }
+    },
+    {
+      "id": "ml-20261102-seneca",
+      "topic": "Filosofia",
+      "title": "Un prestito che nessuno restituisce",
+      "hook": "Un prestito che nessuno restituisce",
+      "paragraphs": [
+        "Se perdiamo un oggetto, sappiamo chiedere il conto. Del tempo ceduto agli altri, invece, raramente consideriamo il valore: eppure è l’unico prestito che neppure una persona riconoscente può restituire. Seneca ammette di sprecarne ancora; riesce però a dire quanto, come e perché. La prima cura non è riempire ogni ora, ma accorgersi della perdita."
+      ],
+      "takeaway": "L’ammissione dello spreco appartiene a Seneca; la lettura non prescrive un programma quotidiano.",
+      "basis": "Letta integralmente la lettera I nella versione inglese di R. M. Gummere. Parafrasi italiana autonoma dei §§1–4; la chiusura sul non riempire ogni ora è interpretazione editoriale. Nessuna citazione letterale o traduzione italiana moderna riprodotta. Grafica concettuale, senza proporzioni temporali misurate. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Seneca · Lettera a Lucilio I, §§1–4",
+          "url": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_1"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-seneca.svg",
+        "alt": "Schema concettuale del tempo strappato, sottratto e sfuggito: il passato non torna, mentre il presente consente di riconoscere la perdita.",
+        "caption": "Tre forme di perdita nella prima lettera a Lucilio.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius/Letter_1"
+      }
+    },
+    {
+      "id": "ml-20261102-arrhenius",
+      "topic": "Cinetica",
+      "title": "Dieci kelvin non valgono sempre il doppio",
+      "hook": "Dieci kelvin non valgono sempre il doppio",
+      "paragraphs": [
+        "Scaldare una reazione da 300 a 310 K non ne raddoppia automaticamente la costante cinetica. Con energia di attivazione di 40 kJ/mol, l’equazione di Arrhenius dà un fattore di circa 1,68, assumendo invariato il prefattore. Il fattore dipende anche dalla temperatura di partenza: la regola dei «dieci gradi» perde queste informazioni."
+      ],
+      "takeaway": "La legge descrive il regime cinetico assunto; altri meccanismi e limiti di trasporto possono cambiare la risposta.",
+      "basis": "Letta la sezione su Arrhenius. Esempio analitico originale: rapporto exp[(Eₐ/R)(1/T₁−1/T₂)], R=8,314 J/(mol·K), Eₐ=40000 J/mol. A ed Eₐ costanti nel range illustrato; non dati sperimentali né tasso di crescita biologica. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "OpenStax Chemistry 2e · Activation Energy and the Arrhenius Equation",
+          "url": "https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-arrhenius.svg",
+        "alt": "Curva analitica crescente tra 300 e 320 kelvin, con valore circa 1,68 a 310 kelvin ed energia di attivazione di 40 kilojoule per mole.",
+        "caption": "Rapporto k(T)/k(300 K), calcolato con Arrhenius.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory"
+      }
+    },
+    {
+      "id": "ml-20261102-titan",
+      "topic": "Esplorazione spaziale",
+      "title": "Sembrano massi, sono ciottoli",
+      "hook": "Sembrano massi, sono ciottoli",
+      "paragraphs": [
+        "Huygens inviò questa vista dalla superficie di Titano nel gennaio 2005. Gli oggetti in primo piano potevano sembrare grandi blocchi: i due al centro misurano invece circa 15 e 4 centimetri. Una scena sconosciuta inganna il nostro senso delle dimensioni. La distanza dalla sonda, circa 85 centimetri, restituisce al paesaggio una scala concreta."
+      ],
+      "takeaway": "Il colore è un’elaborazione scientifica dichiarata nella fonte, non una fotografia terrestre né un rendering.",
+      "basis": "Letta la scheda PIA07232, pubblicata il 15/01/2005. Colore elaborato dalla missione usando dati spettrali, non aggiunto dalla redazione. Ritaglio dei ciottoli dal JPG originale, ottimizzato; dimensioni e distanza sono stime della missione. Immagine educativa con attribuzione secondo JPL Image Use Policy. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "NASA/JPL · First Color View of Titan’s Surface, PIA07232",
+          "url": "https://www.jpl.nasa.gov/images/pia07232-first-color-view-of-titans-surface/"
+        },
+        {
+          "title": "JPL · condizioni di riuso delle immagini",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-titan.jpg",
+        "alt": "Ritaglio della fotografia di Huygens su Titano: ciottoli arrotondati ravvicinati e terreno granuloso, in tonalità arancioni.",
+        "caption": "Dettaglio di Huygens, 14 gennaio 2005: colori elaborati con dati spettrali.",
+        "credit": "NASA/JPL/ESA/University of Arizona · ritaglio Aurelius",
+        "license": "Riuso educativo consentito · JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia07232-first-color-view-of-titans-surface/"
+      }
+    },
+    {
+      "id": "ml-20261102-buckling",
+      "topic": "Meccanica delle strutture",
+      "title": "Più lunga, molto meno stabile",
+      "hook": "Più lunga, molto meno stabile",
+      "paragraphs": [
+        "Una colonna snella può incurvarsi prima che il materiale raggiunga lo snervamento. Nel modello elastico di Eulero, raddoppiare la lunghezza libera riduce a un quarto il carico critico, lasciando uguali materiale, sezione e vincoli. Non è il doppio del materiale a salvarla: la lunghezza rende più facile quella deviazione laterale che la compressione amplifica."
+      ],
+      "takeaway": "Vincoli, imperfezioni e plasticità influenzano le colonne reali; il rapporto ¼ vale nel modello specificato.",
+      "basis": "Lette e ispezionate le diapositive sull’instabilità. Esempio ideale incernierato-incernierato: Pcr=π²EI/L², colonna retta, snella, elastica, compressione centrata. Non verifica di sicurezza per un componente reale; deformate amplificate. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "David M. Parks, MIT · Euler Column Buckling, diapositive 11–13",
+          "url": "https://www.ocw.mit.edu/courses/2-002-mechanics-and-materials-ii-spring-2004/bc25a56b5a91ad29ca5c7419616686f7_lec2.pdf"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-buckling.svg",
+        "alt": "Due colonne con estremi incernierati e deformata sinusoidale amplificata, di lunghezze L e 2L; carichi critici relativi 1 e un quarto.",
+        "caption": "Colonne incernierate: lunghezza doppia, carico critico un quarto.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.ocw.mit.edu/courses/2-002-mechanics-and-materials-ii-spring-2004/bc25a56b5a91ad29ca5c7419616686f7_lec2.pdf"
+      }
+    },
+    {
+      "id": "ml-20261102-parallax",
+      "topic": "Astronomia",
+      "title": "Una stella si sposta perché ci muoviamo noi",
+      "hook": "Una stella si sposta perché ci muoviamo noi",
+      "paragraphs": [
+        "Una stella vicina cambia posizione apparente rispetto alle stelle più lontane quando la Terra passa dall’altro lato del Sole. Confrontando osservazioni separate da sei mesi, otteniamo due punti di vista distanti tra loro. È la parallasse: a parità di base, uno spostamento angolare più piccolo indica una stella più lontana."
+      ],
+      "takeaway": "Il disegno esagera gli angoli per leggibilità; non è una mappa del cielo o della distanza di una stella specifica.",
+      "basis": "Letta la spiegazione ESA; schema originale, non copia del visual ESA. Nel caso simmetrico lo spostamento tra due estremi è 2p, mentre la parallasse annuale p si riferisce alla base di 1 au. Non confondere questo moto apparente con il moto proprio. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "ESA · Measuring stellar distances by parallax",
+          "url": "https://www.esa.int/ESA_Multimedia/Images/2013/06/Measuring_stellar_distances_by_parallax"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-parallax.svg",
+        "alt": "Due posizioni della Terra ai lati del Sole osservano la stessa stella vicina lungo raggi che raggiungono punti diversi dello sfondo stellare.",
+        "caption": "Geometria della parallasse: angoli e distanze fuori scala.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.esa.int/ESA_Multimedia/Images/2013/06/Measuring_stellar_distances_by_parallax"
+      }
+    },
+    {
+      "id": "ml-20261102-gauss",
+      "topic": "Metodi numerici",
+      "title": "Due punti possono integrare una curva",
+      "hook": "Due punti possono integrare una curva",
+      "paragraphs": [
+        "Per integrare x² fra −1 e 1 non serve campionare una griglia fitta. La quadratura di Gauss a due punti sceglie x = ±1/√3 e assegna peso uno a entrambi: somma due valori di 1/3 e ottiene esattamente 2/3. La precisione nasce dalla posizione dei punti, non soltanto dal loro numero."
+      ],
+      "takeaway": "Per funzioni generali i due punti non garantiscono lo stesso risultato esatto.",
+      "basis": "Letta la documentazione leggauss: n punti integrano polinomi fino al grado 2n−1 su [−1,1]. Esempio originale adimensionale, con pesi e nodi analitici. Esattezza matematica per questa classe, soggetta ad arrotondamento nel calcolo numerico. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "NumPy · leggauss, quadratura di Gauss–Legendre",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.polynomial.legendre.leggauss.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-gauss.svg",
+        "alt": "Parabola x quadrato tra meno uno e uno; due punti di Gauss a più e meno uno su radice di tre, con due rettangoli di altezza un terzo.",
+        "caption": "Due rettangoli di area ⅓: totale uguale all’area sotto x².",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://numpy.org/doc/stable/reference/generated/numpy.polynomial.legendre.leggauss.html"
+      }
+    },
+    {
+      "id": "ml-20261102-cache",
+      "topic": "Architetture informatiche",
+      "title": "Variabili diverse, lo stesso ingorgo",
+      "hook": "Variabili diverse, lo stesso ingorgo",
+      "paragraphs": [
+        "Due core aggiornano contatori distinti, ma i contatori occupano la stessa linea di cache. La coerenza deve gestire l’intero blocco: una scrittura può invalidare la copia dell’altro core anche se riguarda un’altra variabile. È false sharing. Separare opportunamente i dati può ridurre il traffico senza cambiare il numero dei calcoli o aggiungere processori."
+      ],
+      "takeaway": "Basta anche uno scrittore con altri lettori; sole letture condivise non producono questo continuo invalidarsi.",
+      "basis": "Letti definizione, esempio e fattori necessari nella documentazione kernel. Schema originale con linea da 64 byte e contatori da 8 byte, dimensioni illustrative dipendenti dalla macchina. Nessun tempo o speedup misurato dichiarato. Separare dati aumenta anche l’ingombro. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Linux Kernel documentation · False Sharing",
+          "url": "https://kernel.org/doc/html/latest/kernel-hacking/false-sharing.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-cache.svg",
+        "alt": "Otto celle contigue da otto byte; due core scrivono nelle prime due, entrambe dentro lo stesso blocco di cache.",
+        "caption": "Una linea illustrativa da 64 byte contiene otto contatori.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://kernel.org/doc/html/latest/kernel-hacking/false-sharing.html"
+      }
+    },
+    {
+      "id": "ml-20261102-compass",
+      "topic": "Orientamento",
+      "title": "L’ago non punta a un punto lontano",
+      "hook": "L’ago non punta a un punto lontano",
+      "paragraphs": [
+        "La bussola segue la componente orizzontale del campo magnetico proprio nel luogo in cui si trova. Non mira geometricamente a un singolo polo. L’angolo rispetto al nord geografico è la declinazione, diversa per luogo e data. Con declinazione di +20°, un rilevamento magnetico di 40° corrisponde a 60° rispetto al nord vero."
+      ],
+      "takeaway": "Per una posizione reale serve la declinazione relativa a quel luogo e a quella data.",
+      "basis": "Letti definizione, correzione del rilevamento e chiarimento sul polo. Esempio originale illustrativo di +20°, non valore corrente per Milano o altra località. Rilevamento vero=magnetico+declinazione con convenzione est positiva. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "NOAA NCEI · Magnetic Declination",
+          "url": "https://www.ncei.noaa.gov/products/magnetic-declination"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-compass.svg",
+        "alt": "Due direzioni partono dallo stesso punto: nord vero verticale in blu e nord magnetico ruotato di venti gradi verso est in rosso.",
+        "caption": "Esempio geometrico: declinazione +20° verso est.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.ncei.noaa.gov/products/magnetic-declination"
+      }
+    },
+    {
+      "id": "ml-20261102-condition",
+      "topic": "Concorrenza",
+      "title": "Essere svegliati non significa poter procedere",
+      "hook": "Essere svegliati non significa poter procedere",
+      "paragraphs": [
+        "Un produttore annuncia che la coda contiene un dato. Due consumatori si risvegliano, ma il primo lo preleva prima che il secondo riprenda il lock. Per il secondo, l’annuncio non basta più. Una condition coordina l’attesa; il predicato sulla coda decide se procedere. Per questo wait_for ricontrolla lo stato, anche dopo un risveglio."
+      ],
+      "takeaway": "La notifica segnala di ricontrollare; non riserva il dato a chi la riceve.",
+      "basis": "Letta la sezione Condition: wait rilascia e poi riacquisisce il lock; sono possibili risvegli spurii. Scenario originale con notifica a entrambi, accessi alla coda sotto lo stesso lock. Timeline senza tempi misurati. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Python · asyncio.Condition, wait e wait_for",
+          "url": "https://docs.python.org/3/library/asyncio-sync.html#condition"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-condition.svg",
+        "alt": "Timeline illustrativa di produttore e due consumatori: inserimento, prelievo di A e successivo controllo a vuoto di B.",
+        "caption": "A preleva il dato; B riprende quando la coda è già vuota.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://docs.python.org/3/library/asyncio-sync.html#condition"
+      }
+    },
+    {
+      "id": "ml-20261102-jacquard",
+      "topic": "Storia della tecnologia",
+      "title": "Il disegno della stoffa vive nei fori",
+      "hook": "Il disegno della stoffa vive nei fori",
+      "paragraphs": [
+        "Nel telaio Jacquard una sequenza di schede perforate decide quali fili dell’ordito sollevare a ogni passaggio della navetta. Il motivo può essere conservato e ripetuto cambiando le schede, senza ricostruire il telaio. Una trama complessa diventa così una successione di scelte fisiche: il disegno è separato dalla macchina che lo esegue."
+      ],
+      "takeaway": "La scheda descrive selezioni dell’ordito: il telaio conserva la propria meccanica, mentre cambia la sequenza di controllo.",
+      "basis": "Letta la scheda del Computer History Museum. Illustrazione originale ridotta a cinque selezioni: non ricostruisce un telaio storico o una scheda di museo. Cercata una foto Smithsonian, ma la pagina originale non era recuperabile; nessuna immagine non autorizzata riusata. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Computer History Museum · Punched cards control Jacquard loom",
+          "url": "https://www.computerhistory.org/storageengine/punched-cards-control-jacquard-loom/"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-jacquard.svg",
+        "alt": "Cinque schede con fori disposti a rombo, accanto a un intreccio stilizzato che mette in evidenza le posizioni corrispondenti.",
+        "caption": "Schede e intreccio: corrispondenza illustrativa di un motivo.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://www.computerhistory.org/storageengine/punched-cards-control-jacquard-loom/"
+      }
+    },
+    {
+      "id": "ml-20261102-jitter",
+      "topic": "Sistemi distribuiti",
+      "title": "Aspettare tutti insieme ricrea la coda",
+      "hook": "Aspettare tutti insieme ricrea la coda",
+      "paragraphs": [
+        "Cento client falliscono insieme e aspettano esattamente un secondo prima di riprovare. Il servizio riceve un’altra ondata compatta. Allungare l’attesa non elimina la sincronizzazione se tutti seguono lo stesso ritmo. Il jitter distribuisce i tentativi nel tempo: un po’ di casualità può rendere il carico collettivo meno brusco, pur lasciando invariato il lavoro richiesto."
+      ],
+      "takeaway": "Limiti ai tentativi e sicurezza degli effetti restano decisioni separate dalla distribuzione temporale.",
+      "basis": "Letta la sezione Jitter e i limiti dei retry. Visual originale con cinque offset illustrativi scelti, non simulazione o benchmark. Il jitter non autorizza a ripetere operazioni con effetti non idempotenti e non riduce da solo il totale dei tentativi. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "Marc Brooker, Amazon Builders’ Library · Jitter",
+          "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-jitter.svg",
+        "alt": "Due raster di eventi: cinque punti sulla stessa verticale nel primo, cinque punti a tempi diversi nel secondo, senza dati di carico misurati.",
+        "caption": "Cinque client: tentativi allineati oppure distribuiti nel tempo.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+      }
+    },
+    {
+      "id": "ml-20261102-bubble",
+      "topic": "Fisica quotidiana",
+      "title": "La bolla piccola spinge di più",
+      "hook": "La bolla piccola spinge di più",
+      "paragraphs": [
+        "Una piccola bolla di sapone ha una sovrapressione maggiore di una grande, a uguale tensione superficiale. Il film ha due superfici: per una sfera sottile vale Δp = 4γ/r. Raddoppiare il raggio dimezza quindi la differenza di pressione con l’esterno. Essere più grande non significa contenere aria a pressione più alta."
+      ],
+      "takeaway": "Le due circonferenze visualizzano le interfacce: lo spessore del film è esagerato, non misurato.",
+      "basis": "Letta la sezione sulla pressione nelle bolle. Esempio originale calcolato con γ=0,030 N/m, film sferico sottile in equilibrio e tensione uguale sulle due superfici. Non applicare il fattore 4 a una goccia con una sola interfaccia. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "OpenStax College Physics 2e · Surface tension, equazione 11.48",
+          "url": "https://openstax.org/books/college-physics-2e/pages/11-8-cohesion-and-adhesion-in-liquids-surface-tension-and-capillary-action"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-bubble.svg",
+        "alt": "Due sezioni di bolle con doppia superficie, di raggi uno e due centimetri; la bolla minore ha sovrapressione dodici pascal, la maggiore sei.",
+        "caption": "Esempio analitico: raggi 1 e 2 cm, sovrapressioni 12 e 6 Pa.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://openstax.org/books/college-physics-2e/pages/11-8-cohesion-and-adhesion-in-liquids-surface-tension-and-capillary-action"
+      }
+    },
+    {
+      "id": "ml-20261102-schema",
+      "topic": "Strumenti AI",
+      "title": "Il campo in più passa, se non lo chiudi",
+      "hook": "Il campo in più passa, se non lo chiudi",
+      "paragraphs": [
+        "Descrivere «nome» e «quantità» in uno schema JSON non vieta automaticamente un terzo campo. Per impostazione predefinita, le proprietà aggiuntive sono ammesse. Con additionalProperties impostato a false, un inatteso «comando_extra» viene rifiutato. Per un tool AI, questo rende esplicito il confine dei dati accettati prima che il programma provi a interpretarli."
+      ],
+      "takeaway": "La conformità dello schema non dimostra che un’azione sia consentita o che i valori siano semanticamente corretti.",
+      "basis": "Letta la sezione Additional Properties. Esempio originale con proprietà dichiarate nello stesso oggetto schema. In questo visual si controllano soltanto i nomi dei campi; tipi, required, autorizzazione ed effetti del tool richiedono controlli distinti. Consultato il 02/11/2026.",
+      "sources": [
+        {
+          "title": "JSON Schema · Object: Additional Properties",
+          "url": "https://json-schema.org/understanding-json-schema/reference/object#additionalproperties"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261102-schema.svg",
+        "alt": "Tre campi attraversano il controllo: nome e quantità sono ammessi; comando_extra è bloccato da additionalProperties false.",
+        "caption": "Uno schema chiuso rifiuta le proprietà non dichiarate.",
+        "credit": "Aurelius · grafica originale",
+        "license": "CC BY 4.0",
+        "source": "https://json-schema.org/understanding-json-schema/reference/object#additionalproperties"
+      }
+    }
+  ]
+}
