@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "date": "2026-11-03",
+  "updated_at": "2026-11-03T04:25:21Z",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261103",
+      "title": "La lepre che non vogliamo comprare",
+      "kind": "synthesis",
+      "basis": "Blaise Pascal, Pensées, articolo IV, edizione Havet (1852), pp. 59–63 e 67: il re e la caccia. Nuova traduzione selettiva dal francese in pubblico dominio, con chiarimenti. Ultimo paragrafo editoriale; il contesto originale è l’apologetica cristiana.",
+      "sections": [
+        {
+          "heading": "Il re lasciato solo",
+          "paragraphs": [
+            "Quando mi sono messo a considerare l’agitazione degli uomini, i pericoli e le fatiche ai quali si espongono a corte e in guerra, le liti, le passioni e le imprese audaci e spesso cattive che ne nascono, mi sono detto più volte che tutta l’infelicità umana viene da una sola cosa: non saper restare tranquilli in una stanza.",
+            "Un uomo che possiede abbastanza per vivere, se sapesse rimanere a casa con piacere, non ne uscirebbe per attraversare il mare o assediare una città. Non pagherebbe tanto per comprare una carica nell’esercito, se non trovasse insopportabile restare dov’è. Si cercano conversazioni e giochi perché non si riesce a stare volentieri soli.",
+            "Ma quando ho guardato più da vicino, cercando la ragione di questa agitazione, ne ho trovata una molto reale: la nostra condizione è debole e mortale. Se la consideriamo senza distrazioni, nessun possesso basta a metterci al riparo.",
+            "Immaginiamo un re circondato da tutto ciò che può desiderare. Lasciamolo però senza divertimenti, a riflettere su quello che è. Quella felicità senza movimento non lo sosterrà. Penserà ai pericoli che lo minacciano, alle rivolte possibili, e infine alla malattia e alla morte, che non può evitare. Eccolo infelice, benché re; forse più infelice del più umile dei suoi sudditi, che intanto gioca e si distrae."
+          ]
+        },
+        {
+          "heading": "La caccia, non la preda",
+          "paragraphs": [
+            "Non sono soltanto i guadagni a rendere così desiderabili il gioco e gli incarichi importanti. Non è nella moneta vinta o nella lepre inseguita che immaginiamo di trovare la beatitudine. Quella lepre, se ci fosse offerta senza inseguirla, non la vorremmo. Ciò che cerchiamo è il trambusto che ci distoglie dal pensare alla nostra condizione.",
+            "Il re è circondato da persone che pensano soltanto a divertirlo e gli impediscono di pensare a sé. Tutto il loro zelo serve a non lasciargli uno spazio vuoto. Anche chi si atteggia a filosofo e deride gli uomini perché passano una giornata dietro una lepre che non comprerebbero conosce poco la nostra natura. La lepre non ci difenderebbe dalla vista della morte e delle miserie; la caccia ce ne difende.",
+            "Se rimproveriamo a questi uomini di cercare con tanto ardore qualcosa che non può soddisfarli, potrebbero rispondere: «Non cerchiamo questo oggetto, ma un’occupazione impetuosa che ci impedisca di pensare a noi stessi. L’oggetto serve ad attirarci e a tenerci impegnati». Non lo dicono, perché non si conoscono abbastanza. Non sanno che cercano la caccia e non la preda."
+          ]
+        },
+        {
+          "heading": "Il riposo rimandato",
+          "paragraphs": [
+            "Si immaginano che, ottenuta quella carica, potranno finalmente riposare con piacere. Credono sinceramente di cercare il riposo e cercano invece l’agitazione. Così scorre la vita: combattiamo qualche ostacolo per raggiungere la quiete e, quando l’abbiamo superato, la quiete diventa insopportabile. Tornano alla mente i mali presenti o quelli che ci minacciano. Anche al sicuro, la noia può risalire dal fondo del cuore.",
+            "La conclusione da trarne non è che ogni attività sia vana o che basti chiudersi in una stanza. È più esigente: riconoscere quando un desiderio ci conduce verso qualcosa che amiamo e quando ci serve soltanto a non incontrare noi stessi. Se non vediamo la differenza, continueremo a chiamare riposo la prossima conquista, mentre prepariamo già una nuova fuga. La prima sincerità consiste nel dare un nome a ciò da cui stiamo cercando di distrarci."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Pascal — Pensées, edizione Havet, pagina 59",
+          "url": "https://fr.wikisource.org/wiki/Page:Pascal_-_Pens%C3%A9es,_%C3%A9d._Havet.djvu/137",
+          "edition": "Parigi, Dezobry et E. Magdeleine, 1852. Lette le pagine 59–63 e 67, corrispondenti alle scansioni 137–141 e 145. Pascal morì nel 1662; originale francese e questa edizione storica sono in pubblico dominio in Italia/UE e negli Stati Uniti. Non usata alcuna traduzione italiana moderna.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Pascal — Il re e la lepre, pagina 60",
+          "url": "https://fr.wikisource.org/wiki/Page:Pascal_-_Pens%C3%A9es,_%C3%A9d._Havet.djvu/138",
+          "edition": "Testo di Pascal distinto dalle note di Havet, non riprodotte. Il divertissement è ciò che distoglie dalla condizione mortale, non soltanto lo svago moderno.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Pascal — La caccia e la preda, pagina 61",
+          "url": "https://fr.wikisource.org/wiki/Page:Pascal_-_Pens%C3%A9es,_%C3%A9d._Havet.djvu/139",
+          "edition": "Prosegue a pagina 62 (scansione 140): ricerca del riposo attraverso l’agitazione. Scansione 141 consultata per il ritorno della noia; scansione 145 per le persone incaricate di non lasciare solo il re.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Pascal — Cercare il riposo attraverso il movimento",
+          "url": "https://fr.wikisource.org/wiki/Page:Pascal_-_Pens%C3%A9es,_%C3%A9d._Havet.djvu/140",
+          "edition": "Pagina 62 dell’edizione 1852. Omesse nella selezione alcune articolazioni teologiche, senza presentare la conclusione redazionale come soluzione proposta dall’intera opera.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Wikisource — Dati bibliografici dell’edizione Havet",
+          "url": "https://fr.wikisource.org/wiki/Livre:Pascal_-_Pens%C3%A9es,_%C3%A9d._Havet.djvu",
+          "edition": "Frontespizio e metadati: edizione del 1852, Parigi. Fonte originale francese; nuova traduzione italiana, non riproduzione di una versione moderna.",
+          "accessed": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261103",
+      "title": "Un pane sotto ciascun braccio",
+      "kind": "synthesis",
+      "basis": "Benjamin Franklin, Autobiography, parte I (1771): l’arrivo a Filadelfia, i tipografi e le contraddizioni del giovane Franklin. Nuova traduzione selettiva dall’inglese in pubblico dominio, edizione Harvard Classics 1909; tagli e breve chiarimento del compositoio.",
+      "sections": [
+        {
+          "heading": "Il mattino dell’arrivo",
+          "paragraphs": [
+            "Indossavo gli abiti da lavoro; quelli migliori dovevano arrivare per mare. Ero sporco del viaggio, avevo le tasche gonfie di camicie e calze, non conoscevo nessuno e non sapevo dove cercare un alloggio.",
+            "Ero stanco per il cammino, per le ore ai remi e per il sonno perduto, e avevo una gran fame. Tutto il mio denaro consisteva in un dollaro olandese e in circa uno scellino di rame. Diedi quest’ultimo agli uomini della barca per il passaggio. Dapprima lo rifiutarono, perché avevo remato anch’io; ma insistetti che lo prendessero. A volte un uomo è più generoso quando ha poco denaro che quando ne ha molto: forse teme che gli altri si accorgano di quanto poco possiede.",
+            "Mi incamminai per la strada, guardandomi intorno, finché vicino al mercato incontrai un ragazzo con del pane. Di pane avevo fatto parecchi pasti. Gli domandai dove lo avesse comprato e andai subito dal fornaio che mi indicò, in Second Street. Chiesi delle gallette, pensando a quelle che avevamo a Boston; ma a Filadelfia, a quanto pare, non ne facevano. Domandai allora una pagnotta da tre pence. Mi risposero che non ne avevano di quel prezzo.",
+            "Non conoscevo la differenza fra le monete, né sapevo che lì il pane costava meno, né come si chiamassero le diverse forme. Così chiesi che mi desse tre pence di pane di qualunque tipo. Mi consegnò tre grossi pani gonfi. Rimasi sorpreso dalla quantità, ma li presi; e poiché nelle tasche non c’era più posto, me ne andai con un pane sotto ciascun braccio, mangiando il terzo.",
+            "Risalii Market Street fino a Fourth Street e passai davanti alla porta del signor Read, il padre della mia futura moglie. Lei era sulla soglia, mi vide e pensò che avessi un’aria goffa e ridicola. E certamente l’avevo. Poi voltai e scesi per Chestnut Street e per un tratto di Walnut Street, continuando a mangiare. Girando mi ritrovai al molo di Market Street, vicino alla barca con cui ero arrivato, e andai a bere un sorso d’acqua del fiume. Un solo pane mi aveva saziato: diedi gli altri due a una donna e al suo bambino che avevano viaggiato con noi e aspettavano di proseguire.",
+            "Così ristorato tornai a risalire la strada. Ora c’erano molte persone ben vestite che camminavano tutte nella stessa direzione. Mi unii a loro e fui condotto nella grande casa di riunione dei quaccheri, vicino al mercato. Mi sedetti fra loro, mi guardai un poco intorno e non sentii pronunciare una parola. Per la fatica e il riposo mancato durante la notte avevo un sonno irresistibile: mi addormentai profondamente e rimasi così fino al termine della riunione, quando qualcuno ebbe la gentilezza di svegliarmi. Fu dunque quella la prima casa in cui entrai, e in cui dormii, a Filadelfia.",
+            "Tornando verso il fiume e osservando i volti dei passanti, incontrai un giovane quacchero dall’aspetto che mi piacque. Gli chiesi dove uno straniero potesse trovare da alloggiare. Eravamo vicini all’insegna dei Tre Marinai. «Qui», mi disse, «accolgono i forestieri, ma la casa non gode di buona reputazione. Se vuoi venire con me, te ne mostrerò una migliore». Mi condusse al Crooked Billet, in Water Street. Lì ebbi un pranzo; e mentre mangiavo mi fecero parecchie domande indirette. La mia età e il mio aspetto dovevano far sospettare che fossi un fuggiasco.",
+            "Dopo pranzo tornò il sonno. Mi mostrarono un letto, mi ci stesi senza spogliarmi e dormii fino alle sei di sera. Mi chiamarono per la cena; poi tornai a letto molto presto e dormii profondamente fino al mattino seguente. Allora mi rimisi in ordine come meglio potevo e andai dal tipografo Andrew Bradford."
+          ]
+        },
+        {
+          "heading": "Una pressa e due tipografi",
+          "paragraphs": [
+            "Nella bottega trovai suo padre, il vecchio che avevo conosciuto a New York. Viaggiando a cavallo era arrivato a Filadelfia prima di me. Mi presentò al figlio, che mi accolse cortesemente e mi diede da fare colazione, ma disse che per il momento non aveva bisogno di un lavorante: ne aveva appena assunto uno. In città, però, si era da poco stabilito un altro tipografo, un certo Keimer; forse lui avrebbe potuto impiegarmi. Altrimenti sarei stato il benvenuto in casa sua, e mi avrebbe dato qualche piccolo lavoro di tanto in tanto, finché non si fosse presentata un’occasione migliore.",
+            "Il vecchio signore disse che mi avrebbe accompagnato dal nuovo tipografo. Quando lo trovammo, gli disse: «Vicino, ti ho portato un giovane del tuo mestiere. Forse puoi aver bisogno di uno come lui». Keimer mi fece alcune domande, mi mise in mano un compositoio, lo strumento in cui si allineano i caratteri, per vedere come lavoravo, e disse che presto mi avrebbe impiegato, benché in quel momento non avesse nulla da farmi fare.",
+            "Poi scambiò il vecchio Bradford, che non aveva mai visto, per un abitante della città ben disposto verso di lui e cominciò a parlargli della sua impresa e delle sue prospettive. Bradford non rivelò di essere il padre dell’altro tipografo. Quando Keimer disse che sperava di impadronirsi presto della maggior parte del lavoro della città, lo incoraggiò con domande accorte e piccoli dubbi a spiegare tutti i suoi progetti: su quali appoggi contava e in che modo intendeva procedere.",
+            "Io rimasi ad ascoltare. Mi accorsi subito che uno era un vecchio ragionatore pieno d’astuzia e l’altro un principiante completo. Bradford mi lasciò con Keimer, che rimase molto sorpreso quando gli spiegai chi fosse quel vecchio signore.",
+            "La tipografia di Keimer consisteva in una vecchia pressa sconquassata e in una sola serie, piccola e consumata, di caratteri. Lui la stava usando per comporre un’elegia per Aquila Rose, un giovane ingegnoso, di ottimo carattere e molto stimato in città, che era stato segretario dell’Assemblea e un discreto poeta. Anche Keimer faceva versi, ma piuttosto male. Non si poteva propriamente dire che li scrivesse: li componeva direttamente con i caratteri, prendendoli dalla propria testa.",
+            "Non essendoci un manoscritto, e disponendo di una sola coppia di casse tipografiche, nessuno poteva aiutarlo; per l’elegia gli sarebbe probabilmente servito tutto il materiale. Cercai di mettere in condizioni di funzionare la sua pressa, che non aveva ancora usato e della quale non capiva nulla. Promisi che sarei tornato a stampare l’elegia appena l’avesse preparata; poi rientrai da Bradford, che intanto mi diede un piccolo lavoro. In casa sua mangiavo e dormivo.",
+            "Qualche giorno dopo Keimer mi mandò a chiamare per stampare l’elegia. Ora si era procurato un’altra coppia di casse e un opuscolo da ristampare, sul quale mi mise al lavoro. Trovai che entrambi i tipografi erano poco preparati per il loro mestiere. Bradford non vi era stato addestrato e aveva pochissima istruzione; Keimer, pur avendo qualche cultura, era soltanto un compositore e non sapeva nulla del lavoro alla pressa.",
+            "A Keimer non piaceva che alloggiassi da Bradford mentre lavoravo per lui. Aveva una casa, ma senza mobili, e non poteva ospitarmi. Mi trovò quindi una sistemazione presso il signor Read, che era anche il proprietario della casa in cui abitava. Intanto erano arrivati il mio baule e i miei abiti: agli occhi della signorina Read cominciai ad avere un aspetto un po’ più rispettabile di quando mi aveva visto per la prima volta mangiare il pane per strada.",
+            "Cominciai a conoscere alcuni giovani della città che amavano la lettura. Passavo con loro serate molto piacevoli. Con il lavoro e la parsimonia guadagnavo denaro e vivevo abbastanza bene, dimenticando Boston quanto più potevo. Non desideravo che là sapessero dove mi trovavo, salvo il mio amico Collins, al quale avevo confidato il segreto e che lo conservò quando gli scrissi."
+          ]
+        },
+        {
+          "heading": "Il visitatore alla finestra",
+          "paragraphs": [
+            "Avevo un cognato, Robert Holmes, comandante di una piccola nave che commerciava fra Boston e il Delaware. A Newcastle, circa quaranta miglia a valle di Filadelfia, sentì parlare di me. Mi scrisse ricordandomi la preoccupazione dei miei familiari per la mia partenza improvvisa e assicurandomi del loro affetto. Se fossi tornato, diceva, ogni cosa si sarebbe accomodata come desideravo. Mi esortava con grande insistenza a farlo.",
+            "Risposi ringraziandolo del consiglio, ma esposi per intero le ragioni per cui avevo lasciato Boston, presentandole in una luce tale da convincerlo che non avevo tutti i torti che aveva immaginato.",
+            "Sir William Keith, governatore della provincia, si trovava allora a Newcastle. Il capitano Holmes era in sua compagnia quando ricevette la mia lettera; gli parlò di me e gliela mostrò. Il governatore la lesse e parve sorpreso quando seppe la mia età. Disse che sembravo un giovane di buone capacità e che bisognava incoraggiarmi. I tipografi di Filadelfia erano pessimi; se mi fossi stabilito in proprio, non dubitava che avrei avuto successo. Da parte sua mi avrebbe procurato il lavoro pubblico e reso ogni altro servizio in suo potere.",
+            "Questo mio cognato me lo raccontò più tardi a Boston. Per il momento non ne sapevo nulla. Un giorno, mentre Keimer e io lavoravamo insieme vicino alla finestra, vedemmo il governatore e un altro gentiluomo, che risultò essere il colonnello French di Newcastle, attraversare la strada direttamente verso casa nostra, vestiti con grande eleganza. Li sentimmo arrivare alla porta.",
+            "Keimer si precipitò subito di sotto, convinto che la visita fosse per lui. Ma il governatore domandò di me, salì e, con una cortesia alla quale non ero affatto abituato, mi fece molti complimenti. Disse che desiderava conoscermi; mi rimproverò benevolmente di non essermi presentato quando ero arrivato e volle che lo accompagnassi alla taverna dove, disse, andava con il colonnello French ad assaggiare un eccellente Madeira.",
+            "Ero non poco sorpreso. Keimer rimase a fissarci con l’aria di un maiale avvelenato. Andai comunque con il governatore e con il colonnello in una taverna all’angolo di Third Street. Davanti al Madeira mi propose di aprire una tipografia. Mi espose le probabilità di successo, e tanto lui quanto il colonnello French mi assicurarono che avrei avuto il loro appoggio e la loro influenza per ottenere il lavoro pubblico di entrambi i governi.",
+            "Espressi il dubbio che mio padre volesse aiutarmi. Sir William rispose che gli avrebbe scritto una lettera esponendogli i vantaggi del progetto e che non dubitava di convincerlo. Si stabilì così che sarei tornato a Boston con la prima nave, portando la lettera con cui il governatore mi raccomandava a mio padre. Nel frattempo il progetto doveva rimanere segreto. Continuai a lavorare da Keimer come al solito; il governatore mi mandava ogni tanto a chiamare perché pranzassi con lui, cosa che consideravo un grandissimo onore, e conversava con me nel modo più affabile, familiare e amichevole che si possa immaginare."
+          ]
+        },
+        {
+          "heading": "Una ragione per il merluzzo",
+          "paragraphs": [
+            "Credo di aver dimenticato di raccontare che, durante il mio primo viaggio da Boston, rimanemmo senza vento al largo di Block Island. I nostri uomini si misero a pescare merluzzi e ne tirarono su moltissimi. Fino ad allora avevo mantenuto la risoluzione di non mangiare cibo animale. Seguendo il mio maestro Tryon, consideravo la cattura di ogni pesce una specie di assassinio senza provocazione: nessuno di loro ci aveva fatto, o avrebbe mai potuto farci, alcun male che giustificasse quella strage. Tutto questo mi sembrava molto ragionevole.",
+            "Ma un tempo ero stato un grande amante del pesce; e quando il merluzzo uscì caldo dalla padella, aveva un profumo meraviglioso. Per un po’ rimasi in bilico fra il principio e l’inclinazione. Poi ricordai che, quando avevano aperto i pesci, avevo visto estrarne dallo stomaco altri pesci più piccoli. Pensai allora: «Se vi mangiate l’un l’altro, non vedo perché noi non possiamo mangiare voi».",
+            "Così pranzai di merluzzo con grande appetito e continuai a mangiare come gli altri, tornando soltanto di quando in quando alla dieta vegetale. È una gran comodità essere una creatura ragionevole: permette di trovare, o fabbricare, una ragione per tutto quello che si ha voglia di fare.",
+            "Keimer e io eravamo in rapporti abbastanza familiari e andavamo discretamente d’accordo: lui non sospettava nulla del mio progetto di mettermi in proprio. Conservava molto dei suoi antichi entusiasmi e amava discutere. Avevamo quindi frequenti dispute. Lo mettevo talmente alle strette con il mio metodo socratico, e lo avevo intrappolato così spesso con domande che parevano lontanissime dall’argomento ma lo conducevano poco a poco a difficoltà e contraddizioni, che alla fine divenne ridicolmente prudente.",
+            "Quasi non rispondeva più alla domanda più comune senza chiedermi prima: «Che cosa intendi dedurne?». Tuttavia questo gli diede un’opinione tanto alta della mia abilità nel confutare gli avversari che mi propose seriamente di diventare suo collega in un progetto per fondare una nuova setta. Lui avrebbe predicato le dottrine; io avrei confuso tutti gli oppositori. Quando venne a spiegarmi le dottrine, trovai diversi punti ai quali mi opponevo, a meno che non mi fosse concesso di fare un poco a modo mio e di introdurre qualche idea mia.",
+            "Keimer portava la barba in tutta la sua lunghezza perché in un punto della legge di Mosè si dice di non guastarne gli angoli. Osservava inoltre il sabato. Questi due punti gli erano essenziali. A me non piaceva nessuno dei due; accettai però di ammetterli a condizione che adottasse la dottrina di non mangiare cibo animale. «Dubito», disse, «che la mia costituzione possa sopportarlo». Gli assicurai che avrebbe potuto, e che anzi ne sarebbe stato meglio. Era di solito un gran mangione, e mi promettevo qualche divertimento nel lasciarlo mezzo affamato.",
+            "Accettò di provare, se gli avessi tenuto compagnia. Lo feci, e continuammo per tre mesi. Una donna del vicinato ci cucinava e ci portava regolarmente i pasti. Le avevo dato una lista di quaranta piatti da prepararci a turno, senza pesce, carne o pollame. Quella fantasia mi conveniva tanto più perché costava poco: non più di diciotto pence di moneta inglese a testa alla settimana.",
+            "Io continuavo piacevolmente, ma il povero Keimer soffriva moltissimo. Si stancò del progetto, cominciò a rimpiangere le pentole di carne d’Egitto e ordinò un maialino arrosto. Invitò a pranzo me e due amiche; ma il maialino fu portato in tavola troppo presto. Non seppe resistere alla tentazione e lo mangiò tutto prima che arrivassimo."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Benjamin Franklin — The Autobiography, Part I",
+          "url": "https://www.gutenberg.org/files/148/148-h/148-h.htm",
+          "edition": "The Harvard Classics, a cura di Charles W. Eliot, P. F. Collier & Son, New York, 1909. Letti i passaggi dall’arrivo a Filadelfia alla visita di Keith e, più avanti nella stessa parte, il ricordo della pesca e le discussioni con Keimer. Omessi il ritorno a Boston e altri episodi intermedi; il ritorno al primo viaggio è un flashback dell’originale. Omesse osservazioni dietetiche generali e alcuni giudizi religiosi; nessuna scena aggiunta. Titolo e divisione in sezioni redazionali.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Library of Congress — Franklin’s Autobiography",
+          "url": "https://guides.loc.gov/finding-benjamin-franklin/autobiography",
+          "edition": "Consultata per storia del testo: parte I scritta nel 1771 e rivolta al figlio William; Franklin morì nel 1790. È la sua rappresentazione retrospettiva degli inizi, non una biografia indipendente né una testimonianza contemporanea agli eventi.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "U.S. Copyright Office — Opere in pubblico dominio",
+          "url": "https://www.copyright.gov/what-is-copyright/",
+          "edition": "Verifica dei diritti USA: opere pubblicate negli Stati Uniti prima del 1931 in pubblico dominio. Usato il testo inglese di Franklin nell’edizione del 1909, senza introduzione e note di Eliot. Anche i diritti patrimoniali sul testo di Franklin sono scaduti in Italia/UE; nessuna traduzione moderna utilizzata.",
+          "accessed": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261103",
+      "title": "Radar · Agenti e filiere europee",
+      "kind": "reduced",
+      "event_date": "2026-11-03",
+      "publication_date": "2026-11-03",
+      "basis": "Nove sviluppi della finestra 2 novembre, 05:04 – 3 novembre, 05:04 Europe/Rome. Radar ridotto: esclusi annunci precedenti, duplicati e piste senza riscontri sufficienti, dopo ricerche su AI/software, Italia, Europa, geopolitica ed energia. Fonti primarie e cronaca; risultati attribuiti, implicazioni editoriali.",
+      "sections": [
+        {
+          "heading": "Weight-Space Programming · Qwen3.5-0.8B corretto nei pesi",
+          "paragraphs": [
+            "Il 2 novembre Takehi, Teoh, Zhang e Khattab pubblicano otto esperimenti con GPT-6 Astra: il modello legge o modifica direttamente pesi di altre reti."
+          ],
+          "bullets": [
+            "Qwen3.5-0.8B: MATH-500 dal 7,9% al 48,1%, dopo 50 forward pass consentiti su problemi di pratica; niente gradient descent.",
+            "La modifica riduce i loop del reasoning. Su Gemma 3 270M non emerge un miglioramento analogo: non è una capacità generale di aggiungere ragionamento.",
+            "Rapporto degli autori, con checkpoint e log collegati; interesse per diagnosi e interventi mirati sui modelli."
+          ]
+        },
+        {
+          "heading": "Claude Code v2.1.317 · gli hook possono bloccare al fallimento",
+          "paragraphs": [
+            "Release del 3 novembre, 01:25 UTC. Anthropic aggiunge onFailure: block ai callback degli hook dell’Agent SDK e corregge casi di perdita delle trascrizioni."
+          ],
+          "bullets": [
+            "Un callback fallito può ora impedire l’azione, invece di lasciarla proseguire.",
+            "In modalità headless, disco pieno o quota esaurita producono errore ed exit 1 in text/JSON; possibili limiti su NFS.",
+            "Corretto anche il trattamento di risultati Grep/Glob parziali come completi: cambiamenti utili alla verificabilità degli harness."
+          ]
+        },
+        {
+          "heading": "Hermes Agent v0.22.6 · skill bloccabili e hook prima dell’inferenza",
+          "paragraphs": [
+            "NousResearch pubblica il 2 novembre alle 17:18 UTC una release stabile che raccoglie i cambiamenti successivi alla v0.22.5."
+          ],
+          "bullets": [
+            "Blocchi per singola skill contro scritture autonome; pre_llm_call può fermare il turno prima dell’inferenza.",
+            "Webapp sul listener del gateway; compaction anticipata opzionale e politica per esecuzioni cron mancate.",
+            "CLI e Docker/Cloud aggiornabili; l’installer desktop riceverà il prossimo bundle. Sono capacità del rilascio, non integrazioni già provate in JarvisOS."
+          ]
+        },
+        {
+          "heading": "Hydrogen-1.0 · pesi aperti per la ricerca scientifica",
+          "paragraphs": [
+            "Il 2 novembre Deep Principle presenta il post-training scientifico di GLM-5.3 su chimica, materiali, scienze della vita e registri di laboratorio."
+          ],
+          "bullets": [
+            "Circa 753B parametri totali nei metadati ufficiali; licenza MIT, contesto dichiarato 1M e output massimo 128K. Download Hugging Face soggetto ad accettazione delle condizioni.",
+            "BF16 e versioni NVFP4/MXFP4 per hardware datacenter; deployment documentato con SGLang su otto GPU. Fuori scala per 12 GiB.",
+            "Gli esempi includono simulazioni e reti di reazioni; benchmark e vantaggi dichiarati sono del produttore."
+          ]
+        },
+        {
+          "heading": "Italia · PMI manifatturiero a 49,4",
+          "paragraphs": [
+            "I dati di ottobre diffusi il 2 novembre riportano l’indice S&P Global sotto 50, da 50,4 a settembre. Reuters documenta anche il deterioramento di ordini e occupazione."
+          ],
+          "bullets": [
+            "Produzione: 49,1→47,3; nuovi ordini: 49,4→47,8. Sono indici d’indagine, non variazioni percentuali della produzione.",
+            "Occupazione a 49,3 da 50,9: primo calo segnalato in tre mesi.",
+            "Per le filiere industriali si combinano domanda debole e pressioni sui costi. La notizia è la nuova rilevazione, non una misura del PIL."
+          ]
+        },
+        {
+          "heading": "Scuola · UIL e UIL Scuola scrivono a Valditara",
+          "paragraphs": [
+            "Il 2 novembre Veronese e D’Aprile annunciano una lettera per chiedere un incontro urgente sui tagli agli organici previsti dalla manovra 2027; ANSA riscontra il confronto sindacale."
+          ],
+          "bullets": [
+            "La nota indica 4.925 posti docenti e 2.049 ATA in meno dal 2027/28; chiede di cancellare le riduzioni durante l’iter parlamentare.",
+            "Il delta è l’iniziativa formale verso il ministro. Non sono licenziamenti già eseguiti né uno sciopero unitario appena concordato.",
+            "La posta è il personale disponibile nelle scuole; restano aperti modifica del testo e coperture."
+          ]
+        },
+        {
+          "heading": "Yemen · i governi UE chiedono un corridoio a Taiz",
+          "paragraphs": [
+            "Nel comunicato del 2 novembre Kallas condanna a nome dell’UE l’escalation Houthi, gli attacchi all’Arabia Saudita e l’assedio di Taiz. Eunews riscontra la dichiarazione."
+          ],
+          "bullets": [
+            "Richiesti accesso umanitario, fine delle azioni militari Houthi e cessazione del sostegno militare esterno, incluso quello iraniano.",
+            "La posizione mantiene il sostegno al negoziato ONU e alla protezione della navigazione nel Mar Rosso.",
+            "Rispetto al voto parlamentare già raccontato, qui parlano i governi UE: non è un nuovo mandato militare per ASPIDES."
+          ]
+        },
+        {
+          "heading": "Regno Unito–Germania · Trinity House si estende all’AI",
+          "paragraphs": [
+            "Il 2 novembre Streeting e Pistorius tengono il secondo Consiglio ministeriale della Difesa e pubblicano una dichiarazione congiunta, riscontrata da Euronews."
+          ],
+          "bullets": [
+            "Il Cyber Lighthouse Project includerà intelligenza artificiale, con pochi casi d’uso militari comuni da sperimentare e adottare.",
+            "Firmata anche un’intesa attuativa sulla cooperazione per il siluro Sting Ray; prosegue il lavoro su spazio e sistemi senza equipaggio.",
+            "Conseguenza: programmi bilaterali più concreti fra industrie e forze armate, senza implicare capacità AI già dispiegate."
+          ]
+        },
+        {
+          "heading": "GNL statunitense · l’Europa assorbe 6,89 milioni di tonnellate",
+          "paragraphs": [
+            "Il 2 novembre Reuters pubblica i dati LSEG di ottobre: le spedizioni USA verso l’Europa salgono da 5,91 a 6,89 milioni di tonnellate."
+          ],
+          "bullets": [
+            "Circa un milione di tonnellate in più; verso l’Asia 2,73 milioni, contro 2,84 a settembre.",
+            "TTF europeo e JKM asiatico hanno entrambi mediato circa 28 dollari/MMBtu: più concorrenza fra destinazioni per le navi disponibili.",
+            "È un bilancio mensile appena pubblicato, non la prova di prezzi futuri più bassi o di forniture già assicurate per tutto l’inverno."
+          ],
+          "chart": {
+            "title": "GNL USA diretto in Europa",
+            "unit": "milioni di tonnellate",
+            "bars": [
+              {
+                "label": "Settembre 2026",
+                "value": 5.91
+              },
+              {
+                "label": "Ottobre 2026",
+                "value": 6.89
+              }
+            ],
+            "note": "Totali mensili di GNL dagli Stati Uniti all’Europa, dati LSEG riportati da Reuters il 2 novembre 2026. Settembre ha 30 giorni, ottobre 31: confronto dei volumi totali, non delle portate giornaliere.",
+            "source_url": "https://ca.marketscreener.com/news/us-lng-exports-hit-second-highest-monthly-level-on-record-as-europe-demand-surges-ce785fd9db88f42d"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "title": "Takehi, Teoh, Zhang e Khattab — Sparks of Weight-Space Programming",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+          "edition": "Rapporto originale del 2 novembre 2026; letti setup e risultati, in particolare esperimento 8. Modifiche mirate per ridurre loop, con budget di 50 forward pass e valutazione separata; nessuna prova di miglioramento generale dei modelli. Collegamenti a checkpoint e log nel rapporto. Hacker News usato per scoperta.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Anthropic — Claude Code v2.1.317",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+          "edition": "Release GitHub pubblicata il 3 novembre 2026 alle 01:25:46 UTC; changelog letto attraverso il connettore GitHub. Selezionati onFailure, errori di scrittura e risultati di ricerca incompleti.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "NousResearch — Hermes Agent v0.22.6",
+          "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.6",
+          "edition": "Release pubblicata il 2 novembre 2026 alle 17:18:36 UTC; confronto dichiarato con v0.22.5. Letta integralmente: funzionalità elencate nella finestra del rilascio, con note curate rinviate a v0.23.0. Nessun benchmark di qualità o costo inventato.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Deep Principle — Introducing Hydrogen-1.0",
+          "url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+          "edition": "Annuncio del 2 novembre 2026, data riscontrata da MarkTechPost e dalla comunicazione del team riportata nella cronaca. Lette via download pubblico le sezioni su post-training, scenari scientifici e disponibilità: post-training scientifico e dimostrazioni del produttore, non risultati indipendenti. Nessun uso dell’API.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Deep Principle — Hydrogen-1.0, model card e metadati",
+          "url": "https://huggingface.co/deep-principle/Hydrogen-1.0",
+          "edition": "Scheda ufficiale e API pubblica consultate il 3 novembre: 753.329.940.480 parametri totali nei metadati safetensors, MIT, contesto 1M, output 128K, SGLang su otto GPU. BF16, NVFP4 per B200/B300, MXFP4 per MI350X/MI355X. Il repository era stato creato il 31 ottobre; la scheda riguarda l’annuncio pubblico del 2 novembre, non la creazione del repository.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "MarkTechPost — Annuncio di Hydrogen-1.0",
+          "url": "https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/",
+          "edition": "Cronaca del 2 novembre usata per riscontrare la data dell’annuncio, non come fonte autonoma dei benchmark; questi restano attribuiti al produttore.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Reuters — Italia, manifattura in contrazione a ottobre",
+          "url": "https://it.investing.com/news/stock-market-news/italia-manifattura-registra-contrazione-inaspettata-a-ottobre--pmi-3620807",
+          "edition": "Resoconto Reuters del 2 novembre, pubblicato alle 10:28 e aggiornato alle 10:32 nella pagina italiana di Investing. Letti integralmente valori di PMI, produzione, ordini e occupazione. Dati S&P Global; comunicato originale individuato ma non accessibile integralmente.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "S&P Global — Sharpest fall in Italian manufacturing output since start of 2026",
+          "url": "https://www.forexfactory.com/news/1434375-sharpest-fall-in-italian-manufacturing-output-since-start",
+          "edition": "Letto il passaggio iniziale del comunicato S&P Global ripubblicato da Forex Factory, con rimando al comunicato 8667d5f8a5494bffb708eabf6ec742a8. Accesso al documento completo S&P rifiutato: non dichiarato come lettura integrale. Valori specifici verificati sul resoconto Reuters.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "UIL — Veronese e D’Aprile: a rischio 6.974 posti",
+          "url": "https://www.uil.it/NewsSX.asp?ID_News=17458&Provenienza=1",
+          "edition": "Nota originale del 2 novembre 2026: lettera al ministro, 4.925 docenti e 2.049 ATA dal 2027/28, richiesta di modifiche durante l’iter. Le cifre sono presentate come contenuto della denuncia sindacale.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "ANSA — Tagli alla scuola, sindacati pronti alla mobilitazione",
+          "url": "https://www.ansa.it/sito/notizie/politica/2026/11/02/i-sindacati-della-scuola-pronti-alla-mobilitazione-contro-i-tagli-previsti-nella_ade17b33-28ec-4e0d-8182-d5235c910705.html",
+          "edition": "Cronaca del 2 novembre: valutazione di un’azione unitaria ancora da discutere, distinta dallo sciopero CGIL del 20 novembre già annunciato. Non attribuito alla giornata un nuovo accordo sindacale.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Consiglio UE — Dichiarazione sulla situazione in Yemen",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/02/statement-of-the-high-representative-on-behalf-of-the-eu-on-the-situation-in-yemen/",
+          "edition": "Comunicato del 2 novembre 2026, pagina con orario 12:22. Letto integralmente: Taiz, sostegno al negoziato ONU e navigazione. La notizia è la dichiarazione UE, non una nuova data attribuita agli attacchi citati.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Eunews — La posizione UE sull’escalation Houthi",
+          "url": "https://www.eunews.it/en/2026/11/02/eu-condemns-houthis-escalation-in-yemen-all-military-action-must-end/",
+          "edition": "Cronaca indipendente del 2 novembre, confrontata con la dichiarazione del Consiglio. Nessuna nuova operazione militare dedotta dal comunicato.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Ministero della Difesa britannico — UK Germany Defence Ministerial Council Joint Statement",
+          "url": "https://www.gov.uk/government/news/uk-germany-defence-ministerial-council-joint-statement--2",
+          "edition": "Dichiarazione congiunta del 2 novembre 2026, letta integralmente. Cyber Lighthouse esteso all’AI; intesa attuativa Sting Ray firmata nella giornata. Distinti programmi, cooperazione e capacità effettivamente operative.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Euronews — Cooperazione militare AI fra Regno Unito e Germania",
+          "url": "https://www.euronews.com/2026/11/02/uk-and-germany-to-jointly-develop-military-ai-in-2027",
+          "edition": "Cronaca del 2 novembre confrontata con il comunicato GOV.UK; nessuna data di entrata in servizio attribuita agli usi AI.",
+          "accessed": "2026-11-03"
+        },
+        {
+          "title": "Reuters — GNL USA, domanda europea e bilancio di ottobre",
+          "url": "https://ca.marketscreener.com/news/us-lng-exports-hit-second-highest-monthly-level-on-record-as-europe-demand-surges-ce785fd9db88f42d",
+          "edition": "Report originale di Curtis Williams, Reuters, 2 novembre 2026, ripubblicazione MarketScreener letta integralmente. Orario visualizzato 13:08 EST, aggiornamento 13:10. Dati LSEG sulle navi: 5,91 e 6,89 milioni di tonnellate verso Europa, 2,84 e 2,73 verso Asia. Grafico redazionale dei totali, senza previsione o inferenza causale.",
+          "accessed": "2026-11-03"
+        }
+      ]
+    }
+  ]
+}
