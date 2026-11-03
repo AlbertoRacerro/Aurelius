@@ -1,0 +1,566 @@
+{
+  "schema": 1,
+  "date": "2026-11-03",
+  "cards": [
+    {
+      "id": "ml-20261103-dropout",
+      "title": "Spegnere senza abbassare la media",
+      "topic": "Machine learning",
+      "hook": "Spegnere senza abbassare la media",
+      "paragraphs": [
+        "Un’attivazione vale 2. Con dropout al 50%, durante l’addestramento diventa 0 oppure 4: il riscalamento conserva il valore atteso, perché metà di zero più metà di quattro fa due. Una singola maschera può sbilanciarsi; la media riguarda molte estrazioni. In valutazione, questo dropout lascia passare direttamente le attivazioni."
+      ],
+      "takeaway": "Un esempio di maschera; l’attesa si conserva sul campionamento.",
+      "basis": "Esplorazione indipendente dalla documentazione PyTorch Dropout. Esempio originale di inverted dropout con p = 0,5; la maschera disegnata è una possibile estrazione, non un risultato sperimentale.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "PyTorch — Dropout",
+          "url": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.Dropout.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-dropout.svg",
+        "alt": "Quattro attivazioni di valore 2; una maschera ne lascia due a 4 e ne porta due a zero. La media su molte maschere resta 2.",
+        "caption": "Un esempio di maschera; l’attesa si conserva sul campionamento.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-dropout.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-frog",
+      "title": "Il ghiaccio può restare fuori",
+      "topic": "Natura",
+      "hook": "Il ghiaccio può restare fuori",
+      "paragraphs": [
+        "La rana dei boschi attraversa l’inverno con ghiaccio nei tessuti: il punto decisivo è dove si forma. Il glucosio accumulato protegge l’interno delle cellule, mentre l’acqua può gelare negli spazi esterni. Durante il congelamento il cuore si arresta; con il disgelo riprende. Non è soltanto sopportare il freddo: è controllarne gli effetti microscopici."
+      ],
+      "takeaway": "Rana dei boschi attiva: il congelamento non è raffigurato.",
+      "basis": "Rielaborazione autonoma della pagina NPS sulla rana dei boschi. La fotografia mostra un animale attivo, non il congelamento. Immagine attribuita al personale NPS; politica di riuso NPS consultata.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "NPS — Amphibian of the Arctic",
+          "url": "https://www.nps.gov/cakr/learn/nature/wood-frog.htm"
+        },
+        {
+          "title": "NPS — Copyright and image use",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-frog.jpg",
+        "alt": "Rana dei boschi bruna, con mascherina scura dietro l’occhio, tra erba e foglie.",
+        "caption": "Rana dei boschi attiva: il congelamento non è raffigurato.",
+        "credit": "NPS Photo / Emily Mesner",
+        "license": "Pubblico dominio — opera NPS (17 USC 105)",
+        "source": "https://www.nps.gov/cakr/learn/nature/wood-frog.htm"
+      }
+    },
+    {
+      "id": "ml-20261103-calibration",
+      "title": "Che cosa promette uno 0,8",
+      "topic": "Machine learning",
+      "hook": "Che cosa promette uno 0,8",
+      "paragraphs": [
+        "Se un modello assegna probabilità 0,8 a cento casi simili, una buona calibrazione significa trovare circa ottanta esiti positivi in quel gruppo. Non significa avere l’80% di risposte giuste su tutto il dataset. Il numero cerca di descrivere una frequenza: per controllarlo servono molti casi, raccolti per fasce di probabilità."
+      ],
+      "takeaway": "Una probabilità si confronta con frequenze di gruppi comparabili.",
+      "basis": "Esplorazione indipendente dalla guida scikit-learn sulla calibrazione. I cento punti e gli ottanta esiti positivi sono un esempio illustrativo ideale, non dati osservati né una verifica statistica sufficiente.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "scikit-learn — Probability calibration",
+          "url": "https://scikit-learn.org/stable/modules/calibration.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-calibration.svg",
+        "alt": "Cento cerchi: ottanta pieni e venti vuoti, esempio ideale per un gruppo di previsioni con probabilità 0,8.",
+        "caption": "Una probabilità si confronta con frequenze di gruppi comparabili.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-calibration.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-couette",
+      "title": "Dieci pascal tra due piastre",
+      "topic": "Fluidodinamica",
+      "hook": "Dieci pascal tra due piastre",
+      "paragraphs": [
+        "Tra due piastre distanti 2 millimetri, quella superiore scorre a 0,20 metri al secondo. Per un fluido newtoniano di viscosità 0,10 pascal secondo, in regime laminare stazionario e senza gradiente di pressione, la velocità cresce linearmente dal fondo: lo sforzo di taglio vale 10 pascal. Dimezzare la distanza raddoppia lo sforzo, a parità delle altre condizioni."
+      ],
+      "takeaway": "Profilo lineare di Couette: τ = μU/h.",
+      "basis": "Esplorazione indipendente dal materiale NASA sulla viscosità. Soluzione analitica di Couette piano: piastre idealmente infinite, aderenza alle pareti, viscosità costante; τ = μU/h. Vettori schematici proporzionali alla velocità, nessun dato sperimentale.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NASA Glenn — Viscosity",
+          "url": "https://www.grc.nasa.gov/www/k-12/airplane/viscosity.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-couette.svg",
+        "alt": "Due piastre parallele e vettori di velocità che aumentano linearmente dal fondo fermo alla piastra mobile; U 0,20 m/s, h 2 mm, sforzo 10 Pa.",
+        "caption": "Profilo lineare di Couette: τ = μU/h.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-couette.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-glass",
+      "title": "Il fiore attraversa il vetro",
+      "topic": "Arte e tecnica",
+      "hook": "Il fiore attraversa il vetro",
+      "paragraphs": [
+        "Questi piccoli fiori non sono dipinti sulla superficie. Nascono da canne di vetro composte con colori diversi: tagliandole, ogni rondella conserva il disegno della sezione. Le fettine vengono poi unite e modellate a caldo. La coppa mostra così un mosaico fatto di materia colorata, non di pennellate: il motivo era già dentro il vetro."
+      ],
+      "takeaway": "Coppa a mosaico, IX secolo, probabilmente Iraq; diametro 14,3 cm.",
+      "basis": "Rielaborazione autonoma del saggio Met sul vetro a mosaico. Oggetto 2001.266: coppa del IX secolo, probabilmente Iraq. Foto Met ritagliata attorno alla coppa, in pubblico dominio, distribuita con CC0; tecnica descritta dal saggio, non dedotta dalla sola fotografia.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "The Met — Bowl, 9th century, 2001.266",
+          "url": "https://www.metmuseum.org/art/collection/search/454030"
+        },
+        {
+          "title": "The Met — Mosaic Glass from Islamic Lands",
+          "url": "https://www.metmuseum.org/essays/mosaic-glass-from-islamic-lands"
+        },
+        {
+          "title": "The Met — Open Access, CC0",
+          "url": "https://www.metmuseum.org/hubs/open-access"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-glass.jpg",
+        "alt": "Coppa di vetro verde con motivi floreali multicolori a mosaico, fotografata su fondo grigio.",
+        "caption": "Coppa a mosaico, IX secolo, probabilmente Iraq; diametro 14,3 cm.",
+        "credit": "The Metropolitan Museum of Art, Rogers Fund, 2001 (2001.266)",
+        "license": "CC0 1.0",
+        "source": "https://www.metmuseum.org/art/collection/search/454030"
+      }
+    },
+    {
+      "id": "ml-20261103-conditioning",
+      "title": "Due rette quasi parallele",
+      "topic": "Calcolo numerico",
+      "hook": "Due rette quasi parallele",
+      "paragraphs": [
+        "Le equazioni x + y = 2 e x + 1,01y = 2,01 si incontrano in (1; 1). Basta portare il secondo termine noto a 2,02 perché la soluzione diventi (0; 2). Il calcolo può essere esatto e restare fragile: quando le rette sono quasi parallele, un piccolo cambiamento nei dati sposta molto l’intersezione."
+      ],
+      "takeaway": "La sensibilità ai dati è una proprietà del problema.",
+      "basis": "Esplorazione indipendente dal concetto di numero di condizionamento documentato da NumPy. Sistema ed esempio grafico originali, soluzioni verificate per sostituzione; nessun errore del solutore è introdotto.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "NumPy — numpy.linalg.cond",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.cond.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-conditioning.svg",
+        "alt": "Tre rette quasi sovrapposte; cambiando il termine noto della seconda equazione da 2,01 a 2,02 l’intersezione passa da (1;1) a (0;2).",
+        "caption": "La sensibilità ai dati è una proprietà del problema.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-conditioning.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-enzyme",
+      "title": "Nove volte non dà nove volte",
+      "topic": "Biochimica",
+      "hook": "Nove volte non dà nove volte",
+      "paragraphs": [
+        "Per un enzima che segue Michaelis–Menten, quando il substrato raggiunge Km la velocità è metà del massimo. A nove volte Km arriva al 90%. Raddoppiare ancora il substrato la porta soltanto a circa il 95%: i siti catalitici sono ormai quasi saturi. Aggiungere reagente cambia sempre meno il ritmo iniziale della reazione."
+      ],
+      "takeaway": "Curva analitica normalizzata, non misure di un enzima specifico.",
+      "basis": "Esplorazione indipendente da Basics of Enzymatic Assays for HTS, Assay Guidance Manual. Curva analitica originale v/Vmax = [S]/(Km+[S]); cinetica Michaelis–Menten semplice, concentrazione enzimatica fissa e velocità iniziale. Nessun dato sperimentale.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Brooks et al. — Basics of Enzymatic Assays for HTS",
+          "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK92007/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-enzyme.svg",
+        "alt": "Curva analitica di Michaelis–Menten normalizzata: a [S]/Km uguale 1 la velocità è 0,5 Vmax, a 9 è 0,9 Vmax.",
+        "caption": "Curva analitica normalizzata, non misure di un enzima specifico.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-enzyme.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-aristotle",
+      "title": "La mano impara costruendo",
+      "topic": "Filosofia",
+      "hook": "La mano impara costruendo",
+      "paragraphs": [
+        "Prima di saper costruire bene bisogna già costruire qualcosa. Aristotele accosta questo apprendistato alla formazione del carattere: le disposizioni prendono forma attraverso azioni ripetute, come l’abilità dell’artigiano. La ripetizione, però, può anche consolidare un modo sbagliato di agire. Conta quale gesto si esercita, non soltanto quante volte lo si ripete."
+      ],
+      "takeaway": "L’esempio del costruttore in Etica Nicomachea II, 1.",
+      "basis": "Rielaborazione autonoma di Aristotele, Etica Nicomachea II, 1, consultata nella traduzione inglese di W. D. Ross. Nessuna citazione o traduzione ravvicinata. Illustrazione originale dell’esempio del costruttore, non ricostruzione archeologica.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Aristotle — Nicomachean Ethics, Book II",
+          "url": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-aristotle.svg",
+        "alt": "Una mano accosta un mattone ai corsi di un muro in costruzione: l’esempio dell’artigiano che apprende esercitando il mestiere.",
+        "caption": "L’esempio del costruttore in Etica Nicomachea II, 1.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-aristotle.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-parallel",
+      "title": "La concentrazione sceglie la strada",
+      "topic": "Reazioni chimiche",
+      "hook": "La concentrazione sceglie la strada",
+      "paragraphs": [
+        "Un reagente A può diventare B oppure C. Se la prima via cresce con la concentrazione e la seconda con il suo quadrato, raddoppiare A raddoppia la produzione istantanea di B ma quadruplica quella di C. A temperatura fissa, il rapporto B/C si dimezza. Una concentrazione maggiore può quindi favorire proprio il prodotto indesiderato."
+      ],
+      "takeaway": "Due leggi cinetiche illustrative, con costanti e unità esplicite.",
+      "basis": "Esplorazione indipendente da Fogler, capitolo sulle reazioni multiple. Esempio analitico originale: vie parallele con rB=k1·CA, rC=k2·CA²; k1=1 s⁻¹ e k2=1 L/(mol·s). Selettività istantanea, non resa finale del reattore.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "University of Michigan — Elements of Chemical Reaction Engineering, Multiple Reactions",
+          "url": "https://websites.umich.edu/~elements/6e/08chap/summary.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-parallel.svg",
+        "alt": "Grafico delle velocità di due reazioni parallele: la retta di primo ordine cresce meno della parabola di secondo ordine; assi con unità mol/L e mol/(L·s).",
+        "caption": "Due leggi cinetiche illustrative, con costanti e unità esplicite.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-parallel.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-mars",
+      "title": "Il tramonto azzurro di Marte",
+      "topic": "Esplorazione spaziale",
+      "hook": "Il tramonto azzurro di Marte",
+      "paragraphs": [
+        "Vicino al Sole, il cielo marziano può diventare azzurro proprio al tramonto. La polvere fine sospesa nell’atmosfera lascia emergere quella luce in prossimità del disco, mentre i toni rossi e gialli si distribuiscono più lontano. Curiosity ha fotografato questo contrasto nel cratere Gale: un tramonto familiare nella forma, ma con i colori disposti diversamente."
+      ],
+      "takeaway": "Curiosity, cratere Gale, 15 aprile 2015; immagine calibrata.",
+      "basis": "Rielaborazione della descrizione JPL dell’immagine PIA19400: Mastcam, 15 aprile 2015, sol 956; immagine calibrata e bilanciata. Riuso educativo consentito dalla JPL Image Use Policy, consultata; crediti completi conservati.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "NASA JPL — Sunset in Mars’ Gale Crater, PIA19400",
+          "url": "https://www.jpl.nasa.gov/images/pia19400-sunset-in-mars-gale-crater/"
+        },
+        {
+          "title": "JPL — Image Use Policy",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-mars.jpg",
+        "alt": "Sole basso dietro il bordo del cratere Gale, con alone azzurro sopra un paesaggio scuro marziano.",
+        "caption": "Curiosity, cratere Gale, 15 aprile 2015; immagine calibrata.",
+        "credit": "NASA/JPL-Caltech/MSSS/Texas A&M Univ.",
+        "license": "Uso educativo consentito dalla JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia19400-sunset-in-mars-gale-crater/"
+      }
+    },
+    {
+      "id": "ml-20261103-symmetry",
+      "title": "Il taglio deve poter scorrere",
+      "topic": "Elementi finiti",
+      "hook": "Il taglio deve poter scorrere",
+      "paragraphs": [
+        "Per simulare un quarto di piastra simmetrica, il bordo tagliato non va necessariamente incastrato. Sul taglio verticale si annulla lo spostamento orizzontale; su quello orizzontale, lo spostamento verticale. Il movimento tangenziale resta libero. Bloccare entrambe le componenti irrigidirebbe artificialmente il modello. La riduzione funziona quando geometria, materiale e carico rispettano le stesse simmetrie."
+      ],
+      "takeaway": "Vincoli normali ai tagli, con scorrimento tangenziale libero.",
+      "basis": "Esplorazione indipendente dall’esempio COMET-FEniCSx di piastra forata caricata simmetricamente. Schema di elasticità piana con tagli privi di trazione tangenziale; mesh illustrativa originale, non soluzione numerica né mappa di tensioni.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Bleyer — Isotropic and orthotropic plane stress elasticity",
+          "url": "https://bleyerj.github.io/comet-fenicsx/tours/linear_problems/isotropic_orthotropic_elasticity/isotropic_orthotropic_elasticity.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-symmetry.svg",
+        "alt": "Mesh di un quarto di piastra con foro al centro delle simmetrie: taglio sinistro ux uguale zero e taglio inferiore uy uguale zero; trazione sui lati esterni.",
+        "caption": "Vincoli normali ai tagli, con scorrimento tangenziale libero.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-symmetry.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-hypercube",
+      "title": "Il centro diventa minuscolo",
+      "topic": "Geometria e dati",
+      "hook": "Il centro diventa minuscolo",
+      "paragraphs": [
+        "Prendi un cubo e conserva il 90% centrale di ogni lato. In due dimensioni rimane l’81% dell’area; in venti, appena il 12,2% del volume. Ogni coordinata sembra tagliata poco, ma i fattori si moltiplicano. Questa geometria aiuta a intuire perché cercare vicini diventi difficile in spazi con molte dimensioni."
+      ],
+      "takeaway": "Il grafico rappresenta un rapporto geometrico di volumi.",
+      "basis": "Esplorazione indipendente dalla guida scikit-learn sui vicini e la dimensionalità. Calcolo geometrico originale: frazione 0,9^d, non dati osservati. Il volume coincide con una probabilità solo sotto distribuzione uniforme nel cubo; nessuna tale ipotesi è attribuita a dataset reali.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "scikit-learn — Nearest Neighbors",
+          "url": "https://scikit-learn.org/stable/modules/neighbors.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-hypercube.svg",
+        "alt": "Curva della frazione di volume 0,9 elevato al numero di dimensioni: da 81% a due dimensioni a 12,2% a venti; inserto di un quadrato centrale.",
+        "caption": "Il grafico rappresenta un rapporto geometrico di volumi.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-hypercube.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-pine",
+      "title": "Un albero vivo a strisce",
+      "topic": "Natura",
+      "hook": "Un albero vivo a strisce",
+      "paragraphs": [
+        "Un pino dai rami scheletrici può essere ancora vivo. Nei bristlecone, una radice può alimentare una porzione specifica dell’albero: se quel settore muore, altri possono continuare a funzionare. Rimangono nastri di corteccia viva accanto al legno esposto. La chioma non dipende sempre da un tronco che lavora tutto insieme come un unico circuito."
+      ],
+      "takeaway": "Legno esposto e rami verdi convivono in un bristlecone.",
+      "basis": "Rielaborazione autonoma della descrizione NPS dell’architettura settoriale dei bristlecone. Foto NPS: nessuna età o identità individuale è dedotta dall’immagine. Politica di riuso NPS consultata.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "NPS — The Prometheus Story",
+          "url": "https://www.nps.gov/grba/learn/historyculture/the-prometheus-story.htm"
+        },
+        {
+          "title": "NPS — Copyright and image use",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-pine.jpg",
+        "alt": "Pino bristlecone con ampie porzioni di legno scoperto e rami secchi, ma anche aghi verdi su alcuni rami.",
+        "caption": "Legno esposto e rami verdi convivono in un bristlecone.",
+        "credit": "National Park Service (NPS)",
+        "license": "Pubblico dominio — opera NPS (17 USC 105)",
+        "source": "https://www.nps.gov/grba/learn/historyculture/the-prometheus-story.htm"
+      }
+    },
+    {
+      "id": "ml-20261103-windup",
+      "title": "Il comando continua oltre il limite",
+      "topic": "Controllo",
+      "hook": "Il comando continua oltre il limite",
+      "paragraphs": [
+        "Una valvola è già aperta al 100%, ma il controllore continua a sommare un errore positivo nel suo integratore. L’attuatore non può obbedire a quel comando crescente. Quando l’errore cambia segno, occorre prima smaltire l’accumulo: la risposta può tardare. L’anti-windup limita o corregge questa memoria quando il comando incontra la saturazione."
+      ],
+      "takeaway": "Esempio imposto: integratore crescente, attuatore saturo.",
+      "basis": "Esplorazione indipendente dall’esempio MathWorks sull’anti-windup PID. Grafico originale con solo termine integrale, errore positivo costante imposto e crescita 10%/s; saturazione a 100%. Non è una risposta simulata o misurata di un impianto.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "MathWorks — Anti-Windup Control Using a PID Controller",
+          "url": "https://www.mathworks.com/help/simulink/slref/anti-windup-control-using-a-pid-controller.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-windup.svg",
+        "alt": "Comando dell’integratore che cresce fino a 150%, mentre l’attuatore si ferma al limite del 100% dopo dieci secondi.",
+        "caption": "Esempio imposto: integratore crescente, attuatore saturo.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-windup.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-aba",
+      "title": "A è tornato, ma non è lo stesso",
+      "topic": "Concorrenza",
+      "hook": "A è tornato, ma non è lo stesso",
+      "paragraphs": [
+        "Un thread legge A e si ferma. Un altro cambia lo stato da A a B e poi di nuovo ad A. Il primo riparte: compare-and-swap trova il valore atteso e riesce. Eppure qualcosa è accaduto nel frattempo. Con i puntatori, lo stesso indirizzo può perfino ospitare un oggetto diverso: uguaglianza del valore e identità non coincidono."
+      ],
+      "takeaway": "Una traccia possibile del problema ABA.",
+      "basis": "Esplorazione indipendente dalla documentazione Rust degli atomici, sezione sul problema ABA in compare_exchange. Traccia temporale originale illustrativa. CAS confronta il valore corrente, non certifica l’assenza di modifiche intermedie.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Rust — Atomic, compare_exchange and the ABA problem",
+          "url": "https://doc.rust-lang.org/std/sync/atomic/struct.Atomic.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-aba.svg",
+        "alt": "Due linee temporali: il thread 1 legge A e poi esegue CAS; nel mezzo il thread 2 modifica A in B e B in A, quindi il confronto riesce.",
+        "caption": "Una traccia possibile del problema ABA.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-aba.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-simpson",
+      "title": "Meglio in ogni gruppo, peggio insieme",
+      "topic": "Giudizio",
+      "hook": "Meglio in ogni gruppo, peggio insieme",
+      "paragraphs": [
+        "Due laboratori lavorano pezzi facili e difficili. A riesce meglio in entrambe le categorie: 90% contro 80%, e 60% contro 50%. Eppure nel totale perde: circa 63% contro 77%. A ha ricevuto soprattutto pezzi difficili, B soprattutto facili. Il confronto aggregato cambia quando cambiano i pesi dei gruppi: prima del giudizio, conta la composizione."
+      ],
+      "takeaway": "Conteggi inventati per illustrare un’inversione, non dati sperimentali.",
+      "basis": "Esempio numerico originale del paradosso di Simpson, verificato per somma: A 69/110, B 85/110. Dati interamente illustrativi. Consultata la voce Stanford; la scelta del confronto appropriato richiede anche contesto causale, non una regola universale a favore dei sottogruppi.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Stanford Encyclopedia of Philosophy — Simpson’s Paradox",
+          "url": "https://plato.stanford.edu/entries/paradox-simpson/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-simpson.svg",
+        "alt": "Percentuali di successo dei laboratori A e B: A migliore nei gruppi facili e difficili, B migliore nel totale; conteggi mostrati accanto alle barre.",
+        "caption": "Conteggi inventati per illustrare un’inversione, non dati sperimentali.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-simpson.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-ranges",
+      "title": "Le undici appartengono a chi arriva",
+      "topic": "Database",
+      "hook": "Le undici appartengono a chi arriva",
+      "paragraphs": [
+        "Una prenotazione dalle 10 alle 11 può convivere con una dalle 11 alle 12, se l’intervallo include l’inizio ed esclude la fine. Una terza, dalle 10:30 alle 11:30, si sovrappone a entrambe. PostgreSQL può vietare le sovrapposizioni con un vincolo di esclusione sui range: rendere unici gli orari di inizio non basta."
+      ],
+      "takeaway": "Confini semiaperti: toccarsi non implica sovrapporsi.",
+      "basis": "Esplorazione indipendente dalla documentazione PostgreSQL sui range e i vincoli di esclusione GiST con operatore &&. Esempio illustrativo per una stessa risorsa; intervalli semiaperti [inizio, fine). Nessuna prenotazione reale.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "PostgreSQL — Range Types",
+          "url": "https://www.postgresql.org/docs/current/rangetypes.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-ranges.svg",
+        "alt": "Tre intervalli orari: A dalle 10 alle 11, B dalle 11 alle 12 e C dalle 10:30 alle 11:30; punti pieni all’inizio e vuoti alla fine.",
+        "caption": "Confini semiaperti: toccarsi non implica sovrapporsi.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-ranges.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-capillary",
+      "title": "L’acqua sale di più nel tubo stretto",
+      "topic": "Fisica",
+      "hook": "L’acqua sale di più nel tubo stretto",
+      "paragraphs": [
+        "In un tubo di vetro ben bagnato, l’acqua sale finché la tensione superficiale bilancia il peso della colonna. Con raggio di mezzo millimetro, un modello ideale dà circa 29 millimetri di risalita; raddoppiando il raggio, l’altezza si dimezza. Il bordo che tira cresce col raggio, ma la sezione d’acqua da sollevare cresce col suo quadrato."
+      ],
+      "takeaway": "Equilibrio ideale per acqua che bagna completamente il vetro.",
+      "basis": "Calcolo analitico originale dal bilancio capillare illustrato dal MIT: h=2γcosθ/(ρgr). γ=0,072 N/m, ρ=1000 kg/m³, g=9,81 m/s², θ=0; equilibrio in tubi circolari, volume del menisco trascurato. Larghezze e altezze relative 2:1, non una fotografia.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "MIT — Surface Tension versus Gravity",
+          "url": "https://web.mit.edu/nnf/education/wettability/gravity.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-capillary.svg",
+        "alt": "Due capillari in acqua: quello di raggio 0,5 mm mostra risalita 29,4 mm; quello di raggio 1 mm, 14,7 mm, con menischi concavi.",
+        "caption": "Equilibrio ideale per acqua che bagna completamente il vetro.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-capillary.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-aesop",
+      "title": "Il mantello stretto al petto",
+      "topic": "Favole",
+      "hook": "Il mantello stretto al petto",
+      "paragraphs": [
+        "Borea soffia sul viandante per strappargli il mantello. Più il vento incalza, più l’uomo se lo stringe addosso. Poi arriva il Sole: il calore cresce, il viandante si allenta e infine si sfila la veste. La favola fa vedere un rovesciamento: una pressione più forte può rafforzare proprio il gesto che vorrebbe impedire."
+      ],
+      "takeaway": "Il cambiamento del gesto raccontato dalla favola.",
+      "basis": "Rielaborazione autonoma della favola di Esopo Borea e il Sole, letta nella versione della Library of Congress. La conclusione è una lettura del racconto, non una legge empirica del comportamento. Illustrazione originale, senza riuso dell’immagine di Milo Winter.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Library of Congress — The North Wind and the Sun",
+          "url": "https://read.gov/aesop/143.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-aesop.svg",
+        "alt": "Illustrazione originale in due scene: sotto le raffiche un viandante stringe il mantello; al sole lo sfila tenendolo con una mano.",
+        "caption": "Il cambiamento del gesto raccontato dalla favola.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-aesop.svg"
+      }
+    },
+    {
+      "id": "ml-20261103-queue",
+      "title": "Il quarto messaggio deve aspettare",
+      "topic": "Software asincrono",
+      "hook": "Il quarto messaggio deve aspettare",
+      "paragraphs": [
+        "Una coda asyncio con maxsize=3 contiene già tre elementi. Il quarto await put() resta sospeso finché un consumatore estrae qualcosa: il produttore riceve così una contropressione concreta. Il limite riguarda gli elementi ancora in coda. Non conta automaticamente i lavori già prelevati e in esecuzione, né tutta la memoria usata dall’applicazione."
+      ],
+      "takeaway": "Un limite sulla coda applica contropressione al produttore.",
+      "basis": "Esplorazione indipendente dalla documentazione Python asyncio.Queue. Traccia di eventi illustrativa, non benchmark: tre inserimenti, un quarto in attesa, quindi get e completamento del put sospeso. Nessuna durata o prestazione è dedotta dal grafico.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Python — asyncio Queues",
+          "url": "https://docs.python.org/3/library/asyncio-queue.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261103-queue.svg",
+        "alt": "Grafico a gradini dell’occupazione di una coda limitata a tre elementi; il quarto inserimento aspetta e riparte dopo un prelievo.",
+        "caption": "Un limite sulla coda applica contropressione al produttore.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261103-queue.svg"
+      }
+    }
+  ]
+}
