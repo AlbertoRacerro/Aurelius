@@ -1,0 +1,558 @@
+{
+  "schema": 1,
+  "date": "2026-11-04",
+  "cards": [
+    {
+      "id": "ml-20261104-temperature",
+      "topic": "Machine learning",
+      "title": "La temperatura cambia le probabilità",
+      "hook": "La temperatura cambia le probabilità",
+      "paragraphs": [
+        "Due token hanno punteggi 2 e 0. Con temperatura 1, il primo riceve circa l’88% della probabilità; con temperatura 2 scende al 73%. I pesi del modello non cambiano: si dividono i punteggi prima della softmax. Il token preferito resta lo stesso, ma quello meno probabile ottiene più spazio nel campionamento."
+      ],
+      "takeaway": "Stessi punteggi, due distribuzioni calcolate.",
+      "basis": "Esplorazione indipendente: implementazione TemperatureLogitsWarper di Transformers. Esempio originale con due soli token, softmax dei punteggi divisi per T positivo, senza top-k, top-p o altre trasformazioni. Percentuali calcolate, non benchmark.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Transformers — TemperatureLogitsWarper",
+          "url": "https://github.com/huggingface/transformers/blob/main/src/transformers/generation/logits_process.py"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-temperature.svg",
+        "alt": "Due barre al 100% confrontano le probabilità dei token A e B: 88,1/11,9% a T=1 e 73,1/26,9% a T=2.",
+        "caption": "Stessi punteggi, due distribuzioni calcolate.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-temperature.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-flamingo",
+      "topic": "Natura",
+      "title": "Il setaccio lavora capovolto",
+      "hook": "Il setaccio lavora capovolto",
+      "paragraphs": [
+        "Il fenicottero immerge il becco al contrario e muove la testa nell’acqua. La lingua pompa il liquido dentro e fuori; piccole lamelle lungo i bordi trattengono il cibo. Quel collo piegato non è quindi una posa strana: mette il filtro nella posizione di lavoro, mentre i piedi possono rimescolare il fango e sollevare altro nutrimento."
+      ],
+      "takeaway": "Il becco immerso è nella posizione di filtrazione.",
+      "basis": "Sintesi autonoma della sezione Food/Eating Habits dello Smithsonian National Zoo. Foto USFWS di Phoenicopterus ruber, ridimensionata senza alterazioni del soggetto; non mostra le lamelle interne.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "Smithsonian National Zoo — American flamingo",
+          "url": "https://nationalzoo.si.edu/animals/american-flamingo"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-flamingo.jpg",
+        "alt": "Fenicotteri americani in acqua bassa; in primo piano il collo curvo porta il becco capovolto sotto la superficie.",
+        "caption": "Il becco immerso è nella posizione di filtrazione.",
+        "credit": "Jesse Achtenberg / USFWS",
+        "license": "Pubblico dominio",
+        "source": "https://www.fws.gov/media/flamingos"
+      }
+    },
+    {
+      "id": "ml-20261104-cache",
+      "topic": "Architetture AI",
+      "title": "Il contesto ha un suo peso",
+      "hook": "Il contesto ha un suo peso",
+      "paragraphs": [
+        "Durante la generazione, la cache conserva chiavi e valori dei token già elaborati: evita di ricalcolarli, ma occupa memoria. Nel modello illustrativo, passare da 1.024 a 4.096 token porta la sola cache da 128 a 512 MiB. I pesi del modello sono un’altra voce: anche senza modificarli, una conversazione più lunga può richiedere più memoria."
+      ],
+      "takeaway": "Una cache piena cresce con i token conservati.",
+      "basis": "Esplorazione indipendente dalla guida Hugging Face Caching. Cache piena non compressa, batch 1, 32 strati, 8 teste KV, dimensione 128, 2 byte per valore: memoria=2·L·Hkv·d·token·byte. Esclusi overhead, attivazioni e pesi; nessuna promessa di fit su hardware.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Hugging Face — Caching",
+          "url": "https://huggingface.co/docs/transformers/v4.57.0/en/cache_explanation"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-cache.svg",
+        "alt": "Tre barre mostrano la crescita lineare della cache: 128 MiB a 1024 token, 256 a 2048 e 512 a 4096.",
+        "caption": "Una cache piena cresce con i token conservati.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-cache.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-flux",
+      "topic": "CFD",
+      "title": "Il confine interno si cancella",
+      "hook": "Il confine interno si cancella",
+      "paragraphs": [
+        "Tra due celle passa una portata di 4 kg/s. Per la prima è un’uscita; per la seconda è un ingresso. Sommando i bilanci, i due contributi si cancellano. Nel metodo dei volumi finiti, usare lo stesso flusso sulla faccia condivisa conserva questa contabilità: il totale cambia soltanto attraverso i bordi esterni e le eventuali sorgenti."
+      ],
+      "takeaway": "Lo scambio interno pesa con due segni opposti.",
+      "basis": "Esplorazione indipendente da CFD Direct, §2.9. Bilancio originale di massa, senza sorgenti: ingresso esterno 7 kg/s, scambio interno 4, uscita esterna 3. Accumuli 3 e 1 kg/s; non è un campo stazionario né una simulazione di velocità.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "CFD Direct — Conservation and boundedness",
+          "url": "https://doc.cfd.direct/notes/cfd-general-principles/conservation-and-boundedness"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-flux.svg",
+        "alt": "Due celle adiacenti: 7 kg/s entrano a sinistra, 4 attraversano la faccia comune e 3 escono a destra; gli accumuli sono 3 e 1 kg/s.",
+        "caption": "Lo scambio interno pesa con due segni opposti.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-flux.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-seastar",
+      "topic": "Biologia marina",
+      "title": "Lo stomaco raggiunge il pranzo",
+      "hook": "Lo stomaco raggiunge il pranzo",
+      "paragraphs": [
+        "La massa rosa al centro della foto è lo stomaco esteso di una stella marina, appoggiato a un ramo di corallo. Parte della digestione comincia fuori dal corpo, direttamente sulla preda. Il cibo non deve sempre attraversare prima la bocca come un boccone intero: in queste stelle è l’organo digestivo a raggiungerlo."
+      ],
+      "takeaway": "La porzione rosa visibile è lo stomaco esteso.",
+      "basis": "Sintesi originale dell’osservazione NOAA del 2019, circa 40 miglia a sud-est di Key West, e della sezione Digestion di Smithsonian Ocean. È lo stomaco cardiaco a estroflettersi; il meccanismo non è universale per tutti gli echinodermi. Foto ridimensionata; riuso conforme alle Multimedia Specifications NOAA Ocean Exploration.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "NOAA Ocean Exploration — Cookie Star Feeding",
+          "url": "https://oceanexplorer.noaa.gov/multimedia/daily-image-media-20210514/"
+        },
+        {
+          "title": "Smithsonian Ocean — Digestion",
+          "url": "https://ocean.si.edu/ocean-life/invertebrates/sea-stars-urchins-and-relatives"
+        },
+        {
+          "title": "NOAA Ocean Exploration — diritti delle immagini",
+          "url": "https://oceanexplorer.noaa.gov/about/kit-specs/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-seastar.jpg",
+        "alt": "Una cookie sea star gialla abbraccia un corallo; il suo stomaco rosa è chiaramente esteso sul ramo.",
+        "caption": "La porzione rosa visibile è lo stomaco esteso.",
+        "credit": "NOAA Ocean Exploration — 2019 Southeastern U.S. Deep-sea Exploration",
+        "license": "Pubblico dominio",
+        "source": "https://oceanexplorer.noaa.gov/multimedia/daily-image-media-20210514/"
+      }
+    },
+    {
+      "id": "ml-20261104-pca",
+      "topic": "Machine learning",
+      "title": "La nuvola può voltarsi",
+      "hook": "La nuvola può voltarsi",
+      "paragraphs": [
+        "Due analisi PCA dello stesso insieme di punti possono disegnare la nuvola specchiata lungo un asse. Non è necessariamente cambiato nulla nei dati: un autovettore e il suo opposto descrivono la stessa direzione. Cambiano i segni delle coordinate proiettate, mentre distanze e varianza spiegata restano uguali. Il verso dell’asse richiede una convenzione, non una nuova interpretazione fisica."
+      ],
+      "takeaway": "Cambiare v in −v ribalta i punteggi, non la direzione.",
+      "basis": "Esplorazione indipendente dalla documentazione Intel oneDAL, Sign-flip technique. Nuvola di punti illustrativa originale; confronto limitato al cambio di segno di una stessa componente, non a rotazioni arbitrarie fra autovalori diversi. Nessun dato sperimentale.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "Intel oneDAL — PCA, Sign-flip technique",
+          "url": "https://www.intel.com/content/www/us/en/docs/onedal/developer-guide-reference/2024-2/pca-1.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-pca.svg",
+        "alt": "La stessa nuvola allungata e la stessa retta compaiono due volte; i simboli più e meno alle estremità dell’asse sono scambiati.",
+        "caption": "Cambiare v in −v ribalta i punteggi, non la direzione.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-pca.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-volume",
+      "topic": "FEM e materiali",
+      "title": "Cambia forma, conserva il volume",
+      "hook": "Cambia forma, conserva il volume",
+      "paragraphs": [
+        "Un materiale incomprimibile può deformarsi moltissimo: deve conservare il volume, non la forma. Nel disegno, ogni strato scivola rispetto a quello vicino e il quadrato diventa un parallelogramma con la stessa area. È una distinzione importante anche nel FEM: imporre male il vincolo di incomprimibilità può far apparire artificialmente rigido un materiale che può ancora deformarsi a taglio."
+      ],
+      "takeaway": "Incomprimibilità: il vincolo riguarda il volume.",
+      "basis": "Esplorazione indipendente da MOOSE, volumetric locking. Taglio semplice originale F=[[1,1/3],[0,1]], det F=1, spessore costante: area e volume invariati. Mesh solo illustrativa, nessuna soluzione FEM o curva sperimentale. Il locking dipende dalla formulazione e dagli elementi usati.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "MOOSE / Idaho National Laboratory — Volumetric locking",
+          "url": "https://mooseframework.inl.gov/modules/solid_mechanics/VolumetricLocking.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-volume.svg",
+        "alt": "Una griglia quadrata diventa un parallelogramma per scorrimento degli strati, senza cambiare base, altezza o area.",
+        "caption": "Incomprimibilità: il vincolo riguarda il volume.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-volume.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-cat",
+      "topic": "Filosofia",
+      "title": "Chi sta giocando con chi?",
+      "hook": "Chi sta giocando con chi?",
+      "paragraphs": [
+        "Gioco con la mia gatta: ma chi sa se non è lei a divertirsi con me, più di quanto io faccia con lei? Entrambi possiamo iniziare o rifiutare il gioco. Montaigne sposta così il punto di vista: la nostra difficoltà a capire l’animale non basta a dimostrare che sia lui quello privo d’intelligenza."
+      ],
+      "takeaway": "Un medesimo gioco ammette due punti di vista.",
+      "basis": "Montaigne, Essais II,12, Apologie de Raimond Sebond: letti il passo della gatta e il contesto immediato nel francese originale. Nuova traduzione selettiva delle prime due frasi e raccordo autonomo; nessuna traduzione moderna riprodotta. Illustrazione concettuale originale, non ritratto documentario.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Montaigne — Essais II,12, passo della gatta",
+          "url": "https://fr.wikisource.org/wiki/Page:Montaigne_-_Essais,_%C3%89d_de_Bordeaux,_2.djvu/108"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-cat.svg",
+        "alt": "Una persona e una gatta partecipano allo stesso gioco con un filo; entrambi allungano un arto verso l’oggetto.",
+        "caption": "Un medesimo gioco ammette due punti di vista.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-cat.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-complex",
+      "topic": "Calcolo numerico",
+      "title": "La derivata prende una via laterale",
+      "hook": "La derivata prende una via laterale",
+      "paragraphs": [
+        "Per derivare x² nel punto 1, prova a spostarti di ih, anziché di un piccolo numero reale. Il quadrato diventa 1 − h² + 2ih: la parte immaginaria, divisa per h, dà 2. Non hai sottratto due valori quasi uguali. Il metodo complex-step sfrutta questa strada, quando la funzione e il codice ammettono una continuazione complessa adeguata."
+      ],
+      "takeaway": "La perturbazione immaginaria evita una sottrazione.",
+      "basis": "Esplorazione indipendente dalla guida MDO Lab, University of Michigan. Esempio polinomiale originale esatto per h reale non nullo; nel caso generale formula di ordine due per funzioni olomorfe vicine al punto. abs, confronti e routine che eliminano la parte immaginaria richiedono attenzione. Asse immaginario dilatato per leggibilità.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "University of Michigan MDO Lab — Complex-step derivative",
+          "url": "https://mdolab.engin.umich.edu/wiki/guide-complex-step-derivative-approximation.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-complex.svg",
+        "alt": "Sul piano complesso il punto 1 viene spostato in verticale a 1+ih; l’espansione del quadrato isola la parte immaginaria 2ih.",
+        "caption": "La perturbazione immaginaria evita una sottrazione.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-complex.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-halflife",
+      "topic": "Cinetica chimica",
+      "title": "Ogni metà rallenta il passo",
+      "hook": "Ogni metà rallenta il passo",
+      "paragraphs": [
+        "In una reazione del secondo ordine, dimezzare la concentrazione richiede sempre più tempo. Nell’esempio, A passa da 1 a 0,5 mol/L in un minuto; per scendere da 0,5 a 0,25 ne servono altri due. La velocità dipende dal quadrato della concentrazione: consumare il reagente significa anche togliere rapidamente forza alla reazione che lo consuma."
+      ],
+      "takeaway": "Da 1 a 0,5: un minuto. Da 0,5 a 0,25: altri due.",
+      "basis": "Esplorazione indipendente da OpenStax Chemistry 2e, §12.4. Curva analitica originale: −dC/dt=kC², C0=1 mol/L, k=1 L/(mol·min), batch a volume e temperatura costanti. C=C0/(1+kC0t), t1/2=1/(kCiniziale). Non dati sperimentali.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "OpenStax — Integrated Rate Laws",
+          "url": "https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-halflife.svg",
+        "alt": "Curva di concentrazione da 1 mol/L: 0,5 a un minuto e 0,25 a tre minuti; la discesa rallenta.",
+        "caption": "Da 1 a 0,5: un minuto. Da 0,5 a 0,25: altri due.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-halflife.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-hummingbird",
+      "topic": "Natura",
+      "title": "Anche il ritorno sostiene il volo",
+      "hook": "Anche il ritorno sostiene il volo",
+      "paragraphs": [
+        "Il colibrì non si limita a spingere l’aria durante una sola metà del battito. La spalla molto mobile gli permette di ruotare l’ala e generare portanza anche nel movimento di ritorno. I due contributi non sono necessariamente uguali. Questa continuità aiuta a sostenerlo quasi fermo davanti a un fiore, mentre cerca nettare senza posarsi."
+      ],
+      "takeaway": "Un fotogramma di volo di Selasphorus rufus.",
+      "basis": "Esposizione originale da Hovering Flight, Stanford Birds, limitata alla rotazione dell’ala e alla portanza nelle due fasi. Foto di Selasphorus rufus in volo: il singolo fotogramma non dimostra da solo la traiettoria o la ripartizione delle forze. Ridimensionamento proporzionale.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "Stanford Birds — Hovering Flight",
+          "url": "https://web.stanford.edu/group/stanfordbirds/text/essays/Hovering_Flight.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-hummingbird.jpg",
+        "alt": "Colibrì rossiccio sospeso in volo, con ali aperte, coda distesa e zampe raccolte.",
+        "caption": "Un fotogramma di volo di Selasphorus rufus.",
+        "credit": "Chelsea McKinney / USFWS",
+        "license": "Pubblico dominio",
+        "source": "https://www.fws.gov/media/rufous-hummingbird-flight"
+      }
+    },
+    {
+      "id": "ml-20261104-washout",
+      "topic": "Bioprocessi",
+      "title": "Il ricambio può svuotare la coltura",
+      "hook": "Il ricambio può svuotare la coltura",
+      "paragraphs": [
+        "In una coltura continua, il flusso in uscita porta via anche cellule. Se il ricambio vale 0,30 volumi all’ora e la crescita specifica resta 0,20 all’ora, la biomassa diminuisce: la rimozione supera la produzione. È il washout. Aggiungere più mezzo fresco non garantisce quindi più cellule: conta quanto velocemente riescono a rimpiazzare quelle che escono."
+      ],
+      "takeaway": "Bilancio illustrativo: in dieci ore resta circa il 37%.",
+      "basis": "Esplorazione indipendente dal manuale sperimentale Dunham Lab. Esempio analitico originale dX/dt=(μ−D)X, μ costante, D=Q/V, volume costante, ingresso sterile, senza ritenzione, riciclo o morte cellulare. La curva illustra quel bilancio semplificato, non una coltura reale né un modello Monod completo.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Dunham Lab, University of Washington — Chemostat Manual",
+          "url": "https://dunham.gs.washington.edu/chemostatv2.htm"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-washout.svg",
+        "alt": "Una curva esponenziale mostra la biomassa relativa che scende da 1 a circa 0,37 in dieci ore, con rimozione superiore alla crescita.",
+        "caption": "Bilancio illustrativo: in dieci ore resta circa il 37%.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-washout.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-radiation",
+      "topic": "Scambio termico",
+      "title": "Il doppio dei kelvin irradia sedici volte",
+      "hook": "Il doppio dei kelvin irradia sedici volte",
+      "paragraphs": [
+        "Una superficie a 600 K emette sedici volte la potenza radiativa della stessa superficie a 300 K, se l’emissività resta uguale. La legge contiene la quarta potenza della temperatura assoluta. Il calore netto ceduto dipende però anche dalla radiazione ricevuta dall’ambiente: emissione e perdita netta non sono la stessa quantità, soprattutto vicino all’equilibrio termico."
+      ],
+      "takeaway": "Curva di emissione, prima di sottrarre ciò che arriva.",
+      "basis": "Esplorazione indipendente da OpenStax University Physics vol.2, §1.6. Curva analitica originale P/A=εσT⁴, σ≈5,67·10⁻⁸ W/(m²·K⁴), ε costante. Riferimento: a ε=1, 300 K circa 459 W/m², 600 K circa 7348 W/m². Non una curva di scambio netto; valori in kelvin, non Celsius.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "OpenStax — Mechanisms of Heat Transfer",
+          "url": "https://openstax.org/books/university-physics-volume-2/pages/1-6-mechanisms-of-heat-transfer"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-radiation.svg",
+        "alt": "La potenza emessa relativa sale da 1 a 300 kelvin a 16 a 600 kelvin, seguendo una quarta potenza.",
+        "caption": "Curva di emissione, prima di sottrarre ciò che arriva.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-radiation.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-astrolabe",
+      "topic": "Storia della scienza",
+      "title": "Un principe con una prova di competenza",
+      "hook": "Un principe con una prova di competenza",
+      "paragraphs": [
+        "Questo astrolabio del 1291 porta il nome di un principe yemenita, ʿUmar ibn Yusuf, che sarebbe poi diventato sovrano. La sua attribuzione non poggia soltanto sull’iscrizione: un trattato autografo conservato al Cairo descrive proprio lo strumento e include attestazioni dei suoi maestri sulla competenza del costruttore. Un oggetto scientifico conserva anche le tracce di un apprendistato."
+      ],
+      "takeaway": "Astrolabio di ʿUmar ibn Yusuf, Yemen, 1291.",
+      "basis": "Rielaborazione autonoma della scheda curatoriale del Metropolitan Museum, oggetto 91.1.535a–h, datato 690 AH/1291 CE. Non è stata consultata direttamente la fonte manoscritta del Cairo: descrizione e attestazioni sono riferite dal museo. Foto Open Access in pubblico dominio, ridimensionata.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "The Metropolitan Museum of Art — Astrolabe of ʿUmar ibn Yusuf",
+          "url": "https://www.metmuseum.org/art/collection/search/444408"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-astrolabe.jpg",
+        "alt": "Astrolabio circolare in ottone con rete traforata, puntatori, incisioni e anello di sospensione; la fotografia mostra il fronte intero.",
+        "caption": "Astrolabio di ʿUmar ibn Yusuf, Yemen, 1291.",
+        "credit": "The Metropolitan Museum of Art — Edward C. Moore Collection, 91.1.535a–h",
+        "license": "Pubblico dominio / Met Open Access",
+        "source": "https://www.metmuseum.org/art/collection/search/444408"
+      }
+    },
+    {
+      "id": "ml-20261104-little",
+      "topic": "Sistemi informatici",
+      "title": "Otto richieste possono essere normali",
+      "hook": "Otto richieste possono essere normali",
+      "paragraphs": [
+        "Un servizio riceve in media quattro richieste al secondo e ciascuna resta nel sistema per due secondi, attesa compresa. In regime stabile, ci sono mediamente otto richieste presenti: è la legge di Little. Non significa che servano otto processori. Il conteggio comprende tutto ciò che è entrato e non è ancora uscito, anche il lavoro in attesa."
+      ],
+      "takeaway": "Il tempo include attesa e servizio.",
+      "basis": "Esplorazione indipendente: Guillaume Roels, Review of Queuing Models, MIT OCW, slide 4–6; MathWorld per le condizioni stazionarie. Esempio originale L=λW: stesso confine del sistema per le tre medie, nessuna crescita indefinita dell’arretrato. Non una previsione di latenza o un dimensionamento hardware.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "MIT OCW — Guillaume Roels, Review of Queuing Models",
+          "url": "https://ocw.mit.edu/courses/15-763j-manufacturing-system-and-supply-chain-design-spring-2005/resources/reviw_of_que_mol-1/"
+        },
+        {
+          "title": "Wolfram MathWorld — Little’s Law",
+          "url": "https://mathworld.wolfram.com/LittlesLaw.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-little.svg",
+        "alt": "Retta L=4W: con due secondi medi di permanenza e quattro arrivi al secondo il numero medio presente vale otto.",
+        "caption": "Il tempo include attesa e servizio.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-little.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-rainbow",
+      "topic": "Ottica naturale",
+      "title": "Il secondo arcobaleno è al contrario",
+      "hook": "Il secondo arcobaleno è al contrario",
+      "paragraphs": [
+        "Nel primo arcobaleno il rosso sta sul bordo esterno. Nel secondo, più ampio e solitamente più debole, l’ordine si inverte: il rosso guarda verso l’arco principale. La luce ha subito due riflessioni dentro le gocce, anziché una. Quel percorso aggiuntivo cambia sia la direzione d’uscita sia l’ordine dei colori che raggiungono l’osservatore."
+      ],
+      "takeaway": "Una riflessione per il primario, due per il secondario.",
+      "basis": "Sintesi autonoma della spiegazione National Weather Service. Schema originale dei due archi concentrici: primario rosso esterno, secondario rosso interno. Le ampiezze delle bande sono illustrative, non misurate; il disegno non rappresenta una fotografia né raggi tracciati in una singola goccia.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "NOAA / National Weather Service — How Do Rainbows Form?",
+          "url": "https://www.weather.gov/fgz/Rainbow"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-rainbow.svg",
+        "alt": "Due arcobaleni concentrici: quello interno ha rosso all’esterno e violetto all’interno; quello esterno ha l’ordine opposto.",
+        "caption": "Una riflessione per il primario, due per il secondario.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-rainbow.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-shield",
+      "topic": "Concorrenza",
+      "title": "L’attesa finisce, il lavoro prosegue",
+      "hook": "L’attesa finisce, il lavoro prosegue",
+      "paragraphs": [
+        "Una coroutine attende un task attraverso asyncio.shield. Se viene cancellata, la coroutine riceve comunque CancelledError, ma quella cancellazione non viene inoltrata al task protetto. Il lavoro può quindi continuare anche dopo la fine dell’attesa. Lo scudo protegge da quel collegamento di cancellazione: non rende il task immortale e non sostituisce la gestione del suo risultato."
+      ],
+      "takeaway": "shield interrompe la propagazione, non l’eccezione del chiamante.",
+      "basis": "Esplorazione indipendente dalla documentazione Python, Shielding from cancellation. Timeline originale con tempi arbitrari dichiarati. Occorre conservare un riferimento forte al task; una cancellazione diretta o interna può ancora interromperlo. Nessuna operazione reale è stata eseguita come esempio.",
+      "tone": "blue",
+      "sources": [
+        {
+          "title": "Python — asyncio.shield",
+          "url": "https://docs.python.org/3/library/asyncio-task.html#shielding-from-cancellation"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-shield.svg",
+        "alt": "La linea del chiamante termina per cancellazione al secondo 2; il task protetto prosegue fino al secondo 5.",
+        "caption": "shield interrompe la propagazione, non l’eccezione del chiamante.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-shield.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-version",
+      "topic": "Database",
+      "title": "La modifica arriva con un numero",
+      "hook": "La modifica arriva con un numero",
+      "paragraphs": [
+        "Due editor leggono la versione 7 dello stesso record. Il primo salva il nuovo contenuto e porta la versione a 8. Il secondo tenta un aggiornamento che richiede ancora versione 7: non trova più righe compatibili. Quel numero trasforma un salvataggio tardivo in un conflitto riconoscibile, invece di cancellare silenziosamente il lavoro appena fatto dall’altro."
+      ],
+      "takeaway": "La versione attesa fa parte della condizione di scrittura.",
+      "basis": "Esplorazione indipendente da PostgreSQL, Read Committed: la condizione WHERE viene ricontrollata dopo un aggiornamento concorrente. Esempio originale di concorrenza ottimistica: valore e versione incrementata nello stesso UPDATE atomico, controllo delle righe modificate; tutti gli scrittori devono seguire il protocollo.",
+      "tone": "sage",
+      "sources": [
+        {
+          "title": "PostgreSQL — Transaction Isolation, Read Committed",
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-version.svg",
+        "alt": "Due editor leggono v7; il primo aggiorna a v8, il secondo con condizione v7 modifica zero righe.",
+        "caption": "La versione attesa fa parte della condizione di scrittura.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-version.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-eclipse",
+      "topic": "Astronomia",
+      "title": "La Luna riceve i nostri tramonti",
+      "hook": "La Luna riceve i nostri tramonti",
+      "paragraphs": [
+        "Durante un’eclissi totale, la Terra blocca la luce diretta del Sole. Eppure una parte della luce attraversa il bordo dell’atmosfera e viene deviata verso la Luna. Il blu si disperde più facilmente lungo quel tragitto, lasciando prevalere i toni rossi e arancioni. La Luna in ombra può così illuminarsi con luce che ha attraversato l’orizzonte terrestre."
+      ],
+      "takeaway": "Il percorso atmosferico cambia il colore della luce.",
+      "basis": "Esposizione autonoma da NASA, Eclipses and the Moon, sezione Blood Moon: How It Works. Schema originale non in scala: raggi deviati dalla rifrazione e filtrati dalla dispersione atmosferica. Nuvole e aerosol possono alterare luminosità e colore. Nessuna previsione di un evento imminente.",
+      "tone": "clay",
+      "sources": [
+        {
+          "title": "NASA — Eclipses and the Moon",
+          "url": "https://science.nasa.gov/moon/eclipses/"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-eclipse.svg",
+        "alt": "La Terra blocca il fascio diretto; due raggi arancioni attraversano schematicamente il bordo atmosferico e raggiungono la Luna dentro l’ombra.",
+        "caption": "Il percorso atmosferico cambia il colore della luce.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-eclipse.svg"
+      }
+    },
+    {
+      "id": "ml-20261104-jam",
+      "topic": "Libri e linguaggio",
+      "title": "La marmellata non è mai oggi",
+      "hook": "La marmellata non è mai oggi",
+      "paragraphs": [
+        "La Regina Bianca offre marmellata a giorni alterni, poi precisa: ieri e domani, mai oggi. Alice obietta che prima o poi dovrà esserci un giorno in cui mangiarla. Ma per la Regina oggi non è mai «un altro giorno». La promessa resta intatta soltanto perché il significato delle parole scivola ogni volta che il presente la raggiunge."
+      ],
+      "takeaway": "Nel gioco di parole, oggi non è mai un altro giorno.",
+      "basis": "Lewis Carroll, Through the Looking-Glass, capitolo V: letto il dialogo sulla marmellata nell’originale inglese, opera del 1871 in pubblico dominio. Rielaborazione autonoma italiana e osservazione conclusiva editoriale; nessuna traduzione moderna copiata. Calendario concettuale originale, non illustrazione attribuita a Tenniel.",
+      "tone": "plum",
+      "sources": [
+        {
+          "title": "Lewis Carroll — Through the Looking-Glass, capitolo V",
+          "url": "https://www.gutenberg.org/files/12/12-h/12-h.htm"
+        }
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261104-jam.svg",
+        "alt": "Tre barattoli rappresentano ieri, oggi e domani; solo quello sotto oggi è vuoto.",
+        "caption": "Nel gioco di parole, oggi non è mai un altro giorno.",
+        "credit": "Aurelius — illustrazione originale",
+        "license": "CC0 1.0",
+        "source": "https://github.com/AlbertoRacerro/Aurelius/blob/main/content/microlearning/media/20261104-jam.svg"
+      }
+    }
+  ]
+}
