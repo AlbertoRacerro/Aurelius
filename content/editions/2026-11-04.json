@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "date": "2026-11-04",
+  "updated_at": "2026-11-04T04:07:10.979111+00:00",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261104",
+      "title": "La chiave sul fondo della botte",
+      "kind": "synthesis",
+      "basis": "David Hume, Of the Standard of Taste (1757), §§14–19. Nuova traduzione selettiva dall’inglese in pubblico dominio, con tagli e raccordi. Ultimo paragrafo editoriale.",
+      "sections": [
+        {
+          "heading": "Un sapore che gli altri non sentono",
+          "paragraphs": [
+            "Tutti pretendono di possedere delicatezza di gusto. Tutti ne parlano e vorrebbero farne la misura del sentimento altrui. Ma se vogliamo mescolare un poco di luce dell’intelletto ai nostri sentimenti, dobbiamo capire meglio in che cosa consista questa delicatezza. E, per non attingere la nostra filosofia a una sorgente troppo profonda, ricorriamo a una storia del Don Chisciotte.",
+            "È con buona ragione, dice Sancho allo scudiero dal gran naso, che mi considero un giudice del vino: nella mia famiglia questa qualità è ereditaria. Due miei parenti furono chiamati un giorno a esprimere il loro parere su una botte di vino che si riteneva eccellente: era invecchiato e di una buona annata. Il primo assaggia, riflette e, dopo matura considerazione, dichiara che il vino sarebbe buono, se non fosse per un leggero sapore di cuoio che vi distingue.",
+            "L’altro procede con le medesime cautele. Anche il suo giudizio è favorevole, salvo una riserva: avverte chiaramente un sapore di ferro. Non potete immaginare quanto furono derisi entrambi. Ma chi rise per ultimo? Quando la botte fu vuotata, sul fondo si trovò una vecchia chiave con una correggia di cuoio legata all’anello.",
+            "Il palato fine non si prova soltanto con sapori forti. Si prova in una mescolanza di piccoli ingredienti, quando sappiamo distinguere ogni parte malgrado la sua debolezza e la confusione con le altre. Così accade al gusto nelle arti. Un elemento può essere presente in misura minima, oppure nascosto fra molti altri: un’impressione complessiva non ci dice ancora se lo abbiamo percepito.",
+            "Anche se la botte non fosse mai stata vuotata, la sensibilità dei due assaggiatori sarebbe rimasta la stessa. Sarebbe stato soltanto più difficile dimostrarla a chi li ascoltava. La loro capacità non nacque dalla scoperta della chiave: la scoperta rese visibile agli altri ciò che il loro palato aveva già distinto."
+          ]
+        },
+        {
+          "heading": "Rivedere ciò che credevamo di avere visto",
+          "paragraphs": [
+            "Per quanto la sensibilità naturale differisca fra una persona e l’altra, nulla la accresce quanto la pratica in un’arte e l’osservazione frequente delle sue opere. Al primo incontro il sentimento è spesso oscuro e confuso. Possiamo dire che l’insieme ci piace, senza distinguere le qualità delle parti, il loro carattere, il grado diverso della loro riuscita.",
+            "Con l’esperienza il sentimento diventa più preciso. Impariamo a riconoscere una bellezza senza perdere di vista il difetto che le sta accanto; distinguiamo ciò che prima si presentava come una massa sola. La nebbia che sembrava sospesa sull’oggetto si dissipa. La pratica dà destrezza nel giudicare, come la dà nell’eseguire un lavoro.",
+            "Prima di pronunciarci su un’opera importante, occorre perciò tornarvi più di una volta e guardarla sotto luci diverse, con attenzione e calma. La fretta del primo incontro confonde il sentimento. Non cogliamo bene i rapporti fra le parti; le differenze dello stile restano indistinte. C’è inoltre una bellezza vistosa e superficiale che piace subito, ma stanca quando ci accorgiamo che non esprime con giustezza né il pensiero né la passione.",
+            "Il racconto suggerisce una disciplina del giudizio: non scambiare la sicurezza con cui parliamo per la finezza di ciò che abbiamo osservato. Possiamo imparare a dire meglio perché qualcosa ci piace, confrontarlo, rivederlo, accorgerci di una qualità sfuggita. Prima di ridere del sapore che un altro distingue, vale la pena domandarsi se abbiamo assaggiato con la stessa attenzione. La chiave potrebbe essere ancora sul fondo."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "David Hume — Of the Standard of Taste",
+          "url": "https://davidhume.org/texts/empl1/st",
+          "edition": "Testo inglese storico: letti i passaggi sulla delicatezza del gusto, i due assaggiatori, la pratica e la rilettura (§§14–19). Autore morto nel 1776; il saggio uscì nel 1757 e fu ripreso nelle raccolte settecentesche. Tradotti soltanto i paragrafi originali, escluse note e modifiche editoriali moderne. Verifica dei termini: originali anteriori al 1931 negli USA; vita dell’autore più 70 anni in UE/Italia. Nessuna traduzione italiana moderna né apparato critico contemporaneo riprodotto.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "U.S. Copyright Office — What is Copyright?",
+          "url": "https://www.copyright.gov/what-is-copyright/",
+          "edition": "Riscontro della scadenza della protezione statunitense per le opere pubblicate prima del 1 gennaio 1931.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Direttiva 2006/116/CE — articolo 1",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0116",
+          "edition": "Termine generale europeo: vita dell’autore e 70 anni dopo la morte; traduzioni e apparati moderni verificati separatamente.",
+          "accessed": "2026-11-04"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261104",
+      "title": "Il fuoco sotto l’abete",
+      "kind": "synthesis",
+      "basis": "Jack London, To Build a Fire, in Lost Face (Mills & Boon, 1919). Nuova traduzione selettiva dall’inglese in pubblico dominio: dall’avvio del viaggio alla caduta della neve sul fuoco. Tagli interni e misure convertite; nessuna scena aggiunta.",
+      "sections": [
+        {
+          "heading": "Il sentiero senza sole",
+          "paragraphs": [
+            "Il giorno era sorto freddo e grigio, straordinariamente freddo e grigio, quando l’uomo lasciò il sentiero principale dello Yukon e risalì l’alta scarpata di terra. Di lassù una traccia poco visibile e poco battuta si inoltrava verso est, nel fitto bosco di abeti. La salita era ripida. In cima si fermò a riprendere fiato, giustificando a se stesso la sosta con un’occhiata all’orologio. Erano le nove. Non c’era sole, né un indizio di sole, benché il cielo fosse senza una nuvola. La giornata era limpida, eppure sulle cose sembrava disteso un velo impalpabile, una sottile oscurità dovuta all’assenza del sole.",
+            "Questo non lo preoccupava. Alla mancanza di sole era abituato. Non lo vedeva da giorni e sapeva che ne sarebbero passati altri prima che quel disco allegro, a sud, facesse appena capolino sull’orizzonte per scomparire subito dopo.",
+            "Guardò indietro. Lo Yukon era largo più di un chilometro e mezzo, sepolto sotto quasi un metro di ghiaccio e altrettanta neve. Tutto era bianco, con dolci ondulazioni là dove il ghiaccio si era ammucchiato durante il congelamento. A nord e a sud, fin dove arrivava lo sguardo, il bianco era interrotto soltanto da un sottile capello scuro che curvava intorno a un’isola coperta di abeti e spariva dietro un’altra. Era il sentiero principale: verso sud conduceva al passo del Chilcoot e al mare; verso nord a Dawson e, molto più lontano, al mare di Bering.",
+            "Ma tutto questo — la traccia misteriosa e remota, il cielo senza sole, il freddo enorme, l’estraneità di ogni cosa — non gli faceva impressione. Non perché vi fosse abituato da molto. Era un nuovo arrivato, al suo primo inverno. Il suo difetto era la mancanza d’immaginazione. Era rapido e attento alle cose della vita, ma soltanto alle cose, non al loro significato. Quarantasei gradi sotto zero volevano dire freddo e disagio: niente di più. Non lo portavano a riflettere sulla propria fragilità, sul fatto che un essere umano può vivere soltanto entro limiti ristretti di caldo e di freddo. Per lui erano un morso da cui difendersi con guantoni, paraorecchie, mocassini caldi e calze spesse. Che potessero significare qualcosa di più non gli era mai passato per la testa.",
+            "Riprese a camminare e sputò, quasi per fare una prova. Uno schiocco secco lo sorprese. Sputò ancora. Di nuovo la saliva crepitò nell’aria prima di toccare la neve. Sapeva che a quarantasei sotto zero crepitava quando cadeva a terra; questa volta crepitava prima. Doveva fare ancora più freddo. Quanto, non lo sapeva. Ma la temperatura non aveva importanza. Andava alla vecchia concessione sul ramo sinistro dell’Henderson Creek, dove i compagni erano già arrivati. Alle sei sarebbe stato al campo: avrebbero acceso il fuoco e preparato una cena calda.",
+            "Premette una mano sul fagotto che gli sporgeva sotto la giacca e sotto la camicia, avvolto in un fazzoletto contro la pelle nuda. Era l’unico modo per impedire ai biscotti di gelare. Sorrise pensando a quei biscotti tagliati a metà, imbevuti di grasso, ciascuno con una bella fetta di pancetta fritta.",
+            "Alle sue calcagna trottava un grosso cane del paese, un husky grigio, un vero cane lupo. Il freddo lo opprimeva. Sapeva che non era tempo di viaggiare. Il suo istinto gli raccontava una storia più vera di quella che il giudizio raccontava all’uomo. In realtà la temperatura era vicina ai cinquantanove gradi sotto zero. Il cane non sapeva nulla di termometri. Provava però un’inquietudine vaga e minacciosa, che lo teneva rasente ai talloni dell’uomo e gli faceva scrutare ogni movimento insolito, nella speranza che cercasse riparo e accendesse un fuoco. Il cane conosceva il fuoco e voleva il fuoco; oppure voleva scavarsi una tana nella neve e rannicchiarvi il proprio calore, lontano dall’aria.",
+            "Il vapore del respiro gli aveva imbiancato il pelo, soprattutto il muso e le ciglia. Anche la barba rossa e i baffi dell’uomo erano coperti di brina, ma su di lui il deposito era più compatto e cresceva a ogni respiro. Masticava tabacco e il ghiaccio gli irrigidiva le labbra: il succo non riusciva a superare il mento. Una barba cristallina, del colore e della solidità dell’ambra, si allungava così sotto il viso. Se fosse caduto, si sarebbe spezzata in frammenti fragili come vetro. Non gli importava. In quel paese era il prezzo che pagavano tutti i masticatori di tabacco."
+          ]
+        },
+        {
+          "heading": "Le trappole sotto la neve",
+          "paragraphs": [
+            "Alle dieci raggiunse il letto gelato dell’Henderson Creek. Dalla biforcazione lo separavano ancora circa sedici chilometri. Procedeva a poco più di sei chilometri l’ora: sarebbe arrivato a mezzogiorno e mezzo. Decise che avrebbe celebrato l’arrivo mangiando.",
+            "Nessuno percorreva quel torrente silenzioso da un mese. Il vecchio solco delle slitte si distingueva ancora, ma sulla traccia degli ultimi pattini si erano depositati trenta centimetri di neve. Non aveva nessuno con cui parlare; e, se anche ci fosse stato qualcuno, la museruola di ghiaccio gli avrebbe impedito di farlo. Continuò a masticare tabacco e ad allungare la barba d’ambra.",
+            "Di tanto in tanto gli tornava il pensiero che facesse molto freddo, più di quanto avesse mai provato. Si strofinava automaticamente il naso e gli zigomi con il dorso del guantone, cambiando mano. Appena smetteva, gli zigomi perdevano sensibilità; un istante dopo, anche la punta del naso. Si sarebbe certamente gelato le guance. Gli dispiaceva non essersi procurato una protezione come quella di Bud, una striscia che copriva il naso e passava anche sugli zigomi. Ma non contava poi molto. Che cosa erano due guance gelate? Un poco di dolore, tutto qui.",
+            "Benché pensasse poco, osservava con attenzione. Notava le curve del torrente, gli ammassi di tronchi e il punto preciso in cui posava i piedi. Girando un’ansa, a un tratto scartò come un cavallo spaventato e indietreggiò di parecchi passi. Aveva sentito cedere il terreno e crepitare una pellicola di ghiaccio nascosta dalla neve.",
+            "Sapeva che dalle colline uscivano sorgenti capaci di scorrere sopra il ghiaccio e sotto la neve anche nel freddo più intenso. Erano trappole. Potevano nascondere una pozza profonda pochi centimetri oppure quasi un metro. Talvolta la copriva una crosta sottile; talvolta acqua e ghiaccio formavano strati alternati, e chi sfondava continuava a sprofondare. Bagnarsi i piedi con quella temperatura significava pericolo e ritardo. Avrebbe dovuto fermarsi, accendere un fuoco e togliersi le calzature per asciugarle.",
+            "Studiò il letto del torrente e le rive. L’acqua doveva arrivare da destra. Rifletté, strofinandosi il naso e le guance, poi aggirò la pozza da sinistra, saggiando il terreno a ogni passo. Superato il pericolo, prese altro tabacco e ripartì alla sua andatura regolare.",
+            "Nelle due ore successive incontrò altre trappole. Di solito la neve sopra le pozze appariva infossata, con una superficie quasi candita che denunciava il pericolo. Una volta, sospettando una crosta fragile, costrinse il cane a passare avanti. L’animale non voleva. Rimase indietro finché l’uomo non lo spinse; allora attraversò rapidamente la superficie bianca e intatta. All’improvviso sfondò, si dibatté da un lato e raggiunse un appoggio solido.",
+            "Aveva bagnato le zampe anteriori. Quasi subito l’acqua si trasformò in ghiaccio. Cercò di leccarlo via, poi si lasciò cadere nella neve e cominciò a mordere i cristalli fra le dita. Non ragionava sulle conseguenze: obbediva a un impulso che saliva dal fondo del suo essere. L’uomo invece conosceva il motivo. Si tolse il guantone destro e lo aiutò a staccare il ghiaccio. Non espose le dita per più di un minuto, eppure la rapidità con cui persero sensibilità lo stupì. Rimesso il guantone, batté violentemente la mano contro il petto."
+          ]
+        },
+        {
+          "heading": "Il pranzo e la fiamma",
+          "paragraphs": [
+            "A mezzogiorno la giornata raggiunse la sua massima luminosità. Il sole era ancora troppo a sud per superare l’orizzonte: l’uomo camminava sotto un cielo sereno e non proiettava ombra. A mezzogiorno e mezzo in punto arrivò alla biforcazione. Soddisfatto della propria velocità, sbottonò giacca e camicia e tirò fuori il pranzo. Il gesto durò non più di quindici secondi; bastarono perché le dita esposte si intorpidissero.",
+            "Le batté una dozzina di volte contro la gamba e si sedette su un tronco coperto di neve. Il bruciore provocato dai colpi passò tanto presto che si sorprese: non aveva ancora dato un morso. Rimise la mano nel guantone e scoprì l’altra. Provò ad avvicinare un biscotto alla bocca, ma il ghiaccio glielo impedì. Aveva dimenticato di accendere un fuoco e scongelarsi. Ridacchiò della propria sciocchezza. Intanto anche quelle dita perdevano sensibilità e il pizzicore che aveva avvertito nei piedi, appena seduto, stava scomparendo. Erano caldi oppure insensibili? Mosse le dita dentro i mocassini e decise che erano insensibili.",
+            "Si alzò in fretta. Ora era un poco spaventato. Pestò i piedi finché il dolore tornò. L’uomo di Sulphur Creek aveva detto la verità raccontando quanto freddo potesse fare nel paese. E lui gli aveva riso in faccia! Non bisognava essere troppo sicuri. Camminò avanti e indietro, agitando le braccia, finché il ritorno del calore non lo rassicurò. Poi prese i fiammiferi.",
+            "Fra i cespugli, le acque alte della primavera precedente avevano lasciato una scorta di ramoscelli secchi. Cominciò con cura da una fiamma piccola e ben presto ebbe un fuoco vigoroso. Vi sciolse il ghiaccio del viso e, al suo riparo, mangiò i biscotti. Per il momento il freddo dello spazio era stato ingannato. Il cane si distese abbastanza vicino da scaldarsi e abbastanza lontano da non bruciarsi il pelo.",
+            "Finito il pranzo, l’uomo riempì la pipa e fumò senza fretta. Poi rimise i guantoni, sistemò i paraorecchie e prese il ramo sinistro del torrente. Il cane rimase deluso. Desiderava tornare al fuoco. L’uomo non conosceva il freddo, il vero freddo; il cane invece lo conosceva, e lo avevano conosciuto tutte le generazioni da cui discendeva. Era tempo di stare rannicchiati nella neve, aspettando che una cortina di nuvole si stendesse fra la terra e lo spazio.",
+            "Ma fra loro non c’era tenerezza. Il cane era lo schiavo dell’uomo, e le sole carezze che avesse ricevuto erano state quelle della frusta e delle voci minacciose che la annunciavano. Non cercò di comunicargli la propria inquietudine: desiderava il fuoco per se stesso. L’uomo fischiò, parlò con una voce che somigliava a una frustata, e il cane tornò alle sue calcagna."
+          ]
+        },
+        {
+          "heading": "La neve sui rami",
+          "paragraphs": [
+            "Per mezz’ora non incontrarono più sorgenti. Poi accadde. In un punto senza alcun segno di pericolo, dove la neve morbida e intatta sembrava garantire la solidità del fondo, l’uomo sfondò. Non era profondo: quando riuscì a raggiungere la crosta resistente, era bagnato soltanto fino a metà delle ginocchia.",
+            "Si arrabbiò e maledisse ad alta voce la propria sorte. Sarebbe arrivato al campo con un’ora di ritardo. Doveva fare un fuoco e asciugare le calzature; a quella temperatura non aveva scelta. Risalì la riva. Fra i cespugli, intorno ai tronchi di piccoli abeti, le piene avevano ammucchiato legna secca, ramoscelli, pezzi di rami e l’erba asciutta dell’anno precedente. Posò alcuni pezzi grossi sulla neve, preparando una base perché la fiamma non annegasse nell’acqua che avrebbe sciolto. Dalla tasca prese un frammento di corteccia di betulla e vi accostò un fiammifero. La corteccia prese fuoco più facilmente della carta. Vi aggiunse fili d’erba e ramoscelli sottilissimi.",
+            "Lavorava lentamente, con cautela, consapevole del pericolo. A mano a mano che la fiamma cresceva, aumentava la grossezza dei rametti. Accovacciato nella neve, li strappava dal groviglio e li lasciava cadere direttamente sul fuoco. Non poteva permettersi un errore. Con i piedi asciutti avrebbe potuto correre e scaldarsi di nuovo; con i piedi bagnati, in quel gelo, non contava più sulla corsa.",
+            "Non sentiva più i piedi. Per lavorare aveva dovuto togliersi i guantoni, e anche le dita si erano presto intorpidite. Finché camminava, il cuore aveva continuato a spingere sangue verso la superficie e le estremità. Appena si era fermato, quel movimento si era allentato. Il sangue si ritirava al riparo dentro il corpo: era vivo, come il cane, e come il cane voleva nascondersi dal freddo terribile. I piedi bagnati gelavano più rapidamente; le dita scoperte perdevano sempre più sensibilità.",
+            "Ma era salvo. Il fuoco cominciava a bruciare bene. Lo alimentava ormai con rametti grossi come un dito; fra un minuto avrebbe potuto usare rami grossi come il polso e togliere finalmente le calzature. Ricordò il consiglio del vecchio di Sulphur Creek e sorrise. Il vecchio era stato molto serio: con più di quarantasei sotto zero nessuno doveva viaggiare solo nel Klondike. Eppure lui era lì. Aveva avuto l’incidente, era solo e si era salvato. Bastava non perdere la testa. Chi fosse davvero un uomo poteva viaggiare da solo.",
+            "Era sorprendente, però, la rapidità con cui il naso e le guance gelavano. Non aveva immaginato che le dita potessero diventare inerti così presto. Le sentiva remote dal corpo e da se stesso. Quando toccava un ramoscello, doveva guardare per capire se lo avesse afferrato. I fili fra lui e la punta delle dita erano quasi tutti interrotti.",
+            "Non importava. Il fuoco crepitava e ogni fiamma danzante prometteva vita. Cominciò a slacciare i mocassini. Il ghiaccio li ricopriva; le calze spesse erano guaine di ferro fino alle ginocchia; i lacci sembravano bacchette d’acciaio contorte e annodate. Tirò per un momento con le dita intorpidite, poi capì l’inutilità dello sforzo ed estrasse il coltello.",
+            "Prima che potesse tagliare i lacci, accadde. Era colpa sua, o piuttosto un suo errore. Non avrebbe dovuto accendere il fuoco sotto l’abete: avrebbe dovuto farlo all’aperto. Ma era stato più comodo strappare i ramoscelli dal cespuglio e lasciarli cadere sulla fiamma. Sopra di lui i rami portavano un gran peso di neve. Da settimane non soffiava vento e ogni ramo era carico. A ogni ramoscello strappato aveva comunicato all’albero una piccola scossa: impercettibile per lui, sufficiente però a provocare il disastro.",
+            "In alto, un ramo rovesciò il proprio carico su quelli sottostanti. Questi lasciarono cadere il loro. Il movimento si allargò, coinvolse l’intero albero, crebbe come una valanga e precipitò senza preavviso sull’uomo e sul fuoco. Il fuoco scomparve. Dove aveva bruciato rimaneva una coltre di neve fresca e scomposta.",
+            "L’uomo restò immobile a fissarla. Era come se avesse appena ascoltato la propria condanna a morte. Poi divenne molto calmo. Forse il vecchio di Sulphur Creek aveva ragione. Se avesse avuto un compagno, ora non sarebbe stato in pericolo: il compagno avrebbe potuto accendere il fuoco. Invece doveva ricominciare lui. E questa seconda volta non doveva fallire."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jack London — Lost Face, To Build a Fire",
+          "url": "https://www.gutenberg.org/cache/epub/2429/pg2429-images.html",
+          "edition": "Trascrizione dell’edizione inglese Mills & Boon 1919, quarto tiraggio; originale narrativo di London, morto nel 1916. Letta la sequenza da «Day had broken cold and grey» a «this second time there must be no failure». Selezione continua con tagli interni: abbreviati itinerario, ripetizioni e spiegazioni fisiologiche, omesso lo sfregamento dei piedi con la neve. Terza persona e giudizi dei personaggi conservati; titolo e quattro sezioni redazionali. Non è l’intero racconto né un manuale di sicurezza. −50 °F≈−46 °C, −75 °F≈−59 °C; miglia e piedi convertiti approssimativamente. Verifica dei termini: originali anteriori al 1931 negli USA; vita dell’autore più 70 anni in UE/Italia. Nessuna traduzione italiana moderna né apparato critico contemporaneo riprodotto.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Project Gutenberg — scheda bibliografica di Lost Face",
+          "url": "https://www.gutenberg.org/ebooks/2429",
+          "edition": "Identità dell’autore 1876–1916, testo inglese e disponibilità in pubblico dominio negli Stati Uniti.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "U.S. Copyright Office — Duration of Copyright",
+          "url": "https://www.copyright.gov/circs/circ15a.pdf",
+          "edition": "Durata massima di 95 anni per i diritti delle opere pubblicate nel regime precedente al 1978; anche l’edizione 1919 è oltre il termine.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Direttiva 2006/116/CE — articolo 1",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0116",
+          "edition": "London morto nel 1916: termine europeo ordinario esaurito. Utilizzato l’inglese storico, non una traduzione moderna.",
+          "accessed": "2026-11-04"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261104",
+      "title": "Radar · Agenti, ingegneria e sicurezza energetica",
+      "kind": "news",
+      "event_date": "2026-11-04",
+      "publication_date": "2026-11-04",
+      "basis": "Dodici schede nella finestra 3 novembre 05:07 – 4 novembre 05:07 Europe/Rome. AI/software, Italia, Europa, geopolitica ed energia; esclusi duplicati e annunci fuori finestra. HN per scoperta, fonti primarie e cronaca per verifica. Risultati e proiezioni attribuiti; implicazioni editoriali.",
+      "sections": [
+        {
+          "heading": "OpenAI · BenchCAD 2.0 e progettazione fisica",
+          "paragraphs": [
+            "Il 3 novembre OpenAI pubblica prove di progettazione CAD, PCB e simulazione, e annuncia una collaborazione di ricerca con Mazda."
+          ],
+          "bullets": [
+            "BenchCAD 2.0: modello interno non nominato a 0,875, GPT-6 Astra al massimo reasoning a 0,594; risultati del produttore.",
+            "Prototipo per parlare con Codex: servono ancora revisioni su tolleranze, assemblaggio e limiti produttivi.",
+            "Interesse: scansioni convertite in CAD e disegni; non è il rilascio di un nuovo modello. Fonte: OpenAI."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Google / Jev · routing misurato per task",
+          "paragraphs": [
+            "Sergio Villani pubblica il 3 novembre un esperimento su 50 domande auto-valutate per agenti di coding, confrontando configurazioni Gemini e un router Jev."
+          ],
+          "bullets": [
+            "Accordo del classificatore con le etichette: 48/50; 34/34 sul sottoinsieme held-out.",
+            "Sia Flash 3.8 con thinking low sia il routing Flash-Lite→Flash low risolvono 50/50.",
+            "Ridurre maxOutputTokens non riduce automaticamente il thinking. Campione piccolo, esecuzioni singole; nessuna integrazione ufficiale Google–TypeSafe."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Antigravity · Cheminformatics Skills disponibili",
+          "paragraphs": [
+            "Il 3 novembre DeepMind rende disponibili le skill cheminformatiche attraverso il plugin Science di Google Antigravity."
+          ],
+          "bullets": [
+            "Orchestrazione linguistica; calcoli molecolari affidati a RDKit, con risorse ChEMBL e PubChem.",
+            "Demo: curazione di composti, matched molecular pairs, modelli di potenza e proposte di macrocicli con vie sintetiche.",
+            "Split temporali o per scaffold nelle analisi. Le molecole proposte restano ipotesi da sintetizzare e verificare. Fonte: DeepMind."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Qwen 3.8 27B · riconoscere un gioco dai pesi",
+          "paragraphs": [
+            "Il 3 novembre Simon Willison pubblica una prova locale sui prompt di Weight-Space Programming: il delta rispetto a ieri è il test senza tool con Qwen."
+          ],
+          "bullets": [
+            "Riconosce Pac-Man, Pong e Breakout; sbaglia Freeway. Quattro casi, non un benchmark generale.",
+            "Pac-Man: 46 minuti e 12 secondi, 43.506 token di reasoning sul suo portatile.",
+            "GGUF Q4_K_M, Apache 2.0, file da 16,8 GB: non entra integralmente in 12 GiB di VRAM, prima della cache. Fonte e trascrizioni: Willison."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Falcon Guardian · AI Kill Switch e gateway",
+          "paragraphs": [
+            "Il 3 novembre CrowdStrike annuncia nuovi controlli in Falcon Guardian, già disponibile da settembre."
+          ],
+          "bullets": [
+            "Kill switch disponibile prima al gateway; terminazione diretta sull’endpoint indicata come successiva.",
+            "Hook dichiarati per Claude Code, Codex, Copilot, OpenCode e Cursor; gateway ora in disponibilità generale.",
+            "Ispezione di rete sull’endpoint: Windows disponibile, Mac in early access. Il prodotto enterprise controlla l’esecuzione, non cambia i pesi. Fonte: CrowdStrike."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Cortex AI Gateway · inferenza e costi in GA",
+          "paragraphs": [
+            "Le release note Snowflake del 3 novembre portano inferenza, osservabilità e gestione dei costi del gateway in disponibilità generale."
+          ],
+          "bullets": [
+            "Un endpoint governato, tracciamento delle richieste e attribuzione della spesa agli utenti.",
+            "Il comunicato separa il prodotto disponibile dalle funzioni ancora in anteprima: il routing dinamico non diventa tutto GA.",
+            "Interesse: controllo centralizzato dei consumi degli agenti. Servizio cloud Snowflake, non un proxy locale gratuito. Fonti: release note e comunicato."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Snowflake CoCo · Excel e Sheets in preview",
+          "paragraphs": [
+            "Il 3 novembre Snowflake introduce in anteprima CoCo dentro Excel e Google Sheets, collegato ai dati Snowflake."
+          ],
+          "bullets": [
+            "Domande in linguaggio naturale o SQL; generazione di formule, grafici e tabelle pivot.",
+            "Query sotto il ruolo dell’utente, con masking e policy di accesso alle righe.",
+            "Anteprima prima delle modifiche al foglio e riferimento alla fonte dei valori scritti. Interesse distinto dal gateway: analisi direttamente nel foglio di lavoro. Fonte: documentazione Snowflake."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Safari 27.3 beta · Adaptive Dark Mode",
+          "paragraphs": [
+            "WebKit presenta il 3 novembre una modalità scura adattiva per i siti che non ne offrono una propria."
+          ],
+          "bullets": [
+            "Trasforma la luminosità mantenendo le tonalità; obiettivo di contrasto del testo 4,5:1.",
+            "Gran parte delle immagini resta invariata; analisi specifica per SVG, icone e loghi. I canvas non vengono trasformati.",
+            "Attivazione scelta dall’utente. Il valore light only non è ancora supportato nella beta 1: dettaglio rilevante per le interfacce scientifiche. Fonte: WebKit."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "USA · prime proiezioni sul nuovo Congresso",
+          "paragraphs": [
+            "Il 4 novembre alle 03:18 UTC Reuters riferisce la proiezione dei media USA di una maggioranza democratica alla Camera, dopo il voto del 3 novembre."
+          ],
+          "bullets": [
+            "Senato: Cooper in North Carolina e Andrews in South Carolina sono attribuiti ai democratici; il controllo della camera alta resta distinto dalle singole vittorie.",
+            "Posta in gioco: una Camera democratica potrebbe bloccare leggi e aprire indagini sull’amministrazione Trump dal nuovo Congresso.",
+            "Sono proiezioni giornalistiche, non certificazioni né un risultato definitivo di entrambe le camere. Fonti: Reuters, CBS News e AP."
+          ],
+          "event_date": "2026-11-04",
+          "publication_date": "2026-11-04"
+        },
+        {
+          "heading": "Germania · assegnati 5.160 rMW di capacità",
+          "paragraphs": [
+            "Il 3 novembre la Bundesnetzagentur pubblica l’esito della prima gara per capacità elettrica di lunga durata; Reuters riscontra i contratti."
+          ],
+          "bullets": [
+            "Undici offerte premiate; 5.160 rMW, misura di capacità ridotta remunerata, non produzione elettrica in MWh.",
+            "Prezzo medio ponderato: 155.296 euro per rMW all’anno, sotto il tetto di 244.000.",
+            "Il sostegno paga disponibilità per la sicurezza del sistema. La Baviera contesta la distribuzione territoriale dei progetti: il problema è anche dove si costruisce."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Intesa Sanpaolo · guidance alzata dopo i nove mesi",
+          "paragraphs": [
+            "Il 3 novembre Intesa pubblica i risultati al 30 settembre: utile netto di 8,2 miliardi, +8,1% sui primi nove mesi del 2025."
+          ],
+          "bullets": [
+            "Obiettivo 2026 ora «ben oltre» 10 miliardi, anziché soltanto «oltre».",
+            "Deliberato un acconto dividendi di circa 3,8 miliardi, pagabile il 25 novembre.",
+            "Sul dossier MPS, Messina si dice fiducioso dell’esito antitrust: autorizzazione ancora attesa, non acquisizione conclusa. Fonti: Intesa e Reuters."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        },
+        {
+          "heading": "Merz–Zelensky · aiuti invernali e Mar Nero",
+          "paragraphs": [
+            "Il 3 novembre Merz riceve Zelensky a Berlino e annuncia l’intenzione di aggiungere sostegno energetico e aiuti invernali già quest’anno."
+          ],
+          "bullets": [
+            "Difesa aerea ed energia al centro: gli aiuti avviati a ottobre vengono attuati, quelli aggiuntivi restano un impegno politico.",
+            "Merz denuncia il rischio di escalation e crisi alimentare dagli attacchi russi nel Mar Nero.",
+            "Delta: nuovo incontro bilaterale prima dei colloqui annunciati fra Ucraina e Russia; non una tregua raggiunta. Fonti: Bundesregierung e Reuters."
+          ],
+          "event_date": "2026-11-03",
+          "publication_date": "2026-11-03"
+        }
+      ],
+      "sources": [
+        {
+          "title": "OpenAI — Accelerating engineering for the physical world",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Letti dimostrazione, benchmark, collaborazione CGR e annuncio Mazda. Il punteggio interno non dimostra validità ingegneristica di un progetto reale; nessuna disponibilità pubblica del modello interno annunciata.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Google Developers — Cost per task",
+          "url": "https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Letto l’esperimento con sviluppo 16 e held-out 34, le configurazioni e i limiti sulle misure temporali fra due round. Le 50 risposte corrette non sono le 48 classificazioni corrette. Non trasferita una promessa di risparmio a un altro harness.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Google DeepMind — Agentic cheminformatics with Google Antigravity",
+          "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Letti workflow, strumenti, validazione e disponibilità del plugin. Dimostrazione del produttore, non scoperta clinica né validazione sperimentale dei nuovi candidati. Nessun programma universitario attribuito al lettore.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Simon Willison — Qwen 3.8 27B on my laptop can interpret model weights, too",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Post primario dell’autore dell’esperimento, 3 novembre ore 16:29 come mostrato dal sito, senza attribuzione di fuso non verificata. Quattro prompt, tre identificazioni, contesto predefinito 8192 insufficiente; nessuna misura trasferita a GPU da 12 GiB, nessun acquisto suggerito. Non è autonomiglioramento né nuovo rilascio dei pesi.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "LM Studio Community — Qwen3.8-27B Q4_K_M",
+          "url": "https://huggingface.co/lmstudio-community/Qwen3.8-27B-GGUF/blob/main/Qwen3.8-27B-Q4_K_M.gguf",
+          "edition": "Artefatto collegato direttamente dall’esperimento di Willison: file GGUF Q4_K_M, 16,8 GB, licenza Apache 2.0 indicata dal repository. Dimensione file distinta da memoria runtime e cache; non è una release nuova del 3 novembre.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "CrowdStrike — AI security and safety for the enterprise",
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Letta la distinzione fra Available Today e New Innovations; priorità alla specifica «first at the Gateway, and soon on the endpoint», senza estendere la disponibilità del blocco endpoint. Riscontro indipendente Decrypt del 3 novembre.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Decrypt — CrowdStrike Launches AI Agent Kill Switch",
+          "url": "https://decrypt.co/382467/crowdstrike-ai-agent-kill-switch-acquire-fiddler-ai",
+          "edition": "3 novembre 2026: riscontro della disponibilità iniziale al gateway e dell’acquisizione Fiddler ancora prevista, non completata.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Snowflake — Cortex AI Gateway, release note del 3 novembre",
+          "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-cortex-ai-gateway-ga",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Letta la voce datata su inferenza, osservabilità e costi. Disponibilità separata dalle altre funzioni presentate alla conferenza.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Snowflake — Business Ontology and Cortex AI Gateway",
+          "url": "https://www.snowflake.com/en/news/press-releases/expedition-2026-business-ontology-ai-gateway/",
+          "edition": "3 novembre 2026: letto l’elenco delle funzionalità e le note di disponibilità; nessuna promessa di prezzo o compatibilità locale.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Snowflake — CoCo for Excel and Google Sheets (Preview)",
+          "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-11-03-coco-excel-sheets-preview",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Voce del 3 novembre 2026, letti ruolo, masking, anteprima e citazioni. Prodotto in preview, non disponibilità generale; nessun prezzo inventato.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "WebKit — Introducing Adaptive Dark Mode",
+          "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. 3 novembre 2026. Letti comportamento delle immagini, canvas, dichiarazioni color-scheme ed eccezione della beta 1. Nessun aggiornamento al software Aurelius eseguito da questo job.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Bundesnetzagentur — risultati della prima gara StromVKG",
+          "url": "https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2026/20261103_StromVKG.html",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Pubblicazione del 3 novembre 2026. Letti risultati, unità rMW e prezzo annuo; non presentato il prezzo come costo di costruzione o tariffa per MWh.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Germany awards gas plant contracts",
+          "url": "https://www.reuters.com/business/energy/germany-awards-gas-plant-contracts-utilities-including-rwe-ephs-leag-2026-11-03/",
+          "edition": "3 novembre 2026: riscontro indipendente dell’assegnazione; dettaglio di misura e prezzo ricavato dall’autorità primaria.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Land Baviera — reazione al risultato della gara",
+          "url": "https://www.bayern.de/bundesnetzagentur-gibt-ergebnisse-der-ersten-ausschreibungsrunde-fr-kraftwerke-bekannt/",
+          "edition": "3 novembre 2026: Aiwanger accoglie il progetto di Leipheim ma contesta l’unico sito bavarese premiato; posizione politica attribuita.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Intesa Sanpaolo — risultati consolidati al 30 settembre 2026",
+          "url": "https://group.intesasanpaolo.com/en/investor-relations/press-releases/2026/11/20261103-ris3q26-uk",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. Risultati diffusi il 3 novembre; 8,2 miliardi sono nove mesi, non utile del trimestre. Acconto deliberato distinto dal pagamento futuro.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Intesa alza guidance e delibera acconto",
+          "url": "https://it.investing.com/news/stock-market-news/intesa-alza-guidance-su-utili-2026-dopo-trim3-sopra-attese-delibera-acconto-dividendi-3624492",
+          "edition": "3 novembre 2026, pubblicazione 13:23 e aggiornamento 13:24 mostrati dalla testata; importo preciso acconto 3,813 miliardi.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Messina e il giudizio antitrust su MPS",
+          "url": "https://www.reuters.com/business/finance/intesa-improves-full-year-profit-outlook-it-prepares-launch-mps-bid-2026-11-03/",
+          "edition": "3 novembre 2026: dichiarazione del CEO e autorizzazioni ancora attese. Nessuna indicazione di investimento.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Bundesregierung — conferenza stampa Merz e Zelensky",
+          "url": "https://www.bundesregierung.de/breg-de/aktuelles/pressekonferenzen/bundeskanzler-pk-selenskyj-berlin-2459660",
+          "edition": "Evento e pubblicazione: 3 novembre 2026. 3 novembre 2026: letti resoconto e dichiarazioni del cancelliere su aiuti, difesa aerea, energia e colloqui attesi. Nessun importo o stanziamento aggiuntivo inventato.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Merz promises more support for Ukraine",
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/03/merz-promises-more-support-for-ukraine-warns-russia-over-black-sea-attacks",
+          "edition": "3 novembre 2026: riscontro indipendente su aiuti invernali e dichiarazioni sul Mar Nero.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Democratic House majority projected",
+          "url": "https://www.reuters.com/world/us/democrats-projected-win-majority-control-us-house-us-media-project-2026-11-04/",
+          "edition": "4 novembre, 03:18 UTC come indicato dal flusso Reuters: attribuzione della proiezione ai media USA, non certificazione ufficiale.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "CBS News — Senate election results 2026",
+          "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
+          "edition": "Diretta consultata il 4 novembre: riscontro primario delle proiezioni CBS, fra cui la vittoria di Annie Andrews in South Carolina. Non trasferite proiezioni delle singole competizioni al controllo complessivo del Senato.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Reuters — Democrats close in on US House, make gains in Senate",
+          "url": "https://www.reuters.com/world/us/trump-faces-midterm-verdict-with-control-congress-stake-2026-11-03/",
+          "edition": "Diretta della notte 3–4 novembre: riscontro indipendente di North Carolina e South Carolina; controllo del Senato ancora incerto nella versione consultata.",
+          "accessed": "2026-11-04"
+        },
+        {
+          "title": "Associated Press — When will we know who controls Congress?",
+          "url": "https://apnews.com/article/9dae62cdd7d776a20a26eab6fbd9b12c",
+          "edition": "Pubblicato il 3 novembre alle 05:24 UTC: 435 collegi Camera e 35 gare Senato; soglie distinte e criterio AP di attribuzione. Non usato come prova delle vittorie successive.",
+          "accessed": "2026-11-04"
+        }
+      ]
+    }
+  ]
+}
