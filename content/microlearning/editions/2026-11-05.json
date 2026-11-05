@@ -1,0 +1,546 @@
+{
+  "schema": 1,
+  "date": "2026-11-05",
+  "cards": [
+    {
+      "id": "micro-20261105-cluster",
+      "topic": "Machine learning",
+      "title": "Cambiare unità può cambiare i gruppi",
+      "hook": "Cambiare unità può cambiare i gruppi",
+      "paragraphs": [
+        "Quattro punti formano un rettangolo alto e stretto. Con due gruppi, k-means preferisce accoppiare quelli sulla stessa riga. Moltiplica soltanto la coordinata orizzontale per tre: il rettangolo diventa largo e gli accoppiamenti migliori passano alle colonne. Le distanze sono parte del modello: cambiare scala a una variabile cambia il peso delle sue differenze."
+      ],
+      "takeaway": "Gli stessi quattro dati, con una coordinata riscalata.",
+      "basis": "Esplorazione indipendente. Letta la definizione di inerzia e l’algoritmo nella documentazione scikit-learn. Esempio originale con punti (0,0), (1,0), (0,2), (1,2); seconda geometria x×3. Si confrontano i minimi globali, non una promessa sull’inizializzazione.",
+      "sources": [
+        {
+          "title": "scikit-learn · K-means",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#k-means"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-cluster.svg",
+        "alt": "Due rettangoli di quattro punti: gruppi per righe prima, per colonne dopo la riscalatura.",
+        "caption": "Gli stessi quattro dati, con una coordinata riscalata.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://scikit-learn.org/stable/modules/clustering.html#k-means"
+      }
+    },
+    {
+      "id": "micro-20261105-seahorse",
+      "topic": "Natura",
+      "title": "È il padre a partorire",
+      "hook": "È il padre a partorire",
+      "paragraphs": [
+        "La femmina trasferisce le uova nella tasca incubatrice del maschio. È lì che si sviluppano i piccoli, fino a quando contrazioni muscolari li espellono nell’acqua già formati. La pancia gonfia di questo cavalluccio marino non è una scorta di cibo: ospita una gravidanza. Dopo la nascita, i piccoli devono cavarsela da soli."
+      ],
+      "takeaway": "Cavalluccio marino maschio in gravidanza.",
+      "basis": "NOAA, sezione su tasca incubatrice e parto. Esposizione autonoma; nessuna identificazione di specie dedotta dalla foto. Fotografia di Kelly McCarthy verificata sulla pagina originale Flickr e su Commons; ridimensionata, non ritagliata.",
+      "sources": [
+        {
+          "title": "NOAA · Seahorses",
+          "url": "https://oceanservice.noaa.gov/facts/seahorse.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-seahorse.jpg",
+        "alt": "Cavalluccio marino grigio chiaro e maculato, di profilo, con tasca addominale gonfia e coda avvolta a un sostegno.",
+        "caption": "Cavalluccio marino maschio in gravidanza.",
+        "credit": "Kelly McCarthy · ridimensionamento Aurelius",
+        "license": "CC BY-SA 2.0 · https://creativecommons.org/licenses/by-sa/2.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:A_pregnant_seahorse.jpg"
+      }
+    },
+    {
+      "id": "micro-20261105-lora",
+      "topic": "Architetture AI",
+      "title": "Una correzione passa da due matrici",
+      "hook": "Una correzione passa da due matrici",
+      "paragraphs": [
+        "Una matrice quadrata da 4.096 elementi per lato contiene quasi 16,8 milioni di coefficienti. LoRA può parametrizzarne la correzione con due matrici sottili di rango otto: in tutto 65.536 valori addestrabili. La matrice di partenza rimane congelata. Si restringe lo spazio degli aggiornamenti possibili, senza dover riaddestrare ogni coefficiente di quel livello."
+      ],
+      "takeaway": "Una correzione di rango otto usa 256 volte meno parametri.",
+      "basis": "Hu et al., LoRA, §4.1 realmente consultato. Conteggio originale: 4096² contro 2×4096×8, bias e fattore di scala esclusi. Non stima la memoria totale né garantisce qualità equivalente a un fine-tuning completo.",
+      "sources": [
+        {
+          "title": "Hu et al. · LoRA, §4.1",
+          "url": "https://arxiv.org/html/2106.09685v2#S4.SS1"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-lora.svg",
+        "alt": "Matrice quadrata confrontata con il prodotto di una matrice alta e stretta e una bassa e larga.",
+        "caption": "Una correzione di rango otto usa 256 volte meno parametri.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://arxiv.org/html/2106.09685v2#S4.SS1"
+      }
+    },
+    {
+      "id": "micro-20261105-vortex",
+      "topic": "Fluidodinamica",
+      "title": "Girare intorno non è girare su sé stessi",
+      "hook": "Girare intorno non è girare su sé stessi",
+      "paragraphs": [
+        "In un vortice ideale, il fluido percorre cerchi, ma fuori dal centro la vorticità può essere zero. La velocità tangenziale diminuisce come uno diviso il raggio: la variazione di velocità compensa la curvatura del percorso. Seguire un’orbita e ruotare localmente sono movimenti diversi. Il centro resta una singolarità, esclusa da questa descrizione."
+      ],
+      "takeaway": "Le linee sono traiettorie; i segmenti indicano velocità diverse.",
+      "basis": "Letta la sezione Vortex Flow del testo di Oregon State. Campo ideale 2D vθ=C/r, vr=0; ωz=(1/r)d(rvθ)/dr=0 per r>0. Non è un modello valido nel nucleo viscoso reale. Disegno originale, nessuna misura.",
+      "sources": [
+        {
+          "title": "Oregon State · Potential Flows, Vortex Flow",
+          "url": "https://open.oregonstate.education/intermediate-fluid-mechanics/chapter/potential-flows/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-vortex.svg",
+        "alt": "Tre orbite concentriche con velocità tangenziale decrescente e formula del vortice irrotazionale.",
+        "caption": "Le linee sono traiettorie; i segmenti indicano velocità diverse.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://open.oregonstate.education/intermediate-fluid-mechanics/chapter/potential-flows/"
+      }
+    },
+    {
+      "id": "micro-20261105-shark",
+      "topic": "Biologia",
+      "title": "Una preda può farsi sentire elettricamente",
+      "hook": "Una preda può farsi sentire elettricamente",
+      "paragraphs": [
+        "Vicino al muso dello squalo, piccoli pori comunicano con canali pieni di gel e cellule sensoriali. Sono le ampolle di Lorenzini: permettono di rilevare deboli campi elettrici prodotti dagli organismi. Nella fase finale della caccia, questo senso può aiutare a localizzare una preda nascosta sotto la sabbia, dove la vista offre poche indicazioni."
+      ],
+      "takeaway": "Dal poro sulla pelle alle cellule sensoriali.",
+      "basis": "Letta la descrizione anatomica e funzionale del Department of Land and Natural Resources delle Hawaii. Schema originale qualitativo: non rappresenta una particolare specie né la distribuzione esatta dei pori.",
+      "sources": [
+        {
+          "title": "Hawaiʻi DLNR · Shark senses",
+          "url": "https://dlnr.hawaii.gov/sharks/about-sharks/senses/"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-shark.svg",
+        "alt": "Sezione schematica con poro, canale pieno di gel, cellule sensoriali e fibra nervosa.",
+        "caption": "Dal poro sulla pelle alle cellule sensoriali.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://dlnr.hawaii.gov/sharks/about-sharks/senses/"
+      }
+    },
+    {
+      "id": "micro-20261105-fem",
+      "topic": "FEM",
+      "title": "Il triangolo ha una sola pendenza",
+      "hook": "Il triangolo ha una sola pendenza",
+      "paragraphs": [
+        "Assegna tre valori ai vertici di un triangolo FEM lineare: dentro l’elemento, la superficie interpolata è un piano. Il suo gradiente resta quindi costante. Per una temperatura, il flusso conduttivo sarà costante nello stesso triangolo se anche la conducibilità è uniforme. Un campo curvo richiede più elementi oppure funzioni di ordine superiore."
+      ],
+      "takeaway": "Tre valori nodali determinano un gradiente costante.",
+      "basis": "DefElement, elemento di Lagrange su triangolo, grado 1: spazio P1 e valori ai vertici. Conseguenza derivata esplicitamente: u=a+bx+cy. Esempio adimensionale u=x+2y sul triangolo di riferimento; Fourier con k costante per l’applicazione termica.",
+      "sources": [
+        {
+          "title": "DefElement · Lagrange",
+          "url": "https://defelement.org/elements/lagrange.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-fem.svg",
+        "alt": "Triangolo con valori 0, 1 e 2 ai vertici e isolinee rette e parallele.",
+        "caption": "Tre valori nodali determinano un gradiente costante.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://defelement.org/elements/lagrange.html"
+      }
+    },
+    {
+      "id": "micro-20261105-oxygen",
+      "topic": "Bioprocessi",
+      "title": "Più ossigeno c’è, più piano entra",
+      "hook": "Più ossigeno c’è, più piano entra",
+      "paragraphs": [
+        "Con kLa uguale a dieci all’ora e saturazione a 8 mg/L, una vasca a 2 mg/L riceve ossigeno al ritmo di 60 mg/L ogni ora. A 7 mg/L ne riceve soltanto dieci. A parità di condizioni, avvicinarsi alla saturazione riduce la forza motrice: lo stesso sistema di aerazione trasferisce sempre meno ossigeno."
+      ],
+      "takeaway": "La differenza dalla saturazione governa il trasferimento.",
+      "basis": "Consultata la sezione Calculation of kLa di Eppendorf: modello dinamico senza consumo. Esempio analitico originale OTR=kLa(C*−C), concentrazioni uniformi e parametri costanti. Nessun valore attribuito a un prodotto o esperimento; l’eventuale consumo cellulare va sottratto nel bilancio.",
+      "sources": [
+        {
+          "title": "Eppendorf · Measuring kLa",
+          "url": "https://www.eppendorf.com/nl-en/lab-academy/applied-industries/bioprocessing/measuring-the-kla-of-cell-culture-bioreactors/"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-oxygen.svg",
+        "alt": "Retta decrescente da 80 mg/L/h a concentrazione zero fino a zero alla saturazione di 8 mg/L.",
+        "caption": "La differenza dalla saturazione governa il trasferimento.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.eppendorf.com/nl-en/lab-academy/applied-industries/bioprocessing/measuring-the-kla-of-cell-culture-bioreactors/"
+      }
+    },
+    {
+      "id": "micro-20261105-venus",
+      "topic": "Spazio",
+      "title": "Le nuvole sorpassano il pianeta",
+      "hook": "Le nuvole sorpassano il pianeta",
+      "paragraphs": [
+        "Queste striature appartengono alle nubi alte di Venere, non alla superficie. Le nubi compiono il giro del pianeta in circa quattro giorni e mezzo, mentre il suolo impiega circa 243 giorni terrestri per ruotare una volta. L’atmosfera corre quindi molto più rapidamente del mondo sottostante. La foto rende visibili strutture di quella circolazione, con colori ricostruiti da filtri diversi."
+      ],
+      "takeaway": "Venere in falsi colori: le striature sono nubi alte.",
+      "basis": "NASA/JPL, PIA23791: descrizione delle nubi e della superrotazione. Dati Mariner 10 del 7–8 febbraio 1974, elaborazione Kevin M. Gill. Composito in falsi colori arancio/ultravioletto; variante a contrasto aumentato, ritagliata e ridimensionata. Riuso secondo JPL Image Use Policy, nessun endorsement.",
+      "sources": [
+        {
+          "title": "NASA/JPL · Venus from Mariner 10",
+          "url": "https://science.nasa.gov/photojournal/venus-from-mariner-10/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-venus.jpg",
+        "alt": "Disco di Venere con bande e strutture spiraliformi delle nubi.",
+        "caption": "Venere in falsi colori: le striature sono nubi alte.",
+        "credit": "NASA/JPL-Caltech · elaborazione Kevin M. Gill",
+        "license": "Riuso autorizzato · https://www.jpl.nasa.gov/jpl-image-use-policy/",
+        "source": "https://science.nasa.gov/photojournal/venus-from-mariner-10/"
+      }
+    },
+    {
+      "id": "micro-20261105-entropy",
+      "topic": "Informazione",
+      "title": "L’incertezza vive a metà",
+      "hook": "L’incertezza vive a metà",
+      "paragraphs": [
+        "Una moneta che dà sempre testa non sorprende: il suo esito ha entropia zero. Se testa e croce sono equiprobabili, l’entropia raggiunge un bit. Rendere un esito rarissimo aumenta la sorpresa quando compare, ma riduce l’incertezza media della moneta: quasi sempre sappiamo già che cosa aspettarci. La sorpresa del singolo evento e la media non coincidono."
+      ],
+      "takeaway": "Il massimo si trova quando i due esiti sono equiprobabili.",
+      "basis": "SciPy, definizione di entropia di Shannon. Curva originale H(p)=−p log₂p−(1−p)log₂(1−p), con 0 log 0=0. Moneta di Bernoulli illustrativa, non misure né valutazione di un modello linguistico.",
+      "sources": [
+        {
+          "title": "SciPy · Shannon entropy",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-entropy.svg",
+        "alt": "Curva simmetrica dell’entropia binaria: zero agli estremi e un bit a probabilità un mezzo.",
+        "caption": "Il massimo si trova quando i due esiti sono equiprobabili.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html"
+      }
+    },
+    {
+      "id": "micro-20261105-osmosis",
+      "topic": "Processi e membrane",
+      "title": "Una soluzione può sostenere una pressione",
+      "hook": "Una soluzione può sostenere una pressione",
+      "paragraphs": [
+        "Una membrana lascia passare acqua ma trattiene il soluto. Il flusso netto verso la soluzione può essere fermato applicando pressione da quel lato. Per un soluto non dissociato a 0,10 mol/L e 298 K, il modello ideale dà circa 2,48 bar: una pressione apprezzabile nasce anche da una soluzione piuttosto diluita."
+      ],
+      "takeaway": "Pressione osmotica: il controbilanciamento del flusso netto.",
+      "basis": "OpenStax Chemistry 2e, §11.4, osmosi e pressione osmotica. Calcolo originale Π=cRT con c=100 mol/m³ e R=8,314 J/(mol K). Soluzione diluita ideale, soluto non elettrolita; non una previsione per acqua di mare.",
+      "sources": [
+        {
+          "title": "OpenStax · Chemistry 2e, §11.4",
+          "url": "https://openstax.org/books/chemistry-2e/pages/11-4-colligative-properties"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-osmosis.svg",
+        "alt": "Due compartimenti con membrana selettiva: acqua pura e soluzione, con formula e parametri.",
+        "caption": "Pressione osmotica: il controbilanciamento del flusso netto.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://openstax.org/books/chemistry-2e/pages/11-4-colligative-properties"
+      }
+    },
+    {
+      "id": "micro-20261105-woodblock",
+      "topic": "Arte e tecnica",
+      "title": "Ogni colore ritrova lo stesso foglio",
+      "hook": "Ogni colore ritrova lo stesso foglio",
+      "paragraphs": [
+        "Per stampare un’immagine giapponese a più colori si usavano matrici separate, una per colore. Il foglio doveva tornare ogni volta nella stessa posizione: due intagli sul bordo del blocco fornivano i riferimenti di allineamento. La precisione dell’immagine nasceva così anche da una geometria quasi invisibile, ripetuta a ogni passaggio sotto le mani dello stampatore."
+      ],
+      "takeaway": "Una matrice lignea conservata al Metropolitan Museum.",
+      "basis": "Letto il saggio del Department of Asian Art del Met sulla stampa ukiyo-e. Foto: matrice lignea da un disegno di Utagawa Toyokuni I, XVIII–XIX secolo, inv. 49.46.1. La foto documenta il tipo di matrice; gli intagli di registro non sono identificati su questo esemplare.",
+      "sources": [
+        {
+          "title": "The Met · Woodblock Prints in the Ukiyo-e Style",
+          "url": "https://www.metmuseum.org/essays/woodblock-prints-in-the-ukiyo-e-style"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-woodblock.jpg",
+        "alt": "Matrice di legno intagliato con contorni e testo giapponese in rilievo.",
+        "caption": "Una matrice lignea conservata al Metropolitan Museum.",
+        "credit": "The Metropolitan Museum of Art · Gift of Mrs. Howard Mansfield, 1949",
+        "license": "CC0 · https://creativecommons.org/publicdomain/zero/1.0/",
+        "source": "https://www.metmuseum.org/art/collection/search/53814"
+      }
+    },
+    {
+      "id": "micro-20261105-light",
+      "topic": "Spettroscopia",
+      "title": "Due strati non sottraggono la stessa luce",
+      "hook": "Due strati non sottraggono la stessa luce",
+      "paragraphs": [
+        "Uno strato di soluzione lascia passare il 10% della luce incidente. Aggiungi un secondo strato identico: passa il 10% di quel residuo, cioè l’1% della luce iniziale. L’assorbanza raddoppia, ma la trasmissione si moltiplica. Per questo una lettura di assorbanza pari a due non significa «il doppio della percentuale assorbita»."
+      ],
+      "takeaway": "10% dopo un centimetro; 1% dopo due.",
+      "basis": "Shimadzu, definizione A=−log₁₀(I/I₀)=εbc e proporzionalità al cammino. Esempio originale: εc=1 cm⁻¹, mezzo omogeneo, luce monocromatica e legge applicabile; riflessione e scattering trascurati. Curva analitica T=10^(−l/cm).",
+      "sources": [
+        {
+          "title": "Shimadzu · Beer–Lambert",
+          "url": "https://www.ssi.shimadzu.com/service-support/faq/uv-vis/light-and-theory/10/index.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-light.svg",
+        "alt": "Curva esponenziale della trasmissione in percentuale lungo una soluzione assorbente.",
+        "caption": "10% dopo un centimetro; 1% dopo due.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.ssi.shimadzu.com/service-support/faq/uv-vis/light-and-theory/10/index.html"
+      }
+    },
+    {
+      "id": "micro-20261105-delay",
+      "topic": "Controllo",
+      "title": "Un secondo può essere un quarto di giro",
+      "hook": "Un secondo può essere un quarto di giro",
+      "paragraphs": [
+        "Una sinusoide con periodo di quattro secondi viene riprodotta identica un secondo più tardi: l’ampiezza non cambia, ma la fase arretra di 90 gradi. Con un’oscillazione più rapida, lo stesso ritardo pesa ancora di più. Nel controllo, un trasporto lento può quindi alterare il tempismo della correzione senza attenuare direttamente il segnale."
+      ],
+      "takeaway": "Le due onde hanno uguale ampiezza e un secondo di distanza.",
+      "basis": "MathWorks, risposta in frequenza dei sistemi con ritardo. Esempio analitico originale G(s)=exp(−sτ), τ=1 s, fase −ωτ. Periodo 4 s: ω=π/2 rad/s. Nessuna simulazione di stabilità chiusa né promessa di tuning.",
+      "sources": [
+        {
+          "title": "MathWorks · Frequency response with time delay",
+          "url": "https://www.mathworks.com/help/control/ug/frequency-response-data-frd-model-with-time-delay.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-delay.svg",
+        "alt": "Due sinusoidi di periodo quattro secondi, una traslata di un secondo e colorata in arancione.",
+        "caption": "Le due onde hanno uguale ampiezza e un secondo di distanza.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.mathworks.com/help/control/ug/frequency-response-data-frd-model-with-time-delay.html"
+      }
+    },
+    {
+      "id": "micro-20261105-meno",
+      "topic": "Filosofia",
+      "title": "Il lato doppio inganna",
+      "hook": "Il lato doppio inganna",
+      "paragraphs": [
+        "Per ottenere un quadrato di area doppia, il ragazzo interrogato da Socrate propone di raddoppiare il lato. Il disegno lo smentisce: l’area diventa quattro volte maggiore. La diagonale del quadrato iniziale offre invece il lato giusto. Nel Menone, una risposta sicura lascia posto a un problema riconosciuto: accorgersi dell’errore rende finalmente possibile cercare."
+      ],
+      "takeaway": "La losanga colorata occupa metà del quadrato esterno.",
+      "basis": "Platone, Menone, episodio geometrico del giovane schiavo, traduzione inglese di Benjamin Jowett realmente consultata. Rielaborazione autonoma italiana breve; figura originale. Non presenta la dottrina della reminiscenza come risultato scientifico.",
+      "sources": [
+        {
+          "title": "Platone · Menone, traduzione di Benjamin Jowett",
+          "url": "https://www.gutenberg.org/files/1643/1643-h/1643-h.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-meno.svg",
+        "alt": "Quattro quadrati unitari con diagonali che delimitano al centro un quadrato di area due.",
+        "caption": "La losanga colorata occupa metà del quadrato esterno.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.gutenberg.org/files/1643/1643-h/1643-h.htm"
+      }
+    },
+    {
+      "id": "micro-20261105-thread",
+      "topic": "Concorrenza",
+      "title": "Una lettura lenta può cambiare corsia",
+      "hook": "Una lettura lenta può cambiare corsia",
+      "paragraphs": [
+        "Una funzione legge un file con un’API bloccante. Chiamarla direttamente dentro una coroutine può fermare l’intero event loop durante l’attesa. Con asyncio.to_thread, quella funzione gira invece in un thread separato: il loop resta disponibile per altre coroutine. Non hai reso il disco più rapido; hai cambiato chi deve aspettarlo."
+      ],
+      "takeaway": "I segmenti blu rappresentano altri lavori del loop.",
+      "basis": "Documentazione Python, Running in Threads, letta. Esempio originale I/O-bound. In CPython con GIL, questo non implica parallelismo dei calcoli Python puri; estensioni che rilasciano il GIL e build senza GIL richiedono considerazioni distinte.",
+      "sources": [
+        {
+          "title": "Python · asyncio.to_thread",
+          "url": "https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-thread.svg",
+        "alt": "Due corsie temporali: il thread esegue una lunga lettura mentre il loop svolge brevi attività.",
+        "caption": "I segmenti blu rappresentano altri lavori del loop.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread"
+      }
+    },
+    {
+      "id": "micro-20261105-dns",
+      "topic": "Reti",
+      "title": "Il nome ricorda per cinque minuti",
+      "hook": "Il nome ricorda per cinque minuti",
+      "paragraphs": [
+        "Un resolver riceve un indirizzo DNS con TTL di 300 secondi. Dopo due minuti, la copia ha ancora tre minuti di validità: le richieste intermedie non le regalano una nuova vita. La cache riduce le consultazioni, ma conserva temporaneamente una risposta precedente. Il TTL governa questa memoria distribuita, non la velocità con cui cambia il server originale."
+      ],
+      "takeaway": "Un TTL di 300 secondi scende a 180 dopo due minuti.",
+      "basis": "RFC 1035, §§3.2.1 e 4.1.3, intervallo di caching in secondi. Esempio ordinario senza refresh anticipato o estensioni serve-stale. Non è una garanzia di propagazione globale né un timer del browser.",
+      "sources": [
+        {
+          "title": "RFC 1035 · §§3.2.1 e 4.1.3",
+          "url": "https://www.rfc-editor.org/rfc/rfc1035.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-dns.svg",
+        "alt": "Linea temporale dalle 12:00 alle 12:05 con TTL residuo decrescente.",
+        "caption": "Un TTL di 300 secondi scende a 180 dopo due minuti.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.rfc-editor.org/rfc/rfc1035.html"
+      }
+    },
+    {
+      "id": "micro-20261105-pascal",
+      "topic": "Matematica e forme",
+      "title": "I numeri pari aprono triangoli",
+      "hook": "I numeri pari aprono triangoli",
+      "paragraphs": [
+        "Colora di scuro i numeri dispari del triangolo di Pascal e lascia chiari quelli pari. Compaiono triangoli vuoti dentro triangoli più grandi. Ogni numero nasce dalla somma dei due sopra: guardando soltanto la parità, due dispari tornano pari. La stessa operazione XOR compare nella regola 90: aritmetica e automi possono disegnare la stessa struttura."
+      ],
+      "takeaway": "Trentadue righe: scuro significa dispari.",
+      "basis": "Eric W. Weisstein, Rule 90, Wolfram MathWorld: collegamento esplicito a Pascal modulo 2 e al triangolo di Sierpiński. Calcolo e visual originali dai coefficienti binomiali. Non estratto da What Ultimately Is There né riproduzione dei grafici del sito.",
+      "sources": [
+        {
+          "title": "Eric W. Weisstein · Rule 90, Wolfram MathWorld",
+          "url": "https://mathworld.wolfram.com/Rule90.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-pascal.svg",
+        "alt": "Triangolo di Pascal modulo due con triangoli vuoti annidati di dimensioni diverse.",
+        "caption": "Trentadue righe: scuro significa dispari.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://mathworld.wolfram.com/Rule90.html"
+      }
+    },
+    {
+      "id": "micro-20261105-savepoint",
+      "topic": "Database",
+      "title": "Puoi tornare soltanto fino a qui",
+      "hook": "Puoi tornare soltanto fino a qui",
+      "paragraphs": [
+        "Una transazione registra A, crea un savepoint e poi registra B. Se B è sbagliato, ROLLBACK TO riporta il database al punto salvato: A resta in attesa del commit, B viene annullato. Il savepoint permette di scartare una parte del lavoro. Non equivale a pubblicare A in anticipo: la transazione complessiva è ancora aperta."
+      ],
+      "takeaway": "Conservare A non significa averlo già confermato.",
+      "basis": "PostgreSQL, tutorial Transactions, sezione savepoints. Esempio originale con modifiche A e B. Il disegno riguarda cambiamenti del database: non annulla automaticamente chiamate esterne, messaggi o altri effetti fuori dalla transazione.",
+      "sources": [
+        {
+          "title": "PostgreSQL · Transactions and savepoints",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-savepoint.svg",
+        "alt": "Sequenza di una modifica A, savepoint S, modifica B e percorso di ritorno a S.",
+        "caption": "Conservare A non significa averlo già confermato.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+      }
+    },
+    {
+      "id": "micro-20261105-seed",
+      "topic": "Natura",
+      "title": "Un seme si costruisce un vortice",
+      "hook": "Un seme si costruisce un vortice",
+      "paragraphs": [
+        "La samara dell’acero scende ruotando. Sopra il bordo anteriore della sua ala si forma un vortice che aumenta la portanza e rallenta la caduta. I ricercatori lo hanno studiato su modelli ingranditi e verificato su semi reali. Restare in aria più a lungo offre al vento più tempo per trasportare il seme lontano dall’albero."
+      ],
+      "takeaway": "Ala e vortice nella caduta in autorotazione.",
+      "basis": "Lentink, Dickson, van Leeuwen e Dickinson, Science 324 (2009), abstract primario e comunicato Caltech letti. Illustrazione originale qualitativa: distingue ala e sezione; nessuna curva sperimentale né copia della figura protetta.",
+      "sources": [
+        {
+          "title": "Lentink et al. · Leading-edge vortices, 2009",
+          "url": "https://authors.library.caltech.edu/records/aa4ac-0vp85"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-seed.svg",
+        "alt": "Samara d’acero e sezione alare con un vortice disegnato sopra il bordo anteriore.",
+        "caption": "Ala e vortice nella caduta in autorotazione.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://authors.library.caltech.edu/records/aa4ac-0vp85"
+      }
+    },
+    {
+      "id": "micro-20261105-transit",
+      "topic": "Astronomia",
+      "title": "Il pianeta doppio oscura quattro volte",
+      "hook": "Il pianeta doppio oscura quattro volte",
+      "paragraphs": [
+        "Un pianeta passa davanti a una stella e ne copre una piccola parte. Se il suo raggio raddoppia, l’area nascosta quadruplica: nell’esempio, il calo di luce passa dall’1% al 4%. Il transito misura così un rapporto di dimensioni. Per ricavare il raggio del pianeta, serve conoscere anche quello della stella."
+      ],
+      "takeaway": "Due raggi planetari diversi davanti alla stessa stella.",
+      "basis": "NASA Exoplanet Archive, Transit Algorithms, sezione Transit Depth: δ=(Rp/R*)². Curve originali da sovrapposizione di dischi, transito centrale, stella a brillanza uniforme, velocità proiettata costante. Ignorati oscuramento al bordo, atmosfera e luce del pianeta; nessun dato osservativo.",
+      "sources": [
+        {
+          "title": "NASA Exoplanet Archive · Transit Depth",
+          "url": "https://exoplanetarchive.ipac.caltech.edu/docs/transit/transit_algorithms.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261105-transit.svg",
+        "alt": "Curve di luce teoriche: pianeta con raggio un decimo della stella produce calo 1%, con un quinto produce 4%.",
+        "caption": "Due raggi planetari diversi davanti alla stessa stella.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://exoplanetarchive.ipac.caltech.edu/docs/transit/transit_algorithms.html"
+      }
+    }
+  ]
+}
