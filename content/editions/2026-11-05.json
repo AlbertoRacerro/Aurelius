@@ -8,7 +8,7 @@
       "id": "philosophy-20261105",
       "title": "La rotta non è una linea retta",
       "kind": "evergreen",
-      "basis": "Ralph Waldo Emerson, Self-Reliance (1841), passaggi iniziali sul pensiero respinto e il lavoro proprio, poi il nucleo sulla foolish consistency fino all’immagine della nave. Nuova traduzione italiana selettiva dall’inglese, con tagli, raccordi minimi e chiarimenti incorporati; non traduzione integrale del saggio. Conservate prima persona, domande e apostrofi. Testo originale in pubblico dominio negli USA e in Italia/UE e Regno Unito: Emerson morì nel 1882. Dall’edizione Merrill 1907 si usa soltanto Emerson, non l’apparato di Edna H. L. Turpin né traduzioni moderne.",
+      "basis": "Ralph Waldo Emerson, Self-Reliance (1841). Nuova traduzione italiana selettiva: il pensiero respinto, il lavoro proprio e la coerenza che impedisce di cambiare. Tagli e raccordi minimi; chiarimenti incorporati. Dall’originale inglese in pubblico dominio, senza ricorrere a traduzioni moderne.",
       "sections": [
         {
           "heading": "Il pensiero che ci torna da fuori",
@@ -38,7 +38,7 @@
         {
           "title": "Emerson — Self-Reliance, testo inglese consultato",
           "url": "https://www.gutenberg.org/files/16643/16643-h/16643-h.htm",
-          "edition": "Saggio del 1841 nell’edizione Essays, Charles E. Merrill, 1907; selezionati i passaggi indicati in basis.",
+          "edition": "Saggio del 1841 nell’edizione Essays, Charles E. Merrill, 1907; selezionati i passaggi indicati in basis. Ralph Waldo Emerson, Self-Reliance (1841), passaggi iniziali sul pensiero respinto e il lavoro proprio, poi il nucleo sulla foolish consistency fino all’immagine della nave. Nuova traduzione italiana selettiva dall’inglese, con tagli, raccordi minimi e chiarimenti incorporati; non traduzione integrale del saggio. Conservate prima persona, domande e apostrofi. Testo originale in pubblico dominio negli USA e in Italia/UE e Regno Unito: Emerson morì nel 1882. Dall’edizione Merrill 1907 si usa soltanto Emerson, non l’apparato di Edna H. L. Turpin né traduzioni moderne.",
           "accessed": "2026-11-05"
         },
         {
@@ -66,7 +66,7 @@
       "id": "books-20261105",
       "title": "Un occhio nello stomaco",
       "kind": "evergreen",
-      "basis": "Edwin Abbott Abbott, Flatland: A Romance of Many Dimensions, seconda edizione riveduta del 1884. Nuova traduzione italiana selettiva dall’inglese delle sezioni 16–17, preceduta da poche righe dalla sezione 1; tagli interni, intestazioni editoriali e raccordo iniziale minimo. Conservati il narratore Quadrato, dialoghi, ironia e chiusura della sezione 17. Omesse digressioni su Lineland, la visibilità di spessori infinitesimi e parte della gerarchia sociale; la deferenza verso i Cerchi appartiene alla società satirica del romanzo. Non impiegate traduzioni italiane moderne. Originale del 1884 in pubblico dominio negli USA e in Italia/UE e Regno Unito; autore morto nel 1926. Non si riproducono apparati moderni.",
+      "basis": "Edwin Abbott Abbott, Flatland: A Romance of Many Dimensions (1884). Nuova traduzione italiana selettiva delle sezioni 16–17, con breve apertura dalla sezione 1. Tagli interni e raccordo iniziale minimo; intestazioni editoriali. Conservati narratore, dialoghi e ironia. Originale inglese in pubblico dominio; riferimenti e precisazioni nelle fonti.",
       "sections": [
         {
           "heading": "Un perfetto Cerchio",
@@ -164,7 +164,7 @@
         {
           "title": "Abbott — Flatland, originale inglese consultato",
           "url": "https://www.gutenberg.org/cache/epub/201/pg201-images.html",
-          "edition": "Seconda edizione riveduta, 1884: sezione 1 e sezioni 16–17 lette; selezione tradotta, senza riproduzione delle illustrazioni.",
+          "edition": "Seconda edizione riveduta, 1884: sezione 1 e sezioni 16–17 lette; selezione tradotta, senza riproduzione delle illustrazioni. Edwin Abbott Abbott, Flatland: A Romance of Many Dimensions, seconda edizione riveduta del 1884. Nuova traduzione italiana selettiva dall’inglese delle sezioni 16–17, preceduta da poche righe dalla sezione 1; tagli interni, intestazioni editoriali e raccordo iniziale minimo. Conservati il narratore Quadrato, dialoghi, ironia e chiusura della sezione 17. Omesse digressioni su Lineland, la visibilità di spessori infinitesimi e parte della gerarchia sociale; la deferenza verso i Cerchi appartiene alla società satirica del romanzo. Non impiegate traduzioni italiane moderne. Originale del 1884 in pubblico dominio negli USA e in Italia/UE e Regno Unito; autore morto nel 1926. Non si riproducono apparati moderni.",
           "accessed": "2026-11-05"
         },
         {
@@ -200,7 +200,7 @@
       "kind": "reduced",
       "event_date": "2026-11-04",
       "publication_date": "2026-11-04",
-      "basis": "Radar ridotto a sette notizie distinte: selezione senza riempitivi nella finestra 4 novembre 2026 ore 05:02–5 novembre ore 05:02, Europe/Rome. Controllati gli eventi/versioni delle edizioni disponibili degli ultimi 30 giorni. Ricercati anche politica italiana/europea, geopolitica ed energia: escluse anticipazioni senza conferma, pagine rilanciate con fatti precedenti e annunci dalla data contraddittoria. Ogni scheda identifica la propria fonte nei dettagli; risultati dei produttori attribuiti. Le implicazioni operative sono valutazioni editoriali. Non è un confronto indipendente fra modelli.",
+      "basis": "Sette notizie nella finestra 4 novembre, 05:02–5 novembre, 05:02, Europe/Rome. Edizione ridotta: altre piste non offrivano novità recenti sufficientemente verificabili. Risultati dei produttori attribuiti; provvedimenti annunciati distinti da quelli approvati. Fonti e date delle singole notizie in fondo.",
       "sections": [
         {
           "heading": "Images 2.6 — OpenAI",
