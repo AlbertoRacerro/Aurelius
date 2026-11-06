@@ -1,0 +1,373 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "updated_at": "2026-11-06T04:05:02.374263+00:00",
+  "articles": [
+    {
+      "slot": "philosophy",
+      "id": "philosophy-20261106",
+      "title": "Il chiasso di una casa silenziosa",
+      "kind": "evergreen",
+      "basis": "Seneca, Lettere a Lucilio, LVI: il frastuono delle terme (§§1–5), la veglia nella casa silenziosa e il ritiro (§§7–9), il congedo (§15). Nuova traduzione italiana selettiva dal latino in pubblico dominio, con tagli, titoli e un ultimo paragrafo di riflessione editoriale.",
+      "sections": [
+        {
+          "heading": "Abito proprio sopra le terme",
+          "paragraphs": [
+            "Che io possa morire, Lucilio, se a chi si ritira a studiare il silenzio è necessario quanto sembra. Da ogni parte mi assedia un fracasso diverso: abito proprio sopra le terme. Figùrati tutto ciò che può farti prendere in odio le tue orecchie. I più robusti si esercitano agitando pesi di piombo. Faticano, o fingono di faticare; quando lasciano uscire il fiato trattenuto, sento gemiti, sibili e il respiro più aspro che si possa immaginare. Se invece uno si accontenta di farsi ungere, sento la mano battergli sulla spalla: il suono cambia a seconda che arrivi piatta o a coppa.",
+            "Aggiungi un litigioso, un ladro colto sul fatto e uno a cui piace ascoltare la propria voce nel bagno. Aggiungi quelli che si tuffano nella piscina sollevando un gran colpo d’acqua. C’è anche il depilatore: per farsi notare alza di continuo la voce, sottile e stridula; tace soltanto quando strappa i peli sotto le ascelle e costringe un altro a gridare per lui. Poi il venditore di bevande, quello delle salsicce, quello delle focacce: ciascuno ha la sua cantilena per annunciare la merce.",
+            "«Devi essere di ferro», mi dici, «oppure sordo, se la tua mente resta ferma in mezzo a tanto chiasso». Eppure quel frastuono mi disturba quanto il moto di un’onda o l’acqua che precipita. Una voce mi distrae più di un rumore: il rumore riempie e percuote le orecchie; la voce si porta dietro il pensiero. Anche un suono che smette e ricomincia mi dà più fastidio di uno continuo.\n"
+          ]
+        },
+        {
+          "heading": "La casa in punta di piedi",
+          "paragraphs": [
+            "Costringo la mente a tenersi occupata di sé e a non correre dietro a ciò che accade fuori. Che fuori risuoni ogni cosa, purché dentro il desiderio e la paura non litighino, purché l’avidità e il gusto dello spreco non si tormentino a vicenda. A che serve il silenzio di un’intera contrada, se dentro fanno chiasso le passioni?",
+            "Guarda quell’uomo che cerca il sonno nel silenzio di una casa spaziosa. Tutta la servitù tace perché nessun suono gli dia fastidio. Chi gli si avvicina posa i piedi con cautela. E lui? Si volta da un lato e dall’altro, cerca un po’ di sonno fra le sue inquietudini e si lamenta di avere udito ciò che non ha udito. Quale credi che sia la causa? È la sua mente che gli fa rumore. Non crederla quieta soltanto perché il corpo è disteso.",
+            "Talvolta ci ritiriamo dalla vita pubblica, stanchi di un posto che non ci ha dato ciò che speravamo. E nel nascondiglio in cui ci hanno spinto la paura e la stanchezza l’ambizione riprende a crescere. Non l’avevamo estirpata: era soltanto stanca, o irritata perché le cose non andavano come voleva. Sembravamo in riposo; non lo eravamo.\n"
+          ]
+        },
+        {
+          "heading": "E tuttavia me ne andrò",
+          "paragraphs": [
+            "«E allora», mi domandi, «non è talvolta più comodo fare a meno del baccano?» Lo ammetto: infatti me ne andrò da qui. Volevo mettermi alla prova ed esercitarmi. Perché dovrei continuare a tormentarmi, quando Ulisse trovò per i compagni un rimedio tanto semplice perfino contro le Sirene?",
+            "È proprio l’ultima risposta a dare il giusto peso all’esperimento. Possiamo chiudere la finestra se il rumore ci impedisce di leggere: non c’è nessun merito nel lasciarla aperta. Ma se, una volta chiusa, continuiamo a discutere in mente con qualcuno che non è nemmeno nella stanza, abbiamo finalmente separato le due cose. Per il rumore della strada bastava la finestra; per quello che resta, vale la pena capire quale paura o desiderio stiamo ancora ascoltando."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Seneca · Epistulae morales, libro VI, lettera LVI",
+          "url": "https://www.thelatinlibrary.com/sen/seneca.ep6.shtml",
+          "edition": "Testo latino consultato: §§1–15. Tradotti i passaggi indicati in basis, senza riprendere traduzioni moderne. La finestra del paragrafo finale è un esempio editoriale.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Perseus Catalog · Lettere a Lucilio",
+          "url": "https://catalog.perseus.org/catalog/urn%3Acts%3AlatinLit%3Aphi1017.phi015",
+          "edition": "Scheda bibliografica dell’opera antica e dell’autore, morto nel 65 d.C. Il latino antico è in pubblico dominio in Italia/UE, Regno Unito e USA; nessuna nota critica moderna riprodotta.",
+          "accessed": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "slot": "books",
+      "id": "books-20261106",
+      "title": "Fuoco, latte, pane, legna",
+      "kind": "evergreen",
+      "basis": "Mary Wollstonecraft Shelley, Frankenstein; or, The Modern Prometheus, prima edizione del 1818, volume II, capitoli III e IV. Nuova traduzione italiana selettiva dall’originale inglese in pubblico dominio: il risveglio della creatura, il rifugio e la famiglia osservata di nascosto. Tagli, raccordi minimi e titoli editoriali; parla la creatura, rivolgendosi al proprio creatore.",
+      "sections": [
+        {
+          "heading": "Il primo fuoco",
+          "paragraphs": [
+            "Mi riesce assai difficile ricordare il principio della mia esistenza. Tutto ciò che accadde allora mi appare confuso e indistinto. Una strana moltitudine di sensazioni si impadronì di me: vedevo, toccavo, udivo e fiutavo nello stesso tempo, e passò molto prima che imparassi a distinguere l’opera di un senso da quella di un altro. Ricordo che, a poco a poco, una luce più forte cominciò a premere sui miei nervi e mi costrinse a chiudere gli occhi. L’oscurità mi turbò; ma l’avevo appena avvertita quando, come ora suppongo, riaprii gli occhi e la luce si riversò di nuovo su di me.",
+            "Camminai e, credo, discesi. Prima ero circondato da corpi oscuri e opachi, che né il tatto né lo sguardo potevano attraversare; ora potevo andare liberamente, senza incontrare ostacoli che non riuscissi a superare o ad aggirare. La luce si faceva sempre più opprimente e, stanco di camminare nel caldo, cercai un luogo dove potessi ripararmi all’ombra. Era il bosco presso Ingolstadt. Mi distesi accanto a un ruscello, finché la fame e la sete non mi destarono da quel torpore. Mangiai alcune bacche che trovai appese ai rami o cadute a terra, mi dissetai al ruscello e, distesomi di nuovo, fui vinto dal sonno.",
+            "Quando mi svegliai era buio. Sentivo freddo e, nel trovarmi così solo, provavo una specie di paura istintiva. Prima di lasciare la tua stanza, al primo sentir freddo, mi ero coperto con qualche indumento; ma non bastava a difendermi dall’umidità della notte. Ero una povera creatura misera e inerme. Non sapevo nulla, non distinguevo nulla; sentendo il dolore invadermi da ogni parte, mi sedetti e piansi.",
+            "Presto una luce mite si insinuò nel cielo, procurandomi una sensazione di piacere. Balzai in piedi e vidi levarsi fra gli alberi una forma luminosa. La guardai con una sorta di meraviglia. Si muoveva lentamente, ma illuminava il mio cammino, e ripresi a cercare bacche. Avevo ancora freddo quando, sotto un albero, trovai un gran mantello; me ne coprii e mi sedetti a terra. Non avevo in mente alcuna idea distinta. Sentivo la luce, la fame, la sete e il buio; innumerevoli suoni mi risuonavano nelle orecchie, e da ogni parte mi venivano incontro odori diversi. La luna splendente era il solo oggetto che riuscissi a distinguere, e vi tenevo fisso lo sguardo con piacere.",
+            "Passarono diversi giorni e diverse notti. Il disco della luna si era già molto assottigliato quando cominciai a distinguere una sensazione dall’altra. Vedevo ormai chiaramente il ruscello che mi dava da bere e gli alberi che mi riparavano con le loro foglie. Che gioia scoprire che un suono piacevole, che spesso mi raggiungeva, usciva dalla gola di quei piccoli animali alati che tante volte mi avevano tolto la luce passando davanti ai miei occhi! Cercavo talora di imitare il loro canto, senza riuscirvi. A volte desideravo esprimere a modo mio ciò che sentivo; ma i suoni rozzi e inarticolati che mi uscivano di bocca mi atterrivano e tornavo a tacere.",
+            "La luna scomparve e riapparve, più esile, mentre ancora dimoravo nel bosco. Le mie sensazioni si erano fatte distinte e ogni giorno acquistavo qualche idea nuova. Imparai a riconoscere l’insetto dall’erba e un’erba dall’altra. Il passero, scoprii, non aveva che note aspre; dolci e seducenti erano invece quelle del merlo e del tordo.",
+            "Un giorno, oppresso dal freddo, trovai un fuoco abbandonato da alcuni mendicanti di passaggio. Il calore mi diede una gioia così grande che, in quell’impeto, infilai una mano nella brace viva; subito la ritrassi con un grido di dolore. Come mi parve strano che una medesima causa potesse produrre effetti tanto contrari! Esaminai ciò di cui era fatto il fuoco e, con mio sommo piacere, scoprii che era legno. Raccolsi in fretta alcuni rami; ma erano bagnati e non volevano bruciare. Me ne afflissi e rimasi seduto a guardare. I rami umidi che avevo messo vicino al calore si asciugarono e presero fuoco. Ci riflettei; toccando i vari rami scoprii la causa, e mi diedi a raccogliere molta legna, per farla seccare e avere di che alimentare il fuoco.",
+            "Quando venne la notte e con essa il sonno, temetti grandemente che il mio fuoco si spegnesse. Lo coprii con cura di legna secca e foglie, vi posai sopra alcuni rami umidi e, steso il mantello, mi addormentai a terra. Al mattino la mia prima cura fu di andare a vedere il fuoco. Lo scoprii e una brezza leggera fece subito risorgere la fiamma. Osservai anche questo e fabbricai con alcuni rami una specie di ventaglio, con cui ravvivavo le braci quando erano sul punto di spegnersi.",
+            "Al calare della notte mi accorsi, con piacere, che il fuoco dava luce oltre che calore. Trovai anche che alcuni avanzi lasciati dai viandanti erano stati arrostiti, e avevano un sapore assai più gradevole delle bacche che coglievo. Provai dunque a cuocere allo stesso modo il mio cibo, mettendolo sulle braci. Le bacche si guastavano; le noci e le radici, invece, acquistavano sapore.\n"
+          ]
+        },
+        {
+          "heading": "La casa vista da una fessura",
+          "paragraphs": [
+            "Il cibo, tuttavia, divenne scarso. Spesso trascorrevo l’intera giornata a cercare invano qualche ghianda con cui placare i morsi della fame. Decisi di lasciare quel luogo e di cercarne uno in cui mi fosse più facile soddisfare i miei pochi bisogni. Ciò che più rimpiangevo, nel partire, era il fuoco: l’avevo avuto per caso e non sapevo accenderne un altro. Passai ore a considerare seriamente quella difficoltà. Infine dovetti rinunciare; mi avvolsi nel mantello e attraversai il bosco verso il sole che tramontava.",
+            "Vagai per tre giorni, poi arrivai in aperta campagna. La notte precedente era caduta molta neve: i campi erano d’un bianco uniforme, triste a vedersi, e i miei piedi si gelavano a contatto con quella sostanza fredda e umida. Cercavo cibo e riparo quando scorsi una capanna su un rialzo. La porta era aperta; entrai. Un vecchio, seduto vicino al fuoco, preparava la colazione. Si volse al rumore e, vedendomi, mandò un grido, uscì e corse per i campi a una velocità di cui, a giudicare dal suo aspetto, non lo avrei creduto capace. La sua fuga mi stupì. Quanto alla capanna, ne fui incantato. Né la neve né la pioggia vi potevano penetrare e il suolo era asciutto: dopo le mie sofferenze, mi apparve un rifugio divino. Divorai il pane, il formaggio e il latte che il vecchio aveva lasciato; assaggiai anche il vino, che però non mi piacque. Poi mi distesi nella paglia e mi addormentai.",
+            "Ripartii a mezzogiorno; verso sera giunsi a un villaggio. Che spettacolo meraviglioso! Ammiravo a turno le capanne, le casette più ordinate e le case imponenti. Gli ortaggi nei giardini, il latte e il formaggio alle finestre mi tentavano. Entrai in una delle case più belle; ma avevo appena varcato la soglia quando i bambini si misero a gridare e una donna svenne. L’intero villaggio fu in subbuglio. Alcuni fuggirono, altri mi assalirono; pesto per le pietre e per tutto ciò che mi avevano scagliato contro, scappai in aperta campagna e mi rifugiai in un basso tugurio. Era di legno, tanto basso che riuscivo a malapena a starvi seduto diritto. Il vento entrava da innumerevoli fessure, ma la terra era asciutta e vi ero al riparo dalla neve, dalla pioggia e, soprattutto, dalla barbarie degli uomini.",
+            "All’alba uscii strisciando per esaminare la casetta a cui il tugurio era addossato. Chiusi con sassi e pezzi di legno le fessure attraverso le quali avrebbero potuto vedermi, lasciandoli però abbastanza mobili da potere uscire. Stesi sul pavimento della paglia pulita. La terra era un poco rialzata, e la vicinanza del camino della casetta rendeva il rifugio abbastanza caldo. Mi parve un paradiso, dopo i rami da cui gocciolava la pioggia e il suolo fradicio del bosco.",
+            "Stavo per spostare un’asse per andare a prendere un poco d’acqua, quando udii un passo. Guardai da una fessura. Una fanciulla passò davanti al tugurio con un secchio sul capo. Portava una rozza gonna azzurra e una giacca di tela; i capelli chiari erano intrecciati, senza ornamenti. Aveva un’aria paziente, eppure triste. Quando tornò, il secchio era in parte pieno di latte e sembrava pesarle. Un giovane dall’aspetto ancora più afflitto le andò incontro. Pronunciò qualche suono con aria malinconica, le tolse il secchio dal capo e lo portò in casa. Lei gli andò dietro e li persi di vista.",
+            "Scoprii poi che dalla mia tana si poteva guardare dentro casa. C’era stata una finestra, i cui vetri erano stati sostituiti da assi; in una di queste restava una fessura tanto piccola che l’occhio vi passava appena. Da lì vedevo una stanza imbiancata, pulita e quasi priva di mobili. In un angolo, vicino a un piccolo fuoco, sedeva un vecchio col capo fra le mani. La fanciulla riordinò la stanza; poi prese da un cassetto un lavoro con cui tenersi occupate le mani e gli si sedette accanto. Il vecchio prese uno strumento e cominciò a suonare. Ne uscivano suoni più dolci della voce del tordo o dell’usignolo.",
+            "Era una scena bellissima persino per me, povero disgraziato, che non avevo mai visto nulla di bello. Il vecchio suonò un’aria dolce e mesta, e la fanciulla si mise a piangere. Egli non se ne accorse finché non la udì singhiozzare. Disse allora qualche parola. Lei lasciò il suo lavoro e gli si inginocchiò ai piedi. Egli la sollevò e le sorrise con una tale bontà e un tale affetto che provai qualcosa di singolare e di troppo forte per me: insieme dolore e piacere, quali non mi avevano mai dato né la fame e il freddo, né il calore e il cibo. Mi ritirai dalla finestra, incapace di sostenere quell’emozione.",
+            "Venne presto notte. Con mia grande meraviglia scoprii che, servendosi di candele, quelle persone sapevano prolungare la luce. Il vecchio riprese lo strumento. Quando ebbe finito, il giovane cominciò a emettere suoni monotoni, che non somigliavano né alla musica né al canto degli uccelli. Seppi poi che leggeva ad alta voce; allora non conoscevo nulla dell’arte delle parole e delle lettere. Poco dopo spensero le candele. Supposi che fossero andati a dormire.\n"
+          ]
+        },
+        {
+          "heading": "Una mano che non vedono",
+          "paragraphs": [
+            "Mi distesi sulla paglia, ma non potevo dormire. Ciò che più mi colpiva era la gentilezza di quelle persone. Quanto avrei voluto unirmi a loro! Non osavo. Ricordavo troppo bene il trattamento che mi avevano inflitto gli abitanti del villaggio. Per il momento sarei rimasto nel mio tugurio a guardarli, cercando di comprendere che cosa li spingesse ad agire come agivano.",
+            "Mi accorsi presto che il vecchio era cieco. Non si poteva mostrare più amore e rispetto di quanto i due giovani gli dimostrassero. Gli rendevano con dolcezza ogni piccolo servizio, e lui li ricompensava con un sorriso. Eppure non erano felici. A volte i due si appartavano e sembravano piangere. Come potevano essere infelici creature tanto amabili? Avevano una dimora deliziosa, almeno ai miei occhi, e ogni agio: un fuoco quando avevano freddo, vivande squisite quando avevano fame, abiti eccellenti; soprattutto, godevano della compagnia e della parola l’uno dell’altro. Che cosa significavano quelle lacrime? Esprimevano davvero dolore? Non sapevo rispondere. Soltanto col tempo e con l’attenzione cominciai a capire ciò che dapprima mi pareva enigmatico.",
+            "Una causa della loro afflizione era la povertà. Si nutrivano degli ortaggi del giardino e del latte di una vacca che, durante l’inverno, ne dava pochissimo. Più volte vidi i due giovani porgere il cibo al vecchio senza tenerne per sé. Questo tratto di bontà mi commosse. Ero solito sottrarre di notte una parte delle loro provviste. Quando mi resi conto del male che facevo loro, smisi e mi accontentai di bacche, noci e radici che raccoglievo in un bosco vicino.",
+            "Scoprii anche un altro modo di alleviare le loro fatiche. Vedevo che il giovane passava buona parte del giorno a raccogliere legna. Di notte prendevo i suoi attrezzi, dei quali compresi presto l’uso, e portavo a casa combustibile sufficiente per parecchi giorni. Ricordo la prima volta: la fanciulla aprì la porta al mattino e si fermò stupita davanti al mucchio di legna. Disse qualcosa a voce alta, il giovane accorse e si meravigliò a sua volta. Mi accorsi con piacere che quel giorno non andò nel bosco: rimase a riparare la casa e a coltivare il giardino.",
+            "A poco a poco feci una scoperta ancora più importante. Queste persone si comunicavano ciò che avevano vissuto e ciò che sentivano per mezzo di suoni articolati. Le parole facevano nascere un sorriso o la tristezza sul viso di chi le udiva. Era davvero una scienza divina, e ardevo dal desiderio di conoscerla. Ma parlavano in fretta; non vedevo alcun nesso fra quei suoni e le cose che avevo davanti. Dopo parecchi giri della luna imparai infine i nomi degli oggetti di cui parlavano più spesso: fuoco, latte, pane, legna. Il vecchio ne aveva uno solo: padre. La fanciulla si chiamava sorella, oppure Agatha; il giovane Felix, fratello, figlio. Non so descrivere la gioia di legare a ciascun suono un’idea e di riuscire a pronunciarlo. Distinguevo già altre parole, senza saperle usare: buono, carissimo, infelice.",
+            "Vidi Felix portare alla sorella il primo fiorellino bianco spuntato da sotto la neve. Quando gli abitanti della casa si ritiravano per la notte, se c’era luna o le stelle facevano abbastanza luce, uscivo a raccogliere il mio cibo e la loro legna. Al ritorno, se occorreva, liberavo il sentiero dalla neve, come avevo visto fare a Felix. Li stupivano molto quei servizi resi da una mano invisibile. In tali occasioni li udii dire una o due volte: spirito buono, meraviglioso. Allora non ne conoscevo il significato."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mary Shelley · Frankenstein, prima edizione, volume II",
+          "url": "https://www.gutenberg.org/files/41445/41445-h/41445-h.htm",
+          "edition": "Londra, Lackington, Hughes, Harding, Mavor & Jones, 1818. Testo della prima edizione trascritto da un facsimile. Letti i capitoli III e IV del secondo volume. Selezione fino alle parole udite dalla creatura dopo i lavori notturni, con tagli interni e un breve riaccostamento del fiore di Felix alla sequenza dei lavori. Non si usano la revisione del 1831 né traduzioni moderne.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Library of Congress · esemplare londinese del 1818",
+          "url": "https://www.loc.gov/item/53051218/",
+          "edition": "Scheda della prima edizione e date dell’autrice (1797–1851).",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Project Gutenberg · scheda e diritti dell’edizione del 1818",
+          "url": "https://www.gutenberg.org/ebooks/41445",
+          "edition": "Originale del 1818 in pubblico dominio negli USA; in Italia/UE e Regno Unito è trascorso il termine ordinario dalla morte dell’autrice. Si usa il testo storico, senza apparati o traduzioni recenti.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Unione europea · durata dei diritti, artt. 1 e 8",
+          "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32006L0116",
+          "edition": "Direttiva 2006/116/CE: vita dell’autore più 70 anni, calcolati per anni civili.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Regno Unito · durata del diritto d’autore",
+          "url": "https://www.gov.uk/copyright/how-long-copyright-lasts",
+          "edition": "Per le opere letterarie, di norma vita più 70 anni; l’impaginazione di edizioni pubblicate ha una durata distinta.",
+          "accessed": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "slot": "future",
+      "id": "future-20261106",
+      "title": "Radar · Pesi base, permessi degli agenti e bollette",
+      "kind": "reduced",
+      "event_date": "2026-11-05",
+      "publication_date": "2026-11-05",
+      "basis": "Dieci sviluppi nella finestra 5 novembre 05:05 – 6 novembre 05:05, Europe/Rome. Radar ridotto: escluse le riprese di notizie già trattate e le piste senza una nuova data verificabile. Orari indicati nelle fonti quando esposti; per la Bank of England la notizia è la pubblicazione del 5, non la riunione del 4. I confronti di Baidu sono dichiarati dal produttore.",
+      "sections": [
+        {
+          "heading": "ERNIE 5.5 Flash Base · Baidu pubblica il checkpoint",
+          "paragraphs": [
+            "Il 5 novembre Baidu pubblica il modello prima del post-training: MoE da 280 miliardi di parametri, 14 attivi per token."
+          ],
+          "bullets": [
+            "Pesi FP8 e BF16; contesto fino a 128K in preaddestramento e 1M in inferenza e fine-tuning, secondo Baidu.",
+            "HumanEval+ pass@1 a un esempio: 82,3 contro 69,5 di DeepSeek-V4-Flash-Base, nel confronto del produttore fra modelli base.",
+            "Licenza v1.0: esclude UE, Regno Unito e Corea del Sud. I checkpoint ufficiali non entrano nella VRAM di una singola GPU da 12 GiB."
+          ]
+        },
+        {
+          "heading": "Italia · Decreto Bollette, il Consiglio rinvia",
+          "paragraphs": [
+            "Il 5 novembre il Consiglio dei ministri ha rinviato il decreto sul costo di elettricità e gas per famiglie e imprese. È il seguito dell’annuncio di Pichetto Fratin del 4 novembre."
+          ],
+          "bullets": [
+            "Il resoconto indica un altro confronto con l’UE e verifiche del MEF. Dal Consiglio non escono misure approvate né nuove tariffe.",
+            "Teleborsa indica lunedì 9 novembre come nuova data d’esame: un passaggio previsto, non un via libera."
+          ]
+        },
+        {
+          "heading": "Edera · Object Capability Bounded Authority",
+          "paragraphs": [
+            "Il 5 novembre Edera ha presentato un modo per concedere a un agente permessi su singole operazioni del proprio runtime."
+          ],
+          "bullets": [
+            "capcurl: le richieste API autorizzate passano tramite un broker che conserva le credenziali fuori dal workload.",
+            "capsudo: consente specifici comandi privilegiati senza dare accesso amministrativo permanente.",
+            "L’integrazione SPIFFE/SPIRE riguarda l’identità del workload; l’annuncio non documenta benchmark di sicurezza indipendenti."
+          ]
+        },
+        {
+          "heading": "Ucraina · versati 4,36 miliardi dal prestito UE",
+          "paragraphs": [
+            "Il 5 novembre la Commissione europea ha erogato 4,36 miliardi di euro dello Ukraine Support Loan. È un pagamento distinto dalle decisioni di ottobre sullo Strumento europeo per la pace."
+          ],
+          "bullets": [
+            "3,7 miliardi per il bilancio; 658 milioni per acquisti di difesa, fra cui droni, radar e munizioni antiaeree.",
+            "La tranche di bilancio segue 12 condizioni, fra cui tassazione dei redditi da piattaforme digitali e riforme doganali."
+          ]
+        },
+        {
+          "heading": "OpenSSH 10.6p2 · correzione per Alpine senza PAM",
+          "paragraphs": [
+            "Il 5 novembre il progetto OpenSSH ha pubblicato la 10.6p2; Alpine segnala un bypass dell’autenticazione a password nelle configurazioni interessate."
+          ],
+          "bullets": [
+            "Il caso riguarda musl senza PAM, con autenticazione a password attiva e specifiche combinazioni di account locali.",
+            "Per un server esposto, Alpine raccomanda aggiornamento del pacchetto e riavvio di sshd. Sostituire il binario non ferma il demone già in esecuzione."
+          ]
+        },
+        {
+          "heading": "Bank of England · tasso al 4%",
+          "paragraphs": [
+            "Il 5 novembre la Bank of England ha annunciato un aumento di 25 punti base, al 4%, dopo la riunione conclusa il giorno prima."
+          ],
+          "bullets": [
+            "Voto 8–1: il voto dissenziente chiedeva 50 punti base, al 4,25%.",
+            "Energia più cara e possibili ricadute su salari e prezzi entrano nelle motivazioni; un altro rialzo dipende dall’evoluzione di queste pressioni."
+          ]
+        },
+        {
+          "heading": "Spagna 2026 · il rapporto IEA passa dalla produzione ai consumi",
+          "paragraphs": [
+            "Il 5 novembre l’IEA ha pubblicato una revisione della politica energetica spagnola, elaborata con il governo del paese."
+          ],
+          "bullets": [
+            "Rinnovabili dal 35% al 56% della generazione elettrica tra il 2015 e il 2025; circa 119 GW di capacità nel 2025.",
+            "Prossima priorità indicata dall’IEA: aumentare gli usi elettrici in trasporti, edifici e industria e rendere la rete più flessibile."
+          ]
+        },
+        {
+          "heading": "Kagi Search · 50 ricerche senza account",
+          "paragraphs": [
+            "Il 5 novembre Kagi ha aperto le prime 50 ricerche sul web a chi non ha un account; dopo la registrazione ne offre altre 100."
+          ],
+          "bullets": [
+            "Il changelog segnala anche una schermata iniziale ridisegnata e ricerca vocale rifatta nell’app Android.",
+            "Il cambio riguarda la prova di Kagi Search; non implica la disponibilità senza account delle API o dell’Assistant."
+          ]
+        },
+        {
+          "heading": "Budva · UE e Balcani occidentali su frodi e frontiere",
+          "paragraphs": [
+            "Il 5 novembre, al forum di Budva, UE e partner dei Balcani occidentali hanno indicato le priorità comuni per la sicurezza interna."
+          ],
+          "bullets": [
+            "Per le frodi online, il comunicato punta su indagini digitali e capacità forensi con Europol e CEPOL.",
+            "Su asilo e frontiere, richiama la cooperazione con Frontex e l’agenzia UE per l’asilo. Il documento non istituisce da solo nuove sanzioni."
+          ]
+        },
+        {
+          "heading": "AGCM e Banca d’Italia · lo stato della concorrenza",
+          "paragraphs": [
+            "Il 5 novembre le due istituzioni hanno presentato il rapporto sulle dinamiche concorrenziali italiane, ricostruite dal 2010 al 2023."
+          ],
+          "bullets": [
+            "Tre misure: margini rispetto ai costi, concentrazione del fatturato per settore, ingresso e uscita delle imprese.",
+            "La stabilità delle imprese al vertice è misurata a parte: una quota concentrata non dice quanto spesso cambi chi la detiene."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Baidu · annuncio e architettura ERNIE 5.5 Flash Base",
+          "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+          "edition": "Rilascio del 5 novembre 2026; configurazioni e natura del checkpoint di base.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Baidu · model card FP8 e valutazioni",
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+          "edition": "Tabella di confronto del produttore fra modelli base, HumanEval+ pass@1, 1-shot. Pesi FP8 e BF16 distinti; nessuna inferenza sulla velocità di una GPU consumer.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Baidu · ERNIE 5.5 Flash Base Model License Agreement v1.0",
+          "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/resolve/main/LICENSE",
+          "edition": "Letti §§1.11, 2 e 5.3: definizione del territorio, concessione e restrizioni. I pesi sono scaricabili sotto licenza specifica, non open source.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Consiglio dei ministri del 5 novembre · testo ripreso da Agenparl",
+          "url": "https://agenparl.eu/2026/11/05/consiglio-dei-ministri-5-novembre-2026/",
+          "edition": "Resoconto della seduta del 5 novembre alle 17:14; la formula sul rinvio è ripresa nel testo.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "ANSA · conferma indipendente del rinvio Bollette",
+          "url": "https://www.ansa.it/amp/sito/notizie/politica/2026/11/05/in-cdm-slitta-ancora-lapprovazione-del-decreto-bollette_8d67ddb9-4bd5-4ec2-bcd1-c3d360b2e537.html",
+          "edition": "5 novembre 2026, riscontro sul rinvio e sulla possibile data successiva.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Teleborsa · prossimo esame del decreto",
+          "url": "https://finanza.repubblica.it/News/2026/11/05/dl_bollette_slitta_ancora_cdm_esaminera_di_nuovo_decreto_lunedi_9_novembre-299/",
+          "edition": "5 novembre 2026, 20:35 CET; riporta la riprogrammazione per il 9 novembre.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Edera · OCAP Bounded Authority",
+          "url": "https://edera.dev/stories/ocap-bounded-authority",
+          "edition": "5 novembre 2026, spiegazione tecnica di broker, capcurl e capsudo.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Edera · comunicato distribuito su PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/edera-redefines-ai-agent-security-with-bounded-authority-and-credential-free-access-302930175.html",
+          "edition": "5 novembre 2026, 08:58 ET (14:58 CET); disponibilità annunciata e identità verificata del workload. Dichiarazioni del produttore.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Commissione europea · erogazione Ukraine Support Loan",
+          "url": "https://enlargement.ec.europa.eu/news/commission-disburses-eur436-billion-ukraine-under-eur90-billion-ukraine-support-loan-2026-11-05_en",
+          "edition": "5 novembre 2026; ripartizione, condizioni e impieghi dichiarati.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Kyiv Independent · riscontro indipendente sul versamento",
+          "url": "https://kyivindependent.com/eu-disburses-over-4-billion-euros-in-budget-support-to-ukraine/",
+          "edition": "5 novembre 2026, 12:37, orario mostrato dalla testata; conferma la cifra complessiva e il quadro del prestito.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Alpine Linux · avviso di sicurezza OpenSSH",
+          "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+          "edition": "5 novembre 2026; condizioni del difetto e indicazione operativa sul riavvio.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "OpenSSH · note della 10.6p2",
+          "url": "https://www.openssh.org/releasenotes.html#10.6p2",
+          "edition": "Rilascio del 5 novembre 2026; workaround di sicurezza per musl con PAM disattivato.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Bank of England · decisione e verbale di novembre",
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "edition": "Pubblicazione del 5 novembre; riunione conclusa il 4. Voto, livello e orientamento verificati.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Reuters · decisione della Bank of England",
+          "url": "https://live.euronext.com/en/financial-news/bank-england-raises-rates-first-time-2023-warns-more-likely",
+          "edition": "5 novembre 2026, 18:10 secondo Euronext; riscontro indipendente e contesto energetico.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "IEA · Spain 2026, Energy Policy Review",
+          "url": "https://www.iea.org/reports/spain-2026",
+          "edition": "Rapporto pubblicato il 5 novembre 2026.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "IEA · sintesi della revisione spagnola",
+          "url": "https://www.iea.org/reports/spain-2026/executive-summary",
+          "edition": "Letti dati 2015–2025 e raccomandazioni su elettrificazione, rete e flessibilità; capacità e quota di produzione distinte.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Kagi · changelog del 5 novembre",
+          "url": "https://kagi.com/changelog",
+          "edition": "Sezioni Search for everyone e Android app. I numeri descrivono l’accesso di prova alla ricerca web.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Consiglio UE · comunicato congiunto di Budva",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/05/joint-press-release-eu-western-balkans-ministerial-forum-on-justice-and-home-affairs-budva-montenegro-5-6-november-2026/",
+          "edition": "5 novembre 2026, 18:33 CET; letti esiti della giornata affari interni, distinti dalla sessione giustizia del 6 novembre.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Vijesti · riscontro locale sul forum di Budva",
+          "url": "https://www.vijesti.me/vijesti/crna-hronika/835010/ebner-crnogorske-bezbjednosne-sluzbe-pouzdan-partner-u-borbi-protiv-organizovanog-kriminala",
+          "edition": "5 novembre 2026, cronaca sulla riunione e sui colloqui con Europol.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Banca d’Italia · rapporto sulla concorrenza",
+          "url": "https://www.bancaditalia.it/pubblicazioni/altri-rapporti/2026-concorrenza-in-italia/index.html",
+          "edition": "5 novembre 2026; periodo osservato e approccio a più indicatori.",
+          "accessed": "2026-11-06"
+        },
+        {
+          "title": "Banca d’Italia · presentazione del rapporto",
+          "url": "https://www.bancaditalia.it/media/notizia/presentazione-del-rapporto-congiunto-agcm-banca-d-italia-lo-stato-della-concorrenza-in-italia/",
+          "edition": "5 novembre 2026; notizia della presentazione congiunta AGCM e Banca d’Italia.",
+          "accessed": "2026-11-06"
+        }
+      ]
+    }
+  ]
+}
