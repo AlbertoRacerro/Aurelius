@@ -1,0 +1,566 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "cards": [
+    {
+      "id": "micro-20261106-clip",
+      "topic": "Machine learning",
+      "title": "Il gradiente si accorcia",
+      "hook": "Il gradiente si accorcia",
+      "paragraphs": [
+        "Un gradiente ha due componenti, 6 e 8, e lunghezza 10. Impostando il limite a 5, entrambe le componenti si dimezzano: diventano 3 e 4. È il taglio per norma: riduce tutto il vettore con un solo fattore, perciò la direzione resta la stessa anche quando il passo di discesa va contenuto."
+      ],
+      "takeaway": "La norma riguarda il gradiente complessivo, anche quando i parametri sono suddivisi in più tensori.",
+      "basis": "PyTorch, implementazione di clip_grad_norm_: norma congiunta e coefficiente unico limitato a 1. Esempio euclideo, trascurando la piccola costante numerica del codice.",
+      "sources": [
+        {
+          "title": "PyTorch · clip_grad_norm_, implementazione",
+          "url": "https://github.com/pytorch/pytorch/blob/main/torch/nn/utils/clip_grad.py"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-clip.svg",
+        "alt": "Su una griglia cartesiana, due vettori sovrapposti con estremi (6,8) e (3,4).",
+        "caption": "Da 10 a 5 lungo la stessa retta.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://github.com/pytorch/pytorch/blob/main/torch/nn/utils/clip_grad.py"
+      }
+    },
+    {
+      "id": "micro-20261106-crab",
+      "topic": "Natura",
+      "title": "Una chela per farsi vedere",
+      "hook": "Una chela per farsi vedere",
+      "paragraphs": [
+        "Sul fango un maschio di granchio violinista agita la chela grande: è un segnale di corteggiamento, visibile anche da lontano. Quella chela serve anche nei confronti con altri maschi. Per raccogliere piccoli bocconi dal sedimento usa invece la chela minuta, che porta ripetutamente alla bocca."
+      ],
+      "takeaway": "La destra e la sinistra non hanno necessariamente lo stesso ruolo.",
+      "basis": "National Park Service, ruoli delle chele. Foto dell’archivio NPS ridimensionata senza ritaglio.",
+      "sources": [
+        {
+          "title": "National Park Service · Fiddler Crabs",
+          "url": "https://www.nps.gov/foma/learn/nature/fiddler-crabs.htm"
+        },
+        {
+          "title": "National Park Service · Copyright and Disclaimer",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-crab.jpg",
+        "alt": "Un granchio violinista sul sedimento: una chela è molto più grande dell’altra.",
+        "caption": "La chela sproporzionata del granchio violinista.",
+        "credit": "NPS Photo / Pete Wintersteen",
+        "license": "Pubblico dominio · politica immagini NPS",
+        "source": "https://www.nps.gov/media/photo/view.htm?id=5EAD2754-CB26-44F8-8999-A13BAB5821B2"
+      }
+    },
+    {
+      "id": "micro-20261106-pitot",
+      "topic": "CFD e misure",
+      "title": "Misurare il vento con due fori",
+      "hook": "Misurare il vento con due fori",
+      "paragraphs": [
+        "L’aria rallenta fino a fermarsi alla presa frontale del tubo di Pitot. I fori laterali misurano invece la pressione statica. La differenza permette di risalire alla velocità: a 20 m/s, con aria di densità 1,2 kg/m³, vale circa 240 Pa. L’esempio usa l’approssimazione incomprimibile."
+      ],
+      "takeaway": "Con un solo valore di pressione non si isola la parte dovuta al moto.",
+      "basis": "NASA Glenn, equazione di Bernoulli e pressione dinamica. Esempio originale in aria a bassa velocità, tubo allineato, variazione di quota trascurabile.",
+      "sources": [
+        {
+          "title": "NASA Glenn · Bernoulli’s Equation",
+          "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoullis-equation/"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-pitot.svg",
+        "alt": "Sezione di tubo di Pitot con presa frontale per p₀ e fori laterali per p.",
+        "caption": "La presa frontale e i fori laterali isolano due pressioni.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoullis-equation/"
+      }
+    },
+    {
+      "id": "micro-20261106-seal",
+      "topic": "Storia",
+      "title": "Una firma da far rotolare",
+      "hook": "Una firma da far rotolare",
+      "paragraphs": [
+        "Un cilindro di ematite alto 1,6 centimetri basta a imprimere una scena lunga quanto il suo giro. Le figure incise sulla pietra riemergono in rilievo quando il cilindro rotola sull’argilla. L’impronta moderna accanto all’oggetto mostra ciò che una fotografia della sola pietra fatica a rivelare: la scena intera, distesa."
+      ],
+      "takeaway": "Una scena avvolta su una superficie cilindrica diventa leggibile su un piano.",
+      "basis": "Catalogo The Met, scheda dell’oggetto 1999.325.44: ematite, 1,6 cm, periodo paleobabilonese; l’impronta affiancata è moderna. Foto Open Access ridimensionata.",
+      "sources": [
+        {
+          "title": "The Met · Cylinder seal and modern impression, 1999.325.44",
+          "url": "https://www.metmuseum.org/art/collection/search/327640"
+        },
+        {
+          "title": "The Met · Open Access e risorse immagini",
+          "url": "https://www.metmuseum.org/policies/image-resources"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-seal.jpg",
+        "alt": "Piccolo cilindro di pietra e impronta rettangolare con figure in rilievo.",
+        "caption": "Sigillo cilindrico e impronta moderna, The Met.",
+        "credit": "The Metropolitan Museum of Art",
+        "license": "CC0 1.0 · The Met Open Access",
+        "source": "https://www.metmuseum.org/art/collection/search/327640"
+      }
+    },
+    {
+      "id": "micro-20261106-jump",
+      "topic": "CFD e idraulica",
+      "title": "L’acqua sale mentre rallenta",
+      "hook": "L’acqua sale mentre rallenta",
+      "paragraphs": [
+        "In un canale rettangolare l’acqua corre in uno strato profondo appena 20 centimetri. Attraversando un salto idraulico, può diventare profonda 47 centimetri: la portata resta la stessa, quindi l’acqua a valle scorre più lentamente. Nel rullo turbolento si dissipa parte dell’energia meccanica; è il motivo per cui il salto torna utile a valle degli sfioratori."
+      ],
+      "takeaway": "La quantità conservata lungo il salto non è l’energia meccanica.",
+      "basis": "US Bureau of Reclamation, rapporto sui salti idraulici; esempio ideale stazionario con canale orizzontale rettangolare e Fr₁=2: y₂/y₁=(√(1+8Fr₁²)−1)/2. Profondità arrotondate.",
+      "sources": [
+        {
+          "title": "US Bureau of Reclamation · Hydraulic Laboratory, HL-2012-02",
+          "url": "https://www.usbr.gov/tsc/techreferences/hydraulics_lab/pubs/HL/HL-2012-02.pdf"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-jump.svg",
+        "alt": "Sezione di un canale con acqua profonda 20 centimetri a monte e circa 47 a valle.",
+        "caption": "Un rullo separa una corrente sottile da una più profonda.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.usbr.gov/tsc/techreferences/hydraulics_lab/pubs/HL/HL-2012-02.pdf"
+      }
+    },
+    {
+      "id": "micro-20261106-io",
+      "topic": "Astronomia",
+      "title": "L’ombra di un vulcano su Io",
+      "hook": "L’ombra di un vulcano su Io",
+      "paragraphs": [
+        "Nella foto della sonda Galileo il pennacchio di Prometeo si alza di circa 75 chilometri sopra Io. Vicino al confine fra giorno e notte, la sua ombra si allunga sulla superficie. La luce radente rende così riconoscibile una colonna di materiale sopra il suolo, anche dove la sua base si confonde con il terreno."
+      ],
+      "takeaway": "Una luce obliqua proietta sul terreno l’ombra di una struttura in quota.",
+      "basis": "NASA/JPL, PIA00703: composito Galileo del 28 giugno 1997 in verde, violetto e vicino infrarosso; Prometeo è vicino al terminatore. Foto ridimensionata.",
+      "sources": [
+        {
+          "title": "NASA/JPL · PIA00703, Active Volcanic Plumes on Io",
+          "url": "https://www.jpl.nasa.gov/images/pia00703-active-volcanic-plumes-on-io/"
+        },
+        {
+          "title": "NASA/JPL · Image Use Policy",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-io.jpg",
+        "alt": "Disco di Io con due ingrandimenti; in basso a destra, il pennacchio di Prometeo e la sua ombra.",
+        "caption": "Prometeo e la sua ombra nel riquadro in basso a destra.",
+        "credit": "NASA/JPL",
+        "license": "Riuso editoriale consentito · JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia00703-active-volcanic-plumes-on-io/"
+      }
+    },
+    {
+      "id": "micro-20261106-gauge",
+      "topic": "CFD",
+      "title": "La pressione cambia, il flusso no",
+      "hook": "La pressione cambia, il flusso no",
+      "paragraphs": [
+        "In un circuito chiuso simulato come incomprimibile, un profilo di pressione può andare da 20 a 10 pascal oppure da 120 a 110. In entrambi i casi la caduta è di 10 pascal. Le equazioni del moto vedono il gradiente: fissare la pressione in una cella toglie questa libertà di scegliere lo zero."
+      ],
+      "takeaway": "Il ragionamento vale quando le condizioni al contorno non fissano già la pressione assoluta.",
+      "basis": "OpenFOAM Foundation, pressure referencing per sistemi chiusi; esempio in pressione fisica, distinto dalla pressione cinematica usata da alcuni solutori.",
+      "sources": [
+        {
+          "title": "OpenFOAM Foundation · Pressure referencing",
+          "url": "https://doc.cfd.direct/openfoam/user-guide-v8/fvsolution"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-gauge.svg",
+        "alt": "Due rette di pressione decrescenti parallele, una traslata in alto di 100 Pa.",
+        "caption": "I profili hanno quote diverse e la stessa inclinazione.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://doc.cfd.direct/openfoam/user-guide-v8/fvsolution"
+      }
+    },
+    {
+      "id": "micro-20261106-airglow",
+      "topic": "Scienza",
+      "title": "La notte ha un bordo luminoso",
+      "hook": "La notte ha un bordo luminoso",
+      "paragraphs": [
+        "Sopra la Terra, la notte conserva un filo arancione. Nella foto dalla Stazione spaziale è il bagliore dell’alta atmosfera: reazioni e transizioni di atomi e molecole emettono luce anche dopo il tramonto. Di taglio lo strato risalta, perché lo sguardo attraversa più gas luminoso che guardando verso l’alto."
+      ],
+      "takeaway": "La linea di vista radente attraversa un tratto più lungo dello strato.",
+      "basis": "NASA Earth Observatory e fotografia ISS057-E-35382 del 7 ottobre 2018; bagliore atmosferico distinto dalle luci a terra. Foto ridimensionata.",
+      "sources": [
+        {
+          "title": "NASA Earth Observatory · Earth Awash in Lights of the Night",
+          "url": "https://science.nasa.gov/earth/earth-observatory/earth-awash-in-lights-of-the-night-92912/"
+        },
+        {
+          "title": "NASA · Media Usage Guidelines",
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-airglow.jpg",
+        "alt": "Bordo curvo della Terra con una fascia arancione sopra le luci della superficie.",
+        "caption": "Bagliore atmosferico sopra l’Australia, visto dalla ISS.",
+        "credit": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
+        "license": "Materiale NASA · riuso secondo NASA Media Usage Guidelines",
+        "source": "https://www.nasa.gov/image-article/earth-enveloped-airglow/"
+      }
+    },
+    {
+      "id": "micro-20261106-heap",
+      "topic": "Algoritmi",
+      "title": "Un minimo senza ordinare tutto",
+      "hook": "Un minimo senza ordinare tutto",
+      "paragraphs": [
+        "In un min-heap, il 7 può stare a sinistra del 3. L’unico vincolo è che ogni nodo sia minore o uguale ai propri figli. Seguendo qualunque ramo dalla radice, i valori non diminuiscono: basta quindi guardare la radice per trovare il minimo. Una coda a priorità risparmia così il lavoro di ordinare tutti gli elementi."
+      ],
+      "takeaway": "La radice si legge in tempo costante; estrarla richiede ripristinare la proprietà.",
+      "basis": "Documentazione Python heapq, proprietà dell’heap; albero originale con sette elementi.",
+      "sources": [
+        {
+          "title": "Python · heapq",
+          "url": "https://docs.python.org/3/library/heapq.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-heap.svg",
+        "alt": "Albero con radice 2 e figli 7 e 3; ciascun figlio ha discendenti di valore superiore.",
+        "caption": "Il 2 è in cima, ma i due sottoalberi non sono ordinati fra loro.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.python.org/3/library/heapq.html"
+      }
+    },
+    {
+      "id": "micro-20261106-orchid",
+      "topic": "Natura",
+      "title": "L’orchidea piega il suo polline",
+      "hook": "L’orchidea piega il suo polline",
+      "paragraphs": [
+        "Un insetto sfila dall’orchidea una massa di polline che gli resta attaccata alla testa. In Orchis mascula il suo peduncolo si piega dopo il distacco. Quando l’insetto entra in un altro fiore della stessa specie, il polline ora sporge nella direzione giusta per toccare lo stigma. Il cambiamento avviene durante il trasporto."
+      ],
+      "takeaway": "Il pollinio è una massa di granuli trasportata come un’unità.",
+      "basis": "Darwin, On the Various Contrivances by which British and Foreign Orchids Are Fertilised by Insects (1862), descrizione di Orchis mascula e confronto dei movimenti dei pollinii; schema originale.",
+      "sources": [
+        {
+          "title": "Charles Darwin · Fertilisation of Orchids, 1862, cap. I e VII",
+          "url": "https://darwin-online.org.uk/content/contentblock?basepage=1&itemID=F800&viewtype=text"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-orchid.svg",
+        "alt": "Due profili semplificati della testa: il pollinio è prima verticale e poi inclinato in avanti.",
+        "caption": "Il peduncolo del pollinio si piega sulla testa dell’insetto.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://darwin-online.org.uk/content/contentblock?basepage=1&itemID=F800&viewtype=text"
+      }
+    },
+    {
+      "id": "micro-20261106-ring",
+      "topic": "Sistemi distribuiti",
+      "title": "Un server nuovo, poche chiavi in viaggio",
+      "hook": "Un server nuovo, poche chiavi in viaggio",
+      "paragraphs": [
+        "Le chiavi e i server occupano posizioni sullo stesso anello. Ogni chiave va al primo server che incontra in senso orario. Se D entra tra A e B, prende a B soltanto le chiavi comprese fra A e D. Per le altre, il primo server incontrato resta lo stesso."
+      ],
+      "takeaway": "Nodi virtuali e replica sono meccanismi ulteriori rispetto a questo anello elementare.",
+      "basis": "DeCandia et al., Dynamo, §4.2. Esempio senza repliche o nodi virtuali, disegnato per isolare il meccanismo di assegnazione.",
+      "sources": [
+        {
+          "title": "DeCandia et al. · Dynamo, §4.2",
+          "url": "https://www.allthingsdistributed.com/2007/10/amazons_dynamo.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-ring.svg",
+        "alt": "Anello con A, D, B e C in senso orario; arco da A a D evidenziato.",
+        "caption": "D rileva una sola porzione della responsabilità di B.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.allthingsdistributed.com/2007/10/amazons_dynamo.html"
+      }
+    },
+    {
+      "id": "micro-20261106-hive",
+      "topic": "Filosofia",
+      "title": "Lo scarico è di tutti",
+      "hook": "Lo scarico è di tutti",
+      "paragraphs": [
+        "Marco Aurelio osserva che ciò che nuoce allo sciame finisce per nuocere anche all’ape. Pensa allo scarico di un cortile: spingervi dentro le foglie fa risparmiare un minuto a chi spazza. Quando piove, però, l’acqua invade anche il suo ingresso. Il vantaggio immediato può consumare la condizione da cui dipende."
+      ],
+      "takeaway": "L’aforisma riguarda la dipendenza reciproca; il cortile la rende concreta.",
+      "basis": "Marco Aurelio, Pensieri VI.54 nella numerazione della traduzione di George Long, consultata per intero per questo paragrafo. Parafrasi italiana autonoma; il cortile è un esempio editoriale.",
+      "sources": [
+        {
+          "title": "Marco Aurelio · Pensieri VI.54, trad. George Long",
+          "url": "https://lexundria.com/m_aur_med/6.54.1/lg"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-hive.svg",
+        "alt": "Un cortile tra due edifici con l’acqua di entrambe le parti che confluisce nello stesso scarico.",
+        "caption": "Due edifici condividono il drenaggio del cortile.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://lexundria.com/m_aur_med/6.54.1/lg"
+      }
+    },
+    {
+      "id": "micro-20261106-cache",
+      "topic": "Architettura",
+      "title": "Due blocchi litigano per un posto",
+      "hook": "Due blocchi litigano per un posto",
+      "paragraphs": [
+        "In una cache da quattro linee a mappatura diretta, i blocchi 0 e 4 finiscono nello stesso posto. Se li leggi a turno, ciascuno scaccia l’altro, anche con tre linee libere. Una cache della stessa capacità ma a due vie può tenerli entrambi nel medesimo insieme: dal terzo accesso in poi li trova già lì."
+      ],
+      "takeaway": "Gli indirizzi sono numeri di blocco, non indirizzi in byte.",
+      "basis": "Hill e Smith, Evaluating Associativity in CPU Caches (1989), letta la distinzione tra mappatura diretta e associatività; traccia originale con indice del set pari all’indirizzo di blocco modulo il numero di set.",
+      "sources": [
+        {
+          "title": "Hill e Smith · Evaluating Associativity in CPU Caches",
+          "url": "https://pages.cs.wisc.edu/~markhill/papers/toc89_cpu_cache_associativity.pdf"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-cache.svg",
+        "alt": "Quattro accessi mostrano il set 0 con un solo valore nella cache diretta e due valori nella cache a due vie.",
+        "caption": "Un posto solo alterna le sostituzioni; due posti conservano entrambi i blocchi.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://pages.cs.wisc.edu/~markhill/papers/toc89_cpu_cache_associativity.pdf"
+      }
+    },
+    {
+      "id": "micro-20261106-filings",
+      "topic": "Storia della scienza",
+      "title": "Faraday fissò il campo alla carta",
+      "hook": "Faraday fissò il campo alla carta",
+      "paragraphs": [
+        "Attorno a una calamita, i grani di ferro si orientano in piccole catene. Basta spostare la carta per rovinare la figura. Faraday usò carta cerata per fissare la limatura: una configurazione fragile diventò un campione che poteva riprendere in mano. Alcune di quelle carte sono ancora nella collezione della Royal Institution."
+      ],
+      "takeaway": "La figura rende percepibile un orientamento; non misura l’intensità del campo.",
+      "basis": "Royal Institution, scheda dei fogli di limatura di Michael Faraday, che descrive l’uso della carta cerata. Illustrazione originale qualitativa, non riproduzione dei documenti.",
+      "sources": [
+        {
+          "title": "Royal Institution · Michael Faraday’s iron filings",
+          "url": "https://www.rigb.org/explore-science/explore/collection/michael-faradays-iron-filings"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-filings.svg",
+        "alt": "Una calamita a barra con segmenti di limatura orientati lungo archi tra i poli.",
+        "caption": "Le catene di limatura rendono visibile la direzione locale.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.rigb.org/explore-science/explore/collection/michael-faradays-iron-filings"
+      }
+    },
+    {
+      "id": "micro-20261106-rename",
+      "topic": "Sistemi operativi",
+      "title": "Cambiare il file senza farlo sparire",
+      "hook": "Cambiare il file senza farlo sparire",
+      "paragraphs": [
+        "Un programma scrive la versione nuova in un file temporaneo. Poi la rinomina sopra il file esistente, nello stesso filesystem. Chi apre quel nome vede la versione vecchia o quella nuova, senza un istante in cui il nome manca. Chi aveva già aperto il vecchio file può continuare a leggerlo dal proprio descrittore."
+      ],
+      "takeaway": "La persistenza dopo un guasto richiede garanzie ulteriori rispetto alla sola rinomina.",
+      "basis": "Linux man-pages, rename(2): sostituzione atomica del percorso di destinazione e descrittori aperti invariati. L’esempio distingue visibilità atomica da persistenza dopo un’interruzione.",
+      "sources": [
+        {
+          "title": "Linux man-pages · rename(2)",
+          "url": "https://www.man7.org/linux/man-pages/man2/rename.2.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-rename.svg",
+        "alt": "Due stati della directory: dati.json passa da v1 a v2, che prima era disponibile come temp.json.",
+        "caption": "Il percorso di destinazione rimane presente durante la sostituzione.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.man7.org/linux/man-pages/man2/rename.2.html"
+      }
+    },
+    {
+      "id": "micro-20261106-pool",
+      "topic": "Machine learning",
+      "title": "Il massimo ricorda dove stava",
+      "hook": "Il massimo ricorda dove stava",
+      "paragraphs": [
+        "Da una finestra 2 × 2, il max pooling conserva l’8. Se salva anche il suo indice, il max unpooling può rimetterlo nella casella in alto a destra. Le altre tre caselle diventano zero: 1, 3 e 2 sono perduti. L’indice conserva una posizione, ma non rende invertibile l’operazione."
+      ],
+      "takeaway": "Il valore massimo e la posizione sono due informazioni distinte.",
+      "basis": "PyTorch, MaxUnpool2d, definizione di inversa parziale. Finestra originale non sovrapposta, massimo unico, dimensione d’uscita 2×2.",
+      "sources": [
+        {
+          "title": "PyTorch · MaxUnpool2d",
+          "url": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.MaxUnpool2d.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-pool.svg",
+        "alt": "Matrice con 1, 8, 3 e 2, poi massimo e indice, poi matrice con 8 nella posizione originale e tre zeri.",
+        "caption": "Si recupera la posizione dell’8; gli altri valori non si ricostruiscono.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.pytorch.org/docs/2.15/generated/torch.nn.MaxUnpool2d.html"
+      }
+    },
+    {
+      "id": "micro-20261106-libration",
+      "topic": "Astronomia",
+      "title": "La Luna sbircia oltre il bordo",
+      "hook": "La Luna sbircia oltre il bordo",
+      "paragraphs": [
+        "La Luna gira su se stessa una volta per orbita. La sua velocità lungo l’orbita, però, varia: a volte vediamo un po’ oltre un bordo, a volte oltre quello opposto. Anche l’inclinazione contribuisce a questo dondolio apparente, detto librazione. Sommando molte osservazioni, dalla Terra si può vedere circa il 59% della superficie lunare."
+      ],
+      "takeaway": "Il 59% si accumula nel tempo; in una singola osservazione vediamo circa metà della Luna.",
+      "basis": "NASA SVS, spiegazione della librazione; NASA/JPL, Lunar Constants and Models, per la frazione totale. Schema polare semplificato della sola componente in longitudine, ampiezza esagerata.",
+      "sources": [
+        {
+          "title": "NASA Scientific Visualization Studio · Moon Phase and Libration",
+          "url": "https://svs.gsfc.nasa.gov/10836"
+        },
+        {
+          "title": "JPL · Lunar Constants and Models Document",
+          "url": "https://ssd.jpl.nasa.gov/doc/lunar_cmd_2005_jpl_d32296.pdf"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-libration.svg",
+        "alt": "Due viste polari: l’emisfero visibile, colorato in azzurro, cambia leggermente orientamento.",
+        "caption": "La parte visibile al singolo istante oscilla rispetto alla media.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://svs.gsfc.nasa.gov/10836"
+      }
+    },
+    {
+      "id": "micro-20261106-lump",
+      "topic": "FEM",
+      "title": "Concentrare la massa sui nodi",
+      "hook": "Concentrare la massa sui nodi",
+      "paragraphs": [
+        "Una barra uniforme ha due nodi. Nella matrice di massa consistente, accelerare un nodo contribuisce anche alla forza inerziale dell’altro. Sommando ogni riga sulla diagonale, si ottengono due masse da m/2: la massa totale resta m, e per ricavare le accelerazioni bastano divisioni separate. È un’approssimazione della dinamica, utile negli schemi espliciti."
+      ],
+      "takeaway": "Conservare la massa totale non garantisce frequenze proprie identiche.",
+      "basis": "Bleyer, Lumping a mass matrix: diagonalizzazione per schemi espliciti. Matrici originali per elemento 1D lineare di sezione e densità costanti, integrate esattamente e poi sommate per riga.",
+      "sources": [
+        {
+          "title": "Jérémy Bleyer · Lumping a mass matrix",
+          "url": "https://bleyerj.github.io/comet-fenicsx/tips/mass_lumping/mass_lumping.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-lump.svg",
+        "alt": "Barra a due nodi e matrici con fattore m/6: 2,1;1,2 prima, 3,0;0,3 dopo.",
+        "caption": "La somma di ogni riga finisce sulla diagonale.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://bleyerj.github.io/comet-fenicsx/tips/mass_lumping/mass_lumping.html"
+      }
+    },
+    {
+      "id": "micro-20261106-undershoot",
+      "topic": "Controllo",
+      "title": "Il primo movimento va al contrario",
+      "hook": "Il primo movimento va al contrario",
+      "paragraphs": [
+        "Al tempo zero chiediamo a un sistema di salire da zero a uno. In questo esempio l’uscita scende prima a −0,21, poi risale e tende a uno. I poli sono stabili, ma uno zero nel semipiano destro cambia il transitorio. Guardare solo il valore finale nasconde proprio quel primo movimento."
+      ],
+      "takeaway": "Il segno della pendenza iniziale è opposto al segno del valore finale.",
+      "basis": "ECE 486, Lecture 7, effetto di uno zero nel semipiano destro. Esempio originale G(s)=(1−s)/(1+s)² con scala temporale 1 s: y(t)=1−(1+2t)e^(−t) con t numerico in secondi; minimo a 0,5 s.",
+      "sources": [
+        {
+          "title": "University of Illinois · ECE 486, Lecture 7",
+          "url": "https://courses.grainger.illinois.edu/ece486/fa2026/documentation/handbook/lec07.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-undershoot.svg",
+        "alt": "Curva teorica che parte da zero, scende a circa meno 0,21 e converge a uno.",
+        "caption": "Risposta inversa a un gradino positivo.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://courses.grainger.illinois.edu/ece486/fa2026/documentation/handbook/lec07.html"
+      }
+    },
+    {
+      "id": "micro-20261106-thiele",
+      "topic": "Reattori",
+      "title": "La sfera è affamata al centro",
+      "hook": "La sfera è affamata al centro",
+      "paragraphs": [
+        "Un reagente entra per diffusione in una sfera catalitica e viene consumato lungo il cammino. Nel modello illustrato, quando il modulo di Thiele passa da 1 a 4, al centro resta circa il 15% della concentrazione superficiale, anziché l’85%. La superficie vede lo stesso reagente; all’interno la reazione lo esaurisce più in fretta rispetto al suo rifornimento."
+      ],
+      "takeaway": "Il modulo di Thiele confronta il consumo per reazione con il trasporto per diffusione.",
+      "basis": "RE Basics, §9.5.3, eq. 9.34. Sfera isoterma, regime stazionario, cinetica di primo ordine e diffusività effettiva costante. C/Csup=sinh(φx)/(x sinh φ), x=r/R; limite centrale φ/sinh φ.",
+      "sources": [
+        {
+          "title": "RE Basics · The Plug Flow Reactor, eq. 9.34",
+          "url": "https://buffalobadger.github.io/RE_Basics/pfr_analysis.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261106-thiele.svg",
+        "alt": "Due curve dal centro alla superficie: circa 0,85 per φ=1 e 0,15 per φ=4 al centro; entrambe terminano a 1.",
+        "caption": "A φ più alto, la concentrazione interna cala molto di più.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://buffalobadger.github.io/RE_Basics/pfr_analysis.html"
+      }
+    }
+  ]
+}
