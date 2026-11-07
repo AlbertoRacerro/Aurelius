@@ -1,0 +1,562 @@
+{
+  "schema": 1,
+  "date": "2026-11-07",
+  "cards": [
+    {
+      "id": "micro-20261107-dilation",
+      "topic": "Machine learning",
+      "title": "Tre pesi, un orizzonte più largo",
+      "hook": "Tre pesi, un orizzonte più largo",
+      "paragraphs": [
+        "Un filtro che legge tre campioni può guardare le posizioni 2, 3 e 4. Con dilatazione 2 legge invece 1, 3 e 5: copre un intervallo più ampio senza aggiungere pesi e può ancora essere applicato a ogni posizione. I campioni saltati restano fuori da questa singola applicazione del filtro."
+      ],
+      "takeaway": "La distanza fra i campioni letti cambia anche se il numero dei pesi resta tre.",
+      "basis": "Definizione della convoluzione dilatata in Yu e Koltun, §2. Esempio monodimensionale, lontano dai bordi.",
+      "sources": [
+        {
+          "title": "Yu e Koltun · Multi-Scale Context Aggregation, §2",
+          "url": "https://arxiv.org/pdf/1511.07122"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-dilation.svg",
+        "alt": "Due righe di sette celle: 2, 3, 4 evidenziate nella prima; 1, 3, 5 nella seconda.",
+        "caption": "Le celle scure sono le posizioni lette dal filtro.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://arxiv.org/pdf/1511.07122"
+      }
+    },
+    {
+      "id": "micro-20261107-slug",
+      "topic": "Natura",
+      "title": "Quel forellino serve a respirare",
+      "hook": "Quel forellino serve a respirare",
+      "paragraphs": [
+        "Tra le foglie bagnate, una limaccia banana può mostrare un foro rotondo sul fianco. Si trova nel mantello e si chiama pneumostoma: è l’apertura della cavità respiratoria. Nella foto è aperto. Il piccolo cerchio, che a prima vista sembra un segno sulla pelle, è quindi un passaggio per l’aria."
+      ],
+      "takeaway": "L’apertura respiratoria si trova nel mantello.",
+      "basis": "Scheda del Parco nazionale Olympic e fotografia del pneumostoma aperto; Copia ridimensionata.",
+      "sources": [
+        {
+          "title": "National Park Service · Slugs of Olympic",
+          "url": "https://home.nps.gov/olym/learn/nature/slugs.htm"
+        },
+        {
+          "title": "National Park Service · Copyright and Disclaimer",
+          "url": "https://www.nps.gov/aboutus/disclaimer.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-slug.jpg",
+        "alt": "Limaccia giallo pallido con un’apertura scura e tondeggiante sul lato del mantello.",
+        "caption": "Pneumostoma aperto nella limaccia banana.",
+        "credit": "Margo Roseum / National Park Service",
+        "license": "Pubblico dominio · fotografia NPS",
+        "source": "https://home.nps.gov/olym/learn/nature/slugs.htm"
+      }
+    },
+    {
+      "id": "micro-20261107-hanging",
+      "topic": "Elementi finiti",
+      "title": "Il nodo a metà non sceglie",
+      "hook": "Il nodo a metà non sceglie",
+      "paragraphs": [
+        "Affina solo il lato destro di una mesh e può comparire un nodo nel mezzo del bordo comune. L’elemento grosso continua a descrivere quel bordo con una retta. Se ai suoi estremi il campo vale 2 e 8, nel mezzo deve valere 5 anche dal lato fine: altrimenti il campo sarebbe discontinuo fra le due maglie."
+      ],
+      "takeaway": "Il nodo è presente nella mesh, ma il suo valore è vincolato dagli altri.",
+      "basis": "deal.II, vincoli sui nodi sospesi. Esempio di elementi quadrangolari Q1, lato rettilineo e campo scalare continuo.",
+      "sources": [
+        {
+          "title": "deal.II · Constraints on degrees of freedom",
+          "url": "https://dealii.org/9.6.0/doxygen/deal.II/group__constraints.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-hanging.svg",
+        "alt": "Una maglia grossa a sinistra e quattro maglie fini a destra; sul bordo comune il punto medio vale 5.",
+        "caption": "Il nodo arancione appartiene al bordo raffinato.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://dealii.org/9.6.0/doxygen/deal.II/group__constraints.html"
+      }
+    },
+    {
+      "id": "micro-20261107-gauntlet",
+      "topic": "Storia materiale",
+      "title": "Un guanto può chiudersi a chiave",
+      "hook": "Un guanto può chiudersi a chiave",
+      "paragraphs": [
+        "Quattro larghe lamelle coprono insieme le dita di questo guanto d’acciaio. A mano chiusa, la piastra terminale si fissa a un perno sul polsino: la presa si blocca. È una soluzione da torneo che fa capire come un’armatura potesse fare più che schermare la mano: poteva anche trattenerla in una posizione."
+      ],
+      "takeaway": "L’articolazione lascia flettere la mano; il blocco mantiene la presa.",
+      "basis": "Catalogo The Met, Locking Gauntlet di Augusta; descrizione delle lamelle e del meccanismo di fissaggio. Fotografia Open Access ridimensionata.",
+      "sources": [
+        {
+          "title": "The Met · Locking Gauntlet",
+          "url": "https://www.metmuseum.org/art/collection/search/24645"
+        },
+        {
+          "title": "The Met · Open Access e risorse immagini",
+          "url": "https://www.metmuseum.org/policies/image-resources"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-gauntlet.jpg",
+        "alt": "Guanto d’armatura con piastre trasversali sovrapposte all’altezza delle dita.",
+        "caption": "Lamelle sovrapposte del guanto a chiusura.",
+        "credit": "The Metropolitan Museum of Art",
+        "license": "CC0 1.0 · The Met Open Access",
+        "source": "https://www.metmuseum.org/art/collection/search/24645"
+      }
+    },
+    {
+      "id": "micro-20261107-upwind",
+      "topic": "CFD",
+      "title": "La griglia può sfumare un fronte",
+      "hook": "La griglia può sfumare un fronte",
+      "paragraphs": [
+        "In un modello di advezione pura, un fronte netto dovrebbe spostarsi senza allargarsi. Con upwind esplicito del primo ordine e numero di Courant pari a ½, ogni cella prende metà del suo valore e metà da quella a monte. Dopo quattro passi il fronte si è spostato di due celle, ma ha acquistato una fascia sfumata: è diffusione numerica."
+      ],
+      "takeaway": "La fascia può comparire anche quando l’equazione non contiene diffusione fisica.",
+      "basis": "Rapporto NASA sulla diffusione introdotta dall’upwind; esempio originale 1D a velocità costante. Le ordinate blu provengono da quattro aggiornamenti cⱼⁿ⁺¹=(cⱼⁿ+cⱼ₋₁ⁿ)/2.",
+      "sources": [
+        {
+          "title": "NASA Technical Reports Server · rapporto 19920002510",
+          "url": "https://ntrs.nasa.gov/api/citations/19920002510/downloads/19920002510.pdf"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-upwind.svg",
+        "alt": "Fronte esatto a gradino confrontato con sette valori upwind che scendono gradualmente.",
+        "caption": "Arancione: traslazione ideale. Blu: valori sulle celle.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://ntrs.nasa.gov/api/citations/19920002510/downloads/19920002510.pdf"
+      }
+    },
+    {
+      "id": "micro-20261107-saturn",
+      "topic": "Astronomia",
+      "title": "Un getto con sei lati",
+      "hook": "Un getto con sei lati",
+      "paragraphs": [
+        "Vicino al polo nord di Saturno le nubi disegnano un esagono. Quel contorno segue una corrente atmosferica che gira intorno al polo; al centro si distingue una tempesta più piccola e tondeggiante. La foto di Cassini mostra i due motivi insieme: a occhio, il vortice centrale e il getto che lo circonda hanno forme molto diverse."
+      ],
+      "takeaway": "Il getto esagonale e il vortice centrale sono strutture distinte.",
+      "basis": "JPL, immagine PIA17652: fotogramma composito di Cassini, proiettato sul polo nord, a colori elaborati. Copia ridimensionata.",
+      "sources": [
+        {
+          "title": "NASA/JPL · PIA17652, In Full View: Saturn’s Streaming Hexagon",
+          "url": "https://www.jpl.nasa.gov/images/pia17652-in-full-view-saturns-streaming-hexagon/"
+        },
+        {
+          "title": "NASA/JPL · Image Use Policy",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-saturn.jpg",
+        "alt": "Saturno visto sopra il polo nord: le nubi delimitano un grande esagono attorno a un vortice rotondo.",
+        "caption": "Il getto esagonale avvolge il vortice polare.",
+        "credit": "NASA/JPL-Caltech/SSI",
+        "license": "Riuso editoriale · JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia17652-in-full-view-saturns-streaming-hexagon/"
+      }
+    },
+    {
+      "id": "micro-20261107-skip",
+      "topic": "Database",
+      "title": "La fila può saltare il primo",
+      "hook": "La fila può saltare il primo",
+      "paragraphs": [
+        "Due processi prelevano lavori dalla stessa tabella. Il primo blocca la riga 1 mentre la reclama; con SKIP LOCKED il secondo passa alla riga 2 invece di fermarsi. Il compromesso è visibile nella coda: mentre la prima riga è occupata, altri lavori possono partire senza rispettare rigidamente l’ordine iniziale."
+      ],
+      "takeaway": "Utile per più consumatori di una coda, dove l’ordine assoluto non è richiesto.",
+      "basis": "PostgreSQL SELECT, clausola FOR UPDATE SKIP LOCKED. Esempio con righe candidate ordinate e una riga già bloccata; la clausola non evita ogni possibile lock.",
+      "sources": [
+        {
+          "title": "PostgreSQL · SELECT, Locking Clause",
+          "url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-skip.svg",
+        "alt": "Tre righe numerate: la prima occupata da A, la seconda presa da B e la terza ancora disponibile.",
+        "caption": "Il secondo processo salta solo la riga occupata.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE"
+      }
+    },
+    {
+      "id": "micro-20261107-flat",
+      "topic": "Libri",
+      "title": "La sfera entra come un punto",
+      "hook": "La sfera entra come un punto",
+      "paragraphs": [
+        "Quando la Sfera visita Flatlandia, il Quadrato la vede apparire come un cerchio che cresce e poi si restringe. I suoi occhi restano confinati al piano, dove arriva soltanto una fetta dell’ospite. La scena fa sentire la differenza fra vedere qualcosa cambiare forma e vedere, una dopo l’altra, sezioni diverse dello stesso oggetto."
+      ],
+      "takeaway": "Il cerchio è la sezione nel piano, non la sagoma proiettata della sfera.",
+      "basis": "Edwin A. Abbott, Flatland, §16, originale inglese; esposizione autonoma della scena, schema delle sezioni originale.",
+      "sources": [
+        {
+          "title": "Edwin A. Abbott · Flatland, §16",
+          "url": "https://www.gutenberg.org/files/45506/45506-h/45506-h.htm"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-flat.svg",
+        "alt": "Quattro istanti: un punto, un cerchio piccolo, un cerchio grande e un cerchio di nuovo piccolo.",
+        "caption": "Dal contatto alla sezione massima, e poi di nuovo in calo.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.gutenberg.org/files/45506/45506-h/45506-h.htm"
+      }
+    },
+    {
+      "id": "micro-20261107-wall",
+      "topic": "CFD",
+      "title": "Il millimetro vicino alla parete",
+      "hook": "Il millimetro vicino alla parete",
+      "paragraphs": [
+        "Il centro della prima cella è a un millimetro dal muro. È vicino abbastanza? La distanza fisica da sola non basta: in unità di parete conta anche la velocità di attrito. A parità di fluido, raddoppiando quest’ultima raddoppia y⁺. Il valore aiuta a valutare se la mesh è adatta al trattamento di parete scelto."
+      ],
+      "takeaway": "La compatibilità di y⁺ dipende dal modello e dal trattamento di parete.",
+      "basis": "OpenFOAM, wall functions e distanza adimensionale y⁺=yuτ/ν, con y in m, uτ in m/s e ν in m²/s. Nessuna soglia universale assunta.",
+      "sources": [
+        {
+          "title": "OpenFOAM · Wall functions",
+          "url": "https://doc.openfoam.com/2312/tools/processing/models/turbulence/ras/wall-functions/"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-wall.svg",
+        "alt": "Griglia sopra una parete; un segmento normale misura la distanza y dal muro al centro della prima cella.",
+        "caption": "La distanza si misura dal muro al centro della prima cella.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://doc.openfoam.com/2312/tools/processing/models/turbulence/ras/wall-functions/"
+      }
+    },
+    {
+      "id": "micro-20261107-basalt",
+      "topic": "Geologia",
+      "title": "La lava si divide in colonne",
+      "hook": "La lava si divide in colonne",
+      "paragraphs": [
+        "A Devils Postpile, le facce delle colonne sembrano tagliate da uno scalpellino. La lava si contraeva raffreddandosi; la roccia si è fessurata e le fratture sono avanzate nel materiale che continuava a perdere calore. Le sezioni possono avere sei lati, ma basta guardare da vicino per accorgersi che gli spigoli non seguono tutti un disegno identico."
+      ],
+      "takeaway": "La forma delle colonne conserva una traccia di come la lava si è raffreddata.",
+      "basis": "Archivio NPS, scheda e immagine di Don Wood; meccanismo confrontato con la documentazione geologica del parco. Foto ritagliata e ridimensionata.",
+      "sources": [
+        {
+          "title": "NPGallery · Basalt columns, Devils Postpile",
+          "url": "https://npgallery.nps.gov/AssetDetail/c6d91c99-aead-480c-9207-4ae3c764a637"
+        },
+        {
+          "title": "National Park Service · Geologic Formations",
+          "url": "https://www.nps.gov/depo/learn/nature/geologicformations.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-basalt.jpg",
+        "alt": "Parete di roccia con colonne di basalto contigue separate da fratture.",
+        "caption": "Giunti colonnari nel basalto di Devils Postpile.",
+        "credit": "NPS Photo / Don Wood",
+        "license": "Pubblico dominio · NPGallery",
+        "source": "https://npgallery.nps.gov/AssetDetail/c6d91c99-aead-480c-9207-4ae3c764a637"
+      }
+    },
+    {
+      "id": "micro-20261107-hysteresis",
+      "topic": "Controllo",
+      "title": "A 19 gradi può fare due cose",
+      "hook": "A 19 gradi può fare due cose",
+      "paragraphs": [
+        "Un riscaldatore si accende sotto i 18 °C e si spegne sopra i 20 °C. A 19 °C può essere acceso se la stanza si sta scaldando da 17, oppure spento se si sta raffreddando da 21. Questa piccola memoria evita che il comando cambi stato a ogni oscillazione attorno a un’unica soglia."
+      ],
+      "takeaway": "Fra le soglie si conserva lo stato precedente.",
+      "basis": "Modelica Standard Library, blocco Hysteresis. Esempio originale con logica invertita per il riscaldatore e soglie illustrative.",
+      "sources": [
+        {
+          "title": "Modelica Standard Library · Logical.Hysteresis",
+          "url": "https://build.openmodelica.org/Documentation/Modelica.Blocks.Logical.Hysteresis.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-hysteresis.svg",
+        "alt": "Ciclo con una traccia accesa da 18 a 20 gradi e una spenta da 20 a 18; entrambe passano per 19.",
+        "caption": "Alla stessa temperatura il percorso determina lo stato.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://build.openmodelica.org/Documentation/Modelica.Blocks.Logical.Hysteresis.html"
+      }
+    },
+    {
+      "id": "micro-20261107-bee",
+      "topic": "Natura",
+      "title": "Nel buio, il Sole diventa “su”",
+      "hook": "Nel buio, il Sole diventa “su”",
+      "paragraphs": [
+        "Un’ape trova cibo a 40 gradi a destra della direzione del Sole. Tornata sul favo verticale, orienta di 40 gradi a destra della verticale il tratto oscillante della danza. Nell’arnia buia, le altre api possono così ricavare una direzione da seguire fuori: l’alto sul favo prende il posto del Sole."
+      ],
+      "takeaway": "La danza traduce l’angolo dal riferimento solare a quello del favo.",
+      "basis": "Karl von Frisch, Nobel Lecture, sezione sulla direzione comunicata dalla danza. Schema originale, 40° come esempio dell’angolo.",
+      "sources": [
+        {
+          "title": "Karl von Frisch · Nobel Lecture, 1973",
+          "url": "https://www.nobelprize.org/uploads/2018/06/frisch-lecture.pdf"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-bee.svg",
+        "alt": "A sinistra, il cibo è a 40 gradi a destra del Sole; a destra, la danza è a 40 gradi a destra della verticale.",
+        "caption": "L’angolo resta uguale mentre cambia il riferimento.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.nobelprize.org/uploads/2018/06/frisch-lecture.pdf"
+      }
+    },
+    {
+      "id": "micro-20261107-lever",
+      "topic": "Termodinamica",
+      "title": "Vicino a una fase, ce n’è di più",
+      "hook": "Vicino a una fase, ce n’è di più",
+      "paragraphs": [
+        "Due fasi in equilibrio contengono rispettivamente il 20% e il 60% in massa del componente B. Se la miscela totale è al 30%, tre quarti della massa devono appartenere alla fase al 20%. La regola della leva viene dal bilancio: per ciascuna fase conta il braccio sul lato opposto alla sua composizione."
+      ],
+      "takeaway": "La quantità di fase non coincide con la sua composizione.",
+      "basis": "Howard DeVoe, Thermodynamics and Chemistry, §13.2, bilancio a due fasi. Composizioni illustrative in frazione massica: (60−30)/(60−20)=0,75.",
+      "sources": [
+        {
+          "title": "Howard DeVoe · Thermodynamics and Chemistry, §13.2",
+          "url": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/DeVoes_Thermodynamics_and_Chemistry/13%3A_The_Phase_Rule_and_Phase_Diagrams/13.02%3A_Phase_Diagrams-_Binary_Systems"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-lever.svg",
+        "alt": "Su una linea, miscela al 30% fra fasi al 20% e 60%; una barra inferiore mostra 75% della prima fase e 25% della seconda.",
+        "caption": "In alto le composizioni; in basso le frazioni delle due fasi.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/DeVoes_Thermodynamics_and_Chemistry/13%3A_The_Phase_Rule_and_Phase_Diagrams/13.02%3A_Phase_Diagrams-_Binary_Systems"
+      }
+    },
+    {
+      "id": "micro-20261107-bacon",
+      "topic": "Filosofia",
+      "title": "Ognuno ha la sua grotta",
+      "hook": "Ognuno ha la sua grotta",
+      "paragraphs": [
+        "Francis Bacon chiama “idoli della caverna” le inclinazioni che colorano il giudizio di ciascuno. In un passo nota che alcune menti colgono soprattutto le somiglianze, altre le differenze. Davanti alle stesse montagne, una vede il profilo comune, l’altra distingue ogni vetta. Provare la domanda opposta può far emergere ciò che la prima abitudine lasciava in ombra."
+      ],
+      "takeaway": "Una predisposizione utile può diventare un punto cieco.",
+      "basis": "Bacon, Novum Organum, I.42 e I.55, edizione inglese a cura di Joseph Devey in Project Gutenberg. Parafrasi autonoma; le montagne sono un esempio editoriale.",
+      "sources": [
+        {
+          "title": "Francis Bacon · Novum Organum, I.42 e I.55",
+          "url": "https://www.gutenberg.org/cache/epub/45988/pg45988-images.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-bacon.svg",
+        "alt": "Due lenti inquadrano gli stessi profili di montagna, sottolineandone la base comune o le vette diverse.",
+        "caption": "Lo stesso profilo, due modi di prestargli attenzione.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.gutenberg.org/cache/epub/45988/pg45988-images.html"
+      }
+    },
+    {
+      "id": "micro-20261107-range",
+      "topic": "Architetture web",
+      "title": "Riprendere dal byte ottocento",
+      "hook": "Riprendere dal byte ottocento",
+      "paragraphs": [
+        "Se un file da 1000 byte si interrompe dopo i primi 800, il client può chiedere Range: bytes=800-999. Un server che accetta l’intervallo risponde con 206 e restituisce soltanto il pezzo mancante. Per ricomporlo in sicurezza bisogna verificare di avere ancora la stessa rappresentazione, per esempio con un validatore forte in If-Range."
+      ],
+      "takeaway": "Gli estremi sono inclusi: 800–999 conta 200 byte.",
+      "basis": "RFC 9110, §§14, 15.3.7 e 13.1.5. Il server può ignorare Range; l’esempio usa byte numerati da zero e valori illustrativi.",
+      "sources": [
+        {
+          "title": "IETF · RFC 9110, §§14 e 15.3.7",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-14.1.2"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-range.svg",
+        "alt": "Un file da 0 a 999 byte e una risposta che comprende solo i byte dall’800 al 999.",
+        "caption": "La risposta parziale contiene il segmento arancione.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.rfc-editor.org/rfc/rfc9110.html#section-14.1.2"
+      }
+    },
+    {
+      "id": "micro-20261107-wolfram",
+      "topic": "Scienza e idee",
+      "title": "Il dettaglio sfugge, la media resta",
+      "hook": "Il dettaglio sfugge, la media resta",
+      "paragraphs": [
+        "In un liquido in movimento, ricostruire la traiettoria di ogni molecola è un compito diverso dal prevedere la velocità media del fluido in un tratto di tubo. Wolfram usa questa differenza per spiegare come possano esistere descrizioni semplici di alcuni aspetti di un sistema, anche quando seguirne ogni dettaglio non offre scorciatoie comparabili."
+      ],
+      "takeaway": "Una previsione aggregata può chiedere meno informazioni di una traiettoria individuale.",
+      "basis": "Stephen Wolfram, saggio What Ultimately Is There? Metaphysics and the Ruliad, passaggio sulle pockets of reducibility e il moto molecolare. Esempio del tubo e grafica redazionali; nessuna tesi cosmologica assunta.",
+      "sources": [
+        {
+          "title": "Stephen Wolfram · What Ultimately Is There? Metaphysics and the Ruliad",
+          "url": "https://writings.stephenwolfram.com/2026/02/what-ultimately-is-there-metaphysics-and-the-ruliad/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-wolfram.svg",
+        "alt": "Due riquadri con particelle e vettori microscopici differenti, accanto alla stessa misura media.",
+        "caption": "Due configurazioni microscopiche possono dare la stessa media.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://writings.stephenwolfram.com/2026/02/what-ultimately-is-there-metaphysics-and-the-ruliad/"
+      }
+    },
+    {
+      "id": "micro-20261107-smoothing",
+      "topic": "Machine learning",
+      "title": "La classe giusta vale 0,85",
+      "hook": "La classe giusta vale 0,85",
+      "paragraphs": [
+        "Con quattro classi, l’etichetta di addestramento può assegnare 1 alla classe giusta e 0 alle altre. Mescolando quel bersaglio con il 20% di una distribuzione uniforme, si ottiene 0,85 per la classe giusta e 0,05 per ciascuna delle altre. Il label smoothing cambia ciò che la funzione di perdita chiede al modello durante l’addestramento."
+      ],
+      "takeaway": "Le barre sono etichette di addestramento, non probabilità prodotte dal modello.",
+      "basis": "Szegedy et al., §7: miscela fra one-hot e distribuzione uniforme con peso ε. Esempio originale con ε=0,2 e quattro classi.",
+      "sources": [
+        {
+          "title": "Szegedy et al. · Rethinking the Inception Architecture, §7",
+          "url": "https://arxiv.org/pdf/1512.00567"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-smoothing.svg",
+        "alt": "Due serie di barre: bersaglio 1/0/0/0 e bersaglio 0,85/0,05/0,05/0,05.",
+        "caption": "La barra blu resta dominante; tre barre ricevono una piccola quota.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://arxiv.org/pdf/1512.00567"
+      }
+    },
+    {
+      "id": "micro-20261107-partial",
+      "topic": "Database",
+      "title": "Un indice può dimenticare i chiusi",
+      "hook": "Un indice può dimenticare i chiusi",
+      "paragraphs": [
+        "In un archivio di ticket, quelli chiusi possono essere molti più di quelli aperti. SQLite permette di costruire un indice che contiene soltanto le righe aperte. Una query con un filtro compatibile può usare questa scorciatoia: i ticket chiusi restano nella tabella, ma non occupano voci nell’indice dedicato alla coda di lavoro."
+      ],
+      "takeaway": "Un indice può coprire una parte della tabella anche senza separare i dati.",
+      "basis": "SQLite, Partial Indexes: la clausola WHERE limita le righe indicizzate. L’utilizzabilità dipende dal predicato della query e dalle regole del pianificatore.",
+      "sources": [
+        {
+          "title": "SQLite · Partial Indexes",
+          "url": "https://www.sqlite.org/partialindex.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-partial.svg",
+        "alt": "Quattro ticket nella tabella; i due aperti sono gli unici collegati all’indice parziale.",
+        "caption": "Soltanto 15 e 17 entrano nell’indice.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.sqlite.org/partialindex.html"
+      }
+    },
+    {
+      "id": "micro-20261107-flow",
+      "topic": "Algoritmi",
+      "title": "Un flusso cresce tornando indietro",
+      "hook": "Un flusso cresce tornando indietro",
+      "paragraphs": [
+        "Hai già mandato un’unità lungo S–A–C–T. Il nodo B raggiunge solo C, ma C–T è pieno. Nella rete residua puoi percorrere C–A al contrario: annulli il flusso da A a C e lo devii attraverso D. Alla fine passano due unità, una da A attraverso D e l’altra da B attraverso C."
+      ],
+      "takeaway": "Il tratto all’indietro modifica un’assegnazione; non aggiunge una condotta fisica.",
+      "basis": "NetworkX, Edmonds–Karp e convenzioni della rete residua. Esempio originale con tutte le capacità unitarie e scelta iniziale illustrativa; il percorso di aumento è S–B–C–A–D–T.",
+      "sources": [
+        {
+          "title": "NetworkX · Edmonds–Karp e rete residua",
+          "url": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.flow.edmonds_karp.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-flow.svg",
+        "alt": "Rete da S a T: il percorso residuo passa per B, C, torna ad A e prosegue per D.",
+        "caption": "Il tratto arancione annulla il precedente passaggio A–C.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.flow.edmonds_karp.html"
+      }
+    },
+    {
+      "id": "micro-20261107-bisect",
+      "topic": "Algoritmi",
+      "title": "Ci sono due posti per il sette",
+      "hook": "Ci sono due posti per il sette",
+      "paragraphs": [
+        "Nella lista ordinata 2, 5, 7, 7, 9, un altro 7 può entrare prima oppure dopo i due già presenti. Le funzioni bisect_left e bisect_right restituiscono i due confini. Sottraendoli ottieni il numero di 7 già nella lista, senza scorrerli uno per uno: in questo caso, due."
+      ],
+      "takeaway": "La differenza fra i confini dà la molteplicità del valore.",
+      "basis": "Documentazione Python bisect: partizioni ai confini sinistro e destro. Esempio originale; la ricerca è distinta dall’inserimento effettivo nella lista.",
+      "sources": [
+        {
+          "title": "Python · bisect, funzioni di bisezione e inserimento",
+          "url": "https://docs.python.org/3/library/bisect.html"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261107-bisect.svg",
+        "alt": "La stessa lista su due righe: il segno d’inserimento è prima del primo 7 e dopo il secondo 7.",
+        "caption": "Le linee arancioni delimitano il gruppo di valori uguali.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.python.org/3/library/bisect.html"
+      }
+    }
+  ]
+}
