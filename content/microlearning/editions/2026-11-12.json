@@ -1,0 +1,554 @@
+{
+  "schema": 1,
+  "date": "2026-11-12",
+  "cards": [
+    {
+      "id": "micro-20261112-check",
+      "topic": "Machine learning",
+      "title": "Ricordarne meno, rifarne un po’",
+      "hook": "Ricordarne meno, rifarne un po’",
+      "paragraphs": [
+        "Durante l’addestramento, il passaggio all’indietro ha bisogno di valori intermedi prodotti all’andata. Puoi conservare soltanto alcuni punti del calcolo: quando un valore interno serve, lo rigeneri ripartendo da un punto conservato. È il checkpointing delle attivazioni. Il segmento richiede meno memoria per quei valori, al prezzo di altro calcolo."
+      ],
+      "takeaway": "Si scambia memoria delle attivazioni con ricomputazione, senza cambiare l’obiettivo.",
+      "basis": "PyTorch, guida al checkpointing. Il diagramma rappresenta un segmento illustrativo, non una misura di memoria o velocità.",
+      "sources": [
+        {
+          "title": "PyTorch · Activation Checkpointing",
+          "url": "https://pytorch.org/blog/activation-checkpointing-techniques/"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-check.svg",
+        "alt": "Due sequenze di sette caselle: nella prima sono conservate tutte, nella seconda solo gli estremi.",
+        "caption": "Le caselle scure restano disponibili dopo il passaggio in avanti.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://pytorch.org/blog/activation-checkpointing-techniques/"
+      }
+    },
+    {
+      "id": "micro-20261112-pika",
+      "topic": "Natura",
+      "title": "Il fieno fra le pietre",
+      "hook": "Il fieno fra le pietre",
+      "paragraphs": [
+        "D’estate il pika americano raccoglie erbe e altri vegetali e ne fa mucchietti fra le rocce. D’inverno non va in letargo: quei depositi gli offrono cibo quando cercarne di fresco è più difficile. Il pendio di pietre funziona così anche da dispensa, con ripari vicini al luogo in cui l’animale si alimenta."
+      ],
+      "takeaway": "Il deposito estivo permette al pika di alimentarsi durante l’inverno.",
+      "basis": "National Park Service, descrizione delle riserve vegetali del pika americano. Foto d’archivio ridimensionata.",
+      "sources": [
+        {
+          "title": "NPS · American Pika at Mount Rainier",
+          "url": "https://www.nps.gov/articles/american-pika-at-mount-rainier.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-pika.jpg",
+        "alt": "Felci raccolte in un mucchio riparato fra grandi massi.",
+        "caption": "Una riserva di felci fra i massi del Mount Rainier.",
+        "credit": "NPS / A. Mangan",
+        "license": "Pubblico dominio · NPS",
+        "source": "https://www.nps.gov/articles/american-pika-at-mount-rainier.htm"
+      }
+    },
+    {
+      "id": "micro-20261112-stokes",
+      "topic": "Fluidodinamica",
+      "title": "Per una sfera lenta il doppio è doppio",
+      "hook": "Per una sfera lenta il doppio è doppio",
+      "paragraphs": [
+        "Una sferetta di raggio 10 micrometri avanza in acqua a un millimetro al secondo. Con viscosità di 1 mPa·s, la resistenza di Stokes vale circa 190 piconewton. Se raddoppi la velocità, la forza raddoppia: a Reynolds molto piccolo domina la viscosità e la dipendenza quadratica tipica di altri regimi non vale."
+      ],
+      "takeaway": "La forza è lineare nella velocità nel limite di Reynolds molto minore di uno.",
+      "basis": "NASA, drag nel limite di Stokes. F=6πμrU; ρ=1000 kg/m³, Re basato sul diametro =0,02 alla velocità di esempio; sfera isolata lontano dalle pareti.",
+      "sources": [
+        {
+          "title": "NASA · Palmer et al., Particle Drag",
+          "url": "https://ntrs.nasa.gov/api/citations/20220007039/downloads/FAR_2022_Palmer_Particle_Drag_v3.pdf"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-stokes.svg",
+        "alt": "Retta di forza in piconewton contro velocità in millimetri al secondo, per una sfera di raggio dieci micrometri.",
+        "caption": "La pendenza del grafico è 6πμr.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://ntrs.nasa.gov/api/citations/20220007039/downloads/FAR_2022_Palmer_Particle_Drag_v3.pdf"
+      }
+    },
+    {
+      "id": "micro-20261112-mimas",
+      "topic": "Astronomia",
+      "title": "Un cratere largo un terzo della luna",
+      "hook": "Un cratere largo un terzo della luna",
+      "paragraphs": [
+        "Mimas misura circa 396 chilometri da un lato all’altro. Herschel, il cratere visibile sulla destra nel mosaico di Cassini, è largo circa 130 chilometri. La proporzione spiega perché domina la fotografia: messo lungo un diametro della luna, il solo cratere ne occuperebbe quasi un terzo. Al centro si distingue anche il rilievo dell’impatto."
+      ],
+      "takeaway": "Centotrenta chilometri sono circa un terzo di 396.",
+      "basis": "NASA/JPL, PIA12570: mosaico di sei immagini Cassini in luce visibile del 13 febbraio 2010. Il confronto usa i diametri riportati nella scheda, non una misura sui pixel.",
+      "sources": [
+        {
+          "title": "NASA/JPL · PIA12570, mosaico Cassini",
+          "url": "https://www.jpl.nasa.gov/images/pia12570-flying-by-the-death-star-moon/"
+        },
+        {
+          "title": "JPL · Image Use Policy",
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-mimas.jpg",
+        "alt": "Disco craterizzato di Mimas, con l’ampio cratere Herschel e il rilievo centrale sulla destra.",
+        "caption": "Mimas, con Herschel sul lato destro del mosaico.",
+        "credit": "NASA/JPL-Caltech/Space Science Institute",
+        "license": "Riuso editoriale · JPL Image Use Policy",
+        "source": "https://www.jpl.nasa.gov/images/pia12570-flying-by-the-death-star-moon/"
+      }
+    },
+    {
+      "id": "micro-20261112-locking",
+      "topic": "Elementi finiti",
+      "title": "La mesh può irrigidire una trave",
+      "hook": "La mesh può irrigidire una trave",
+      "paragraphs": [
+        "Una trave sottile si piega con poco scorrimento a taglio. In alcuni elementi di Timoshenko, la pendenza dell’asse è costante dentro ogni maglia, mentre la rotazione della sezione è interpolata linearmente. Imporre quasi zero taglio costringe le due a coincidere: la mesh può allora ostacolare proprio la flessione che dovrebbe rappresentare."
+      ],
+      "takeaway": "La rigidezza numerica in eccesso viene dalla coppia di spazi di approssimazione.",
+      "basis": "NGSolve, dimostrazione del locking per approssimazioni lineari uguali di spostamento e rotazione; schema qualitativo della flessione desiderata.",
+      "sources": [
+        {
+          "title": "NGSolve · Timoschenko and Euler-Bernoulli beam",
+          "url": "https://docu.ngsolve.org/ngs24/SaS/Timoschenko_Bernoulli_beam.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-locking.svg",
+        "alt": "Asse di trave curvo e sezioni trasversali con angolo variabile lungo l’asse.",
+        "caption": "In flessione la rotazione cambia lungo la trave.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docu.ngsolve.org/ngs24/SaS/Timoschenko_Bernoulli_beam.html"
+      }
+    },
+    {
+      "id": "micro-20261112-spring",
+      "topic": "Geologia",
+      "title": "La terrazza cresce con l’acqua",
+      "hook": "La terrazza cresce con l’acqua",
+      "paragraphs": [
+        "Alle sorgenti calde di Mammoth l’acqua porta in superficie calcio disciolto. Quando libera anidride carbonica, può depositare carbonato di calcio. Il travertino si accumula lungo i bordi dove l’acqua trabocca: si formano gradini e piccoli bacini. Le strisce chiare della fotografia sono roccia deposta dall’acqua, non schiuma rimasta in superficie."
+      ],
+      "takeaway": "Il deposito costruisce la forma che poi guida lo scorrimento.",
+      "basis": "National Park Service, meccanismo di deposizione alle Lower Terraces e archivio fotografico di Canary Spring. Immagine ridimensionata.",
+      "sources": [
+        {
+          "title": "NPS · Mammoth Hot Springs, Lower Terraces",
+          "url": "https://www.nps.gov/places/000/mammoth-hot-springs-lower-terraces.htm"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-spring.jpg",
+        "alt": "Terrazze di travertino a Canary Spring, con acqua che scende lungo i bordi dei gradini.",
+        "caption": "Canary Spring: l’acqua scorre sui bordi delle terrazze.",
+        "credit": "NPS / Diane Renkin",
+        "license": "Pubblico dominio · NPGallery",
+        "source": "https://npgallery.nps.gov/AssetDetail/719a2bae-39ab-4ccd-9806-db07094bc755"
+      }
+    },
+    {
+      "id": "micro-20261112-cow",
+      "topic": "Sistemi operativi",
+      "title": "La pagina si copia alla prima scrittura",
+      "hook": "La pagina si copia alla prima scrittura",
+      "paragraphs": [
+        "Su Linux, dopo fork, padre e figlio possono leggere la stessa pagina fisica. Se il figlio scrive, il sistema gli dà una copia privata della pagina, lasciando al padre il contenuto precedente. È copy-on-write: per le pagine mai modificate, la duplicazione dei dati può non avvenire affatto."
+      ],
+      "takeaway": "Il risparmio riguarda le copie fisiche, non elimina il costo di creare un processo.",
+      "basis": "Linux man-pages, fork(2), nota sulla copia delle pagine alla scrittura. Esempio di una pagina privata, non di memoria condivisa esplicitamente.",
+      "sources": [
+        {
+          "title": "Linux man-pages · fork(2)",
+          "url": "https://man7.org/linux/man-pages/man2/fork.2.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-cow.svg",
+        "alt": "Padre e figlio collegati prima alla stessa pagina e poi a due pagine distinte.",
+        "caption": "La scrittura del figlio separa solo la pagina modificata.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://man7.org/linux/man-pages/man2/fork.2.html"
+      }
+    },
+    {
+      "id": "micro-20261112-glass",
+      "topic": "Storia materiale",
+      "title": "Un filo di vetro diventa appoggio",
+      "hook": "Un filo di vetro diventa appoggio",
+      "paragraphs": [
+        "Su questa bottiglia romana un cordone di vetro gira attorno al bordo della bocca, un altro forma un disco sporgente sul collo e un terzo si allarga alla base. Il dettaglio interessante è in basso: il cordone non disegna soltanto una linea, ma sporge fino a formare l’anello su cui poggia il recipiente."
+      ],
+      "takeaway": "Il cordone applicato può cambiare anche la geometria di appoggio.",
+      "basis": "Catalogo The Met, descrizione della bottiglia tardo imperiale e dei tre cordoni applicati. Immagine Open Access ridimensionata.",
+      "sources": [
+        {
+          "title": "The Met · Glass bottle, Late Imperial",
+          "url": "https://www.metmuseum.org/art/collection/search/249413"
+        },
+        {
+          "title": "The Met · Open Access e risorse immagini",
+          "url": "https://www.metmuseum.org/policies/image-resources"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-glass.jpg",
+        "alt": "Bottiglia romana in vetro con un disco sul collo e un anello sporgente al piede.",
+        "caption": "Il cordone inferiore sporge a formare la base ad anello.",
+        "credit": "The Metropolitan Museum of Art",
+        "license": "CC0 1.0 · The Met Open Access",
+        "source": "https://www.metmuseum.org/art/collection/search/249413"
+      }
+    },
+    {
+      "id": "micro-20261112-zoh",
+      "topic": "Controllo",
+      "title": "Tra due tic, il comando non cambia",
+      "hook": "Tra due tic, il comando non cambia",
+      "paragraphs": [
+        "Un controllore aggiorna una tensione ogni secondo. Se alle due invia 2 volt, il mantenimento di ordine zero conserva proprio 2 volt fino all’aggiornamento successivo. Il processo riceve quindi una scala di gradini. Una discretizzazione con questa ipotesi riproduce ai campioni la risposta del modello lineare a quell’ingresso a gradini."
+      ],
+      "takeaway": "Il modello discreto dipende da come immagini il comando fra i campioni.",
+      "basis": "SciPy, cont2discrete e zero-order hold. Segnale illustrativo; equivalenza ai campioni per il modello lineare continuo e ingresso mantenuto costante.",
+      "sources": [
+        {
+          "title": "SciPy · cont2discrete, zero-order hold",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.cont2discrete.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-zoh.svg",
+        "alt": "Grafico a gradini di una tensione in volt, con aggiornamenti a intervalli di un secondo.",
+        "caption": "I punti arancioni segnano i nuovi valori del comando.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.cont2discrete.html"
+      }
+    },
+    {
+      "id": "micro-20261112-euclid",
+      "topic": "Matematica",
+      "title": "Il primo che manca alla lista",
+      "hook": "Il primo che manca alla lista",
+      "paragraphs": [
+        "Scrivi 2, 3 e 5, moltiplicali e aggiungi uno: ottieni 31. Nessuno dei tre primi divide 31, perché resta sempre uno. L’idea di Euclide funziona per qualunque lista finita: il numero ottenuto può essere composto, ma almeno un suo divisore primo deve comunque stare fuori dalla lista."
+      ],
+      "takeaway": "Il numero costruito non deve essere primo: basta un suo divisore primo nuovo.",
+      "basis": "Elementi IX.20, edizione annotata di D. E. Joyce. Esempio moderno prodotto più uno; Euclide parte da un multiplo comune.",
+      "sources": [
+        {
+          "title": "Euclide · Elementi IX.20",
+          "url": "https://mathcs.clarku.edu/~djoyce/java/elements/bookIX/propIX20.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-euclid.svg",
+        "alt": "Due, tre e cinque moltiplicati danno trenta; trentuno ha resto uno nelle tre divisioni.",
+        "caption": "Dividere 31 per uno dei primi elencati lascia resto uno.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://mathcs.clarku.edu/~djoyce/java/elements/bookIX/propIX20.html"
+      }
+    },
+    {
+      "id": "micro-20261112-choke",
+      "topic": "Fluidodinamica",
+      "title": "La gola pone un tetto alla portata",
+      "hook": "La gola pone un tetto alla portata",
+      "paragraphs": [
+        "In un ugello convergente, abbassare la pressione a valle fa aumentare la portata finché alla gola il gas raggiunge la velocità del suono. A quel punto abbassarla ancora non fa passare più massa, se area e condizioni a monte restano fisse. È la strozzatura sonica: il flusso continua, ma ha raggiunto il suo limite."
+      ],
+      "takeaway": "La portata critica dipende dall’area della gola e dallo stato totale a monte.",
+      "basis": "NASA Glenn, equazione della portata per flusso comprimibile; curva normalizzata per gas perfetto, flusso ideale isentropico, γ=1,4. Il ramo oltre Mach 1 appartiene alla relazione analitica, non all’evoluzione nella gola del convergente.",
+      "sources": [
+        {
+          "title": "NASA Glenn · Mass Flow Rate Equations",
+          "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/mass-flow-rate-equations/"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-choke.svg",
+        "alt": "Curva di portata normalizzata in funzione del numero di Mach, con massimo a uno.",
+        "caption": "Il massimo della portata normalizzata cade a Mach 1.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/mass-flow-rate-equations/"
+      }
+    },
+    {
+      "id": "micro-20261112-echo",
+      "topic": "Libri",
+      "title": "Eco può finire la frase",
+      "hook": "Eco può finire la frase",
+      "paragraphs": [
+        "Nelle Metamorfosi, Eco non può parlare per prima: le è rimasto il potere di riprendere la fine di ciò che ascolta. Quando Narciso propone di unirsi a chi lo chiama, lei ripete proprio l’invito che desiderava rivolgergli. Le stesse parole gli servono per cercare una voce, a lei per rispondere con una speranza."
+      ],
+      "takeaway": "Eco può riusare una parola altrui con un’intenzione propria.",
+      "basis": "Ovidio, Metamorfosi III, episodio di Eco e Narciso, vv. 356–401; consultata la versione di A. S. Kline. Formulazione autonoma in italiano, «uniamoci» rende il latino coeamus.",
+      "sources": [
+        {
+          "title": "Ovidio · Metamorfosi III, 356–401",
+          "url": "https://www.poetryintranslation.com/PITBR/Latin/Metamorph3.php"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-echo.svg",
+        "alt": "Una frase di Narciso è seguita dalla sola parola finale ripetuta da Eco, con onde simboliche.",
+        "caption": "Eco può pronunciare «uniamoci» dopo averlo sentito.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.poetryintranslation.com/PITBR/Latin/Metamorph3.php"
+      }
+    },
+    {
+      "id": "micro-20261112-group",
+      "topic": "Machine learning",
+      "title": "Otto canali, due famiglie",
+      "hook": "Otto canali, due famiglie",
+      "paragraphs": [
+        "Prendi una singola immagine intermedia con otto canali. GroupNorm può dividerli in due gruppi da quattro e normalizzare ciascun gruppo usando i suoi canali e le sue posizioni spaziali. L’immagine successiva si calcola le proprie statistiche: non serve aspettare che il batch contenga molte immagini per stimare una media fra esempi."
+      ],
+      "takeaway": "Il raggruppamento riguarda i canali, non i campioni del batch.",
+      "basis": "PyTorch, GroupNorm. Statistiche calcolate per gruppo dentro ciascun campione, sia durante addestramento sia in valutazione; schema illustrativo con otto canali.",
+      "sources": [
+        {
+          "title": "PyTorch · GroupNorm",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.GroupNorm.html"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-group.svg",
+        "alt": "Due immagini con otto canali ciascuna, separati in gruppi di quattro dentro ogni immagine.",
+        "caption": "Ogni riga è un campione, con due gruppi indipendenti.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.pytorch.org/docs/stable/generated/torch.nn.GroupNorm.html"
+      }
+    },
+    {
+      "id": "micro-20261112-hooke",
+      "topic": "Storia della scienza",
+      "title": "Una pulce in armatura",
+      "hook": "Una pulce in armatura",
+      "paragraphs": [
+        "Nella tavola di Hooke la pulce ha giunture che sembrano quelle di un’armatura. Il microscopio gli mostrava come le zampe si ripiegassero una dentro l’altra; per le posteriori scelse l’immagine di un righello a più snodi. Le lettere incise sulla tavola permettono di seguire quelle pieghe mentre si legge la sua descrizione."
+      ],
+      "takeaway": "La tavola si legge insieme alle lettere citate nell’osservazione.",
+      "basis": "Robert Hooke, Micrographia, osservazione LIII e tavola XXXIV, 1665. Analogia delle giunture riportata in parafrasi; riproduzione della stampa storica.",
+      "sources": [
+        {
+          "title": "Robert Hooke · Micrographia, osservazione LIII",
+          "url": "https://www.gutenberg.org/cache/epub/15491/pg15491-images.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-hooke.jpg",
+        "alt": "Incisione di una pulce di profilo, con zampe articolate e lettere che indicano le parti descritte.",
+        "caption": "Tavola XXXIV: lettere e giunture della pulce osservata da Hooke.",
+        "credit": "Robert Hooke, Micrographia (1665) · Project Gutenberg",
+        "license": "Pubblico dominio · incisione storica",
+        "source": "https://www.gutenberg.org/cache/epub/15491/pg15491-images.html#obsLIII"
+      }
+    },
+    {
+      "id": "micro-20261112-dijkstra",
+      "topic": "Algoritmi",
+      "title": "Il nodo più vicino può venire prima",
+      "hook": "Il nodo più vicino può venire prima",
+      "paragraphs": [
+        "Da A puoi andare direttamente a C in nove minuti, oppure raggiungere B in due. Dijkstra fissa prima B: con durate non negative, passare da una tappa più lontana non può accorciare quei due minuti. Da B scopre che C si raggiunge in altri tre. La stima per C scende così da nove a cinque."
+      ],
+      "takeaway": "Fissare la distanza minore è giustificato dall’assenza di pesi negativi.",
+      "basis": "Dijkstra, A Note on Two Problems in Connexion with Graphs (1959), problema del percorso minimo. Rete originale a pesi positivi.",
+      "sources": [
+        {
+          "title": "E. W. Dijkstra · A Note on Two Problems, 1959",
+          "url": "https://www.cs.yale.edu/homes/lans/readings/routing/dijkstra-routing-1959.pdf"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-dijkstra.svg",
+        "alt": "Grafo a tre nodi: A–B due minuti, B–C tre minuti e A–C nove minuti.",
+        "caption": "La strada attraverso B costa 5 minuti, quella diretta 9.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.cs.yale.edu/homes/lans/readings/routing/dijkstra-routing-1959.pdf"
+      }
+    },
+    {
+      "id": "micro-20261112-wolfram",
+      "topic": "Scienza e idee",
+      "title": "Due storie si ritrovano",
+      "hook": "Due storie si ritrovano",
+      "paragraphs": [
+        "Parti da 00 e cambia uno zero in uno a ogni passo. Puoi ottenere prima 10 oppure 01, ma entrambi portano a 11. In un grafo multiway, come quelli discussi da Wolfram, si disegna un solo nodo per quello stato finale. I cammini restano diversi anche se ciò che hanno prodotto è identico."
+      ],
+      "takeaway": "Il nodo rappresenta lo stato; il percorso conserva la storia delle operazioni.",
+      "basis": "Stephen Wolfram, What Ultimately Is There? Metaphysics and the Ruliad, passaggi su ramificazioni e fusioni dei grafi multiway. Esempio binario originale, senza assunzioni fisiche.",
+      "sources": [
+        {
+          "title": "Stephen Wolfram · What Ultimately Is There? Metaphysics and the Ruliad",
+          "url": "https://writings.stephenwolfram.com/2026/02/what-ultimately-is-there-metaphysics-and-the-ruliad/"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-wolfram.svg",
+        "alt": "Rombo con 00 in alto, 10 e 01 sui lati e 11 come esito comune.",
+        "caption": "I due ordini si riuniscono nel nodo 11.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://writings.stephenwolfram.com/2026/02/what-ultimately-is-there-metaphysics-and-the-ruliad/"
+      }
+    },
+    {
+      "id": "micro-20261112-base",
+      "topic": "Software",
+      "title": "I due rami hanno un punto di partenza",
+      "hook": "I due rami hanno un punto di partenza",
+      "paragraphs": [
+        "In una storia Git, due rami passano entrambi per A e B e poi si separano. Per confrontare i cambiamenti dopo la separazione, B è più utile di A: è un antenato comune e discende da A. È il criterio di merge-base. In storie più intrecciate possono esserci più basi ugualmente buone."
+      ],
+      "takeaway": "Conta la relazione di discendenza, non l’ora registrata nel commit.",
+      "basis": "Documentazione Git, git-merge-base: un antenato comune è migliore di un altro se il secondo è un suo antenato. Diagramma originale, senza merge incrociati.",
+      "sources": [
+        {
+          "title": "Git · git-merge-base",
+          "url": "https://git-scm.com/docs/git-merge-base"
+        }
+      ],
+      "tone": "blue",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-base.svg",
+        "alt": "Grafo Git con A seguito da B; da B partono due rami distinti.",
+        "caption": "B è comune a entrambi i rami ed è più recente di A nella storia.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://git-scm.com/docs/git-merge-base"
+      }
+    },
+    {
+      "id": "micro-20261112-sum",
+      "topic": "Calcolo numerico",
+      "title": "Due uno fanno la differenza",
+      "hook": "Due uno fanno la differenza",
+      "paragraphs": [
+        "Aggiungi 1 a 10¹⁶ in virgola mobile a 64 bit: l’arrotondamento lascia il valore invariato. Aggiungi di nuovo 1 e può succedere lo stesso. La somma compensata di Kahan conserva una correzione per il contributo perso. Quando arriva il secondo 1, il contributo accumulato vale 2 e il risultato può finalmente cambiare."
+      ],
+      "takeaway": "La compensazione conserva informazione persa al singolo arrotondamento.",
+      "basis": "Goldberg, sezione Errors in Summation, somma compensata. Esempio IEEE 754 binary64, arrotondamento al più vicino con parità nei casi a metà; senza riassociazione delle operazioni.",
+      "sources": [
+        {
+          "title": "David Goldberg · What Every Computer Scientist Should Know About Floating-Point Arithmetic",
+          "url": "https://docs.oracle.com/cd/E19957-01/816-2464/ncg_goldberg.html"
+        }
+      ],
+      "tone": "sage",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-sum.svg",
+        "alt": "Confronto tra i risultati 10 alla sedicesima e 10 alla sedicesima più due.",
+        "caption": "La somma ordinaria perde due unità; quella compensata le recupera in questo esempio.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://docs.oracle.com/cd/E19957-01/816-2464/ncg_goldberg.html"
+      }
+    },
+    {
+      "id": "micro-20261112-rk",
+      "topic": "Calcolo numerico",
+      "title": "Mezzo passo prima di fare sul serio",
+      "hook": "Mezzo passo prima di fare sul serio",
+      "paragraphs": [
+        "Con y′ = y e valore iniziale 1, un passo di Eulero lungo 0,4 arriva a 1,4. Il metodo del punto medio usa prima la pendenza iniziale per stimare 1,2 a metà. Poi torna al punto di partenza e usa quella nuova pendenza per tutto il passo: arriva a 1,48, vicino all’esatto 1,492."
+      ],
+      "takeaway": "Il mezzo passo stima una pendenza; non è la prima metà del risultato finale.",
+      "basis": "MIT, Runge–Kutta di secondo ordine. Esempio originale di punto medio esplicito: k₁=1, k₂=1+0,2k₁, risultato 1+0,4k₂. Variabili adimensionali.",
+      "sources": [
+        {
+          "title": "Brenton LeMesurier · The Explicit Midpoint Method",
+          "url": "https://lemesurierb.people.charleston.edu/numerical-methods-and-analysis-python/main/ODE-IVP-2-Runge-Kutta-python.html"
+        }
+      ],
+      "tone": "clay",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-rk.svg",
+        "alt": "Due segmenti da y uguale a uno: Eulero termina a 1,40, il metodo del punto medio a 1,48.",
+        "caption": "La sonda a metà fornisce la pendenza usata nel passo blu.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://lemesurierb.people.charleston.edu/numerical-methods-and-analysis-python/main/ODE-IVP-2-Runge-Kutta-python.html"
+      }
+    },
+    {
+      "id": "micro-20261112-tff",
+      "topic": "Bioprocessi",
+      "title": "Il liquido scorre di lato",
+      "hook": "Il liquido scorre di lato",
+      "paragraphs": [
+        "Nella filtrazione tangenziale, l’alimentazione scorre lungo la membrana. Una parte attraversa i pori e diventa permeato; il resto prosegue lungo il canale come retentato. Se una proteina è trattenuta mentre parte del solvente passa, il retentato si concentra. Lo scorrimento parallelo aiuta a limitare l’accumulo sulla membrana, senza eliminarlo."
+      ],
+      "takeaway": "La direzione dell’alimentazione è distinta da quella del permeato.",
+      "basis": "Sartorius, guida alla filtrazione tangenziale e alle cassette. Schema originale per ultrafiltrazione, con specie trattenuta e solvente permeante, senza dati prestazionali.",
+      "sources": [
+        {
+          "title": "Sartorius · Tangential Flow Filtration",
+          "url": "https://www.sartorius.com/products/lab-filtration-purification/ultrafiltration-devices/tangential-crossflow"
+        }
+      ],
+      "tone": "plum",
+      "visual": {
+        "kind": "image",
+        "src": "content/microlearning/media/20261112-tff.svg",
+        "alt": "Sezione di membrana: alimentazione e retentato scorrono in orizzontale, il permeato scende attraverso i pori.",
+        "caption": "Blu: flusso lungo la membrana. Arancio: solvente che la attraversa.",
+        "credit": "Aurelius · grafico o schema originale",
+        "license": "CC BY 4.0 · https://creativecommons.org/licenses/by/4.0/",
+        "source": "https://www.sartorius.com/products/lab-filtration-purification/ultrafiltration-devices/tangential-crossflow"
+      }
+    }
+  ]
+}
